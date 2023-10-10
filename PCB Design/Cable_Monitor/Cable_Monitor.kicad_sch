@@ -1144,13 +1144,13 @@
       )
     )
     (symbol "SS13L_R3G:SS13L_R3G" (pin_names hide) (in_bom yes) (on_board yes)
-      (property "Reference" "D3" (at 3.81 -5.08 0)
+      (property "Reference" "D4" (at 3.5306 -4.445 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "SS13L_R3G" (at 3.81 -2.54 0)
-        (effects (font (size 1.27 1.27)))
+      (property "Value" "SS13L_R3G" (at 3.175 -2.54 0)
+        (effects (font (size 0.762 0.762)))
       )
-      (property "Footprint" "SODFL3618X143N" (at 8.89 -97.46 0)
+      (property "Footprint" "SS13L_R3G:SODFL3618X143N" (at 8.89 -97.46 0)
         (effects (font (size 1.27 1.27)) (justify left top) hide)
       )
       (property "Datasheet" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 8.89 -197.46 0)
@@ -1183,10 +1183,10 @@
       (symbol "SS13L_R3G_1_1"
         (polyline
           (pts
-            (xy 1.27 0)
             (xy 2.54 0)
+            (xy 5.08 0)
           )
-          (stroke (width 0.254) (type default))
+          (stroke (width 0) (type default))
           (fill (type none))
         )
         (polyline
@@ -1194,15 +1194,25 @@
             (xy 2.54 1.27)
             (xy 2.54 -1.27)
           )
-          (stroke (width 0.254) (type default))
+          (stroke (width 0.1524) (type default))
           (fill (type none))
         )
         (polyline
           (pts
-            (xy 5.08 0)
-            (xy 6.35 0)
+            (xy 2.54 -1.27)
+            (xy 1.905 -1.27)
+            (xy 1.905 -0.635)
           )
-          (stroke (width 0.254) (type default))
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 2.54 1.27)
+            (xy 3.175 1.27)
+            (xy 3.175 0.635)
+          )
+          (stroke (width 0) (type default))
           (fill (type none))
         )
         (polyline
@@ -1212,14 +1222,14 @@
             (xy 5.08 -1.27)
             (xy 2.54 0)
           )
-          (stroke (width 0.254) (type default))
-          (fill (type outline))
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
         )
         (pin passive line (at 0 0 0) (length 2.54)
           (name "K" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at 8.89 0 180) (length 2.54)
+        (pin passive line (at 7.62 0 180) (length 2.54)
           (name "A" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
@@ -1654,7 +1664,7 @@
     )
   )
 
-  (junction (at 155.575 164.465) (diameter 0) (color 0 0 0 0)
+  (junction (at 158.115 164.465) (diameter 0) (color 0 0 0 0)
     (uuid 0cd57133-f9df-4834-8670-6234fd258e3e)
   )
   (junction (at 149.225 91.44) (diameter 0) (color 0 0 0 0)
@@ -1705,7 +1715,7 @@
   (junction (at 168.275 127.635) (diameter 0) (color 0 0 0 0)
     (uuid 6083d93a-4008-4538-b556-4b71fd8277b1)
   )
-  (junction (at 165.735 92.075) (diameter 0) (color 0 0 0 0)
+  (junction (at 169.545 92.075) (diameter 0) (color 0 0 0 0)
     (uuid 626f3469-6482-4de5-a508-d664fefdd94c)
   )
   (junction (at 83.82 92.075) (diameter 0) (color 0 0 0 0)
@@ -1731,6 +1741,12 @@
   )
   (junction (at 166.37 48.26) (diameter 0) (color 0 0 0 0)
     (uuid 8d6fe60d-45b2-48a9-ac86-fd04bae171b5)
+  )
+  (junction (at 157.48 91.44) (diameter 0) (color 0 0 0 0)
+    (uuid 8de0b0d0-f1e6-4b00-9923-70c2bab7b29d)
+  )
+  (junction (at 208.915 127.635) (diameter 0) (color 0 0 0 0)
+    (uuid 929ae4a4-f96d-41f0-867c-4fd9a6833af2)
   )
   (junction (at 173.355 127.635) (diameter 0) (color 0 0 0 0)
     (uuid 95c2c102-5581-49ee-a610-f4ff4c1309cb)
@@ -1829,7 +1845,11 @@
     (stroke (width 0) (type default))
     (uuid 0d601f91-9abf-4066-880e-63b1a931481e)
   )
-  (wire (pts (xy 155.575 173.355) (xy 155.575 180.975))
+  (wire (pts (xy 158.115 164.465) (xy 156.21 164.465))
+    (stroke (width 0) (type default))
+    (uuid 0ee583ea-0b4b-4229-b7b3-eff41452b67d)
+  )
+  (wire (pts (xy 158.115 177.8) (xy 158.115 180.975))
     (stroke (width 0) (type default))
     (uuid 0f61d236-d646-4804-81c1-7cff56651173)
   )
@@ -1857,6 +1877,10 @@
     (stroke (width 0) (type default))
     (uuid 18d6de9d-0add-4edf-8dbb-b97c1c05da26)
   )
+  (wire (pts (xy 146.685 91.44) (xy 149.225 91.44))
+    (stroke (width 0) (type default))
+    (uuid 19d55563-c1d4-464f-ae32-78420f8f7451)
+  )
   (wire (pts (xy 206.375 38.1) (xy 206.375 39.37))
     (stroke (width 0) (type default))
     (uuid 1a1c0bf8-1ee8-4dd3-ab6c-305c0a19adba)
@@ -1868,10 +1892,6 @@
   (wire (pts (xy 54.61 72.39) (xy 46.99 72.39))
     (stroke (width 0) (type default))
     (uuid 1c9ee9dc-831b-491b-b9fe-595986bdacef)
-  )
-  (wire (pts (xy 147.955 164.465) (xy 155.575 164.465))
-    (stroke (width 0) (type default))
-    (uuid 1fb06e7d-1201-4154-b1ea-5efb75aee236)
   )
   (wire (pts (xy 102.235 136.525) (xy 111.125 136.525))
     (stroke (width 0) (type default))
@@ -1888,6 +1908,14 @@
   (wire (pts (xy 163.195 48.26) (xy 166.37 48.26))
     (stroke (width 0) (type default))
     (uuid 21e05b56-10e5-46e2-8c10-f1f7b2bd838e)
+  )
+  (wire (pts (xy 208.915 127.635) (xy 208.915 125.73))
+    (stroke (width 0) (type default))
+    (uuid 22679229-6459-4fac-97c0-f7d43312780f)
+  )
+  (wire (pts (xy 133.985 128.27) (xy 133.985 127.635))
+    (stroke (width 0) (type default))
+    (uuid 228dae9c-7bc3-4773-924d-3e9d2e1404a7)
   )
   (wire (pts (xy 118.11 98.425) (xy 118.11 100.965))
     (stroke (width 0) (type default))
@@ -1917,11 +1945,19 @@
     (stroke (width 0) (type default))
     (uuid 321e8aaf-f02f-488d-95a8-f1d7c2c1bfda)
   )
+  (wire (pts (xy 133.985 135.89) (xy 133.985 135.255))
+    (stroke (width 0) (type default))
+    (uuid 32be195a-ed74-4b81-ae01-63c2e463441b)
+  )
+  (wire (pts (xy 157.48 91.44) (xy 159.385 91.44))
+    (stroke (width 0) (type default))
+    (uuid 333600e3-4269-40b2-adc1-617862b65b8b)
+  )
   (wire (pts (xy 173.355 78.105) (xy 167.005 78.105))
     (stroke (width 0) (type default))
     (uuid 34f7f5e6-bbba-4017-8efd-0038b253570b)
   )
-  (wire (pts (xy 168.275 135.255) (xy 168.275 136.525))
+  (wire (pts (xy 168.275 135.89) (xy 168.275 136.525))
     (stroke (width 0) (type default))
     (uuid 35356bb1-7434-4162-9e89-54d229e76f60)
   )
@@ -1933,7 +1969,7 @@
     (stroke (width 0) (type default))
     (uuid 3679066f-d8c4-494e-a8fd-83cbaf9d0c0a)
   )
-  (wire (pts (xy 197.485 127.635) (xy 206.375 127.635))
+  (wire (pts (xy 197.485 127.635) (xy 198.755 127.635))
     (stroke (width 0) (type default))
     (uuid 36a51a8c-6796-49b9-b4a0-7ae41a3ee081)
   )
@@ -1969,11 +2005,11 @@
     (stroke (width 0) (type default))
     (uuid 41ef4203-d1b7-4fd3-ab7b-7cbb9098ff6a)
   )
-  (wire (pts (xy 197.485 135.255) (xy 197.485 136.525))
+  (wire (pts (xy 197.485 135.89) (xy 197.485 136.525))
     (stroke (width 0) (type default))
     (uuid 422e4d7a-3c86-4f73-b35d-8c4f5f1c97b0)
   )
-  (wire (pts (xy 165.735 90.805) (xy 165.735 92.075))
+  (wire (pts (xy 169.545 90.805) (xy 169.545 92.075))
     (stroke (width 0) (type default))
     (uuid 44918842-df80-4c88-a437-9987ecb59556)
   )
@@ -1981,7 +2017,7 @@
     (stroke (width 0) (type default))
     (uuid 4502b334-3695-410c-b6f0-ec70ac27820d)
   )
-  (wire (pts (xy 147.955 180.975) (xy 155.575 180.975))
+  (wire (pts (xy 147.955 180.975) (xy 158.115 180.975))
     (stroke (width 0) (type default))
     (uuid 457ba821-11b7-47c2-b7e8-ab50f61fad5a)
   )
@@ -2005,6 +2041,10 @@
     (stroke (width 0) (type default))
     (uuid 53430fae-738e-4ca8-a8ed-e8f7af2f54ff)
   )
+  (wire (pts (xy 206.375 127.635) (xy 208.915 127.635))
+    (stroke (width 0) (type default))
+    (uuid 547d8dd7-8378-4a8a-822d-1f523693f0f9)
+  )
   (wire (pts (xy 111.125 127.635) (xy 111.125 136.525))
     (stroke (width 0) (type default))
     (uuid 572b6b75-0e16-4155-aead-6c873d3b7b97)
@@ -2017,6 +2057,10 @@
     (stroke (width 0) (type default))
     (uuid 5c2d36f8-f7b3-473e-bcd8-09ace4c09834)
   )
+  (wire (pts (xy 138.43 91.44) (xy 139.065 91.44))
+    (stroke (width 0) (type default))
+    (uuid 5d3a19d3-81ba-4d83-bb78-0c36c2cb89ac)
+  )
   (wire (pts (xy 83.82 92.075) (xy 88.265 92.075))
     (stroke (width 0) (type default))
     (uuid 5eedd4fb-8de3-4d69-8ce9-1f8a12fea75a)
@@ -2024,6 +2068,10 @@
   (wire (pts (xy 29.21 97.79) (xy 21.59 97.79))
     (stroke (width 0) (type default))
     (uuid 5f66e795-1665-4263-a37a-01d94b28e2a4)
+  )
+  (wire (pts (xy 148.59 164.465) (xy 147.955 164.465))
+    (stroke (width 0) (type default))
+    (uuid 62a3df83-1874-401b-a838-d0d7ec47150d)
   )
   (wire (pts (xy 265.43 87.63) (xy 267.97 87.63))
     (stroke (width 0) (type default))
@@ -2057,7 +2105,15 @@
     (stroke (width 0) (type default))
     (uuid 7017729e-ee6c-4c0e-b58a-599912dfa346)
   )
-  (wire (pts (xy 149.225 91.44) (xy 153.035 91.44))
+  (wire (pts (xy 149.225 80.645) (xy 149.225 82.55))
+    (stroke (width 0) (type default))
+    (uuid 71f074ac-0721-40db-89e7-fe0c6c885935)
+  )
+  (wire (pts (xy 168.275 128.27) (xy 168.275 127.635))
+    (stroke (width 0) (type default))
+    (uuid 74bf2299-3986-44f4-80a4-c2fdbc043e5e)
+  )
+  (wire (pts (xy 149.225 91.44) (xy 157.48 91.44))
     (stroke (width 0) (type default))
     (uuid 75764d45-9671-4099-98f8-f1dd8b4243c6)
   )
@@ -2073,7 +2129,7 @@
     (stroke (width 0) (type default))
     (uuid 77ec70cc-451c-4a12-91e1-238ddc78b6f4)
   )
-  (wire (pts (xy 155.575 164.465) (xy 155.575 165.735))
+  (wire (pts (xy 158.115 164.465) (xy 158.115 170.18))
     (stroke (width 0) (type default))
     (uuid 795724cb-ae3f-4b91-90ab-43f94868c989)
   )
@@ -2089,10 +2145,6 @@
     (stroke (width 0) (type default))
     (uuid 8094aaa5-f4cd-4310-ab8d-6b96ca378c1f)
   )
-  (wire (pts (xy 147.32 91.44) (xy 149.225 91.44))
-    (stroke (width 0) (type default))
-    (uuid 80d76746-fdac-4362-a4bd-e2c88f369168)
-  )
   (wire (pts (xy 105.41 80.645) (xy 105.41 86.36))
     (stroke (width 0) (type default))
     (uuid 811e79a6-d992-45cb-bd49-bf23f50a2b25)
@@ -2101,7 +2153,7 @@
     (stroke (width 0) (type default))
     (uuid 833e716d-d317-4aac-afe6-2c9af8facfca)
   )
-  (wire (pts (xy 156.845 80.645) (xy 165.735 80.645))
+  (wire (pts (xy 156.845 80.645) (xy 169.545 80.645))
     (stroke (width 0) (type default))
     (uuid 8355598b-0146-4c12-b291-59626228f38b)
   )
@@ -2153,17 +2205,25 @@
     (stroke (width 0) (type default))
     (uuid 92ba2e98-6839-4c4a-a705-b0902d9255ea)
   )
-  (wire (pts (xy 165.735 92.075) (xy 173.99 92.075))
+  (wire (pts (xy 169.545 92.075) (xy 177.8 92.075))
     (stroke (width 0) (type default))
     (uuid 9554c9d0-e729-4a78-ba53-69a766ccb0bf)
   )
-  (wire (pts (xy 173.99 90.17) (xy 173.99 92.075))
+  (wire (pts (xy 158.115 164.465) (xy 161.29 164.465))
+    (stroke (width 0) (type default))
+    (uuid 9737a244-9c4b-422c-850d-c45706cdb3fc)
+  )
+  (wire (pts (xy 177.8 90.17) (xy 177.8 92.075))
     (stroke (width 0) (type default))
     (uuid 9a20e640-6456-4666-bef6-5f533e555137)
   )
   (wire (pts (xy 220.345 46.99) (xy 220.345 49.53))
     (stroke (width 0) (type default))
     (uuid 9b367f96-3d5d-445a-b26a-bbe00b4c0625)
+  )
+  (wire (pts (xy 157.48 100.965) (xy 157.48 102.235))
+    (stroke (width 0) (type default))
+    (uuid 9f3e4a27-94fe-4d5d-98b6-f41ca8385f2c)
   )
   (wire (pts (xy 105.41 93.345) (xy 110.49 93.345))
     (stroke (width 0) (type default))
@@ -2177,7 +2237,7 @@
     (stroke (width 0) (type default))
     (uuid a5026bd9-066e-46f3-ab6a-d17824fe161c)
   )
-  (wire (pts (xy 165.735 92.075) (xy 165.735 93.345))
+  (wire (pts (xy 169.545 92.075) (xy 169.545 93.345))
     (stroke (width 0) (type default))
     (uuid a6845908-5828-4fb0-a8de-d7b9126de910)
   )
@@ -2193,9 +2253,13 @@
     (stroke (width 0) (type default))
     (uuid a763612d-c371-4b03-8a45-f7fa1190dcf6)
   )
-  (wire (pts (xy 155.575 161.925) (xy 155.575 164.465))
+  (wire (pts (xy 158.115 161.925) (xy 158.115 164.465))
     (stroke (width 0) (type default))
     (uuid a8161abb-f87d-4235-b1a3-70f3c48d88d1)
+  )
+  (wire (pts (xy 157.48 91.44) (xy 157.48 93.345))
+    (stroke (width 0) (type default))
+    (uuid a8615084-7c33-4e30-bdaf-f80075404a19)
   )
   (wire (pts (xy 54.61 74.93) (xy 46.99 74.93))
     (stroke (width 0) (type default))
@@ -2204,10 +2268,6 @@
   (wire (pts (xy 222.885 66.04) (xy 213.995 66.04))
     (stroke (width 0) (type default))
     (uuid aa959ad8-7fdf-49d6-a2e6-c7d8eb3fb42c)
-  )
-  (wire (pts (xy 206.375 125.095) (xy 206.375 127.635))
-    (stroke (width 0) (type default))
-    (uuid ac2e7cee-c4ec-4111-b65f-1c02f7cdcbf1)
   )
   (wire (pts (xy 213.995 60.96) (xy 206.375 60.96))
     (stroke (width 0) (type default))
@@ -2237,6 +2297,10 @@
     (stroke (width 0) (type default))
     (uuid bbf14e29-d888-4c8c-a696-26533454e090)
   )
+  (wire (pts (xy 133.985 125.73) (xy 133.985 127.635))
+    (stroke (width 0) (type default))
+    (uuid bd125c42-71e1-404b-98fd-ddb35ac596a8)
+  )
   (wire (pts (xy 206.375 59.69) (xy 206.375 60.96))
     (stroke (width 0) (type default))
     (uuid be9d6d1e-0e7f-44fe-8f88-3a1c0d191d29)
@@ -2245,7 +2309,7 @@
     (stroke (width 0) (type default))
     (uuid bfa4ed95-8a23-4e6e-b8ee-1acea36834d5)
   )
-  (wire (pts (xy 165.735 100.965) (xy 165.735 102.235))
+  (wire (pts (xy 169.545 100.965) (xy 169.545 102.235))
     (stroke (width 0) (type default))
     (uuid bfe8b51a-9af0-400d-b4fd-234e199507ab)
   )
@@ -2253,17 +2317,13 @@
     (stroke (width 0) (type default))
     (uuid c43bd19e-e133-4363-b98f-97f8c289eece)
   )
-  (wire (pts (xy 165.735 83.185) (xy 165.735 80.645))
+  (wire (pts (xy 169.545 83.185) (xy 169.545 80.645))
     (stroke (width 0) (type default))
     (uuid c5b58355-7866-4cda-8548-c2b5f91a84d2)
   )
   (wire (pts (xy 220.98 122.555) (xy 222.885 122.555))
     (stroke (width 0) (type default))
     (uuid c6e7d662-b62c-479f-892a-5edbf46b7435)
-  )
-  (wire (pts (xy 149.225 80.645) (xy 149.225 81.28))
-    (stroke (width 0) (type default))
-    (uuid c7a33b9b-fbd6-461e-b15a-cbe6080315d1)
   )
   (wire (pts (xy 88.265 92.075) (xy 88.265 92.71))
     (stroke (width 0) (type default))
@@ -2357,6 +2417,10 @@
     (stroke (width 0) (type default))
     (uuid eb5f646c-c52b-4b1d-b53c-a659bf9899b1)
   )
+  (wire (pts (xy 197.485 128.27) (xy 197.485 127.635))
+    (stroke (width 0) (type default))
+    (uuid eb84a719-4c7d-4dcd-9bb2-0d09ee5a3b8a)
+  )
   (wire (pts (xy 88.265 88.265) (xy 88.265 92.075))
     (stroke (width 0) (type default))
     (uuid ecb3026d-5dc6-4b17-992d-7ffd0cf6deec)
@@ -2407,7 +2471,7 @@
     (fill (type none))
     (uuid 1043f8f4-6a6a-4550-a41c-60299aff2a18)
   )
-  (rectangle (start 130.175 153.035) (end 165.735 186.309)
+  (rectangle (start 130.175 153.035) (end 168.91 186.309)
     (stroke (width 0) (type dash))
     (fill (type none))
     (uuid 1d1dd049-b75b-4f0c-a22f-b7b7f36a0f9d)
@@ -2626,10 +2690,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "PE3" (shape input) (at 173.99 90.17 90) (fields_autoplaced)
+  (global_label "PE3" (shape input) (at 177.8 90.17 90) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 7f8857ef-e334-423e-b793-4604b3067faa)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 173.99 83.5563 90)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 177.8 83.5563 90)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2759,10 +2823,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "Enable" (shape input) (at 153.035 91.44 0) (fields_autoplaced)
+  (global_label "Enable" (shape input) (at 159.385 91.44 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid f17235df-8e26-45f4-801e-0c0fc406be17)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 162.37 91.44 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 168.72 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2781,23 +2845,23 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 133.985 131.445 0) (unit 1)
+  (symbol (lib_id "Device:C") (at 133.985 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 04bde082-d849-4d5d-a5c9-9d304beeacd1)
-    (property "Reference" "C3" (at 137.795 130.1749 0)
+    (property "Reference" "C3" (at 137.795 130.8099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "4.7uF" (at 137.795 132.7149 0)
+    (property "Value" "4.7uF" (at 137.795 133.3499 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 134.9502 135.255 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 134.9502 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 133.985 131.445 0)
+    (property "Datasheet" "~" (at 133.985 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 9169a8bd-a2c3-400a-b8a9-f51d1eb65a07))
-    (pin "2" (uuid 7c1e3a29-7fd4-4341-bbe4-ea218eb796a1))
+    (pin "1" (uuid 5329234b-a582-4470-9e50-854dea0d66b8))
+    (pin "2" (uuid 0507f7dd-388f-4328-8661-c7aef263b215))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -2807,57 +2871,10 @@
     )
   )
 
-  (symbol (lib_id "SS13L_R3G:SS13L_R3G") (at 147.32 91.44 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 088dd155-3a61-4a3d-99d1-7535f58bf6f6)
-    (property "Reference" "D1" (at 143.51 88.265 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "SS13L_R3G" (at 142.24 94.615 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "SODFL3618X143N" (at 138.43 -6.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Datasheet" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 138.43 -106.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Height" "1.43" (at 138.43 -306.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Manufacturer_Name" "Taiwan Semiconductor" (at 138.43 -406.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Manufacturer_Part_Number" "SS13L R3G" (at 138.43 -506.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Mouser Part Number" "821-SS13LR3G" (at 138.43 -606.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Taiwan-Semiconductor/SS13L-R3G?qs=5aG0NVq1C4yK%252B2Aj4Chtgw%3D%3D" (at 138.43 -706.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Arrow Part Number" "SS13L R3G" (at 138.43 -806.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 138.43 -906.02 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (pin "1" (uuid c69fa7b2-4743-4093-bbc7-eeadddd8221d))
-    (pin "2" (uuid 05ae6890-1759-4059-93a6-47f4ce1bf257))
-    (instances
-      (project "Cable_Monitor"
-        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "D1") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "power:GND") (at 168.275 136.525 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 08b582ca-0f41-44e4-ade4-e5532c661305)
-    (property "Reference" "#PWR022" (at 168.275 142.875 0)
+    (property "Reference" "#PWR023" (at 168.275 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 168.275 141.605 0)
@@ -2869,11 +2886,11 @@
     (property "Datasheet" "" (at 168.275 136.525 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 7f9b79a3-314c-4ff4-9b9c-65eb52b923dc))
+    (pin "1" (uuid b13a3373-c4c3-48d6-8609-f26a1f6713e9))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -2894,7 +2911,7 @@
     (property "Datasheet" "" (at 102.235 147.955 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid c115573e-b681-425f-b6da-17cdbe12e61e))
+    (pin "1" (uuid 69a8b1c3-34b7-4973-8ddf-52d14c82748c))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -2919,7 +2936,7 @@
     (property "Datasheet" "" (at 206.375 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6ad70ba3-5a08-44b7-9efb-423a418e12da))
+    (pin "1" (uuid 7de7682a-9679-4d2f-ac03-6bd5c2a93830))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -2956,7 +2973,7 @@
     (property "Sim.Pins" "1=1" (at -5.08 -36.195 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid e1041dbc-90ee-4a64-a888-ab03bad793e2))
+    (pin "1" (uuid efc04939-850a-4157-8c0b-bcbbeb4f78be))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -2993,7 +3010,7 @@
     (property "Sim.Pins" "1=1" (at 24.13 -40.005 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid bcab765b-6db7-45a2-8d28-17c801f97715))
+    (pin "1" (uuid 752417f6-9e7c-4189-9860-610ace339630))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3003,27 +3020,27 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 155.575 169.545 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "Device:C") (at 158.115 173.99 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid 1837f406-a3b4-47a5-a741-19d20104e405)
-    (property "Reference" "C4" (at 159.385 168.275 0)
+    (property "Reference" "C5" (at 161.925 172.72 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "100uF" (at 159.385 170.815 0)
+    (property "Value" "100uF" (at 161.925 175.26 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 156.5402 173.355 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 159.0802 177.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 155.575 169.545 0)
+    (property "Datasheet" "~" (at 158.115 173.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 0a38f779-306e-44aa-b81e-b5b1395cf0a3))
-    (pin "2" (uuid ada56f00-e349-418f-b061-c1c9c2d6e15a))
+    (pin "1" (uuid 699c249a-896c-4bd4-89fb-bf2bd0e9cae9))
+    (pin "2" (uuid 49c9631c-06c3-4f64-8254-7b92386c0e08))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "C4") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -3032,7 +3049,7 @@
   (symbol (lib_id "power:+5V") (at 173.355 76.835 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1a21aec9-4c9d-4080-ab90-5edee04a5eea)
-    (property "Reference" "#PWR024" (at 173.355 80.645 0)
+    (property "Reference" "#PWR025" (at 173.355 80.645 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 173.355 73.025 0)
@@ -3044,11 +3061,11 @@
     (property "Datasheet" "" (at 173.355 76.835 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6dfe4252-166b-4cc5-8bc6-a778b4bf3791))
+    (pin "1" (uuid 7b059468-8142-47ea-b46e-0402ff564ae4))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -3069,8 +3086,8 @@
     (property "Datasheet" "~" (at 102.235 131.445 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 9648ff87-a60c-4fe8-a889-aa329cc6be45))
-    (pin "2" (uuid 0a7990f2-b195-4420-8172-e4c9821877ff))
+    (pin "1" (uuid d3b9406a-38f8-44be-b484-3b0e5b10ae2b))
+    (pin "2" (uuid 857de7b1-72d4-4b31-b573-e9692f7212e3))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3083,7 +3100,7 @@
   (symbol (lib_id "power:PWR_FLAG") (at 173.355 127.635 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2139191a-761a-4ea0-b9dc-cc42f281ad1b)
-    (property "Reference" "#FLG02" (at 173.355 125.73 0)
+    (property "Reference" "#FLG03" (at 173.355 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "PWR_FLAG" (at 173.355 123.825 0)
@@ -3095,11 +3112,11 @@
     (property "Datasheet" "~" (at 173.355 127.635 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f6b58219-7323-4f57-b3bf-2472bd964460))
+    (pin "1" (uuid 70a7c1c7-ad80-43be-99c8-c9d9d0f16dc8))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#FLG02") (unit 1)
+          (reference "#FLG03") (unit 1)
         )
       )
     )
@@ -3129,9 +3146,9 @@
     (property "Sim.Pins" "3=1 1=2 2=3" (at 115.57 93.345 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f227622a-5470-457a-a01b-88698a16d4aa))
-    (pin "2" (uuid 7b8ade07-a833-4b96-a778-8502a8fbced4))
-    (pin "3" (uuid 5d1bf4ab-dec7-4d9e-a1f8-4fb70fc9f4b7))
+    (pin "1" (uuid 837a3232-f63f-45b1-884b-43ca84d8a55e))
+    (pin "2" (uuid 55ff1889-b58f-4c81-9110-80400e5f4076))
+    (pin "3" (uuid e4da71ab-3a34-4215-89a8-3eefceea52d5))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3168,7 +3185,7 @@
     (property "Sim.Pins" "1=1" (at 78.105 36.83 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6a39a884-aa51-4110-a74b-14ebebce6d7c))
+    (pin "1" (uuid e165c133-cdbf-495e-bb86-6bece6fd021f))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3205,7 +3222,7 @@
     (property "Sim.Pins" "1=1" (at -0.635 -36.195 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 222c5036-50de-40f3-b49a-1ff1862663ef))
+    (pin "1" (uuid 0c9ee8e8-bf5c-4a8d-aeaf-3d04a757cfec))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3230,8 +3247,8 @@
     (property "Datasheet" "~" (at 72.39 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 4c68cf2e-eb8b-4bc7-8236-bdbd0dd935f5))
-    (pin "2" (uuid 4684958e-73d8-4723-a6e6-a7bf4e8a9978))
+    (pin "1" (uuid 970f076a-930d-4be4-8cd8-aec15e1fea9b))
+    (pin "2" (uuid 3b7ba32e-5f0a-4d68-8330-ba90684679a6))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3256,8 +3273,8 @@
     (property "Datasheet" "~" (at 105.41 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid b215f3a9-1932-41b1-96ca-522bd6065c13))
-    (pin "2" (uuid 6de00ad2-c9e6-4ba0-a908-d50fa61f119f))
+    (pin "1" (uuid 28c2d85d-98f3-4b2e-86b5-fba9ac4e3afc))
+    (pin "2" (uuid 7dd46690-f9bc-4d58-b6c0-d3828fd102cc))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3291,8 +3308,8 @@
     (property "Sim.Pins" "2=1 1=2" (at 222.885 137.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 509938f6-5392-4b08-9de8-a4ab3d9d2fc9))
-    (pin "2" (uuid 85c472ce-01f5-453c-9600-e91ca892fdee))
+    (pin "1" (uuid 9bb52e9c-1134-43f2-97f9-589ce621efa6))
+    (pin "2" (uuid 267670b4-fcd7-408c-b833-ae3d4862ff21))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3317,8 +3334,8 @@
     (property "Datasheet" "~" (at 240.665 128.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid eddb3e44-2d3f-41a7-b70c-01d4123a341a))
-    (pin "2" (uuid 4ccfacbd-c09c-45fa-a149-fd4a70fc9d04))
+    (pin "1" (uuid fde5b8b1-8794-4e52-b5a1-d04f9d61657b))
+    (pin "2" (uuid 994fecce-57bb-41b6-b818-c21a341b545b))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3331,7 +3348,7 @@
   (symbol (lib_id "power:GND") (at 197.485 136.525 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3b5f93db-eebd-4163-9979-07eb9766f8c4)
-    (property "Reference" "#PWR026" (at 197.485 142.875 0)
+    (property "Reference" "#PWR029" (at 197.485 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 197.485 140.335 0)
@@ -3343,11 +3360,11 @@
     (property "Datasheet" "" (at 197.485 136.525 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 91c30b2b-9abb-4814-a2b2-2a1418731168))
+    (pin "1" (uuid c56eadf6-a4ea-4ae8-8119-6bf67043a9f7))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -3368,7 +3385,7 @@
     (property "Datasheet" "" (at 194.945 39.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6932fbc6-3f1d-4a78-8c51-5a8b924365dc))
+    (pin "1" (uuid bd79c783-1067-4490-acc9-b11f93674dba))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3381,7 +3398,7 @@
   (symbol (lib_id "power:GND") (at 187.325 136.525 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3f89c434-5d22-4e67-8d7f-505d2d6d1215)
-    (property "Reference" "#PWR025" (at 187.325 142.875 0)
+    (property "Reference" "#PWR026" (at 187.325 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 187.325 140.335 0)
@@ -3393,11 +3410,11 @@
     (property "Datasheet" "" (at 187.325 136.525 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 1c760d95-6f6a-4387-a781-e68fc652833f))
+    (pin "1" (uuid 6fe09d36-2585-4716-9650-64fe3ad6c992))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -3430,7 +3447,7 @@
     (property "Sim.Pins" "1=1" (at 78.105 -1.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid c8c32d9c-d7d2-46d5-90f0-115a14647c08))
+    (pin "1" (uuid ff0e1f8d-0c3b-451a-8968-9009c0fafa01))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3440,22 +3457,22 @@
     )
   )
 
-  (symbol (lib_id "power:+5V") (at 133.985 127.635 0) (unit 1)
+  (symbol (lib_id "power:+5V") (at 133.985 125.73 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4cb08c6d-8382-43a9-8731-c9c89308574e)
-    (property "Reference" "#PWR016" (at 133.985 131.445 0)
+    (property "Reference" "#PWR016" (at 133.985 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+5V" (at 133.985 123.825 0)
+    (property "Value" "+5V" (at 133.985 121.92 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 133.985 127.635 0)
+    (property "Footprint" "" (at 133.985 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 133.985 127.635 0)
+    (property "Datasheet" "" (at 133.985 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6138c7da-3b3e-4b72-9553-18d6e8f5f9c9))
+    (pin "1" (uuid 5b828836-fcdc-4140-863c-c328fe97c82c))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3480,7 +3497,7 @@
     (property "Datasheet" "~" (at 202.565 127.635 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid eb972e9d-575c-4147-8639-84f5866d5f91))
+    (pin "1" (uuid 4a4a5935-aace-42f8-bd44-c17407ada861))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3505,7 +3522,7 @@
     (property "Datasheet" "" (at 118.11 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid dc37dee3-3d28-4e48-80fe-62a43ece3f75))
+    (pin "1" (uuid ee2d8abe-64d8-4e3e-acfc-5f4c986d6e0b))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3542,38 +3559,38 @@
     (property "Sim.Pins" "1=1 2=2 3=3 4=4 5=5 6=6 7=7 8=8 9=9 10=10 11=11 12=12 13=13 14=14 15=15 16=16 17=17 18=18 19=19 20=20 21=21 22=22 23=23 24=24 25=25 26=26 27=27 28=28 29=29 30=30 31=31 32=32" (at -8.89 -1.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f990a7b0-e8eb-45b3-a2d5-e32d57179e94))
-    (pin "10" (uuid 90b81a23-3847-4db6-899d-7679c97fb2e7))
-    (pin "11" (uuid c3cbeae7-2b89-47f7-a1bb-e631af2eeb5d))
-    (pin "12" (uuid 082bdacd-ed43-4044-a3db-1b5c622e7c9e))
-    (pin "13" (uuid 83ab7917-4e2b-4c81-a5b1-2438b93a156f))
-    (pin "14" (uuid b25f6f07-9af7-426b-adb2-8dd7f9e78dce))
-    (pin "15" (uuid a9eab7f4-206c-485c-a446-611e7f0a054c))
-    (pin "16" (uuid 82ee693a-ed0b-4c18-901f-0c55fd008c4c))
-    (pin "17" (uuid 796d7e1e-2979-4643-8b88-8a8fe015e5b6))
-    (pin "18" (uuid f44575c2-708d-4269-ad71-0524f89b3827))
-    (pin "19" (uuid c2523343-db2c-467d-a073-1e7c359dc0b6))
-    (pin "2" (uuid 9ef277e6-7dc9-467b-b4b7-50f73b591ccc))
-    (pin "20" (uuid 8d856f68-b9f1-443a-95c5-de8696c86517))
-    (pin "21" (uuid 53885756-dbdc-46c9-bae0-2d19f643b70c))
-    (pin "22" (uuid eb597d65-1d4e-4f61-b931-a7a19cc1ace6))
-    (pin "23" (uuid b7e8feaa-b660-4058-85e0-11da666d7e6c))
-    (pin "24" (uuid 27ba73d3-0c37-4ebe-b758-480c4374f426))
-    (pin "25" (uuid e4625e29-a341-4fe6-b016-4638c91b04d2))
-    (pin "26" (uuid b1ee9f5b-a316-4bca-a21f-5c19370b01b8))
-    (pin "27" (uuid 1c402d70-3bb8-45e8-8f49-a5cdd92f6b51))
-    (pin "28" (uuid c8489c4c-e9ce-4156-b93f-bea9074d3ccb))
-    (pin "29" (uuid edca5bea-4850-4cce-ab3f-b2e92d329704))
-    (pin "3" (uuid 24819d38-c7ff-4b36-8059-69b16d451d17))
-    (pin "30" (uuid a7a4d73c-2e0c-49b2-8a62-318264b7bbcd))
-    (pin "31" (uuid ffbabf42-e3f1-4908-9e6c-ca6a95087dc5))
-    (pin "32" (uuid 08f87101-eb74-490a-87a1-39a848236878))
-    (pin "4" (uuid ad535edd-8a0b-4902-8c9b-0dd42eae2b0a))
-    (pin "5" (uuid ce56eeff-46fc-4621-81b3-e10c44db8dbb))
-    (pin "6" (uuid f82ad40f-b16d-4908-b89c-600ea2d778ee))
-    (pin "7" (uuid a03ee81e-af44-4878-a12b-71536739984c))
-    (pin "8" (uuid 74c7cb96-f8d4-48df-99ee-6f4566cc62a2))
-    (pin "9" (uuid 976d3675-8d42-429d-b36c-fac3539d2714))
+    (pin "1" (uuid 120be22f-4f42-44d8-8ea4-3f608dc25a68))
+    (pin "10" (uuid 9aaccbfc-a86d-4efe-88c6-27edaf2b50a0))
+    (pin "11" (uuid ae787d31-0efc-40ed-8dad-d48a41facace))
+    (pin "12" (uuid 04349f2d-c6e1-4403-8b24-0a7c71e02526))
+    (pin "13" (uuid 8236d351-19d7-438a-b342-9ab5aa4e17ab))
+    (pin "14" (uuid f39c35a8-aa1a-41e9-b489-568cbb6c0378))
+    (pin "15" (uuid c0144d29-282d-4bcb-8215-e070c6ccce27))
+    (pin "16" (uuid 09804c0a-9678-434d-b4f6-7785590718cf))
+    (pin "17" (uuid a5529f9c-5a3f-4a48-ae3f-8b6d509d6c3e))
+    (pin "18" (uuid 63e77cfe-1f35-458d-9773-4b7e949f9fcc))
+    (pin "19" (uuid 4fd9200b-8f97-43be-ade8-272cf33d3467))
+    (pin "2" (uuid f05a24da-75ce-496d-af21-e6fb6bc7635a))
+    (pin "20" (uuid c4a93033-939d-4cff-a93e-9399a06e0ed7))
+    (pin "21" (uuid 1133c422-e6f7-46f2-a6ab-be43db398eaf))
+    (pin "22" (uuid 3050d654-9bf5-4de7-85b4-bdde917df86f))
+    (pin "23" (uuid 7a756fea-522f-4453-b116-b4403e74cb34))
+    (pin "24" (uuid f8bdff43-7097-48be-81e2-d751e66824b0))
+    (pin "25" (uuid 546308b8-9b3c-4d58-aa91-a0a242834b83))
+    (pin "26" (uuid 1b8fe660-4846-44ed-b435-9fc559c53dc9))
+    (pin "27" (uuid ac514847-ac1d-4b16-833d-a5b235bd12d5))
+    (pin "28" (uuid abf7838e-5b93-4bdc-8b19-acb307f6b62f))
+    (pin "29" (uuid b36eae47-54c9-47a5-8282-5c8dc212c702))
+    (pin "3" (uuid 69b9edb5-669d-4f7a-b518-bda2e04a5c25))
+    (pin "30" (uuid fd8d1475-5a4f-4263-b680-a4b58f393fee))
+    (pin "31" (uuid 70443bac-2f9b-4ebf-bcb3-46d7d043ec25))
+    (pin "32" (uuid 4d7b6412-0069-488c-846e-24e79a417c0a))
+    (pin "4" (uuid 23c88b3d-45fc-40e4-9d4d-1ecf3df54033))
+    (pin "5" (uuid a64a542e-4612-431a-bc96-ee60b174ed39))
+    (pin "6" (uuid d4aec42c-71fd-4275-ae48-2f5d607fc874))
+    (pin "7" (uuid 59c3ba2d-429e-49f6-9648-f032e34f2f5a))
+    (pin "8" (uuid 0da38961-74a5-49c7-ad10-e0802ec1a7ab))
+    (pin "9" (uuid df236d88-9d07-4aac-b6f1-deffea555417))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3610,7 +3627,7 @@
     (property "Sim.Pins" "1=1" (at 177.165 217.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid de44a7a9-e324-4dd5-a015-3498e736ba2e))
+    (pin "1" (uuid 2315615e-1a13-4fa6-89b6-3102dc169d72))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3635,7 +3652,7 @@
     (property "Datasheet" "" (at 206.375 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 8f7b599a-316f-468b-a288-98c7ae3faa63))
+    (pin "1" (uuid c47a2e29-1f1a-4491-b88a-50fba3cbc212))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3669,9 +3686,9 @@
     (property "Sim.Pins" "3=1 2=2 1=3 1=4" (at 187.325 127.635 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid fae05149-cf73-4c73-af3a-46041505a39f))
-    (pin "2" (uuid 8fad9c59-fd27-4b98-9db3-c6daed70d0e6))
-    (pin "3" (uuid 007877c5-14d7-4266-90f6-1159251dc752))
+    (pin "1" (uuid 5035dabf-5dde-4539-8fdc-165f24078165))
+    (pin "2" (uuid bc563028-f6d2-4aeb-80a8-985374044d02))
+    (pin "3" (uuid bbc207d6-c18f-4e33-8269-0f2c894385ec))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3696,7 +3713,7 @@
     (property "Datasheet" "" (at 46.99 113.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 78d23a9c-bc34-4207-9252-1e78ae6e98de))
+    (pin "1" (uuid 176e5b97-a56b-4623-9931-34bc9cd13792))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3733,7 +3750,7 @@
     (property "Sim.Pins" "1=1" (at 172.72 217.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 35d01628-55a9-4a30-84e6-f01d3447e8b4))
+    (pin "1" (uuid 65453636-9b1c-4361-9990-36462338073e))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3743,10 +3760,35 @@
     )
   )
 
+  (symbol (lib_id "power:PWR_FLAG") (at 161.29 164.465 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 585d6a4c-4c88-4659-bbf7-a0d0a12e6156)
+    (property "Reference" "#FLG02" (at 163.195 164.465 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "PWR_FLAG" (at 165.1 164.465 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 161.29 164.465 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 161.29 164.465 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 394c2d8e-b108-4f9c-884b-e49f9ae1f273))
+    (instances
+      (project "Cable_Monitor"
+        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
+          (reference "#FLG02") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:GND") (at 75.565 92.075 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5d3e824c-cea9-4b8f-8fd6-4cec50f3549b)
-    (property "Reference" "#PWR07" (at 75.565 98.425 0)
+    (property "Reference" "#PWR09" (at 75.565 98.425 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 75.565 97.155 0)
@@ -3758,11 +3800,37 @@
     (property "Datasheet" "" (at 75.565 92.075 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a68b3dae-6386-4e3b-b49a-98db6028d8a1))
+    (pin "1" (uuid 5107f46d-1014-4c4e-bb82-a301b6029b71))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR07") (unit 1)
+          (reference "#PWR09") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:C") (at 157.48 97.155 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 63345260-a4fc-4304-87df-8d00e6de97aa)
+    (property "Reference" "C4" (at 160.655 95.885 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "100uF" (at 160.655 98.425 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 158.4452 100.965 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 157.48 97.155 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 147cf73a-d0c0-481d-b0d7-2034ef8f0e0a))
+    (pin "2" (uuid 1338b76f-aeb8-4318-83e2-13ec63c7d87b))
+    (instances
+      (project "Cable_Monitor"
+        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -3795,8 +3863,8 @@
     (property "Sim.Pins" "1=1 2=2" (at 164.465 275.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 4cc78a90-e161-44fd-a21d-2d2cf7e63a52))
-    (pin "2" (uuid 9a553cd0-95b1-4cc2-a04a-493948063297))
+    (pin "1" (uuid f2eb4e4c-451b-41ed-a94a-4e8f44436f2c))
+    (pin "2" (uuid 30e94436-bc04-41b0-b1b5-c547b7118c05))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3821,7 +3889,7 @@
     (property "Datasheet" "" (at 133.985 135.255 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 8cc4343a-2b79-462b-b7cb-7934587fbafe))
+    (pin "1" (uuid a5898bf3-b3d4-4878-a54c-17c3f37e7e3f))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3831,26 +3899,26 @@
     )
   )
 
-  (symbol (lib_id "power:+5V") (at 155.575 161.925 0) (unit 1)
+  (symbol (lib_id "power:+5V") (at 158.115 161.925 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6c0a7972-51bb-47f1-8377-6fe99e1b27e3)
-    (property "Reference" "#PWR020" (at 155.575 165.735 0)
+    (property "Reference" "#PWR022" (at 158.115 165.735 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+5V" (at 155.575 156.845 90)
+    (property "Value" "+5V" (at 158.115 156.845 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 155.575 161.925 0)
+    (property "Footprint" "" (at 158.115 161.925 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 155.575 161.925 0)
+    (property "Datasheet" "" (at 158.115 161.925 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid b8ffb459-4d85-400e-8492-2350d080ce70))
+    (pin "1" (uuid 4b600b36-044d-43f1-8197-ebf5cd7ae274))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -3859,7 +3927,7 @@
   (symbol (lib_id "power:GND") (at 154.305 137.795 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6ca35281-364c-43a8-8b92-7a9c8bc05fc8)
-    (property "Reference" "#PWR019" (at 154.305 144.145 0)
+    (property "Reference" "#PWR020" (at 154.305 144.145 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 154.305 142.875 0)
@@ -3871,11 +3939,11 @@
     (property "Datasheet" "" (at 154.305 137.795 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 24008d68-7982-4252-ab56-766c542b3415))
+    (pin "1" (uuid 0c583b9c-d544-4f31-a940-712a8b78c0f1))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -3908,13 +3976,60 @@
     (property "Sim.Pins" "1=1 2=2 3=3" (at -50.165 21.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid da2f5968-54b2-4640-ae93-4c39b2c6dce7))
-    (pin "2" (uuid a2bff654-cca1-444c-8800-c178854cbda7))
-    (pin "3" (uuid e2bd0f06-5a8b-4c85-9c08-499a6960430c))
+    (pin "1" (uuid 6ca07960-6fcb-448a-8f4d-e32e0c085165))
+    (pin "2" (uuid 3f14cc82-3b6c-458c-91d1-e23b83d11dcc))
+    (pin "3" (uuid 2c1cc661-62da-4c7d-a157-978ad53067c4))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
           (reference "U4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "SS13L_R3G:SS13L_R3G") (at 146.685 91.44 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 70c614dd-646e-4bb2-94b2-5f16f12bd1a4)
+    (property "Reference" "D1" (at 143.1544 85.09 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SS13L_R3G" (at 143.1544 87.63 0)
+      (effects (font (size 1.016 1.016)))
+    )
+    (property "Footprint" "SS13L_R3G:SODFL3618X143N" (at 137.795 -6.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Datasheet" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 137.795 -106.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Height" "1.43" (at 137.795 -306.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Manufacturer_Name" "Taiwan Semiconductor" (at 137.795 -406.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Manufacturer_Part_Number" "SS13L R3G" (at 137.795 -506.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Mouser Part Number" "821-SS13LR3G" (at 137.795 -606.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Taiwan-Semiconductor/SS13L-R3G?qs=5aG0NVq1C4yK%252B2Aj4Chtgw%3D%3D" (at 137.795 -706.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Arrow Part Number" "SS13L R3G" (at 137.795 -806.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 137.795 -906.02 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (pin "1" (uuid 6af5b4ae-8a3b-439e-b8e7-36e374fd5c62))
+    (pin "2" (uuid 5356eadd-3e8d-485c-ac5e-b0b2c2a0fc53))
+    (instances
+      (project "Cable_Monitor"
+        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
+          (reference "D1") (unit 1)
         )
       )
     )
@@ -3947,8 +4062,8 @@
     (property "Sim.Pins" "1=1 2=2" (at 164.465 237.49 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 99151257-85aa-450f-b951-6ad81aeb1d0e))
-    (pin "2" (uuid 74006050-3366-434a-88b7-791a927572a8))
+    (pin "1" (uuid 9acabed1-a347-4da8-9860-a4dbe35e8ec4))
+    (pin "2" (uuid c38e3629-1091-422f-aa3a-c8f082f0b410))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -3961,7 +4076,7 @@
   (symbol (lib_id "power:GND") (at 149.225 102.235 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 72e3af0f-50b6-4bc8-b9a9-ca1ecfe6f4be)
-    (property "Reference" "#PWR021" (at 149.225 108.585 0)
+    (property "Reference" "#PWR019" (at 149.225 108.585 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 149.225 107.315 0)
@@ -3973,11 +4088,11 @@
     (property "Datasheet" "" (at 149.225 102.235 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 9c97f129-a1f9-4586-a3b9-bd2df8cb6380))
+    (pin "1" (uuid 8239cf0e-9a46-4dcb-b21b-e4d20d681402))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -4010,7 +4125,7 @@
     (property "Sim.Pins" "1=1" (at -13.97 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 21d7880c-a41b-4b6e-82d6-feaaa92c8f75))
+    (pin "1" (uuid 51bc570f-5ddb-4770-aa9d-ef51661b9dd7))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4035,7 +4150,7 @@
     (property "Datasheet" "~" (at 144.78 127.635 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3fe41bf0-d6e1-40fe-a66b-583900ddd723))
+    (pin "1" (uuid 71960ebc-97c8-4ba0-b8be-5a6362dee4e7))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4048,7 +4163,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 111.125 127.635 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 77cfe004-0d4c-42e5-b819-4f8fc20c76bd)
-    (property "Reference" "TP7" (at 116.205 127.635 90)
+    (property "Reference" "TP8" (at 116.205 127.635 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "VGND" (at 111.4365 129.7313 90)
@@ -4060,33 +4175,33 @@
     (property "Datasheet" "~" (at 111.125 132.715 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid db9f4a34-0a03-4c2a-9264-cea1e397999a))
+    (pin "1" (uuid 33a031db-5e82-41e0-9fb4-19de37dda500))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "TP7") (unit 1)
+          (reference "TP8") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Device:R") (at 165.735 97.155 180) (unit 1)
+  (symbol (lib_id "Device:R") (at 169.545 97.155 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7b0c46e3-7c4b-4276-8d12-5d2340bb2ac1)
-    (property "Reference" "R6" (at 168.275 95.885 0)
+    (property "Reference" "R6" (at 172.085 95.885 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "43k" (at 168.275 98.425 0)
+    (property "Value" "43k" (at 172.085 98.425 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 167.513 97.155 90)
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 171.323 97.155 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 165.735 97.155 0)
+    (property "Datasheet" "~" (at 169.545 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 938358aa-41d2-479c-9407-622ff52ca555))
-    (pin "2" (uuid fc97edd9-9afb-4134-a6b6-8a1d8dbb57f5))
+    (pin "1" (uuid 11d25780-d8d8-4d0e-b4c6-1d8060c90a8a))
+    (pin "2" (uuid 4d1771ae-f776-45d3-bf69-9d08b7ec6172))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4111,7 +4226,7 @@
     (property "Datasheet" "" (at 102.235 126.365 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 0aab2045-d003-47ec-b542-53cf787a1724))
+    (pin "1" (uuid 897b5fb6-fd03-4d64-b31d-aa24c0f79ca6))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4124,7 +4239,7 @@
   (symbol (lib_id "Device:C") (at 200.025 38.1 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7d5b0aeb-1850-4d26-b379-0fd1828fdd75)
-    (property "Reference" "C7" (at 200.025 30.48 90)
+    (property "Reference" "C8" (at 200.025 30.48 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100nF" (at 200.025 33.02 90)
@@ -4136,12 +4251,12 @@
     (property "Datasheet" "~" (at 200.025 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a5b45479-56fe-4f88-afa1-dead9e3dd60a))
-    (pin "2" (uuid 32f449f5-bc6b-4a2a-9f39-b4ac7a4e22b2))
+    (pin "1" (uuid ecf3ff67-bc32-4fb1-b3e4-1e9daf76a7e5))
+    (pin "2" (uuid 33cd39d2-c57a-47e8-8002-f6014163a38c))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "C7") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
     )
@@ -4174,7 +4289,7 @@
     (property "Sim.Pins" "1=1" (at -13.335 -34.925 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 2d76096e-b11e-4ca3-895e-84faf48c0391))
+    (pin "1" (uuid 9e90ede6-9aca-4d28-bc18-43a8a50998e9))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4211,8 +4326,8 @@
     (property "Sim.Pins" "1=1 2=2" (at 79.375 -36.195 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid bde6ae4f-cf8e-46f6-b678-2047a220d16d))
-    (pin "2" (uuid 649763d5-3433-46f6-b3d0-2d1e1591a8e2))
+    (pin "1" (uuid 58a0b01f-ef52-49df-926d-57dd11520557))
+    (pin "2" (uuid 992a6489-2648-4ae4-aa72-b2aab1d1d73b))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4237,7 +4352,7 @@
     (property "Datasheet" "" (at 46.99 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 56f221c5-9af0-4982-afef-c16afdd7d418))
+    (pin "1" (uuid ef355763-9a24-43bd-895c-d2a7c5f72f19))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4262,8 +4377,8 @@
     (property "Datasheet" "~" (at 121.285 81.915 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 15aa6de8-9f5e-4ce4-b963-f79546bde42a))
-    (pin "2" (uuid f8818181-ee51-4edf-8c4b-067d91cb7988))
+    (pin "1" (uuid 78b12023-a75a-4bdd-bfc0-03d7ef61f6f5))
+    (pin "2" (uuid 0d5df90c-afb5-4b9b-b5e9-9295e5f3906d))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4300,7 +4415,7 @@
     (property "Sim.Pins" "1=1" (at -13.97 -10.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6e58383e-4734-485f-8a8f-1d78b9b4845d))
+    (pin "1" (uuid fb1c4b98-153d-433e-bd48-c2ff46f447c5))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4325,7 +4440,7 @@
     (property "Datasheet" "" (at 206.375 72.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 835a347b-8160-4aac-ab2e-f2cf03169ff7))
+    (pin "1" (uuid 625b9104-0c57-402d-b108-94837a7069f2))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4350,7 +4465,7 @@
     (property "Datasheet" "" (at 147.955 180.975 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid b05421c1-23f2-4b43-9592-4af477aec02a))
+    (pin "1" (uuid 80c4e441-0a76-46fc-96ab-730e50d5ecde))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4375,7 +4490,7 @@
     (property "Datasheet" "" (at 21.59 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 79cacc2a-88a0-4af3-ae03-8ea7e7d4545e))
+    (pin "1" (uuid 866207c5-5784-46c4-880c-c710a6eea694))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4400,7 +4515,7 @@
     (property "Datasheet" "" (at 118.11 100.965 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3c3d7c46-0324-44e6-8163-34e878e6d7ac))
+    (pin "1" (uuid 1239cf67-acaf-46ee-913f-97970ec7cc71))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4437,7 +4552,7 @@
     (property "Sim.Pins" "1=1" (at -13.335 -34.925 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid fd2b27bf-1fed-4ec4-825d-e238b307f2f6))
+    (pin "1" (uuid 88fcb1dd-9519-45dc-929e-e00e18d7bb80))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4447,27 +4562,27 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 197.485 131.445 0) (unit 1)
+  (symbol (lib_id "Device:C") (at 197.485 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 99106522-0b9e-445e-87b1-0b233d5bc9d1)
-    (property "Reference" "C6" (at 201.295 130.1749 0)
+    (property "Reference" "C7" (at 201.295 130.8099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10uF" (at 201.295 132.7149 0)
+    (property "Value" "10uF" (at 201.295 133.3499 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 198.4502 135.255 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 198.4502 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 197.485 131.445 0)
+    (property "Datasheet" "~" (at 197.485 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 4111e26f-a855-429c-a1d1-8e12b20e0ea9))
-    (pin "2" (uuid 716ce992-6756-4691-afc5-6b32e30d46b6))
+    (pin "1" (uuid 1e441307-ae8e-48b7-9584-5df728bca201))
+    (pin "2" (uuid 8e41c8ab-2291-4854-9f72-975e5c38eead))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "C6") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -4476,7 +4591,7 @@
   (symbol (lib_id "power:+3V0") (at 72.39 118.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 99362cfb-10bc-4f5f-b35a-bec7e4d9dd24)
-    (property "Reference" "#PWR08" (at 72.39 121.92 0)
+    (property "Reference" "#PWR07" (at 72.39 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V0" (at 72.39 114.3 0)
@@ -4488,11 +4603,11 @@
     (property "Datasheet" "" (at 72.39 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid d11bb285-df35-497a-a0c5-f70aec0a6e7e))
+    (pin "1" (uuid 12cb63ce-ee05-4a5f-8fab-002b5228c15f))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -4513,8 +4628,8 @@
     (property "Datasheet" "~" (at 149.225 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 0660851b-2f07-4a18-8114-6f0fe46d6c04))
-    (pin "2" (uuid e80500ac-8b53-4666-9363-0aa02a56adc0))
+    (pin "1" (uuid a3c9c440-84e5-4d17-b227-3fb0b3e376b5))
+    (pin "2" (uuid e4a907d5-eec3-43d8-86cb-1f54eb39716c))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4524,10 +4639,57 @@
     )
   )
 
+  (symbol (lib_id "SS13L_R3G:SS13L_R3G") (at 156.21 164.465 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid a3a7c1bf-211a-4288-b13f-e3cd88e69c61)
+    (property "Reference" "D3" (at 151.765 159.385 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SS13L_R3G" (at 151.765 161.29 0)
+      (effects (font (size 1.016 1.016)))
+    )
+    (property "Footprint" "SS13L_R3G:SODFL3618X143N" (at 147.32 67.005 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Datasheet" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 147.32 -32.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Height" "1.43" (at 147.32 -232.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Manufacturer_Name" "Taiwan Semiconductor" (at 147.32 -332.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Manufacturer_Part_Number" "SS13L R3G" (at 147.32 -432.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Mouser Part Number" "821-SS13LR3G" (at 147.32 -532.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Taiwan-Semiconductor/SS13L-R3G?qs=5aG0NVq1C4yK%252B2Aj4Chtgw%3D%3D" (at 147.32 -632.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Arrow Part Number" "SS13L R3G" (at 147.32 -732.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 147.32 -832.995 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (pin "1" (uuid 40632f00-e7ab-44a2-9550-6f88004e565c))
+    (pin "2" (uuid 54be3469-9228-4f5a-b97e-64c7c00caf08))
+    (instances
+      (project "Cable_Monitor"
+        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
+          (reference "D3") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:GND") (at 105.41 100.965 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a86232ac-1862-4db4-bed0-86dee9461e8e)
-    (property "Reference" "#PWR013" (at 105.41 107.315 0)
+    (property "Reference" "#PWR012" (at 105.41 107.315 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 105.41 106.045 0)
@@ -4539,11 +4701,11 @@
     (property "Datasheet" "" (at 105.41 100.965 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 489f9dd0-3e6b-431e-911a-d859cee4dbc4))
+    (pin "1" (uuid 98f1713c-bfc5-4faf-a1e5-1829f91bbdd6))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR012") (unit 1)
         )
       )
     )
@@ -4573,8 +4735,8 @@
     (property "Sim.Pins" "2=1 1=2" (at 240.665 137.16 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ffbe3dbd-e2f3-4f2b-beff-e2e809c82954))
-    (pin "2" (uuid 411979e2-84f4-4066-b072-411b3faf3bf7))
+    (pin "1" (uuid c18cef8f-1265-45f4-8941-2c70fb131ed5))
+    (pin "2" (uuid 2d5b9583-fb1a-421b-9e28-1713098dad55))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4587,7 +4749,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 105.41 86.36 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ab306e03-6ef8-4071-9f57-9e1a3748620c)
-    (property "Reference" "TP8" (at 108.585 81.915 90)
+    (property "Reference" "TP7" (at 108.585 81.915 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "PWM_Buzzer" (at 108.585 83.82 90)
@@ -4611,36 +4773,83 @@
     (property "Sim.Pins" "1=1" (at 153.67 -55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3f777de0-0e20-425d-affd-456db53fa94a))
+    (pin "1" (uuid 6420d014-f5e0-4530-8a8f-e506d8ae65fb))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "TP8") (unit 1)
+          (reference "TP7") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "power:GND") (at 165.735 102.235 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 169.545 102.235 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ac851391-219d-4cc1-af3d-9e1687cc405e)
-    (property "Reference" "#PWR023" (at 165.735 108.585 0)
+    (property "Reference" "#PWR024" (at 169.545 108.585 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 165.735 107.315 0)
+    (property "Value" "GND" (at 169.545 107.315 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 165.735 102.235 0)
+    (property "Footprint" "" (at 169.545 102.235 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 165.735 102.235 0)
+    (property "Datasheet" "" (at 169.545 102.235 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid c7edfb4b-637a-4408-a928-aac5f817291b))
+    (pin "1" (uuid f75f0084-7777-4254-ba2e-ab61afa12645))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR024") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "SS13L_R3G:SS13L_R3G") (at 206.375 127.635 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid affef7e1-43ef-459e-94ba-9ff57f07eee0)
+    (property "Reference" "D4" (at 202.8444 123.19 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SS13L_R3G" (at 203.2 125.095 0)
+      (effects (font (size 0.762 0.762)))
+    )
+    (property "Footprint" "SS13L_R3G:SODFL3618X143N" (at 197.485 30.175 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Datasheet" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 197.485 -69.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Height" "1.43" (at 197.485 -269.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Manufacturer_Name" "Taiwan Semiconductor" (at 197.485 -369.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Manufacturer_Part_Number" "SS13L R3G" (at 197.485 -469.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Mouser Part Number" "821-SS13LR3G" (at 197.485 -569.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Taiwan-Semiconductor/SS13L-R3G?qs=5aG0NVq1C4yK%252B2Aj4Chtgw%3D%3D" (at 197.485 -669.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Arrow Part Number" "SS13L R3G" (at 197.485 -769.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (property "Arrow Price/Stock" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 197.485 -869.825 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (pin "1" (uuid 59aa2734-b29a-43d9-bca7-536924c5ff59))
+    (pin "2" (uuid 394bd063-e973-4571-8104-cba710a1c964))
+    (instances
+      (project "Cable_Monitor"
+        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
+          (reference "D4") (unit 1)
         )
       )
     )
@@ -4673,7 +4882,7 @@
     (property "Sim.Pins" "1=1" (at 21.59 -1.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid d0e4481b-ce03-4083-ba7d-bda4243e71e9))
+    (pin "1" (uuid f069a69c-e3e3-4b8e-a694-31e3415b8b34))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4698,8 +4907,8 @@
     (property "Datasheet" "~" (at 222.885 128.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 645ee598-e9ca-450c-9b16-c06c8ea2b93f))
-    (pin "2" (uuid b17e6b92-44e0-4a8f-997f-32262afd2ae7))
+    (pin "1" (uuid 26307728-21a7-4eae-91bb-3b689f69d8e3))
+    (pin "2" (uuid be0688a2-7743-4098-b415-c50c49e1d365))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4724,12 +4933,12 @@
     (property "Datasheet" "~" (at 144.145 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 5b62cad8-b5c0-4f19-a51d-fcb7870b55f5))
-    (pin "2" (uuid 99ccc94c-f0a7-4d2f-ada4-747027e03987))
-    (pin "3" (uuid 12f5fef0-bc8f-4914-83b3-3f1e1dee8468))
-    (pin "4" (uuid eb985402-8427-41f7-9534-4b833ede8c0c))
-    (pin "5" (uuid c97a40a2-19f2-4ec1-a646-78a56be1d732))
-    (pin "6" (uuid eb5dcb29-8752-40fb-93b4-046025ea882b))
+    (pin "1" (uuid 92f0538f-132d-451c-b122-a0826899487c))
+    (pin "2" (uuid b22d33a8-338a-43fd-9a0a-aa31dcc76f90))
+    (pin "3" (uuid c1e4584a-fdbb-4059-ab14-929abd8632f1))
+    (pin "4" (uuid 71b6ff56-9693-4b40-9e49-df5643e92562))
+    (pin "5" (uuid 8a56b8d1-be23-4f4f-b5cf-8c361de3a247))
+    (pin "6" (uuid 3ba791fd-c637-452c-b1c6-530444bf8ccb))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4766,9 +4975,9 @@
     (property "Sim.Pins" "1=1 2=2 3=3" (at -50.165 -16.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 0ad97bb8-4289-4203-975d-2ad2d0f23f8f))
-    (pin "2" (uuid 75196608-d49f-4bd1-9419-11a782c9c79e))
-    (pin "3" (uuid 081154f8-8e18-4c6a-860b-ea297f5b2804))
+    (pin "1" (uuid 6cac965b-e071-4438-b96a-798d556d9fba))
+    (pin "2" (uuid 921a1038-242b-4771-b5c2-4dc44493abb2))
+    (pin "3" (uuid 20996fc6-7e4d-466b-b242-e92cf6e0f316))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4793,7 +5002,7 @@
     (property "Datasheet" "~" (at 111.125 125.095 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid c0133981-fee5-4a5b-acb8-df421a06c4c8))
+    (pin "1" (uuid 011f124e-408a-4657-8221-7862419cc5ba))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4806,7 +5015,7 @@
   (symbol (lib_id "power:GND") (at 222.885 140.97 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bbf7271b-cbd5-4b24-9abd-01c218a55f9d)
-    (property "Reference" "#PWR034" (at 222.885 147.32 0)
+    (property "Reference" "#PWR035" (at 222.885 147.32 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 222.885 146.05 0)
@@ -4818,11 +5027,11 @@
     (property "Datasheet" "" (at 222.885 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 8f9e2b89-458e-4c36-9dda-f4e00d349e34))
+    (pin "1" (uuid ed4cf189-ce6e-4077-80df-77138c821aab))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -4852,12 +5061,12 @@
     (property "Sim.Params" "type=\"X\" model=\"SiP32508\" lib=\"spice\\miscellaneous.lib\"" (at 154.305 114.935 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid d07dc305-0331-4bf0-b8a9-d180f6c86a09))
-    (pin "2" (uuid 7887d9bf-42a7-4799-8434-631414674275))
-    (pin "3" (uuid c0b85c25-6971-4b72-a04d-f93871754f77))
-    (pin "4" (uuid c862bb3f-1a80-42cd-aa2e-c23a33d0d754))
-    (pin "5" (uuid 672ee581-ee9c-47f1-8a3d-33a1a5554b19))
-    (pin "6" (uuid 11d5d5fc-d562-45b2-b9b1-1b9d27e68f8d))
+    (pin "1" (uuid 29262c65-28bd-48a2-8251-26b075ff7b16))
+    (pin "2" (uuid 35a18748-191f-4098-853c-680ea156278e))
+    (pin "3" (uuid d6795d4d-dee8-4d67-9491-902ca8f87db2))
+    (pin "4" (uuid a25fa173-584e-4e3e-9cba-3edc8d5205f7))
+    (pin "5" (uuid 66a01e0c-11e2-4f3f-9fe0-6492ce6a2ae2))
+    (pin "6" (uuid f506f1e1-176e-4439-a961-1fd6aec7a184))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4882,7 +5091,7 @@
     (property "Datasheet" "" (at 29.21 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ee6fd329-8c93-4f6b-ae96-6d860148ab03))
+    (pin "1" (uuid 1cc13b7e-5db1-4045-9acd-217d0c07c9a2))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4892,26 +5101,51 @@
     )
   )
 
-  (symbol (lib_id "power:+3V0") (at 206.375 125.095 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "power:+3V0") (at 208.915 125.73 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid c259d9f1-96eb-4466-8387-5ac5a5119c2f)
-    (property "Reference" "#PWR029" (at 206.375 128.905 0)
+    (property "Reference" "#PWR034" (at 208.915 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+3V0" (at 206.375 120.015 0)
+    (property "Value" "+3V0" (at 207.645 121.285 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 206.375 125.095 0)
+    (property "Footprint" "" (at 208.915 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 206.375 125.095 0)
+    (property "Datasheet" "" (at 208.915 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 7cd74107-f314-4143-bc10-1221832852e6))
+    (pin "1" (uuid 6f0011e9-c3ea-4e0c-b2c2-8a58cdc35331))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR034") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:PWR_FLAG") (at 208.915 127.635 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid c58aab1b-6003-496c-92bb-96abdee608ff)
+    (property "Reference" "#FLG04" (at 208.915 129.54 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "PWR_FLAG" (at 208.915 131.445 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "" (at 208.915 127.635 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 208.915 127.635 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 11359bfc-7d81-4c5d-b2cc-01e5791ce6ac))
+    (instances
+      (project "Cable_Monitor"
+        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
+          (reference "#FLG04") (unit 1)
         )
       )
     )
@@ -4920,7 +5154,7 @@
   (symbol (lib_id "power:GND") (at 111.125 147.955 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c8eeb2eb-977c-4c1b-b032-5f283e4444f5)
-    (property "Reference" "#PWR012" (at 111.125 154.305 0)
+    (property "Reference" "#PWR013" (at 111.125 154.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 111.125 153.035 0)
@@ -4932,11 +5166,11 @@
     (property "Datasheet" "" (at 111.125 147.955 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid d6611e8f-fa89-4788-a03f-574d124888b8))
+    (pin "1" (uuid 17cd2f01-2755-44cd-a799-be69d6593540))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR013") (unit 1)
         )
       )
     )
@@ -4945,7 +5179,7 @@
   (symbol (lib_id "power:GND") (at 72.39 125.73 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cae5a965-6249-4598-b18d-e839ddc77f44)
-    (property "Reference" "#PWR09" (at 72.39 132.08 0)
+    (property "Reference" "#PWR08" (at 72.39 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 72.39 130.81 0)
@@ -4957,11 +5191,11 @@
     (property "Datasheet" "" (at 72.39 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 901d5a25-c7f9-4c0c-b4b6-b71c6f1f28ef))
+    (pin "1" (uuid 81bff39d-a66c-4352-b3bb-eef9f580cb82))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
     )
@@ -4982,7 +5216,7 @@
     (property "Datasheet" "" (at 46.99 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid d294221e-4ae5-4543-b528-912aee5dce08))
+    (pin "1" (uuid 9ec916a6-0f6b-4067-a72c-fe09fadeb595))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -4998,7 +5232,7 @@
     (property "Reference" "C2" (at 114.935 141.605 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "1nF" (at 114.935 144.145 0)
+    (property "Value" "220nF" (at 114.935 144.145 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 112.0902 146.685 0)
@@ -5007,8 +5241,8 @@
     (property "Datasheet" "~" (at 111.125 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid fe68a2dd-1d49-4c2f-a01b-897d47c78a2e))
-    (pin "2" (uuid 84f27f4d-919d-401a-b331-14b4244cd192))
+    (pin "1" (uuid fb3ba2db-227f-49c4-9359-01d9a774a0a6))
+    (pin "2" (uuid f674723d-11e0-4bf1-a526-26b78afa1553))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5045,7 +5279,7 @@
     (property "Sim.Pins" "1=1" (at 24.13 -12.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 84c6b520-846a-48de-a2fa-af45b6445bf9))
+    (pin "1" (uuid e11146df-963b-4386-879b-f78872c08275))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5055,23 +5289,23 @@
     )
   )
 
-  (symbol (lib_id "Device:R") (at 165.735 86.995 0) (unit 1)
+  (symbol (lib_id "Device:R") (at 169.545 86.995 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid da7e7ed2-ebf7-40a7-a952-204128b4470c)
-    (property "Reference" "R5" (at 168.275 85.725 0)
+    (property "Reference" "R5" (at 172.085 85.725 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "30k" (at 168.275 88.265 0)
+    (property "Value" "30k" (at 172.085 88.265 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 163.957 86.995 90)
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 167.767 86.995 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 165.735 86.995 0)
+    (property "Datasheet" "~" (at 169.545 86.995 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6038a54f-0d94-4183-9c47-0b3c8aad1f28))
-    (pin "2" (uuid b72def29-9506-415b-b190-f014a30866a9))
+    (pin "1" (uuid 38591a05-88df-4d55-b970-82b80121b583))
+    (pin "2" (uuid 731599e9-b2cc-4d7f-8888-4bd2adbda6c1))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5081,10 +5315,35 @@
     )
   )
 
+  (symbol (lib_id "power:GND") (at 157.48 102.235 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid db00a5e6-e687-45d7-8c61-92f6b1a1a1e4)
+    (property "Reference" "#PWR021" (at 157.48 108.585 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 157.48 107.315 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 157.48 102.235 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 157.48 102.235 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 866ac64a-933b-4b80-9325-6600c4b5c702))
+    (instances
+      (project "Cable_Monitor"
+        (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
+          (reference "#PWR021") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:C") (at 200.025 76.2 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ddd89aea-874d-4cec-ac19-4ef7adf51d7b)
-    (property "Reference" "C8" (at 200.025 68.58 90)
+    (property "Reference" "C9" (at 200.025 68.58 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100nF" (at 200.025 71.12 90)
@@ -5096,12 +5355,12 @@
     (property "Datasheet" "~" (at 200.025 76.2 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 53d195d8-fea8-44d9-96a1-af7761ddb93b))
-    (pin "2" (uuid 009e2f10-700f-49dc-99f6-886a78180171))
+    (pin "1" (uuid 019296f8-0f67-434c-8eff-44718c26e58b))
+    (pin "2" (uuid 1439ec3f-3756-4885-9499-4488854ed1f7))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "C8") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
     )
@@ -5122,8 +5381,8 @@
     (property "Datasheet" "~" (at 102.235 142.875 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 592bb1ea-6bd0-405b-a7df-2ae8b71ceb05))
-    (pin "2" (uuid 758d3fd9-37b1-431d-b63b-52b60560e1b3))
+    (pin "1" (uuid 9c6053d8-c7e5-423d-af97-02263203d94a))
+    (pin "2" (uuid 2d66e278-097d-40f2-b1b4-ec9a2680eaf2))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5160,38 +5419,38 @@
     (property "Sim.Pins" "1=1 2=2 3=3 4=4 5=5 6=6 7=7 8=8 9=9 10=10 11=11 12=12 13=13 14=14 15=15 16=16 17=17 18=18 19=19 20=20 21=21 22=22 23=23 24=24 25=25 26=26 27=27 28=28 29=29 30=30 31=31 32=32" (at -8.89 -1.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 162aa005-37b0-4ea4-b95b-ed0381ee0e66))
-    (pin "10" (uuid 8e65a140-8e2c-41cd-a87b-ff5c116e3cd0))
-    (pin "11" (uuid ab131e38-1fea-40e4-9471-817c9db8f3fa))
-    (pin "12" (uuid 6b9ddb49-559e-413d-a9e7-154add77d2d2))
-    (pin "13" (uuid 6e7a26fd-bf3f-4ebf-ad63-188d50456fd8))
-    (pin "14" (uuid 34d2a8e9-10cd-4665-b7b8-ce4fed261222))
-    (pin "15" (uuid a4f2bc79-e5fc-442f-9f12-0466892cc387))
-    (pin "16" (uuid 78b1c54c-9667-43ec-b774-b2386d7ba1a7))
-    (pin "17" (uuid 64c2d3ca-92fb-42e5-b83c-01c9126ffc40))
-    (pin "18" (uuid 65c8e8c4-fea1-4282-bb94-7d9fe546039f))
-    (pin "19" (uuid d87f0c22-5af9-4e1b-9664-c4cb6b031383))
-    (pin "2" (uuid 6514904b-3ecf-479c-894f-81228df390f9))
-    (pin "20" (uuid 932a54c4-e3a7-4b3b-9fbf-1736134e7116))
-    (pin "21" (uuid 481cd2f9-bf78-4024-8b82-a1d30e967769))
-    (pin "22" (uuid a3d7578d-1e20-4b59-9597-a1a23cc80647))
-    (pin "23" (uuid ecdab314-c625-4c9b-a591-82700468ee64))
-    (pin "24" (uuid eb5845b8-ffec-452a-acb1-46c94a5bb903))
-    (pin "25" (uuid 22deae9f-f7b2-451a-929b-cdc4d40f0816))
-    (pin "26" (uuid 0057f7a8-c310-4010-9d48-19dc39fd192d))
-    (pin "27" (uuid 149c51b8-c931-4fc0-bed0-48f1144e7ac5))
-    (pin "28" (uuid 355a8d9a-fe1e-49b8-8380-ad99d02335da))
-    (pin "29" (uuid 87f27b14-e35b-408f-9b01-4e663618c8b2))
-    (pin "3" (uuid eec139ae-acab-405a-a229-a8c7df05862b))
-    (pin "30" (uuid 5f9742dd-faf8-4009-abbf-b986691804ab))
-    (pin "31" (uuid 7e4d4035-69ea-42bf-8061-4d9b820bc877))
-    (pin "32" (uuid 047d7cfd-4678-4592-a3d5-8cf8aad933f6))
-    (pin "4" (uuid f380b7c5-c54c-458d-9d29-67f3b019ffaf))
-    (pin "5" (uuid 9dde6c8a-0e4a-4f2b-a193-c8957df9d8b9))
-    (pin "6" (uuid 0c2da427-6244-420f-bb4f-39cc743bf44e))
-    (pin "7" (uuid a1df3a83-bce6-4b2f-9da3-ed7a66bd4440))
-    (pin "8" (uuid f075cbb6-29cd-48ca-ba41-2b9974c8f5ed))
-    (pin "9" (uuid 4d25d2db-b443-47a1-89c1-1f6891e75b47))
+    (pin "1" (uuid 8722a7a1-3fcc-4258-b595-9454c9a6ba4b))
+    (pin "10" (uuid 33f88775-c61a-4783-846d-646ef5b64456))
+    (pin "11" (uuid 95b52bf5-9163-4739-be54-da26e4c443ef))
+    (pin "12" (uuid 77086a7f-ea57-49a4-8342-df8bdca62870))
+    (pin "13" (uuid 3f795555-3036-4a9c-a216-da6041c91c57))
+    (pin "14" (uuid 314f04c7-7a38-4a97-87e3-b2c5828355df))
+    (pin "15" (uuid 36e43c34-8801-45ab-b114-13416c5999ba))
+    (pin "16" (uuid d7e6bf17-d46c-43f1-a93b-cfe2edd17d13))
+    (pin "17" (uuid 3d30115b-8290-4cfe-a9c9-b703be4a2b0d))
+    (pin "18" (uuid d6537d50-7c4b-47f3-b4ef-c0ef1f3b3b52))
+    (pin "19" (uuid 94e51ad7-a6fb-4d64-a509-1d959e904c5b))
+    (pin "2" (uuid 5a7c98ae-8701-49b3-bbb0-2b65bd1430ce))
+    (pin "20" (uuid 7a26610a-5d65-4b35-b190-5e0f79a25abb))
+    (pin "21" (uuid 3b5a5ab5-2e18-4e81-b4c7-8e3dd2859680))
+    (pin "22" (uuid 8098d682-a45a-4bc9-b32c-6e248a62e439))
+    (pin "23" (uuid 6afe2409-5cea-4871-bd32-08abd1416a48))
+    (pin "24" (uuid ac057791-3253-41de-8125-cc05e9ce6430))
+    (pin "25" (uuid 397cfb43-f40c-4a14-95c7-7b422087ea48))
+    (pin "26" (uuid 623a78c1-fea9-4a15-92c0-16efd9746100))
+    (pin "27" (uuid 56505d6f-278a-4afe-8fec-495ab19aa5fc))
+    (pin "28" (uuid bbfde450-c004-4b76-ba6b-d59f4beaeb02))
+    (pin "29" (uuid 3d0644d8-3a62-401e-9e65-942e8ceefc26))
+    (pin "3" (uuid 72c2975e-44bd-49a2-b81e-57c65f047496))
+    (pin "30" (uuid 8f5c9b27-6a59-4007-b69c-4f80c3bb76a6))
+    (pin "31" (uuid 7b2fc833-3b08-4d2e-b1fb-c20513fd1c1c))
+    (pin "32" (uuid 629f3e6e-9ca9-4db3-8ddf-21a1c8b66e88))
+    (pin "4" (uuid 1ea0d83c-c52b-4a85-914d-c44d52529dbb))
+    (pin "5" (uuid 536ecb77-214b-43d6-8f69-416b289591c8))
+    (pin "6" (uuid 98a256ff-f3ca-4c79-834f-7d37153485c3))
+    (pin "7" (uuid 5d88fdc6-25c4-4664-90c2-e535464d5c06))
+    (pin "8" (uuid 402e4af3-e432-4def-ace0-1ea164fab108))
+    (pin "9" (uuid be3189bb-d03b-40f6-b56c-a466b22d09f4))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5216,7 +5475,7 @@
     (property "Datasheet" "" (at 54.61 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid fb37c766-630e-499f-9493-f32e3dd0069d))
+    (pin "1" (uuid ace2395e-b68a-4c04-9a35-fbb950835886))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5241,7 +5500,7 @@
     (property "Datasheet" "" (at 194.945 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 5f9e42f2-42da-4148-ae73-3b1d7a23e816))
+    (pin "1" (uuid 5217efb0-f9e9-4b6e-a6e9-be15eb8bbc13))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5278,7 +5537,7 @@
     (property "Sim.Pins" "1=1" (at 21.59 -1.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ce1a17f4-c27e-404e-8fe6-8b005fe48dad))
+    (pin "1" (uuid 16a340aa-5aa8-4a9d-a0b8-c0aa2c07db97))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5291,7 +5550,7 @@
   (symbol (lib_id "power:GND") (at 240.665 140.97 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ee3a538f-7c5a-4671-ab1a-b993e84ee836)
-    (property "Reference" "#PWR035" (at 240.665 147.32 0)
+    (property "Reference" "#PWR036" (at 240.665 147.32 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 240.665 146.05 0)
@@ -5303,11 +5562,11 @@
     (property "Datasheet" "" (at 240.665 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3eeebf23-08f2-4d1d-b6c8-d461bc0fc86d))
+    (pin "1" (uuid 4efdb2e8-69d8-40af-84fb-f3e13218d71f))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -5322,7 +5581,7 @@
     (property "Value" "SS13L_R3G" (at 151.13 87.63 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "SODFL3618X143N" (at 246.685 81.28 0)
+    (property "Footprint" "SS13L_R3G:SODFL3618X143N" (at 246.685 81.28 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
     (property "Datasheet" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 346.685 81.28 0)
@@ -5349,8 +5608,8 @@
     (property "Arrow Price/Stock" "https://www.arrow.com/en/products/ss13l-r3g/taiwan-semiconductor" (at 1146.685 81.28 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
-    (pin "1" (uuid 7e41be2e-5dbc-47aa-86c3-ea082d2124c4))
-    (pin "2" (uuid ac0d9512-3090-4f92-a0f3-998d5a127757))
+    (pin "1" (uuid 3a010a4d-4b35-4ad4-a1f1-9f616baa3506))
+    (pin "2" (uuid d2bfee2e-b0a5-4c8d-b6e0-0545baeb89e9))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
@@ -5360,27 +5619,27 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 168.275 131.445 0) (unit 1)
+  (symbol (lib_id "Device:C") (at 168.275 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f7fa839a-a668-4f1d-9df4-b1b528b8ec03)
-    (property "Reference" "C5" (at 172.085 130.175 0)
+    (property "Reference" "C6" (at 172.085 130.81 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "100nF" (at 172.085 132.715 0)
+    (property "Value" "100nF" (at 172.085 133.35 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 169.2402 135.255 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 169.2402 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 168.275 131.445 0)
+    (property "Datasheet" "~" (at 168.275 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 1be1ffb4-a66a-44d5-82c9-68d9dbfd0e72))
-    (pin "2" (uuid e265dcaa-80b6-4782-8e57-01ff9bf04ef4))
+    (pin "1" (uuid c9985841-67c0-48a4-ba3f-9b40eb1bc58e))
+    (pin "2" (uuid 44639092-3963-43da-8594-dfd38f60af6d))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
-          (reference "C5") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -5401,7 +5660,7 @@
     (property "Datasheet" "" (at 206.375 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 1c3590e1-bcb3-4bb0-819b-c5a787183232))
+    (pin "1" (uuid 711c37c2-9083-495b-a789-323d897de833))
     (instances
       (project "Cable_Monitor"
         (path "/1f276d59-ad9b-4e70-a842-f3b7e562eb9b"
