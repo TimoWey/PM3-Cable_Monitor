@@ -6,11 +6,14 @@ clc; clear; close all;
 format compact; format short eng;
 
 %% Geometry             % All dimensions in m or m2
-length_pad = 15.62e-3;
-with_pad = 22.86e-3;
+length_pad = 15.62e-3
+with_pad = 22.
 A_wire = 1.5e-6;        % Conductor cross-section in m2
 d_wires = 2.6e-3;       % Outer diameter of isolated conductor = distance of wire centers
-d_pad = sqrt(2*length_pad*with_pad);  % Length of pad which picks up the electric field of the wire
+A_Pad = 357.07;         % Area size of one Pad (357.07 mm^2)
+d_pad = sqrt(2*A_Pad);  % Length of pad which picks up the electric field of the wire
+                        % 2*Area size of Pad because there are 2 Areas on
+                        % each side of the PCB
 %% Pre-calculation
 r_wire = sqrt(A_wire/pi);        % Radius of the wire
 N = 115; inc = r_wire/2;         % Grid dimension and grid spacing in mm
