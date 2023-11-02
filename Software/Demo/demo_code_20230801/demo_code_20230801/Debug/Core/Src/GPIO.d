@@ -1,4 +1,4 @@
-Core/Src/main.o: ../Core/Src/main.c \
+Core/Src/GPIO.o: ../Core/Src/GPIO.c \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -34,18 +34,7 @@ Core/Src/main.o: ../Core/Src/main.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
  ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h \
- ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h \
- ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h \
- ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h \
- ../Drivers/BSP/STM32F429I-Discovery/../../../Utilities/Fonts/fonts.h \
- ../Drivers/BSP/STM32F429I-Discovery/../Components/ili9341/ili9341.h \
- ../Drivers/BSP/STM32F429I-Discovery/../Components/ili9341/../Common/lcd.h \
- ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.h \
- ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/stmpe811.h \
- ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h \
- ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h \
- ../Core/Inc/main.h ../Core/Inc/pushbutton.h ../Core/Inc/menu.h \
- ../Core/Inc/measuring.h ../Core/Inc/GPIO.h
+ ../Core/Inc/GPIO.h
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -81,18 +70,4 @@ Core/Src/main.o: ../Core/Src/main.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
 ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h:
-../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h:
-../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h:
-../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h:
-../Drivers/BSP/STM32F429I-Discovery/../../../Utilities/Fonts/fonts.h:
-../Drivers/BSP/STM32F429I-Discovery/../Components/ili9341/ili9341.h:
-../Drivers/BSP/STM32F429I-Discovery/../Components/ili9341/../Common/lcd.h:
-../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.h:
-../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/stmpe811.h:
-../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h:
-../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h:
-../Core/Inc/main.h:
-../Core/Inc/pushbutton.h:
-../Core/Inc/menu.h:
-../Core/Inc/measuring.h:
 ../Core/Inc/GPIO.h:

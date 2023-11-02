@@ -106,7 +106,7 @@ void MENU_hint(void)
 	BSP_LCD_DisplayStringAt(5, 110, (uint8_t *)"Switch DAC on/off", LEFT_MODE);
 	BSP_LCD_DisplayStringAt(5, 130, (uint8_t *)"with blue pushbutton", LEFT_MODE);
 	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"(c) hhrt@zhaw.ch", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"Version 27.09.2022", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"Version 02.11.2022", LEFT_MODE);
 }
 
 

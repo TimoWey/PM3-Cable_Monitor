@@ -354,6 +354,7 @@ void SystemInit_ExtMemCtl(void)
   /* No pull-up, pull-down for PFx pins */ 
   GPIOF->PUPDR   = 0x00000000;
   
+  // PG5 OUTPUT, HIGH on system startup
   /* Connect PGx pins to FMC Alternate function */
   GPIOG->AFR[0]  = 0x00CC00CC;
   GPIOG->AFR[1]  = 0xC000000C;
@@ -365,6 +366,14 @@ void SystemInit_ExtMemCtl(void)
   GPIOG->OTYPER  = 0x00000000;
   /* No pull-up, pull-down for PGx pins */ 
   GPIOG->PUPDR   = 0x00000000;
+
+  //************************************************************
+  // Set PG5 as OUTPUT
+  GPIOG->MODER   |= GPIO_MODER_MODER5_0; // Set as Output
+
+  // Set PG5 to HIGH
+  GPIOG->BSRR = GPIO_BSRR_BS5; // Set Bit 5 (PG5) to HIGH
+  //************************************************************
 
   /* FMC Configuration */
   /* Enable the FMC interface clock */

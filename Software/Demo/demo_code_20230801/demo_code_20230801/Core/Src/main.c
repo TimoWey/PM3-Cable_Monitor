@@ -24,6 +24,7 @@
 #include "pushbutton.h"
 #include "menu.h"
 #include "measuring.h"
+#include "GPIO.h"
 
 
 /******************************************************************************
@@ -81,6 +82,8 @@ int main(void) {
 
 	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
 	MEAS_timer_init();					// Configure the timer
+	
+	GPIO_Init();						// Init PE5 and set it to HIGH
 
 	/* Infinite while loop */
 	while (1) {							// Infinitely loop in main function
@@ -100,6 +103,16 @@ int main(void) {
 				DAC_reset();
 				BSP_LED_Off(LED4);
 			}
+		}
+
+		// Check if Device should power off (PE3)
+		if (HAL_GPIO_ReadPin(GPIOE, PIN_PE3) == GPIO_PIN_SET)
+		{
+		  // Set PE5 low
+		  HAL_GPIO_WritePin(GPIOE, PIN_PE5, GPIO_PIN_RESET);
+
+		  // Delay for 3 seconds
+		  HAL_Delay(3000);
 		}
 
 		/* Comment next line if touchscreen interrupt is enabled */
