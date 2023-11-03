@@ -82,8 +82,8 @@ all: main-build
 main-build: demo_code_20230801.elf secondary-outputs
 
 # Tool invocations
-demo_code_20230801.elf demo_code_20230801.map: $(OBJS) $(USER_OBJS) G:\Meine\ Ablage\ZHAW\Projekt\ Modul\ 3\PM3-Cable_Monitor\Software\Demo\demo_code_20230801\demo_code_20230801\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "demo_code_20230801.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"G:\Meine Ablage\ZHAW\Projekt Modul 3\PM3-Cable_Monitor\Software\Demo\demo_code_20230801\demo_code_20230801\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="demo_code_20230801.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+demo_code_20230801.elf demo_code_20230801.map: $(OBJS) $(USER_OBJS) C:\Users\aleja\OneDrive\ -\ ZHAW\0_Modulen\3\ Jahr\Semester\ 5\PM3\PM3-Cable_Monitor\Software\Demo\demo_code_20230801\demo_code_20230801\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "demo_code_20230801.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\aleja\OneDrive - ZHAW\0_Modulen\3 Jahr\Semester 5\PM3\PM3-Cable_Monitor\Software\Demo\demo_code_20230801\demo_code_20230801\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="demo_code_20230801.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
