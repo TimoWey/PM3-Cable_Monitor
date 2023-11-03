@@ -67,4 +67,9 @@ void GPIO_Init(void)
 	HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_SET);
+	while (HAL_GPIO_ReadPin(GPIOE, PIN_PE3) == GPIO_PIN_SET)
+	{
+	  HAL_Delay(100);
+	}
+	HAL_Delay(3000);
 }
