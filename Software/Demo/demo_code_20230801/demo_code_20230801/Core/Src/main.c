@@ -55,6 +55,8 @@ int main(void) {
 
 	SystemClock_Config();				// Configure system clocks
 
+	GPIO_Init();						// Init PE5 and set it to HIGH
+
 #ifdef FLIPPED_LCD
 	BSP_LCD_Init_Flipped();				// Initialize the LCD for flipped orientation
 #else
@@ -83,7 +85,7 @@ int main(void) {
 	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
 	MEAS_timer_init();					// Configure the timer
 	
-	GPIO_Init();						// Init PE5 and set it to HIGH
+
 
 	/* Infinite while loop */
 	while (1) {							// Infinitely loop in main function
