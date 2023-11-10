@@ -5,7 +5,7 @@
 clc; clear; close all;
 format compact; format short eng;
 % Known values
-B0 = 1e-5;              % Magnetic field in air (from simulation)
+B0 = 2.241e-5;              % Magnetic field in air (from simulation)
 f = 50;                 % Frequency of mains
 d = 5e-3;               % Diameter of coil (datasheet)
 l = 3e-3;               % Length of coil (datasheet)
