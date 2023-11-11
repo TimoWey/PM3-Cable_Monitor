@@ -17,7 +17,6 @@ d_pad = sqrt(2*length_pad*with_pad);  % Length of pad which picks up the electri
 r_wire = sqrt(A_wire/pi);        % Radius of the wire
 N = 115; inc = r_wire/2;         % Grid dimension and grid spacing in mm
 [X,Y] = meshgrid(inc*(-N:1:N), inc*(-N:1:N));
-
 scrsz   = get(0,'ScreenSize');
 figure('name', 'Capacity to earth and H-field of one wire and of two wires', 'Position',[10,10,scrsz(3)-20,scrsz(4)-100])
 
@@ -49,9 +48,13 @@ xlabel('distance / m');
 axis([-N*inc, N*inc, Cmax/100, Cmax]);
 % Add coordinates at the intersection point
 xlineIntersection = 0.005;
-ylineIntersection = interp1(X(1+N,:), C(1+N,:), xlineIntersection); % Interpolate y-value at intersection
-scatter(xlineIntersection, ylineIntersection, 50, 'r', 'filled'); % Add a filled red dot at the intersection
-text(xlineIntersection+0.005, ylineIntersection, sprintf('(%.3e, %.3e)', xlineIntersection, ylineIntersection), 'Color', 'red', 'FontSize', 12, 'VerticalAlignment', 'bottom');
+% Interpolate y-value at intersection
+ylineIntersection = interp1(X(1+N,:), C(1+N,:), xlineIntersection); 
+% Add a filled red dot at the intersection
+scatter(xlineIntersection, ylineIntersection, 50, 'r', 'filled'); 
+text(xlineIntersection+0.005, ylineIntersection, sprintf('(%.3e, %.3e)', ...
+    xlineIntersection, ylineIntersection), 'Color', 'red', 'FontSize', 12, ...
+    'VerticalAlignment', 'bottom');
 box on;
 hold off;
 subplot(333);
@@ -81,9 +84,13 @@ title('B-field of one wire');
 ylabel('B-field / T'); xlabel('distance / m');
 axis([-N*inc, N*inc, Bmax/100, Bmax]);
 % Add coordinates at the intersection point
-ylineIntersection = interp1(X(1+N,:), B(1+N,:), xlineIntersection) % Interpolate y-value at intersection
-scatter(xlineIntersection, ylineIntersection, 50, 'r', 'filled'); % Add a filled red dot at the intersection
-text(xlineIntersection+0.005, ylineIntersection, sprintf('(%.3e, %.3e)', xlineIntersection, ylineIntersection), 'Color', 'red', 'FontSize', 12, 'VerticalAlignment', 'bottom');
+% Interpolate y-value at intersection
+ylineIntersection = interp1(X(1+N,:), B(1+N,:), xlineIntersection);
+% Add a filled red dot at the intersection
+scatter(xlineIntersection, ylineIntersection, 50, 'r', 'filled');
+text(xlineIntersection+0.005, ylineIntersection, sprintf('(%.3e, %.3e)', ...
+    xlineIntersection, ylineIntersection), 'Color', 'red', 'FontSize', 12, ...
+    'VerticalAlignment', 'bottom');
 box on;
 hold off;
 subplot(336);
@@ -116,9 +123,13 @@ title('B-field of two parallel wires');
 ylabel('B-field / T'); xlabel('distance / m');
 axis([-N*inc, N*inc, -Bmax, Bmax]);
 % Add coordinates at the intersection point
-ylineIntersection = interp1(X(1+N,:), B12(1+N,:), xlineIntersection) % Interpolate y-value at intersection
-scatter(xlineIntersection, ylineIntersection, 50, 'r', 'filled'); % Add a filled red dot at the intersection
-text(xlineIntersection+0.005, ylineIntersection-0.5e-4, sprintf('(%.3e, %.3e)', xlineIntersection, ylineIntersection), 'Color', 'red', 'FontSize', 12, 'VerticalAlignment', 'bottom');
+% Interpolate y-value at intersection
+ylineIntersection = interp1(X(1+N,:), B12(1+N,:), xlineIntersection);
+% Add a filled red dot at the intersection
+scatter(xlineIntersection, ylineIntersection, 50, 'r', 'filled'); 
+text(xlineIntersection+0.005, ylineIntersection-0.5e-4, sprintf('(%.3e, %.3e)', ...
+    xlineIntersection, ylineIntersection), 'Color', 'red', 'FontSize', 12, ...
+    'VerticalAlignment', 'bottom');
 hold off;
 
 subplot(339);
