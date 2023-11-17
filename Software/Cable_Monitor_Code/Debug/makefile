@@ -56,34 +56,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := demo_code_20230801
+BUILD_ARTIFACT_NAME := Cable_Monitor
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-demo_code_20230801.elf \
+Cable_Monitor.elf \
 
 MAP_FILES += \
-demo_code_20230801.map \
+Cable_Monitor.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-demo_code_20230801.list \
+Cable_Monitor.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: demo_code_20230801.elf secondary-outputs
+main-build: Cable_Monitor.elf secondary-outputs
 
 # Tool invocations
-demo_code_20230801.elf demo_code_20230801.map: $(OBJS) $(USER_OBJS) C:\Users\aleja\OneDrive\ -\ ZHAW\0_Modulen\3\ Jahr\Semester\ 5\PM3\PM3-Cable_Monitor\Software\Demo\demo_code_20230801\demo_code_20230801\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "demo_code_20230801.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\aleja\OneDrive - ZHAW\0_Modulen\3 Jahr\Semester 5\PM3\PM3-Cable_Monitor\Software\Demo\demo_code_20230801\demo_code_20230801\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="demo_code_20230801.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Cable_Monitor.elf Cable_Monitor.map: $(OBJS) $(USER_OBJS) C:\Users\aleja\OneDrive\ -\ ZHAW\0_Modulen\3\ Jahr\Semester\ 5\PM3\PM3-Cable_Monitor\Software\Cable_Monitor_Code\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Cable_Monitor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\aleja\OneDrive - ZHAW\0_Modulen\3 Jahr\Semester 5\PM3\PM3-Cable_Monitor\Software\Cable_Monitor_Code\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Cable_Monitor.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -92,14 +92,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-demo_code_20230801.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "demo_code_20230801.list"
+Cable_Monitor.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Cable_Monitor.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout demo_code_20230801.elf demo_code_20230801.list demo_code_20230801.map
+	-$(RM) Cable_Monitor.elf Cable_Monitor.list Cable_Monitor.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
