@@ -101,12 +101,16 @@ void MENU_hint(void)
 	BSP_LCD_SetFont(&Font12);
 	BSP_LCD_DisplayStringAt(0,30, (uint8_t *) "by Alejandro & Timo", CENTER_MODE);
 	BSP_LCD_SetFont(&Font16);
-	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Touch a menu item", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 80, (uint8_t *)"to start an ADC demo", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 110, (uint8_t *)"Switch DAC on/off", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 130, (uint8_t *)"with blue pushbutton", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"(c) hhrt@zhaw.ch", LEFT_MODE);
-	BSP_LCD_DisplayStringAt(5, 160, (uint8_t *)"Version 02.11.2022", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"1. Touch a menu item", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 80, (uint8_t *)"to start a cable", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 100, (uint8_t *)"measurement:", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 120, (uint8_t *)"Single or Accurate.", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 150, (uint8_t *)"Version: 01.00", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 170, (uint8_t *)"Data: 17.12.2023", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 190, (uint8_t *)"Authors: Horvat, Wey", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 210, (uint8_t *)"Modul: ET.PM3 ZHAW", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 230, (uint8_t *)"Lecturers: Matic &", LEFT_MODE);
+	BSP_LCD_DisplayStringAt(5, 250, (uint8_t *)"Ehrensperger", LEFT_MODE);
 }
 
 
@@ -124,6 +128,47 @@ void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry)
 	}
 }
 
+/** ***************************************************************************
+ * @brief Handler for displaying all the information on the screen.
+ * @param[in] type	Actual menu type
+ *
+ * Displays the title and information on each screen.
+ *****************************************************************************/
+void DISP_info_screen(MENU_type_t type)
+{
+	BSP_LCD_Clear(LCD_COLOR_WHITE);				// Clear the screen
+	MENU_draw(type);							// Draw the menu
+
+	switch (type) {
+	case MENU_HOME:
+		/* Show info home */
+		DISP_info_home();
+		break;
+	case MENU_M_SI:
+		/* Show info single meas. */
+		DISP_info_measurement((uint8_t *)"Single Meas.");
+		break;
+	case MENU_M_AC:
+		/* Show info accurate meas. */
+		DISP_info_measurement((uint8_t *)"Accurate Meas.");
+		break;
+	case MENU_CALI:
+		/* Show info calibration */
+		DISP_info_calibration();
+		break;
+	case MENU_C_CO:
+		/* Show coil info calibration */
+		DISP_info_cali_coil();
+		break;
+	case MENU_C_PA:
+		/* Show pad info calibration */
+		DISP_info_cali_pad();
+		break;
+	default:
+		/* Should never occur */
+		break;
+	}
+}
 
 /** ***************************************************************************
  * @brief Get a menu entry.

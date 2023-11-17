@@ -151,7 +151,7 @@ int main(void) {
 			break;
 		}
 
-		HAL_Delay(200);					// Wait or sleep
+		HAL_Delay(2);					// Wait or sleep
 	}
 }
 
