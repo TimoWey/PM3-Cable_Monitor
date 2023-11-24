@@ -19,7 +19,11 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define MENU_ENTRY_COUNT		6		///< Number of menu entries
+#define MENU_NUM_NUM_ENTRIES	5		///< Number of diffrent menu layers
+#define MENU_NUM_MENU_ELEMENTS	3		///< Number of menu elements per layer
+///< Total number of menu entries
+#define MENU_ENTRY_COUNT 		(MENU_NUM_NUM_ENTRIES * MENU_NUM_MENU_ELEMENTS)
+
 
 
 /******************************************************************************
@@ -27,8 +31,16 @@
  *****************************************************************************/
 /** Enumeration of possible menu items */
 typedef enum {
-	MENU_ZERO = 0, MENU_ONE, MENU_TWO, MENU_THREE, MENU_FOUR, MENU_FIVE, MENU_NONE
+	MENU_HOME = 0,
+	MENU_MEASUREMENTS,
+	MENU_SINGLE,
+	MENU_ACCURATE,
+	MENU_RETURN,
+	MENU_CALIBRATION,
+	MENU_INFO,
+	MENU_NONE
 } MENU_item_t;
+
 /** Struct with fields of a menu entry */
 typedef struct {
 	char line1[16];						///< First line of menu text
@@ -41,11 +53,15 @@ typedef struct {
 /******************************************************************************
  * Functions
  *****************************************************************************/
-void MENU_draw(void);
+void MENU_main(void);
+void MENU_draw(uint8_t start_item, uint8_t end_item);
 void MENU_hint(void);
+void MENU_Measurements(void);
+void MENU_Calibrations(void);
+void MENU_Info(void);
 void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry);
 MENU_entry_t MENU_get_entry(const MENU_item_t item);
-void MENU_check_transition(void);
+void MENU_check_transition(MENU_item_t menu);
 MENU_item_t MENU_get_transition(void);
 
 
