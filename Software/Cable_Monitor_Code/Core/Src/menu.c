@@ -44,19 +44,114 @@
  * Variables
  *****************************************************************************/
 static MENU_item_t MENU_transition = MENU_NONE;	///< Transition to this menu
+
 static MENU_entry_t MENU_entry[MENU_ENTRY_COUNT] = {
-		{"sin-",	"gle",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE},
-		{"Timer",	"+IRQ",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
-		{"DMA",	    "+IRQ",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
-		{"DMA",	    "dual",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
-		{"DMA",	    "scan",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTMAGENTA},
-		{"DMA",	    "scan_",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTYELLOW}
-};										///< All the menu entries
+		{"Measurement",	"-",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE},
+		{"Calibration",	"-",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+		{"Info",	    "-",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
+
+		//MEASUREMENTS
+		{"Single",		"Measurement",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE},
+		{"Accurate",	"Measurement",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE},
+		{"Return",		"to Home",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
+
+		//SINGLE
+		{"Single",		"Measurement",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE},
+		{"Return",		"to Home",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
+
+		//ACCURATE
+		{"Accurate",	"Measurement",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTBLUE},
+		{"Return",		"to Home",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
+
+		//CALIBRATION
+		{"Calibrate",	"-",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+		{"Return",		"to Home",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
+};		///< All the menu entries
 
 
 /******************************************************************************
  * Functions
  *****************************************************************************/
+
+
+/** ***************************************************************************
+ * @brief Handles the main menu state machine.
+ *
+ * Each menu entry has two lines.
+ * Text and background colors are applied.
+ * @n These attributes are defined in the variable MENU_draw[].
+ *****************************************************************************/
+void MENU_main(void)
+{
+	//static CALC_meas_data_t meas_data;
+	static MENU_item_t menu = MENU_HOME;
+
+	/* Comment next line if touchscreen interrupt is enabled */
+	MENU_check_transition(menu);
+
+	switch (MENU_get_transition())
+	{	// Handle user menu choice
+		case MENU_HOME:
+            // Handle home menu selection
+			MENU_hint();
+			MENU_draw(0, 3);
+            break;
+        case MENU_MEASUREMENTS:
+			MENU_Measurements();
+        	MENU_draw(4, 7);
+            // Handle measurements menu selection
+            break;
+        case MENU_SINGLE:
+            // Handle single menu selection
+            break;
+        case MENU_ACCURATE:
+            // Handle accurate menu selection
+            break;
+        case MENU_CALIBRATION:
+			MENU_Calibrations();
+			MENU_draw(10, 11);
+            // Handle calibration menu selection
+            break;
+        case MENU_INFO:
+			MENU_Info();
+            // Handle info menu selection
+            break;
+		case MENU_RETURN:
+			menu = MENU_HOME;
+			break;
+        case MENU_NONE:
+            // Handle none menu selection
+            break;
+        default:
+            // Handle invalid menu selection
+            break;
+		/*case MENU_ZERO:
+			ADC3_IN4_single_init();
+			ADC3_IN4_single_read();
+			break;
+		case MENU_ONE:
+			ADC3_IN4_timer_init();
+			ADC3_IN4_timer_start();
+			break;
+		case MENU_TWO:
+			ADC3_IN4_DMA_init();
+			ADC3_IN4_DMA_start();
+			break;
+		case MENU_THREE:
+			ADC1_IN13_ADC2_IN5_dual_init();
+			ADC1_IN13_ADC2_IN5_dual_start();
+			break;
+		case MENU_FOUR:
+			ADC2_IN13_IN5_scan_init();
+			ADC2_IN13_IN5_scan_start();
+			break;
+		case MENU_FIVE:
+			ADC3_IN13_IN4_scan_init();
+			ADC3_IN13_IN4_scan_start();
+			break;*/
+	}
+}
+
 
 
 /** ***************************************************************************
@@ -66,15 +161,20 @@ static MENU_entry_t MENU_entry[MENU_ENTRY_COUNT] = {
  * Text and background colors are applied.
  * @n These attributes are defined in the variable MENU_draw[].
  *****************************************************************************/
-void MENU_draw(void)
+void MENU_draw(uint8_t start_item, uint8_t end_item)
 {
+	uint8_t count = end_item - start_item;
+	
 	BSP_LCD_SetFont(MENU_FONT);
 	uint32_t x, y, m, w, h;
 	y = MENU_Y;
 	m = MENU_MARGIN;
-	w = BSP_LCD_GetXSize()/MENU_ENTRY_COUNT;
+	w = BSP_LCD_GetXSize()/count;
 	h = MENU_HEIGHT;
-	for (uint32_t i = 0; i < MENU_ENTRY_COUNT; i++) {
+	
+	
+	for (uint8_t i = start_item; i < end_item; i++) 
+	{
 		x = i*w;
 		BSP_LCD_SetTextColor(MENU_entry[i].back_color);
 		BSP_LCD_FillRect(x+m, y+m, w-2*m, h-2*m);
@@ -94,6 +194,7 @@ void MENU_draw(void)
  *****************************************************************************/
 void MENU_hint(void)
 {
+	BSP_LCD_Clear(LCD_COLOR_WHITE);
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	BSP_LCD_SetFont(&Font24);
@@ -113,6 +214,57 @@ void MENU_hint(void)
 	BSP_LCD_DisplayStringAt(5, 250, (uint8_t *)"Ehrensperger", LEFT_MODE);
 }
 
+/** ***************************************************************************
+ * @brief Shows a hint at startup.
+ *
+ *****************************************************************************/
+void MENU_Measurements(void)
+{
+	BSP_LCD_Clear(LCD_COLOR_WHITE);
+	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
+	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+	BSP_LCD_SetFont(&Font24);
+	BSP_LCD_DisplayStringAt(0,10, (uint8_t *)"Cable-Monitor", CENTER_MODE);
+	BSP_LCD_SetFont(&Font12);
+	BSP_LCD_DisplayStringAt(0,30, (uint8_t *) "by Alejandro & Timo", CENTER_MODE);
+	BSP_LCD_SetFont(&Font16);
+	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Measurements", LEFT_MODE);
+}
+
+/** ***************************************************************************
+ * @brief Shows a hint at startup.
+ *
+ *****************************************************************************/
+void MENU_Calibrations(void)
+{
+	BSP_LCD_Clear(LCD_COLOR_WHITE);
+	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
+	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+	BSP_LCD_SetFont(&Font24);
+	BSP_LCD_DisplayStringAt(0,10, (uint8_t *)"Cable-Monitor", CENTER_MODE);
+	BSP_LCD_SetFont(&Font12);
+	BSP_LCD_DisplayStringAt(0,30, (uint8_t *) "by Alejandro & Timo", CENTER_MODE);
+	BSP_LCD_SetFont(&Font16);
+	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Calibrations", LEFT_MODE);
+}
+
+/** ***************************************************************************
+ * @brief Shows a hint at startup.
+ *
+ *****************************************************************************/
+void MENU_Info(void)
+{
+	BSP_LCD_Clear(LCD_COLOR_WHITE);
+	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
+	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+	BSP_LCD_SetFont(&Font24);
+	BSP_LCD_DisplayStringAt(0,10, (uint8_t *)"Cable-Monitor", CENTER_MODE);
+	BSP_LCD_SetFont(&Font12);
+	BSP_LCD_DisplayStringAt(0,30, (uint8_t *) "by Alejandro & Timo", CENTER_MODE);
+	BSP_LCD_SetFont(&Font16);
+	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Info", LEFT_MODE);
+}
+
 
 /** ***************************************************************************
  * @brief Set a menu entry.
@@ -128,49 +280,6 @@ void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry)
 	}
 }
 
-/** ***************************************************************************
- * @brief Handler for displaying all the information on the screen.
- * @param[in] type	Actual menu type
- *
- * Displays the title and information on each screen.
- *****************************************************************************/
-void DISP_info_screen(MENU_type_t type)
-{
-	static MENU_type_t menu = MENU_HOME;
-
-	BSP_LCD_Clear(LCD_COLOR_WHITE);				// Clear the screen
-	MENU_draw(type);							// Draw the menu
-
-	switch (type) {
-	case MENU_HOME:
-		/* Show info home */
-		DISP_info_home();
-		break;
-	case MENU_M_SI:
-		/* Show info single meas. */
-		DISP_info_measurement((uint8_t *)"Single Meas.");
-		break;
-	case MENU_M_AC:
-		/* Show info accurate meas. */
-		DISP_info_measurement((uint8_t *)"Accurate Meas.");
-		break;
-	case MENU_CALI:
-		/* Show info calibration */
-		DISP_info_calibration();
-		break;
-	case MENU_C_CO:
-		/* Show coil info calibration */
-		DISP_info_cali_coil();
-		break;
-	case MENU_C_PA:
-		/* Show pad info calibration */
-		DISP_info_cali_pad();
-		break;
-	default:
-		/* Should never occur */
-		break;
-	}
-}
 
 /** ***************************************************************************
  * @brief Get a menu entry.
@@ -203,7 +312,6 @@ MENU_item_t MENU_get_transition(void)
 	return item;
 }
 
-
 /** ***************************************************************************
  * @brief Check for selection/transition
  *
@@ -214,11 +322,13 @@ MENU_item_t MENU_get_transition(void)
  * in the touch controller compared to the display.
  * Uncomment or comment the <b>\#define EVAL_REV_E</b> in main.h accordingly.
  *****************************************************************************/
-void MENU_check_transition(void)
+void MENU_check_transition(MENU_item_t menu)
 {
+
 	static MENU_item_t item_old = MENU_NONE;
 	static MENU_item_t item_new = MENU_NONE;
 	static TS_StateTypeDef  TS_State;	// State of the touch controller
+	uint32_t menu_offset = 0;
 	BSP_TS_GetState(&TS_State);			// Get the state
 
 
@@ -240,14 +350,20 @@ void MENU_check_transition(void)
 #ifdef EVAL_REV_E
 #endif
 */
+
 	if (TS_State.TouchDetected) {		// If a touch was detected
 		/* Do only if last transition not pending anymore */
 		if (MENU_NONE == MENU_transition) {
 			item_old = item_new;		// Store old item
 			/* If touched within the menu bar? */
 			if ((MENU_Y < TS_State.Y) && (MENU_Y+MENU_HEIGHT > TS_State.Y)) {
+				//Calculate which menu is next
+				if(menu < MENU_NUM_NUM_ENTRIES) {
+					menu_offset = menu*MENU_NUM_MENU_ELEMENTS; //calculate the menu
+				}
+				
 				item_new = TS_State.X	// Calculate new item
-						/ (BSP_LCD_GetXSize()/MENU_ENTRY_COUNT);
+						/ (BSP_LCD_GetXSize()/MENU_NUM_MENU_ELEMENTS);
 				if ((0 > item_new) || (MENU_ENTRY_COUNT <= item_new)) {
 					item_new = MENU_NONE;	// Out of bounds
 				}
@@ -280,7 +396,7 @@ void EXTI15_10_IRQHandler(void)
 		EXTI->PR |= EXTI_PR_PR15;		// Clear pending interrupt on line 15
 		if (BSP_TS_ITGetStatus()) {		// Get interrupt status
 			BSP_TS_ITClear();				// Clear touchscreen controller int.
-			MENU_check_transition();
+			MENU_check_transition(MENU_NONE);
 		}
 		EXTI->PR |= EXTI_PR_PR15;		// Clear pending interrupt on line 15
 	}

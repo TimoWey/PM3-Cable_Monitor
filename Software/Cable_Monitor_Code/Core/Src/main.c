@@ -69,7 +69,7 @@ int main(void) {
 
 	BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());	// Touchscreen
 	/* Uncomment next line to enable touchscreen interrupt */
-	// BSP_TS_ITConfig();					// Enable Touchscreen interrupt
+	//BSP_TS_ITConfig();					// Enable Touchscreen interrupt
 
 	PB_init();							// Initialize the user pushbutton
 	PB_enableIRQ();						// Enable interrupt on user pushbutton
@@ -77,8 +77,8 @@ int main(void) {
 	BSP_LED_Init(LED3);					// Toggles in while loop
 	BSP_LED_Init(LED4);					// Is toggled by user button
 
-	MENU_draw();						// Draw the menu
 	MENU_hint();						// Show hint at startup
+	MENU_draw(0,3);						// Draw the menu
 
 	gyro_disable();						// Disable gyro, use those analog inputs
 
@@ -119,41 +119,9 @@ int main(void) {
 
 		//DISP_info_screen();
 
-		/* Comment next line if touchscreen interrupt is enabled */
-		MENU_check_transition();
+		MENU_main();					// Check for user input
 
-		switch (MENU_get_transition()) {	// Handle user menu choice
-		case MENU_NONE:					// No transition => do nothing
-			break;
-		case MENU_ZERO:
-			ADC3_IN4_single_init();
-			ADC3_IN4_single_read();
-			break;
-		case MENU_ONE:
-			ADC3_IN4_timer_init();
-			ADC3_IN4_timer_start();
-			break;
-		case MENU_TWO:
-			ADC3_IN4_DMA_init();
-			ADC3_IN4_DMA_start();
-			break;
-		case MENU_THREE:
-			ADC1_IN13_ADC2_IN5_dual_init();
-			ADC1_IN13_ADC2_IN5_dual_start();
-			break;
-		case MENU_FOUR:
-			ADC2_IN13_IN5_scan_init();
-			ADC2_IN13_IN5_scan_start();
-			break;
-		case MENU_FIVE:
-			ADC3_IN13_IN4_scan_init();
-			ADC3_IN13_IN4_scan_start();
-			break;
-		default:						// Should never occur
-			break;
-		}
-
-		HAL_Delay(2);					// Wait or sleep
+		HAL_Delay(200);					// Wait or sleep
 	}
 }
 
