@@ -136,6 +136,8 @@ void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry)
  *****************************************************************************/
 void DISP_info_screen(MENU_type_t type)
 {
+	static MENU_type_t menu = MENU_HOME;
+
 	BSP_LCD_Clear(LCD_COLOR_WHITE);				// Clear the screen
 	MENU_draw(type);							// Draw the menu
 

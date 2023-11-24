@@ -117,6 +117,8 @@ int main(void) {
 		  HAL_Delay(3000);
 		}
 
+		//DISP_info_screen();
+
 		/* Comment next line if touchscreen interrupt is enabled */
 		MENU_check_transition();
 
