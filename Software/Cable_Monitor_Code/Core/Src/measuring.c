@@ -75,6 +75,7 @@
 #define TIM_TOP			9			///< Timer top value
 #define TIM_PRESCALE	(TIM_CLOCK/ADC_FS/(TIM_TOP+1)-1) ///< Clock prescaler
 
+#define INPUT_COUNT		4			///< Number of input channels
 
 /******************************************************************************
  * Variables
@@ -573,7 +574,26 @@ void DMA2_Stream4_IRQHandler(void)
 		MEAS_data_ready = true;
 	}
 }
+/** ***************************************************************************
+ * Measurement functions
+ *****************************************************************************/
 
+/** ***************************************************************************
+ * @brief Resets the buffer
+ * @param[in] channels	input channels
+ * @param[in] buffer	buffer pointer
+ *****************************************************************************/
+static void MEAS_Buffer_reset(uint8_t channels) {
+	/* Clear buffer and flag */
+	for (uint32_t i = 0; i < ADC_NUMS*channels; i++){
+		ADC_samples[i] = 0;
+	}
+}
+
+uint32_t MEAS_get_data(void)
+{
+	
+}
 
 /** ***************************************************************************
  * @brief Draw buffer data as curves
