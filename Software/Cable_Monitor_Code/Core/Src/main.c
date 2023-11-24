@@ -11,7 +11,6 @@
  * @date	17.06.2021
  *****************************************************************************/
 
-
 /******************************************************************************
  * Includes
  *****************************************************************************/
@@ -26,23 +25,19 @@
 #include "measuring.h"
 #include "GPIO.h"
 
-
 /******************************************************************************
  * Defines
  *****************************************************************************/
 
-
 /******************************************************************************
  * Variables
  *****************************************************************************/
-
 
 /******************************************************************************
  * Functions
  *****************************************************************************/
 static void SystemClock_Config(void);	///< System Clock Configuration
 static void gyro_disable(void);			///< Disable the onboard gyroscope
-
 
 /** ***************************************************************************
  * @brief  Main function
@@ -53,7 +48,7 @@ static void gyro_disable(void);			///< Disable the onboard gyroscope
 int main(void) {
 	HAL_Init();							// Initialize the system
 
-	SystemClock_Config();				// Configure system clocks
+	//SystemClock_Config();				// Configure system clocks
 
 	GPIO_Init();						// Init PE5 and set it to HIGH
 
@@ -70,22 +65,22 @@ int main(void) {
 	BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());	// Touchscreen
 	/* Uncomment next line to enable touchscreen interrupt */
 	// BSP_TS_ITConfig();					// Enable Touchscreen interrupt
-
 	PB_init();							// Initialize the user pushbutton
 	PB_enableIRQ();						// Enable interrupt on user pushbutton
 
 	BSP_LED_Init(LED3);					// Toggles in while loop
 	BSP_LED_Init(LED4);					// Is toggled by user button
-
+/*
 	MENU_draw();						// Draw the menu
 	MENU_hint();						// Show hint at startup
-
+*/
 	gyro_disable();						// Disable gyro, use those analog inputs
 
-	MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
+	//MEAS_GPIO_analog_init();			// Configure GPIOs in analog mode
 	MEAS_timer_init();					// Configure the timer
-	
 
+	HAL_GPIO_WritePin(GPIOE, LED_RIGHT, 0); // Set LED_Right to 0
+	HAL_GPIO_WritePin(GPIOE, LED_LEFT, 0); // Set LED_Left to 0
 
 	/* Infinite while loop */
 	while (1) {							// Infinitely loop in main function
@@ -108,17 +103,19 @@ int main(void) {
 		}
 
 		// Check if Device should power off (PE3)
-		if (HAL_GPIO_ReadPin(GPIOE, PIN_PE3) == GPIO_PIN_SET)
-		{
-		  // Set PE5 low
-		  HAL_GPIO_WritePin(GPIOE, PIN_PE5, GPIO_PIN_RESET);
+		if (HAL_GPIO_ReadPin(GPIOE, PIN_PE3) == GPIO_PIN_SET) {
+			//HAL_GPIO_WritePin(GPIOE, LED_RIGHT, GPIO_PIN_SET); // Set LED_Right to 1
+			//HAL_GPIO_WritePin(GPIOE, LED_LEFT, GPIO_PIN_SET); // Set LED_Right to 1
 
-		  // Delay for 3 seconds
-		  HAL_Delay(3000);
+			// Set PE5 low
+			HAL_GPIO_WritePin(GPIOE, PIN_PE5, GPIO_PIN_RESET);
+
+			// Delay for 3 seconds
+			HAL_Delay(3000);
 		}
 
 		/* Comment next line if touchscreen interrupt is enabled */
-		MENU_check_transition();
+		/*MENU_check_transition();
 
 		switch (MENU_get_transition()) {	// Handle user menu choice
 		case MENU_NONE:					// No transition => do nothing
@@ -151,19 +148,18 @@ int main(void) {
 			break;
 		}
 
-		HAL_Delay(200);					// Wait or sleep
+		HAL_Delay(200);					// Wait or sleep*/
 	}
 }
-
 
 /** ***************************************************************************
  * @brief System Clock Configuration
  *
  *****************************************************************************/
-static void SystemClock_Config(void){
-	RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-	RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-	RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+static void SystemClock_Config(void) {
+	RCC_OscInitTypeDef RCC_OscInitStruct = { 0 };
+	RCC_ClkInitTypeDef RCC_ClkInitStruct = { 0 };
+	RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = { 0 };
 	/* Configure the main internal regulator output voltage */
 	__HAL_RCC_PWR_CLK_ENABLE();
 	__HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
@@ -195,7 +191,6 @@ static void SystemClock_Config(void){
 	ADC->CCR |= ADC_CCR_ADCPRE_0;
 }
 
-
 /** ***************************************************************************
  * @brief Disable the GYRO on the microcontroller board.
  *
@@ -208,8 +203,7 @@ static void SystemClock_Config(void){
  * @n An other solution would be to remove the GYRO
  * from the microcontroller board by unsoldering it.
  *****************************************************************************/
-static void gyro_disable(void)
-{
+static void gyro_disable(void) {
 	__HAL_RCC_GPIOC_CLK_ENABLE();		// Enable Clock for GPIO port C
 	/* Disable PC1 and PF8 first */
 	GPIOC->MODER &= ~GPIO_MODER_MODER1_Msk;	// Reset mode for PC1
@@ -225,10 +219,13 @@ static void gyro_disable(void)
 	GPIOF->MODER |= 3UL << GPIO_MODER_MODER8_Pos; // Analog mode PF8 = ADC3_IN4
 }
 
-
 // Default function implementations required to prevent build errors.
-__attribute__((weak)) void _close(void){}
-__attribute__((weak)) void _lseek(void){}
-__attribute__((weak)) void _read(void){}
-__attribute__((weak)) void _write(void){}
+__attribute__((weak)) void _close(void) {
+}
+__attribute__((weak)) void _lseek(void) {
+}
+__attribute__((weak)) void _read(void) {
+}
+__attribute__((weak)) void _write(void) {
+}
 
