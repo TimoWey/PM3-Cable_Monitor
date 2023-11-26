@@ -77,8 +77,9 @@ int main(void) {
 	BSP_LED_Init(LED3);					// Toggles in while loop
 	BSP_LED_Init(LED4);					// Is toggled by user button
 
-	MENU_hint();						// Show hint at startup
-	MENU_draw(0,3);						// Draw the menu
+	//MENU_hint();						// Show hint at startup
+	//MENU_draw(0,3);						// Draw the menu
+	DISP_info_screen(MENU_HOME);
 
 	gyro_disable();						// Disable gyro, use those analog inputs
 
