@@ -49,29 +49,36 @@
  *****************************************************************************/
 /** Enumeration of possible menu items */
 typedef enum {
-	MENU_SING = 0,	///< Single measurement button
-	MENU_ACCU,		///< Accurate measurement button
-	MENU_CALB,		///< Calibration button
+	// Main Menu
+	MENU_MEASUREMENT = 0,		///< Measurement Menu button
+	MENU_CALIBRATION,			///< Calibration Menu button
+	MENU_INFORMATION,			///< Information Menu button
 
-	MENU_S_1P,		///< Single measurement one phase button
-	MENU_S_HO,		///< Single measurement home button
-	MENU_S_3P,		///< Single measurement three phase button
+	// Measurement Menu's
+	MENU_SINGLE_MEASUREMENT,	///< Single measurement button
+	MENU_ACCURATE_MEASUREMENT,	///< Accurate measurement button
+	MENU_RETURN_HOME,			///< Return to home button
 
-	MENU_A_1P,		///< Accurate measurement one phase button
-	MENU_A_HO,		///< Accurate measurement home button
-	MENU_A_3P,		///< Accurate measurement three phase button
+	MENU_SINGLE_1P,				///< 1 Phase measurement one phase button
+	MENU_SINGLE_3P,				///< 3 Phase measurement three phase button
+	MENU_SINGLE_HOME,			///< Return to home button
 
-	MENU_C_CI,		///< Calibration current button
-	MENU_C_HO,		///< Calibration home button
-	MENU_C_PD,		///< Calibration distance button
+	MENU_ACCURATE_1P,			///< 1 Phase measurement one phase button
+	MENU_ACCURATE_3P,			///< 3 Phase measurement three phase button
+	MENU_ACCURATE_HOME,			///< Return to home button
 
-	MENU_C_1P,		///< Calibration current one phase button
-	MENU_C_AB,		///< Calibration current aboard button
-	MENU_C_3P,		///< Calibration current three phase button
-
-	MENU_P_NE,		///< Calibration distance next button
-	MENU_P_AB,		///< Calibration distance aboard button
-	MENU_P_BA,		///< Calibration distance back button
+	// Calibration Menu's
+	MENU_CALIBRATION_I,			///< Calibration current button
+	MENU_CALIBRATION_D,			///< Calibration distance button
+	MENU_CALIBRATION_M_HOME,	///< Calibration home button
+	
+	MENU_CALIBRATION_1P,		///< Calibration current one phase button
+	MENU_CALIBRATION_3P,		///< Calibration current three phase button
+	MENU_CALIBRATION_HOME,		///< Calibration current aboard button
+	
+	MENU_P_NE,					///< Calibration distance next button
+	MENU_P_AB,					///< Calibration distance aboard button
+	MENU_P_BA,					///< Calibration distance back button
 
 	MENU_NONE		///< Do nothing
 } MENU_item_t;
@@ -83,29 +90,32 @@ static MENU_item_t MENU_transition = MENU_NONE;	///< Transition to this menu
 
 static MENU_entry_t MENU_entry[MENU_ENTRY_COUNT] =
 {
-	{"single",	"measurem.",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
-	{"accurate","measurem.",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
-	{"calibra.","screen",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTMAGENTA},
+	// Main Menu Items
+	{"Measure",	"ment",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
+	{"Cali","brate",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+	{"Info.","",				LCD_COLOR_BLACK,	LCD_COLOR_GRAY},
 
-	{"1.phase",	"measurem.",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
-	{"home",	"screen",		LCD_COLOR_WHITE,	LCD_COLOR_GRAY},
-	{"3.phase",	"measurem.",	LCD_COLOR_WHITE,	LCD_COLOR_DARKCYAN},
+	// Measurement Menu Items
+	{"Single",	"",				LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
+	{"Accurate", "",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+	{"Return",	"To Home.",		LCD_COLOR_BLACK,	LCD_COLOR_GRAY},
 
-	{"1.phase",	"measurem.",	LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
-	{"home",	"screen",		LCD_COLOR_WHITE,	LCD_COLOR_GRAY},
-	{"3.phase",	"measurem.",	LCD_COLOR_WHITE,	LCD_COLOR_DARKGREEN},
+	{"1.phase",	"",				LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
+	{"3.phase",	"",				LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+	{"Return",	"To Home.",		LCD_COLOR_BLACK,	LCD_COLOR_GRAY},
 
-	{"calibra.","current",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
-	{"home",	"screen",		LCD_COLOR_WHITE,	LCD_COLOR_GRAY},
-	{"calibra.","distance",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTYELLOW},
+	{"1.phase",	".",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
+	{"3.phase",	".",			LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+	{"Return",	"To Home.",		LCD_COLOR_BLACK,	LCD_COLOR_GRAY},
 
-	{"1.phase",	"current",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTRED},
-	{"abort",	"current",		LCD_COLOR_WHITE,	LCD_COLOR_GRAY},
-	{"3.phase", "current",		LCD_COLOR_WHITE,	LCD_COLOR_BROWN},
+	// Calibration Menu Items
+	{"calibra.","current",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
+	{"home",	"screen",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+	{"calibra.","distance",		LCD_COLOR_BLACK,	LCD_COLOR_GRAY},
 
-	{"next",	"distance",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTYELLOW},
-	{"abort",	"distance",		LCD_COLOR_WHITE,	LCD_COLOR_GRAY},
-	{"back",	"distance",		LCD_COLOR_WHITE,	LCD_COLOR_ORANGE},
+	{"next",	"distance",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTCYAN},
+	{"abort",	"distance",		LCD_COLOR_BLACK,	LCD_COLOR_LIGHTGREEN},
+	{"back",	"distance",		LCD_COLOR_BLACK,	LCD_COLOR_GRAY},
 };		///< first block home menu, second meas single, third meas accurate,
 		///< fourth calibration, fifth cali current, sixth cali distance		///< All the menu entries
 
@@ -130,96 +140,95 @@ void MENU_main(void)
 
 	MENU_check_transition(menu);
 
-	switch (MENU_get_transition()) {	// Handle user menu choice
-	case MENU_NONE:						// No transition => do nothing
-		break;
+	switch (MENU_get_transition()) 
+	{	// Handle user menu choice
+		case MENU_NONE:						// No transition => do nothing
+			break;
 
-	case MENU_SING:
-		menu = MENU_M_SI;
-		DISP_info_screen(menu);			// Show single meas. menu
-		break;
-	case MENU_ACCU:
-		menu = MENU_M_AC;
-		DISP_info_screen(menu);			// Show accurate meas. menu
-		break;
-	case MENU_CALB:
-		menu = MENU_CALI;
-		DISP_info_screen(menu);			// Show calibration menu
-		break;
-
-	case MENU_S_1P:
-		//CALC_start_single_measurement(&meas_data, CALC_ONE_PHASE);
-		//DISP_value_screen_sing(meas_data, CALC_ONE_PHASE);
-		break;
-	case MENU_S_3P:
-		//CALC_start_single_measurement(&meas_data, CALC_THREE_PHASE);
-		//DISP_value_screen_sing(meas_data, CALC_THREE_PHASE);
-		break;
-
-	case MENU_A_1P:
-		//CALC_start_accurate_measurement(&meas_data, CALC_ONE_PHASE);
-		//DISP_value_screen_accu(meas_data, CALC_ONE_PHASE);
-		break;
-	case MENU_A_3P:
-		//CALC_start_accurate_measurement(&meas_data, CALC_THREE_PHASE);
-		//DISP_value_screen_accu(meas_data, CALC_THREE_PHASE);
-		break;
-
-	case MENU_C_PD:
-		menu = MENU_C_PA;
-		DISP_info_screen(menu);			// Show distance calibration menu
-		break;
-	case MENU_C_CI:
-		menu = MENU_C_CO;
-		DISP_info_screen(menu);			// Show current calibration menu
-		break;
-
-	case MENU_C_1P:
-		/*if (MENU_coil_cali(MENU_C_1P) >= CALC_CALI_C_END) {
+		case MENU_MEASUREMENT:
+			menu = MENU_M;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+		case MENU_CALIBRATION:
 			menu = MENU_CALI;
-			DISP_info_screen(menu);		// Show calibration menu
-		}*/
-		break;
-	case MENU_C_AB:
-		/*if (MENU_coil_cali(MENU_C_AB) >= CALC_CALI_C_END) {
-			menu = MENU_CALI;
-			DISP_info_screen(menu);		// Show calibration menu
-		}*/
-		break;
-	case MENU_C_3P:
-		/*if (MENU_coil_cali(MENU_C_3P) >= CALC_CALI_C_END) {
-			menu = MENU_CALI;
-			DISP_info_screen(menu);		// Show calibration menu
-		}*/
-		break;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+		case MENU_INFORMATION:
+			menu = MENU_INFO;
+			DISP_info_screen(menu);					// Show the menu
+			break;
 
-	case MENU_P_NE:
-		/*if (MENU_pad_cali(MENU_P_NE) >= CALC_CALI_P_END) {
-			menu = MENU_CALI;
-			DISP_info_screen(menu);		// Show calibration menu
-		}*/
-		break;
-	case MENU_P_AB:
-		/*if (MENU_pad_cali(MENU_P_AB) >= CALC_CALI_P_END) {
-			menu = MENU_CALI;
-			DISP_info_screen(menu);		// Show calibration menu
-		}*/
-		break;
-	case MENU_P_BA:
-		/*if (MENU_pad_cali(MENU_P_BA) >= CALC_CALI_P_END) {
-			menu = MENU_CALI;
-			DISP_info_screen(menu);		// Show calibration menu
-		}*/
-		break;
+		case MENU_SINGLE_1P:
+			//CALC_start_single_measurement(&meas_data, CALC_ONE_PHASE);
+			//DISP_value_screen_sing(meas_data, CALC_ONE_PHASE);
+			break;
+		case MENU_SINGLE_3P:
+			//CALC_start_single_measurement(&meas_data, CALC_THREE_PHASE);
+			//DISP_value_screen_sing(meas_data, CALC_THREE_PHASE);
+			break;
 
-	case MENU_C_HO:
-	case MENU_A_HO:
-	case MENU_S_HO:
-		menu = MENU_HOME;
-		DISP_info_screen(menu);			// Show home menu
-		break;
-	default:							// Should never occur
-		break;
+		case MENU_ACCURATE_1P:
+			//CALC_start_accurate_measurement(&meas_data, CALC_ONE_PHASE);
+			//DISP_value_screen_accu(meas_data, CALC_ONE_PHASE);
+			break;
+		case MENU_ACCURATE_HOME:
+			//CALC_start_accurate_measurement(&meas_data, CALC_THREE_PHASE);
+			//DISP_value_screen_accu(meas_data, CALC_THREE_PHASE);
+			break;
+
+		case MENU_CALIBRATION_D:
+			menu = MENU_C_PA;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+		case MENU_CALIBRATION_I:
+			menu = MENU_C_CO;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+
+		case MENU_CALIBRATION_1P:
+			/*if (MENU_coil_cali(MENU_CALIBRATION_1P) >= CALC_CALI_C_END) {
+				menu = MENU_CALI;
+				DISP_info_screen(menu);		// Show calibration menu
+			}*/
+			break;
+		case MENU_CALIBRATION_HOME:
+			/*if (MENU_coil_cali(MENU_CALIBRATION_HOME) >= CALC_CALI_C_END) {
+				menu = MENU_CALI;
+				DISP_info_screen(menu);		// Show calibration menu
+			}*/
+			break;
+		case MENU_CALIBRATION_3P:
+			/*if (MENU_coil_cali(MENU_CALIBRATION_3P) >= CALC_CALI_C_END) {
+				menu = MENU_CALI;
+				DISP_info_screen(menu);		// Show calibration menu
+			}*/
+			break;
+
+		case MENU_P_NE:
+			/*if (MENU_pad_cali(MENU_P_NE) >= CALC_CALI_P_END) {
+				menu = MENU_CALI;
+				DISP_info_screen(menu);		// Show calibration menu
+			}*/
+			break;
+		case MENU_P_AB:
+			/*if (MENU_pad_cali(MENU_P_AB) >= CALC_CALI_P_END) {
+				menu = MENU_CALI;
+				DISP_info_screen(menu);		// Show calibration menu
+			}*/
+			break;
+		case MENU_P_BA:
+			/*if (MENU_pad_cali(MENU_P_BA) >= CALC_CALI_P_END) {
+				menu = MENU_CALI;
+				DISP_info_screen(menu);		// Show calibration menu
+			}*/
+			break;
+
+		case MENU_CALIBRATION_M_HOME:
+		case MENU_ACCURATE_3P:
+		case MENU_SINGLE_HOME:
+			break;
+		default:							// Should never occur
+			break;
 	}
 }
 
@@ -237,26 +246,45 @@ void DISP_info_screen(MENU_type_t type)
 	switch (type) {
 	case MENU_HOME:
 		/* Show info home */
-		MENU_hint();
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: HOME", LEFT_MODE);
 		break;
+	
+	case MENU_INFO:
+		/* Show info info */
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Info", LEFT_MODE);
+		//MENU_Info();
+		break;
+
+	case MENU_M:
+		/* Show measurement menu */
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Measurement", LEFT_MODE);
+		//MENU_Measurements();
+		break;
+
 	case MENU_M_SI:
 		/* Show info single meas. */
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Meas. Single", LEFT_MODE);
 		//DISP_info_measurement((uint8_t *)"Single Meas.");
 		break;
 	case MENU_M_AC:
 		/* Show info accurate meas. */
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Meas. acc", LEFT_MODE);
 		//DISP_info_measurement((uint8_t *)"Accurate Meas.");
 		break;
 	case MENU_CALI:
 		/* Show info calibration */
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: calibration", LEFT_MODE);
+		//MENU_Calibrations();
 		//DISP_info_calibration();
 		break;
 	case MENU_C_CO:
 		/* Show coil info calibration */
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: cali coil", LEFT_MODE);
 		//DISP_info_cali_coil();
 		break;
 	case MENU_C_PA:
 		/* Show pad info calibration */
+		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: cali pad", LEFT_MODE);
 		//DISP_info_cali_pad();
 		break;
 	default:
@@ -305,7 +333,6 @@ void MENU_draw(MENU_type_t type)
  *****************************************************************************/
 void MENU_hint(void)
 {
-	//BSP_LCD_Clear(LCD_COLOR_WHITE);
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	BSP_LCD_SetFont(&Font24);
@@ -331,7 +358,6 @@ void MENU_hint(void)
  *****************************************************************************/
 void MENU_Measurements(void)
 {
-	BSP_LCD_Clear(LCD_COLOR_WHITE);
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	BSP_LCD_SetFont(&Font24);
@@ -348,7 +374,6 @@ void MENU_Measurements(void)
  *****************************************************************************/
 void MENU_Calibrations(void)
 {
-	BSP_LCD_Clear(LCD_COLOR_WHITE);
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	BSP_LCD_SetFont(&Font24);
@@ -365,7 +390,6 @@ void MENU_Calibrations(void)
  *****************************************************************************/
 void MENU_Info(void)
 {
-	BSP_LCD_Clear(LCD_COLOR_WHITE);
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	BSP_LCD_SetFont(&Font24);

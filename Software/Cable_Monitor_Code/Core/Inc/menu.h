@@ -27,11 +27,13 @@
 /** Enumeration of possible main menu types */
 typedef enum {
 	MENU_HOME = 0, 	///< Home menu
+	MENU_M, 		///< Measurement menu
 	MENU_M_SI, 		///< Single measurement menu
 	MENU_M_AC, 		///< Accurate measurement menu
 	MENU_CALI, 		///< Calibration menu
 	MENU_C_CO, 		///< Current calibration menu
-	MENU_C_PA 		///< Distance calibration menu
+	MENU_C_PA, 		///< Distance calibration menu
+	MENU_INFO		///< Info menu
 } MENU_type_t;
 
 
