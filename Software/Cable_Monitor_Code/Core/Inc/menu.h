@@ -19,34 +19,28 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define MENU_NUM_NUM_ENTRIES	5		///< Number of diffrent menu layers
-#define MENU_NUM_MENU_ELEMENTS	3		///< Number of menu elements per layer
-///< Total number of menu entries
-#define MENU_ENTRY_COUNT 		(MENU_NUM_NUM_ENTRIES * MENU_NUM_MENU_ELEMENTS)
-
 
 
 /******************************************************************************
  * Types
  *****************************************************************************/
-/** Enumeration of possible menu items */
+/** Enumeration of possible main menu types */
 typedef enum {
-	MENU_HOME = 0,
-	MENU_MEASUREMENTS,
-	MENU_SINGLE,
-	MENU_ACCURATE,
-	MENU_RETURN,
-	MENU_CALIBRATION,
-	MENU_INFO,
-	MENU_NONE
-} MENU_item_t;
+	MENU_HOME = 0, 	///< Home menu
+	MENU_M_SI, 		///< Single measurement menu
+	MENU_M_AC, 		///< Accurate measurement menu
+	MENU_CALI, 		///< Calibration menu
+	MENU_C_CO, 		///< Current calibration menu
+	MENU_C_PA 		///< Distance calibration menu
+} MENU_type_t;
+
 
 /** Struct with fields of a menu entry */
 typedef struct {
-	char line1[16];						///< First line of menu text
-	char line2[16];						///< Second line of menu text
-	uint32_t text_color;				///< Text color
-	uint32_t back_color;				///< Background color
+	char line1[16]; 		///< First line of menu text
+	char line2[16]; 		///< Second line of menu text
+	uint32_t text_color; 	///< Text color
+	uint32_t back_color; 	///< Background color
 } MENU_entry_t;
 
 
@@ -54,15 +48,12 @@ typedef struct {
  * Functions
  *****************************************************************************/
 void MENU_main(void);
-void MENU_draw(uint8_t start_item, uint8_t end_item);
+void MENU_draw(MENU_type_t type);
 void MENU_hint(void);
 void MENU_Measurements(void);
 void MENU_Calibrations(void);
 void MENU_Info(void);
-void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry);
-MENU_entry_t MENU_get_entry(const MENU_item_t item);
-void MENU_check_transition(MENU_item_t menu);
-MENU_item_t MENU_get_transition(void);
+void DISP_info_screen(MENU_type_t type);
 
 
 #endif
