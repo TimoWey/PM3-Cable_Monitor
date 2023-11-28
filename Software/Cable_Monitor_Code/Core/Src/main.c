@@ -122,7 +122,7 @@ int main(void) {
 
 		MENU_main();					// Check for user input
 
-		HAL_Delay(200);					// Wait or sleep
+		HAL_Delay(100);					// Wait or sleep
 	}
 }
 
