@@ -145,6 +145,7 @@ void MENU_main(void)
 		case MENU_NONE:						// No transition => do nothing
 			break;
 
+		// Main Menu
 		case MENU_MEASUREMENT:
 			menu = MENU_M;
 			DISP_info_screen(menu);					// Show the menu
@@ -158,6 +159,21 @@ void MENU_main(void)
 			DISP_info_screen(menu);					// Show the menu
 			break;
 
+		// Measurement Menu
+		case MENU_SINGLE_MEASUREMENT:
+			menu = MENU_M_SI;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+		case MENU_ACCURATE_MEASUREMENT:
+			menu = MENU_M_AC;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+		case MENU_RETURN_HOME:
+			menu = MENU_HOME;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+
+		// Single Measurement Menu
 		case MENU_SINGLE_1P:
 			//CALC_start_single_measurement(&meas_data, CALC_ONE_PHASE);
 			//DISP_value_screen_sing(meas_data, CALC_ONE_PHASE);
@@ -166,15 +182,36 @@ void MENU_main(void)
 			//CALC_start_single_measurement(&meas_data, CALC_THREE_PHASE);
 			//DISP_value_screen_sing(meas_data, CALC_THREE_PHASE);
 			break;
+		case MENU_SINGLE_HOME:
+			menu = MENU_HOME;
+			DISP_info_screen(menu);					// Show the menu
+			break;
 
+		// Accurate Measurement Menu
 		case MENU_ACCURATE_1P:
 			//CALC_start_accurate_measurement(&meas_data, CALC_ONE_PHASE);
 			//DISP_value_screen_accu(meas_data, CALC_ONE_PHASE);
 			break;
-		case MENU_ACCURATE_HOME:
+		case MENU_ACCURATE_3P:
 			//CALC_start_accurate_measurement(&meas_data, CALC_THREE_PHASE);
 			//DISP_value_screen_accu(meas_data, CALC_THREE_PHASE);
 			break;
+		case MENU_ACCURATE_HOME:
+			menu = MENU_HOME;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+
+		// Single Calibration Menu
+		//TODO:
+		//calibrate current
+		//calibrate distance
+
+		case MENU_CALIBRATION_M_HOME:
+			menu = MENU_HOME;
+			DISP_info_screen(menu);					// Show the menu
+			break;
+
+		
 
 		case MENU_CALIBRATION_D:
 			menu = MENU_C_PA;
@@ -223,10 +260,6 @@ void MENU_main(void)
 			}*/
 			break;
 
-		case MENU_CALIBRATION_M_HOME:
-		case MENU_ACCURATE_3P:
-		case MENU_SINGLE_HOME:
-			break;
 		default:							// Should never occur
 			break;
 	}
@@ -243,53 +276,54 @@ void DISP_info_screen(MENU_type_t type)
 	BSP_LCD_Clear(LCD_COLOR_WHITE);		//Clear display
 	MENU_draw(type);					//Draw the home menu
 
-	switch (type) {
-	case MENU_HOME:
-		/* Show info home */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: HOME", LEFT_MODE);
-		break;
-	
-	case MENU_INFO:
-		/* Show info info */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Info", LEFT_MODE);
-		//MENU_Info();
-		break;
+	switch (type) 
+	{
+		case MENU_HOME:
+			/* Show info home */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: HOME", LEFT_MODE);
+			break;
+		
+		case MENU_INFO:
+			/* Show info info */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Info", LEFT_MODE);
+			//MENU_Info();
+			break;
 
-	case MENU_M:
-		/* Show measurement menu */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Measurement", LEFT_MODE);
-		//MENU_Measurements();
-		break;
+		case MENU_M:
+			/* Show measurement menu */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Measurement", LEFT_MODE);
+			//MENU_Measurements();
+			break;
 
-	case MENU_M_SI:
-		/* Show info single meas. */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Meas. Single", LEFT_MODE);
-		//DISP_info_measurement((uint8_t *)"Single Meas.");
-		break;
-	case MENU_M_AC:
-		/* Show info accurate meas. */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Meas. acc", LEFT_MODE);
-		//DISP_info_measurement((uint8_t *)"Accurate Meas.");
-		break;
-	case MENU_CALI:
-		/* Show info calibration */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: calibration", LEFT_MODE);
-		//MENU_Calibrations();
-		//DISP_info_calibration();
-		break;
-	case MENU_C_CO:
-		/* Show coil info calibration */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: cali coil", LEFT_MODE);
-		//DISP_info_cali_coil();
-		break;
-	case MENU_C_PA:
-		/* Show pad info calibration */
-		BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: cali pad", LEFT_MODE);
-		//DISP_info_cali_pad();
-		break;
-	default:
-		/* Should never occur */
-		break;
+		case MENU_M_SI:
+			/* Show info single meas. */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Meas. Single", LEFT_MODE);
+			//DISP_info_measurement((uint8_t *)"Single Meas.");
+			break;
+		case MENU_M_AC:
+			/* Show info accurate meas. */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Meas. acc", LEFT_MODE);
+			//DISP_info_measurement((uint8_t *)"Accurate Meas.");
+			break;
+		case MENU_CALI:
+			/* Show info calibration */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: calibration", LEFT_MODE);
+			//MENU_Calibrations();
+			//DISP_info_calibration();
+			break;
+		case MENU_C_CO:
+			/* Show coil info calibration */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: cali coil", LEFT_MODE);
+			//DISP_info_cali_coil();
+			break;
+		case MENU_C_PA:
+			/* Show pad info calibration */
+			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: cali pad", LEFT_MODE);
+			//DISP_info_cali_pad();
+			break;
+		default:
+			/* Should never occur */
+			break;
 	}
 }
 
@@ -324,6 +358,20 @@ void MENU_draw(MENU_type_t type)
 				(uint8_t *)MENU_entry[i+offset].line1, LEFT_MODE);
 		BSP_LCD_DisplayStringAt(x+3*m, y+h/2,
 				(uint8_t *)MENU_entry[i+offset].line2, LEFT_MODE);
+	}
+}
+
+/** ***************************************************************************
+ * @brief Set a menu entry.
+ * @param [in] item number of menu bar
+ * @param [in] entry attributes for that item
+ *
+ * @note Call MENU_draw() to update the display.
+ *****************************************************************************/
+void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry)
+{
+	if ((0 <= item) && (MENU_ENTRY_COUNT > item)) {
+		MENU_entry[item] = entry;
 	}
 }
 
@@ -401,19 +449,7 @@ void MENU_Info(void)
 }
 
 
-/** ***************************************************************************
- * @brief Set a menu entry.
- * @param [in] item number of menu bar
- * @param [in] entry attributes for that item
- *
- * @note Call MENU_draw() to update the display.
- *****************************************************************************/
-void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry)
-{
-	if ((0 <= item) && (MENU_ENTRY_COUNT > item)) {
-		MENU_entry[item] = entry;
-	}
-}
+
 
 
 /** ***************************************************************************
