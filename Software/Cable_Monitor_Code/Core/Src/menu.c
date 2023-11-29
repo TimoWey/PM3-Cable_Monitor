@@ -285,8 +285,7 @@ void DISP_info_screen(MENU_type_t type)
 		
 		case MENU_INFO:
 			/* Show info info */
-			BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Info", LEFT_MODE);
-			//MENU_Info();
+			MENU_Info();
 			break;
 
 		case MENU_M:
@@ -376,10 +375,10 @@ void MENU_set_entry(const MENU_item_t item, const MENU_entry_t entry)
 }
 
 /** ***************************************************************************
- * @brief Shows a hint at startup.
+ * @brief Show some information about the Cable-Monitor.
  *
  *****************************************************************************/
-void MENU_hint(void)
+void MENU_Info(void)
 {
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
@@ -431,26 +430,6 @@ void MENU_Calibrations(void)
 	BSP_LCD_SetFont(&Font16);
 	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Calibrations", LEFT_MODE);
 }
-
-/** ***************************************************************************
- * @brief Shows a hint at startup.
- *
- *****************************************************************************/
-void MENU_Info(void)
-{
-	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
-	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-	BSP_LCD_SetFont(&Font24);
-	BSP_LCD_DisplayStringAt(0,10, (uint8_t *)"Cable-Monitor", CENTER_MODE);
-	BSP_LCD_SetFont(&Font12);
-	BSP_LCD_DisplayStringAt(0,30, (uint8_t *) "by Alejandro & Timo", CENTER_MODE);
-	BSP_LCD_SetFont(&Font16);
-	BSP_LCD_DisplayStringAt(5, 60, (uint8_t *)"Menu: Info", LEFT_MODE);
-}
-
-
-
-
 
 /** ***************************************************************************
  * @brief Get a menu entry.
