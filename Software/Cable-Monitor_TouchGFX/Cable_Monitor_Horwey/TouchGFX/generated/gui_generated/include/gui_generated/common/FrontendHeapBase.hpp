@@ -9,6 +9,9 @@
 #include <mvp/MVPHeap.hpp>
 
 #include <touchgfx/transitions/NoTransition.hpp>
+#include <touchgfx/transitions/WipeTransition.hpp>
+#include <touchgfx/transitions/SlideTransition.hpp>
+
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
@@ -16,6 +19,14 @@
 #include <gui/main_menu_screen/Main_MenuPresenter.hpp>
 #include <gui/measurement_screen/MeasurementView.hpp>
 #include <gui/measurement_screen/MeasurementPresenter.hpp>
+#include <gui/measurement_single_screen/Measurement_SingleView.hpp>
+#include <gui/measurement_single_screen/Measurement_SinglePresenter.hpp>
+#include <gui/measurement_single_display_screen/Measurement_Single_DisplayView.hpp>
+#include <gui/measurement_single_display_screen/Measurement_Single_DisplayPresenter.hpp>
+#include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp>
+#include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp>
+#include <gui/measurement_accurate_screen/Measurement_AccurateView.hpp>
+#include <gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp>
 #include <gui/calibration_screen/CalibrationView.hpp>
 #include <gui/calibration_screen/CalibrationPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
@@ -44,9 +55,13 @@ public:
      */
     typedef touchgfx::meta::TypeList< Main_MenuView,
             touchgfx::meta::TypeList< MeasurementView,
+            touchgfx::meta::TypeList< Measurement_SingleView,
+            touchgfx::meta::TypeList< Measurement_Single_DisplayView,
+            touchgfx::meta::TypeList< Measurement_Accurate_DisplayView,
+            touchgfx::meta::TypeList< Measurement_AccurateView,
             touchgfx::meta::TypeList< CalibrationView,
             touchgfx::meta::TypeList< Project_InfoView,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -60,9 +75,13 @@ public:
      */
     typedef touchgfx::meta::TypeList< Main_MenuPresenter,
             touchgfx::meta::TypeList< MeasurementPresenter,
+            touchgfx::meta::TypeList< Measurement_SinglePresenter,
+            touchgfx::meta::TypeList< Measurement_Single_DisplayPresenter,
+            touchgfx::meta::TypeList< Measurement_Accurate_DisplayPresenter,
+            touchgfx::meta::TypeList< Measurement_AccuratePresenter,
             touchgfx::meta::TypeList< CalibrationPresenter,
             touchgfx::meta::TypeList< Project_InfoPresenter,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -75,7 +94,11 @@ public:
      * @note All transition types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< WipeTransition<EAST>,
+            touchgfx::meta::TypeList< WipeTransition<WEST>,
+            touchgfx::meta::TypeList< SlideTransition<EAST>,
+            touchgfx::meta::TypeList< SlideTransition<WEST>,
+            touchgfx::meta::Nil > > > >
             > GeneratedTransitionTypes;
 
     /**

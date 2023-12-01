@@ -9,6 +9,8 @@
 #include <gui/main_menu_screen/Main_MenuPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
@@ -29,6 +31,8 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
+    touchgfx::Line line1;
+    touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
     touchgfx::ButtonWithLabel buttonWithLabel3;
@@ -36,6 +40,12 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel1;
 
 private:
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint32_t CANVAS_BUFFER_SIZE = 3600;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
     /*
      * Callback Declarations
