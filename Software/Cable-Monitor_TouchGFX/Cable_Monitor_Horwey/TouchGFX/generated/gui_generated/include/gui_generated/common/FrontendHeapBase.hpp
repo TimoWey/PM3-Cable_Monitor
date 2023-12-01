@@ -21,8 +21,10 @@
 #include <gui/measurement_screen/MeasurementPresenter.hpp>
 #include <gui/measurement_single_screen/Measurement_SingleView.hpp>
 #include <gui/measurement_single_screen/Measurement_SinglePresenter.hpp>
-#include <gui/measurement_single_display_screen/Measurement_Single_DisplayView.hpp>
-#include <gui/measurement_single_display_screen/Measurement_Single_DisplayPresenter.hpp>
+#include <gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp>
+#include <gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp>
+#include <gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp>
+#include <gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp>
 #include <gui/measurement_accurate_screen/Measurement_AccurateView.hpp>
@@ -56,12 +58,13 @@ public:
     typedef touchgfx::meta::TypeList< Main_MenuView,
             touchgfx::meta::TypeList< MeasurementView,
             touchgfx::meta::TypeList< Measurement_SingleView,
-            touchgfx::meta::TypeList< Measurement_Single_DisplayView,
+            touchgfx::meta::TypeList< Measurement_Single_Display_1PView,
+            touchgfx::meta::TypeList< Measurement_Single_Display_3PView,
             touchgfx::meta::TypeList< Measurement_Accurate_DisplayView,
             touchgfx::meta::TypeList< Measurement_AccurateView,
             touchgfx::meta::TypeList< CalibrationView,
             touchgfx::meta::TypeList< Project_InfoView,
-            touchgfx::meta::Nil > > > > > > >
+            touchgfx::meta::Nil > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -76,12 +79,13 @@ public:
     typedef touchgfx::meta::TypeList< Main_MenuPresenter,
             touchgfx::meta::TypeList< MeasurementPresenter,
             touchgfx::meta::TypeList< Measurement_SinglePresenter,
-            touchgfx::meta::TypeList< Measurement_Single_DisplayPresenter,
+            touchgfx::meta::TypeList< Measurement_Single_Display_1PPresenter,
+            touchgfx::meta::TypeList< Measurement_Single_Display_3PPresenter,
             touchgfx::meta::TypeList< Measurement_Accurate_DisplayPresenter,
             touchgfx::meta::TypeList< Measurement_AccuratePresenter,
             touchgfx::meta::TypeList< CalibrationPresenter,
             touchgfx::meta::TypeList< Project_InfoPresenter,
-            touchgfx::meta::Nil > > > > > > >
+            touchgfx::meta::Nil > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

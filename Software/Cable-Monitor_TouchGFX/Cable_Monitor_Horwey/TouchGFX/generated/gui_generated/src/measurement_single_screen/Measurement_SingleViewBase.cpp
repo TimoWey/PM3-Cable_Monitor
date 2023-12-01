@@ -54,6 +54,7 @@ Measurement_SingleViewBase::Measurement_SingleViewBase() :
     buttonWithLabel2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_3S2P));
     buttonWithLabel2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel2.setAction(buttonCallback);
     add(buttonWithLabel2);
 
     buttonWithLabel1.setXY(33, 100);
@@ -87,8 +88,15 @@ void Measurement_SingleViewBase::buttonCallbackHandler(const touchgfx::AbstractB
     if (&src == &buttonWithLabel1)
     {
         //Interaction2
-        //When buttonWithLabel1 clicked change screen to Measurement_Single_Display
-        //Go to Measurement_Single_Display with screen transition towards East
-        application().gotoMeasurement_Single_DisplayScreenSlideTransitionEast();
+        //When buttonWithLabel1 clicked change screen to Measurement_Single_Display_1P
+        //Go to Measurement_Single_Display_1P with screen transition towards East
+        application().gotoMeasurement_Single_Display_1PScreenSlideTransitionEast();
+    }
+    if (&src == &buttonWithLabel2)
+    {
+        //Interaction3
+        //When buttonWithLabel2 clicked change screen to Measurement_Single_Display_3P
+        //Go to Measurement_Single_Display_3P with screen transition towards East
+        application().gotoMeasurement_Single_Display_3PScreenWipeTransitionEast();
     }
 }

@@ -63,7 +63,8 @@ TouchGFX/build/STM32F429IDISCO/TouchGFX/gui/src/main_menu_screen/Main_MenuPresen
  Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp
 
 TouchGFX/gui/include/gui/main_menu_screen/Main_MenuView.hpp:
 
@@ -192,3 +193,5 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp:

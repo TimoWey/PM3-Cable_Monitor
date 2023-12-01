@@ -102,14 +102,20 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/measurement_single_screen/Measurement_SingleView.hpp \
  generated/gui_generated/include/gui_generated/measurement_single_screen/Measurement_SingleViewBase.hpp \
  gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp \
- gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayView.hpp \
- generated/gui_generated/include/gui_generated/measurement_single_display_screen/Measurement_Single_DisplayViewBase.hpp \
- gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayPresenter.hpp \
+ gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp \
+ generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp \
+ gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp \
+ gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp \
+ generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp \
+ gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp \
+ gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp \
+ generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp \
+ gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp \
  gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
  generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
@@ -335,11 +341,11 @@ generated/gui_generated/include/gui_generated/measurement_single_screen/Measurem
 
 gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp:
 
-gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayView.hpp:
+gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp:
 
-generated/gui_generated/include/gui_generated/measurement_single_display_screen/Measurement_Single_DisplayViewBase.hpp:
+generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp:
 
-gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayPresenter.hpp:
+gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
 
@@ -350,6 +356,18 @@ gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayPres
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
+
+gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp:
+
+generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp:
+
+gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp:
+
+gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp:
+
+generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp:
+
+gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp:
 
 gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
 

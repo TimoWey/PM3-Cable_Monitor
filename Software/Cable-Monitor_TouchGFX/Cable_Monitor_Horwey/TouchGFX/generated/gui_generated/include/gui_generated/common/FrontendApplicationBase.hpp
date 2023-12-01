@@ -35,8 +35,11 @@ public:
 
     void gotoMeasurement_SingleScreenSlideTransitionWest();
 
-    // Measurement_Single_Display
-    void gotoMeasurement_Single_DisplayScreenSlideTransitionEast();
+    // Measurement_Single_Display_1P
+    void gotoMeasurement_Single_Display_1PScreenSlideTransitionEast();
+
+    // Measurement_Single_Display_3P
+    void gotoMeasurement_Single_Display_3PScreenWipeTransitionEast();
 
     // Calibration
     void gotoCalibrationScreenWipeTransitionEast();
@@ -64,8 +67,11 @@ protected:
 
     void gotoMeasurement_SingleScreenSlideTransitionWestImpl();
 
-    // Measurement_Single_Display
-    void gotoMeasurement_Single_DisplayScreenSlideTransitionEastImpl();
+    // Measurement_Single_Display_1P
+    void gotoMeasurement_Single_Display_1PScreenSlideTransitionEastImpl();
+
+    // Measurement_Single_Display_3P
+    void gotoMeasurement_Single_Display_3PScreenWipeTransitionEastImpl();
 
     // Calibration
     void gotoCalibrationScreenWipeTransitionEastImpl();

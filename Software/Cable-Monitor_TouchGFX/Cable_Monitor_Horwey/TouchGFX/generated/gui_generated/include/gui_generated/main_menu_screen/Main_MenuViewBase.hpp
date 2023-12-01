@@ -13,6 +13,7 @@
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
 
 class Main_MenuViewBase : public touchgfx::View<Main_MenuPresenter>
 {
@@ -20,6 +21,14 @@ public:
     Main_MenuViewBase();
     virtual ~Main_MenuViewBase();
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void Device_off()
+    {
+        // Override and implement this function in Main_Menu
+    }
 
 protected:
     FrontendApplication& application() {
@@ -38,6 +47,7 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel3;
     touchgfx::ButtonWithLabel buttonWithLabel2;
     touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::ButtonWithIcon buttonWithIcon1;
 
 private:
 

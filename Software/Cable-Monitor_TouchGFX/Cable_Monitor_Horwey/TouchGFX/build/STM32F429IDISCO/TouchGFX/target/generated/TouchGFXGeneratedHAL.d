@@ -75,20 +75,27 @@ TouchGFX/build/STM32F429IDISCO/TouchGFX/target/generated/TouchGFXGeneratedHAL.o:
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
  TouchGFX/gui/include/gui/measurement_screen/MeasurementView.hpp \
  TouchGFX/generated/gui_generated/include/gui_generated/measurement_screen/MeasurementViewBase.hpp \
  TouchGFX/gui/include/gui/measurement_screen/MeasurementPresenter.hpp \
  TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SingleView.hpp \
  TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_screen/Measurement_SingleViewBase.hpp \
  TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp \
- TouchGFX/gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayView.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_screen/Measurement_Single_DisplayViewBase.hpp \
- TouchGFX/gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayPresenter.hpp \
+ TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp \
+ TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp \
+ TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp \
+ TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp \
+ TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp \
+ TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp \
  TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
  TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
@@ -294,6 +301,8 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp:
+
 TouchGFX/gui/include/gui/measurement_screen/MeasurementView.hpp:
 
 TouchGFX/generated/gui_generated/include/gui_generated/measurement_screen/MeasurementViewBase.hpp:
@@ -306,11 +315,11 @@ TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_screen
 
 TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp:
 
-TouchGFX/gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayView.hpp:
+TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp:
 
-TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_screen/Measurement_Single_DisplayViewBase.hpp:
+TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp:
 
-TouchGFX/gui/include/gui/measurement_single_display_screen/Measurement_Single_DisplayPresenter.hpp:
+TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
 
@@ -321,6 +330,18 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp:
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
+
+TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp:
+
+TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp:
+
+TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp:
+
+TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp:
+
+TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp:
+
+TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp:
 
 TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
 

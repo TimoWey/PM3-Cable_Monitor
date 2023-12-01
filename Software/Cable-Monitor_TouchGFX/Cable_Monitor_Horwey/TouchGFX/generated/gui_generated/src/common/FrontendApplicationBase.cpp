@@ -15,8 +15,10 @@
 #include <gui/measurement_screen/MeasurementPresenter.hpp>
 #include <gui/measurement_single_screen/Measurement_SingleView.hpp>
 #include <gui/measurement_single_screen/Measurement_SinglePresenter.hpp>
-#include <gui/measurement_single_display_screen/Measurement_Single_DisplayView.hpp>
-#include <gui/measurement_single_display_screen/Measurement_Single_DisplayPresenter.hpp>
+#include <gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp>
+#include <gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp>
+#include <gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp>
+#include <gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp>
 #include <gui/measurement_accurate_screen/Measurement_AccurateView.hpp>
@@ -116,17 +118,30 @@ void FrontendApplicationBase::gotoMeasurement_SingleScreenSlideTransitionWestImp
     touchgfx::makeTransition<Measurement_SingleView, Measurement_SinglePresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Measurement_Single_Display
+// Measurement_Single_Display_1P
 
-void FrontendApplicationBase::gotoMeasurement_Single_DisplayScreenSlideTransitionEast()
+void FrontendApplicationBase::gotoMeasurement_Single_Display_1PScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMeasurement_Single_DisplayScreenSlideTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMeasurement_Single_Display_1PScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoMeasurement_Single_DisplayScreenSlideTransitionEastImpl()
+void FrontendApplicationBase::gotoMeasurement_Single_Display_1PScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<Measurement_Single_DisplayView, Measurement_Single_DisplayPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<Measurement_Single_Display_1PView, Measurement_Single_Display_1PPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Measurement_Single_Display_3P
+
+void FrontendApplicationBase::gotoMeasurement_Single_Display_3PScreenWipeTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMeasurement_Single_Display_3PScreenWipeTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMeasurement_Single_Display_3PScreenWipeTransitionEastImpl()
+{
+    touchgfx::makeTransition<Measurement_Single_Display_3PView, Measurement_Single_Display_3PPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Calibration
