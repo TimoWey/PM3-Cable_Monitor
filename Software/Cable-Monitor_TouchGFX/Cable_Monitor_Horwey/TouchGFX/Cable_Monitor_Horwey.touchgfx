@@ -127,6 +127,21 @@
               "Blue": 255
             },
             "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "X": 199,
+            "Y": 5,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "power_off_36x36.png",
+            "IconReleased": "power_off_36x36.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
           }
         ],
         "Interactions": [
@@ -167,6 +182,17 @@
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Project_Info"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Device_off"
             }
           }
         ]
@@ -480,13 +506,26 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "Measurement_Single_Display"
+              "ActionComponent": "Measurement_Single_Display_1P"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel2"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Measurement_Single_Display_3P"
             }
           }
         ]
       },
       {
-        "Name": "Measurement_Single_Display",
+        "Name": "Measurement_Single_Display_1P",
         "CanvasBufferSize": 3600,
         "Components": [
           {
@@ -513,6 +552,167 @@
             "EndY": 5.0,
             "LineWidth": 1.0,
             "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 43,
+            "Y": 70,
+            "Width": 154,
+            "Height": 12,
+            "TextId": "__SingleUse_5EX1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 69,
+            "Y": 36,
+            "Width": 103,
+            "Height": 12,
+            "TextId": "__SingleUse_9O3K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 12,
+            "Width": 133,
+            "Height": 23,
+            "TextId": "__SingleUse_T27V",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 33,
+            "Y": 240,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_7H5T",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1",
+            "X": 60,
+            "Y": 100,
+            "Width": 120,
+            "Height": 120,
+            "Preset": "alternate_theme\\presets\\gauges\\tiny\\dark.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_tiny_backgrounds_dark.png",
+            "RotationCenterX": 60.0,
+            "RotationCenterY": 60.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "RangeMax": 100.0,
+            "InitialValue": 50.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_tiny_needles_rough.png",
+            "NeedleRotationCenterX": 5.0,
+            "NeedleRotationCenterY": 33.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "ArcCapStyle": "Butt"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Measurement_Single"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Measurement_Single_Display_3P",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 43,
+            "Y": 70,
+            "Width": 154,
+            "Height": 12,
+            "TextId": "__SingleUse_FHDM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           },
           {
             "Type": "TextArea",
@@ -572,7 +772,7 @@
             "Type": "Gauge",
             "Name": "gauge1",
             "X": 56,
-            "Y": 69,
+            "Y": 100,
             "Width": 120,
             "Height": 120,
             "Preset": "alternate_theme\\presets\\gauges\\tiny\\dark.json",

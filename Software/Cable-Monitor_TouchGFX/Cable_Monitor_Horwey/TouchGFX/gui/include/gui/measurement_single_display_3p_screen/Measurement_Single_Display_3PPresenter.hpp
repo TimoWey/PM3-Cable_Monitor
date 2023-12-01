@@ -1,17 +1,17 @@
-#ifndef MEASUREMENT_SINGLE_DISPLAYPRESENTER_HPP
-#define MEASUREMENT_SINGLE_DISPLAYPRESENTER_HPP
+#ifndef MEASUREMENT_SINGLE_DISPLAY_3PPRESENTER_HPP
+#define MEASUREMENT_SINGLE_DISPLAY_3PPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Measurement_Single_DisplayView;
+class Measurement_Single_Display_3PView;
 
-class Measurement_Single_DisplayPresenter : public touchgfx::Presenter, public ModelListener
+class Measurement_Single_Display_3PPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Measurement_Single_DisplayPresenter(Measurement_Single_DisplayView& v);
+    Measurement_Single_Display_3PPresenter(Measurement_Single_Display_3PView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Measurement_Single_DisplayPresenter() {}
+    virtual ~Measurement_Single_Display_3PPresenter() {}
 
 private:
-    Measurement_Single_DisplayPresenter();
+    Measurement_Single_Display_3PPresenter();
 
-    Measurement_Single_DisplayView& view;
+    Measurement_Single_Display_3PView& view;
 };
 
-#endif // MEASUREMENT_SINGLE_DISPLAYPRESENTER_HPP
+#endif // MEASUREMENT_SINGLE_DISPLAY_3PPRESENTER_HPP
