@@ -3,13 +3,32 @@
     "Screens": [
       {
         "Name": "Main_Menu",
+        "CanvasBufferSize": 3600,
         "Components": [
           {
             "Type": "Image",
             "Name": "image1",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "v617batch2-bb-01-technology.png"
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
           },
           {
             "Type": "TextArea",
@@ -32,8 +51,8 @@
             "Name": "textArea1",
             "X": 50,
             "Y": 12,
-            "Width": 140,
-            "Height": 24,
+            "Width": 133,
+            "Height": 23,
             "TextId": "__SingleUse_9K1W",
             "TextRotation": "0",
             "Color": {
@@ -119,7 +138,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Measurement"
             }
           },
@@ -131,7 +151,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Calibration"
             }
           },
@@ -143,7 +164,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Project_Info"
             }
           }
@@ -151,13 +173,32 @@
       },
       {
         "Name": "Measurement",
+        "CanvasBufferSize": 3600,
         "Components": [
           {
             "Type": "Image",
             "Name": "image1",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "v617batch2-bb-01-technology.png"
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
           },
           {
             "Type": "TextArea",
@@ -180,8 +221,8 @@
             "Name": "textArea1",
             "X": 50,
             "Y": 12,
-            "Width": 140,
-            "Height": 24,
+            "Width": 133,
+            "Height": 23,
             "TextId": "__SingleUse_FIV6",
             "TextRotation": "0",
             "Color": {
@@ -258,17 +299,622 @@
             "TextRotation": "0"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Main_Menu"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Measurement_Single"
+            }
+          }
+        ]
       },
       {
-        "Name": "Calibration",
+        "Name": "Measurement_Single",
+        "CanvasBufferSize": 3600,
         "Components": [
           {
             "Type": "Image",
             "Name": "image1",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "v617batch2-bb-01-technology.png"
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 69,
+            "Y": 36,
+            "Width": 103,
+            "Height": 12,
+            "TextId": "__SingleUse_T0FJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 12,
+            "Width": 133,
+            "Height": 23,
+            "TextId": "__SingleUse_3BUV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 33,
+            "Y": 240,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_O699",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel2",
+            "X": 33,
+            "Y": 170,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_3S2P",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 33,
+            "Y": 100,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_RPQK",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Measurement"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Measurement_Single_Display"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Measurement_Single_Display",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 69,
+            "Y": 36,
+            "Width": 103,
+            "Height": 12,
+            "TextId": "__SingleUse_DCTT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 12,
+            "Width": 133,
+            "Height": 23,
+            "TextId": "__SingleUse_SPOY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 33,
+            "Y": 240,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_BQZ4",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1",
+            "X": 56,
+            "Y": 69,
+            "Width": 120,
+            "Height": 120,
+            "Preset": "alternate_theme\\presets\\gauges\\tiny\\dark.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_tiny_backgrounds_dark.png",
+            "RotationCenterX": 60.0,
+            "RotationCenterY": 60.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "RangeMax": 100.0,
+            "InitialValue": 50.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_tiny_needles_rough.png",
+            "NeedleRotationCenterX": 5.0,
+            "NeedleRotationCenterY": 33.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "ArcCapStyle": "Butt"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Measurement_Single"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Measurement_Accurate_Display",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 69,
+            "Y": 36,
+            "Width": 103,
+            "Height": 12,
+            "TextId": "__SingleUse_YCWF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 12,
+            "Width": 133,
+            "Height": 23,
+            "TextId": "__SingleUse_7ZBX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 33,
+            "Y": 240,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_ZXHY",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1",
+            "X": 56,
+            "Y": 69,
+            "Width": 120,
+            "Height": 120,
+            "Preset": "alternate_theme\\presets\\gauges\\tiny\\dark.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_tiny_backgrounds_dark.png",
+            "RotationCenterX": 60.0,
+            "RotationCenterY": 60.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "RangeMax": 100.0,
+            "InitialValue": 50.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_tiny_needles_rough.png",
+            "NeedleRotationCenterX": 5.0,
+            "NeedleRotationCenterY": 33.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "ArcCapStyle": "Butt"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Measurement_Single"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Measurement_Accurate",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 69,
+            "Y": 36,
+            "Width": 103,
+            "Height": 12,
+            "TextId": "__SingleUse_UWMX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 12,
+            "Width": 133,
+            "Height": 23,
+            "TextId": "__SingleUse_1X41",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 33,
+            "Y": 240,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_NRXD",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel2",
+            "X": 33,
+            "Y": 170,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_DMVB",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 33,
+            "Y": 100,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_CU44",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Measurement"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Calibration",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
           },
           {
             "Type": "TextArea",
@@ -291,8 +937,8 @@
             "Name": "textArea1",
             "X": 50,
             "Y": 12,
-            "Width": 140,
-            "Height": 24,
+            "Width": 133,
+            "Height": 23,
             "TextId": "__SingleUse_2ABZ",
             "TextRotation": "0",
             "Color": {
@@ -369,17 +1015,88 @@
             "TextRotation": "0"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Main_Menu"
+            }
+          }
+        ]
       },
       {
         "Name": "Project_Info",
+        "CanvasBufferSize": 3600,
         "Components": [
           {
             "Type": "Image",
             "Name": "image1",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "v617batch2-bb-01-technology.png"
+            "RelativeFilename": "background_2_resized_4.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 33,
+            "Y": 240,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "TextId": "__SingleUse_VQIQ",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 5,
+            "Y": 91,
+            "Width": 231,
+            "Height": 138,
+            "TextId": "__SingleUse_9J9T",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           },
           {
             "Type": "TextArea",
@@ -402,25 +1119,9 @@
             "Name": "textArea1",
             "X": 50,
             "Y": 12,
-            "Width": 140,
-            "Height": 24,
+            "Width": 133,
+            "Height": 23,
             "TextId": "__SingleUse_SSFQ",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea3",
-            "X": 74,
-            "Y": 84,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "__SingleUse_9J9T",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -430,7 +1131,21 @@
             "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel3"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Main_Menu"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],

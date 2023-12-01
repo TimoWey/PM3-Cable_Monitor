@@ -23,14 +23,26 @@ public:
     // Main_Menu
     void gotoMain_MenuScreenNoTransition();
 
+    void gotoMain_MenuScreenWipeTransitionWest();
+
     // Measurement
-    void gotoMeasurementScreenNoTransition();
+    void gotoMeasurementScreenWipeTransitionEast();
+
+    void gotoMeasurementScreenWipeTransitionWest();
+
+    // Measurement_Single
+    void gotoMeasurement_SingleScreenWipeTransitionEast();
+
+    void gotoMeasurement_SingleScreenSlideTransitionWest();
+
+    // Measurement_Single_Display
+    void gotoMeasurement_Single_DisplayScreenSlideTransitionEast();
 
     // Calibration
-    void gotoCalibrationScreenNoTransition();
+    void gotoCalibrationScreenWipeTransitionEast();
 
     // Project_Info
-    void gotoProject_InfoScreenNoTransition();
+    void gotoProject_InfoScreenWipeTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -40,14 +52,26 @@ protected:
     // Main_Menu
     void gotoMain_MenuScreenNoTransitionImpl();
 
+    void gotoMain_MenuScreenWipeTransitionWestImpl();
+
     // Measurement
-    void gotoMeasurementScreenNoTransitionImpl();
+    void gotoMeasurementScreenWipeTransitionEastImpl();
+
+    void gotoMeasurementScreenWipeTransitionWestImpl();
+
+    // Measurement_Single
+    void gotoMeasurement_SingleScreenWipeTransitionEastImpl();
+
+    void gotoMeasurement_SingleScreenSlideTransitionWestImpl();
+
+    // Measurement_Single_Display
+    void gotoMeasurement_Single_DisplayScreenSlideTransitionEastImpl();
 
     // Calibration
-    void gotoCalibrationScreenNoTransitionImpl();
+    void gotoCalibrationScreenWipeTransitionEastImpl();
 
     // Project_Info
-    void gotoProject_InfoScreenNoTransitionImpl();
+    void gotoProject_InfoScreenWipeTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP
