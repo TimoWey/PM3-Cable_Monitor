@@ -122,3 +122,11 @@ static void calc_distance_and_angle_from_one_side(float distance_pad_1,
 static void calc_distance_and_angle(float distance_pad_l,
 								float distance_pad_r, float *distance_center,
                                 float *angle);
+
+void calc_start_single_measurement(CALC_meas_data_t *meas_data){
+    uint8_t num_of_channels = MEAS_get_num_of_channels();
+    uint8_t num_of_samples = ADC_NUMS;
+    uint8_t num_of_loops = MEAS_get_num_of_loops();
+
+}
+
