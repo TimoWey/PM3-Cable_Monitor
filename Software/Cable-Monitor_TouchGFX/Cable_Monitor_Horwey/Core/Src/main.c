@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
+#include "gpio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -159,7 +160,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  GPIO_Init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
