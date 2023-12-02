@@ -60,12 +60,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define VSYNC_FREQ_Pin GPIO_PIN_2
 #define VSYNC_FREQ_GPIO_Port GPIOE
-#define RENDER_TIME_Pin GPIO_PIN_3
-#define RENDER_TIME_GPIO_Port GPIOE
+#define DEVICE_ON_READ_Pin GPIO_PIN_3
+#define DEVICE_ON_READ_GPIO_Port GPIOE
 #define FRAME_RATE_Pin GPIO_PIN_4
 #define FRAME_RATE_GPIO_Port GPIOE
-#define MCU_ACTIVE_Pin GPIO_PIN_5
-#define MCU_ACTIVE_GPIO_Port GPIOE
+#define POWER_ON_DEVICE_Pin GPIO_PIN_5
+#define POWER_ON_DEVICE_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 
