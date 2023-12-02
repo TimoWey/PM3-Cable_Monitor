@@ -79,7 +79,6 @@
  * Variables
  *****************************************************************************/
 bool MEAS_data_ready = false;			///< New data is ready
-
 static uint32_t ADC_sample_count = 0;	///< Index for buffer
 static uint32_t ADC_samples[INPUT_COUNT*ADC_NUMS]; ///< ADC values of max. 2 input channels
 
@@ -162,7 +161,7 @@ void MEAS_timer_init(void)
  *****************************************************************************/
 void ADC3_scan_init(void)
 {
-	__HAL_RCC_ADC2_CLK_ENABLE();		// Enable Clock for ADC2
+	__HAL_RCC_ADC3_CLK_ENABLE();		// Enable Clock for ADC3
 	ADC3->SQR1 |= (3UL << ADC_SQR1_L_Pos);			// Convert 4 inputs (4-1)
 	ADC3->SQR3 |= (4UL << ADC_SQR3_SQ1_Pos);	// Input 4 = first conversion
 	ADC3->SQR3 |= (13UL << ADC_SQR3_SQ2_Pos);	// Input 13 = second conversion
@@ -244,71 +243,23 @@ void DMA2_Stream1_IRQHandler(void)
 	}
 }
 
-
-/** ***************************************************************************
- * @brief Interrupt handler for DMA2 Stream3
- *
- * The samples from the ADC3 have been transfered to memory by the DMA2 Stream1
- * and are ready for processing.
- *****************************************************************************/
-void DMA2_Stream3_IRQHandler(void)
-{
-	if (DMA2->LISR & DMA_LISR_TCIF3) {	// Stream3 transfer compl. interrupt f.
-		NVIC_DisableIRQ(DMA2_Stream3_IRQn);	// Disable DMA interrupt in the NVIC
-		NVIC_ClearPendingIRQ(DMA2_Stream3_IRQn);// Clear pending DMA interrupt
-		DMA2_Stream3->CR &= ~DMA_SxCR_EN;	// Disable the DMA
-		while (DMA2_Stream3->CR & DMA_SxCR_EN) { ; }	// Wait for DMA to finish
-		DMA2->LIFCR |= DMA_LIFCR_CTCIF3;// Clear transfer complete interrupt fl.
-		TIM2->CR1 &= ~TIM_CR1_CEN;		// Disable timer
-		ADC2->CR2 &= ~ADC_CR2_ADON;		// Disable ADC2
-		ADC2->CR2 &= ~ADC_CR2_DMA;		// Disable DMA mode
-		ADC_reset();
-		MEAS_data_ready = true;
-	}
-}
-
-
-/** ***************************************************************************
- * @brief Interrupt handler for DMA2 Stream4
- *
- * Here the interrupt handler is used together with ADC1 and ADC2
- * in dual mode where they sample simultaneously.
- * @n The samples from both ADCs packed in a 32 bit word have been transfered
- * to memory by the DMA2 and are ready for unpacking.
- * @note In dual ADC mode two values are combined (packed) in a single uint32_t
- * ADC_CDR[31:0] = ADC2_DR[15:0] | ADC1_DR[15:0]
- * and are therefore extracted before further processing.
- *****************************************************************************/
-void DMA2_Stream4_IRQHandler(void)
-{
-	if (DMA2->HISR & DMA_HISR_TCIF4) {	// Stream4 transfer compl. interrupt f.
-		NVIC_DisableIRQ(DMA2_Stream4_IRQn);	// Disable DMA interrupt in the NVIC
-		NVIC_ClearPendingIRQ(DMA2_Stream4_IRQn);// Clear pending DMA interrupt
-		DMA2_Stream4->CR &= ~DMA_SxCR_EN;	// Disable the DMA
-		while (DMA2_Stream4->CR & DMA_SxCR_EN) { ; }	// Wait for DMA to finish
-		DMA2->HIFCR |= DMA_HIFCR_CTCIF4;// Clear transfer complete interrupt fl.
-		TIM2->CR1 &= ~TIM_CR1_CEN;		// Disable timer
-		ADC1->CR2 &= ~ADC_CR2_ADON;		// Disable ADC1
-		ADC2->CR2 &= ~ADC_CR2_ADON;		// Disable ADC2
-		ADC->CCR &= ~ADC_CCR_DMA_1;		// Disable DMA mode
-		/* Extract combined samples */
-		for (int32_t i = ADC_NUMS-1; i >= 0; i--){
-			ADC_samples[2*i+1] = (ADC_samples[i] >> 16);
-			ADC_samples[2*i]   = (ADC_samples[i] & 0xffff);
-		}
-		ADC_reset();
-		MEAS_data_ready = true;
-	}
-}
 /** ***************************************************************************
  * Measurement functions
  *****************************************************************************/
-
-
-uint32_t MEAS_get_data(void)
+/** ***************************************************************************
+ * @brief Start the measurement
+ * @return ADC samples pointer
+ * 
+ * @note The result is stored alternated e.g. every 4th is together.
+ *****************************************************************************/
+uint32_t MEAS_start_measure(void)
 {
 	MEAS_Buffer_reset(INPUT_COUNT, ADC_samples);
-	
+	ADC3_scan_init();
+	ADC3_scan_start();
+	while (!MEAS_data_ready) { ; }
+	MEAS_data_ready = false;
+	return ADC_samples;
 }
 
 /** ***************************************************************************
@@ -323,17 +274,17 @@ uint32_t MEAS_get_data(void)
  * and should be moved to a separate file in the final version
  * because displaying is not related to measuring.
  *****************************************************************************/
-/*void MEAS_show_data(void)
+void MEAS_show_data(void)
 {
 	const uint32_t Y_OFFSET = 260;
 	const uint32_t X_SIZE = 240;
 	uint32_t data;
 	uint32_t data_last;
 	/* Clear the display */
-	/*BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
+	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 	BSP_LCD_FillRect(0, 0, X_SIZE, Y_OFFSET+1);
 	/* Write first 2 samples as numbers */
-	/*BSP_LCD_SetFont(&Font24);
+	BSP_LCD_SetFont(&Font24);
 	BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 	char text[16];
@@ -342,7 +293,7 @@ uint32_t MEAS_get_data(void)
 	snprintf(text, 15, "2. sample %4d", (int)(ADC_samples[1]));
 	BSP_LCD_DisplayStringAt(0, 80, (uint8_t *)text, LEFT_MODE);
 	/* Draw the  values of input channel 1 as a curve */
-	/*BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
 	data = ADC_samples[MEAS_input_count*0] / f;
 	for (uint32_t i = 1; i < ADC_NUMS; i++){
 		data_last = data;
@@ -350,8 +301,8 @@ uint32_t MEAS_get_data(void)
 		if (data > Y_OFFSET) { data = Y_OFFSET; }// Limit value, prevent crash
 		BSP_LCD_DrawLine(4*(i-1), Y_OFFSET-data_last, 4*i, Y_OFFSET-data);
 	}
-	/* Draw the  values of input channel 2 (if present) as a curve */
-	/*if (MEAS_input_count == 2) {
+	 /*Draw the  values of input channel 2 (if present) as a curve */
+	if (MEAS_input_count == 2) {
 		BSP_LCD_SetTextColor(LCD_COLOR_RED);
 		data = ADC_samples[MEAS_input_count*0+1] / f;
 		for (uint32_t i = 1; i < ADC_NUMS; i++){
@@ -362,10 +313,10 @@ uint32_t MEAS_get_data(void)
 		}
 	}
 	/* Clear buffer and flag */
-	/*for (uint32_t i = 0; i < ADC_NUMS; i++){
+	for (uint32_t i = 0; i < ADC_NUMS; i++){
 		ADC_samples[2*i] = 0;
 		ADC_samples[2*i+1] = 0;
 	}
 	ADC_sample_count = 0;
-}*/
+}
 
