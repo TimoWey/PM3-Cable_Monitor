@@ -76,7 +76,7 @@ int main(void) {
 
 	BSP_LED_Init(LED3);					// Toggles in while loop
 	BSP_LED_Init(LED4);					// Is toggled by user button
-
+	
 	MENU_draw();						// Draw the menu
 	MENU_hint();						// Show hint at startup
 
