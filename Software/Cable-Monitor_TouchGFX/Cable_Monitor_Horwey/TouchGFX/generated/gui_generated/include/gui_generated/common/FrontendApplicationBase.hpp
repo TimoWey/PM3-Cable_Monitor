@@ -47,6 +47,9 @@ public:
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEast();
 
+    // Shutting_Off
+    void gotoShutting_OffScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -78,6 +81,9 @@ protected:
 
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEastImpl();
+
+    // Shutting_Off
+    void gotoShutting_OffScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -27,6 +27,8 @@
 #include <gui/calibration_screen/CalibrationPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
 #include <gui/project_info_screen/Project_InfoPresenter.hpp>
+#include <gui/shutting_off_screen/Shutting_OffView.hpp>
+#include <gui/shutting_off_screen/Shutting_OffPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -168,4 +170,17 @@ void FrontendApplicationBase::gotoProject_InfoScreenWipeTransitionEast()
 void FrontendApplicationBase::gotoProject_InfoScreenWipeTransitionEastImpl()
 {
     touchgfx::makeTransition<Project_InfoView, Project_InfoPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Shutting_Off
+
+void FrontendApplicationBase::gotoShutting_OffScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoShutting_OffScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoShutting_OffScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<Shutting_OffView, Shutting_OffPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
