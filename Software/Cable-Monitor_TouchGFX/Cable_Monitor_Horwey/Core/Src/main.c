@@ -160,7 +160,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  GPIO_Init();
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -570,7 +570,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, VSYNC_FREQ_Pin|FRAME_RATE_Pin|POWER_ON_DEVICE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, VSYNC_FREQ_Pin|FRAME_RATE_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(POWER_ON_DEVICE_GPIO_Port, POWER_ON_DEVICE_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET);
@@ -578,18 +581,15 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(DEVICE_ON_GPIO_Port, DEVICE_ON_Pin, GPIO_PIN_SET);
+
   /*Configure GPIO pins : VSYNC_FREQ_Pin FRAME_RATE_Pin */
   GPIO_InitStruct.Pin = VSYNC_FREQ_Pin|FRAME_RATE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : DEVICE_ON_READ_Pin */
-  GPIO_InitStruct.Pin = DEVICE_ON_READ_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(DEVICE_ON_READ_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : POWER_ON_DEVICE_Pin */
   GPIO_InitStruct.Pin = POWER_ON_DEVICE_Pin;
@@ -611,6 +611,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : DEVICE_ON_Pin */
+  GPIO_InitStruct.Pin = DEVICE_ON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(DEVICE_ON_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
