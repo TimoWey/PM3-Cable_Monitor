@@ -65,7 +65,7 @@ Main_MenuViewBase::Main_MenuViewBase() :
     buttonWithLabel1.setAction(buttonCallback);
     add(buttonWithLabel1);
 
-    buttonWithIcon1.setXY(190, 12);
+    buttonWithIcon1.setXY(198, 5);
     buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID));
     buttonWithIcon1.setIconXY(0, 0);
     buttonWithIcon1.setAction(buttonCallback);
