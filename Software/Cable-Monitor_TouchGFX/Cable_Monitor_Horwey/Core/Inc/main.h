@@ -60,6 +60,9 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define VSYNC_FREQ_Pin GPIO_PIN_2
 #define VSYNC_FREQ_GPIO_Port GPIOE
+#define DEVICE_ON_OFF_TRIGGER_Pin GPIO_PIN_3
+#define DEVICE_ON_OFF_TRIGGER_GPIO_Port GPIOE
+#define DEVICE_ON_OFF_TRIGGER_EXTI_IRQn EXTI3_IRQn
 #define FRAME_RATE_Pin GPIO_PIN_4
 #define FRAME_RATE_GPIO_Port GPIOE
 #define POWER_ON_DEVICE_Pin GPIO_PIN_5
