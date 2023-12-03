@@ -14,6 +14,7 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include "main.h"
 
 class Main_MenuViewBase : public touchgfx::View<Main_MenuPresenter>
 {
@@ -21,14 +22,6 @@ public:
     Main_MenuViewBase();
     virtual ~Main_MenuViewBase();
     virtual void setupScreen();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void Device_off()
-    {
-        // Override and implement this function in Main_Menu
-    }
 
 protected:
     FrontendApplication& application() {

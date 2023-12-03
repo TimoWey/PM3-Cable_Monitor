@@ -77,41 +77,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
- ../../TouchGFX/gui/include/gui/measurement_screen/MeasurementView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_screen/MeasurementViewBase.hpp \
- ../../TouchGFX/gui/include/gui/measurement_screen/MeasurementPresenter.hpp \
- ../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SingleView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_screen/Measurement_SingleViewBase.hpp \
- ../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp \
- ../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp \
- ../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp \
- ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp \
- ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp \
- ../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp \
- ../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp \
- ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
- ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
- ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
- ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp \
- ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
- ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp \
- ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
- ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
- ../../TouchGFX/target/generated/STM32DMA.hpp \
- ../../TouchGFX/target/TouchGFXHAL.hpp \
- ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp \
- ../../TouchGFX/target/STM32TouchController.hpp \
+ ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -147,7 +113,45 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+ ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../../TouchGFX/gui/include/gui/measurement_screen/MeasurementView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_screen/MeasurementViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_screen/MeasurementPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SingleView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_screen/Measurement_SingleViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
+ ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/shutting_off_screen/Shutting_OffView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/shutting_off_screen/Shutting_OffViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/shutting_off_screen/Shutting_OffPresenter.hpp \
+ ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
+ ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
+ ../../TouchGFX/target/generated/STM32DMA.hpp \
+ ../../TouchGFX/target/TouchGFXHAL.hpp \
+ ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp \
+ ../../TouchGFX/target/STM32TouchController.hpp
 ../../TouchGFX/generated/texts/include/texts/TypedTextDatabase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp:
@@ -225,41 +229,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp:
-../../TouchGFX/gui/include/gui/measurement_screen/MeasurementView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_screen/MeasurementViewBase.hpp:
-../../TouchGFX/gui/include/gui/measurement_screen/MeasurementPresenter.hpp:
-../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SingleView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_screen/Measurement_SingleViewBase.hpp:
-../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp:
-../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp:
-../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
-../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp:
-../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp:
-../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp:
-../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp:
-../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp:
-../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp:
-../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
-../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp:
-../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp:
-../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp:
-../../TouchGFX/generated/images/include/BitmapDatabase.hpp:
-../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
-../../TouchGFX/target/generated/STM32DMA.hpp:
-../../TouchGFX/target/TouchGFXHAL.hpp:
-../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:
-../../TouchGFX/target/STM32TouchController.hpp:
+../../Core/Inc/main.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../../Core/Inc/stm32f4xx_hal_conf.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -296,3 +266,41 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../../TouchGFX/gui/include/gui/measurement_screen/MeasurementView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_screen/MeasurementViewBase.hpp:
+../../TouchGFX/gui/include/gui/measurement_screen/MeasurementPresenter.hpp:
+../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SingleView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_screen/Measurement_SingleViewBase.hpp:
+../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SinglePresenter.hpp:
+../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp:
+../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
+../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp:
+../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp:
+../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp:
+../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp:
+../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp:
+../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp:
+../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
+../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp:
+../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp:
+../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp:
+../../TouchGFX/gui/include/gui/shutting_off_screen/Shutting_OffView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/shutting_off_screen/Shutting_OffViewBase.hpp:
+../../TouchGFX/gui/include/gui/shutting_off_screen/Shutting_OffPresenter.hpp:
+../../TouchGFX/generated/images/include/BitmapDatabase.hpp:
+../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
+../../TouchGFX/target/generated/STM32DMA.hpp:
+../../TouchGFX/target/TouchGFXHAL.hpp:
+../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:
+../../TouchGFX/target/STM32TouchController.hpp:

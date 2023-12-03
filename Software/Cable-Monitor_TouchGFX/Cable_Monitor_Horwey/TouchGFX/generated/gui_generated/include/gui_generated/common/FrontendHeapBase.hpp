@@ -33,6 +33,8 @@
 #include <gui/calibration_screen/CalibrationPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
 #include <gui/project_info_screen/Project_InfoPresenter.hpp>
+#include <gui/shutting_off_screen/Shutting_OffView.hpp>
+#include <gui/shutting_off_screen/Shutting_OffPresenter.hpp>
 
 
 /**
@@ -64,7 +66,8 @@ public:
             touchgfx::meta::TypeList< Measurement_AccurateView,
             touchgfx::meta::TypeList< CalibrationView,
             touchgfx::meta::TypeList< Project_InfoView,
-            touchgfx::meta::Nil > > > > > > > >
+            touchgfx::meta::TypeList< Shutting_OffView,
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -85,7 +88,8 @@ public:
             touchgfx::meta::TypeList< Measurement_AccuratePresenter,
             touchgfx::meta::TypeList< CalibrationPresenter,
             touchgfx::meta::TypeList< Project_InfoPresenter,
-            touchgfx::meta::Nil > > > > > > > >
+            touchgfx::meta::TypeList< Shutting_OffPresenter,
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

@@ -191,8 +191,21 @@
               "TriggerComponent": "buttonWithIcon1"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "Device_off"
+              "Type": "ActionExecuteCode",
+              "Includes": "#include \"main.h\"\r\n",
+              "Code": "HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Shutting_Off"
             }
           }
         ]
@@ -1346,6 +1359,20 @@
             }
           }
         ]
+      },
+      {
+        "Name": "Shutting_Off",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -3,
+            "Width": 247,
+            "Height": 320,
+            "RelativeFilename": "shutdown.png"
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],
