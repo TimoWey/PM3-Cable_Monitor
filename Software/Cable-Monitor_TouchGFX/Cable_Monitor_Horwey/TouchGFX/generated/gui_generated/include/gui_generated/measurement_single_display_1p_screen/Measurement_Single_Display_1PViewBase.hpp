@@ -13,7 +13,7 @@
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/Gauge.hpp>
+#include <gui/containers/Gauge_with_Values.hpp>
 
 class Measurement_Single_Display_1PViewBase : public touchgfx::View<Measurement_Single_Display_1PPresenter>
 {
@@ -38,7 +38,7 @@ protected:
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
     touchgfx::ButtonWithLabel buttonWithLabel3;
-    touchgfx::Gauge gauge1;
+    Gauge_with_Values gauge_with_Values1;
 
 private:
 

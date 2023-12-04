@@ -45,7 +45,7 @@ TouchGFX/build/STM32F429IDISCO/Core/Src/main.o: Core/Src/main.c \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  TouchGFX/App/app_touchgfx.h Drivers/BSP/Components/ili9341/ili9341.h \
- Drivers/BSP/Components/ili9341/../Common/lcd.h
+ Drivers/BSP/Components/ili9341/../Common/lcd.h Core/Inc/gpio.h
 
 Core/Inc/main.h:
 
@@ -148,3 +148,5 @@ TouchGFX/App/app_touchgfx.h:
 Drivers/BSP/Components/ili9341/ili9341.h:
 
 Drivers/BSP/Components/ili9341/../Common/lcd.h:
+
+Core/Inc/gpio.h:

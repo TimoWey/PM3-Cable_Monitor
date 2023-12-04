@@ -29,7 +29,7 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    textArea3.setXY(43, 70);
+    textArea3.setXY(29, 63);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5EX1));
@@ -47,7 +47,7 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_T27V));
     add(textArea1);
 
-    buttonWithLabel3.setXY(33, 240);
+    buttonWithLabel3.setXY(33, 256);
     buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
     buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_7H5T));
     buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -55,16 +55,8 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     buttonWithLabel3.setAction(buttonCallback);
     add(buttonWithLabel3);
 
-    gauge1.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_TINY_BACKGROUNDS_DARK_ID));
-    gauge1.setPosition(60, 100, 120, 120);
-    gauge1.setCenter(60, 60);
-    gauge1.setStartEndAngle(-90, 90);
-    gauge1.setRange(0, 100);
-    gauge1.setValue(50);
-    gauge1.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_TINY_NEEDLES_ROUGH_ID, 5, 33);
-    gauge1.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    gauge1.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    add(gauge1);
+    gauge_with_Values1.setXY(0, 78);
+    add(gauge_with_Values1);
 }
 
 Measurement_Single_Display_1PViewBase::~Measurement_Single_Display_1PViewBase()
@@ -74,7 +66,7 @@ Measurement_Single_Display_1PViewBase::~Measurement_Single_Display_1PViewBase()
 
 void Measurement_Single_Display_1PViewBase::setupScreen()
 {
-
+    gauge_with_Values1.initialize();
 }
 
 void Measurement_Single_Display_1PViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)

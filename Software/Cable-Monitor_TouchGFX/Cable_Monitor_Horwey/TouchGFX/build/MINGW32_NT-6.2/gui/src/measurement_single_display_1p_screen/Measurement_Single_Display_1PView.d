@@ -64,12 +64,15 @@ build/MINGW32_NT-6.2/gui/src/measurement_single_display_1p_screen/Measurement_Si
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ gui/include/gui/containers/Gauge_with_Values.hpp \
+ generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
 
 gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp:
 
@@ -199,6 +202,10 @@ gui/include/gui/model/ModelListener.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
+gui/include/gui/containers/Gauge_with_Values.hpp:
+
+generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp:
+
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
@@ -210,3 +217,5 @@ gui/include/gui/model/ModelListener.hpp:
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
