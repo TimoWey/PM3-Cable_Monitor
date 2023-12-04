@@ -331,7 +331,7 @@ void MEAS_show_data(void) {
     BSP_LCD_DisplayStringAt(0, 120, (uint8_t*)"of Channels 1 to 4:", CENTER_MODE);
     BSP_LCD_DisplayStringAt(0, 260, (uint8_t*)"(without VGND -> peak - 2048)",
                             CENTER_MODE);
-    BSP_LCD_SetFont(&Font24);
+    BSP_LCD_SetFont(&Font20);
     char text[32];
 	// Calculate the frequency of channel 1
 	uint32_t frequency = frequency_calculation(0, Samples);
@@ -343,7 +343,8 @@ void MEAS_show_data(void) {
         }
     }
     peak -= 2048;
-    snprintf(text, 40, "C1 %4d f %3d  ", (int)(peak), (int)(frequency));
+    BSP_LCD_SetTextColor(LCD_COLOR_CYAN);
+    snprintf(text, 40, "C1:%4d f:%3d HZ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C1 %4d", (int)(Samples[0]));
     BSP_LCD_DisplayStringAt(0, 140, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 2
@@ -356,7 +357,8 @@ void MEAS_show_data(void) {
         }
     }
     peak -= 2048;
-    snprintf(text, 40, "C2 %4d f %3d  ", (int)(peak), (int)(frequency));
+    BSP_LCD_SetTextColor(LCD_COLOR_RED);
+    snprintf(text, 40, "C2:%4d f:%3d HZ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C2 %4d", (int)(Samples[1]));
     BSP_LCD_DisplayStringAt(0, 170, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 3
@@ -369,7 +371,8 @@ void MEAS_show_data(void) {
         }
     }
     peak -= 2048;
-    snprintf(text, 40, "C3 %4d f %3d  ", (int)(peak), (int)(frequency));
+    BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+    snprintf(text, 40, "C3:%4d f:%3d HZ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C3 %4d", (int)(Samples[2]));
     BSP_LCD_DisplayStringAt(0, 200, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 4
@@ -382,11 +385,12 @@ void MEAS_show_data(void) {
         }
     }
     peak -= 2048;
-    snprintf(text, 40, "C4 %4d f %3d  ", (int)(peak), (int)(frequency));
+    BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
+    snprintf(text, 40, "C4:%4d f:%3d HZ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C4 %4d", (int)(Samples[3]));
     BSP_LCD_DisplayStringAt(0, 230, (uint8_t*)text, LEFT_MODE);
     /* Draw the  values of input channel 1 as a curve */
-    BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+    BSP_LCD_SetTextColor(LCD_COLOR_CYAN);
     data = Samples[0] / f;
     for (uint32_t i = 0; i < ADC_NUMS; i++) {
         data_last = data;
@@ -410,7 +414,7 @@ void MEAS_show_data(void) {
                          Y_OFFSET - data);
     }
     /* Draw the  values of input channel 3 as a curve */
-    BSP_LCD_SetTextColor(LCD_COLOR_ORANGE);
+    BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
     data = Samples[2] / f;
     for (uint32_t i = 0; i < ADC_NUMS; i++) {
         data_last = data;
