@@ -16,3 +16,8 @@ void Shutting_OffPresenter::deactivate()
 {
 
 }
+
+void Shutting_OffPresenter::setTimeoutValue(int value)
+{
+
+}

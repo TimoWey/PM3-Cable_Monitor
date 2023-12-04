@@ -27,6 +27,8 @@ public:
 
     virtual ~Shutting_OffPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     Shutting_OffPresenter();
 

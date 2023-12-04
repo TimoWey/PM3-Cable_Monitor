@@ -16,3 +16,8 @@ void Measurement_Single_Display_3PPresenter::deactivate()
 {
 
 }
+
+void Measurement_Single_Display_3PPresenter::setTimeoutValue(int value)
+{
+
+}
