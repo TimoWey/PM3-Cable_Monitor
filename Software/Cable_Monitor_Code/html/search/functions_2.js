@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['dac_5fincrement_0',['DAC_increment',['../measuring_8h.html#a892bfc2635d9b39cbeadd1f61d43ddd8',1,'DAC_increment(void):&#160;measuring.c'],['../measuring_8c.html#a892bfc2635d9b39cbeadd1f61d43ddd8',1,'DAC_increment(void):&#160;measuring.c']]],
-  ['dac_5finit_1',['DAC_init',['../measuring_8h.html#a4500c15ee6b13637e00fd6b901b60224',1,'DAC_init(void):&#160;measuring.c'],['../measuring_8c.html#a4500c15ee6b13637e00fd6b901b60224',1,'DAC_init(void):&#160;measuring.c']]],
-  ['dac_5freset_2',['DAC_reset',['../measuring_8h.html#a0ec0c70d77844e92e6b1862ab7fc7fb8',1,'DAC_reset(void):&#160;measuring.c'],['../measuring_8c.html#a0ec0c70d77844e92e6b1862ab7fc7fb8',1,'DAC_reset(void):&#160;measuring.c']]],
-  ['dma2_5fstream1_5firqhandler_3',['DMA2_Stream1_IRQHandler',['../measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2',1,'measuring.c']]],
-  ['dma2_5fstream3_5firqhandler_4',['DMA2_Stream3_IRQHandler',['../measuring_8c.html#a877135f6494d6923d6f6ec32d75d9eeb',1,'measuring.c']]],
-  ['dma2_5fstream4_5firqhandler_5',['DMA2_Stream4_IRQHandler',['../measuring_8c.html#a295198ed574625d416158a5fc54205ea',1,'measuring.c']]]
+  ['calc_5fdistance_5fand_5fangle_0',['calc_distance_and_angle',['../calculation_8c.html#ac1d2c99e9745e7aa9e41772565848c10',1,'calculation.c']]],
+  ['calc_5fdistance_5fand_5fangle_5ffrom_5fone_5fside_1',['calc_distance_and_angle_from_one_side',['../calculation_8c.html#aca375c36a21c785ec8374317a50623f5',1,'calculation.c']]],
+  ['calc_5fget_5fact_5fcurr_2',['CALC_get_act_curr',['../calculation_8h.html#a1e0e393cfa633acdceb6ea816857a331',1,'calculation.h']]],
+  ['calc_5fget_5fact_5fdist_3',['CALC_get_act_dist',['../calculation_8h.html#ab2b8e5bdc657e277f623635d03bbaae5',1,'calculation.h']]],
+  ['calc_5fsignal_5fstrength_4',['calc_signal_strength',['../calculation_8c.html#a30a3c53271e9b95389dc090e2031ae55',1,'calculation.c']]],
+  ['calc_5fstart_5faccurate_5fmeasurement_5',['CALC_start_accurate_measurement',['../calculation_8h.html#a0d39476ceaf7d83fa7bd3599b53b85de',1,'calculation.h']]],
+  ['calc_5fstart_5fcoil_5fcalibration_6',['CALC_start_coil_calibration',['../calculation_8h.html#a4d9bb068545c5c8be52de1998f07180d',1,'calculation.h']]],
+  ['calc_5fstart_5fpad_5fcalibration_7',['CALC_start_pad_calibration',['../calculation_8h.html#a0acddde2c977bd7e54f5a1322ac89deb',1,'calculation.h']]],
+  ['calc_5fstart_5fsingle_5fmeasurement_8',['CALC_start_single_measurement',['../calculation_8h.html#a1fad97eff19a02e0f4ac5808a9874acb',1,'calculation.h']]]
 ];

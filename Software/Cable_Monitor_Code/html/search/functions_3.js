@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['exti0_5firqhandler_0',['EXTI0_IRQHandler',['../pushbutton_8c.html#a17e9789a29a87d2df54f12b94dd1a0b6',1,'pushbutton.c']]],
-  ['exti15_5f10_5firqhandler_1',['EXTI15_10_IRQHandler',['../menu_8c.html#a738473a5b43f6c92b80ce1d3d6f77ed9',1,'menu.c']]]
+  ['disp_5finfo_5fscreen_0',['disp_info_screen',['../menu_8h.html#acdfd6d2059a73c3a7b22ec5ccffd3dfa',1,'DISP_info_screen(MENU_type_t type):&#160;menu.c'],['../menu_8c.html#acdfd6d2059a73c3a7b22ec5ccffd3dfa',1,'DISP_info_screen(MENU_type_t type):&#160;menu.c']]],
+  ['dma2_5fstream1_5firqhandler_1',['dma2_stream1_irqhandler',['../measuring_8h.html#adab6f3e22e90bd5b1ceebb98022abdf2',1,'DMA2_Stream1_IRQHandler(void):&#160;measuring.c'],['../measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2',1,'DMA2_Stream1_IRQHandler(void):&#160;measuring.c']]]
 ];

@@ -1,4 +1,9 @@
 Core/Src/measuring.o: ../Core/Src/measuring.c \
+ ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ ../Core/Inc/stm32f4xx_hal_conf.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -7,10 +12,6 @@ Core/Src/measuring.o: ../Core/Src/measuring.c \
  ../Drivers/CMSIS/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
- ../Core/Inc/stm32f4xx_hal_conf.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
@@ -33,7 +34,6 @@ Core/Src/measuring.o: ../Core/Src/measuring.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
- ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h \
  ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h \
  ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h \
  ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h \
@@ -45,6 +45,11 @@ Core/Src/measuring.o: ../Core/Src/measuring.c \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/ts.h \
  ../Drivers/BSP/STM32F429I-Discovery/../Components/stmpe811/../Common/io.h \
  ../Core/Inc/measuring.h
+../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
+../Core/Inc/stm32f4xx_hal_conf.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -53,10 +58,6 @@ Core/Src/measuring.o: ../Core/Src/measuring.c \
 ../Drivers/CMSIS/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
-../Core/Inc/stm32f4xx_hal_conf.h:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
@@ -79,7 +80,6 @@ Core/Src/measuring.o: ../Core/Src/measuring.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
-../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h:
 ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.h:
 ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.h:
 ../Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.h:
