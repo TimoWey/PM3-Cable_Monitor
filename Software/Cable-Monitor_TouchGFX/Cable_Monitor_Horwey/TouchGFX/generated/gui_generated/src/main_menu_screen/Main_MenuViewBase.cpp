@@ -70,6 +70,12 @@ Main_MenuViewBase::Main_MenuViewBase() :
     buttonWithIcon1.setIconXY(0, 0);
     buttonWithIcon1.setAction(buttonCallback);
     add(buttonWithIcon1);
+
+    textArea3.setXY(0, 0);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2SIJ));
+    add(textArea3);
 }
 
 Main_MenuViewBase::~Main_MenuViewBase()
