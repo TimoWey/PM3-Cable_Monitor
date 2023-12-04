@@ -92,6 +92,13 @@ const osThreadAttr_t GUI_Task_attributes = {
   .stack_size = 8192 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for Sleep_Timeout */
+osThreadId_t Sleep_TimeoutHandle;
+const osThreadAttr_t Sleep_Timeout_attributes = {
+  .name = "Sleep_Timeout",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -110,6 +117,7 @@ static void MX_TIM7_Init(void);
 static void MX_TIM3_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
+void Sleep_Timeout_Task(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -149,7 +157,7 @@ static LCD_DrvTypeDef* LcdDrv;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
 
-volatile uint8_t sleep_timer = 60;
+uint8_t sleep_timer = 60;
 
 /* USER CODE END 0 */
 
@@ -222,6 +230,9 @@ int main(void)
 
   /* creation of GUI_Task */
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
+
+  /* creation of Sleep_Timeout */
+  Sleep_TimeoutHandle = osThreadNew(Sleep_Timeout_Task, NULL, &Sleep_Timeout_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -769,6 +780,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PA15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pin : DEVICE_ON_Pin */
   GPIO_InitStruct.Pin = DEVICE_ON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -779,6 +796,9 @@ static void MX_GPIO_Init(void)
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI3_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
@@ -1126,6 +1146,25 @@ void StartDefaultTask(void *argument)
     osDelay(100);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_Sleep_Timeout_Task */
+/**
+* @brief Function implementing the Sleep_Timeout_T thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Sleep_Timeout_Task */
+void Sleep_Timeout_Task(void *argument)
+{
+  /* USER CODE BEGIN Sleep_Timeout_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+	  osMessageQueuePut(Sleep_TimeoutHandle, &sleep_timer, 0, 0);
+	  osDelay(100);
+  }
+  /* USER CODE END Sleep_Timeout_Task */
 }
 
 /**

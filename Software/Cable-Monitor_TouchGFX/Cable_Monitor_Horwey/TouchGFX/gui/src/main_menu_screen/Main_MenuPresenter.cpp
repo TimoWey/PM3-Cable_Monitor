@@ -16,3 +16,8 @@ void Main_MenuPresenter::deactivate()
 {
 
 }
+
+void Main_MenuPresenter::setTimeoutValue(int value)
+{
+	view.setTimeoutValue(value);
+}

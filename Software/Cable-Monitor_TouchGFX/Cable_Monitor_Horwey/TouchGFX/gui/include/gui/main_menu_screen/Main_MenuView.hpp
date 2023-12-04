@@ -11,6 +11,7 @@ public:
     virtual ~Main_MenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void setTimeoutValue(int Timeout_Value);
 protected:
 };
 

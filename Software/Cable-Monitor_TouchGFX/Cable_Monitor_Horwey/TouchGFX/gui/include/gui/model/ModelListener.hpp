@@ -14,6 +14,7 @@ public:
     {
         model = m;
     }
+    virtual void setTimeoutValue(int Timeout_Value);
 protected:
     Model* model;
 };

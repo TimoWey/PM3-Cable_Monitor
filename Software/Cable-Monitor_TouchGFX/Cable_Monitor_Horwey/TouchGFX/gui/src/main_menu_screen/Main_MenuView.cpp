@@ -14,3 +14,8 @@ void Main_MenuView::tearDownScreen()
 {
     Main_MenuViewBase::tearDownScreen();
 }
+
+void Main_MenuView::setTimeoutValue(int Timeout_Value)
+{
+	//textArea3.setWildcard1("test");
+}
