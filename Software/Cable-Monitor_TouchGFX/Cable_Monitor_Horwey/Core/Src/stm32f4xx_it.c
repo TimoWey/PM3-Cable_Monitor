@@ -58,6 +58,7 @@
 /* External variables --------------------------------------------------------*/
 extern DMA2D_HandleTypeDef hdma2d;
 extern LTDC_HandleTypeDef hltdc;
+extern TIM_HandleTypeDef htim7;
 extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
@@ -171,7 +172,7 @@ void EXTI3_IRQHandler(void)
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
 
   /* USER CODE END EXTI3_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(DEVICE_ON_OFF_TRIGGER_Pin);			// Turn off device by pulling PE5 low
+  HAL_GPIO_EXTI_IRQHandler(DEVICE_ON_OFF_TRIGGER_Pin);
   /* USER CODE BEGIN EXTI3_IRQn 1 */
 
   /* USER CODE END EXTI3_IRQn 1 */
@@ -189,6 +190,34 @@ void TIM6_DAC_IRQHandler(void)
   /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
 
   /* USER CODE END TIM6_DAC_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM7 global interrupt.
+  */
+void TIM7_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM7_IRQn 0 */
+
+  /* USER CODE END TIM7_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim7);
+  /* USER CODE BEGIN TIM7_IRQn 1 */
+
+  // Toggle onboard LED as heartbeat visual feedback
+  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+
+  static uint8_t sleep_timer = 60;
+
+  if(sleep_timer == 0)
+  {
+	  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
+  }
+  else
+  {
+	  sleep_timer--;
+  }
+
+  /* USER CODE END TIM7_IRQn 1 */
 }
 
 /**
