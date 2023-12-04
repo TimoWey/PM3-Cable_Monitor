@@ -192,7 +192,7 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#include \"main.h\"\r\n",
+              "Includes": "#include \"main.h\"",
               "Code": "HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);"
             }
           },
@@ -569,10 +569,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea3",
-            "X": 43,
-            "Y": 70,
-            "Width": 154,
-            "Height": 12,
+            "X": 29,
+            "Y": 63,
+            "Width": 182,
+            "Height": 15,
             "TextId": "__SingleUse_5EX1",
             "TextRotation": "0",
             "Color": {
@@ -618,7 +618,7 @@
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel3",
             "X": 33,
-            "Y": 240,
+            "Y": 256,
             "Width": 175,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
@@ -637,33 +637,12 @@
             "TextRotation": "0"
           },
           {
-            "Type": "Gauge",
-            "Name": "gauge1",
-            "X": 60,
-            "Y": 100,
-            "Width": 120,
-            "Height": 120,
-            "Preset": "alternate_theme\\presets\\gauges\\tiny\\dark.json",
-            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_tiny_backgrounds_dark.png",
-            "RotationCenterX": 60.0,
-            "RotationCenterY": 60.0,
-            "StartAngle": -90.0,
-            "EndAngle": 90.0,
-            "RangeMax": 100.0,
-            "InitialValue": 50.0,
-            "Easing": "Linear",
-            "EasingOption": "In",
-            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_tiny_needles_rough.png",
-            "NeedleRotationCenterX": 5.0,
-            "NeedleRotationCenterY": 33.0,
-            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
-            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
-            "ArcColor": {
-              "Red": 20,
-              "Green": 151,
-              "Blue": 197
-            },
-            "ArcCapStyle": "Butt"
+            "Type": "CustomContainerInstance",
+            "Name": "gauge_with_Values1",
+            "Y": 78,
+            "Width": 240,
+            "Height": 169,
+            "CustomContainerDefinitionName": "Gauge_with_Values"
           }
         ],
         "Interactions": [
@@ -1300,7 +1279,7 @@
             "Name": "textArea3",
             "X": 5,
             "Y": 91,
-            "Width": 231,
+            "Width": 221,
             "Height": 138,
             "TextId": "__SingleUse_9J9T",
             "TextRotation": "0",
@@ -1375,7 +1354,143 @@
         "Interactions": []
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "Gauge_with_Values",
+        "Y": 46,
+        "Width": 240,
+        "Height": 169,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_2",
+            "X": 217,
+            "Y": 109,
+            "Width": 23,
+            "Height": 15,
+            "TextId": "__SingleUse_D6CM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_1",
+            "Y": 109,
+            "Width": 28,
+            "Height": 15,
+            "TextId": "__SingleUse_YENI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 113,
+            "Width": 15,
+            "Height": 15,
+            "TextId": "__SingleUse_Z8XU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 76,
+            "Y": 124,
+            "Width": 88,
+            "Height": 15,
+            "TextId": "__SingleUse_RQ3J",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5_1",
+            "X": 86,
+            "Y": 139,
+            "Width": 65,
+            "Height": 15,
+            "TextId": "__SingleUse_54VS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5_2",
+            "X": 86,
+            "Y": 154,
+            "Width": 67,
+            "Height": 15,
+            "TextId": "__SingleUse_UKDF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {}
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1",
+            "X": 28,
+            "Y": 18,
+            "Width": 184,
+            "Height": 106,
+            "Preset": "alternate_theme\\presets\\gauges\\small\\light_precision.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_small_backgrounds_light_precision.png",
+            "RotationCenterX": 92.0,
+            "RotationCenterY": 92.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "RangeMin": -90.0,
+            "RangeMax": 90.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_small_needles_rough.png",
+            "NeedleRotationCenterX": 8.0,
+            "NeedleRotationCenterY": 53.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "ArcCapStyle": "Butt"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
     "Name": "Cable_Monitor_Horwey",
     "Resolution": {
       "Width": 240,
