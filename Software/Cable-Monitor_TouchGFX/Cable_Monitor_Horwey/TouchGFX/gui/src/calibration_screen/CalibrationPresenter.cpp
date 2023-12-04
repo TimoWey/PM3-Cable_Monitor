@@ -16,3 +16,8 @@ void CalibrationPresenter::deactivate()
 {
 
 }
+
+void CalibrationPresenter::setTimeoutValue(int value)
+{
+
+}

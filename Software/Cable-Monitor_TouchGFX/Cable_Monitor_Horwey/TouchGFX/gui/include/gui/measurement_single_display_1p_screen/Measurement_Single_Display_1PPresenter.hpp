@@ -27,6 +27,8 @@ public:
 
     virtual ~Measurement_Single_Display_1PPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     Measurement_Single_Display_1PPresenter();
 

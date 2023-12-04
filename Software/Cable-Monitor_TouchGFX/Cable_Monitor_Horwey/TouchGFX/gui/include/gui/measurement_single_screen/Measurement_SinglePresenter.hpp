@@ -27,6 +27,8 @@ public:
 
     virtual ~Measurement_SinglePresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     Measurement_SinglePresenter();
 

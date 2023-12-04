@@ -8,7 +8,6 @@
 extern "C"
 {
 	extern osMessageQueueId_t Sleep_TimeoutHandle;
-
 }
 
 #endif
@@ -24,7 +23,7 @@ void Model::tick()
 #ifndef SIMUULATOR
 	if(osMessageQueueGetCount(Sleep_TimeoutHandle) > 0)								//if message recieved
 	{
-		static uint8_t Timeout_Value;
+		static int Timeout_Value;
 		if(osMessageQueueGet(Sleep_TimeoutHandle, &Timeout_Value, 0, 0) == osOK)	// if read successfully
 		{
 
