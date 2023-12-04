@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['menu_5fentry_5ft_0',['MENU_entry_t',['../struct_m_e_n_u__entry__t.html',1,'']]]
+  ['calc_5fmeas_5fdata_5ft_0',['CALC_meas_data_t',['../struct_c_a_l_c__meas__data__t.html',1,'']]]
 ];

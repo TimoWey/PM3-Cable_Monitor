@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['systemclock_5fconfig_0',['SystemClock_Config',['../main_8c.html#ad554cbf06ce0fa6f92a0c4152b8a4c64',1,'main.c']]]
+  ['output_5fmeas_5ftimer_5finit_0',['output_meas_timer_init',['../measuring_8h.html#a200726c4acd55c198ca2aba0121bf535',1,'OUTPUT_MEAS_timer_init(void):&#160;measuring.c'],['../measuring_8c.html#a200726c4acd55c198ca2aba0121bf535',1,'OUTPUT_MEAS_timer_init(void):&#160;measuring.c']]]
 ];
