@@ -15,7 +15,6 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/Gauge.hpp>
 #include "main.h"
 
 class Main_MenuViewBase : public touchgfx::View<Main_MenuPresenter>
@@ -44,7 +43,12 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel1;
     touchgfx::ButtonWithIcon buttonWithIcon1;
     touchgfx::TextAreaWithOneWildcard textArea3;
-    touchgfx::Gauge gauge1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA3_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar textArea3Buffer[TEXTAREA3_SIZE];
 
 private:
 

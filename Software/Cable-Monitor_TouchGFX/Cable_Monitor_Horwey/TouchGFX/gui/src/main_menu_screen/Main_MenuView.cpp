@@ -17,8 +17,9 @@ void Main_MenuView::tearDownScreen()
 
 void Main_MenuView::setTimeoutValue(int value)
 {
-	gauge1.setValue(value);
-	gauge1.invalidate();
+	//gauge1.setValue(value);
+	//gauge1.invalidate();
 
-	//Unicode::snprintf(textAreaBuffer3, TEXTAREA_SIZE, "%d", value);
+	Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%d", value);
+	textArea3.invalidate();
 }

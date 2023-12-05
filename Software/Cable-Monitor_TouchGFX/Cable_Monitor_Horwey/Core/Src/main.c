@@ -74,7 +74,6 @@ SPI_HandleTypeDef hspi5;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
-TIM_HandleTypeDef htim7;
 
 SDRAM_HandleTypeDef hsdram1;
 
@@ -118,7 +117,6 @@ static void MX_FMC_Init(void);
 static void MX_LTDC_Init(void);
 static void MX_DMA2D_Init(void);
 static void MX_TIM1_Init(void);
-static void MX_TIM7_Init(void);
 static void MX_TIM3_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
@@ -201,7 +199,6 @@ int main(void)
   MX_LTDC_Init();
   MX_DMA2D_Init();
   MX_TIM1_Init();
-  MX_TIM7_Init();
   MX_TIM3_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
@@ -625,46 +622,6 @@ static void MX_TIM3_Init(void)
   /* USER CODE BEGIN TIM3_Init 2 */
 
   /* USER CODE END TIM3_Init 2 */
-
-}
-
-/**
-  * @brief TIM7 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM7_Init(void)
-{
-
-  /* USER CODE BEGIN TIM7_Init 0 */
-
-  /* USER CODE END TIM7_Init 0 */
-
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-  /* USER CODE BEGIN TIM7_Init 1 */
-
-  /* USER CODE END TIM7_Init 1 */
-  htim7.Instance = TIM7;
-  htim7.Init.Prescaler = 16800;
-  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 5000;
-  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM7_Init 2 */
-
-  HAL_TIM_Base_Start_IT(&htim7);
-
-  /* USER CODE END TIM7_Init 2 */
 
 }
 
@@ -1159,11 +1116,25 @@ void StartTimeoutTask(void *argument)
 {
   /* USER CODE BEGIN StartTimeoutTask */
   /* Infinite loop */
+  // set the sleep timout to 60 seconds
   static int sleep_timeout_value = 60;
   for(;;)
   {
 	  sleep_timeout_value--;
 	  osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
+
+	  if(sleep_timeout_value == 0)
+	  {
+		  sleep_timeout_value = 60;
+		  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);	//shut down device
+	  }
+	  if(sleep_timeout_value > 60 && sleep_timeout_value < 0)
+		  sleep_timeout_value = 60;
+
+
+	  // Toggle onboard LED as heartbeat visual feedback
+	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+
 	  osDelay(1000);
   }
   /* USER CODE END StartTimeoutTask */
