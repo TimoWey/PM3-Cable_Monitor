@@ -27,6 +27,8 @@ public:
 
     virtual ~Project_InfoPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     Project_InfoPresenter();
 

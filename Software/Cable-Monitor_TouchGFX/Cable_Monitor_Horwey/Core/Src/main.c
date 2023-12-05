@@ -92,6 +92,18 @@ const osThreadAttr_t GUI_Task_attributes = {
   .stack_size = 8192 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for TimeoutTask */
+osThreadId_t TimeoutTaskHandle;
+const osThreadAttr_t TimeoutTask_attributes = {
+  .name = "TimeoutTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for TimeoutQueue */
+osMessageQueueId_t TimeoutQueueHandle;
+const osMessageQueueAttr_t TimeoutQueue_attributes = {
+  .name = "TimeoutQueue"
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -110,6 +122,7 @@ static void MX_TIM7_Init(void);
 static void MX_TIM3_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
+void StartTimeoutTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -149,7 +162,7 @@ static LCD_DrvTypeDef* LcdDrv;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
 
-volatile uint8_t sleep_timer = 60;
+int sleep_timeout = 60;
 
 /* USER CODE END 0 */
 
@@ -212,6 +225,10 @@ int main(void)
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* creation of TimeoutQueue */
+  TimeoutQueueHandle = osMessageQueueNew (16, sizeof(uint16_t), &TimeoutQueue_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
@@ -222,6 +239,9 @@ int main(void)
 
   /* creation of GUI_Task */
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
+
+  /* creation of TimeoutTask */
+  TimeoutTaskHandle = osThreadNew(StartTimeoutTask, NULL, &TimeoutTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1126,6 +1146,27 @@ void StartDefaultTask(void *argument)
     osDelay(100);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartTimeoutTask */
+/**
+* @brief Function implementing the TimeoutTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTimeoutTask */
+void StartTimeoutTask(void *argument)
+{
+  /* USER CODE BEGIN StartTimeoutTask */
+  /* Infinite loop */
+  static int sleep_timeout_value = 60;
+  for(;;)
+  {
+	  sleep_timeout_value--;
+	  osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
+	  osDelay(1000);
+  }
+  /* USER CODE END StartTimeoutTask */
 }
 
 /**

@@ -27,6 +27,8 @@ public:
 
     virtual ~Main_MenuPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     Main_MenuPresenter();
 
