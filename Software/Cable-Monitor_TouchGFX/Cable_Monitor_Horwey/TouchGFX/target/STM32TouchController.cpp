@@ -27,6 +27,8 @@
 static TS_DrvTypeDef*     TsDrv;
 static uint16_t          TsXBoundary, TsYBoundary;
 
+extern int sleep_timeout_value;
+
 typedef struct
 {
     uint16_t TouchDetected;
@@ -72,6 +74,7 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
     {
         x = state.X;
         y = state.Y;
+        sleep_timeout_value = 60;
         return true;
     }
     return false;

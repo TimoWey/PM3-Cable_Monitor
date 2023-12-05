@@ -160,7 +160,8 @@ static LCD_DrvTypeDef* LcdDrv;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
 
-int sleep_timeout = 60;
+//int isDisplayTouched = 0;
+int sleep_timeout_value = 60;
 
 /* USER CODE END 0 */
 
@@ -746,6 +747,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PA15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Alternate = GPIO_AF15_EVENTOUT;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pin : DEVICE_ON_Pin */
   GPIO_InitStruct.Pin = DEVICE_ON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -1117,7 +1126,7 @@ void StartTimeoutTask(void *argument)
   /* USER CODE BEGIN StartTimeoutTask */
   /* Infinite loop */
   // set the sleep timout to 60 seconds
-  static int sleep_timeout_value = 60;
+  //static int sleep_timeout_value = 60;
   for(;;)
   {
 	  sleep_timeout_value--;
