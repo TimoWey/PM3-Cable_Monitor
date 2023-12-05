@@ -20,6 +20,20 @@ Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
 
+    buttonWithLabel3.setXY(33, 257);
+    buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
+    buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_J2XI));
+    buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel3.setAction(buttonCallback);
+    add(buttonWithLabel3);
+
+    textArea3.setXY(23, 60);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZR32));
+    add(textArea3);
+
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
@@ -32,33 +46,17 @@ Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
     textArea2.setXY(69, 36);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YCWF));
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K7UP));
     add(textArea2);
 
     textArea1.setXY(50, 12);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7ZBX));
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0GAY));
     add(textArea1);
 
-    buttonWithLabel3.setXY(33, 240);
-    buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
-    buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_ZXHY));
-    buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setAction(buttonCallback);
-    add(buttonWithLabel3);
-
-    gauge1.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_TINY_BACKGROUNDS_DARK_ID));
-    gauge1.setPosition(56, 69, 120, 120);
-    gauge1.setCenter(60, 60);
-    gauge1.setStartEndAngle(-90, 90);
-    gauge1.setRange(0, 100);
-    gauge1.setValue(50);
-    gauge1.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_TINY_NEEDLES_ROUGH_ID, 5, 33);
-    gauge1.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    gauge1.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    add(gauge1);
+    gauge_with_Values1.setXY(0, 78);
+    add(gauge_with_Values1);
 }
 
 Measurement_Accurate_DisplayViewBase::~Measurement_Accurate_DisplayViewBase()
@@ -68,7 +66,7 @@ Measurement_Accurate_DisplayViewBase::~Measurement_Accurate_DisplayViewBase()
 
 void Measurement_Accurate_DisplayViewBase::setupScreen()
 {
-
+    gauge_with_Values1.initialize();
 }
 
 void Measurement_Accurate_DisplayViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -76,8 +74,8 @@ void Measurement_Accurate_DisplayViewBase::buttonCallbackHandler(const touchgfx:
     if (&src == &buttonWithLabel3)
     {
         //Interaction1
-        //When buttonWithLabel3 clicked change screen to Measurement_Single
-        //Go to Measurement_Single with screen transition towards West
-        application().gotoMeasurement_SingleScreenSlideTransitionWest();
+        //When buttonWithLabel3 clicked change screen to Measurement_Accurate
+        //Go to Measurement_Accurate with screen transition towards West
+        application().gotoMeasurement_AccurateScreenWipeTransitionWest();
     }
 }

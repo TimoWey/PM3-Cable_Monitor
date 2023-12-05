@@ -20,6 +20,12 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
 
+    textArea3.setXY(31, 60);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M3QF));
+    add(textArea3);
+
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
@@ -28,12 +34,6 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     line1.setLineWidth(1);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
-
-    textArea3.setXY(29, 63);
-    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea3.setLinespacing(0);
-    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5EX1));
-    add(textArea3);
 
     textArea2.setXY(69, 36);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -75,7 +75,7 @@ void Measurement_Single_Display_1PViewBase::buttonCallbackHandler(const touchgfx
     {
         //Interaction1
         //When buttonWithLabel3 clicked change screen to Measurement_Single
-        //Go to Measurement_Single with screen transition towards West
-        application().gotoMeasurement_SingleScreenSlideTransitionWest();
+        //Go to Measurement_Single with screen transition towards East
+        application().gotoMeasurement_SingleScreenWipeTransitionEast();
     }
 }

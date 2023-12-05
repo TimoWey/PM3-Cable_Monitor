@@ -9,11 +9,11 @@
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/Gauge.hpp>
+#include <gui/containers/Gauge_with_Values.hpp>
 
 class Measurement_Accurate_DisplayViewBase : public touchgfx::View<Measurement_Accurate_DisplayPresenter>
 {
@@ -32,12 +32,13 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
+    touchgfx::ButtonWithLabel buttonWithLabel3;
+    touchgfx::TextArea textArea3;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
-    touchgfx::ButtonWithLabel buttonWithLabel3;
-    touchgfx::Gauge gauge1;
+    Gauge_with_Values gauge_with_Values1;
 
 private:
 

@@ -9,12 +9,12 @@
 #include <gui/main_menu_screen/Main_MenuPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #ifndef SIMULATOR
 #include "main.h"
 #endif
@@ -36,6 +36,7 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
+    touchgfx::TextAreaWithOneWildcard textArea3;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea2;
@@ -44,7 +45,6 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel2;
     touchgfx::ButtonWithLabel buttonWithLabel1;
     touchgfx::ButtonWithIcon buttonWithIcon1;
-    touchgfx::TextAreaWithOneWildcard textArea3;
 
     /*
      * Wildcard Buffers

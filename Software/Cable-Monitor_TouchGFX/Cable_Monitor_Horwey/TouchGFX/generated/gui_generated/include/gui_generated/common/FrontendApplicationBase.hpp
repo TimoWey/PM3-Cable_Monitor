@@ -33,13 +33,22 @@ public:
     // Measurement_Single
     void gotoMeasurement_SingleScreenWipeTransitionEast();
 
-    void gotoMeasurement_SingleScreenSlideTransitionWest();
-
     // Measurement_Single_Display_1P
-    void gotoMeasurement_Single_Display_1PScreenSlideTransitionEast();
+    void gotoMeasurement_Single_Display_1PScreenWipeTransitionEast();
 
     // Measurement_Single_Display_3P
     void gotoMeasurement_Single_Display_3PScreenWipeTransitionEast();
+
+    // Measurement_Accurate
+    void gotoMeasurement_AccurateScreenWipeTransitionEast();
+
+    void gotoMeasurement_AccurateScreenWipeTransitionWest();
+
+    // Measurement_Accurate_Display
+    void gotoMeasurement_Accurate_DisplayScreenWipeTransitionEast();
+
+    // Measurement_Accurate_Display_2
+    void gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEast();
 
     // Calibration
     void gotoCalibrationScreenWipeTransitionEast();
@@ -68,13 +77,22 @@ protected:
     // Measurement_Single
     void gotoMeasurement_SingleScreenWipeTransitionEastImpl();
 
-    void gotoMeasurement_SingleScreenSlideTransitionWestImpl();
-
     // Measurement_Single_Display_1P
-    void gotoMeasurement_Single_Display_1PScreenSlideTransitionEastImpl();
+    void gotoMeasurement_Single_Display_1PScreenWipeTransitionEastImpl();
 
     // Measurement_Single_Display_3P
     void gotoMeasurement_Single_Display_3PScreenWipeTransitionEastImpl();
+
+    // Measurement_Accurate
+    void gotoMeasurement_AccurateScreenWipeTransitionEastImpl();
+
+    void gotoMeasurement_AccurateScreenWipeTransitionWestImpl();
+
+    // Measurement_Accurate_Display
+    void gotoMeasurement_Accurate_DisplayScreenWipeTransitionEastImpl();
+
+    // Measurement_Accurate_Display_2
+    void gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEastImpl();
 
     // Calibration
     void gotoCalibrationScreenWipeTransitionEastImpl();
