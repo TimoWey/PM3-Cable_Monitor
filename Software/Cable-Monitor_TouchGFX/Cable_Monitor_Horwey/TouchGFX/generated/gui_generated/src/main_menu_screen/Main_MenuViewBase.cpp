@@ -50,6 +50,12 @@ Main_MenuViewBase::Main_MenuViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9K1W));
     add(textArea1);
 
+    textArea3_1.setXY(88, 60);
+    textArea3_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3_1.setLinespacing(0);
+    textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L4HV));
+    add(textArea3_1);
+
     buttonWithLabel3.setXY(33, 240);
     buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
     buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_WFCV));
