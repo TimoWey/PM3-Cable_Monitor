@@ -17,9 +17,13 @@ void Main_MenuView::tearDownScreen()
 
 void Main_MenuView::setTimeoutValue(int value)
 {
-	//gauge1.setValue(value);
-	//gauge1.invalidate();
-
+	//display the timeout value on the GUI
 	Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%d", value);
 	textArea3.invalidate();
+
+	if(value == 0)
+	{
+		//application().gotoMeasurement_SingleScreenSlideTransitionWest();
+		application().gotoShutting_OffScreenNoTransition();
+	}
 }
