@@ -10,6 +10,7 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 // Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    338, // T___SINGLEUSE_UQO1: "000"
     222, // T___SINGLEUSE_2SIJ: "Auto off: <>"
     196, // T___SINGLEUSE_UKDF: "Current: <> A"
     209, // T___SINGLEUSE_54VS: "Voltage: <> V"
@@ -42,7 +43,7 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     0,   // T___SINGLEUSE_9J9T: "Version: 1.0\nDate: 01.12.2023\nAuthors: Horvat & Wey\nModul: ET.PM3 ZHAW\nLecturers: Matic &\nEhrensperger"
     234, // T___SINGLEUSE_SSFQ: "Cable-Monitor"
     176, // T___SINGLEUSE_8N0V: "by Alejandro & Timo"
-    338, // T___SINGLEUSE_D7CI: "Pad"
+    342, // T___SINGLEUSE_D7CI: "Pad"
     273, // T___SINGLEUSE_APIG: "Hall-Sensor"
     285, // T___SINGLEUSE_JKZK: "Return Home"
     234, // T___SINGLEUSE_2ABZ: "Cable-Monitor"

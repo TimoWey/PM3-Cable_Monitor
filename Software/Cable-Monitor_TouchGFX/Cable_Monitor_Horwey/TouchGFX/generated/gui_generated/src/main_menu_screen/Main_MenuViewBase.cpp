@@ -71,22 +71,14 @@ Main_MenuViewBase::Main_MenuViewBase() :
     buttonWithIcon1.setAction(buttonCallback);
     add(buttonWithIcon1);
 
-    textArea3.setXY(0, 0);
+    textArea3.setXY(86, 308);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
+    Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_UQO1).getText());
+    textArea3.setWildcard(textArea3Buffer);
+    textArea3.resizeToCurrentText();
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2SIJ));
     add(textArea3);
-
-    gauge1.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_TINY_BACKGROUNDS_LIGHT_PRECISION_ID));
-    gauge1.setPosition(96, 110, 120, 120);
-    gauge1.setCenter(60, 60);
-    gauge1.setStartEndAngle(-90, 90);
-    gauge1.setRange(0, 100);
-    gauge1.setValue(50);
-    gauge1.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_TINY_NEEDLES_ROUGH_ID, 5, 33);
-    gauge1.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    gauge1.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    add(gauge1);
 }
 
 Main_MenuViewBase::~Main_MenuViewBase()
