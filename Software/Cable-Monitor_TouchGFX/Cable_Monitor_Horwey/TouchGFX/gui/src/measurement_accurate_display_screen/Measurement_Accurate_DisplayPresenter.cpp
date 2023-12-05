@@ -16,3 +16,8 @@ void Measurement_Accurate_DisplayPresenter::deactivate()
 {
 
 }
+
+void Measurement_Accurate_DisplayPresenter::setTimeoutValue(int value)
+{
+
+}

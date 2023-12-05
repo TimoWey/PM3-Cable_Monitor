@@ -27,6 +27,8 @@ public:
 
     virtual ~Measurement_Accurate_DisplayPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     Measurement_Accurate_DisplayPresenter();
 

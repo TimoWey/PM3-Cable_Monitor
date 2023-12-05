@@ -43,21 +43,21 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  19 .debug_line_str 00000093  00000000  00000000  001e245f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_info   001bed96  00000000  00000000  001e24f2  2**0
+ 20 .debug_info   001bee14  00000000  00000000  001e24f2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_abbrev 000252d8  00000000  00000000  003a1288  2**0
+ 21 .debug_abbrev 000252d8  00000000  00000000  003a1306  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_aranges 00003ac0  00000000  00000000  003c6560  2**3
+ 22 .debug_aranges 00003ac0  00000000  00000000  003c65e0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_str    0011b082  00000000  00000000  003ca020  2**0
+ 23 .debug_str    0011b174  00000000  00000000  003ca0a0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 24 .debug_rnglists 00004ea4  00000000  00000000  004e50a2  2**0
+ 24 .debug_rnglists 00004ea4  00000000  00000000  004e5214  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 25 .debug_loclists 00020421  00000000  00000000  004e9f46  2**0
+ 25 .debug_loclists 00020418  00000000  00000000  004ea0b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 26 .debug_macro  000360b7  00000000  00000000  0050a367  2**0
+ 26 .debug_macro  000360b7  00000000  00000000  0050a4d0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 27 .debug_frame  0000a608  00000000  00000000  00540420  2**2
+ 27 .debug_frame  0000a608  00000000  00000000  00540588  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -10780,6 +10780,7 @@ protected:
         //Interaction4
         //When buttonWithIcon1 clicked execute C++ code
         //Execute C++ code
+        #ifndef SIMULATOR
         HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
  8004232:	4806      	ldr	r0, [pc, #24]	; (800424c <_ZN17Main_MenuViewBase21buttonCallbackHandlerERKN8touchgfx14AbstractButtonE+0x58>)
  8004234:	2200      	movs	r2, #0
@@ -15019,6 +15020,7 @@ void Model::tick()
  8006168:	6803      	ldr	r3, [r0, #0]
 		}
 	}
+#endif
 }
  800616a:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
 			modelListener->setTimeoutValue(Timeout_Value);
