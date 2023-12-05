@@ -27,6 +27,8 @@ public:
 
     virtual ~CalibrationPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     CalibrationPresenter();
 

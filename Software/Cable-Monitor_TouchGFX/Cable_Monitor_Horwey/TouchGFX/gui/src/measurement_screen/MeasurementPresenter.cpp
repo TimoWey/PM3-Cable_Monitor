@@ -16,3 +16,8 @@ void MeasurementPresenter::deactivate()
 {
 
 }
+
+void MeasurementPresenter::setTimeoutValue(int value)
+{
+
+}

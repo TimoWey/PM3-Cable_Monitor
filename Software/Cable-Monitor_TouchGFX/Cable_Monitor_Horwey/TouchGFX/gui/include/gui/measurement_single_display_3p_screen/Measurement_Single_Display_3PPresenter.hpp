@@ -27,6 +27,8 @@ public:
 
     virtual ~Measurement_Single_Display_3PPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     Measurement_Single_Display_3PPresenter();
 
