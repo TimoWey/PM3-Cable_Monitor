@@ -213,8 +213,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#include \"main.h\"",
-              "Code": "HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);"
+              "Includes": "#ifndef SIMULATOR\r\n#include \"main.h\"\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\nHAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);\r\n#endif\r\n"
             }
           },
           {

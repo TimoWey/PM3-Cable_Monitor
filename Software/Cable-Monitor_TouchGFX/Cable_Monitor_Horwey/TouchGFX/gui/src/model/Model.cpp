@@ -6,7 +6,7 @@
 #include "main.h"
 extern "C"
 {
-	extern osMessageQueueId_t TimeoutTaskHandle;
+	//extern osMessageQueueId_t TimeoutTaskHandle;
 	extern osMessageQueueId_t TimeoutQueueHandle;
 }
 #endif
@@ -29,5 +29,6 @@ void Model::tick()
 			modelListener->setTimeoutValue(Timeout_Value);
 		}
 	}
-}
 #endif
+}
+

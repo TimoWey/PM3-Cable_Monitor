@@ -15,7 +15,9 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#ifndef SIMULATOR
 #include "main.h"
+#endif
 
 class Main_MenuViewBase : public touchgfx::View<Main_MenuPresenter>
 {

@@ -119,7 +119,9 @@ void Main_MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
         //Interaction4
         //When buttonWithIcon1 clicked execute C++ code
         //Execute C++ code
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
+        #ifndef SIMULATOR
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
+        #endif
         //Interaction5
         //When buttonWithIcon1 clicked change screen to Shutting_Off
         //Go to Shutting_Off with no screen transition
