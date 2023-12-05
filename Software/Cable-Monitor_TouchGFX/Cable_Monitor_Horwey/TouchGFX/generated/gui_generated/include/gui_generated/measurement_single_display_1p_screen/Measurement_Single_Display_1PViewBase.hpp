@@ -9,9 +9,9 @@
 #include <gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <gui/containers/Gauge_with_Values.hpp>
 
@@ -32,9 +32,9 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
+    touchgfx::TextArea textArea3;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::TextArea textArea3;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
     touchgfx::ButtonWithLabel buttonWithLabel3;

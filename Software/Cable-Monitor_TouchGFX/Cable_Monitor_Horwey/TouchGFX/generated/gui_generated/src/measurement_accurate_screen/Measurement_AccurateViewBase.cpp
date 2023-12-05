@@ -41,6 +41,12 @@ Measurement_AccurateViewBase::Measurement_AccurateViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1X41));
     add(textArea1);
 
+    textArea3.setXY(33, 60);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D7H9));
+    add(textArea3);
+
     buttonWithLabel3.setXY(33, 240);
     buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
     buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_NRXD));
@@ -54,6 +60,7 @@ Measurement_AccurateViewBase::Measurement_AccurateViewBase() :
     buttonWithLabel2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_DMVB));
     buttonWithLabel2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel2.setAction(buttonCallback);
     add(buttonWithLabel2);
 
     buttonWithLabel1.setXY(33, 100);
@@ -61,6 +68,7 @@ Measurement_AccurateViewBase::Measurement_AccurateViewBase() :
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_CU44));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setAction(buttonCallback);
     add(buttonWithLabel1);
 }
 
@@ -82,5 +90,19 @@ void Measurement_AccurateViewBase::buttonCallbackHandler(const touchgfx::Abstrac
         //When buttonWithLabel3 clicked change screen to Measurement
         //Go to Measurement with screen transition towards West
         application().gotoMeasurementScreenWipeTransitionWest();
+    }
+    if (&src == &buttonWithLabel2)
+    {
+        //Interaction2
+        //When buttonWithLabel2 clicked change screen to Measurement_Accurate_Display_2
+        //Go to Measurement_Accurate_Display_2 with screen transition towards East
+        application().gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEast();
+    }
+    if (&src == &buttonWithLabel1)
+    {
+        //Interaction3
+        //When buttonWithLabel1 clicked change screen to Measurement_Accurate_Display
+        //Go to Measurement_Accurate_Display with screen transition towards East
+        application().gotoMeasurement_Accurate_DisplayScreenWipeTransitionEast();
     }
 }

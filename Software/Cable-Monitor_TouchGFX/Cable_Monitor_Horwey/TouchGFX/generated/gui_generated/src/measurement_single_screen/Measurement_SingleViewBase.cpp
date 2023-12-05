@@ -20,6 +20,12 @@ Measurement_SingleViewBase::Measurement_SingleViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
 
+    textArea3.setXY(41, 60);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1QNY));
+    add(textArea3);
+
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
@@ -90,7 +96,7 @@ void Measurement_SingleViewBase::buttonCallbackHandler(const touchgfx::AbstractB
         //Interaction2
         //When buttonWithLabel1 clicked change screen to Measurement_Single_Display_1P
         //Go to Measurement_Single_Display_1P with screen transition towards East
-        application().gotoMeasurement_Single_Display_1PScreenSlideTransitionEast();
+        application().gotoMeasurement_Single_Display_1PScreenWipeTransitionEast();
     }
     if (&src == &buttonWithLabel2)
     {

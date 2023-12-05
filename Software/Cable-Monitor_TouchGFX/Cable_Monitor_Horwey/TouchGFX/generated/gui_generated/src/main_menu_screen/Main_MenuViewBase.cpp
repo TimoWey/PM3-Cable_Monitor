@@ -20,6 +20,15 @@ Main_MenuViewBase::Main_MenuViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
 
+    textArea3.setXY(86, 308);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_UQO1).getText());
+    textArea3.setWildcard(textArea3Buffer);
+    textArea3.resizeToCurrentText();
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2SIJ));
+    add(textArea3);
+
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
@@ -70,15 +79,6 @@ Main_MenuViewBase::Main_MenuViewBase() :
     buttonWithIcon1.setIconXY(0, 0);
     buttonWithIcon1.setAction(buttonCallback);
     add(buttonWithIcon1);
-
-    textArea3.setXY(86, 308);
-    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea3.setLinespacing(0);
-    Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_UQO1).getText());
-    textArea3.setWildcard(textArea3Buffer);
-    textArea3.resizeToCurrentText();
-    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2SIJ));
-    add(textArea3);
 }
 
 Main_MenuViewBase::~Main_MenuViewBase()
