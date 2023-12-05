@@ -20,6 +20,15 @@ MeasurementViewBase::MeasurementViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
 
+    textArea3_1.setXY(86, 308);
+    textArea3_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3_1.setLinespacing(0);
+    Unicode::snprintf(textArea3_1Buffer, TEXTAREA3_1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_0CQH).getText());
+    textArea3_1.setWildcard(textArea3_1Buffer);
+    textArea3_1.resizeToCurrentText();
+    textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TOET));
+    add(textArea3_1);
+
     textArea3.setXY(57, 60);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
