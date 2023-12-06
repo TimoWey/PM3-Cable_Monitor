@@ -19,5 +19,5 @@ void Measurement_AccuratePresenter::deactivate()
 
 void Measurement_AccuratePresenter::setTimeoutValue(int value)
 {
-
+	view.setTimeoutValue(value);
 }
