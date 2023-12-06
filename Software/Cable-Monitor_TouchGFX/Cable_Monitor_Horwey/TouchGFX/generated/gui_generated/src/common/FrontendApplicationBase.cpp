@@ -29,6 +29,8 @@
 #include <gui/calibration_screen/CalibrationPresenter.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadView.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadPresenter.hpp>
+#include <gui/calibration_hall_screen/Calibration_HallView.hpp>
+#include <gui/calibration_hall_screen/Calibration_HallPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
 #include <gui/project_info_screen/Project_InfoPresenter.hpp>
 #include <gui/shutting_off_screen/Shutting_OffView.hpp>
@@ -224,6 +226,19 @@ void FrontendApplicationBase::gotoCalibration_PadScreenWipeTransitionEast()
 void FrontendApplicationBase::gotoCalibration_PadScreenWipeTransitionEastImpl()
 {
     touchgfx::makeTransition<Calibration_PadView, Calibration_PadPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Calibration_Hall
+
+void FrontendApplicationBase::gotoCalibration_HallScreenWipeTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoCalibration_HallScreenWipeTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoCalibration_HallScreenWipeTransitionEastImpl()
+{
+    touchgfx::makeTransition<Calibration_HallView, Calibration_HallPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Project_Info

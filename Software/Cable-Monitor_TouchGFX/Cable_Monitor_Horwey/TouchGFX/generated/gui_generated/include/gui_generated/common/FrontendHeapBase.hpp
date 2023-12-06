@@ -34,6 +34,8 @@
 #include <gui/calibration_screen/CalibrationPresenter.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadView.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadPresenter.hpp>
+#include <gui/calibration_hall_screen/Calibration_HallView.hpp>
+#include <gui/calibration_hall_screen/Calibration_HallPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
 #include <gui/project_info_screen/Project_InfoPresenter.hpp>
 #include <gui/shutting_off_screen/Shutting_OffView.hpp>
@@ -70,9 +72,10 @@ public:
             touchgfx::meta::TypeList< Measurement_Accurate_Display_2View,
             touchgfx::meta::TypeList< CalibrationView,
             touchgfx::meta::TypeList< Calibration_PadView,
+            touchgfx::meta::TypeList< Calibration_HallView,
             touchgfx::meta::TypeList< Project_InfoView,
             touchgfx::meta::TypeList< Shutting_OffView,
-            touchgfx::meta::Nil > > > > > > > > > > >
+            touchgfx::meta::Nil > > > > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -94,9 +97,10 @@ public:
             touchgfx::meta::TypeList< Measurement_Accurate_Display_2Presenter,
             touchgfx::meta::TypeList< CalibrationPresenter,
             touchgfx::meta::TypeList< Calibration_PadPresenter,
+            touchgfx::meta::TypeList< Calibration_HallPresenter,
             touchgfx::meta::TypeList< Project_InfoPresenter,
             touchgfx::meta::TypeList< Shutting_OffPresenter,
-            touchgfx::meta::Nil > > > > > > > > > > >
+            touchgfx::meta::Nil > > > > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**
