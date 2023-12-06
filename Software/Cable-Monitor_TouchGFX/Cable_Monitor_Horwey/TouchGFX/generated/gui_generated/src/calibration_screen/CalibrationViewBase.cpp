@@ -20,7 +20,7 @@ CalibrationViewBase::CalibrationViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
 
-    textArea3_1.setXY(86, 308);
+    textArea3_1.setXY(89, 308);
     textArea3_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3_1.setLinespacing(0);
     Unicode::snprintf(textArea3_1Buffer, TEXTAREA3_1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_I8KB).getText());
@@ -38,13 +38,19 @@ CalibrationViewBase::CalibrationViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    textArea2.setXY(69, 36);
+    textArea3.setXY(70, 60);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_05WF));
+    add(textArea3);
+
+    textArea2.setXY(69, 35);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y01G));
     add(textArea2);
 
-    textArea1.setXY(50, 12);
+    textArea1.setXY(54, 12);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2ABZ));
@@ -70,6 +76,7 @@ CalibrationViewBase::CalibrationViewBase() :
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_D7CI));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setAction(buttonCallback);
     add(buttonWithLabel1);
 }
 
@@ -91,5 +98,12 @@ void CalibrationViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When buttonWithLabel3 clicked change screen to Main_Menu
         //Go to Main_Menu with screen transition towards West
         application().gotoMain_MenuScreenWipeTransitionWest();
+    }
+    if (&src == &buttonWithLabel1)
+    {
+        //Interaction2
+        //When buttonWithLabel1 clicked change screen to Calibration_Pad
+        //Go to Calibration_Pad with screen transition towards East
+        application().gotoCalibration_PadScreenWipeTransitionEast();
     }
 }

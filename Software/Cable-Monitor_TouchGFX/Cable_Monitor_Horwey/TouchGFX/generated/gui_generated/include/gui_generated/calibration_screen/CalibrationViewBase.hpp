@@ -35,6 +35,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard textArea3_1;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
+    touchgfx::TextArea textArea3;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
     touchgfx::ButtonWithLabel buttonWithLabel3;

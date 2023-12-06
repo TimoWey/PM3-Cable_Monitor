@@ -143,6 +143,9 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
  ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
  ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
  ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp \
@@ -303,6 +306,9 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
 ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp:
+../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp:
+../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
 ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp:
 ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp:

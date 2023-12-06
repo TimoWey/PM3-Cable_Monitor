@@ -29,7 +29,7 @@ MeasurementViewBase::MeasurementViewBase() :
     textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TOET));
     add(textArea3_1);
 
-    textArea3.setXY(57, 60);
+    textArea3.setXY(61, 60);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q8CP));
@@ -44,13 +44,13 @@ MeasurementViewBase::MeasurementViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    textArea2.setXY(69, 36);
+    textArea2.setXY(69, 35);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_V2L5));
     add(textArea2);
 
-    textArea1.setXY(50, 12);
+    textArea1.setXY(54, 12);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FIV6));
