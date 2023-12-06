@@ -53,6 +53,11 @@ public:
     // Calibration
     void gotoCalibrationScreenWipeTransitionEast();
 
+    void gotoCalibrationScreenWipeTransitionWest();
+
+    // Calibration_Pad
+    void gotoCalibration_PadScreenWipeTransitionEast();
+
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEast();
 
@@ -96,6 +101,11 @@ protected:
 
     // Calibration
     void gotoCalibrationScreenWipeTransitionEastImpl();
+
+    void gotoCalibrationScreenWipeTransitionWestImpl();
+
+    // Calibration_Pad
+    void gotoCalibration_PadScreenWipeTransitionEastImpl();
 
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEastImpl();

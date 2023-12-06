@@ -27,6 +27,8 @@
 #include <gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp>
 #include <gui/calibration_screen/CalibrationView.hpp>
 #include <gui/calibration_screen/CalibrationPresenter.hpp>
+#include <gui/calibration_pad_screen/Calibration_PadView.hpp>
+#include <gui/calibration_pad_screen/Calibration_PadPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
 #include <gui/project_info_screen/Project_InfoPresenter.hpp>
 #include <gui/shutting_off_screen/Shutting_OffView.hpp>
@@ -198,6 +200,30 @@ void FrontendApplicationBase::gotoCalibrationScreenWipeTransitionEast()
 void FrontendApplicationBase::gotoCalibrationScreenWipeTransitionEastImpl()
 {
     touchgfx::makeTransition<CalibrationView, CalibrationPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplicationBase::gotoCalibrationScreenWipeTransitionWest()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoCalibrationScreenWipeTransitionWestImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoCalibrationScreenWipeTransitionWestImpl()
+{
+    touchgfx::makeTransition<CalibrationView, CalibrationPresenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Calibration_Pad
+
+void FrontendApplicationBase::gotoCalibration_PadScreenWipeTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoCalibration_PadScreenWipeTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoCalibration_PadScreenWipeTransitionEastImpl()
+{
+    touchgfx::makeTransition<Calibration_PadView, Calibration_PadPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Project_Info

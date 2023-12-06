@@ -38,13 +38,13 @@ Main_MenuViewBase::Main_MenuViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    textArea2.setXY(69, 36);
+    textArea2.setXY(69, 35);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6D7Z));
     add(textArea2);
 
-    textArea1.setXY(50, 12);
+    textArea1.setXY(54, 12);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9K1W));
