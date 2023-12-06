@@ -69,6 +69,7 @@ CalibrationViewBase::CalibrationViewBase() :
     buttonWithLabel2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_APIG));
     buttonWithLabel2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel2.setAction(buttonCallback);
     add(buttonWithLabel2);
 
     buttonWithLabel1.setXY(33, 100);
@@ -105,5 +106,12 @@ void CalibrationViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When buttonWithLabel1 clicked change screen to Calibration_Pad
         //Go to Calibration_Pad with screen transition towards East
         application().gotoCalibration_PadScreenWipeTransitionEast();
+    }
+    if (&src == &buttonWithLabel2)
+    {
+        //Interaction3
+        //When buttonWithLabel2 clicked change screen to Calibration_Hall
+        //Go to Calibration_Hall with screen transition towards East
+        application().gotoCalibration_HallScreenWipeTransitionEast();
     }
 }
