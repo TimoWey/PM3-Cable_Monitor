@@ -19,5 +19,5 @@ void Project_InfoPresenter::deactivate()
 
 void Project_InfoPresenter::setTimeoutValue(int value)
 {
-
+	view.setTimeoutValue(value);
 }
