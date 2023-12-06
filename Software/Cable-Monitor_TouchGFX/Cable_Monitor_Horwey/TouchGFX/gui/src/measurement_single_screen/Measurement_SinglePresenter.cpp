@@ -19,5 +19,5 @@ void Measurement_SinglePresenter::deactivate()
 
 void Measurement_SinglePresenter::setTimeoutValue(int value)
 {
-
+	view.setTimeoutValue(value);
 }

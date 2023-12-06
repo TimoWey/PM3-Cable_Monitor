@@ -11,6 +11,7 @@ public:
     virtual ~Measurement_SingleView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void setTimeoutValue(int value);
 protected:
 };
 
