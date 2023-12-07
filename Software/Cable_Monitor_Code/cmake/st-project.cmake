@@ -24,6 +24,7 @@ target_include_directories(
     "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:${PROJECT_SOURCE_DIR}/Drivers\\BSP\\STM32F429I-Discovery>"
     "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:${PROJECT_SOURCE_DIR}/Utilities\\Fonts>"
     "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:${PROJECT_SOURCE_DIR}/Drivers\\CMSIS\\DSP\\Include>"
+    "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:C:\\Users\\aleja\\OneDrive - ZHAW\\0_Modulen\\3 Jahr\\Semester 5\\PM3\\PM3-Cable_Monitor\\Software\\Cable_Monitor_Code\\Drivers>"
 )
 
 target_compile_options(

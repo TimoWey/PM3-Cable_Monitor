@@ -79,15 +79,7 @@ typedef struct {
 /******************************************************************************
  * Functions
  *****************************************************************************/
-void CALC_start_single_measurement(CALC_meas_data_t *meas_data,
-		CALC_phase_item_t phase);
-void CALC_start_accurate_measurement(CALC_meas_data_t *meas_data,
-		CALC_phase_item_t phase);
-void CALC_start_pad_calibration(CALC_cali_pad_step_t state_pad_cali);
-void CALC_start_coil_calibration(CALC_phase_item_t state_phase,
-		CALC_cali_coil_step_t state_coil_cali);
-float *CALC_get_act_dist(void);
-float *CALC_get_act_curr(void);
+float calculate_main_frequency(uint8_t Channel, float* samples, uint8_t num_channels, uint32_t buffer_size, uint32_t sampling_freq);
 
 
 #endif	/* CALC_H_ */
