@@ -65,8 +65,8 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define ADC_NUMS 60         ///< Number of samples
-#define ADC_FS 600          ///< Sampling freq. => 12 samples for a 50Hz period
+#define ADC_NUMS 64         ///< Number of samples
+#define ADC_FS 640          ///< Sampling freq. => 12 samples for a 50Hz period
 #define TIM_CLOCK 84000000  ///< APB1 timer clock frequency
 #define TIM_TOP 9           ///< Timer top value
 #define TIM_PRESCALE \
@@ -238,37 +238,56 @@ uint32_t* MEAS_start_measure(void) {
     return ADC_samples;
 }
 
+/** ***************************************************************************
+ * @brief Get the number of channels
+ * @return Number of channels
+ *****************************************************************************/
+uint8_t MEAS_get_num_of_chan(void)
+{
+	return INPUT_COUNT;
+}
+
+
+/** ***************************************************************************
+ * @brief Get the number of samples
+ * @return Number of samples
+ *****************************************************************************/
+uint8_t MEAS_get_num_of_samples(void)
+{
+	return ADC_NUMS;
+}
+
+
+/** ***************************************************************************
+ * @brief Get the sampling frequency
+ * @return Sampling frequency
+ *****************************************************************************/
+uint16_t MEAS_get_samp_freq(void)
+{
+	return ADC_FS;
+}
+
 /**
  * @brief Initializes the MEAS timer.
  *
  * This function enables the clock for timer 3, sets the prescaler to 16000,
  * sets the auto reload register to 100, enables the update interrupt,
  * enables timer 3, and enables the timer 3 interrupt.
- * This timer is used to trigger the data output to the display every 2s.
+ * This timer is used to trigger the data output to the display every 800ms.
  */
 void OUTPUT_MEAS_timer_init(void) {
     RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;  // enable clock for timer 3
     TIM3->PSC = 16000 - 1;               // set prescaler to 16000
-    TIM3->ARR = 800 - 1;                 // set auto reload register to 2000
+    TIM3->ARR = 800 - 1;                 // set auto reload register to 800
     TIM3->DIER |= TIM_DIER_UIE;          // enable update interrupt
     TIM3->CR1 |= TIM_CR1_CEN;            // enable timer 3
     NVIC_SetPriority(TIM3_IRQn, 3);
     NVIC_EnableIRQ(TIM3_IRQn);  // enable timer 3 interrupt
 }
 
-/**
- * @brief Calculates the frequency of a signal based on the given samples.
- *
- * This function calculates the frequency of a signal by finding the peaks in the samples.
- * It iterates through the samples and checks for peaks by comparing each sample with its neighbors.
- * The first and last peak indices are recorded, and the peak count is incremented for each subsequent peak.
- * The average period between peaks is then calculated, and the frequency is obtained by dividing the ADC full scale by the average period.
- *
- * @param Channel The channel number of the samples.
- * @param Samples Pointer to the array of samples.
- * @return The calculated frequency of the signal.
- */
-uint32_t frequency_calculation(uint8_t Channel, uint32_t* Samples) {
+
+
+/* uint32_t frequency_calculation(uint8_t Channel, uint32_t* Samples) {
 	uint32_t first_peak_index = 0;
 	uint32_t last_peak_index = 0;
 	uint32_t peak_count = 0;
@@ -291,7 +310,7 @@ uint32_t frequency_calculation(uint8_t Channel, uint32_t* Samples) {
 		frequency = ADC_FS / average_period;
 	}
 	return frequency;
-}
+} */
 
 /** ***************************************************************************
  * @brief Draw buffer data as curves
@@ -334,7 +353,8 @@ void MEAS_show_data(void) {
     BSP_LCD_SetFont(&Font20);
     char text[32];
 	// Calculate the frequency of channel 1
-	uint32_t frequency = frequency_calculation(0, Samples);
+	float frequency = calculate_main_frequency(1, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
+    //uint32_t frequency = frequency_calculation(0, Samples);
     // Calculate the peak value of channel 1
     uint32_t peak = 0;
     for (uint32_t i = 0; i < ADC_NUMS; i++) {
@@ -344,11 +364,12 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_CYAN);
-    snprintf(text, 40, "C1:%4d f:%3d HZ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C1:%4d f:%3d HZ", (int)(peak), (float)(frequency));
     // snprintf(text, 15, "C1 %4d", (int)(Samples[0]));
     BSP_LCD_DisplayStringAt(0, 140, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 2
-	frequency = frequency_calculation(1, Samples);
+	frequency = calculate_main_frequency(2, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
+    //frequency = frequency_calculation(1, Samples);
     // Calculate the peak value of channel 2
     peak = 0;
     for (uint32_t i = 0; i < ADC_NUMS; i++) {
@@ -358,11 +379,12 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_RED);
-    snprintf(text, 40, "C2:%4d f:%3d HZ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C2:%4d f:%3d HZ", (int)(peak), (float)(frequency));
     // snprintf(text, 15, "C2 %4d", (int)(Samples[1]));
     BSP_LCD_DisplayStringAt(0, 170, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 3
-	frequency = frequency_calculation(2, Samples);
+	frequency = calculate_main_frequency(3, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
+    //frequency = frequency_calculation(2, Samples);
     // Calculate the peak value of channel 3
     peak = 0;
     for (uint32_t i = 0; i < ADC_NUMS; i++) {
@@ -372,11 +394,12 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
-    snprintf(text, 40, "C3:%4d f:%3d HZ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C3:%4d f:%3d HZ ", (int)(peak), (float)(frequency));
     // snprintf(text, 15, "C3 %4d", (int)(Samples[2]));
     BSP_LCD_DisplayStringAt(0, 200, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 4
-	frequency = frequency_calculation(3, Samples);
+	frequency = calculate_main_frequency(4, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
+    //frequency = frequency_calculation(3, Samples);
     // Calculate the peak value of channel 4
     peak = 0;
     for (uint32_t i = 0; i < ADC_NUMS; i++) {
@@ -386,7 +409,7 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
-    snprintf(text, 40, "C4:%4d f:%3d HZ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C4:%4d f:%3d HZ", (int)(peak), (float)(frequency));
     // snprintf(text, 15, "C4 %4d", (int)(Samples[3]));
     BSP_LCD_DisplayStringAt(0, 230, (uint8_t*)text, LEFT_MODE);
     /* Draw the  values of input channel 1 as a curve */

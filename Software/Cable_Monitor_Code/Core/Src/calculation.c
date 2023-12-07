@@ -61,6 +61,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "stm32f4xx.h"
+#include "stm32f4xx_hal.h"
 #include "arm_math.h"
 
 #include "calculation.h"
@@ -111,6 +112,9 @@ static float a_magnetic_1 = 0;
 static float a_magnetic_3 = 0;
 	///< Constant for Current approximation
 
+// Global variable to store the FFT output
+//float32_t fft_output[60];
+
 /******************************************************************************
  * Functions
  * ****************************************************************************/
@@ -130,3 +134,48 @@ static void calc_distance_and_angle(float distance_pad_l,
 
 }*/
 
+/**
+ * @brief Calculates the main frequency for a specific channel using Fast Fourier Transform (FFT).
+ *
+ * This function takes an array of samples for all channels, extracts the samples for the specific channel,
+ * performs FFT on the extracted samples, calculates the magnitude of the complex numbers,
+ * finds the index of the maximum magnitude, and calculates the main frequency based on the index.
+ *
+ * @param Channel The channel for which the main frequency is calculated.
+ * @param all_samples Pointer to the array of all samples for all channels.
+ * @param num_channels The total number of channels.
+ * @param fft_len The length of the FFT.
+ * @param output Pointer to the array to store the FFT output.
+ * @return The main frequency for the specific channel.
+ */
+
+float calculate_main_frequency(uint8_t Channel, float* samples, uint8_t num_channels, uint32_t buffer_size, uint32_t sampling_freq) {
+    
+    // Perform FFT using CMSIS-DSP library
+    const uint32_t fft_size = buffer_size;
+    float32_t input_samples[fft_size];
+
+    for (uint32_t i = 0; i < fft_size; i++) {
+        input_samples[i] = samples[i * num_channels + (Channel - 1)];
+    }
+
+    float output[fft_size];
+    arm_rfft_fast_instance_f32 fft_struct;
+    arm_rfft_fast_init_f32(&fft_struct, fft_size);
+
+    // Perform the FFT on the input samples
+    arm_rfft_fast_f32(&fft_struct, input_samples, output, 0);
+
+    // Calculate magnitude of complex numbers
+    arm_cmplx_mag_f32(output, output, fft_size / 2);
+
+    // Find the index of the maximum magnitude in the first half of the array
+    uint32_t maxIndex;
+    float32_t maxValue;
+    arm_max_f32(output, fft_size / 2, &maxValue, &maxIndex);
+
+    // Calculate the main frequency
+    float main_frequency = (float)maxIndex * ((float)sampling_freq) / fft_size;
+    
+    return main_frequency;
+}

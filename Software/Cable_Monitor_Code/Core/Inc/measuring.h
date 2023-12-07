@@ -21,7 +21,6 @@
  *****************************************************************************/
 extern bool MEAS_data_ready;
 extern uint32_t MEAS_input_count;
-extern bool DAC_active;
 
 
 /******************************************************************************
@@ -29,15 +28,10 @@ extern bool DAC_active;
  *****************************************************************************/
 void MEAS_GPIO_analog_init(void);
 void ADC_reset(void);
-static void MEAS_Buffer_reset(uint8_t channels, uint32_t *buffer);
-void MEAS_timer_init(void);
-void ADC3_scan_init(void);
-void ADC3_scan_start(void);
-void ADC_IRQHandler(void);
-void DMA2_Stream1_IRQHandler(void);
+uint8_t MEAS_get_num_of_chan(void);
+uint8_t MEAS_get_num_of_samples(void);
+uint16_t MEAS_get_samp_freq(void);
 uint32_t *MEAS_start_measure(void);
-void OUTPUT_MEAS_timer_init(void);
 void MEAS_show_data(void);
-void TIM3_IRQHandler(void);
 
 #endif
