@@ -6,8 +6,8 @@
  *
  *****************************************************************************/
 
-#ifndef CALC_H_
-#define CALC_H_
+#ifndef CALCULATION_H_
+#define CALCULATION_H_
 
 
 /******************************************************************************
@@ -38,7 +38,7 @@ typedef struct {
 /******************************************************************************
  * Functions
  *****************************************************************************/
-FFT calculate_freq_and_signalstrenght(uint8_t Channel, uint32_t* samples, uint8_t given_frequency);
+FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples, uint8_t given_frequency);
 
 
 #endif	/* CALC_H_ */

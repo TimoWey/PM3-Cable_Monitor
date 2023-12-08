@@ -107,7 +107,8 @@ Application/User/gui/Measurement_Single_Display_1PView.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+ ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h
 ../../TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -216,3 +217,5 @@ Application/User/gui/Measurement_Single_Display_1PView.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../../Core/Inc/measuring.h:
+../../Core/Inc/calculation.h:

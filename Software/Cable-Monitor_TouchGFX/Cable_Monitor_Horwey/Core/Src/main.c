@@ -35,6 +35,9 @@
 
 #include "arm_math.h"
 
+#include "measuring.h"
+#include "calculation.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -125,9 +128,9 @@ static void MX_I2C3_Init(void);
 static void MX_SPI5_Init(void);
 static void MX_FMC_Init(void);
 static void MX_LTDC_Init(void);
-static void MX_DMA2D_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_DMA2D_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 void StartTimeoutTask(void *argument);
@@ -214,16 +217,17 @@ int main(void)
   MX_SPI5_Init();
   MX_FMC_Init();
   MX_LTDC_Init();
-  MX_DMA2D_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_DMA2D_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
 
   //Init for ADC etc.
-
+  MEAS_GPIO_analog_init();         // Configure GPIOs in analog mode
+  MEAS_timer_init();               // Configure the timer
 
   /* USER CODE END 2 */
 
@@ -371,10 +375,10 @@ static void MX_DMA2D_Init(void)
   /* USER CODE END DMA2D_Init 1 */
   hdma2d.Instance = DMA2D;
   hdma2d.Init.Mode = DMA2D_M2M;
-  hdma2d.Init.ColorMode = DMA2D_OUTPUT_RGB565;
+  hdma2d.Init.ColorMode = DMA2D_OUTPUT_ARGB8888;
   hdma2d.Init.OutputOffset = 0;
   hdma2d.LayerCfg[1].InputOffset = 0;
-  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_RGB565;
+  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_ARGB8888;
   hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
   hdma2d.LayerCfg[1].InputAlpha = 0;
   if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)

@@ -231,9 +231,9 @@ uint32_t* MEAS_start_measure(void) {
     MEAS_Buffer_reset(INPUT_COUNT, ADC_samples);
     MEAS_ADC3_scan_init();
     MEAS_ADC3_scan_start();
-    while (!MEAS_data_ready)
-        ;  // Wait for data
-    MEAS_data_ready = false;
+//    while (!MEAS_data_ready)
+//        ;  // Wait for data
+//    MEAS_data_ready = false;
 
     return ADC_samples;
 }
