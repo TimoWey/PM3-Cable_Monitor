@@ -81,81 +81,41 @@
 /******************************************************************************
  * Defines
  *****************************************************************************/
-#define D_P 18 ///< Distance board center to pad
+///< pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
+#define D_P 19.7 ///< Distance from the board center to pad center
 #define ACCURATE_MEASUREMENT_LOOPS 10 ///< How many loops for accu. meas.
 #define POW2(x) ((x) * (x)) ///< Power of two
 
 /******************************************************************************
  * Variables
  *****************************************************************************/
-static float cal_distance[CALC_CALI_P_END - 3] = {10, 100, 300};
-	///< Distance from wire to board center
-static float cal_current[CALC_CALI_C_END - 3] = {5}; ///< Current through wire
 
-/** @todo safe in EEPROM in a future version */
-static float a_static_l = 0;
-	///< Coefficient for distance approximation @anchor Coefficients
-/** @todo safe in EEPROM in a future version */
-static float b_static_l = 0; ///< Coefficient for distance approximation
-/** @todo safe in EEPROM in a future version */
-static float c_static_l = 0; ///< Coefficient for distance approximation
-/** @todo safe in EEPROM in a future version */
-static float a_static_r = 0; ///< Coefficient for distance approximation
-/** @todo safe in EEPROM in a future version */
-static float b_static_r = 0; ///< Coefficient for distance approximation
-/** @todo safe in EEPROM in a future version */
-static float c_static_r = 0; ///< Coefficient for distance approximation
-/** @todo safe in EEPROM in a future version */
-static float a_magnetic_1 = 0;
-	///< Constant for Current approximation @anchor Constant
-/** @todo safe in EEPROM in a future version */
-static float a_magnetic_3 = 0;
-	///< Constant for Current approximation
-
-// Global variable to store the FFT output
-//float32_t fft_output[60];
 
 /******************************************************************************
  * Functions
  * ****************************************************************************/
-static float calc_signal_strength(float *rfft_input, uint8_t fft_len,
-								uint8_t frequency);
-static void calc_distance_and_angle_from_one_side(float distance_pad_1,
-                                float distance_pad_2, float *distance_center,
-                                float *angle);
-static void calc_distance_and_angle(float distance_pad_l,
-								float distance_pad_r, float *distance_center,
-                                float *angle);
-
-/*void calc_start_single_measurement(CALC_meas_data_t *meas_data){
-    uint8_t num_of_channels = MEAS_get_num_of_channels();
-    uint8_t num_of_samples = ADC_NUMS;
-    uint8_t num_of_loops = MEAS_get_num_of_loops();
-
-}*/
 
 /**
- * @brief Calculates the main frequency for a specific channel using Fast Fourier Transform (FFT).
+ * @brief Calculates the frequency and signal strength using Fast Fourier Transform (FFT).
  *
- * This function takes an array of samples for all channels, extracts the samples for the specific channel,
- * performs FFT on the extracted samples, calculates the magnitude of the complex numbers,
- * finds the index of the maximum magnitude, and calculates the main frequency based on the index.
+ * This function performs FFT on the input samples using the CMSIS-DSP library.
+ * It calculates the magnitude of complex numbers and finds the index of the given frequency.
+ * The signal strength is calculated based on the FFT output.
+ * The main frequency is determined by finding the index of the maximum magnitude in the first half of the array.
  *
- * @param Channel The channel for which the main frequency is calculated.
- * @param all_samples Pointer to the array of all samples for all channels.
- * @param num_channels The total number of channels.
- * @param fft_len The length of the FFT.
- * @param output Pointer to the array to store the FFT output.
- * @return The main frequency for the specific channel.
+ * @param Channel The channel number.
+ * @param samples Pointer to the input samples array.
+ * @param given_frequency The given frequency.
+ * @return FFT structure containing the main frequency and signal strength.
  */
-
-float calculate_main_frequency(uint8_t Channel, uint32_t* samples, uint8_t num_channels, uint32_t buffer_size, uint32_t sampling_freq) {
+FFT calculate_freq_and_signalstrenght(uint8_t Channel, uint32_t* samples, uint8_t given_frequency) {
     // Perform FFT using CMSIS-DSP library
+    uint8_t buffer_size = MEAS_get_num_of_samples();
     const uint32_t fft_size = buffer_size;
+    // Convert the samples to the specific channel
     float32_t input_samples[buffer_size];
-
     for (uint32_t i = 0; i < fft_size; i++) {
-        input_samples[i] = (float32_t)samples[i * num_channels + (Channel - 1)];
+        input_samples[i] = (float32_t)samples[i * MEAS_get_num_of_chan() + (Channel - 1)];
     }
     
     // remove DC component
@@ -163,23 +123,45 @@ float calculate_main_frequency(uint8_t Channel, uint32_t* samples, uint8_t num_c
         input_samples[i] -= 2047.5;
     }
 
-    float32_t output[2*buffer_size];
+    // Create an array for the FFT output
+    float32_t fft_complex_output[2*buffer_size];
+
+    // Create an instance of the FFT structure
     arm_rfft_fast_instance_f32 fft_struct;
+
+    // Initialize the FFT structure
     arm_rfft_fast_init_f32(&fft_struct, fft_size);
 
     // Perform the FFT on the input samples
-    arm_rfft_fast_f32(&fft_struct, input_samples, output, 0);
+    arm_rfft_fast_f32(&fft_struct, input_samples, fft_complex_output, 0);
 
     // Calculate magnitude of complex numbers
-    arm_cmplx_mag_f32(output, output, fft_size / 2);
+    arm_cmplx_mag_f32(fft_complex_output, fft_complex_output, fft_size / 2);
+
+    //calculate the index of the given frequency
+    uint32_t index = (uint32_t)given_frequency * fft_size / MEAS_get_samp_freq();
+
+    //calculate the signal strength
+    float signal_strength = 2* fft_complex_output[index] / fft_size;
 
     // Find the index of the maximum magnitude in the first half of the array
     uint32_t maxIndex;
     float32_t maxValue;
-    arm_max_f32(output, fft_size / 2, &maxValue, &maxIndex);
+    arm_max_f32(fft_complex_output, fft_size / 2, &maxValue, &maxIndex);
 
     // Calculate the main frequency
-    float main_frequency = (float)maxIndex * ((float)sampling_freq) / fft_size;
+    float main_frequency = (float)maxIndex * ((float)MEAS_get_samp_freq()) / fft_size;
+
+    // Create an instance of the FFT structure
+    FFT fft;
+
+    // return the calculated values
+    fft.main_freq = main_frequency;
+    fft.signal_strength = signal_strength;
+    return fft;
+}
+
+DISTANCE_ANGLE calculate_distance_and_angle_single_pad(float distance_r, float distance_l){
+
     
-    return main_frequency;
 }
