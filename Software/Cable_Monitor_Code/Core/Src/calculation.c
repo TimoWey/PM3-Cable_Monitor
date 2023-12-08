@@ -152,7 +152,7 @@ static void calc_distance_and_angle(float distance_pad_l,
 float calculate_main_frequency(uint8_t Channel, uint32_t* samples, uint8_t num_channels, uint32_t buffer_size, uint32_t sampling_freq) {
     // Perform FFT using CMSIS-DSP library
     const uint32_t fft_size = buffer_size;
-    float32_t input_samples[64];
+    float32_t input_samples[buffer_size];
 
     for (uint32_t i = 0; i < fft_size; i++) {
         input_samples[i] = (float32_t)samples[i * num_channels + (Channel - 1)];
@@ -163,7 +163,7 @@ float calculate_main_frequency(uint8_t Channel, uint32_t* samples, uint8_t num_c
         input_samples[i] -= 2047.5;
     }
 
-    float32_t output[128];
+    float32_t output[2*buffer_size];
     arm_rfft_fast_instance_f32 fft_struct;
     arm_rfft_fast_init_f32(&fft_struct, fft_size);
 

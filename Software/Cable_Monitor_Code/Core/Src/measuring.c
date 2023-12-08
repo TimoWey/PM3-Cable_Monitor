@@ -365,7 +365,7 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_CYAN);
-    snprintf(text, 40, "C1:%4d f:%3d HZ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C1:%4d f:%3d HZ ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C1 %4d", (int)(Samples[0]));
     BSP_LCD_DisplayStringAt(0, 140, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 2
@@ -380,7 +380,7 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_RED);
-    snprintf(text, 40, "C2:%4d f:%3d HZ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C2:%4d f:%3d HZ ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C2 %4d", (int)(Samples[1]));
     BSP_LCD_DisplayStringAt(0, 170, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 3
@@ -410,7 +410,7 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
-    snprintf(text, 40, "C4:%4d f:%3d HZ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C4:%4d f:%3d HZ ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C4 %4d", (int)(Samples[3]));
     BSP_LCD_DisplayStringAt(0, 230, (uint8_t*)text, LEFT_MODE);
     /* Draw the  values of input channel 1 as a curve */
