@@ -1,5 +1,5 @@
 Application/User/gui/Project_InfoPresenter.o: \
- C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/project_info_screen/Project_InfoPresenter.cpp \
+ C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/project_info_screen/Project_InfoPresenter.cpp \
  ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

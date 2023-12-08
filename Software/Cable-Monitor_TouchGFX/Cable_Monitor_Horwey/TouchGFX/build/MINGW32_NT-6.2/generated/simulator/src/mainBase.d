@@ -105,8 +105,6 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp \
  generated/gui_generated/include/gui_generated/measurement_single_display_1p_screen/Measurement_Single_Display_1PViewBase.hpp \
  gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp \
- gui/include/gui/containers/Gauge_with_Values.hpp \
- generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
@@ -115,6 +113,8 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp \
  generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp \
  gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp \
+ gui/include/gui/containers/Gauge_with_Values.hpp \
+ generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp \
  gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
  generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
@@ -361,10 +361,6 @@ generated/gui_generated/include/gui_generated/measurement_single_display_1p_scre
 
 gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp:
 
-gui/include/gui/containers/Gauge_with_Values.hpp:
-
-generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp:
-
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
@@ -380,6 +376,10 @@ gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_
 generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp:
 
 gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp:
+
+gui/include/gui/containers/Gauge_with_Values.hpp:
+
+generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp:
 
 gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
 

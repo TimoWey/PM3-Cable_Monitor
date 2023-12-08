@@ -10,10 +10,11 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Gauge.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <gui/containers/Gauge_with_Values.hpp>
 
 class Measurement_Single_Display_1PViewBase : public touchgfx::View<Measurement_Single_Display_1PPresenter>
 {
@@ -42,12 +43,28 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image image1;
     touchgfx::TextArea textArea3;
+    touchgfx::Gauge SMD1_gauge;
+    touchgfx::TextAreaWithOneWildcard SMD1_Current;
+    touchgfx::TextAreaWithOneWildcard SMD1_Frequency;
+    touchgfx::TextAreaWithOneWildcard SMD1_Distance;
+    touchgfx::TextArea textArea4;
+    touchgfx::TextArea textArea4_1;
+    touchgfx::TextArea textArea4_2;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
     touchgfx::ButtonWithLabel buttonWithLabel3;
-    Gauge_with_Values gauge_with_Values1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t SMD1_CURRENT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SMD1_CurrentBuffer[SMD1_CURRENT_SIZE];
+    static const uint16_t SMD1_FREQUENCY_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SMD1_FrequencyBuffer[SMD1_FREQUENCY_SIZE];
+    static const uint16_t SMD1_DISTANCE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SMD1_DistanceBuffer[SMD1_DISTANCE_SIZE];
 
 private:
 

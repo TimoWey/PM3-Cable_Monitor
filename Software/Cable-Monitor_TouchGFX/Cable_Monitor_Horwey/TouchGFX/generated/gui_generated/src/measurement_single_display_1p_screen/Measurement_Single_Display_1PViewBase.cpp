@@ -26,6 +26,62 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M3QF));
     add(textArea3);
 
+    SMD1_gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
+    SMD1_gauge.setPosition(28, 94, 184, 106);
+    SMD1_gauge.setCenter(92, 92);
+    SMD1_gauge.setStartEndAngle(-90, 90);
+    SMD1_gauge.setRange(-90, 90);
+    SMD1_gauge.setValue(0);
+    SMD1_gauge.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
+    SMD1_gauge.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    SMD1_gauge.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    add(SMD1_gauge);
+
+    SMD1_Current.setXY(75, 230);
+    SMD1_Current.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SMD1_Current.setLinespacing(0);
+    Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_1WKT).getText());
+    SMD1_Current.setWildcard(SMD1_CurrentBuffer);
+    SMD1_Current.resizeToCurrentText();
+    SMD1_Current.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y5P8));
+    add(SMD1_Current);
+
+    SMD1_Frequency.setXY(63, 215);
+    SMD1_Frequency.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SMD1_Frequency.setLinespacing(0);
+    Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9OHS).getText());
+    SMD1_Frequency.setWildcard(SMD1_FrequencyBuffer);
+    SMD1_Frequency.resizeToCurrentText();
+    SMD1_Frequency.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PCCW));
+    add(SMD1_Frequency);
+
+    SMD1_Distance.setXY(64, 200);
+    SMD1_Distance.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SMD1_Distance.setLinespacing(0);
+    Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LVUK).getText());
+    SMD1_Distance.setWildcard(SMD1_DistanceBuffer);
+    SMD1_Distance.resizeToCurrentText();
+    SMD1_Distance.setTypedText(touchgfx::TypedText(T_SMD1_DISTANCE));
+    add(SMD1_Distance);
+
+    textArea4.setXY(113, 76);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q5GP));
+    add(textArea4);
+
+    textArea4_1.setXY(0, 185);
+    textArea4_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea4_1.setLinespacing(0);
+    textArea4_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VCZH));
+    add(textArea4_1);
+
+    textArea4_2.setXY(217, 185);
+    textArea4_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea4_2.setLinespacing(0);
+    textArea4_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_B5GD));
+    add(textArea4_2);
+
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
@@ -54,9 +110,6 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel3.setAction(buttonCallback);
     add(buttonWithLabel3);
-
-    gauge_with_Values1.setXY(0, 78);
-    add(gauge_with_Values1);
 }
 
 Measurement_Single_Display_1PViewBase::~Measurement_Single_Display_1PViewBase()
@@ -66,7 +119,7 @@ Measurement_Single_Display_1PViewBase::~Measurement_Single_Display_1PViewBase()
 
 void Measurement_Single_Display_1PViewBase::setupScreen()
 {
-    gauge_with_Values1.initialize();
+
 }
 
 void Measurement_Single_Display_1PViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
