@@ -79,7 +79,7 @@ typedef struct {
 /******************************************************************************
  * Functions
  *****************************************************************************/
-float calculate_main_frequency(uint8_t Channel, float* samples, uint8_t num_channels, uint32_t buffer_size, uint32_t sampling_freq);
+float calculate_main_frequency(uint8_t Channel, uint32_t* samples, uint8_t num_channels, uint32_t buffer_size, uint32_t sampling_freq);
 
 
 #endif	/* CALC_H_ */
