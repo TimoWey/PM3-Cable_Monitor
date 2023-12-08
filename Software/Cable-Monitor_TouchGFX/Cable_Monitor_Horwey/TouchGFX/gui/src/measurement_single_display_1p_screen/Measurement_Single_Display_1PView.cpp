@@ -2,6 +2,14 @@
 
 #ifndef SIMULATOR
 #include "main.h"
+
+
+extern "C"
+{
+	#include "measuring.h"
+	#include "calculation.h"
+}
+
 #endif
 
 Measurement_Single_Display_1PView::Measurement_Single_Display_1PView()
@@ -26,6 +34,11 @@ void Measurement_Single_Display_1PView::testGui()
 
 	test = updateGUI_test();
 
+	uint32_t* Samples = MEAS_start_measure();
+
+	//callback to fft
+	FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+
 	//update GUI values
 	//set gauge angle
 	SMD1_gauge.setValue(test);
@@ -36,7 +49,7 @@ void Measurement_Single_Display_1PView::testGui()
 	SMD1_Current.invalidate();
 
 	//set frequency value
-	Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%d", test);
+	Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%d", fft.main_freq);
 	SMD1_Frequency.invalidate();
 
 	//set distance value
