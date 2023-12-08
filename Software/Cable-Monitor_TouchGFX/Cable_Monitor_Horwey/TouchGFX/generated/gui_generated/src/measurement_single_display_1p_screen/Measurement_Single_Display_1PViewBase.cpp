@@ -79,3 +79,11 @@ void Measurement_Single_Display_1PViewBase::buttonCallbackHandler(const touchgfx
         application().gotoMeasurement_SingleScreenWipeTransitionEast();
     }
 }
+
+void Measurement_Single_Display_1PViewBase::handleTickEvent()
+{
+    //Interaction2
+    //When every N tick call virtual function
+    //Call testGui
+    testGui();
+}

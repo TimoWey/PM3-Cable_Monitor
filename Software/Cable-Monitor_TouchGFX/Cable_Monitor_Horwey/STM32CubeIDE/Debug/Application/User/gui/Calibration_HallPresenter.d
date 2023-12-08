@@ -1,5 +1,5 @@
 Application/User/gui/Calibration_HallPresenter.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/calibration_hall_screen/Calibration_HallPresenter.cpp \
+ C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/calibration_hall_screen/Calibration_HallPresenter.cpp \
  ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
