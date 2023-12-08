@@ -148,8 +148,8 @@ void MEAS_timer_init(void) {
  * and transfered to memory by the DMA.
  * @n As each conversion triggers the DMA, the number of transfers is doubled.
  * @n The DMA triggers the transfer complete interrupt when all data is ready.
- * @n The inputs used are ADC3_IN4 = GPIO PF6 (Pad Left), ADC3_IN13 = GPIO PC3
- *(Pad Right), ADC_IN6 = GPIO PF8 (HS-Left), ADC3_IN11 = GPIO PC1 (HS-Right)
+ * @n The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3
+ *(Pad Left), ADC_IN6 = GPIO PF8 (HS-Right), ADC3_IN11 = GPIO PC1 (HS-Left)
  *****************************************************************************/
 void MEAS_ADC3_scan_init(void) {
     __HAL_RCC_ADC3_CLK_ENABLE();               // Enable Clock for ADC3
@@ -286,33 +286,6 @@ void OUTPUT_MEAS_timer_init(void) {
     NVIC_EnableIRQ(TIM3_IRQn);  // enable timer 3 interrupt
 }
 
-
-
-/* uint32_t frequency_calculation(uint8_t Channel, uint32_t* Samples) {
-	uint32_t first_peak_index = 0;
-	uint32_t last_peak_index = 0;
-	uint32_t peak_count = 0;
-	for (uint32_t i = 1; i < ADC_NUMS - 1; i++) {
-		if (Samples[4 * i + Channel] > Samples[4 * (i - 1) + Channel] &&
-			Samples[4 * i + Channel] > Samples[4 * (i + 1) + Channel]) {
-			if (last_peak_index != 0) {
-				peak_count++;
-			} else {
-				first_peak_index = i;
-			}
-			last_peak_index = i;
-		}
-	}
-
-	float frequency = 0;
-	if (peak_count > 0) {
-		float average_period =
-			(float)(last_peak_index - first_peak_index) / peak_count;
-		frequency = ADC_FS / average_period;
-	}
-	return frequency;
-} */
-
 /** ***************************************************************************
  * @brief Draw buffer data as curves
  *
@@ -354,63 +327,27 @@ void MEAS_show_data(void) {
     BSP_LCD_SetFont(&Font20);
     char text[32];
 	// Calculate the frequency of channel 1
-	float frequency = calculate_main_frequency(1, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
-    //uint32_t frequency = frequency_calculation(0, Samples);
-    // Calculate the peak value of channel 1
-    uint32_t peak = 0;
-    for (uint32_t i = 0; i < ADC_NUMS; i++) {
-        if (Samples[4 * i] > peak) {
-            peak = Samples[4 * i];
-        }
-    }
-    peak -= 2048;
+	FFT fft = calculate_freq_and_signalstrenght(1, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_CYAN);
-    snprintf(text, 40, "C1:%4d f:%3d HZ ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C1:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C1 %4d", (int)(Samples[0]));
     BSP_LCD_DisplayStringAt(0, 140, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 2
-	frequency = calculate_main_frequency(2, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
-    //frequency = frequency_calculation(1, Samples);
-    // Calculate the peak value of channel 2
-    peak = 0;
-    for (uint32_t i = 0; i < ADC_NUMS; i++) {
-        if (Samples[4 * i + 1] > peak) {
-            peak = Samples[4 * i + 1];
-        }
-    }
-    peak -= 2048;
+	fft = calculate_freq_and_signalstrenght(2, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_RED);
-    snprintf(text, 40, "C2:%4d f:%3d HZ ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C2:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C2 %4d", (int)(Samples[1]));
     BSP_LCD_DisplayStringAt(0, 170, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 3
-	frequency = calculate_main_frequency(3, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
-    //frequency = frequency_calculation(2, Samples);
-    // Calculate the peak value of channel 3
-    peak = 0;
-    for (uint32_t i = 0; i < ADC_NUMS; i++) {
-        if (Samples[4 * i + 2] > peak) {
-            peak = Samples[4 * i + 2];
-        }
-    }
-    peak -= 2048;
+	fft = calculate_freq_and_signalstrenght(3, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
-    snprintf(text, 40, "C3:%4d f:%3d HZ ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C3:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C3 %4d", (int)(Samples[2]));
     BSP_LCD_DisplayStringAt(0, 200, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 4
-	frequency = calculate_main_frequency(4, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
-    //frequency = frequency_calculation(3, Samples);
-    // Calculate the peak value of channel 4
-    peak = 0;
-    for (uint32_t i = 0; i < ADC_NUMS; i++) {
-        if (Samples[4 * i + 3] > peak) {
-            peak = Samples[4 * i + 3];
-        }
-    }
-    peak -= 2048;
+	fft = calculate_freq_and_signalstrenght(3, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
-    snprintf(text, 40, "C4:%4d f:%3d HZ ", (int)(peak), (int)(frequency));
+    snprintf(text, 40, "C4:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C4 %4d", (int)(Samples[3]));
     BSP_LCD_DisplayStringAt(0, 230, (uint8_t*)text, LEFT_MODE);
     /* Draw the  values of input channel 1 as a curve */
