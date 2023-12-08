@@ -1,10 +1,8 @@
 #include <gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp>
 
-extern "C"
-{
+#ifndef SIMULATOR
 #include "main.h"
-}
-
+#endif
 
 Measurement_Single_Display_1PView::Measurement_Single_Display_1PView()
 {
@@ -23,21 +21,27 @@ void Measurement_Single_Display_1PView::tearDownScreen()
 
 void Measurement_Single_Display_1PView::testGui()
 {
+#ifndef SIMULATOR
 	int test = 	0;
 
 	test = updateGUI_test();
 
-	test = test + 1;
+	//update GUI values
+	//set gauge angle
+	SMD1_gauge.setValue(test);
+	SMD1_gauge.invalidate();
 
+	//set current value
+	Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%d", test);
+	SMD1_Current.invalidate();
 
-	//touchgfx::Gauge* myGaugeWidget = &Gauge_with_Values.gauge1();
-	//myGaugeWidget->setValue(newValue);
-	//gauge_with_Values1.invalidate();
+	//set frequency value
+	Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%d", test);
+	SMD1_Frequency.invalidate();
 
-	//gauge_with_Values1->gauge1.setValue(10);
-	//Gauge_with_ValuesBase->setValue(test);
-
-	//Gauge_with_ValuesBase.gauge1.setValue(test);
-	//Gauge_with_ValuesBase.gauge1.invalidate();
+	//set distance value
+	Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%d", test);
+	SMD1_Distance.invalidate();
+#endif
 }
 
