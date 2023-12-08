@@ -5,5 +5,5 @@
 
 USER_OBJS :=
 
-LIBS := -l:libtouchgfx-float-abi-hard.a
+LIBS := -l:libtouchgfx-float-abi-hard.a -larm_cortexM4lf_math
 

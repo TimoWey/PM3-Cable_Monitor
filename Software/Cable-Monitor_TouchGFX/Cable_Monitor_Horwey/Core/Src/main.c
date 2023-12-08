@@ -25,6 +25,17 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
+
+#include <stdint.h>
+#include <stdio.h>
+#include "stm32f4xx.h"
+#include "stm32f4xx_hal.h"
+
+#define ARM_MATH_CM4
+
+
+#include "arm_math.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
