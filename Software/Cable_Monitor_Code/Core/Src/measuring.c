@@ -354,8 +354,7 @@ void MEAS_show_data(void) {
     BSP_LCD_SetFont(&Font20);
     char text[32];
 	// Calculate the frequency of channel 1
-	static float frequency = 0;
-	frequency = calculate_main_frequency(1, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
+	float frequency = calculate_main_frequency(1, Samples, INPUT_COUNT, ADC_NUMS, ADC_FS);
     //uint32_t frequency = frequency_calculation(0, Samples);
     // Calculate the peak value of channel 1
     uint32_t peak = 0;
@@ -411,7 +410,7 @@ void MEAS_show_data(void) {
     }
     peak -= 2048;
     BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
-    snprintf(text, 40, "C4:%4d f:%3d HZ", (int)(peak), (float)(frequency));
+    snprintf(text, 40, "C4:%4d f:%3d HZ", (int)(peak), (int)(frequency));
     // snprintf(text, 15, "C4 %4d", (int)(Samples[3]));
     BSP_LCD_DisplayStringAt(0, 230, (uint8_t*)text, LEFT_MODE);
     /* Draw the  values of input channel 1 as a curve */
