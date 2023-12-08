@@ -163,6 +163,12 @@ uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communic
 //int isDisplayTouched = 0;
 int sleep_timeout_value = 60;
 
+//test functon
+int updateGUI_test(void)
+{
+	return sleep_timeout_value;
+}
+
 /* USER CODE END 0 */
 
 /**

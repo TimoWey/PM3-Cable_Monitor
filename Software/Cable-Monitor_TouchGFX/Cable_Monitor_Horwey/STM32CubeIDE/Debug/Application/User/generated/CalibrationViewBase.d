@@ -1,5 +1,5 @@
 Application/User/generated/CalibrationViewBase.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/calibration_screen/CalibrationViewBase.cpp \
+ C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/calibration_screen/CalibrationViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

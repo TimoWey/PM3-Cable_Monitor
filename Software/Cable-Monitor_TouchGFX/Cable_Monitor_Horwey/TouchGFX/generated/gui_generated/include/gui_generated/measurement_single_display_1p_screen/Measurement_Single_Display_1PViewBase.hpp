@@ -21,6 +21,15 @@ public:
     Measurement_Single_Display_1PViewBase();
     virtual ~Measurement_Single_Display_1PViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void testGui()
+    {
+        // Override and implement this function in Measurement_Single_Display_1P
+    }
 
 protected:
     FrontendApplication& application() {
