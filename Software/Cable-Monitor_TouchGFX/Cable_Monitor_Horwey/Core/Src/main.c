@@ -33,7 +33,6 @@
 
 #define ARM_MATH_CM4
 
-
 #include "arm_math.h"
 
 /* USER CODE END Includes */
@@ -222,6 +221,9 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
+
+  //Init for ADC etc.
+
 
   /* USER CODE END 2 */
 
