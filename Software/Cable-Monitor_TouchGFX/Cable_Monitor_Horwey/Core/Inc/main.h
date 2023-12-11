@@ -67,6 +67,10 @@ int updateGUI_test(void);
 #define FRAME_RATE_GPIO_Port GPIOE
 #define POWER_ON_DEVICE_Pin GPIO_PIN_5
 #define POWER_ON_DEVICE_GPIO_Port GPIOE
+#define DEBUG2_GPIO_Pin GPIO_PIN_7
+#define DEBUG2_GPIO_GPIO_Port GPIOA
+#define DEBUG_GPIO_Pin GPIO_PIN_4
+#define DEBUG_GPIO_GPIO_Port GPIOC
 #define DEVICE_ON_Pin GPIO_PIN_13
 #define DEVICE_ON_GPIO_Port GPIOG
 

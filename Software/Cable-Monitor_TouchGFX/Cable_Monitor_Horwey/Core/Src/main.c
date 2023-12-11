@@ -816,7 +816,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(POWER_ON_DEVICE_GPIO_Port, POWER_ON_DEVICE_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2|DEBUG_GPIO_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(DEBUG2_GPIO_GPIO_Port, DEBUG2_GPIO_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13, GPIO_PIN_RESET);
@@ -850,6 +853,20 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : DEBUG2_GPIO_Pin */
+  GPIO_InitStruct.Pin = DEBUG2_GPIO_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(DEBUG2_GPIO_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : DEBUG_GPIO_Pin */
+  GPIO_InitStruct.Pin = DEBUG_GPIO_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(DEBUG_GPIO_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PD12 PD13 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
@@ -1251,9 +1268,8 @@ void StartTimeoutTask(void *argument)
 	  if(sleep_timeout_value > 60 && sleep_timeout_value < 0)
 		  sleep_timeout_value = 60;
 
-
 	  // Toggle onboard LED as heartbeat visual feedback
-//	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
+	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
 
 	  osDelay(1000);
   }

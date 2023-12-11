@@ -2,12 +2,13 @@
 
 #ifndef SIMULATOR
 #include "main.h"
-
+#include "stm32f4xx_hal_gpio.h"
 
 extern "C"
 {
 	#include "measuring.h"
 	#include "calculation.h"
+
 }
 
 #endif
@@ -32,13 +33,16 @@ void Measurement_Single_Display_1PView::testGui()
 #ifndef SIMULATOR
 	int test = 	0;
 
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);
+
 	test = updateGUI_test();
 
 	uint32_t* Samples = MEAS_start_measure();
 
 	//callback to fft
 	FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
-
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
 	//update GUI values
 	//set gauge angle
 	SMD1_gauge.setValue(test);
@@ -55,6 +59,9 @@ void Measurement_Single_Display_1PView::testGui()
 	//set distance value
 	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", fft.signal_strength);
 	SMD1_Distance.invalidate();
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+
 #endif
 }
 

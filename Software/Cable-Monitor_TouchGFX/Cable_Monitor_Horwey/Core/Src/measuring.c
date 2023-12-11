@@ -77,7 +77,7 @@
  * Variables
  *****************************************************************************/
 bool MEAS_data_ready = false;          ///< New data is ready
-static uint32_t ADC_sample_count = 0;  ///< Index for buffer
+//static uint32_t ADC_sample_count = 0;  ///< Index for buffer
 ///< ADC values of max. 4 input channels
 static uint32_t ADC_samples[INPUT_COUNT * ADC_NUMS];
 
@@ -168,7 +168,7 @@ void MEAS_ADC3_scan_init(void) {
     while (DMA2_Stream1->CR & DMA_SxCR_EN){};  // Wait for DMA to finish
     DMA2->LIFCR |= DMA_LIFCR_CTCIF1;  // Clear transfer complete interrupt fl.
     DMA2_Stream1->CR |= (2UL << DMA_SxCR_CHSEL_Pos);  // Select channel 2
-    DMA2_Stream1->CR |= DMA_SxCR_PL_1;                // Priority high
+    DMA2_Stream1->CR |= DMA_SxCR_PL_0;                // Priority high
     DMA2_Stream1->CR |= DMA_SxCR_MSIZE_1;  // Memory data size = 32 bit
     DMA2_Stream1->CR |= DMA_SxCR_PSIZE_1;  // Peripheral data size = 32 bit
     DMA2_Stream1->CR |= DMA_SxCR_MINC;     // Increment memory address pointer
@@ -200,7 +200,8 @@ void MEAS_ADC3_scan_start(void)
  *****************************************************************************/
 void DMA2_Stream1_IRQHandler(void)
 {
-    static int debug = 0;
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);
+	static int debug = 0;
     debug++;
     //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
 
@@ -223,6 +224,7 @@ void DMA2_Stream1_IRQHandler(void)
         MEAS_ADC_reset();
         MEAS_data_ready = true;
     }
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
 }
 
 /** ***************************************************************************
@@ -237,7 +239,8 @@ void DMA2_Stream1_IRQHandler(void)
 // Start the measurement procedure
 uint32_t* MEAS_start_measure(void)
 {
-    //works
+
+	//works
 	MEAS_Buffer_reset(INPUT_COUNT, ADC_samples);
 
     //
@@ -255,7 +258,8 @@ uint32_t* MEAS_start_measure(void)
     MEAS_data_ready = false;
     timeout=0;
 
-//    HAL_Delay(100);
+    HAL_Delay(100);
+
 
     return ADC_samples;
 }
