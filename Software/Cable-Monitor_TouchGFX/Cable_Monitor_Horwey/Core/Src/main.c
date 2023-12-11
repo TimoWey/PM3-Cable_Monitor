@@ -173,6 +173,7 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 static LCD_DrvTypeDef* LcdDrv;
+void gyro_disable(void);
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
@@ -185,6 +186,24 @@ int updateGUI_test(void)
 {
 	return sleep_timeout_value;
 }
+
+void gyro_disable(void)
+{
+	__HAL_RCC_GPIOC_CLK_ENABLE();  // Enable Clock for GPIO port C
+	/* Disable PC1 and PF8 first */
+	GPIOC->MODER &= ~GPIO_MODER_MODER1_Msk;        // Reset mode for PC1
+	GPIOC->MODER |= 1UL << GPIO_MODER_MODER1_Pos;  // Set PC1 as output
+	GPIOC->BSRR |= GPIO_BSRR_BR1;  // Set GYRO (CS) to 0 for a short time
+	HAL_Delay(10);                 // Wait some time
+	GPIOC->MODER |= 3UL << GPIO_MODER_MODER1_Pos;  // Analog PC1 = ADC123_IN11
+	__HAL_RCC_GPIOF_CLK_ENABLE();  // Enable Clock for GPIO port F
+	GPIOF->OSPEEDR &= ~GPIO_OSPEEDR_OSPEED8_Msk;  // Reset speed of PF8
+	GPIOF->AFR[1] &= ~GPIO_AFRH_AFSEL8_Msk;  // Reset alternate function of PF8
+	GPIOF->PUPDR &= ~GPIO_PUPDR_PUPD8_Msk;   // Reset pulup/down of PF8
+	HAL_Delay(10);                           // Wait some time
+	GPIOF->MODER |= 3UL << GPIO_MODER_MODER8_Pos;  // Analog mode PF8 = ADC3_IN4
+}
+
 
 /* USER CODE END 0 */
 
@@ -211,8 +230,8 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  MEAS_GPIO_analog_init();         // Configure GPIOs in analog mode
-  MEAS_timer_init();               // Configure the timer
+
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -233,7 +252,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   //Init for ADC etc.
-
+  gyro_disable();
+  MEAS_GPIO_analog_init();         // Configure GPIOs in analog mode
+  MEAS_timer_init();               // Configure the timer
 
   /* USER CODE END 2 */
 

@@ -36,5 +36,4 @@ uint16_t MEAS_get_samp_freq(void);
 uint32_t *MEAS_start_measure(void);
 void MEAS_show_data(void);
 
-
 #endif
