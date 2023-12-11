@@ -8,7 +8,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
-    buttonCallback(this, &Measurement_Single_Display_1PViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Measurement_Single_Display_1PViewBase::buttonCallbackHandler),
+    frameCountInteraction2Interval(0)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -132,8 +133,13 @@ void Measurement_Single_Display_1PViewBase::buttonCallbackHandler(const touchgfx
 
 void Measurement_Single_Display_1PViewBase::handleTickEvent()
 {
-    //Interaction2
-    //When every N tick call virtual function
-    //Call testGui
-    testGui();
+    frameCountInteraction2Interval++;
+    if(frameCountInteraction2Interval == TICK_INTERACTION2_INTERVAL)
+    {
+        //Interaction2
+        //When every N tick call virtual function
+        //Call testGui
+        testGui();
+        frameCountInteraction2Interval = 0;
+    }
 }

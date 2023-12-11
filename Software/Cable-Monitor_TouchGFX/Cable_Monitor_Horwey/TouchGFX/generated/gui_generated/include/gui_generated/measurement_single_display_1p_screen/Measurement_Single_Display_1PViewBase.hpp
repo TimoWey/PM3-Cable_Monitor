@@ -84,6 +84,12 @@ private:
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
+    /*
+     * Tick Counter Declarations
+     */
+    static const uint32_t TICK_INTERACTION2_INTERVAL = 10;
+    uint32_t frameCountInteraction2Interval;
+
 };
 
 #endif // MEASUREMENT_SINGLE_DISPLAY_1PVIEWBASE_HPP
