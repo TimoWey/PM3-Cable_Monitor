@@ -255,7 +255,7 @@ uint32_t* MEAS_start_measure(void)
     MEAS_data_ready = false;
     timeout=0;
 
-    HAL_Delay(100);
+//    HAL_Delay(100);
 
     return ADC_samples;
 }
