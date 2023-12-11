@@ -49,11 +49,11 @@ void Measurement_Single_Display_1PView::testGui()
 	SMD1_Current.invalidate();
 
 	//set frequency value
-	Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%d", fft.main_freq);
+	Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", fft.main_freq);
 	SMD1_Frequency.invalidate();
 
 	//set distance value
-	Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%d", test);
+	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", fft.signal_strength);
 	SMD1_Distance.invalidate();
 #endif
 }

@@ -119,9 +119,11 @@ void MEAS_ADC_reset(void) {
  * @param[in] channels	input channels
  * @param[in] buffer	buffer pointer
  *****************************************************************************/
-static void MEAS_Buffer_reset(uint8_t channels, uint32_t* buffer) {
+static void MEAS_Buffer_reset(uint8_t channels, uint32_t* buffer)
+{
     /* Clear buffer and flag */
-    for (uint32_t i = 0; i < ADC_NUMS * channels; i++) {
+    for (uint32_t i = 0; i < ADC_NUMS * channels; i++)
+    {
         buffer[i] = 0;
     }
 }
@@ -163,9 +165,10 @@ void MEAS_ADC3_scan_init(void) {
     ADC3->CR2 |= ADC_CR2_DMA;                  // Enable DMA mode
     __HAL_RCC_DMA2_CLK_ENABLE();               // Enable Clock for DMA2
     DMA2_Stream1->CR &= ~DMA_SxCR_EN;          // Disable the DMA stream 1
-    while (DMA2_Stream1->CR & DMA_SxCR_EN) {
+    while (DMA2_Stream1->CR & DMA_SxCR_EN) 	   // Wait for DMA to finish
+    {
         ;
-    }                                 // Wait for DMA to finish
+    }
     DMA2->LIFCR |= DMA_LIFCR_CTCIF1;  // Clear transfer complete interrupt fl.
     DMA2_Stream1->CR |= (2UL << DMA_SxCR_CHSEL_Pos);  // Select channel 2
     DMA2_Stream1->CR |= DMA_SxCR_PL_1;                // Priority high
@@ -197,20 +200,26 @@ void MEAS_ADC3_scan_start(void) {
  * The samples from the ADC3 have been transfered to memory by the DMA2 Stream1
  * and are ready for processing.
  *****************************************************************************/
-void DMA2_Stream1_IRQHandler(void) {
-    if (DMA2->LISR & DMA_LISR_TCIF1) {  // Stream1 transfer compl. interrupt f.
-        NVIC_DisableIRQ(
-            DMA2_Stream1_IRQn);  // Disable DMA interrupt in the NVIC
-        NVIC_ClearPendingIRQ(DMA2_Stream1_IRQn);  // Clear pending DMA interrupt
+void DMA2_Stream1_IRQHandler(void)
+{
+    static int debug = 0;
+    debug++;
+
+	if (DMA2->LISR & DMA_LISR_TCIF1) // Stream1 transfer compl. interrupt f.
+    {
+        // Disable DMA interrupt in the NVIC
+    	NVIC_DisableIRQ(DMA2_Stream1_IRQn);
+        NVIC_ClearPendingIRQ(DMA2_Stream1_IRQn);  // clr pending DMA interrupt
         DMA2_Stream1->CR &= ~DMA_SxCR_EN;         // Disable the DMA
-        while (DMA2_Stream1->CR & DMA_SxCR_EN) {
+        while (DMA2_Stream1->CR & DMA_SxCR_EN)	  // Wait for DMA to finish
+        {
             ;
-        }  // Wait for DMA to finish
-        DMA2->LIFCR |=
-            DMA_LIFCR_CTCIF1;        // Clear transfer complete interrupt fl.
+        }
+        DMA2->LIFCR |= DMA_LIFCR_CTCIF1;// clr transfer complete interrupt fl.
         TIM2->CR1 &= ~TIM_CR1_CEN;   // Disable timer
         ADC3->CR2 &= ~ADC_CR2_ADON;  // Disable ADC3
         ADC3->CR2 &= ~ADC_CR2_DMA;   // Disable DMA mode
+
         // copy data from DMA buffer to ADC_samples
         MEAS_ADC_reset();
         MEAS_data_ready = true;
@@ -227,13 +236,24 @@ void DMA2_Stream1_IRQHandler(void) {
  * @note The result is stored alternated e.g. every 4th is together.
  *****************************************************************************/
 // Start the measurement procedure
-uint32_t* MEAS_start_measure(void) {
+uint32_t* MEAS_start_measure(void)
+{
     MEAS_Buffer_reset(INPUT_COUNT, ADC_samples);
+
     MEAS_ADC3_scan_init();
+
     MEAS_ADC3_scan_start();
-//    while (!MEAS_data_ready)
-//        ;  // Wait for data
-//    MEAS_data_ready = false;
+
+    static int timeout = 0;
+    while ((!MEAS_data_ready) & (timeout > 99999))
+    {
+    	// Wait for data
+    	timeout++;
+    }
+    MEAS_data_ready = false;
+    timeout=0;
+
+    HAL_Delay(100);
 
     return ADC_samples;
 }
