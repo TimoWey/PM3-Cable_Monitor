@@ -113,7 +113,7 @@
  */
 FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples, uint8_t given_frequency) {
     // Perform FFT using CMSIS-DSP library
-    uint8_t buffer_size = MEAS_get_num_of_samples();
+	uint8_t buffer_size = MEAS_get_num_of_samples();
     const uint32_t fft_size = buffer_size;
     // Convert the samples to the specific channel
     float32_t input_samples[buffer_size];

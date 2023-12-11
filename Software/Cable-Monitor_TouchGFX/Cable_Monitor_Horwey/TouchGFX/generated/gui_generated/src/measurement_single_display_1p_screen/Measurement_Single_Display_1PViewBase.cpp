@@ -37,30 +37,27 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     SMD1_gauge.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
     add(SMD1_gauge);
 
-    SMD1_Current.setXY(75, 230);
+    SMD1_Current.setPosition(0, 230, 240, 15);
     SMD1_Current.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     SMD1_Current.setLinespacing(0);
     Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_1WKT).getText());
     SMD1_Current.setWildcard(SMD1_CurrentBuffer);
-    SMD1_Current.resizeToCurrentText();
     SMD1_Current.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y5P8));
     add(SMD1_Current);
 
-    SMD1_Frequency.setXY(63, 215);
+    SMD1_Frequency.setPosition(0, 215, 240, 15);
     SMD1_Frequency.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     SMD1_Frequency.setLinespacing(0);
     Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9OHS).getText());
     SMD1_Frequency.setWildcard(SMD1_FrequencyBuffer);
-    SMD1_Frequency.resizeToCurrentText();
     SMD1_Frequency.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PCCW));
     add(SMD1_Frequency);
 
-    SMD1_Distance.setXY(64, 200);
+    SMD1_Distance.setPosition(0, 200, 240, 15);
     SMD1_Distance.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     SMD1_Distance.setLinespacing(0);
     Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LVUK).getText());
     SMD1_Distance.setWildcard(SMD1_DistanceBuffer);
-    SMD1_Distance.resizeToCurrentText();
     SMD1_Distance.setTypedText(touchgfx::TypedText(T_SMD1_DISTANCE));
     add(SMD1_Distance);
 
