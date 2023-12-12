@@ -77,8 +77,6 @@
 /* Private variables ---------------------------------------------------------*/
 CRC_HandleTypeDef hcrc;
 
-DMA2D_HandleTypeDef hdma2d;
-
 I2C_HandleTypeDef hi2c3;
 
 LTDC_HandleTypeDef hltdc;
@@ -88,7 +86,6 @@ SPI_HandleTypeDef hspi5;
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
-DMA_HandleTypeDef hdma_tim2_up_ch3;
 
 SDRAM_HandleTypeDef hsdram1;
 
@@ -125,7 +122,6 @@ const osMessageQueueAttr_t TimeoutQueue_attributes = {
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_DMA_Init(void);
 static void MX_CRC_Init(void);
 static void MX_I2C3_Init(void);
 static void MX_SPI5_Init(void);
@@ -133,7 +129,6 @@ static void MX_FMC_Init(void);
 static void MX_LTDC_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
-static void MX_DMA2D_Init(void);
 static void MX_TIM2_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
@@ -238,7 +233,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-//  MX_DMA_Init();
   MX_CRC_Init();
   MX_I2C3_Init();
   MX_SPI5_Init();
@@ -246,17 +240,16 @@ int main(void)
   MX_LTDC_Init();
 //  MX_TIM1_Init();
 //  MX_TIM3_Init();
-//  MX_DMA2D_Init();
-  MX_TIM2_Init();
+//  MX_TIM2_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
 
   //Init for ADC etc.
-//  gyro_disable();
+  gyro_disable();
   MEAS_GPIO_analog_init();         // Configure GPIOs in analog mode
-  	MEAS_timer_init();               // Configure the timer
+  MEAS_timer_init();               // Configure the timer
 
   /* USER CODE END 2 */
 
@@ -384,43 +377,6 @@ static void MX_CRC_Init(void)
   /* USER CODE BEGIN CRC_Init 2 */
 
   /* USER CODE END CRC_Init 2 */
-
-}
-
-/**
-  * @brief DMA2D Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_DMA2D_Init(void)
-{
-
-  /* USER CODE BEGIN DMA2D_Init 0 */
-
-  /* USER CODE END DMA2D_Init 0 */
-
-  /* USER CODE BEGIN DMA2D_Init 1 */
-
-  /* USER CODE END DMA2D_Init 1 */
-  hdma2d.Instance = DMA2D;
-  hdma2d.Init.Mode = DMA2D_M2M;
-  hdma2d.Init.ColorMode = DMA2D_OUTPUT_ARGB8888;
-  hdma2d.Init.OutputOffset = 0;
-  hdma2d.LayerCfg[1].InputOffset = 0;
-  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_ARGB8888;
-  hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
-  hdma2d.LayerCfg[1].InputAlpha = 0;
-  if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_DMA2D_ConfigLayer(&hdma2d, 1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN DMA2D_Init 2 */
-
-  /* USER CODE END DMA2D_Init 2 */
 
 }
 
@@ -720,22 +676,6 @@ static void MX_TIM3_Init(void)
   /* USER CODE BEGIN TIM3_Init 2 */
 
   /* USER CODE END TIM3_Init 2 */
-
-}
-
-/**
-  * Enable DMA controller clock
-  */
-static void MX_DMA_Init(void)
-{
-
-  /* DMA controller clock enable */
-  __HAL_RCC_DMA1_CLK_ENABLE();
-
-  /* DMA interrupt init */
-  /* DMA1_Stream1_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
 
 }
 
