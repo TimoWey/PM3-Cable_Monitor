@@ -31,6 +31,9 @@ void Measurement_Single_Display_1PView::tearDownScreen()
 void Measurement_Single_Display_1PView::testGui()
 {
 #ifndef SIMULATOR
+	// Disable Touchgfx tasks to avoid interference
+	touchgfx::HAL::getInstance()->disableInterrupts();
+
 	int test = 	0;
 
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
@@ -60,6 +63,9 @@ void Measurement_Single_Display_1PView::testGui()
 	SMD1_Distance.invalidate();
 
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+
+	// Enable Touchgfx tasks
+	touchgfx::HAL::getInstance()->enableInterrupts();
 
 #endif
 }
