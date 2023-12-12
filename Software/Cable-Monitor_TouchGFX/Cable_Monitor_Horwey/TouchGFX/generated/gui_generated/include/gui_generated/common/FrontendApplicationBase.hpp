@@ -17,10 +17,12 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoMeasurement_Single_Display_1PScreenNoTransition();
+        gotoMain_MenuScreenNoTransition();
     }
 
     // Main_Menu
+    void gotoMain_MenuScreenNoTransition();
+
     void gotoMain_MenuScreenWipeTransitionWest();
 
     // Measurement
@@ -32,8 +34,6 @@ public:
     void gotoMeasurement_SingleScreenWipeTransitionEast();
 
     // Measurement_Single_Display_1P
-    void gotoMeasurement_Single_Display_1PScreenNoTransition();
-
     void gotoMeasurement_Single_Display_1PScreenWipeTransitionEast();
 
     // Measurement_Single_Display_3P
@@ -73,6 +73,8 @@ protected:
     Model& model;
 
     // Main_Menu
+    void gotoMain_MenuScreenNoTransitionImpl();
+
     void gotoMain_MenuScreenWipeTransitionWestImpl();
 
     // Measurement
@@ -84,8 +86,6 @@ protected:
     void gotoMeasurement_SingleScreenWipeTransitionEastImpl();
 
     // Measurement_Single_Display_1P
-    void gotoMeasurement_Single_Display_1PScreenNoTransitionImpl();
-
     void gotoMeasurement_Single_Display_1PScreenWipeTransitionEastImpl();
 
     // Measurement_Single_Display_3P
