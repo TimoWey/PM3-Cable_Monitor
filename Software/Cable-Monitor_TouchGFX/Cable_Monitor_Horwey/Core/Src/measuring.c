@@ -244,8 +244,10 @@ uint32_t* MEAS_start_measure(void)
 	MEAS_Buffer_reset(INPUT_COUNT, ADC_samples);
 
     //
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, GPIO_PIN_SET);
+	HAL_Delay(1);
 	MEAS_ADC3_scan_init();
-
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, GPIO_PIN_RESET);
 	//
     MEAS_ADC3_scan_start();
 
@@ -258,7 +260,7 @@ uint32_t* MEAS_start_measure(void)
     MEAS_data_ready = false;
     timeout=0;
 
-    HAL_Delay(100);
+//    HAL_Delay(100);
 
 
     return ADC_samples;
