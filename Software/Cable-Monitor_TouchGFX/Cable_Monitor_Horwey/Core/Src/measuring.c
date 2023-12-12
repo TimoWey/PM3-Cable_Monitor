@@ -76,7 +76,7 @@
 /******************************************************************************
  * Variables
  *****************************************************************************/
-bool MEAS_data_ready = false;          ///< New data is ready
+extern int MEAS_data_ready = 0;          ///< New data is ready
 //static uint32_t ADC_sample_count = 0;  ///< Index for buffer
 ///< ADC values of max. 4 input channels
 static uint32_t ADC_samples[INPUT_COUNT * ADC_NUMS];
@@ -139,6 +139,9 @@ void MEAS_timer_init(void) {
     TIM2->ARR = TIM_TOP;          // Auto reload = counter top value
     TIM2->CR2 |= TIM_CR2_MMS_1;   // TRGO on update
 
+    // set timer to highest priority
+    NVIC_SetPriority(TIM2_IRQn, 0);
+
     // Enable timer interrupt in the NVIC
 //    NVIC_ClearPendingIRQ(TIM2_IRQn);  // Clear pending timer interrupt
 //    NVIC_EnableIRQ(TIM2_IRQn);        // Enable timer interrupt in the NVIC
@@ -149,13 +152,13 @@ void MEAS_timer_init(void) {
 
 void TIM2_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM2_IRQn 0 */
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
-	HAL_Delay(1);
-  /* USER CODE END TIM2_IRQn 0 */
-//  HAL_TIM_IRQHandler(&htim2);
-  /* USER CODE BEGIN TIM2_IRQn 1 */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+//  /* USER CODE BEGIN TIM2_IRQn 0 */
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+//	HAL_Delay(1);
+//  /* USER CODE END TIM2_IRQn 0 */
+////  HAL_TIM_IRQHandler(&htim2);
+//  /* USER CODE BEGIN TIM2_IRQn 1 */
+//  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
   /* USER CODE END TIM2_IRQn 1 */
 }
 
@@ -183,8 +186,14 @@ void MEAS_ADC3_scan_init(void) {
     ADC3->CR2 |= (6UL << ADC_CR2_EXTSEL_Pos);  // Timer 2 TRGO event
     ADC3->CR2 |= ADC_CR2_DMA;                  // Enable DMA mode
     __HAL_RCC_DMA2_CLK_ENABLE();               // Enable Clock for DMA2
+    // set DMA to highest priority
+    NVIC_SetPriority(DMA2_Stream1_IRQn, 0);
     DMA2_Stream1->CR &= ~DMA_SxCR_EN;          // Disable the DMA stream 1
-    while (DMA2_Stream1->CR & DMA_SxCR_EN){};  // Wait for DMA to finish
+    while (DMA2_Stream1->CR & DMA_SxCR_EN)
+    {
+    	static int i = 0;
+    	i++;
+    }  // Wait for DMA to finish
     DMA2->LIFCR |= DMA_LIFCR_CTCIF1;  // Clear transfer complete interrupt fl.
     DMA2_Stream1->CR |= (2UL << DMA_SxCR_CHSEL_Pos);  // Select channel 2
     DMA2_Stream1->CR |= DMA_SxCR_PL_0;                // Priority high
@@ -196,6 +205,8 @@ void MEAS_ADC3_scan_init(void) {
         INPUT_COUNT * ADC_NUMS;  // Number of data items to transfer
     DMA2_Stream1->PAR = (uint32_t)&ADC3->DR;     // Peripheral register address
     DMA2_Stream1->M0AR = (uint32_t)ADC_samples;  // Buffer memory loc. address
+
+
 }
 
 /** ***************************************************************************
@@ -219,10 +230,11 @@ void MEAS_ADC3_scan_start(void)
  *****************************************************************************/
 void DMA2_Stream1_IRQHandler(void)
 {
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);
+//	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_4);
+
 	static int debug = 0;
     debug++;
-    //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
 
 	if (DMA2->LISR & DMA_LISR_TCIF1) // Stream1 transfer compl. interrupt f.
     {
@@ -232,18 +244,23 @@ void DMA2_Stream1_IRQHandler(void)
         DMA2_Stream1->CR &= ~DMA_SxCR_EN;         // Disable the DMA
         while (DMA2_Stream1->CR & DMA_SxCR_EN)	  // Wait for DMA to finish
         {
-            ;
+        	static int j = 0;
+        	    j++;
         }
+
+
         DMA2->LIFCR |= DMA_LIFCR_CTCIF1;// clr transfer complete interrupt fl.
         TIM2->CR1 &= ~TIM_CR1_CEN;   // Disable timer
         ADC3->CR2 &= ~ADC_CR2_ADON;  // Disable ADC3
         ADC3->CR2 &= ~ADC_CR2_DMA;   // Disable DMA mode
 
         // copy data from DMA buffer to ADC_samples
+
         MEAS_ADC_reset();
-        MEAS_data_ready = true;
+        MEAS_data_ready = 1;
+        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_4);
     }
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
 }
 
 /** ***************************************************************************
@@ -268,23 +285,19 @@ uint32_t* MEAS_start_measure(void)
 	MEAS_ADC3_scan_init();
 	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, GPIO_PIN_RESET);
 	//
+
+
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+	HAL_Delay(1);
     MEAS_ADC3_scan_start();
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
 
-    static int timeout = 0;
-    while ((!MEAS_data_ready) & (timeout > 99999))
-    {
-    	// Wait for data
-    	timeout++;
-    }
-    MEAS_data_ready = false;
-    timeout=0;
+    while (DMA2_Stream1->CR & DMA_SxCR_EN)	  // Wait for DMA to finish
+	{
 
-//    HAL_Delay(100);
+	}
 
-
-    return ADC_samples;
+     return ADC_samples;
 }
 
 /** ***************************************************************************
