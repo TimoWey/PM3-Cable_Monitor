@@ -108,7 +108,7 @@
  * @param given_frequency The given frequency.
  * @return FFT structure containing the main frequency and signal strength.
  */
-FFT calculate_freq_and_signalstrenght(uint8_t Channel, uint32_t* samples, uint8_t given_frequency) {
+FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples, uint8_t given_frequency) {
     // Perform FFT using CMSIS-DSP library
     uint8_t buffer_size = MEAS_get_num_of_samples();
     const uint32_t fft_size = buffer_size;

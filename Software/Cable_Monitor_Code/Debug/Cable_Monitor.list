@@ -29,27 +29,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      000000b1  00000000  00000000  000403f8  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00016824  00000000  00000000  000404a9  2**0
+ 13 .debug_info   000167fd  00000000  00000000  000404a9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00003ef6  00000000  00000000  00056ccd  2**0
+ 14 .debug_abbrev 00003ef4  00000000  00000000  00056ca6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00001570  00000000  00000000  0005abc8  2**3
+ 15 .debug_aranges 00001570  00000000  00000000  0005aba0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000f91  00000000  00000000  0005c138  2**0
+ 16 .debug_rnglists 00000f91  00000000  00000000  0005c110  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00026bae  00000000  00000000  0005d0c9  2**0
+ 17 .debug_macro  00026bae  00000000  00000000  0005d0a1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0001a28d  00000000  00000000  00083c77  2**0
+ 18 .debug_line   0001a28d  00000000  00000000  00083c4f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df9e7  00000000  00000000  0009df04  2**0
+ 19 .debug_str    000df9b7  00000000  00000000  0009dedc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00005c80  00000000  00000000  0017d8ec  2**2
+ 20 .debug_frame  00005c80  00000000  00000000  0017d894  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000009b  00000000  00000000  0018356c  2**0
+ 21 .debug_line_str 0000007c  00000000  00000000  00183514  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_loc    0000330c  00000000  00000000  00183607  2**0
+ 22 .debug_loc    0000330c  00000000  00000000  00183590  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_ranges 00000140  00000000  00000000  00186913  2**0
+ 23 .debug_ranges 00000140  00000000  00000000  0018689c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -582,13 +582,13 @@ void GPIO_Init(void)
  80006d0:	40023800 	.word	0x40023800
  80006d4:	40021000 	.word	0x40021000
 
-080006d8 <calculate_freq_and_signalstrenght>:
+080006d8 <calculate_freq_and_signalstrength>:
  * @param Channel The channel number.
  * @param samples Pointer to the input samples array.
  * @param given_frequency The given frequency.
  * @return FFT structure containing the main frequency and signal strength.
  */
-FFT calculate_freq_and_signalstrenght(uint8_t Channel, uint32_t* samples, uint8_t given_frequency) {
+FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples, uint8_t given_frequency) {
  80006d8:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
  80006dc:	ed2d 8b02 	vpush	{d8}
  80006e0:	b09f      	sub	sp, #124	; 0x7c
@@ -649,7 +649,7 @@ FFT calculate_freq_and_signalstrenght(uint8_t Channel, uint32_t* samples, uint8_
     for (uint32_t i = 0; i < fft_size; i++) {
  800075e:	2300      	movs	r3, #0
  8000760:	677b      	str	r3, [r7, #116]	; 0x74
- 8000762:	e01a      	b.n	800079a <calculate_freq_and_signalstrenght+0xc2>
+ 8000762:	e01a      	b.n	800079a <calculate_freq_and_signalstrength+0xc2>
         input_samples[i] = (float32_t)samples[i * MEAS_get_num_of_chan() + (Channel - 1)];
  8000764:	f000 fc66 	bl	8001034 <MEAS_get_num_of_chan>
  8000768:	4603      	mov	r3, r0
@@ -677,21 +677,21 @@ FFT calculate_freq_and_signalstrenght(uint8_t Channel, uint32_t* samples, uint8_
  800079a:	6f7a      	ldr	r2, [r7, #116]	; 0x74
  800079c:	6ebb      	ldr	r3, [r7, #104]	; 0x68
  800079e:	429a      	cmp	r2, r3
- 80007a0:	d3e0      	bcc.n	8000764 <calculate_freq_and_signalstrenght+0x8c>
+ 80007a0:	d3e0      	bcc.n	8000764 <calculate_freq_and_signalstrength+0x8c>
     }
     
     // remove DC component
     for (uint32_t i = 0; i < fft_size; i++) {
  80007a2:	2300      	movs	r3, #0
  80007a4:	673b      	str	r3, [r7, #112]	; 0x70
- 80007a6:	e012      	b.n	80007ce <calculate_freq_and_signalstrenght+0xf6>
+ 80007a6:	e012      	b.n	80007ce <calculate_freq_and_signalstrength+0xf6>
         input_samples[i] -= 2047.5;
  80007a8:	6e3a      	ldr	r2, [r7, #96]	; 0x60
  80007aa:	6f3b      	ldr	r3, [r7, #112]	; 0x70
  80007ac:	009b      	lsls	r3, r3, #2
  80007ae:	4413      	add	r3, r2
  80007b0:	edd3 7a00 	vldr	s15, [r3]
- 80007b4:	ed9f 7a54 	vldr	s14, [pc, #336]	; 8000908 <calculate_freq_and_signalstrenght+0x230>
+ 80007b4:	ed9f 7a54 	vldr	s14, [pc, #336]	; 8000908 <calculate_freq_and_signalstrength+0x230>
  80007b8:	ee77 7ac7 	vsub.f32	s15, s15, s14
  80007bc:	6e3a      	ldr	r2, [r7, #96]	; 0x60
  80007be:	6f3b      	ldr	r3, [r7, #112]	; 0x70
@@ -705,7 +705,7 @@ FFT calculate_freq_and_signalstrenght(uint8_t Channel, uint32_t* samples, uint8_
  80007ce:	6f3a      	ldr	r2, [r7, #112]	; 0x70
  80007d0:	6ebb      	ldr	r3, [r7, #104]	; 0x68
  80007d2:	429a      	cmp	r2, r3
- 80007d4:	d3e8      	bcc.n	80007a8 <calculate_freq_and_signalstrenght+0xd0>
+ 80007d4:	d3e8      	bcc.n	80007a8 <calculate_freq_and_signalstrength+0xd0>
     }
 
     // Create an array for the FFT output
@@ -2114,11 +2114,11 @@ void MEAS_show_data(void) {
  8001152:	f001 fe73 	bl	8002e3c <BSP_LCD_SetFont>
     char text[32];
 	// Calculate the frequency of channel 1
-	FFT fft = calculate_freq_and_signalstrenght(1, Samples, 50);
+	FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
  8001156:	2232      	movs	r2, #50	; 0x32
  8001158:	6bf9      	ldr	r1, [r7, #60]	; 0x3c
  800115a:	2001      	movs	r0, #1
- 800115c:	f7ff fabc 	bl	80006d8 <calculate_freq_and_signalstrenght>
+ 800115c:	f7ff fabc 	bl	80006d8 <calculate_freq_and_signalstrength>
  8001160:	eeb0 7a40 	vmov.f32	s14, s0
  8001164:	eef0 7a60 	vmov.f32	s15, s1
  8001168:	ed87 7a01 	vstr	s14, [r7, #4]
@@ -2146,11 +2146,11 @@ void MEAS_show_data(void) {
  80011a6:	2000      	movs	r0, #0
  80011a8:	f001 fece 	bl	8002f48 <BSP_LCD_DisplayStringAt>
 	// Calculate the frequency of channel 2
-	fft = calculate_freq_and_signalstrenght(2, Samples, 50);
+	fft = calculate_freq_and_signalstrength(2, Samples, 50);
  80011ac:	2232      	movs	r2, #50	; 0x32
  80011ae:	6bf9      	ldr	r1, [r7, #60]	; 0x3c
  80011b0:	2002      	movs	r0, #2
- 80011b2:	f7ff fa91 	bl	80006d8 <calculate_freq_and_signalstrenght>
+ 80011b2:	f7ff fa91 	bl	80006d8 <calculate_freq_and_signalstrength>
  80011b6:	eeb0 7a40 	vmov.f32	s14, s0
  80011ba:	eef0 7a60 	vmov.f32	s15, s1
  80011be:	ed87 7a01 	vstr	s14, [r7, #4]
@@ -2178,11 +2178,11 @@ void MEAS_show_data(void) {
  80011fa:	2000      	movs	r0, #0
  80011fc:	f001 fea4 	bl	8002f48 <BSP_LCD_DisplayStringAt>
 	// Calculate the frequency of channel 3
-	fft = calculate_freq_and_signalstrenght(3, Samples, 50);
+	fft = calculate_freq_and_signalstrength(3, Samples, 50);
  8001200:	2232      	movs	r2, #50	; 0x32
  8001202:	6bf9      	ldr	r1, [r7, #60]	; 0x3c
  8001204:	2003      	movs	r0, #3
- 8001206:	f7ff fa67 	bl	80006d8 <calculate_freq_and_signalstrenght>
+ 8001206:	f7ff fa67 	bl	80006d8 <calculate_freq_and_signalstrength>
  800120a:	eeb0 7a40 	vmov.f32	s14, s0
  800120e:	eef0 7a60 	vmov.f32	s15, s1
  8001212:	ed87 7a01 	vstr	s14, [r7, #4]
@@ -2210,11 +2210,11 @@ void MEAS_show_data(void) {
  8001250:	2000      	movs	r0, #0
  8001252:	f001 fe79 	bl	8002f48 <BSP_LCD_DisplayStringAt>
 	// Calculate the frequency of channel 4
-	fft = calculate_freq_and_signalstrenght(3, Samples, 50);
+	fft = calculate_freq_and_signalstrength(3, Samples, 50);
  8001256:	2232      	movs	r2, #50	; 0x32
  8001258:	6bf9      	ldr	r1, [r7, #60]	; 0x3c
  800125a:	2003      	movs	r0, #3
- 800125c:	f7ff fa3c 	bl	80006d8 <calculate_freq_and_signalstrenght>
+ 800125c:	f7ff fa3c 	bl	80006d8 <calculate_freq_and_signalstrength>
  8001260:	eeb0 7a40 	vmov.f32	s14, s0
  8001264:	eef0 7a60 	vmov.f32	s15, s1
  8001268:	ed87 7a01 	vstr	s14, [r7, #4]

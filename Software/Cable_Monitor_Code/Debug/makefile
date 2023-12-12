@@ -82,8 +82,8 @@ all: main-build
 main-build: Cable_Monitor.elf secondary-outputs
 
 # Tool invocations
-Cable_Monitor.elf Cable_Monitor.map: $(OBJS) $(USER_OBJS) C:\Users\aleja\OneDrive\ -\ ZHAW\0_Modulen\3\ Jahr\Semester\ 5\PM3\PM3-Cable_Monitor\Software\Cable_Monitor_Code\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Cable_Monitor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\aleja\OneDrive - ZHAW\0_Modulen\3 Jahr\Semester 5\PM3\PM3-Cable_Monitor\Software\Cable_Monitor_Code\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Cable_Monitor.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Cable_Monitor.elf Cable_Monitor.map: $(OBJS) $(USER_OBJS) C:\Users\aleja\Documents\Github\PM3-Cable_Monitor\Software\Cable_Monitor_Code\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Cable_Monitor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\aleja\Documents\Github\PM3-Cable_Monitor\Software\Cable_Monitor_Code\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Cable_Monitor.map" -Wl,--gc-sections -static -L../Drivers/CMSIS/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
