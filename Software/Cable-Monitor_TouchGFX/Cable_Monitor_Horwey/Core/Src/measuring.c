@@ -138,6 +138,25 @@ void MEAS_timer_init(void) {
     TIM2->PSC = TIM_PRESCALE;     // Prescaler for clock freq. = 1MHz
     TIM2->ARR = TIM_TOP;          // Auto reload = counter top value
     TIM2->CR2 |= TIM_CR2_MMS_1;   // TRGO on update
+
+    // Enable timer interrupt in the NVIC
+//    NVIC_ClearPendingIRQ(TIM2_IRQn);  // Clear pending timer interrupt
+//    NVIC_EnableIRQ(TIM2_IRQn);        // Enable timer interrupt in the NVIC
+//    TIM2->DIER |= TIM_DIER_UIE; // Enable update interrupt
+//    NVIC_SetPriority(TIM2_IRQn, 2); // Set priority to a suitable value
+
+}
+
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+	HAL_Delay(1);
+  /* USER CODE END TIM2_IRQn 0 */
+//  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  /* USER CODE END TIM2_IRQn 1 */
 }
 
 /** ***************************************************************************
@@ -249,7 +268,9 @@ uint32_t* MEAS_start_measure(void)
 	MEAS_ADC3_scan_init();
 	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, GPIO_PIN_RESET);
 	//
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
     MEAS_ADC3_scan_start();
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
 
     static int timeout = 0;
     while ((!MEAS_data_ready) & (timeout > 99999))
