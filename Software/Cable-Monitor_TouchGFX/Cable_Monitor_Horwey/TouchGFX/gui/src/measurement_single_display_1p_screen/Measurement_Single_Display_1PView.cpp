@@ -34,7 +34,6 @@ void Measurement_Single_Display_1PView::testGui()
 	int test = 	0;
 
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);
 
 	test = updateGUI_test();
 
@@ -42,7 +41,7 @@ void Measurement_Single_Display_1PView::testGui()
 
 	//callback to fft
 	FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
+
 	//update GUI values
 	//set gauge angle
 	SMD1_gauge.setValue(test);
