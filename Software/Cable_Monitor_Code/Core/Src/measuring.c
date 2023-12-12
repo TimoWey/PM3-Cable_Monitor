@@ -78,7 +78,7 @@
  * Variables
  *****************************************************************************/
 bool MEAS_data_ready = false;          ///< New data is ready
-static uint32_t ADC_sample_count = 0;  ///< Index for buffer
+
 static uint32_t ADC_samples[INPUT_COUNT *
                             ADC_NUMS];  ///< ADC values of max. 4 input channels
 
@@ -327,25 +327,25 @@ void MEAS_show_data(void) {
     BSP_LCD_SetFont(&Font20);
     char text[32];
 	// Calculate the frequency of channel 1
-	FFT fft = calculate_freq_and_signalstrenght(1, Samples, 50);
+	FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_CYAN);
     snprintf(text, 40, "C1:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C1 %4d", (int)(Samples[0]));
     BSP_LCD_DisplayStringAt(0, 140, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 2
-	fft = calculate_freq_and_signalstrenght(2, Samples, 50);
+	fft = calculate_freq_and_signalstrength(2, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_RED);
     snprintf(text, 40, "C2:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C2 %4d", (int)(Samples[1]));
     BSP_LCD_DisplayStringAt(0, 170, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 3
-	fft = calculate_freq_and_signalstrenght(3, Samples, 50);
+	fft = calculate_freq_and_signalstrength(3, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
     snprintf(text, 40, "C3:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C3 %4d", (int)(Samples[2]));
     BSP_LCD_DisplayStringAt(0, 200, (uint8_t*)text, LEFT_MODE);
 	// Calculate the frequency of channel 4
-	fft = calculate_freq_and_signalstrenght(3, Samples, 50);
+	fft = calculate_freq_and_signalstrength(3, Samples, 50);
     BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
     snprintf(text, 40, "C4:%4d f:%3d HZ ", (int)(fft.signal_strength), (int)(fft.main_freq));
     // snprintf(text, 15, "C4 %4d", (int)(Samples[3]));
