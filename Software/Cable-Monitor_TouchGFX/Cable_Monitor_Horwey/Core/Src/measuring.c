@@ -76,7 +76,7 @@
 /******************************************************************************
  * Variables
  *****************************************************************************/
-extern int MEAS_data_ready = 0;          ///< New data is ready
+
 //static uint32_t ADC_sample_count = 0;  ///< Index for buffer
 ///< ADC values of max. 4 input channels
 static uint32_t ADC_samples[INPUT_COUNT * ADC_NUMS];
@@ -94,7 +94,8 @@ static uint32_t ADC_samples[INPUT_COUNT * ADC_NUMS];
  * - ADC3_IN6 = GPIO PF8 (Hall sensor Left)
  * - ADC123_IN11 = GPIO PC1 (Hall sensor Right)
  *****************************************************************************/
-void MEAS_GPIO_analog_init(void) {
+void MEAS_GPIO_analog_init(void)
+{
     __HAL_RCC_GPIOF_CLK_ENABLE();  // Enable Clock for GPIO port F
     GPIOF->MODER |= (3UL << GPIO_MODER_MODER6_Pos);  // Analog PF6 = ADC3_IN4
     GPIOF->MODER |= (3UL << GPIO_MODER_MODER8_Pos);  // Analog PF8 = ADC3_IN6
@@ -108,7 +109,8 @@ void MEAS_GPIO_analog_init(void) {
  *
  * to make sure the different demos do not interfere.
  *****************************************************************************/
-void MEAS_ADC_reset(void) {
+void MEAS_ADC_reset(void)
+{
     RCC->APB2RSTR |= RCC_APB2RSTR_ADCRST;   // Reset ADCs
     RCC->APB2RSTR &= ~RCC_APB2RSTR_ADCRST;  // Release reset of ADCs
     TIM2->CR1 &= ~TIM_CR1_CEN;              // Disable timer
@@ -133,7 +135,8 @@ static void MEAS_Buffer_reset(uint8_t channels, uint32_t* buffer)
  *
  * @note For debugging purposes the timer interrupt might be useful.
  *****************************************************************************/
-void MEAS_timer_init(void) {
+void MEAS_timer_init(void)
+{
     __HAL_RCC_TIM2_CLK_ENABLE();  // Enable Clock for TIM2
     TIM2->PSC = TIM_PRESCALE;     // Prescaler for clock freq. = 1MHz
     TIM2->ARR = TIM_TOP;          // Auto reload = counter top value
@@ -141,25 +144,6 @@ void MEAS_timer_init(void) {
 
     // set timer to highest priority
     NVIC_SetPriority(TIM2_IRQn, 0);
-
-    // Enable timer interrupt in the NVIC
-//    NVIC_ClearPendingIRQ(TIM2_IRQn);  // Clear pending timer interrupt
-//    NVIC_EnableIRQ(TIM2_IRQn);        // Enable timer interrupt in the NVIC
-//    TIM2->DIER |= TIM_DIER_UIE; // Enable update interrupt
-//    NVIC_SetPriority(TIM2_IRQn, 2); // Set priority to a suitable value
-
-}
-
-void TIM2_IRQHandler(void)
-{
-//  /* USER CODE BEGIN TIM2_IRQn 0 */
-//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
-//	HAL_Delay(1);
-//  /* USER CODE END TIM2_IRQn 0 */
-////  HAL_TIM_IRQHandler(&htim2);
-//  /* USER CODE BEGIN TIM2_IRQn 1 */
-//  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-  /* USER CODE END TIM2_IRQn 1 */
 }
 
 /** ***************************************************************************
@@ -174,7 +158,8 @@ void TIM2_IRQHandler(void)
  * @n The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3
  *(Pad Left), ADC_IN6 = GPIO PF8 (HS-Right), ADC3_IN11 = GPIO PC1 (HS-Left)
  *****************************************************************************/
-void MEAS_ADC3_scan_init(void) {
+void MEAS_ADC3_scan_init(void)
+{
     __HAL_RCC_ADC3_CLK_ENABLE();               // Enable Clock for ADC3
     ADC3->SQR1 |= (3UL << ADC_SQR1_L_Pos);     // Convert 4 inputs (4-1)
     ADC3->SQR3 |= (4UL << ADC_SQR3_SQ1_Pos);   // Input 4 = first conversion
@@ -191,8 +176,7 @@ void MEAS_ADC3_scan_init(void) {
     DMA2_Stream1->CR &= ~DMA_SxCR_EN;          // Disable the DMA stream 1
     while (DMA2_Stream1->CR & DMA_SxCR_EN)
     {
-    	static int i = 0;
-    	i++;
+
     }  // Wait for DMA to finish
     DMA2->LIFCR |= DMA_LIFCR_CTCIF1;  // Clear transfer complete interrupt fl.
     DMA2_Stream1->CR |= (2UL << DMA_SxCR_CHSEL_Pos);  // Select channel 2
@@ -201,12 +185,10 @@ void MEAS_ADC3_scan_init(void) {
     DMA2_Stream1->CR |= DMA_SxCR_PSIZE_1;  // Peripheral data size = 32 bit
     DMA2_Stream1->CR |= DMA_SxCR_MINC;     // Increment memory address pointer
     DMA2_Stream1->CR |= DMA_SxCR_TCIE;     // Transfer complete interrupt enable
-    DMA2_Stream1->NDTR =
-        INPUT_COUNT * ADC_NUMS;  // Number of data items to transfer
+    // Number of data items to transfer
+    DMA2_Stream1->NDTR = INPUT_COUNT * ADC_NUMS;
     DMA2_Stream1->PAR = (uint32_t)&ADC3->DR;     // Peripheral register address
     DMA2_Stream1->M0AR = (uint32_t)ADC_samples;  // Buffer memory loc. address
-
-
 }
 
 /** ***************************************************************************
@@ -230,12 +212,6 @@ void MEAS_ADC3_scan_start(void)
  *****************************************************************************/
 void DMA2_Stream1_IRQHandler(void)
 {
-//	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);
-//	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_4);
-
-	static int debug = 0;
-    debug++;
-
 	if (DMA2->LISR & DMA_LISR_TCIF1) // Stream1 transfer compl. interrupt f.
     {
         // Disable DMA interrupt in the NVIC
@@ -244,23 +220,16 @@ void DMA2_Stream1_IRQHandler(void)
         DMA2_Stream1->CR &= ~DMA_SxCR_EN;         // Disable the DMA
         while (DMA2_Stream1->CR & DMA_SxCR_EN)	  // Wait for DMA to finish
         {
-        	static int j = 0;
-        	    j++;
-        }
 
+        }
 
         DMA2->LIFCR |= DMA_LIFCR_CTCIF1;// clr transfer complete interrupt fl.
         TIM2->CR1 &= ~TIM_CR1_CEN;   // Disable timer
         ADC3->CR2 &= ~ADC_CR2_ADON;  // Disable ADC3
         ADC3->CR2 &= ~ADC_CR2_DMA;   // Disable DMA mode
 
-        // copy data from DMA buffer to ADC_samples
-
         MEAS_ADC_reset();
-        MEAS_data_ready = 1;
-        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_4);
     }
-//	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
 }
 
 /** ***************************************************************************
@@ -275,22 +244,9 @@ void DMA2_Stream1_IRQHandler(void)
 // Start the measurement procedure
 uint32_t* MEAS_start_measure(void)
 {
-
-	//works
 	MEAS_Buffer_reset(INPUT_COUNT, ADC_samples);
-
-    //
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, GPIO_PIN_SET);
-	HAL_Delay(1);
 	MEAS_ADC3_scan_init();
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_2, GPIO_PIN_RESET);
-	//
-
-
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
-	HAL_Delay(1);
     MEAS_ADC3_scan_start();
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
 
     while (DMA2_Stream1->CR & DMA_SxCR_EN)	  // Wait for DMA to finish
 	{

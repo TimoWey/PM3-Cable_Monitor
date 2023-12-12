@@ -56,6 +56,17 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
 
 // Main_Menu
 
+void FrontendApplicationBase::gotoMain_MenuScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMain_MenuScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMain_MenuScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<Main_MenuView, Main_MenuPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 void FrontendApplicationBase::gotoMain_MenuScreenWipeTransitionWest()
 {
     transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMain_MenuScreenWipeTransitionWestImpl);
@@ -105,17 +116,6 @@ void FrontendApplicationBase::gotoMeasurement_SingleScreenWipeTransitionEastImpl
 }
 
 // Measurement_Single_Display_1P
-
-void FrontendApplicationBase::gotoMeasurement_Single_Display_1PScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMeasurement_Single_Display_1PScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoMeasurement_Single_Display_1PScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<Measurement_Single_Display_1PView, Measurement_Single_Display_1PPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
 
 void FrontendApplicationBase::gotoMeasurement_Single_Display_1PScreenWipeTransitionEast()
 {
