@@ -13,7 +13,6 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <gui/containers/Gauge_with_Values.hpp>
 
 class Measurement_Accurate_DisplayViewBase : public touchgfx::View<Measurement_Accurate_DisplayPresenter>
 {
@@ -38,7 +37,6 @@ protected:
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
-    Gauge_with_Values gauge_with_Values1;
 
 private:
 

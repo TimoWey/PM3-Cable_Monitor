@@ -54,9 +54,6 @@ Measurement_Single_Display_3PViewBase::Measurement_Single_Display_3PViewBase() :
     buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel3.setAction(buttonCallback);
     add(buttonWithLabel3);
-
-    gauge_with_Values1.setXY(0, 78);
-    add(gauge_with_Values1);
 }
 
 Measurement_Single_Display_3PViewBase::~Measurement_Single_Display_3PViewBase()
@@ -66,7 +63,7 @@ Measurement_Single_Display_3PViewBase::~Measurement_Single_Display_3PViewBase()
 
 void Measurement_Single_Display_3PViewBase::setupScreen()
 {
-    gauge_with_Values1.initialize();
+
 }
 
 void Measurement_Single_Display_3PViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)

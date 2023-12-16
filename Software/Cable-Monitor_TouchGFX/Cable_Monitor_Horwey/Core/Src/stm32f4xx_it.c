@@ -181,17 +181,17 @@ void EXTI3_IRQHandler(void)
 /**
   * @brief This function handles TIM2 global interrupt.
   */
-//void TIM2_IRQHandler(void)
-//{
-//  /* USER CODE BEGIN TIM2_IRQn 0 */
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
 //	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
 //	HAL_Delay(1);
-//  /* USER CODE END TIM2_IRQn 0 */
-//  HAL_TIM_IRQHandler(&htim2);
-//  /* USER CODE BEGIN TIM2_IRQn 1 */
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
 //  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-//  /* USER CODE END TIM2_IRQn 1 */
-//}
+  /* USER CODE END TIM2_IRQn 1 */
+}
 
 /**
   * @brief This function handles TIM6 global interrupt, DAC1 and DAC2 underrun error interrupts.

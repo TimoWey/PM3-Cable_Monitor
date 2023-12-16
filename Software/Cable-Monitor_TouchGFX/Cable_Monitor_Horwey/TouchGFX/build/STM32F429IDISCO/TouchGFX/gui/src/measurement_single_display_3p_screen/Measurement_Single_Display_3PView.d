@@ -63,13 +63,7 @@ TouchGFX/build/STM32F429IDISCO/TouchGFX/gui/src/measurement_single_display_3p_sc
  Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
 
 TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp:
 
@@ -198,15 +192,3 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
