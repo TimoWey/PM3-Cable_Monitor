@@ -34,6 +34,15 @@ Calibration_HallViewBase::Calibration_HallViewBase() :
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AQKY));
     add(textArea3);
 
+    line1_1.setPosition(0, 75, 240, 10);
+    line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1_1.setPainter(line1_1Painter);
+    line1_1.setStart(5, 5);
+    line1_1.setEnd(235, 5);
+    line1_1.setLineWidth(1);
+    line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line1_1);
+
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);

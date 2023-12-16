@@ -44,7 +44,14 @@ TouchGFX/build/STM32F429IDISCO/TouchGFX/gui/src/measurement_single_display_1p_sc
  TouchGFX/gui/include/gui/model/ModelListener.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Rasterizer.hpp \
@@ -52,27 +59,52 @@ TouchGFX/build/STM32F429IDISCO/TouchGFX/gui/src/measurement_single_display_1p_sc
  Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Cell.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/transforms/DisplayTransformation.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- TouchGFX/gui/include/gui/containers/Gauge_with_Values.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
+ Core/Inc/main.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ Core/Inc/stm32f4xx_hal_conf.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+ Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+ Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h \
+ Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
+ Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h \
+ Drivers/CMSIS/Include/mpu_armv7.h \
+ Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ Core/Inc/measuring.h Core/Inc/calculation.h
 
 TouchGFX/gui/include/gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PView.hpp:
 
@@ -162,7 +194,21 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:
 
@@ -178,7 +224,13 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainte
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/transforms/DisplayTransformation.hpp:
 
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
+
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:
 
@@ -190,32 +242,84 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainte
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
-
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
-TouchGFX/gui/include/gui/containers/Gauge_with_Values.hpp:
+Core/Inc/main.h:
 
-TouchGFX/generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp:
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp:
+Core/Inc/stm32f4xx_hal_conf.h:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextureMapper.hpp:
+Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
+Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp:
+Drivers/CMSIS/Include/core_cm4.h:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+Drivers/CMSIS/Include/cmsis_version.h:
+
+Drivers/CMSIS/Include/cmsis_compiler.h:
+
+Drivers/CMSIS/Include/cmsis_gcc.h:
+
+Drivers/CMSIS/Include/mpu_armv7.h:
+
+Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
+Core/Inc/measuring.h:
+
+Core/Inc/calculation.h:

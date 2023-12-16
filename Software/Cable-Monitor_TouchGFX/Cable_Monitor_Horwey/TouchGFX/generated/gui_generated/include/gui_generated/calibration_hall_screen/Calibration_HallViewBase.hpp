@@ -33,6 +33,8 @@ protected:
     touchgfx::Image image1;
     touchgfx::ButtonWithLabel buttonWithLabel3;
     touchgfx::TextArea textArea3;
+    touchgfx::Line line1_1;
+    touchgfx::PainterRGB565 line1_1Painter;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea2;
