@@ -34,7 +34,7 @@
 #define ARM_MATH_CM4
 
 #include "arm_math.h"
-
+#include "FLASH_SECTOR_F4.h"
 #include "measuring.h"
 #include "calculation.h"
 
@@ -199,6 +199,13 @@ void gyro_disable(void)
 	GPIOF->MODER |= 3UL << GPIO_MODER_MODER8_Pos;  // Analog mode PF8 = ADC3_IN4
 }
 
+uint32_t *data = "Timo Wey";
+uint32_t Rx_Data[8];
+char string[30];
+
+//__attribute__((__section__(".user_data"))) const uint32_t userConfig[24];
+
+
 
 /* USER CODE END 0 */
 
@@ -250,6 +257,13 @@ int main(void)
   gyro_disable();
   MEAS_GPIO_analog_init();         // Configure GPIOs in analog mode
   MEAS_timer_init();               // Configure the timer
+
+
+//  Flash_Write_Data(0x081627F0, data, 6);
+//  Flash_Read_Data(0x081627F0, Rx_Data, 6);
+//  Convert_To_Str(Rx_Data, string);
+
+
 
   /* USER CODE END 2 */
 

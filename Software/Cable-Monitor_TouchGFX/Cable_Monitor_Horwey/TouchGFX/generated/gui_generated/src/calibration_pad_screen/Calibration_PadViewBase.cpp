@@ -8,6 +8,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Calibration_PadViewBase::Calibration_PadViewBase() :
+    updateItemCallback(this, &Calibration_PadViewBase::updateItemCallbackHandler),
     buttonCallback(this, &Calibration_PadViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -43,6 +44,15 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
+    line1_1.setPosition(0, 75, 240, 10);
+    line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1_1.setPainter(line1_1Painter);
+    line1_1.setStart(5, 5);
+    line1_1.setEnd(235, 5);
+    line1_1.setLineWidth(1);
+    line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line1_1);
+
     textArea2.setXY(69, 35);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
@@ -54,6 +64,19 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EAAK));
     add(textArea1);
+
+    scrollList1.setPosition(0, 95, 240, 147);
+    scrollList1.setHorizontal(false);
+    scrollList1.setCircular(true);
+    scrollList1.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
+    scrollList1.setSwipeAcceleration(10);
+    scrollList1.setDragAcceleration(10);
+    scrollList1.setNumberOfItems(1);
+    scrollList1.setPadding(0, 0);
+    scrollList1.setSnapping(false);
+    scrollList1.setDrawableSize(256, 0);
+    scrollList1.setDrawables(scrollList1ListItems, updateItemCallback);
+    add(scrollList1);
 }
 
 Calibration_PadViewBase::~Calibration_PadViewBase()
@@ -63,7 +86,11 @@ Calibration_PadViewBase::~Calibration_PadViewBase()
 
 void Calibration_PadViewBase::setupScreen()
 {
-
+    scrollList1.initialize();
+    for (int i = 0; i < scrollList1ListItems.getNumberOfDrawables(); i++)
+    {
+        scrollList1ListItems[i].initialize();
+    }
 }
 
 void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -74,5 +101,13 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //When buttonWithLabel3 clicked change screen to Calibration
         //Go to Calibration with screen transition towards West
         application().gotoCalibrationScreenWipeTransitionWest();
+    }
+}
+
+void Calibration_PadViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
+{
+    if (items == &scrollList1ListItems)
+    {
+        scrollList1UpdateItem(scrollList1ListItems[containerIndex], itemIndex);
     }
 }

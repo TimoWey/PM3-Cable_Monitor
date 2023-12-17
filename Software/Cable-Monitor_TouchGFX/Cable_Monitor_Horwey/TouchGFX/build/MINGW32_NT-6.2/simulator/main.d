@@ -112,8 +112,6 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp \
  generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp \
  gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp \
- gui/include/gui/containers/Gauge_with_Values.hpp \
- generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp \
  gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
  generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
@@ -129,6 +127,11 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
  generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
  gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
+ gui/include/gui/containers/CustomContainer1.hpp \
+ generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp \
  gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp \
  generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp \
  gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp \
@@ -368,10 +371,6 @@ generated/gui_generated/include/gui_generated/measurement_single_display_3p_scre
 
 gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp:
 
-gui/include/gui/containers/Gauge_with_Values.hpp:
-
-generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp:
-
 gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
 
 generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp:
@@ -401,6 +400,16 @@ gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
 generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp:
 
 gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
+
+gui/include/gui/containers/CustomContainer1.hpp:
+
+generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp:
 
 gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp:
 

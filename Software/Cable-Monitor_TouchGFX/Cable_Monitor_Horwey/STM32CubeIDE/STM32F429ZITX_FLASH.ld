@@ -64,7 +64,7 @@ MEMORY
 {
   CCMRAM    (xrw)    : ORIGIN = 0x10000000,   LENGTH = 64K
   RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 192K
-  FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 2048K
+  FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 2M
   SDRAM        (xrw)    : ORIGIN = 0xD0000000,   LENGTH = 8M
 }
 
@@ -118,7 +118,7 @@ SECTIONS
     __exidx_end = .;
     . = ALIGN(4);
   } >FLASH
-
+  
   .preinit_array     :
   {
     . = ALIGN(4);
@@ -137,6 +137,8 @@ SECTIONS
     PROVIDE_HIDDEN (__init_array_end = .);
     . = ALIGN(4);
   } >FLASH
+  
+  
   
   .fini_array :
   {

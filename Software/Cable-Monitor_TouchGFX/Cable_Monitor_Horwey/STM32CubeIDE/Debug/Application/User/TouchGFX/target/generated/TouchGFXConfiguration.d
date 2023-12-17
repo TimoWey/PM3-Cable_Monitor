@@ -129,8 +129,6 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp \
  ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp \
- ../../TouchGFX/gui/include/gui/containers/Gauge_with_Values.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp \
  ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
@@ -146,6 +144,11 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
  ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
+ ../../TouchGFX/gui/include/gui/containers/Configuration_Container.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Configuration_ContainerBase.hpp \
  ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp \
  ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp \
@@ -290,8 +293,6 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_display_3p_screen/Measurement_Single_Display_3PViewBase.hpp:
 ../../TouchGFX/gui/include/gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp:
-../../TouchGFX/gui/include/gui/containers/Gauge_with_Values.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp:
 ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp:
 ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp:
@@ -307,6 +308,11 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp:
 ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
+../../TouchGFX/gui/include/gui/containers/Configuration_Container.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Configuration_ContainerBase.hpp:
 ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp:
 ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp:

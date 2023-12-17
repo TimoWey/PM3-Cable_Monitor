@@ -13,6 +13,8 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/containers/scrollers/ScrollList.hpp>
+#include <gui/containers/Configuration_Container.hpp>
 
 class Calibration_PadViewBase : public touchgfx::View<Calibration_PadPresenter>
 {
@@ -20,6 +22,11 @@ public:
     Calibration_PadViewBase();
     virtual ~Calibration_PadViewBase();
     virtual void setupScreen();
+
+    virtual void scrollList1UpdateItem(Configuration_Container& item, int16_t itemIndex)
+    {
+        // Override and implement this function in Calibration_Pad
+    }
 
 protected:
     FrontendApplication& application() {
@@ -35,8 +42,12 @@ protected:
     touchgfx::TextArea textArea3;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
+    touchgfx::Line line1_1;
+    touchgfx::PainterRGB565 line1_1Painter;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
+    touchgfx::ScrollList scrollList1;
+    touchgfx::DrawableListItems<Configuration_Container, 2> scrollList1ListItems;
 
 private:
 
@@ -49,11 +60,13 @@ private:
     /*
      * Callback Declarations
      */
+    touchgfx::Callback<Calibration_PadViewBase, touchgfx::DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
     touchgfx::Callback<Calibration_PadViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
+    void updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
