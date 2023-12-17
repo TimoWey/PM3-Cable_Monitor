@@ -54,9 +54,6 @@ Measurement_Accurate_Display_2ViewBase::Measurement_Accurate_Display_2ViewBase()
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IJWA));
     add(textArea1);
-
-    gauge_with_Values1.setXY(0, 78);
-    add(gauge_with_Values1);
 }
 
 Measurement_Accurate_Display_2ViewBase::~Measurement_Accurate_Display_2ViewBase()
@@ -66,7 +63,7 @@ Measurement_Accurate_Display_2ViewBase::~Measurement_Accurate_Display_2ViewBase(
 
 void Measurement_Accurate_Display_2ViewBase::setupScreen()
 {
-    gauge_with_Values1.initialize();
+
 }
 
 void Measurement_Accurate_Display_2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)

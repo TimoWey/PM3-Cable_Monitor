@@ -1019,14 +1019,6 @@
               "Blue": 255
             },
             "TextRotation": "0"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "gauge_with_Values1",
-            "Y": 78,
-            "Width": 240,
-            "Height": 169,
-            "CustomContainerDefinitionName": "Gauge_with_Values"
           }
         ],
         "Interactions": [
@@ -1350,14 +1342,6 @@
               "Blue": 255
             },
             "AutoSize": true
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "gauge_with_Values1",
-            "Y": 78,
-            "Width": 240,
-            "Height": 169,
-            "CustomContainerDefinitionName": "Gauge_with_Values"
           }
         ],
         "Interactions": [
@@ -1474,14 +1458,6 @@
               "Blue": 255
             },
             "AutoSize": true
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "gauge_with_Values1",
-            "Y": 78,
-            "Width": 240,
-            "Height": 169,
-            "CustomContainerDefinitionName": "Gauge_with_Values"
           }
         ],
         "Interactions": [
@@ -1775,6 +1751,24 @@
             "LineEndingStyle": "Round"
           },
           {
+            "Type": "Line",
+            "Name": "line1_1",
+            "Y": 75,
+            "Width": 240,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 235.0,
+            "EndY": 5.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
             "Type": "TextArea",
             "Name": "textArea2",
             "X": 69,
@@ -1805,6 +1799,20 @@
               "Blue": 255
             },
             "AutoSize": true
+          },
+          {
+            "Type": "ScrollList",
+            "Name": "scrollList1",
+            "Y": 95,
+            "Width": 240,
+            "Height": 147,
+            "IsCircular": true,
+            "ItemTemplateName": "Configuration_Container",
+            "NumberofItems": 1,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0
           }
         ],
         "Interactions": [
@@ -2093,65 +2101,33 @@
     ],
     "CustomContainerDefinitions": [
       {
-        "Name": "Gauge_with_Values",
-        "Y": 46,
+        "Name": "Configuration_Container",
         "Width": 240,
-        "Height": 169,
+        "Height": 256,
         "Components": [
           {
-            "Type": "TextArea",
-            "Name": "textArea4_2",
-            "X": 217,
-            "Y": 109,
-            "Width": 23,
-            "Height": 15,
-            "TextId": "__SingleUse_D6CM",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1_6",
+            "X": 194,
+            "Y": 218,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "checkmark.png",
+            "IconReleased": "checkmark.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
           },
           {
             "Type": "TextArea",
-            "Name": "textArea4_1",
-            "Y": 109,
-            "Width": 28,
-            "Height": 15,
-            "TextId": "__SingleUse_YENI",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea4",
-            "X": 113,
-            "Width": 15,
-            "Height": 15,
-            "TextId": "__SingleUse_Z8XU",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea5",
-            "X": 76,
-            "Y": 124,
-            "Width": 88,
-            "Height": 15,
-            "TextId": "__SingleUse_RQ3J",
+            "Name": "textArea1_6",
+            "X": 10,
+            "Y": 225,
+            "Width": 126,
+            "Height": 23,
+            "TextId": "__SingleUse_CNHG",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -2159,16 +2135,35 @@
               "Blue": 255
             },
             "AutoSize": true,
-            "Wildcard1": {}
+            "Wildcard1": {
+              "TextId": "__SingleUse_H9HA",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1_5",
+            "X": 194,
+            "Y": 182,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "checkmark.png",
+            "IconReleased": "checkmark.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
           },
           {
             "Type": "TextArea",
-            "Name": "textArea5_1",
-            "X": 86,
-            "Y": 139,
-            "Width": 65,
-            "Height": 15,
-            "TextId": "__SingleUse_54VS",
+            "Name": "textArea1_5",
+            "X": 10,
+            "Y": 189,
+            "Width": 126,
+            "Height": 23,
+            "TextId": "__SingleUse_TNZF",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -2176,16 +2171,35 @@
               "Blue": 255
             },
             "AutoSize": true,
-            "Wildcard1": {}
+            "Wildcard1": {
+              "TextId": "__SingleUse_EFV9",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1_4",
+            "X": 194,
+            "Y": 146,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "checkmark.png",
+            "IconReleased": "checkmark.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
           },
           {
             "Type": "TextArea",
-            "Name": "textArea5_2",
-            "X": 86,
-            "Y": 154,
-            "Width": 67,
-            "Height": 15,
-            "TextId": "__SingleUse_UKDF",
+            "Name": "textArea1_4",
+            "X": 22,
+            "Y": 153,
+            "Width": 114,
+            "Height": 23,
+            "TextId": "__SingleUse_DS48",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -2193,36 +2207,155 @@
               "Blue": 255
             },
             "AutoSize": true,
-            "Wildcard1": {}
+            "Wildcard1": {
+              "TextId": "__SingleUse_8X1K",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           },
           {
-            "Type": "Gauge",
-            "Name": "gauge1",
-            "X": 28,
-            "Y": 18,
-            "Width": 184,
-            "Height": 106,
-            "Preset": "alternate_theme\\presets\\gauges\\small\\light_precision.json",
-            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_small_backgrounds_light_precision.png",
-            "RotationCenterX": 92.0,
-            "RotationCenterY": 92.0,
-            "StartAngle": -90.0,
-            "EndAngle": 90.0,
-            "RangeMin": -90.0,
-            "RangeMax": 90.0,
-            "Easing": "Linear",
-            "EasingOption": "In",
-            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_small_needles_rough.png",
-            "NeedleRotationCenterX": 8.0,
-            "NeedleRotationCenterY": 53.0,
-            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
-            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
-            "ArcColor": {
-              "Red": 20,
-              "Green": 151,
-              "Blue": 197
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1_3",
+            "X": 194,
+            "Y": 110,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "checkmark.png",
+            "IconReleased": "checkmark.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_3",
+            "X": 22,
+            "Y": 117,
+            "Width": 114,
+            "Height": 23,
+            "TextId": "__SingleUse_TD3K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "ArcCapStyle": "Butt"
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_KMHD",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1_2",
+            "X": 194,
+            "Y": 74,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "checkmark.png",
+            "IconReleased": "checkmark.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 34,
+            "Y": 45,
+            "Width": 102,
+            "Height": 23,
+            "TextId": "__SingleUse_GZ9R",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_UKN6",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1_1",
+            "X": 194,
+            "Y": 38,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "checkmark.png",
+            "IconReleased": "checkmark.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2",
+            "X": 22,
+            "Y": 81,
+            "Width": 114,
+            "Height": 23,
+            "TextId": "__SingleUse_TIHR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_QWFM",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "X": 194,
+            "Y": 2,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
+            "IconPressed": "checkmark.png",
+            "IconReleased": "checkmark.png",
+            "IconHeight": 36,
+            "IconWidth": 36,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 34,
+            "Y": 9,
+            "Width": 102,
+            "Height": 23,
+            "TextId": "__SingleUse_AGRP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_L0JG",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": []
