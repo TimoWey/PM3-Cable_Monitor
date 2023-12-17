@@ -6,6 +6,9 @@
 
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
@@ -24,36 +27,42 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::ButtonWithIcon buttonWithIcon1_6;
-    touchgfx::TextAreaWithOneWildcard textArea1_6;
+    touchgfx::Line line1_1_2_1;
+    touchgfx::PainterRGB565 line1_1_2_1Painter;
+    touchgfx::Line line1_1_2_2;
+    touchgfx::PainterRGB565 line1_1_2_2Painter;
+    touchgfx::Line line1_1_2_3;
+    touchgfx::PainterRGB565 line1_1_2_3Painter;
+    touchgfx::TextArea textArea3;
     touchgfx::ButtonWithIcon buttonWithIcon1_5;
-    touchgfx::TextAreaWithOneWildcard textArea1_5;
     touchgfx::ButtonWithIcon buttonWithIcon1_4;
-    touchgfx::TextAreaWithOneWildcard textArea1_4;
     touchgfx::ButtonWithIcon buttonWithIcon1_3;
+    touchgfx::TextAreaWithOneWildcard textArea1_5;
+    touchgfx::TextAreaWithOneWildcard textArea1_4;
     touchgfx::TextAreaWithOneWildcard textArea1_3;
     touchgfx::ButtonWithIcon buttonWithIcon1_2;
-    touchgfx::TextAreaWithOneWildcard textArea1_1;
     touchgfx::ButtonWithIcon buttonWithIcon1_1;
-    touchgfx::TextAreaWithOneWildcard textArea1_2;
     touchgfx::ButtonWithIcon buttonWithIcon1;
+    touchgfx::TextAreaWithOneWildcard textArea1_2;
+    touchgfx::TextAreaWithOneWildcard textArea1_1;
     touchgfx::TextAreaWithOneWildcard textArea1;
+    touchgfx::Line line1_1_2;
+    touchgfx::PainterRGB565 line1_1_2Painter;
+    touchgfx::TextArea textArea3_2;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTAREA1_6_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textArea1_6Buffer[TEXTAREA1_6_SIZE];
     static const uint16_t TEXTAREA1_5_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea1_5Buffer[TEXTAREA1_5_SIZE];
     static const uint16_t TEXTAREA1_4_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea1_4Buffer[TEXTAREA1_4_SIZE];
     static const uint16_t TEXTAREA1_3_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea1_3Buffer[TEXTAREA1_3_SIZE];
-    static const uint16_t TEXTAREA1_1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textArea1_1Buffer[TEXTAREA1_1_SIZE];
     static const uint16_t TEXTAREA1_2_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea1_2Buffer[TEXTAREA1_2_SIZE];
+    static const uint16_t TEXTAREA1_1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textArea1_1Buffer[TEXTAREA1_1_SIZE];
     static const uint16_t TEXTAREA1_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea1Buffer[TEXTAREA1_SIZE];
 

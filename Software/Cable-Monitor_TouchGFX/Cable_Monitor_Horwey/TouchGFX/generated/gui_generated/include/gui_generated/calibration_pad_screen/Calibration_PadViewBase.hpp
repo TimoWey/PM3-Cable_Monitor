@@ -27,6 +27,15 @@ public:
     {
         // Override and implement this function in Calibration_Pad
     }
+    virtual void transitionBegins();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void Load_FLASH_Values()
+    {
+        // Override and implement this function in Calibration_Pad
+    }
 
 protected:
     FrontendApplication& application() {

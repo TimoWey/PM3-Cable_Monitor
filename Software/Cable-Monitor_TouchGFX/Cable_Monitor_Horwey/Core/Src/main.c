@@ -199,12 +199,18 @@ void gyro_disable(void)
 	GPIOF->MODER |= 3UL << GPIO_MODER_MODER8_Pos;  // Analog mode PF8 = ADC3_IN4
 }
 
-uint32_t *data = "Timo Wey";
-uint32_t Rx_Data[8];
-char string[30];
 
-//__attribute__((__section__(".user_data"))) const uint32_t userConfig[24];
+#define SECTOR_23_ADDR 0x081E0000
 
+//__attribute__((__section__(".USER_DATA"))) uint32_t test_data[6];
+
+uint32_t *Config_Data_PAD[6] =
+{
+		100, 420, 6969, 200, 840, 13938
+};
+
+uint32_t Rx_Data[6];
+char string[100];
 
 
 /* USER CODE END 0 */
@@ -259,9 +265,8 @@ int main(void)
   MEAS_timer_init();               // Configure the timer
 
 
-//  Flash_Write_Data(0x081627F0, data, 6);
-//  Flash_Read_Data(0x081627F0, Rx_Data, 6);
-//  Convert_To_Str(Rx_Data, string);
+  Flash_Write_Data(SECTOR_23_ADDR, Config_Data_PAD, 6);
+  Flash_Read_Data(SECTOR_23_ADDR, Rx_Data, 6);
 
 
 

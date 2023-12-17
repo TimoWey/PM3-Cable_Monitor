@@ -84,7 +84,7 @@ static uint32_t GetSector(uint32_t Address)
   {
     sector = FLASH_SECTOR_11;
   }
-  /*  else if((Address < 0x08103FFF) && (Address >= 0x08100000))
+  else if((Address < 0x08103FFF) && (Address >= 0x08100000))
   {
     sector = FLASH_SECTOR_12;
   }
@@ -128,10 +128,10 @@ static uint32_t GetSector(uint32_t Address)
   {
     sector = FLASH_SECTOR_22;
   }
-  else if (Address < 0x081FFFFF) && (Address >= 0x081E0000)
+  else if((Address < 0x081FFFFF) && (Address >= 0x081E0000))
   {
     sector = FLASH_SECTOR_23;
-  }*/
+  }
   return sector;
 }
 
