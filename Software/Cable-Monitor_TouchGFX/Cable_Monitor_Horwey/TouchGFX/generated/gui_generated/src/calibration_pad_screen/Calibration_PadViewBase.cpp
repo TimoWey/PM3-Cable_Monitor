@@ -29,7 +29,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     buttonWithLabel3.setAction(buttonCallback);
     add(buttonWithLabel3);
 
-    textArea3.setXY(58, 60);
+    textArea3.setXY(70, 60);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X786));
@@ -65,7 +65,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EAAK));
     add(textArea1);
 
-    scrollList1.setPosition(0, 95, 240, 147);
+    scrollList1.setPosition(0, 85, 240, 167);
     scrollList1.setHorizontal(false);
     scrollList1.setCircular(true);
     scrollList1.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
@@ -74,7 +74,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     scrollList1.setNumberOfItems(1);
     scrollList1.setPadding(0, 0);
     scrollList1.setSnapping(false);
-    scrollList1.setDrawableSize(256, 0);
+    scrollList1.setDrawableSize(286, 0);
     scrollList1.setDrawables(scrollList1ListItems, updateItemCallback);
     add(scrollList1);
 }
@@ -91,6 +91,7 @@ void Calibration_PadViewBase::setupScreen()
     {
         scrollList1ListItems[i].initialize();
     }
+    transitionBegins();
 }
 
 void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -102,6 +103,14 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Go to Calibration with screen transition towards West
         application().gotoCalibrationScreenWipeTransitionWest();
     }
+}
+
+void Calibration_PadViewBase::transitionBegins()
+{
+    //Interaction2
+    //When screen transition begins call virtual function
+    //Call Load_FLASH_Values
+    Load_FLASH_Values();
 }
 
 void Calibration_PadViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
