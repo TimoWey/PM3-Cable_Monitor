@@ -1,13 +1,16 @@
 #include <gui/calibration_pad_screen/Calibration_PadView.hpp>
+#include <gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp>
 
 #ifndef SIMULATOR
-#include "main.h"
-#include "FLASH_SECTOR_F4.h"
 
-//extern "C"
-//{
-//	#include "FLASH_SECTOR_F4.h"
-//}
+#include "main.h"
+
+
+extern "C"
+{
+	#include "FLASH_SECTOR_F4.h"
+
+}
 
 #endif
 
@@ -35,10 +38,18 @@ void Calibration_PadView::Load_FLASH_Values()
 {
 #ifndef SIMULATOR
 
-	//Load the 6 Calibration Values from the Flash
-	//uint32_t Rx_Data[6];
+	SwipeContainer swipeContainer = swipeContainer1;
+	uint32_t Rx_Data[6];
 
-	//Flash_Read_Data(SECTOR_23_ADDR, Rx_Data, 6);
+	//Load the 6 Calibration Values from the Flash
+	Flash_Read_Data(0x081E0000, Rx_Data, 6);
+
+	// Write current Data stored in the Flash to the GUI
+	Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", Rx_Data[0]);
+	Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%d", Rx_Data[1]);
+	Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP3_SIZE, "%d", Rx_Data[2]);
+	swipeContainer1.invalidate();
+
 
 #endif
 }

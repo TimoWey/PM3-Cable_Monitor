@@ -10,7 +10,10 @@ public:
     virtual ~Configuration_Container() {}
 
     virtual void initialize();
+    void update_Container();
+
 protected:
+
 };
 
 #endif // CONFIGURATION_CONTAINER_HPP

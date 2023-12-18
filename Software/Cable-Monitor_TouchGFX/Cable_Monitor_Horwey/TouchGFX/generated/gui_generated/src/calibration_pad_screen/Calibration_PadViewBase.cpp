@@ -8,7 +8,6 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Calibration_PadViewBase::Calibration_PadViewBase() :
-    updateItemCallback(this, &Calibration_PadViewBase::updateItemCallbackHandler),
     buttonCallback(this, &Calibration_PadViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -29,6 +28,155 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     buttonWithLabel3.setAction(buttonCallback);
     add(buttonWithLabel3);
 
+    swipeContainer1.setXY(0, 85);
+    swipeContainer1.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SWIPECONTAINER_MEDIUM_OFF_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SWIPECONTAINER_MEDIUM_ON_ACTIVE_ID));
+    swipeContainer1.setPageIndicatorXY(100, 140);
+    swipeContainer1.setSwipeCutoff(50);
+    swipeContainer1.setEndSwipeElasticWidth(50);
+
+    swipeContainerPadRight.setWidth(240);
+    swipeContainerPadRight.setHeight(172);
+    buttonWithIcon_RP3.setXY(194, 97);
+    buttonWithIcon_RP3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
+    buttonWithIcon_RP3.setIconXY(0, 0);
+    swipeContainerPadRight.add(buttonWithIcon_RP3);
+
+    buttonWithIcon_RP2.setXY(194, 61);
+    buttonWithIcon_RP2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
+    buttonWithIcon_RP2.setIconXY(0, 0);
+    swipeContainerPadRight.add(buttonWithIcon_RP2);
+
+    buttonWithIcon_RP1.setXY(194, 25);
+    buttonWithIcon_RP1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
+    buttonWithIcon_RP1.setIconXY(0, 0);
+    swipeContainerPadRight.add(buttonWithIcon_RP1);
+
+    textAreaCal_RP3.setXY(10, 104);
+    textAreaCal_RP3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_RP3.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_8T3Q).getText());
+    textAreaCal_RP3.setWildcard(textAreaCal_RP3Buffer);
+    textAreaCal_RP3.resizeToCurrentText();
+    textAreaCal_RP3.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RP3));
+    swipeContainerPadRight.add(textAreaCal_RP3);
+
+    textAreaCal_RP2.setXY(22, 68);
+    textAreaCal_RP2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_RP2.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_NZZI).getText());
+    textAreaCal_RP2.setWildcard(textAreaCal_RP2Buffer);
+    textAreaCal_RP2.resizeToCurrentText();
+    textAreaCal_RP2.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RP2));
+    swipeContainerPadRight.add(textAreaCal_RP2);
+
+    textAreaCal_RP1.setXY(22, 32);
+    textAreaCal_RP1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_RP1.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_XVN8).getText());
+    textAreaCal_RP1.setWildcard(textAreaCal_RP1Buffer);
+    textAreaCal_RP1.resizeToCurrentText();
+    textAreaCal_RP1.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RP1));
+    swipeContainerPadRight.add(textAreaCal_RP1);
+
+    line1_1_2.setPosition(0, 15, 240, 10);
+    line1_1_2Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1_1_2.setPainter(line1_1_2Painter);
+    line1_1_2.setStart(5, 5);
+    line1_1_2.setEnd(235, 5);
+    line1_1_2.setLineWidth(1);
+    line1_1_2.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    swipeContainerPadRight.add(line1_1_2);
+
+    textArea3_2.setXY(92, 0);
+    textArea3_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3_2.setLinespacing(0);
+    textArea3_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L8ZM));
+    swipeContainerPadRight.add(textArea3_2);
+
+    swipeContainer1.add(swipeContainerPadRight);
+
+    swipeContainerPadLeft.setWidth(240);
+    swipeContainerPadLeft.setHeight(172);
+    textAreaCal_LP1_1.setXY(22, 32);
+    textAreaCal_LP1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LP1_1.setLinespacing(0);
+    textAreaCal_LP1_1Buffer[0] = 0;
+    textAreaCal_LP1_1.setWildcard(textAreaCal_LP1_1Buffer);
+    textAreaCal_LP1_1.resizeToCurrentText();
+    textAreaCal_LP1_1.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RP1));
+    swipeContainerPadLeft.add(textAreaCal_LP1_1);
+
+    buttonWithIcon_LP3.setXY(194, 97);
+    buttonWithIcon_LP3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
+    buttonWithIcon_LP3.setIconXY(0, 0);
+    swipeContainerPadLeft.add(buttonWithIcon_LP3);
+
+    buttonWithIcon_LP2.setXY(194, 61);
+    buttonWithIcon_LP2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
+    buttonWithIcon_LP2.setIconXY(0, 0);
+    swipeContainerPadLeft.add(buttonWithIcon_LP2);
+
+    buttonWithIcon_LP1.setXY(194, 25);
+    buttonWithIcon_LP1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
+    buttonWithIcon_LP1.setIconXY(0, 0);
+    swipeContainerPadLeft.add(buttonWithIcon_LP1);
+
+    textAreaCal_LP3.setXY(10, 104);
+    textAreaCal_LP3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LP3.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_12P5).getText());
+    textAreaCal_LP3.setWildcard(textAreaCal_LP3Buffer);
+    textAreaCal_LP3.resizeToCurrentText();
+    textAreaCal_LP3.setTypedText(touchgfx::TypedText(T_TEXTAREACAL1_LP3));
+    swipeContainerPadLeft.add(textAreaCal_LP3);
+
+    textAreaCal_LP2.setXY(22, 68);
+    textAreaCal_LP2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LP2.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_01G5).getText());
+    textAreaCal_LP2.setWildcard(textAreaCal_LP2Buffer);
+    textAreaCal_LP2.resizeToCurrentText();
+    textAreaCal_LP2.setTypedText(touchgfx::TypedText(T_TEXTAREACAL1_LP2));
+    swipeContainerPadLeft.add(textAreaCal_LP2);
+
+    textAreaCal_LP1.setXY(22, 32);
+    textAreaCal_LP1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LP1.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_TG06).getText());
+    textAreaCal_LP1.setWildcard(textAreaCal_LP1Buffer);
+    textAreaCal_LP1.resizeToCurrentText();
+    textAreaCal_LP1.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RP1));
+    swipeContainerPadLeft.add(textAreaCal_LP1);
+
+    line1_1_2_1.setPosition(0, 15, 240, 10);
+    line1_1_2_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1_1_2_1.setPainter(line1_1_2_1Painter);
+    line1_1_2_1.setStart(5, 5);
+    line1_1_2_1.setEnd(235, 5);
+    line1_1_2_1.setLineWidth(1);
+    line1_1_2_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    swipeContainerPadLeft.add(line1_1_2_1);
+
+    textArea3_2_1.setXY(92, 0);
+    textArea3_2_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3_2_1.setLinespacing(0);
+    textArea3_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q2TU));
+    swipeContainerPadLeft.add(textArea3_2_1);
+
+    swipeContainer1.add(swipeContainerPadLeft);
+
+    swipeContainer1.setSelectedPage(1);
+    add(swipeContainer1);
+
+    line1_1.setPosition(0, 75, 240, 10);
+    line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1_1.setPainter(line1_1Painter);
+    line1_1.setStart(5, 5);
+    line1_1.setEnd(235, 5);
+    line1_1.setLineWidth(1);
+    line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line1_1);
+
     textArea3.setXY(70, 60);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
@@ -44,15 +192,6 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    line1_1.setPosition(0, 75, 240, 10);
-    line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    line1_1.setPainter(line1_1Painter);
-    line1_1.setStart(5, 5);
-    line1_1.setEnd(235, 5);
-    line1_1.setLineWidth(1);
-    line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
-    add(line1_1);
-
     textArea2.setXY(69, 35);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
@@ -64,19 +203,6 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EAAK));
     add(textArea1);
-
-    scrollList1.setPosition(0, 85, 240, 167);
-    scrollList1.setHorizontal(false);
-    scrollList1.setCircular(true);
-    scrollList1.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
-    scrollList1.setSwipeAcceleration(10);
-    scrollList1.setDragAcceleration(10);
-    scrollList1.setNumberOfItems(1);
-    scrollList1.setPadding(0, 0);
-    scrollList1.setSnapping(false);
-    scrollList1.setDrawableSize(286, 0);
-    scrollList1.setDrawables(scrollList1ListItems, updateItemCallback);
-    add(scrollList1);
 }
 
 Calibration_PadViewBase::~Calibration_PadViewBase()
@@ -86,11 +212,6 @@ Calibration_PadViewBase::~Calibration_PadViewBase()
 
 void Calibration_PadViewBase::setupScreen()
 {
-    scrollList1.initialize();
-    for (int i = 0; i < scrollList1ListItems.getNumberOfDrawables(); i++)
-    {
-        scrollList1ListItems[i].initialize();
-    }
     transitionBegins();
 }
 
@@ -111,12 +232,4 @@ void Calibration_PadViewBase::transitionBegins()
     //When screen transition begins call virtual function
     //Call Load_FLASH_Values
     Load_FLASH_Values();
-}
-
-void Calibration_PadViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
-{
-    if (items == &scrollList1ListItems)
-    {
-        scrollList1UpdateItem(scrollList1ListItems[containerIndex], itemIndex);
-    }
 }

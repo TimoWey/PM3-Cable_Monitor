@@ -75,7 +75,7 @@ int updateGUI_test(void);
 #define DEVICE_ON_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
-
+#define SECTOR_23_ADDR 0x081E0000
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

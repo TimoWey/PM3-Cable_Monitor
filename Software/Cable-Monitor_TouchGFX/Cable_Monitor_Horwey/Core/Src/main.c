@@ -200,15 +200,12 @@ void gyro_disable(void)
 }
 
 
-#define SECTOR_23_ADDR 0x081E0000
 
-//__attribute__((__section__(".USER_DATA"))) uint32_t test_data[6];
-
-uint32_t *Config_Data_PAD[6] =
+uint32_t Config_Data_PAD[6] =
 {
 		100, 420, 6969, 200, 840, 13938
 };
-
+uint32_t *data_addr = Config_Data_PAD;
 uint32_t Rx_Data[6];
 char string[100];
 
@@ -251,9 +248,9 @@ int main(void)
   MX_SPI5_Init();
   MX_FMC_Init();
   MX_LTDC_Init();
-//  MX_TIM1_Init();
-//  MX_TIM3_Init();
-//  MX_TIM2_Init();
+  MX_TIM1_Init();
+  MX_TIM3_Init();
+  MX_TIM2_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -265,7 +262,7 @@ int main(void)
   MEAS_timer_init();               // Configure the timer
 
 
-  Flash_Write_Data(SECTOR_23_ADDR, Config_Data_PAD, 6);
+  Flash_Write_Data(SECTOR_23_ADDR, data_addr, 6);
   Flash_Read_Data(SECTOR_23_ADDR, Rx_Data, 6);
 
 
