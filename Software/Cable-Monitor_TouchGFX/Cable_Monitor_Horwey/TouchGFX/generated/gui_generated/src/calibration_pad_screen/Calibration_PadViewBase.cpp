@@ -220,9 +220,9 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
     if (&src == &buttonWithLabel3)
     {
         //Interaction1
-        //When buttonWithLabel3 clicked change screen to Calibration
-        //Go to Calibration with screen transition towards West
-        application().gotoCalibrationScreenWipeTransitionWest();
+        //When buttonWithLabel3 clicked change screen to Main_Menu
+        //Go to Main_Menu with screen transition towards West
+        application().gotoMain_MenuScreenWipeTransitionWest();
     }
 }
 

@@ -14,8 +14,3 @@ void Calibration_HallView::tearDownScreen()
 {
     Calibration_HallViewBase::tearDownScreen();
 }
-
-void Calibration_HallView::setTimeoutValue(int value)
-{
-
-}

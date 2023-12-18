@@ -16,8 +16,3 @@ void Calibration_HallPresenter::deactivate()
 {
 
 }
-
-void Calibration_HallPresenter::setTimeoutValue(int value)
-{
-
-}

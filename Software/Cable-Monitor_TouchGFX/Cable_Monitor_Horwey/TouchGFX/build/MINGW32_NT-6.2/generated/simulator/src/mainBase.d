@@ -122,9 +122,6 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2View.hpp \
  generated/gui_generated/include/gui_generated/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2ViewBase.hpp \
  gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp \
- gui/include/gui/calibration_screen/CalibrationView.hpp \
- generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
- gui/include/gui/calibration_screen/CalibrationPresenter.hpp \
  gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
  generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
  gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
@@ -395,12 +392,6 @@ gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Displ
 generated/gui_generated/include/gui_generated/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2ViewBase.hpp:
 
 gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp:
-
-gui/include/gui/calibration_screen/CalibrationView.hpp:
-
-generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
-
-gui/include/gui/calibration_screen/CalibrationPresenter.hpp:
 
 gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
 
