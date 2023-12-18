@@ -200,6 +200,22 @@ void gyro_disable(void)
 }
 
 
+// read all 12 flash values since they get erased hen writing a new value
+// proceed to write the 23 values including the new one
+void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint32_t index, uint16_t numberofwords)
+{
+	uint32_t Rx_Data[numberofwords];
+	uint32_t *data_addr = Rx_Data;
+
+	Flash_Read_Data(StartSectorAddress, Rx_Data, numberofwords);
+
+	// Replace the data to write
+	Rx_Data[index] = value;
+
+	Flash_Write_Data(StartSectorAddress, data_addr, numberofwords);
+}
+
+
 
 uint32_t Config_Data_PAD[6] =
 {

@@ -55,6 +55,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 int updateGUI_test(void);
+void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint32_t index, uint16_t numberofwords);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
