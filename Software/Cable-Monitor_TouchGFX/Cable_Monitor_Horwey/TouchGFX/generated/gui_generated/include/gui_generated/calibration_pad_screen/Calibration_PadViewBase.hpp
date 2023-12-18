@@ -12,8 +12,8 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
@@ -56,16 +56,15 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel3;
     touchgfx::SwipeContainer swipeContainer1;
     touchgfx::Container swipeContainerPadLeft;
-    touchgfx::TextAreaWithOneWildcard textAreaCal_LP1_1;
     touchgfx::ButtonWithIcon buttonWithIcon_LP3;
     touchgfx::ButtonWithIcon buttonWithIcon_LP2;
     touchgfx::ButtonWithIcon buttonWithIcon_LP1;
     touchgfx::TextAreaWithOneWildcard textAreaCal_LP3;
     touchgfx::TextAreaWithOneWildcard textAreaCal_LP2;
     touchgfx::TextAreaWithOneWildcard textAreaCal_LP1;
-    touchgfx::Line line1_1_2_1;
-    touchgfx::PainterRGB565 line1_1_2_1Painter;
-    touchgfx::TextArea textArea3_2_1;
+    touchgfx::Line line1_LP;
+    touchgfx::PainterRGB565 line1_LPPainter;
+    touchgfx::TextArea textArea1_LP;
     touchgfx::Container swipeContainerPadRight;
     touchgfx::ButtonWithIcon buttonWithIcon_RP3;
     touchgfx::ButtonWithIcon buttonWithIcon_RP2;
@@ -73,9 +72,9 @@ protected:
     touchgfx::TextAreaWithOneWildcard textAreaCal_RP3;
     touchgfx::TextAreaWithOneWildcard textAreaCal_RP2;
     touchgfx::TextAreaWithOneWildcard textAreaCal_RP1;
-    touchgfx::Line line1_1_2;
-    touchgfx::PainterRGB565 line1_1_2Painter;
-    touchgfx::TextArea textArea3_2;
+    touchgfx::Line line1_RP;
+    touchgfx::PainterRGB565 line1_RPPainter;
+    touchgfx::TextArea textArea1_RP;
     touchgfx::Container swipeContainerHallLeft;
     touchgfx::ButtonWithIcon buttonWithIcon_LH3;
     touchgfx::ButtonWithIcon buttonWithIcon_LH2;
@@ -83,9 +82,9 @@ protected:
     touchgfx::TextAreaWithOneWildcard textAreaCal_LH3;
     touchgfx::TextAreaWithOneWildcard textAreaCal_LH2;
     touchgfx::TextAreaWithOneWildcard textAreaCal_LH1;
-    touchgfx::Line line1_1_2_2;
-    touchgfx::PainterRGB565 line1_1_2_2Painter;
-    touchgfx::TextArea textArea3_2_2;
+    touchgfx::Line line1_LH;
+    touchgfx::PainterRGB565 line1_LHPainter;
+    touchgfx::TextArea textArea1_LH;
     touchgfx::Container swipeContainerHallRight;
     touchgfx::ButtonWithIcon buttonWithIcon_RH3;
     touchgfx::ButtonWithIcon buttonWithIcon_RH2;
@@ -93,9 +92,9 @@ protected:
     touchgfx::TextAreaWithOneWildcard textAreaCal_RH3;
     touchgfx::TextAreaWithOneWildcard textAreaCal_RH2;
     touchgfx::TextAreaWithOneWildcard textAreaCal_RH1;
-    touchgfx::Line line1_1_2_3;
-    touchgfx::PainterRGB565 line1_1_2_3Painter;
-    touchgfx::TextArea textArea3_2_3;
+    touchgfx::Line line1_RH_1;
+    touchgfx::PainterRGB565 line1_RH_1Painter;
+    touchgfx::TextArea textArea1_RH_1;
     touchgfx::Line line1_1;
     touchgfx::PainterRGB565 line1_1Painter;
     touchgfx::TextArea textArea3;
@@ -107,8 +106,6 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTAREACAL_LP1_1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textAreaCal_LP1_1Buffer[TEXTAREACAL_LP1_1_SIZE];
     static const uint16_t TEXTAREACAL_LP3_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textAreaCal_LP3Buffer[TEXTAREACAL_LP3_SIZE];
     static const uint16_t TEXTAREACAL_LP2_SIZE = 10;
