@@ -141,6 +141,7 @@ Application/User/generated/FrontendApplicationBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
+ ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
  ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
  ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp \
@@ -289,6 +290,8 @@ Application/User/generated/FrontendApplicationBase.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
+../../Core/Inc/measuring.h:
+../../Core/Inc/calculation.h:
 ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp:
 ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp:

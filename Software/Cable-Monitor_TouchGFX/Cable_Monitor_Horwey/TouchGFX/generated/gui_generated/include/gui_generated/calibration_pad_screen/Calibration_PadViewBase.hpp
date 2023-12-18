@@ -20,6 +20,11 @@
 #ifndef SIMULATOR
 
 #include "main.h"
+extern "C"
+{
+	#include "measuring.h"
+	#include "calculation.h"
+}
 #endif
 
 class Calibration_PadViewBase : public touchgfx::View<Calibration_PadPresenter>
