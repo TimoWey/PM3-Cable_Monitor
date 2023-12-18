@@ -9,6 +9,7 @@
 #include <gui/calibration_hall_screen/Calibration_HallPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
@@ -20,6 +21,15 @@ public:
     Calibration_HallViewBase();
     virtual ~Calibration_HallViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void function_cali_hall_sensor()
+    {
+        // Override and implement this function in Calibration_Hall
+    }
 
 protected:
     FrontendApplication& application() {
@@ -31,12 +41,28 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
+    touchgfx::TextAreaWithOneWildcard CALIBRATION_HSL_S;
+    touchgfx::TextAreaWithOneWildcard CALIBRATION_HSL_F;
+    touchgfx::TextAreaWithOneWildcard CALIBRATION_HSR_F;
+    touchgfx::TextAreaWithOneWildcard CALIBRATION_HSR_S;
     touchgfx::ButtonWithLabel buttonWithLabel3;
     touchgfx::TextArea textArea3;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t CALIBRATION_HSL_S_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar CALIBRATION_HSL_SBuffer[CALIBRATION_HSL_S_SIZE];
+    static const uint16_t CALIBRATION_HSL_F_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar CALIBRATION_HSL_FBuffer[CALIBRATION_HSL_F_SIZE];
+    static const uint16_t CALIBRATION_HSR_F_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar CALIBRATION_HSR_FBuffer[CALIBRATION_HSR_F_SIZE];
+    static const uint16_t CALIBRATION_HSR_S_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar CALIBRATION_HSR_SBuffer[CALIBRATION_HSR_S_SIZE];
 
 private:
 
@@ -55,6 +81,12 @@ private:
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+
+    /*
+     * Tick Counter Declarations
+     */
+    static const uint32_t TICK_INTERACTION2_INTERVAL = 5;
+    uint32_t frameCountInteraction2Interval;
 
 };
 

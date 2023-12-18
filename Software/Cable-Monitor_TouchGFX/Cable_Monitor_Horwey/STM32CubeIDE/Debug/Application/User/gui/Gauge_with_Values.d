@@ -1,5 +1,5 @@
 Application/User/gui/Gauge_with_Values.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/containers/Gauge_with_Values.cpp \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/containers/Gauge_with_Values.cpp \
  ../../TouchGFX/gui/include/gui/containers/Gauge_with_Values.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Gauge_with_ValuesBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

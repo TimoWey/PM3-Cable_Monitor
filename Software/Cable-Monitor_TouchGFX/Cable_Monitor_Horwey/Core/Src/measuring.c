@@ -174,10 +174,7 @@ void MEAS_ADC3_scan_init(void)
     // set DMA to highest priority
     NVIC_SetPriority(DMA2_Stream1_IRQn, 0);
     DMA2_Stream1->CR &= ~DMA_SxCR_EN;          // Disable the DMA stream 1
-    while (DMA2_Stream1->CR & DMA_SxCR_EN)
-    {
-
-    }  // Wait for DMA to finish
+    while (DMA2_Stream1->CR & DMA_SxCR_EN);     // Wait for DMA to finish
     DMA2->LIFCR |= DMA_LIFCR_CTCIF1;  // Clear transfer complete interrupt fl.
     DMA2_Stream1->CR |= (2UL << DMA_SxCR_CHSEL_Pos);  // Select channel 2
     DMA2_Stream1->CR |= DMA_SxCR_PL_0;                // Priority high
@@ -218,11 +215,7 @@ void DMA2_Stream1_IRQHandler(void)
     	NVIC_DisableIRQ(DMA2_Stream1_IRQn);
         NVIC_ClearPendingIRQ(DMA2_Stream1_IRQn);  // clr pending DMA interrupt
         DMA2_Stream1->CR &= ~DMA_SxCR_EN;         // Disable the DMA
-        while (DMA2_Stream1->CR & DMA_SxCR_EN)	  // Wait for DMA to finish
-        {
-
-        }
-
+        while (DMA2_Stream1->CR & DMA_SxCR_EN);	  // Wait for DMA to finish
         DMA2->LIFCR |= DMA_LIFCR_CTCIF1;// clr transfer complete interrupt fl.
         TIM2->CR1 &= ~TIM_CR1_CEN;   // Disable timer
         ADC3->CR2 &= ~ADC_CR2_ADON;  // Disable ADC3

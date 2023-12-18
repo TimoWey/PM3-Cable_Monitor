@@ -1,5 +1,5 @@
 Application/User/gui/Measurement_SingleView.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/measurement_single_screen/Measurement_SingleView.cpp \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/measurement_single_screen/Measurement_SingleView.cpp \
  ../../TouchGFX/gui/include/gui/measurement_single_screen/Measurement_SingleView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_single_screen/Measurement_SingleViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
