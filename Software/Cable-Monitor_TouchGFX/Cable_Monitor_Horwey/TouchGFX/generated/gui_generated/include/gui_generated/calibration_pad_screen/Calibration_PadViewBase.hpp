@@ -71,6 +71,26 @@ protected:
     touchgfx::Line line1_1_2;
     touchgfx::PainterRGB565 line1_1_2Painter;
     touchgfx::TextArea textArea3_2;
+    touchgfx::Container swipeContainerHallLeft;
+    touchgfx::ButtonWithIcon buttonWithIcon_LH3;
+    touchgfx::ButtonWithIcon buttonWithIcon_LH2;
+    touchgfx::ButtonWithIcon buttonWithIcon_LH1;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_LH3;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_LH2;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_LH1;
+    touchgfx::Line line1_1_2_2;
+    touchgfx::PainterRGB565 line1_1_2_2Painter;
+    touchgfx::TextArea textArea3_2_2;
+    touchgfx::Container swipeContainerHallRight;
+    touchgfx::ButtonWithIcon buttonWithIcon_RH3;
+    touchgfx::ButtonWithIcon buttonWithIcon_RH2;
+    touchgfx::ButtonWithIcon buttonWithIcon_RH1;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_RH3;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_RH2;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_RH1;
+    touchgfx::Line line1_1_2_3;
+    touchgfx::PainterRGB565 line1_1_2_3Painter;
+    touchgfx::TextArea textArea3_2_3;
     touchgfx::Line line1_1;
     touchgfx::PainterRGB565 line1_1Painter;
     touchgfx::TextArea textArea3;
@@ -96,6 +116,18 @@ protected:
     touchgfx::Unicode::UnicodeChar textAreaCal_RP2Buffer[TEXTAREACAL_RP2_SIZE];
     static const uint16_t TEXTAREACAL_RP1_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textAreaCal_RP1Buffer[TEXTAREACAL_RP1_SIZE];
+    static const uint16_t TEXTAREACAL_LH3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_LH3Buffer[TEXTAREACAL_LH3_SIZE];
+    static const uint16_t TEXTAREACAL_LH2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_LH2Buffer[TEXTAREACAL_LH2_SIZE];
+    static const uint16_t TEXTAREACAL_LH1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_LH1Buffer[TEXTAREACAL_LH1_SIZE];
+    static const uint16_t TEXTAREACAL_RH3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_RH3Buffer[TEXTAREACAL_RH3_SIZE];
+    static const uint16_t TEXTAREACAL_RH2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_RH2Buffer[TEXTAREACAL_RH2_SIZE];
+    static const uint16_t TEXTAREACAL_RH1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_RH1Buffer[TEXTAREACAL_RH1_SIZE];
 
 private:
 

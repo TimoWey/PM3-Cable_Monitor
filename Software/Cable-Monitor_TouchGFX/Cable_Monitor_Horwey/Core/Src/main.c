@@ -278,8 +278,8 @@ int main(void)
   MEAS_timer_init();               // Configure the timer
 
 
-  Flash_Write_Data(SECTOR_23_ADDR, data_addr, 6);
-  Flash_Read_Data(SECTOR_23_ADDR, Rx_Data, 6);
+//  Flash_Write_Data(SECTOR_23_ADDR, data_addr, 6);
+//  Flash_Read_Data(SECTOR_23_ADDR, Rx_Data, 6);
 
 
 
