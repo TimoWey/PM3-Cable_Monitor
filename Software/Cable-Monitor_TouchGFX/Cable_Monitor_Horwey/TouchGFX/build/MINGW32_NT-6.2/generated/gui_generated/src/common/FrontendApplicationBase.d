@@ -104,9 +104,6 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
- gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp \
- generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp \
- gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp \
  gui/include/gui/project_info_screen/Project_InfoView.hpp \
  generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
  gui/include/gui/project_info_screen/Project_InfoPresenter.hpp \
@@ -324,12 +321,6 @@ gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
-
-gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp:
-
-generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp:
-
-gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp:
 
 gui/include/gui/project_info_screen/Project_InfoView.hpp:
 

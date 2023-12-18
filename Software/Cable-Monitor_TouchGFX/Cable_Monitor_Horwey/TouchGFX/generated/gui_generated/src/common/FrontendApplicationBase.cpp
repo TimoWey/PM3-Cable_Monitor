@@ -27,8 +27,6 @@
 #include <gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadView.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadPresenter.hpp>
-#include <gui/calibration_hall_screen/Calibration_HallView.hpp>
-#include <gui/calibration_hall_screen/Calibration_HallPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
 #include <gui/project_info_screen/Project_InfoPresenter.hpp>
 #include <gui/shutting_off_screen/Shutting_OffView.hpp>
