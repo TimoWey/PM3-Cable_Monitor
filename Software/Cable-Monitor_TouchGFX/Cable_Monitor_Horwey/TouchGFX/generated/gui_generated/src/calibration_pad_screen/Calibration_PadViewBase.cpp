@@ -48,11 +48,13 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     buttonWithIcon_LP3.setXY(194, 97);
     buttonWithIcon_LP3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_LP3.setIconXY(0, 0);
+    buttonWithIcon_LP3.setAction(buttonCallback);
     swipeContainerPadLeft.add(buttonWithIcon_LP3);
 
     buttonWithIcon_LP2.setXY(194, 61);
     buttonWithIcon_LP2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_LP2.setIconXY(0, 0);
+    buttonWithIcon_LP2.setAction(buttonCallback);
     swipeContainerPadLeft.add(buttonWithIcon_LP2);
 
     buttonWithIcon_LP1.setXY(194, 25);
@@ -227,7 +229,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
     }
     if (&src == &buttonWithIcon_LP1)
     {
-        //Interaction3
+        //Interaction_LP1
         //When buttonWithIcon_LP1 clicked execute C++ code
         //Execute C++ code
         #ifndef SIMULATOR
@@ -237,6 +239,38 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         setCalibrationFlashValues(SECTOR_23_ADDR, 999, 0, 12);
         
         Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", 999);
+        swipeContainer1.invalidate();
+        
+        #endif
+    }
+    if (&src == &buttonWithIcon_LP2)
+    {
+        //Interaction_LP2
+        //When buttonWithIcon_LP2 clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        SwipeContainer swipeContainer = swipeContainer1;
+        
+        setCalibrationFlashValues(SECTOR_23_ADDR, 500, 1, 12);
+        
+        Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%d", 500);
+        swipeContainer1.invalidate();
+        
+        #endif
+    }
+    if (&src == &buttonWithIcon_LP3)
+    {
+        //Interaction_LP3
+        //When buttonWithIcon_LP3 clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        SwipeContainer swipeContainer = swipeContainer1;
+        
+        setCalibrationFlashValues(SECTOR_23_ADDR, 444, 2, 12);
+        
+        Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, "%d", 444);
         swipeContainer1.invalidate();
         
         #endif

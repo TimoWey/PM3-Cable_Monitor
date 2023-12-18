@@ -1956,7 +1956,7 @@
             }
           },
           {
-            "InteractionName": "Interaction3",
+            "InteractionName": "Interaction_LP1",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonWithIcon_LP1"
@@ -1965,6 +1965,30 @@
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\n#endif",
               "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, 999, 0, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, \"%d\", 999);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+            }
+          },
+          {
+            "InteractionName": "Interaction_LP2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_LP2"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, 500, 1, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, \"%d\", 500);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+            }
+          },
+          {
+            "InteractionName": "Interaction_LP3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_LP3"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, 444, 2, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, \"%d\", 444);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           }
         ]
