@@ -50,6 +50,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -68,8 +70,6 @@ void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint
 #define FRAME_RATE_GPIO_Port GPIOE
 #define POWER_ON_DEVICE_Pin GPIO_PIN_5
 #define POWER_ON_DEVICE_GPIO_Port GPIOE
-#define DEBUG2_GPIO_Pin GPIO_PIN_7
-#define DEBUG2_GPIO_GPIO_Port GPIOA
 #define DEBUG_GPIO_Pin GPIO_PIN_4
 #define DEBUG_GPIO_GPIO_Port GPIOC
 #define DEVICE_ON_Pin GPIO_PIN_13

@@ -58,7 +58,6 @@
 /* External variables --------------------------------------------------------*/
 extern I2C_HandleTypeDef hi2c3;
 extern LTDC_HandleTypeDef hltdc;
-extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
@@ -177,21 +176,6 @@ void EXTI3_IRQHandler(void)
 
   /* USER CODE END EXTI3_IRQn 1 */
 }
-
-/**
-  * @brief This function handles TIM2 global interrupt.
-  */
-//void TIM2_IRQHandler(void)
-//{
-//  /* USER CODE BEGIN TIM2_IRQn 0 */
-//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
-//	HAL_Delay(1);
-//  /* USER CODE END TIM2_IRQn 0 */
-//  HAL_TIM_IRQHandler(&htim2);
-//  /* USER CODE BEGIN TIM2_IRQn 1 */
-//  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-//  /* USER CODE END TIM2_IRQn 1 */
-//}
 
 /**
   * @brief This function handles TIM6 global interrupt, DAC1 and DAC2 underrun error interrupts.
