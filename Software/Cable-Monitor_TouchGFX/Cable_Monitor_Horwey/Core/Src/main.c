@@ -216,14 +216,7 @@ void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint
 }
 
 
-
-uint32_t Config_Data_PAD[6] =
-{
-		100, 420, 6969, 200, 840, 13938
-};
-uint32_t *data_addr = Config_Data_PAD;
-uint32_t Rx_Data[6];
-char string[100];
+uint32_t Calibration_Data[12];
 
 
 /* USER CODE END 0 */
@@ -277,11 +270,8 @@ int main(void)
   MEAS_GPIO_analog_init();         // Configure GPIOs in analog mode
   MEAS_timer_init();               // Configure the timer
 
-
-//  Flash_Write_Data(SECTOR_23_ADDR, data_addr, 6);
-//  Flash_Read_Data(SECTOR_23_ADDR, Rx_Data, 6);
-
-
+  //Read flash calibration values for further calculations
+  Flash_Read_Data(SECTOR_23_ADDR, Calibration_Data, 12);
 
   /* USER CODE END 2 */
 
