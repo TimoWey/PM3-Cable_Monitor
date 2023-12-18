@@ -112,16 +112,19 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     buttonWithIcon_RP3.setXY(194, 97);
     buttonWithIcon_RP3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_RP3.setIconXY(0, 0);
+    buttonWithIcon_RP3.setAction(buttonCallback);
     swipeContainerPadRight.add(buttonWithIcon_RP3);
 
     buttonWithIcon_RP2.setXY(194, 61);
     buttonWithIcon_RP2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_RP2.setIconXY(0, 0);
+    buttonWithIcon_RP2.setAction(buttonCallback);
     swipeContainerPadRight.add(buttonWithIcon_RP2);
 
     buttonWithIcon_RP1.setXY(194, 25);
     buttonWithIcon_RP1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_RP1.setIconXY(0, 0);
+    buttonWithIcon_RP1.setAction(buttonCallback);
     swipeContainerPadRight.add(buttonWithIcon_RP1);
 
     textAreaCal_RP3.setXY(10, 104);
@@ -290,7 +293,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
 
     swipeContainer1.add(swipeContainerHallRight);
 
-    swipeContainer1.setSelectedPage(0);
+    swipeContainer1.setSelectedPage(1);
     add(swipeContainer1);
 
     line1_1.setPosition(0, 75, 240, 10);
@@ -357,10 +360,13 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         #ifndef SIMULATOR
         
         SwipeContainer swipeContainer = swipeContainer1;
+        uint32_t* Samples = MEAS_start_measure();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, 999, 0, 12);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
         
-        Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", 999);
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 0, 12);
+        
+        Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", (uint32_t)fft.signal_strength);
         swipeContainer1.invalidate();
         
         #endif
@@ -373,10 +379,13 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         #ifndef SIMULATOR
         
         SwipeContainer swipeContainer = swipeContainer1;
+        uint32_t* Samples = MEAS_start_measure();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, 500, 1, 12);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
         
-        Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%d", 500);
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 1, 12);
+        
+        Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%d", (uint32_t)fft.signal_strength);
         swipeContainer1.invalidate();
         
         #endif
@@ -389,10 +398,70 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         #ifndef SIMULATOR
         
         SwipeContainer swipeContainer = swipeContainer1;
+        uint32_t* Samples = MEAS_start_measure();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, 444, 2, 12);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
         
-        Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, "%d", 444);
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 2, 12);
+        
+        Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, "%d", (uint32_t)fft.signal_strength);
+        swipeContainer1.invalidate();
+        
+        #endif
+    }
+    if (&src == &buttonWithIcon_RP1)
+    {
+        //Interaction_RP1
+        //When buttonWithIcon_RP1 clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        SwipeContainer swipeContainer = swipeContainer1;
+        uint32_t* Samples = MEAS_start_measure();
+        
+        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 3, 12);
+        
+        Unicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, "%d", (uint32_t)fft.signal_strength);
+        swipeContainer1.invalidate();
+        
+        #endif
+    }
+    if (&src == &buttonWithIcon_RP2)
+    {
+        //Interaction_RP2
+        //When buttonWithIcon_RP2 clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        SwipeContainer swipeContainer = swipeContainer1;
+        uint32_t* Samples = MEAS_start_measure();
+        
+        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 4, 12);
+        
+        Unicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, "%d", (uint32_t)fft.signal_strength);
+        swipeContainer1.invalidate();
+        
+        #endif
+    }
+    if (&src == &buttonWithIcon_RP3)
+    {
+        //Interaction_RP3
+        //When buttonWithIcon_RP3 clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        SwipeContainer swipeContainer = swipeContainer1;
+        uint32_t* Samples = MEAS_start_measure();
+        
+        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 5, 12);
+        
+        Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, "%d", (uint32_t)fft.signal_strength);
         swipeContainer1.invalidate();
         
         #endif

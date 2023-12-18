@@ -39,10 +39,10 @@ void Calibration_PadView::Load_FLASH_Values()
 #ifndef SIMULATOR
 
 	SwipeContainer swipeContainer = swipeContainer1;
-	uint32_t Rx_Data[6];
+	uint32_t Rx_Data[12];
 
 	//Load the 6 Calibration Values from the Flash
-	Flash_Read_Data(0x081E0000, Rx_Data, 6);
+	Flash_Read_Data(0x081E0000, Rx_Data, 12);
 
 	// Write current Data stored in the Flash to the GUI
 	//Left Pad
