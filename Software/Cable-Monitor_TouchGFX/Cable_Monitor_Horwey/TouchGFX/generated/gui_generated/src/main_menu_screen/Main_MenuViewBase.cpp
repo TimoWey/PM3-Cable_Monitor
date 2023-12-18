@@ -109,9 +109,9 @@ void Main_MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
     if (&src == &buttonWithLabel2)
     {
         //Interaction2
-        //When buttonWithLabel2 clicked change screen to Calibration
-        //Go to Calibration with screen transition towards East
-        application().gotoCalibrationScreenWipeTransitionEast();
+        //When buttonWithLabel2 clicked change screen to Calibration_Pad
+        //Go to Calibration_Pad with screen transition towards East
+        application().gotoCalibration_PadScreenWipeTransitionEast();
     }
     if (&src == &buttonWithLabel3)
     {

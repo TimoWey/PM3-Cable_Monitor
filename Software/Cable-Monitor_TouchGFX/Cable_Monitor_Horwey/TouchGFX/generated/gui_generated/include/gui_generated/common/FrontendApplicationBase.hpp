@@ -50,16 +50,8 @@ public:
     // Measurement_Accurate_Display_2
     void gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEast();
 
-    // Calibration
-    void gotoCalibrationScreenWipeTransitionEast();
-
-    void gotoCalibrationScreenWipeTransitionWest();
-
     // Calibration_Pad
     void gotoCalibration_PadScreenWipeTransitionEast();
-
-    // Calibration_Hall
-    void gotoCalibration_HallScreenWipeTransitionEast();
 
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEast();
@@ -102,16 +94,8 @@ protected:
     // Measurement_Accurate_Display_2
     void gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEastImpl();
 
-    // Calibration
-    void gotoCalibrationScreenWipeTransitionEastImpl();
-
-    void gotoCalibrationScreenWipeTransitionWestImpl();
-
     // Calibration_Pad
     void gotoCalibration_PadScreenWipeTransitionEastImpl();
-
-    // Calibration_Hall
-    void gotoCalibration_HallScreenWipeTransitionEastImpl();
 
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEastImpl();

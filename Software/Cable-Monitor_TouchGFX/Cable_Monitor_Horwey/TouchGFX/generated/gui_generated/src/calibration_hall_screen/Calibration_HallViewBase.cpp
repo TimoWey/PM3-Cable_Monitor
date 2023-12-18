@@ -7,8 +7,7 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-Calibration_HallViewBase::Calibration_HallViewBase() :
-    buttonCallback(this, &Calibration_HallViewBase::buttonCallbackHandler)
+Calibration_HallViewBase::Calibration_HallViewBase()
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -25,7 +24,6 @@ Calibration_HallViewBase::Calibration_HallViewBase() :
     buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_ZEVR));
     buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setAction(buttonCallback);
     add(buttonWithLabel3);
 
     textArea3.setXY(32, 60);
@@ -64,15 +62,4 @@ Calibration_HallViewBase::~Calibration_HallViewBase()
 void Calibration_HallViewBase::setupScreen()
 {
 
-}
-
-void Calibration_HallViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
-{
-    if (&src == &buttonWithLabel3)
-    {
-        //Interaction1
-        //When buttonWithLabel3 clicked change screen to Calibration
-        //Go to Calibration with screen transition towards West
-        application().gotoCalibrationScreenWipeTransitionWest();
-    }
 }

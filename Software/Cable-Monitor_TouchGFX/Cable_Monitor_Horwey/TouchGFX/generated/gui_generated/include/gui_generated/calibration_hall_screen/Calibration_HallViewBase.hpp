@@ -46,16 +46,6 @@ private:
     static const uint32_t CANVAS_BUFFER_SIZE = 3600;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<Calibration_HallViewBase, const touchgfx::AbstractButton&> buttonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
-
 };
 
 #endif // CALIBRATION_HALLVIEWBASE_HPP
