@@ -128,11 +128,9 @@ build/MINGW32_NT-6.2/generated/simulator/src/mainBase.o: \
  gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
  generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
  gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
- gui/include/gui/containers/Configuration_Container.hpp \
- generated/gui_generated/include/gui_generated/containers/Configuration_ContainerBase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp \
  generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp \
  gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp \
@@ -410,15 +408,11 @@ generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration
 
 gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
-
-gui/include/gui/containers/Configuration_Container.hpp:
-
-generated/gui_generated/include/gui_generated/containers/Configuration_ContainerBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
 
 gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp:
 

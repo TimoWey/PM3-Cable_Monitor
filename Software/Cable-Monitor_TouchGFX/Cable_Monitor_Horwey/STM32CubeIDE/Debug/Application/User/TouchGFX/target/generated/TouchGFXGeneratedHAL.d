@@ -143,11 +143,9 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
  ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
- ../../TouchGFX/gui/include/gui/containers/Configuration_Container.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Configuration_ContainerBase.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp \
  ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp \
@@ -314,11 +312,9 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp:
 ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
-../../TouchGFX/gui/include/gui/containers/Configuration_Container.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Configuration_ContainerBase.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
 ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp:
 ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallPresenter.hpp:

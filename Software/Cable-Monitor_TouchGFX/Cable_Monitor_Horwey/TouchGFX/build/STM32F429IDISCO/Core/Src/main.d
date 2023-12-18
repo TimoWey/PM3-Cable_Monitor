@@ -18,7 +18,6 @@ TouchGFX/build/STM32F429IDISCO/Core/Src/main.o: Core/Src/main.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -45,7 +44,8 @@ TouchGFX/build/STM32F429IDISCO/Core/Src/main.o: Core/Src/main.c \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  TouchGFX/App/app_touchgfx.h Drivers/BSP/Components/ili9341/ili9341.h \
- Drivers/BSP/Components/ili9341/../Common/lcd.h Core/Inc/gpio.h
+ Drivers/BSP/Components/ili9341/../Common/lcd.h Core/Inc/arm_math.h \
+ Core/Inc/FLASH_SECTOR_F4.h Core/Inc/measuring.h Core/Inc/calculation.h
 
 Core/Inc/main.h:
 
@@ -90,8 +90,6 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 
@@ -149,4 +147,10 @@ Drivers/BSP/Components/ili9341/ili9341.h:
 
 Drivers/BSP/Components/ili9341/../Common/lcd.h:
 
-Core/Inc/gpio.h:
+Core/Inc/arm_math.h:
+
+Core/Inc/FLASH_SECTOR_F4.h:
+
+Core/Inc/measuring.h:
+
+Core/Inc/calculation.h:

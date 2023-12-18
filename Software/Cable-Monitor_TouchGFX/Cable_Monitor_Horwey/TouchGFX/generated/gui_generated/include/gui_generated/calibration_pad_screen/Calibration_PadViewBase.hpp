@@ -10,11 +10,13 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/containers/SwipeContainer.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/containers/scrollers/ScrollList.hpp>
-#include <gui/containers/Configuration_Container.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class Calibration_PadViewBase : public touchgfx::View<Calibration_PadPresenter>
 {
@@ -22,11 +24,6 @@ public:
     Calibration_PadViewBase();
     virtual ~Calibration_PadViewBase();
     virtual void setupScreen();
-
-    virtual void scrollList1UpdateItem(Configuration_Container& item, int16_t itemIndex)
-    {
-        // Override and implement this function in Calibration_Pad
-    }
     virtual void transitionBegins();
 
     /*
@@ -48,15 +45,53 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image image1;
     touchgfx::ButtonWithLabel buttonWithLabel3;
+    touchgfx::SwipeContainer swipeContainer1;
+    touchgfx::Container swipeContainerPadRight;
+    touchgfx::ButtonWithIcon buttonWithIcon_RP3;
+    touchgfx::ButtonWithIcon buttonWithIcon_RP2;
+    touchgfx::ButtonWithIcon buttonWithIcon_RP1;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_RP3;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_RP2;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_RP1;
+    touchgfx::Line line1_1_2;
+    touchgfx::PainterRGB565 line1_1_2Painter;
+    touchgfx::TextArea textArea3_2;
+    touchgfx::Container swipeContainerPadLeft;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_LP1_1;
+    touchgfx::ButtonWithIcon buttonWithIcon_LP3;
+    touchgfx::ButtonWithIcon buttonWithIcon_LP2;
+    touchgfx::ButtonWithIcon buttonWithIcon_LP1;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_LP3;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_LP2;
+    touchgfx::TextAreaWithOneWildcard textAreaCal_LP1;
+    touchgfx::Line line1_1_2_1;
+    touchgfx::PainterRGB565 line1_1_2_1Painter;
+    touchgfx::TextArea textArea3_2_1;
+    touchgfx::Line line1_1;
+    touchgfx::PainterRGB565 line1_1Painter;
     touchgfx::TextArea textArea3;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::Line line1_1;
-    touchgfx::PainterRGB565 line1_1Painter;
     touchgfx::TextArea textArea2;
     touchgfx::TextArea textArea1;
-    touchgfx::ScrollList scrollList1;
-    touchgfx::DrawableListItems<Configuration_Container, 2> scrollList1ListItems;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREACAL_RP3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_RP3Buffer[TEXTAREACAL_RP3_SIZE];
+    static const uint16_t TEXTAREACAL_RP2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_RP2Buffer[TEXTAREACAL_RP2_SIZE];
+    static const uint16_t TEXTAREACAL_RP1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_RP1Buffer[TEXTAREACAL_RP1_SIZE];
+    static const uint16_t TEXTAREACAL_LP1_1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_LP1_1Buffer[TEXTAREACAL_LP1_1_SIZE];
+    static const uint16_t TEXTAREACAL_LP3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_LP3Buffer[TEXTAREACAL_LP3_SIZE];
+    static const uint16_t TEXTAREACAL_LP2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_LP2Buffer[TEXTAREACAL_LP2_SIZE];
+    static const uint16_t TEXTAREACAL_LP1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaCal_LP1Buffer[TEXTAREACAL_LP1_SIZE];
 
 private:
 
@@ -69,13 +104,11 @@ private:
     /*
      * Callback Declarations
      */
-    touchgfx::Callback<Calibration_PadViewBase, touchgfx::DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
     touchgfx::Callback<Calibration_PadViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
-    void updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
