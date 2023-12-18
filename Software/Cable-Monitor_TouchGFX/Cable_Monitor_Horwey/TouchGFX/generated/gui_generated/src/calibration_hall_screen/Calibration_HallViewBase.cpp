@@ -8,7 +8,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Calibration_HallViewBase::Calibration_HallViewBase() :
-    buttonCallback(this, &Calibration_HallViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Calibration_HallViewBase::buttonCallbackHandler),
+    frameCountInteraction2Interval(0)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -19,6 +20,38 @@ Calibration_HallViewBase::Calibration_HallViewBase() :
     image1.setXY(0, 0);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
+
+    CALIBRATION_HSL_S.setPosition(0, 160, 207, 27);
+    CALIBRATION_HSL_S.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_HSL_S.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_HSL_SBuffer, CALIBRATION_HSL_S_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_96IR).getText());
+    CALIBRATION_HSL_S.setWildcard(CALIBRATION_HSL_SBuffer);
+    CALIBRATION_HSL_S.setTypedText(touchgfx::TypedText(T___SINGLEUSE_T1XZ));
+    add(CALIBRATION_HSL_S);
+
+    CALIBRATION_HSL_F.setPosition(25, 187, 207, 22);
+    CALIBRATION_HSL_F.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_HSL_F.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_HSL_FBuffer, CALIBRATION_HSL_F_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_PU07).getText());
+    CALIBRATION_HSL_F.setWildcard(CALIBRATION_HSL_FBuffer);
+    CALIBRATION_HSL_F.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AFGX));
+    add(CALIBRATION_HSL_F);
+
+    CALIBRATION_HSR_F.setPosition(25, 119, 207, 22);
+    CALIBRATION_HSR_F.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_HSR_F.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_HSR_FBuffer, CALIBRATION_HSR_F_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IPYE).getText());
+    CALIBRATION_HSR_F.setWildcard(CALIBRATION_HSR_FBuffer);
+    CALIBRATION_HSR_F.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0EGP));
+    add(CALIBRATION_HSR_F);
+
+    CALIBRATION_HSR_S.setPosition(0, 92, 207, 27);
+    CALIBRATION_HSR_S.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_HSR_S.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_HSR_SBuffer, CALIBRATION_HSR_S_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KCM3).getText());
+    CALIBRATION_HSR_S.setWildcard(CALIBRATION_HSR_SBuffer);
+    CALIBRATION_HSR_S.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2MWJ));
+    add(CALIBRATION_HSR_S);
 
     buttonWithLabel3.setXY(33, 257);
     buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
@@ -74,5 +107,18 @@ void Calibration_HallViewBase::buttonCallbackHandler(const touchgfx::AbstractBut
         //When buttonWithLabel3 clicked change screen to Calibration
         //Go to Calibration with screen transition towards West
         application().gotoCalibrationScreenWipeTransitionWest();
+    }
+}
+
+void Calibration_HallViewBase::handleTickEvent()
+{
+    frameCountInteraction2Interval++;
+    if(frameCountInteraction2Interval == TICK_INTERACTION2_INTERVAL)
+    {
+        //Interaction2
+        //When every N tick call virtual function
+        //Call function_cali_hall_sensor
+        function_cali_hall_sensor();
+        frameCountInteraction2Interval = 0;
     }
 }

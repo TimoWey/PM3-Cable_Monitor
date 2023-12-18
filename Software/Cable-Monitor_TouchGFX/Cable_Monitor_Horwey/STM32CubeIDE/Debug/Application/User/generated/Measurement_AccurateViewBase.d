@@ -1,5 +1,5 @@
 Application/User/generated/Measurement_AccurateViewBase.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/measurement_accurate_screen/Measurement_AccurateViewBase.cpp \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/measurement_accurate_screen/Measurement_AccurateViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

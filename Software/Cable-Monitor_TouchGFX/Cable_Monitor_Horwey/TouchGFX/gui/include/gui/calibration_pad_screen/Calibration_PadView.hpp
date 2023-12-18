@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void setTimeoutValue(int value);
+    virtual void function_cali_pad();
 protected:
 };
 

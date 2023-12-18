@@ -8,7 +8,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Calibration_PadViewBase::Calibration_PadViewBase() :
-    buttonCallback(this, &Calibration_PadViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Calibration_PadViewBase::buttonCallbackHandler),
+    frameCountInteraction2Interval(0)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -19,6 +20,38 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     image1.setXY(0, 0);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image1);
+
+    CALIBRATION_PADR_S.setPosition(0, 92, 207, 27);
+    CALIBRATION_PADR_S.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_PADR_S.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_PADR_SBuffer, CALIBRATION_PADR_S_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_NNGV).getText());
+    CALIBRATION_PADR_S.setWildcard(CALIBRATION_PADR_SBuffer);
+    CALIBRATION_PADR_S.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WYEC));
+    add(CALIBRATION_PADR_S);
+
+    CALIBRATION_PADR_F.setPosition(25, 119, 207, 22);
+    CALIBRATION_PADR_F.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_PADR_F.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_PADR_FBuffer, CALIBRATION_PADR_F_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9DMI).getText());
+    CALIBRATION_PADR_F.setWildcard(CALIBRATION_PADR_FBuffer);
+    CALIBRATION_PADR_F.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MDOA));
+    add(CALIBRATION_PADR_F);
+
+    CALIBRATION_PADL_F.setPosition(25, 187, 207, 22);
+    CALIBRATION_PADL_F.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_PADL_F.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_PADL_FBuffer, CALIBRATION_PADL_F_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_NZTO).getText());
+    CALIBRATION_PADL_F.setWildcard(CALIBRATION_PADL_FBuffer);
+    CALIBRATION_PADL_F.setTypedText(touchgfx::TypedText(T___SINGLEUSE_H127));
+    add(CALIBRATION_PADL_F);
+
+    CALIBRATION_PADL_S.setPosition(0, 160, 207, 27);
+    CALIBRATION_PADL_S.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    CALIBRATION_PADL_S.setLinespacing(0);
+    Unicode::snprintf(CALIBRATION_PADL_SBuffer, CALIBRATION_PADL_S_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KIGA).getText());
+    CALIBRATION_PADL_S.setWildcard(CALIBRATION_PADL_SBuffer);
+    CALIBRATION_PADL_S.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2BW0));
+    add(CALIBRATION_PADL_S);
 
     buttonWithLabel3.setXY(33, 257);
     buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
@@ -74,5 +107,18 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //When buttonWithLabel3 clicked change screen to Calibration
         //Go to Calibration with screen transition towards West
         application().gotoCalibrationScreenWipeTransitionWest();
+    }
+}
+
+void Calibration_PadViewBase::handleTickEvent()
+{
+    frameCountInteraction2Interval++;
+    if(frameCountInteraction2Interval == TICK_INTERACTION2_INTERVAL)
+    {
+        //Interaction2
+        //When every N tick call virtual function
+        //Call function_cali_pad
+        function_cali_pad();
+        frameCountInteraction2Interval = 0;
     }
 }

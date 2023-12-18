@@ -36,18 +36,20 @@ void Measurement_Single_Display_1PView::testGui()
 
 	int test = 	0;
 
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+	//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
 
 	test = updateGUI_test();
 
 	uint32_t* Samples = MEAS_start_measure();
 
+
 	//callback to fft
-	FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+	//FFT fft = calculate_freq_and_signalstrength(1, Samples);
+	DISTANCE_ANGLE distance_angle = calculate_distance_and_angle();
 
 	//update GUI values
 	//set gauge angle
-	SMD1_gauge.setValue(test);
+	SMD1_gauge.setValue(distance_angle.angle);
 	SMD1_gauge.invalidate();
 
 	//set current value
@@ -55,14 +57,18 @@ void Measurement_Single_Display_1PView::testGui()
 	SMD1_Current.invalidate();
 
 	//set frequency value
-	Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", fft.main_freq);
+	//Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", fft.main_freq);
 	SMD1_Frequency.invalidate();
 
 	//set distance value
-	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", fft.signal_strength);
+	//if(fft.error == CALC_ERROR_NONE)
+	//{
+		Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", distance_angle.distance);
+	//} else Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "Error");
+	
 	SMD1_Distance.invalidate();
 
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
+	//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);
 
 	// Enable Touchgfx tasks
 	touchgfx::HAL::getInstance()->enableInterrupts();
