@@ -723,7 +723,7 @@ static void MX_TIM14_Init(void)
 
   /* USER CODE END TIM14_Init 1 */
   htim14.Instance = TIM14;
-  htim14.Init.Prescaler = 168-1;
+  htim14.Init.Prescaler = 210-1;
   htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim14.Init.Period = 100-1;
   htim14.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -745,7 +745,7 @@ static void MX_TIM14_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM14_Init 2 */
-  TIM14->CCR1 = 33;
+  TIM14->CCR1 = 50;
   HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
   /* USER CODE END TIM14_Init 2 */
   HAL_TIM_MspPostInit(&htim14);
