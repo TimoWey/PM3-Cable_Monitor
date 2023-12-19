@@ -170,40 +170,34 @@ FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples) {
     return fft;
 }
 
+void accurate_measurement(uint32_t* Samples){
+
+}
 
 /**
- * @brief Calculates the coefficients for the distance approximation from a second degree polynomial.
+ * Calculates the coefficients for the distance approximation from an approximation based on a second degree polynomial.
  *
- * This function calculates the coefficients (a, b, c) for the distance approximation from a second degree polynomial
- * using the given input arrays (d, s).
- *
- * @param d An array of float32_t values representing the distance values.
- * @param s An array of float32_t values representing the sensor values.
+ * @param s An array containing the values x_0, x_1, x_2.
+ * @param d An array containing the values y_0, y_1, y_2.
  */
-void calculate_coefficients_single_pad(float32_t d[], float32_t s[]) {
-    // Calculate the coefficients for the distance approximation from a second degree polynomial
-
-    /*  a=((−(x_0*(y_1-y_2)-x_1*(y_0-y_2)+x_2*(y_0-y_1)))/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
-        -> Result from Nspire
-    */
-
-    a = ((-(s[0] * (d[1] - d[2]) - s[1] * (d[0] - d[2]) + s[2] * (d[0] - d[1])))) /
-                    ((POW2(s[0]) - s[0]*(s[1]+s[2]) + s[1]*s[2])*(s[1]-s[2]));
-
-    /*  b=((x_0^(2)*(y_1-y_2)-x_1^(2)*(y_0-y_2)+x_2^(2)*(y_0-y_1))/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))  
-        -> Result from Nspire
-    */
-
-    b = ((POW2(s[0]) * (d[1] - d[2])) - (POW2(s[1]) * (d[0] - d[2])) + (POW2(s[2]) * (d[0] - d[1]))) /
-                    ((POW2(s[0]) - s[0]*(s[1]+s[2]) + s[1]*s[2])*(s[1]-s[2]));
-
-    /*  c=((x_0^(2)*(x_1*y_2-x_2*y_1)-x_0*(x_1^(2)*y_2-x_2^(2)*y_1)+x_1*(x_1-x_2)*x_2*y_0)/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
-        -> Result from Nspire
-    */   
-
-    c = ((POW2(s[0]) * (s[1] * d[2] - s[2] * d[1])) - (s[0] * (POW2(s[1]) * d[2] - POW2(s[2]) * d[1])) + (s[1] * (s[1] - s[2]) * s[2] * d[0])) /
-                    ((POW2(s[0]) - s[0]*(s[1]+s[2]) + s[1]*s[2])*(s[1]-s[2]));
+void calculate_coefficients_single_pad(float32_t s[], float32_t d[]) {
+    // s = x_0, x_1, x_2 d= y_0, y_1, y_2
+    // Calculate the coefficients for the distance approximation from an approximation based on a second degree polynomial
+    // a=((x_0^(2)*(x_1-x_2)*y_0-x_0*(x_1^(2)*y_1-x_2^(2)*y_2)+x_1*(x_1*y_1-x_2*y_2)*x_2)/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
+    // -> Result of Nspire CAS
+    
+    a = (POW2(s[0]) * (s[1] - s[2]) * d[0] - s[0] * (POW2(s[1]) * d[1] - POW2(s[2]) * d[2]) + s[1] * (s[1] * d[1] - s[2] * d[2]) * s[2]) 
+    / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
+    // b = ((−(x_0^(2)*(x_1^(2)*(y_0-y_1)-x_2^(2)*(y_0-y_2))+x_1^(2)*x_2^(2)*(y_1-y_2)))/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
+    // -> Result of Nspire CAS
+    b = (-(POW2(s[0]) * (POW2(s[1]) * (d[0] - d[1]) - POW2(s[2]) * (d[0] - d[2])) + POW2(s[1]) * POW2(s[2]) * (d[1] - d[2]))) 
+    / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
+    // c=((x_0*(x_0*(x_1*(y_0-y_1)-x_2*(y_0-y_2))+x_1*x_2*(y_1-y_2))*x_1*x_2)/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
+    // -> Result of Nspire CAS
+    c = ((s[0] * (s[0] * (s[1] * (d[0] - d[1]) - s[2] * (d[0] - d[2])) + s[1] * s[2] * (d[1] - d[2])) * s[1] * s[2])) 
+    / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
 }
+
 
 DISTANCE_ANGLE calculate_distance_and_angle()
 { 
@@ -217,12 +211,12 @@ DISTANCE_ANGLE calculate_distance_and_angle()
     DISTANCE_ANGLE dist_angle;
 
     // Calculate the coefficients for the distance approximation from a second degree polynomial
-    calculate_coefficients_single_pad(distance, signal_r);
+    calculate_coefficients_single_pad(signal_r, distance);
     poly_coeff.a_r = a;
     poly_coeff.b_r = b;
     poly_coeff.c_r = c;
 
-    calculate_coefficients_single_pad(distance, signal_l);
+    calculate_coefficients_single_pad(signal_l, distance);
     poly_coeff.a_l = a;
     poly_coeff.b_l = b;
     poly_coeff.c_l = c;
@@ -231,36 +225,29 @@ DISTANCE_ANGLE calculate_distance_and_angle()
     uint32_t* Samples = MEAS_start_measure();
     FFT fft = calculate_freq_and_signalstrength(1, Samples);
 
-    float32_t signal_pad_right = fft.signal_strength;
+    float32_t signal_pad = fft.signal_strength;
     // Calculate the distance using the coefficients and the actual signal strength
-    float32_t calc_distance = a * POW2(signal_pad_right) + b * signal_pad_right + c;
+    float32_t calc_distance = a + (b / signal_pad) + (c / POW2(signal_pad));
 
     // Calculate the angle using the distance
-    float32_t angle = atanf(calc_distance / D_P) * 180 / PI;
+    
     // Set the calculated values
     dist_angle.distance_r = calc_distance;
-    dist_angle.angle_r = angle;
 
     fft = calculate_freq_and_signalstrength(2, Samples);
-    signal_pad_right = fft.signal_strength;
+    signal_pad = fft.signal_strength;
     // Calculate the distance using the coefficients and the actual signal strength
-    calc_distance = a * POW2(signal_pad_right) + b * signal_pad_right + c;
-    // Calculate the angle using the distance
-    angle = atanf(calc_distance / D_P) * 180 / PI;
+    calc_distance = a + (b / signal_pad) + (c / POW2(signal_pad));
     // Set the calculated values
     dist_angle.distance_l = calc_distance;
-    dist_angle.angle_l = angle;
 
-    angle = (dist_angle.angle_r + dist_angle.angle_l) / 2;
-
-    if (dist_angle.distance_r < dist_angle.distance_l) {
-        angle = -angle;
-	}
-    
-    // calculate the distance and angle from the center of board to the wire
+    // calculate the distance and angle
     dist_angle.distance = (dist_angle.distance_r + dist_angle.distance_l) / 2;
-    dist_angle.angle = angle;
+    dist_angle.angle_r = atanf(2 * D_P / (dist_angle.distance_r - dist_angle.distance_l));
+    dist_angle.angle_l = atanf(2 * D_P / (dist_angle.distance_l - dist_angle.distance_r));
     
+    dist_angle.angle = (dist_angle.angle_r * 180 / PI);
+
     // Return the calculated values
     return dist_angle;
 }
