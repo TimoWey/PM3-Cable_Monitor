@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
     virtual void setTimeoutValue(int value);
     virtual void Load_FLASH_Values();
+    virtual void update_Coefficients();
 protected:
 };
 

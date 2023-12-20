@@ -195,6 +195,13 @@ void gyro_disable(void)
 	GPIOF->MODER |= 3UL << GPIO_MODER_MODER8_Pos;  // Analog mode PF8 = ADC3_IN4
 }
 
+// Global Calibration values
+// At distance: 10mm, 50mm and 100mm
+// 0-2:  Left Pad
+// 3-5:  Right Pad
+// 6-8:  Left Hall
+// 9-11: Right Hall
+uint32_t Calibration_Data[12]; // The CAlibration values are read after init
 
 // read all 12 flash values since they get erased hen writing a new value
 // proceed to write the 23 values including the new one
@@ -209,18 +216,10 @@ void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint
 	Rx_Data[index] = value;
 
 	Flash_Write_Data(StartSectorAddress, data_addr, numberofwords);
+
+	// store new data in global variable
+	Calibration_Data[index] = value;
 }
-
-
-// Global Calibration values
-// At distance: 10mm, 50mm and 100mm
-// 0-2:  Left Pad
-// 3-5:  Right Pad
-// 6-8:  Left Hall
-// 9-11: Right Hall
-uint32_t Calibration_Data[12]; // The CAlibration values are read after init
-
-
 
 /* USER CODE END 0 */
 

@@ -9,6 +9,7 @@
 extern "C"
 {
 	#include "FLASH_SECTOR_F4.h"
+	#include "calculation.h"
 }
 
 #endif
@@ -62,6 +63,18 @@ void Calibration_PadView::Load_FLASH_Values()
 	Unicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, "%d", Rx_Data[10]);
 	Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", Rx_Data[11]);
 	swipeContainer1.invalidate();
+
+#endif
+}
+
+void Calibration_PadView::update_Coefficients()
+{
+#ifndef SIMULATOR
+
+	// Call start_calibration to update coefficients
+	//start_calibration();
+	int i = 0;
+	i++;
 
 #endif
 }
