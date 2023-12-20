@@ -44,6 +44,8 @@ protected:
     touchgfx::Image image1;
     touchgfx::TextArea textArea3;
     touchgfx::Gauge SMD1_gauge;
+    touchgfx::TextAreaWithOneWildcard Pad_L;
+    touchgfx::TextAreaWithOneWildcard Pad_R;
     touchgfx::TextAreaWithOneWildcard SMD1_Current;
     touchgfx::TextAreaWithOneWildcard SMD1_Frequency;
     touchgfx::TextAreaWithOneWildcard SMD1_Distance;
@@ -59,6 +61,10 @@ protected:
     /*
      * Wildcard Buffers
      */
+    static const uint16_t PAD_L_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Pad_LBuffer[PAD_L_SIZE];
+    static const uint16_t PAD_R_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Pad_RBuffer[PAD_R_SIZE];
     static const uint16_t SMD1_CURRENT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar SMD1_CurrentBuffer[SMD1_CURRENT_SIZE];
     static const uint16_t SMD1_FREQUENCY_SIZE = 10;

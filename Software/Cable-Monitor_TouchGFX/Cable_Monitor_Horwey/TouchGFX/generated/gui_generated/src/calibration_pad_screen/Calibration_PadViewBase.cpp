@@ -359,7 +359,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 0, 12);
         
@@ -378,7 +378,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 1, 12);
         
@@ -397,7 +397,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 2, 12);
         
@@ -416,7 +416,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 3, 12);
         
@@ -435,7 +435,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 4, 12);
         
@@ -454,7 +454,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 5, 12);
         
@@ -473,7 +473,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 6, 12);
         
@@ -492,7 +492,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 7, 12);
         
@@ -511,7 +511,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 8, 12);
         
@@ -530,7 +530,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 9, 12);
         
@@ -549,7 +549,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 10, 12);
         
@@ -568,7 +568,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         SwipeContainer swipeContainer = swipeContainer1;
         uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples, 50);
+        FFT fft = calculate_freq_and_signalstrength(1, Samples);
         
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 11, 12);
         
