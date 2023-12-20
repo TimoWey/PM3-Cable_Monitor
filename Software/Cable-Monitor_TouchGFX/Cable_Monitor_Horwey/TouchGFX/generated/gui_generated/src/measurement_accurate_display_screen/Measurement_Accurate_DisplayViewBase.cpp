@@ -16,23 +16,85 @@ Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
-    add(image1);
+    image_background.setXY(0, 0);
+    image_background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
+    add(image_background);
 
-    buttonWithLabel3.setXY(33, 257);
-    buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
-    buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_J2XI));
-    buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setAction(buttonCallback);
-    add(buttonWithLabel3);
+    buttonWithLabel_Return.setXY(33, 257);
+    buttonWithLabel_Return.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
+    buttonWithLabel_Return.setLabelText(touchgfx::TypedText(T___SINGLEUSE_J2XI));
+    buttonWithLabel_Return.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_Return.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_Return.setAction(buttonCallback);
+    add(buttonWithLabel_Return);
 
-    textArea3.setXY(23, 60);
-    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea3.setLinespacing(0);
-    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZR32));
-    add(textArea3);
+    textArea_n90C.setXY(0, 194);
+    textArea_n90C.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_n90C.setLinespacing(0);
+    textArea_n90C.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HYQ8));
+    add(textArea_n90C);
+
+    textArea_p90C.setXY(217, 194);
+    textArea_p90C.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_p90C.setLinespacing(0);
+    textArea_p90C.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MW1V));
+    add(textArea_p90C);
+
+    textArea_0C.setXY(113, 85);
+    textArea_0C.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_0C.setLinespacing(0);
+    textArea_0C.setTypedText(touchgfx::TypedText(T___SINGLEUSE_H3VA));
+    add(textArea_0C);
+
+    AMD1_Current.setPosition(0, 239, 240, 15);
+    AMD1_Current.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    AMD1_Current.setLinespacing(0);
+    Unicode::snprintf(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_DKHH).getText());
+    AMD1_Current.setWildcard(AMD1_CurrentBuffer);
+    AMD1_Current.setTypedText(touchgfx::TypedText(T_AMD3_CURRENTAMD1_CURRENT));
+    add(AMD1_Current);
+
+    AMD1_Frequency.setPosition(0, 224, 240, 15);
+    AMD1_Frequency.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    AMD1_Frequency.setLinespacing(0);
+    Unicode::snprintf(AMD1_FrequencyBuffer, AMD1_FREQUENCY_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_23ZO).getText());
+    AMD1_Frequency.setWildcard(AMD1_FrequencyBuffer);
+    AMD1_Frequency.setTypedText(touchgfx::TypedText(T_AMD3_FREQUENCY));
+    add(AMD1_Frequency);
+
+    AMD1_Distance.setPosition(0, 209, 240, 15);
+    AMD1_Distance.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    AMD1_Distance.setLinespacing(0);
+    Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7DZL).getText());
+    AMD1_Distance.setWildcard(AMD1_DistanceBuffer);
+    AMD1_Distance.setTypedText(touchgfx::TypedText(T_AMD3_DISTANCE));
+    add(AMD1_Distance);
+
+    AMD1_Gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
+    AMD1_Gauge.setPosition(28, 103, 184, 106);
+    AMD1_Gauge.setCenter(92, 92);
+    AMD1_Gauge.setStartEndAngle(-90, 90);
+    AMD1_Gauge.setRange(-90, 90);
+    AMD1_Gauge.setValue(0);
+    AMD1_Gauge.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
+    AMD1_Gauge.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    AMD1_Gauge.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    add(AMD1_Gauge);
+
+    line2.setPosition(0, 75, 240, 10);
+    line2Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line2.setPainter(line2Painter);
+    line2.setStart(5, 5);
+    line2.setEnd(235, 5);
+    line2.setLineWidth(1);
+    line2.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line2);
+
+    textArea_menu.setXY(23, 60);
+    textArea_menu.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_menu.setLinespacing(0);
+    textArea_menu.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZR32));
+    add(textArea_menu);
 
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -43,17 +105,17 @@ Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    textArea2.setXY(69, 35);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K7UP));
-    add(textArea2);
+    textArea_name.setXY(69, 35);
+    textArea_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_name.setLinespacing(0);
+    textArea_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K7UP));
+    add(textArea_name);
 
-    textArea1.setXY(54, 12);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0GAY));
-    add(textArea1);
+    textArea_title.setXY(54, 12);
+    textArea_title.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_title.setLinespacing(0);
+    textArea_title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0GAY));
+    add(textArea_title);
 }
 
 Measurement_Accurate_DisplayViewBase::~Measurement_Accurate_DisplayViewBase()
@@ -68,10 +130,10 @@ void Measurement_Accurate_DisplayViewBase::setupScreen()
 
 void Measurement_Accurate_DisplayViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonWithLabel3)
+    if (&src == &buttonWithLabel_Return)
     {
         //Interaction1
-        //When buttonWithLabel3 clicked change screen to Measurement_Accurate
+        //When buttonWithLabel_Return clicked change screen to Measurement_Accurate
         //Go to Measurement_Accurate with screen transition towards West
         application().gotoMeasurement_AccurateScreenWipeTransitionWest();
     }

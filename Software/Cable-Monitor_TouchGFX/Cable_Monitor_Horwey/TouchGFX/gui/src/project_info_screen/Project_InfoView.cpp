@@ -18,8 +18,8 @@ void Project_InfoView::tearDownScreen()
 void Project_InfoView::setTimeoutValue(int value)
 {
 	//display the timeout value on the GUI
-	Unicode::snprintf(textArea3_1Buffer, TEXTAREA3_1_SIZE, "%d", value);
-	textArea3_1.invalidate();
+	Unicode::snprintf(textArea_auto_offBuffer, TEXTAREA_AUTO_OFF_SIZE, "%d", value);
+	textArea_auto_off.invalidate();
 
 	if (value == 0) {
 		//application().gotoMeasurement_SingleScreenSlideTransitionWest();

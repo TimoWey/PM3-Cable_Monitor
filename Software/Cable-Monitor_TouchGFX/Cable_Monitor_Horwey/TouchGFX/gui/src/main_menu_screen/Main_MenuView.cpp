@@ -18,8 +18,8 @@ void Main_MenuView::tearDownScreen()
 void Main_MenuView::setTimeoutValue(int value)
 {
 	//display the timeout value on the GUI
-	Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%d", value);
-	textArea3.invalidate();
+	Unicode::snprintf(textArea_auto_offBuffer, TEXTAREA_AUTO_OFF_SIZE, "%d", value);
+	textArea_auto_off.invalidate();
 
 	if(value == 0)
 	{

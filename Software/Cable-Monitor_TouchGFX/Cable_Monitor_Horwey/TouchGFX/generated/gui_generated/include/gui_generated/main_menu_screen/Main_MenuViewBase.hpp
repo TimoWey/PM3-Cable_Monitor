@@ -10,10 +10,10 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #ifndef SIMULATOR
 #include "main.h"
@@ -35,23 +35,25 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
-    touchgfx::TextAreaWithOneWildcard textArea3;
+    touchgfx::Image image_background;
+    touchgfx::TextAreaWithOneWildcard textArea_auto_off;
+    touchgfx::ButtonWithLabel buttonWithLabel_ProjectInfo;
+    touchgfx::ButtonWithLabel buttonWithLabel_Calibration;
+    touchgfx::ButtonWithLabel buttonWithLabel_Measure;
+    touchgfx::Line line2;
+    touchgfx::PainterRGB565 line2Painter;
+    touchgfx::TextArea textArea_menu;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea3_1;
-    touchgfx::ButtonWithLabel buttonWithLabel3;
-    touchgfx::ButtonWithLabel buttonWithLabel2;
-    touchgfx::ButtonWithLabel buttonWithLabel1;
-    touchgfx::ButtonWithIcon buttonWithIcon1;
+    touchgfx::TextArea textArea_name;
+    touchgfx::TextArea textArea_title;
+    touchgfx::ButtonWithIcon buttonWithIcon_turn_off;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTAREA3_SIZE = 4;
-    touchgfx::Unicode::UnicodeChar textArea3Buffer[TEXTAREA3_SIZE];
+    static const uint16_t TEXTAREA_AUTO_OFF_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar textArea_auto_offBuffer[TEXTAREA_AUTO_OFF_SIZE];
 
 private:
 

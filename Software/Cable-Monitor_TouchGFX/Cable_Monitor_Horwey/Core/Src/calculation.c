@@ -70,15 +70,15 @@
 
 /** Struct with fields of a menu entry */
 /*typedef struct {
-        float distance; 			///< Distance from wire to board
-center in mm float angle; 				///< Angle pointing to
-wire in degree float current; 				///< Current flowing
-through wire in A float dist_sdev; 			///< Distance standard
-devision in mm float angl_sdev; 			///< Angle standard
-devision in degree float curr_sdev; 			///< Current standard
-devision in A CALC_error_item_t error;	///< Measurement error }
-CALC_meas_data_t;
-
+ * float distance; 			///< Distance from wire to board
+ * center in mm float angle; 				///< Angle pointing to
+ * wire in degree float current; 				///< Current flowing
+ * through wire in A float dist_sdev; 			///< Distance standard
+ * devision in mm float angl_sdev; 			///< Angle standard
+ * evision in degree float curr_sdev; 			///< Current standard
+ * devision in A CALC_error_item_t error;	///< Measurement error }
+ * CALC_meas_data_t;
+ **/
 /******************************************************************************
  * Defines
  *****************************************************************************/
@@ -103,14 +103,14 @@ static float c = 0;  ///< Coefficient for distance approximation
  * @brief Calculates the frequency and signal strength using FFT.
  *
  * This function performs Fast Fourier Transform (FFT) on the input samples to
- *calculate the main frequency and signal strength. It uses the CMSIS-DSP
- *library for FFT calculations.
+ * calculate the main frequency and signal strength. It uses the CMSIS-DSP
+ * library for FFT calculations.
  *
  * @param Channel The channel number for which the frequency and signal strength
- *are calculated.
+ * are calculated.
  * @param samples Pointer to the array of input samples.
  * @return FFT structure containing the calculated main frequency and signal
- *strength.
+ * strength.
  **/
 FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* Samples) {
     // Perform FFT using CMSIS-DSP library

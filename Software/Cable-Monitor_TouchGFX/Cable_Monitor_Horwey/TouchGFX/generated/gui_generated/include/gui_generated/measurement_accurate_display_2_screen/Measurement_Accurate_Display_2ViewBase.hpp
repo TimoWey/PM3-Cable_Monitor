@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Gauge.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 
@@ -30,13 +32,32 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
-    touchgfx::ButtonWithLabel buttonWithLabel3;
-    touchgfx::TextArea textArea3;
+    touchgfx::Image image_background;
+    touchgfx::ButtonWithLabel buttonWithLabel_Return;
+    touchgfx::TextArea textArea_n90C;
+    touchgfx::TextArea textArea_p90C;
+    touchgfx::TextArea textArea_0C;
+    touchgfx::TextAreaWithOneWildcard AMD3_Current;
+    touchgfx::TextAreaWithOneWildcard AMD3_Frequency;
+    touchgfx::TextAreaWithOneWildcard AMD3_Distance;
+    touchgfx::Gauge AMD3_Gauge;
+    touchgfx::Line line2;
+    touchgfx::PainterRGB565 line2Painter;
+    touchgfx::TextArea textArea_menu;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea_name;
+    touchgfx::TextArea textArea_title;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t AMD3_CURRENT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar AMD3_CurrentBuffer[AMD3_CURRENT_SIZE];
+    static const uint16_t AMD3_FREQUENCY_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar AMD3_FrequencyBuffer[AMD3_FREQUENCY_SIZE];
+    static const uint16_t AMD3_DISTANCE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar AMD3_DistanceBuffer[AMD3_DISTANCE_SIZE];
 
 private:
 

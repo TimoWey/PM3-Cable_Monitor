@@ -11,9 +11,9 @@ Shutting_OffViewBase::Shutting_OffViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(-3, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_SHUTDOWN_ID));
-    add(image1);
+    image_shutdown.setXY(-3, 0);
+    image_shutdown.setBitmap(touchgfx::Bitmap(BITMAP_SHUTDOWN_ID));
+    add(image_shutdown);
 }
 
 Shutting_OffViewBase::~Shutting_OffViewBase()
