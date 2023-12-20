@@ -20,7 +20,7 @@ Measurement_Single_Display_3PViewBase::Measurement_Single_Display_3PViewBase() :
     image_background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image_background);
 
-    buttonWithLabel_return.setXY(33, 257);
+    buttonWithLabel_return.setXY(33, 256);
     buttonWithLabel_return.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
     buttonWithLabel_return.setLabelText(touchgfx::TypedText(T___SINGLEUSE_BQZ4));
     buttonWithLabel_return.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -67,21 +67,21 @@ Measurement_Single_Display_3PViewBase::Measurement_Single_Display_3PViewBase() :
     SMD3_Distance.setLinespacing(0);
     Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_EK4L).getText());
     SMD3_Distance.setWildcard(SMD3_DistanceBuffer);
-    SMD3_Distance.setTypedText(touchgfx::TypedText(T_SMD1_DISTANCE));
+    SMD3_Distance.setTypedText(touchgfx::TypedText(T_AMD3_DISTANCE));
     add(SMD3_Distance);
 
-    SMD3_gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
-    SMD3_gauge.setPosition(28, 103, 184, 106);
-    SMD3_gauge.setCenter(92, 92);
-    SMD3_gauge.setStartEndAngle(-90, 90);
-    SMD3_gauge.setRange(-90, 90);
-    SMD3_gauge.setValue(0);
-    SMD3_gauge.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
-    SMD3_gauge.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    SMD3_gauge.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    add(SMD3_gauge);
+    SMD3_Gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
+    SMD3_Gauge.setPosition(28, 103, 184, 106);
+    SMD3_Gauge.setCenter(92, 92);
+    SMD3_Gauge.setStartEndAngle(-90, 90);
+    SMD3_Gauge.setRange(-90, 90);
+    SMD3_Gauge.setValue(0);
+    SMD3_Gauge.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
+    SMD3_Gauge.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    SMD3_Gauge.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    add(SMD3_Gauge);
 
-    line2.setPosition(0, 50, 240, 10);
+    line2.setPosition(0, 75, 240, 10);
     line2Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line2.setPainter(line2Painter);
     line2.setStart(5, 5);
@@ -96,7 +96,7 @@ Measurement_Single_Display_3PViewBase::Measurement_Single_Display_3PViewBase() :
     textArea_menu.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0LJ7));
     add(textArea_menu);
 
-    line1.setPosition(0, 75, 240, 10);
+    line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
     line1.setStart(5, 5);

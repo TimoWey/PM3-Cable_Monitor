@@ -26,7 +26,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
+    touchgfx::Image image_shutdown;
 
 private:
 

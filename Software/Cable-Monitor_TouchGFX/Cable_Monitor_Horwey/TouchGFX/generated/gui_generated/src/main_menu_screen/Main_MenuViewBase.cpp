@@ -16,18 +16,57 @@ Main_MenuViewBase::Main_MenuViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
-    add(image1);
+    image_background.setXY(0, 0);
+    image_background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
+    add(image_background);
 
-    textArea3.setXY(86, 308);
-    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea3.setLinespacing(0);
-    Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_UQO1).getText());
-    textArea3.setWildcard(textArea3Buffer);
-    textArea3.resizeToCurrentText();
-    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2SIJ));
-    add(textArea3);
+    textArea_auto_off.setXY(86, 308);
+    textArea_auto_off.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_auto_off.setLinespacing(0);
+    Unicode::snprintf(textArea_auto_offBuffer, TEXTAREA_AUTO_OFF_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_UQO1).getText());
+    textArea_auto_off.setWildcard(textArea_auto_offBuffer);
+    textArea_auto_off.resizeToCurrentText();
+    textArea_auto_off.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2SIJ));
+    add(textArea_auto_off);
+
+    buttonWithLabel_ProjectInfo.setXY(33, 240);
+    buttonWithLabel_ProjectInfo.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
+    buttonWithLabel_ProjectInfo.setLabelText(touchgfx::TypedText(T___SINGLEUSE_WFCV));
+    buttonWithLabel_ProjectInfo.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_ProjectInfo.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_ProjectInfo.setAction(buttonCallback);
+    add(buttonWithLabel_ProjectInfo);
+
+    buttonWithLabel_Calibration.setXY(33, 170);
+    buttonWithLabel_Calibration.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
+    buttonWithLabel_Calibration.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6X9O));
+    buttonWithLabel_Calibration.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_Calibration.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_Calibration.setAction(buttonCallback);
+    add(buttonWithLabel_Calibration);
+
+    buttonWithLabel_Measure.setXY(33, 100);
+    buttonWithLabel_Measure.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
+    buttonWithLabel_Measure.setLabelText(touchgfx::TypedText(T___SINGLEUSE_8673));
+    buttonWithLabel_Measure.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_Measure.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_Measure.setAction(buttonCallback);
+    add(buttonWithLabel_Measure);
+
+    line2.setPosition(0, 75, 240, 10);
+    line2Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line2.setPainter(line2Painter);
+    line2.setStart(5, 5);
+    line2.setEnd(235, 5);
+    line2.setLineWidth(1);
+    line2.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line2);
+
+    textArea_menu.setXY(88, 60);
+    textArea_menu.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_menu.setLinespacing(0);
+    textArea_menu.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L4HV));
+    add(textArea_menu);
 
     line1.setPosition(0, 50, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -38,53 +77,23 @@ Main_MenuViewBase::Main_MenuViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    textArea2.setXY(69, 35);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6D7Z));
-    add(textArea2);
+    textArea_name.setXY(69, 35);
+    textArea_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_name.setLinespacing(0);
+    textArea_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6D7Z));
+    add(textArea_name);
 
-    textArea1.setXY(54, 12);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9K1W));
-    add(textArea1);
+    textArea_title.setXY(54, 12);
+    textArea_title.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_title.setLinespacing(0);
+    textArea_title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9K1W));
+    add(textArea_title);
 
-    textArea3_1.setXY(88, 60);
-    textArea3_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea3_1.setLinespacing(0);
-    textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L4HV));
-    add(textArea3_1);
-
-    buttonWithLabel3.setXY(33, 240);
-    buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
-    buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_WFCV));
-    buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setAction(buttonCallback);
-    add(buttonWithLabel3);
-
-    buttonWithLabel2.setXY(33, 170);
-    buttonWithLabel2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
-    buttonWithLabel2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6X9O));
-    buttonWithLabel2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel2.setAction(buttonCallback);
-    add(buttonWithLabel2);
-
-    buttonWithLabel1.setXY(33, 100);
-    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
-    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_8673));
-    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setAction(buttonCallback);
-    add(buttonWithLabel1);
-
-    buttonWithIcon1.setXY(198, 5);
-    buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID));
-    buttonWithIcon1.setIconXY(0, 0);
-    buttonWithIcon1.setAction(buttonCallback);
-    add(buttonWithIcon1);
+    buttonWithIcon_turn_off.setXY(198, 5);
+    buttonWithIcon_turn_off.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID));
+    buttonWithIcon_turn_off.setIconXY(0, 0);
+    buttonWithIcon_turn_off.setAction(buttonCallback);
+    add(buttonWithIcon_turn_off);
 }
 
 Main_MenuViewBase::~Main_MenuViewBase()
@@ -99,37 +108,37 @@ void Main_MenuViewBase::setupScreen()
 
 void Main_MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonWithLabel1)
+    if (&src == &buttonWithLabel_Measure)
     {
         //Interaction1
-        //When buttonWithLabel1 clicked change screen to Measurement
+        //When buttonWithLabel_Measure clicked change screen to Measurement
         //Go to Measurement with screen transition towards East
         application().gotoMeasurementScreenWipeTransitionEast();
     }
-    if (&src == &buttonWithLabel2)
+    if (&src == &buttonWithLabel_Calibration)
     {
         //Interaction2
-        //When buttonWithLabel2 clicked change screen to Calibration_Pad
+        //When buttonWithLabel_Calibration clicked change screen to Calibration_Pad
         //Go to Calibration_Pad with screen transition towards East
         application().gotoCalibration_PadScreenWipeTransitionEast();
     }
-    if (&src == &buttonWithLabel3)
+    if (&src == &buttonWithLabel_ProjectInfo)
     {
         //Interaction3
-        //When buttonWithLabel3 clicked change screen to Project_Info
+        //When buttonWithLabel_ProjectInfo clicked change screen to Project_Info
         //Go to Project_Info with screen transition towards East
         application().gotoProject_InfoScreenWipeTransitionEast();
     }
-    if (&src == &buttonWithIcon1)
+    if (&src == &buttonWithIcon_turn_off)
     {
         //Interaction4
-        //When buttonWithIcon1 clicked execute C++ code
+        //When buttonWithIcon_turn_off clicked execute C++ code
         //Execute C++ code
         #ifndef SIMULATOR
         HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
         #endif
         //Interaction5
-        //When buttonWithIcon1 clicked change screen to Shutting_Off
+        //When buttonWithIcon_turn_off clicked change screen to Shutting_Off
         //Go to Shutting_Off with no screen transition
         application().gotoShutting_OffScreenNoTransition();
     }

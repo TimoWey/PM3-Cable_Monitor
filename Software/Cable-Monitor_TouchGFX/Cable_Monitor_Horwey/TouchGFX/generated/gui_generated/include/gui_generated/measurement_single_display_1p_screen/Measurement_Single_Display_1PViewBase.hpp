@@ -10,9 +10,9 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/Gauge.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 
@@ -43,16 +43,16 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image image_background;
     touchgfx::ButtonWithLabel buttonWithLabel_return;
-    touchgfx::TextAreaWithOneWildcard SMD1_Current;
-    touchgfx::TextAreaWithOneWildcard SMD1_Frequency;
-    touchgfx::TextAreaWithOneWildcard SMD1_Distance;
-    touchgfx::Gauge SMD1_gauge;
     touchgfx::TextArea textArea_n90C;
     touchgfx::TextArea textArea_p90C;
     touchgfx::TextArea textArea_0C;
+    touchgfx::TextAreaWithOneWildcard SMD1_Current;
+    touchgfx::TextAreaWithOneWildcard SMD1_Frequency;
+    touchgfx::TextAreaWithOneWildcard SMD1_Distance;
+    touchgfx::Gauge SMD1_Gauge;
     touchgfx::Line line2;
     touchgfx::PainterRGB565 line2Painter;
-    touchgfx::TextArea textArea_menu_titel;
+    touchgfx::TextArea textArea_menu;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea_name;

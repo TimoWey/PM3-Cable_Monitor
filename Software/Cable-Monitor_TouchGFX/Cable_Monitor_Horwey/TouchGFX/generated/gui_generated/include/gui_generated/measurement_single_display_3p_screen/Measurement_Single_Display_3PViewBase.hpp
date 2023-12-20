@@ -40,7 +40,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard SMD3_Current;
     touchgfx::TextAreaWithOneWildcard SMD3_Frequency;
     touchgfx::TextAreaWithOneWildcard SMD3_Distance;
-    touchgfx::Gauge SMD3_gauge;
+    touchgfx::Gauge SMD3_Gauge;
     touchgfx::Line line2;
     touchgfx::PainterRGB565 line2Painter;
     touchgfx::TextArea textArea_menu;

@@ -41,8 +41,8 @@ void Measurement_Single_Display_1PView::testGui()
 
 	//update GUI values
 	//set gauge angle
-	SMD1_gauge.setValue(distance_angle.angle);
-	SMD1_gauge.invalidate();
+	SMD1_Gauge.setValue(distance_angle.angle);
+	SMD1_Gauge.invalidate();
 
 	//set current value
 	Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f", distance_angle.angle);
@@ -55,13 +55,6 @@ void Measurement_Single_Display_1PView::testGui()
 	//set distance value
 	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", distance_angle.distance);
 	SMD1_Distance.invalidate();
-
-
-	//temp
-	Unicode::snprintfFloat(Pad_LBuffer, PAD_L_SIZE, "%.2f", distance_angle.distance_l);
-	Pad_L.invalidate();
-	Unicode::snprintfFloat(Pad_RBuffer, PAD_R_SIZE, "%.2f", distance_angle.distance_r);
-	Pad_R.invalidate();
 
 #endif
 }

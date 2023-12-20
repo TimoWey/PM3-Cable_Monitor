@@ -10,10 +10,10 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class Measurement_AccurateViewBase : public touchgfx::View<Measurement_AccuratePresenter>
 {
@@ -31,22 +31,24 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
-    touchgfx::TextAreaWithOneWildcard textArea3_1;
+    touchgfx::Image image_return;
+    touchgfx::TextAreaWithOneWildcard textArea_auto_off;
+    touchgfx::ButtonWithLabel buttonWithLabel_Return;
+    touchgfx::ButtonWithLabel buttonWithLabel_3Phase;
+    touchgfx::ButtonWithLabel buttonWithLabel_1Phase;
+    touchgfx::Line line2;
+    touchgfx::PainterRGB565 line2Painter;
+    touchgfx::TextArea textArea_menu;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea3;
-    touchgfx::ButtonWithLabel buttonWithLabel3;
-    touchgfx::ButtonWithLabel buttonWithLabel2;
-    touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::TextArea textArea_name;
+    touchgfx::TextArea textArea_title;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTAREA3_1_SIZE = 4;
-    touchgfx::Unicode::UnicodeChar textArea3_1Buffer[TEXTAREA3_1_SIZE];
+    static const uint16_t TEXTAREA_AUTO_OFF_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar textArea_auto_offBuffer[TEXTAREA_AUTO_OFF_SIZE];
 
 private:
 
