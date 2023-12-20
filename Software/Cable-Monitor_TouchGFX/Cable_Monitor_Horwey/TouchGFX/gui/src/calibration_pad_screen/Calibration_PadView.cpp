@@ -28,7 +28,7 @@ void Calibration_PadView::setTimeoutValue(int value) {}
 void Calibration_PadView::function_cali_pad() {
 #ifndef SIMULATOR
 	
-	uint32_t* Samples = MEAS_start_measure();
+	uint32_t* Samples = calculate_average_of_measurements();
 	FFT fft = calculate_freq_and_signalstrength(1, Samples);
     Unicode::snprintfFloat(CALIBRATION_PADR_SBuffer, CALIBRATION_PADR_S_SIZE,
                            "%.2f", fft.signal_strength);

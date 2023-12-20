@@ -169,11 +169,22 @@ FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples) {
     fft.signal_strength = signal_strength;
     return fft;
 }
-
-void accurate_measurement(uint32_t* Samples){
-
+// Calculate the average of all measurements and return as pointer to array
+uint32_t* calculate_average_of_measurements() {
+    uint32_t* Samples = 0;
+    uint32_t buffer_size = MEAS_get_num_of_samples()*MEAS_get_num_of_chan();
+    uint32_t* average = malloc(buffer_size * sizeof(uint32_t));
+    for (uint32_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++) {
+        Samples = MEAS_start_measure();
+        for (uint32_t j = 0; j < buffer_size; j++) {
+            average[j] += Samples[j];
+        }
+    }
+    for (uint32_t i = 0; i < buffer_size; i++) {
+        average[i] /= ACCURATE_MEASUREMENT_LOOPS;
+    }
+    return average;
 }
-
 /**
  * Calculates the coefficients for the distance approximation from an approximation based on a second degree polynomial.
  *
@@ -190,8 +201,10 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[]) {
     / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
     // b = ((−(x_0^(2)*(x_1^(2)*(y_0-y_1)-x_2^(2)*(y_0-y_2))+x_1^(2)*x_2^(2)*(y_1-y_2)))/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
     // -> Result of Nspire CAS
+
     b = (-(POW2(s[0]) * (POW2(s[1]) * (d[0] - d[1]) - POW2(s[2]) * (d[0] - d[2])) + POW2(s[1]) * POW2(s[2]) * (d[1] - d[2]))) 
     / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
+
     // c=((x_0*(x_0*(x_1*(y_0-y_1)-x_2*(y_0-y_2))+x_1*x_2*(y_1-y_2))*x_1*x_2)/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
     // -> Result of Nspire CAS
     c = ((s[0] * (s[0] * (s[1] * (d[0] - d[1]) - s[2] * (d[0] - d[2])) + s[1] * s[2] * (d[1] - d[2])) * s[1] * s[2])) 
@@ -227,9 +240,7 @@ DISTANCE_ANGLE calculate_distance_and_angle()
 
     float32_t signal_pad = fft.signal_strength;
     // Calculate the distance using the coefficients and the actual signal strength
-    float32_t calc_distance = a + (b / signal_pad) + (c / POW2(signal_pad));
-
-    // Calculate the angle using the distance
+    float32_t calc_distance = poly_coeff.a_r + (poly_coeff.b_r / signal_pad) + (poly_coeff.c_r / POW2(signal_pad));
     
     // Set the calculated values
     dist_angle.distance_r = calc_distance;
@@ -237,16 +248,14 @@ DISTANCE_ANGLE calculate_distance_and_angle()
     fft = calculate_freq_and_signalstrength(2, Samples);
     signal_pad = fft.signal_strength;
     // Calculate the distance using the coefficients and the actual signal strength
-    calc_distance = a + (b / signal_pad) + (c / POW2(signal_pad));
+    calc_distance = poly_coeff.a_l + (poly_coeff.b_l / signal_pad) + (poly_coeff.c_l / POW2(signal_pad));
     // Set the calculated values
     dist_angle.distance_l = calc_distance;
 
-    // calculate the distance and angle
+    // calculate the distance and angle (using ratio of distances)
     dist_angle.distance = (dist_angle.distance_r + dist_angle.distance_l) / 2;
-    dist_angle.angle_r = atanf(2 * D_P / (dist_angle.distance_r - dist_angle.distance_l));
-    dist_angle.angle_l = atanf(2 * D_P / (dist_angle.distance_l - dist_angle.distance_r));
-    
-    dist_angle.angle = (dist_angle.angle_r * 180 / PI);
+
+    dist_angle.angle = atanf((dist_angle.distance_l - dist_angle.distance_r) / (2 * D_P)) * (180 / PI);
 
     // Return the calculated values
     return dist_angle;

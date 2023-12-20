@@ -40,7 +40,7 @@ void Measurement_Single_Display_1PView::testGui()
 
 	test = updateGUI_test();
 
-	uint32_t* Samples = MEAS_start_measure();
+	//uint32_t* Samples = calculate_average_of_measurements();
 
 
 	//callback to fft
