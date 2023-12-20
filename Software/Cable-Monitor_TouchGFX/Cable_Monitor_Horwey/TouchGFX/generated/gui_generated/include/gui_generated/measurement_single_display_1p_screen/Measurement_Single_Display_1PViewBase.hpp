@@ -9,12 +9,12 @@
 #include <gui/measurement_single_display_1p_screen/Measurement_Single_Display_1PPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/Gauge.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Gauge.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class Measurement_Single_Display_1PViewBase : public touchgfx::View<Measurement_Single_Display_1PPresenter>
 {
@@ -41,30 +41,26 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
-    touchgfx::TextArea textArea3;
-    touchgfx::Gauge SMD1_gauge;
-    touchgfx::TextAreaWithOneWildcard Pad_L;
-    touchgfx::TextAreaWithOneWildcard Pad_R;
+    touchgfx::Image image_background;
+    touchgfx::ButtonWithLabel buttonWithLabel_return;
     touchgfx::TextAreaWithOneWildcard SMD1_Current;
     touchgfx::TextAreaWithOneWildcard SMD1_Frequency;
     touchgfx::TextAreaWithOneWildcard SMD1_Distance;
-    touchgfx::TextArea textArea4;
-    touchgfx::TextArea textArea4_1;
-    touchgfx::TextArea textArea4_2;
+    touchgfx::Gauge SMD1_gauge;
+    touchgfx::TextArea textArea_n90C;
+    touchgfx::TextArea textArea_p90C;
+    touchgfx::TextArea textArea_0C;
+    touchgfx::Line line2;
+    touchgfx::PainterRGB565 line2Painter;
+    touchgfx::TextArea textArea_menu_titel;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea1;
-    touchgfx::ButtonWithLabel buttonWithLabel3;
+    touchgfx::TextArea textArea_name;
+    touchgfx::TextArea textArea_titel;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t PAD_L_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Pad_LBuffer[PAD_L_SIZE];
-    static const uint16_t PAD_R_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Pad_RBuffer[PAD_R_SIZE];
     static const uint16_t SMD1_CURRENT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar SMD1_CurrentBuffer[SMD1_CURRENT_SIZE];
     static const uint16_t SMD1_FREQUENCY_SIZE = 10;

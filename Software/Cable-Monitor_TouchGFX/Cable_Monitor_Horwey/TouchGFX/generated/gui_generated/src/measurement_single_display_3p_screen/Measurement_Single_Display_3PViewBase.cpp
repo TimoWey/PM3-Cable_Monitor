@@ -16,11 +16,87 @@ Measurement_Single_Display_3PViewBase::Measurement_Single_Display_3PViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
-    add(image1);
+    image_background.setXY(0, 0);
+    image_background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
+    add(image_background);
 
-    line1.setPosition(0, 50, 240, 10);
+    buttonWithLabel_return.setXY(33, 257);
+    buttonWithLabel_return.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
+    buttonWithLabel_return.setLabelText(touchgfx::TypedText(T___SINGLEUSE_BQZ4));
+    buttonWithLabel_return.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_return.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_return.setAction(buttonCallback);
+    add(buttonWithLabel_return);
+
+    textArea_n90C.setXY(0, 194);
+    textArea_n90C.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_n90C.setLinespacing(0);
+    textArea_n90C.setTypedText(touchgfx::TypedText(T___SINGLEUSE_C7CD));
+    add(textArea_n90C);
+
+    textArea_p90C.setXY(217, 194);
+    textArea_p90C.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_p90C.setLinespacing(0);
+    textArea_p90C.setTypedText(touchgfx::TypedText(T___SINGLEUSE_85IX));
+    add(textArea_p90C);
+
+    textArea_0C.setXY(113, 85);
+    textArea_0C.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_0C.setLinespacing(0);
+    textArea_0C.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XVJO));
+    add(textArea_0C);
+
+    SMD3_Current.setPosition(0, 239, 240, 15);
+    SMD3_Current.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SMD3_Current.setLinespacing(0);
+    Unicode::snprintf(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_HT0R).getText());
+    SMD3_Current.setWildcard(SMD3_CurrentBuffer);
+    SMD3_Current.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6OVJ));
+    add(SMD3_Current);
+
+    SMD3_Frequency.setPosition(0, 224, 240, 15);
+    SMD3_Frequency.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SMD3_Frequency.setLinespacing(0);
+    Unicode::snprintf(SMD3_FrequencyBuffer, SMD3_FREQUENCY_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YT2E).getText());
+    SMD3_Frequency.setWildcard(SMD3_FrequencyBuffer);
+    SMD3_Frequency.setTypedText(touchgfx::TypedText(T___SINGLEUSE_W5I5));
+    add(SMD3_Frequency);
+
+    SMD3_Distance.setPosition(0, 209, 240, 15);
+    SMD3_Distance.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    SMD3_Distance.setLinespacing(0);
+    Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_EK4L).getText());
+    SMD3_Distance.setWildcard(SMD3_DistanceBuffer);
+    SMD3_Distance.setTypedText(touchgfx::TypedText(T_SMD1_DISTANCE));
+    add(SMD3_Distance);
+
+    SMD3_gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
+    SMD3_gauge.setPosition(28, 103, 184, 106);
+    SMD3_gauge.setCenter(92, 92);
+    SMD3_gauge.setStartEndAngle(-90, 90);
+    SMD3_gauge.setRange(-90, 90);
+    SMD3_gauge.setValue(0);
+    SMD3_gauge.setNeedle(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
+    SMD3_gauge.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    SMD3_gauge.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    add(SMD3_gauge);
+
+    line2.setPosition(0, 50, 240, 10);
+    line2Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line2.setPainter(line2Painter);
+    line2.setStart(5, 5);
+    line2.setEnd(235, 5);
+    line2.setLineWidth(1);
+    line2.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(line2);
+
+    textArea_menu.setXY(31, 60);
+    textArea_menu.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_menu.setLinespacing(0);
+    textArea_menu.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0LJ7));
+    add(textArea_menu);
+
+    line1.setPosition(0, 75, 240, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
     line1.setStart(5, 5);
@@ -29,31 +105,17 @@ Measurement_Single_Display_3PViewBase::Measurement_Single_Display_3PViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line1);
 
-    textArea2.setXY(69, 35);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DCTT));
-    add(textArea2);
+    textArea_name.setXY(69, 35);
+    textArea_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_name.setLinespacing(0);
+    textArea_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DCTT));
+    add(textArea_name);
 
-    textArea3.setXY(31, 60);
-    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea3.setLinespacing(0);
-    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0LJ7));
-    add(textArea3);
-
-    textArea1.setXY(54, 12);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SPOY));
-    add(textArea1);
-
-    buttonWithLabel3.setXY(33, 257);
-    buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID));
-    buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_BQZ4));
-    buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setAction(buttonCallback);
-    add(buttonWithLabel3);
+    textArea_title.setXY(54, 12);
+    textArea_title.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea_title.setLinespacing(0);
+    textArea_title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SPOY));
+    add(textArea_title);
 }
 
 Measurement_Single_Display_3PViewBase::~Measurement_Single_Display_3PViewBase()
@@ -68,10 +130,10 @@ void Measurement_Single_Display_3PViewBase::setupScreen()
 
 void Measurement_Single_Display_3PViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonWithLabel3)
+    if (&src == &buttonWithLabel_return)
     {
         //Interaction1
-        //When buttonWithLabel3 clicked change screen to Measurement_Single
+        //When buttonWithLabel_return clicked change screen to Measurement_Single
         //Go to Measurement_Single with screen transition towards East
         application().gotoMeasurement_SingleScreenWipeTransitionEast();
     }
