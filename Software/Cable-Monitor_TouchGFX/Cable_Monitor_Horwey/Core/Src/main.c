@@ -178,12 +178,6 @@ uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communic
 //int isDisplayTouched = 0;
 int sleep_timeout_value = 60;
 
-//test functon
-int updateGUI_test(void)
-{
-	return sleep_timeout_value;
-}
-
 void gyro_disable(void)
 {
 	__HAL_RCC_GPIOC_CLK_ENABLE();  // Enable Clock for GPIO port C
@@ -218,7 +212,14 @@ void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint
 }
 
 
-uint32_t Calibration_Data[12];
+// Global Calibration values
+// At distance: 10mm, 50mm and 100mm
+// 0-2:  Left Pad
+// 3-5:  Right Pad
+// 6-8:  Left Hall
+// 9-11: Right Hall
+uint32_t Calibration_Data[12]; // The CAlibration values are read after init
+
 
 
 /* USER CODE END 0 */

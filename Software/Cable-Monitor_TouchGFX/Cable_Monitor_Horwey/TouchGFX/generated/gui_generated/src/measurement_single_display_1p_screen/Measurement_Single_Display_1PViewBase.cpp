@@ -38,12 +38,28 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     SMD1_gauge.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
     add(SMD1_gauge);
 
+    Pad_L.setPosition(0, 76, 113, 18);
+    Pad_L.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Pad_L.setLinespacing(0);
+    Unicode::snprintf(Pad_LBuffer, PAD_L_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6CY0).getText());
+    Pad_L.setWildcard(Pad_LBuffer);
+    Pad_L.setTypedText(touchgfx::TypedText(T___SINGLEUSE_V1PS));
+    add(Pad_L);
+
+    Pad_R.setPosition(131, 76, 113, 18);
+    Pad_R.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Pad_R.setLinespacing(0);
+    Unicode::snprintf(Pad_RBuffer, PAD_R_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_PRO6).getText());
+    Pad_R.setWildcard(Pad_RBuffer);
+    Pad_R.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WR23));
+    add(Pad_R);
+
     SMD1_Current.setPosition(0, 230, 240, 15);
     SMD1_Current.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     SMD1_Current.setLinespacing(0);
-    Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_1WKT).getText());
+    Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LFLK).getText());
     SMD1_Current.setWildcard(SMD1_CurrentBuffer);
-    SMD1_Current.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y5P8));
+    SMD1_Current.setTypedText(touchgfx::TypedText(T___SINGLEUSE_G8ED));
     add(SMD1_Current);
 
     SMD1_Frequency.setPosition(0, 215, 240, 15);
