@@ -61,7 +61,8 @@ typedef struct {
  * Functions
  *****************************************************************************/
 FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples);
-DISTANCE_ANGLE calculate_distance_and_angle();
+DISTANCE_ANGLE calculate_distance_and_angle(void);
+uint32_t* calculate_average_of_measurements(void);
 
 #endif	/* CALC_H_ */
 
