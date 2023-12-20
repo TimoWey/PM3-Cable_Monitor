@@ -40,15 +40,13 @@ void Measurement_Single_Display_1PView::testGui()
 
 	test = updateGUI_test();
 
-	// Start measurement
 	uint32_t* Samples = MEAS_start_measure();
 
-	//SINGLE_MEAS single_meas = single_measurement(Samples);
-	ACCU_MEAS accu_meas = accurate_measurement(Samples);
+	SINGLE_MEAS single_meas = single_measurement(Samples);
 
 	//update GUI values
 	//set gauge angle
-	SMD1_gauge.setValue(accu_meas.angle);
+	SMD1_gauge.setValue(single_meas.angle);
 	SMD1_gauge.invalidate();
 
 	//set current value
@@ -56,15 +54,11 @@ void Measurement_Single_Display_1PView::testGui()
 	SMD1_Current.invalidate();
 
 	//set frequency value
-	Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", accu_meas.frequency);
+	Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", single_meas.frequency);
 	SMD1_Frequency.invalidate();
 
 	//set distance value
-	//if(fft.error == CALC_ERROR_NONE)
-	//{
-		Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", accu_meas.distance);
-	//} else Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "Error");
-	
+	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
 	SMD1_Distance.invalidate();
 
 	//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);

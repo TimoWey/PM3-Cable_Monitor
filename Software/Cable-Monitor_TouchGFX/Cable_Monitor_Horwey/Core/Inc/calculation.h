@@ -43,6 +43,18 @@ typedef struct {
     CALC_ERROR_ITEM error;
 } FFT;
 
+/* Structure for Accurate FFT*/
+typedef struct {
+    float32_t signal_strength_pr;
+    float32_t signal_strength_pr_std_dev;
+    float32_t signal_strength_pl;
+    float32_t signal_strength_pl_std_dev;
+    float32_t signal_strength_hsr;
+    float32_t signal_strength_hsr_std_dev;
+    float32_t signal_strength_hsl;
+    float32_t signal_strength_hsl_std_dev;
+} ACCU_FFT;
+
 /* Structure for measurements*/
 typedef struct {
 	float32_t distance;
@@ -86,6 +98,7 @@ typedef struct {
 SINGLE_MEAS single_measurement(uint32_t* samples);
 ACCU_MEAS accurate_measurement(uint32_t* samples);
 CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[]);
+ACCU_FFT accurate_FFT(void);
 
 
 #endif	/* CALC_H_ */

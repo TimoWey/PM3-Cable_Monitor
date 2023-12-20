@@ -69,24 +69,14 @@
 #define ARM_MATH_CM4
 #include "arm_math.h"
 
-/** Struct with fields of a menu entry */
-/*typedef struct {
-        float distance; 			///< Distance from wire to board
-center in mm float angle; 				///< Angle pointing to
-wire in degree float current; 				///< Current flowing
-through wire in A float dist_sdev; 			///< Distance standard
-devision in mm float angl_sdev; 			///< Angle standard
-devision in degree float curr_sdev; 			///< Current standard
-devision in A CALC_error_item_t error;	///< Measurement error }
-CALC_meas_data_t;
 
-*******************************************************************************
+/*******************************************************************************
  * Defines
  *****************************************************************************/
 ///< pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm
 ///< (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
 #define D_P 19.7  ///< Distance from the board center to pad center
-#define ACCURATE_MEASUREMENT_LOOPS 50  ///< How many loops for accu. meas.
+#define ACCURATE_MEASUREMENT_LOOPS 5  ///< How many loops for accu. meas.
 #define POW2(x) ((x) * (x))            ///< Power of two
 
 /******************************************************************************
@@ -100,6 +90,8 @@ CALC_meas_data_t;
 void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
 FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
 DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
+
+
 /**
  * @brief Calculates the frequency and signal strength using FFT.
  *
@@ -164,7 +156,82 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[]) {
     return fft;
 }
 
+/**
+ * @brief Performs accurate FFT calculation for signal strength and main frequency.
+ * 
+ * This function calculates the signal strength and main frequency for each channel
+ * using the Fast Fourier Transform (FFT) algorithm. It performs multiple measurements
+ * to obtain accurate results and returns the calculated values in an instance of the
+ * ACCU_FFT structure.
+ * 
+ * @return The calculated signal strength and main frequency for each channel.
+ */
+ACCU_FFT accurate_FFT(void){
+    // Create an instance of the ACCU_FFT structure
+    ACCU_FFT accu_fft;
+    // Create an instance of the FFT structure
+    FFT fft;
 
+    float32_t accu_strength_PR[ACCURATE_MEASUREMENT_LOOPS];
+    float32_t accu_strength_PL[ACCURATE_MEASUREMENT_LOOPS];
+    float32_t accu_strength_HSR[ACCURATE_MEASUREMENT_LOOPS];
+    float32_t accu_strength_HSL[ACCURATE_MEASUREMENT_LOOPS];
+
+    uint32_t* samples;
+
+    uint8_t buffer_size = MEAS_get_num_of_samples();
+    float32_t samples_PR[buffer_size];
+    float32_t samples_PL[buffer_size];
+    float32_t samples_HSR[buffer_size];
+    float32_t samples_HSL[buffer_size];
+
+    for(uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
+        // Start the measurement
+        samples = MEAS_start_measure();
+        
+        // Convert the samples to the specific channel
+        for (uint32_t j = 0; j < buffer_size; j++) {
+            samples_PR[j] = (float32_t)samples[j * MEAS_get_num_of_chan()];
+            samples_PL[j] = (float32_t)samples[j * MEAS_get_num_of_chan() + 1];
+            samples_HSR[j] = (float32_t)samples[j * MEAS_get_num_of_chan() + 2];
+            samples_HSL[j] = (float32_t)samples[j * MEAS_get_num_of_chan() + 3];
+        }
+        // Calculate the Signal Strength and the main frequency for each channel using FFT
+
+        fft = calculate_freq_and_signalstrength(samples_PR);
+        accu_strength_PR[i] = fft.signal_strength;
+        fft = calculate_freq_and_signalstrength(samples_PL);
+        accu_strength_PL[i] = fft.signal_strength;
+        fft = calculate_freq_and_signalstrength(samples_HSR);
+        accu_strength_HSR[i] = fft.signal_strength;
+        fft = calculate_freq_and_signalstrength(samples_HSL);
+        accu_strength_HSL[i] = fft.signal_strength;
+        //current[i] = single_meas.current;
+    }
+    arm_mean_f32(accu_strength_PR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr);
+    //arm_std_f32(accu_strength_PR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr_std_dev);
+    arm_mean_f32(accu_strength_PL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl);
+    //arm_std_f32(accu_strength_PL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl_std_dev);
+    arm_mean_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr);
+    //arm_std_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr_std_dev);
+    arm_mean_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl);
+    //arm_std_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl_std_dev);
+
+    return accu_fft;
+}
+
+/**
+ * @brief Perform single measurement on the given samples.
+ * 
+ * This function takes an array of samples and performs calculations to determine the signal strength, main frequency,
+ * distance, angle, and current for a single measurement. The samples are converted to specific channels and then passed
+ * through an FFT algorithm to calculate the signal strength and main frequency for each channel. The main frequency is
+ * then averaged between two channels to obtain the final frequency. The signal strengths of two channels are used to
+ * calculate the distance and angle. The current is currently not calculated and is set to 0.
+ * 
+ * @param samples Pointer to the array of samples.
+ * @return The SINGLE_MEAS structure containing the calculated values.
+ */
 SINGLE_MEAS single_measurement(uint32_t* samples) {
     // Create an instance of the SINGLE_MEAS structure
     SINGLE_MEAS single_meas;
@@ -208,6 +275,16 @@ SINGLE_MEAS single_measurement(uint32_t* samples) {
     return single_meas;
 }
 
+/**
+ * @brief Performs accurate measurement of distance, angle, and frequency.
+ *
+ * This function takes an array of samples and performs accurate measurement
+ * of distance, angle, and frequency. It calculates the mean value and standard
+ * deviation of each parameter over a specified number of measurement loops.
+ *
+ * @param samples Pointer to the array of samples.
+ * @return ACCU_MEAS The structure containing the accurate measurement results.
+ */
 ACCU_MEAS accurate_measurement(uint32_t* samples){
     // Create an instance of the ACCU_MEAS structure
     ACCU_MEAS accu_meas;
@@ -216,8 +293,8 @@ ACCU_MEAS accurate_measurement(uint32_t* samples){
     float32_t distance[ACCURATE_MEASUREMENT_LOOPS];
     float32_t angle[ACCURATE_MEASUREMENT_LOOPS];
     float32_t frequency[ACCURATE_MEASUREMENT_LOOPS];
-
     //float32_t current[ACCU_MEASUREMENT_LOOPS];
+
     for(uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
         SINGLE_MEAS single_meas = single_measurement(samples);
         distance[i] = single_meas.distance;
@@ -243,6 +320,18 @@ ACCU_MEAS accurate_measurement(uint32_t* samples){
     //arm_std_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current_std_dev);
     return accu_meas;
 }
+
+/**
+ * @brief Calculates the distance and angle based on signal strengths.
+ *
+ * This function calculates the distance and angle using the provided signal strengths
+ * and calibration values. It takes the signal strengths of the right and left pads
+ * as input and returns a structure containing the calculated distance and angle.
+ *
+ * @param signal_strength_r The signal strength of the right pad.
+ * @param signal_strength_l The signal strength of the left pad.
+ * @return The calculated distance and angle.
+ */
 DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l){
     // TODO: Put Calibration Values in another function
     float32_t distance[3] = {10, 50, 100};
@@ -275,7 +364,18 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
     return dist_angle;
 }
 
-CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[]) // TODO: add Hall sensor Calibration/Coefficients
+/**
+ * @brief Starts the calibration process for the pads.
+ *
+ * This function calculates the coefficients for the distance approximation from a second degree polynomial
+ * based on the provided signal values and distance measurements.
+ *
+ * @param distance An array of distance measurements.
+ * @param signal_pr An array of signal values from the right pad.
+ * @param signal_pl An array of signal values from the left pad.
+ * @return The CALIBRATION structure containing the calculated coefficients.
+ */
+CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[])
 {
     // create an instance of the CALIBRATION structure
     CALIBRATION calibration;

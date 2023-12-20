@@ -28,15 +28,17 @@ void Calibration_PadView::setTimeoutValue(int value) {}
 void Calibration_PadView::function_cali_pad() {
 #ifndef SIMULATOR
 	
+	ACCU_FFT accu_fft = accurate_FFT();
+
     Unicode::snprintfFloat(CALIBRATION_PADR_SBuffer, CALIBRATION_PADR_S_SIZE,
-                           "%.2f", 0.0);
+                           "%.2f", accu_fft.signal_strength_pr);
     CALIBRATION_PADR_S.invalidate();
     Unicode::snprintfFloat(CALIBRATION_PADR_FBuffer, CALIBRATION_PADR_F_SIZE,
                            "%.2f", 0.0);
     CALIBRATION_PADR_F.invalidate();
 
     Unicode::snprintfFloat(CALIBRATION_PADL_SBuffer, CALIBRATION_PADL_S_SIZE,
-                           "%.2f", 0.0);
+                           "%.2f", accu_fft.signal_strength_pl);
     CALIBRATION_PADL_S.invalidate();
     Unicode::snprintfFloat(CALIBRATION_PADL_FBuffer, CALIBRATION_PADL_F_SIZE,
                            "%.2f", 0.0);
