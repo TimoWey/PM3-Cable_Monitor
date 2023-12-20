@@ -354,16 +354,32 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Interaction_LP1
         //When buttonWithIcon_LP1 clicked execute C++ code
         //Execute C++ code
+        
+        /**
+         * @brief Handles the button callback events in the Calibration_PadViewBase class.
+         * 
+         * This function is called when a button is clicked in the Calibration_PadViewBase screen.
+         * It performs different actions based on the button that was clicked and stores
+         * its associated value in the FLASH
+         * 
+         * @param src The reference to the button that triggered the callback.
+         */
+        
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 0, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 0, 12);
         
-        Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pl);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -375,14 +391,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 1, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 1, 12);
         
-        Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pl);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -394,14 +415,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 2, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 2, 12);
         
-        Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pl);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -413,14 +439,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 3, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 3, 12);
         
-        Unicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pr);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -432,14 +463,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 4, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 4, 12);
         
-        Unicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pr);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -451,14 +487,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 5, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 12);
         
-        Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pr);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -470,14 +511,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 6, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 6, 12);
         
-        Unicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -489,14 +535,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 7, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 7, 12);
         
-        Unicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -508,14 +559,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 8, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 8, 12);
         
-        Unicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -527,14 +583,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 9, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 9, 12);
         
-        Unicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -546,14 +607,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 10, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 10, 12);
         
-        Unicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif
@@ -565,14 +631,19 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Execute C++ code
         #ifndef SIMULATOR
         
+        // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
-        uint32_t* Samples = MEAS_start_measure();
         
-        FFT fft = calculate_freq_and_signalstrength(1, Samples);
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
         
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 11, 12);
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);
         
-        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)fft.signal_strength);
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
         
         #endif

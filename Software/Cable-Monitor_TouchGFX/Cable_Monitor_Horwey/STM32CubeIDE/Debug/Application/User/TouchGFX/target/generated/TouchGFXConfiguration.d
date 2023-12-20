@@ -145,6 +145,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
+ ../../Core/Inc/arm_math.h \
  ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
  ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp \
@@ -303,6 +304,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
 ../../Core/Inc/measuring.h:
 ../../Core/Inc/calculation.h:
+../../Core/Inc/arm_math.h:
 ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp:
 ../../TouchGFX/gui/include/gui/project_info_screen/Project_InfoPresenter.hpp:
