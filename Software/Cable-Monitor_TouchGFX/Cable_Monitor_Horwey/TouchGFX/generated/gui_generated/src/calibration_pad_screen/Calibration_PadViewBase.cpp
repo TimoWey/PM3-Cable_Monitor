@@ -342,13 +342,6 @@ void Calibration_PadViewBase::setupScreen()
 
 void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonWithLabel3)
-    {
-        //Interaction1
-        //When buttonWithLabel3 clicked change screen to Main_Menu
-        //Go to Main_Menu with screen transition towards West
-        application().gotoMain_MenuScreenWipeTransitionWest();
-    }
     if (&src == &buttonWithIcon_LP1)
     {
         //Interaction_LP1
@@ -648,11 +641,22 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         
         #endif
     }
+    if (&src == &buttonWithLabel3)
+    {
+        //interaction_menu
+        //When buttonWithLabel3 clicked change screen to Main_Menu
+        //Go to Main_Menu with no screen transition
+        application().gotoMain_MenuScreenNoTransition();
+        //Interaction_coeff
+        //When buttonWithLabel3 clicked call virtual function
+        //Call update_Coefficients
+        update_Coefficients();
+    }
 }
 
 void Calibration_PadViewBase::transitionBegins()
 {
-    //Interaction2
+    //Interaction_begin
     //When screen transition begins call virtual function
     //Call Load_FLASH_Values
     Load_FLASH_Values();
