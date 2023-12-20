@@ -100,9 +100,7 @@ Application/User/gui/Calibration_HallView.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
- ../../Core/Inc/arm_math.h
+ ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ../../TouchGFX/gui/include/gui/calibration_hall_screen/Calibration_HallView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_hall_screen/Calibration_HallViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -204,6 +202,3 @@ Application/User/gui/Calibration_HallView.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
-../../Core/Inc/measuring.h:
-../../Core/Inc/calculation.h:
-../../Core/Inc/arm_math.h:

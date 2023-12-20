@@ -13,8 +13,14 @@
 /******************************************************************************
  * Includes
  *****************************************************************************/
-#include <stdbool.h>
 #include <stdint.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include "stm32f4xx.h"
+#include "stm32f4xx_hal.h"
+
+#define ARM_MATH_CM4
+#include "arm_math.h"
 
 /******************************************************************************
  * Defines
@@ -32,37 +38,46 @@ typedef enum {
 
 /* Structure for FFT*/
 typedef struct {
-    float main_freq;
-    float signal_strength;
+    float32_t main_freq;
+    float32_t signal_strength;
     CALC_ERROR_ITEM error;
 } FFT;
 
+/* Structure for measurements*/
+typedef struct {
+	float32_t distance;
+	float32_t angle;
+	float32_t frequency;
+	float32_t current;
+} SINGLE_MEAS;
+
 /* Structure for distance and angle*/
 typedef struct {
-	float distance_r;
-	float angle_r;
-    float distance_l;
-    float angle_l;
-    float distance;
-    float angle;
+	float32_t distance_r;
+	float32_t distance_l;
+	float32_t distance;
+	float32_t angle;
 } DISTANCE_ANGLE;
 
-/* Structure for Polynomial coefficients*/
+/* Structure for Polynomial coefficients (Calibration)*/
 typedef struct {
-    float a_r;
-    float b_r;
-    float c_r;
-    float a_l;
-    float b_l;
-    float c_l;
-} POLY_COEFF;
+	float32_t a_r;
+	float32_t b_r;
+	float32_t c_r;
+	float32_t a_l;
+	float32_t b_l;
+	float32_t c_l;
+} CALIBRATION;
 
 /******************************************************************************
  * Functions
  *****************************************************************************/
-FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* samples);
-DISTANCE_ANGLE calculate_distance_and_angle(void);
-uint32_t* calculate_average_of_measurements(void);
+FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
+SINGLE_MEAS single_measurement(uint32_t* samples);
+DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
+CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[]);
+void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
+
 
 #endif	/* CALC_H_ */
 
