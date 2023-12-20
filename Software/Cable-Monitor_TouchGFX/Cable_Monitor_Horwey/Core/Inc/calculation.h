@@ -13,8 +13,14 @@
 /******************************************************************************
  * Includes
  *****************************************************************************/
-#include <stdbool.h>
 #include <stdint.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include "stm32f4xx.h"
+#include "stm32f4xx_hal.h"
+
+#define ARM_MATH_CM4
+#include "arm_math.h"
 
 /******************************************************************************
  * Defines
@@ -32,39 +38,68 @@ typedef enum {
 
 /* Structure for FFT*/
 typedef struct {
-    float main_freq;
-    float signal_strength;
+    float32_t main_freq;
+    float32_t signal_strength;
     CALC_ERROR_ITEM error;
 } FFT;
 
+/* Structure for Accurate FFT*/
+typedef struct {
+    float32_t signal_strength_pr;
+    float32_t signal_strength_pr_std_dev;
+    float32_t signal_strength_pl;
+    float32_t signal_strength_pl_std_dev;
+    float32_t signal_strength_hsr;
+    float32_t signal_strength_hsr_std_dev;
+    float32_t signal_strength_hsl;
+    float32_t signal_strength_hsl_std_dev;
+} ACCU_FFT;
+
+/* Structure for measurements*/
+typedef struct {
+	float32_t distance;
+	float32_t angle;
+	float32_t frequency;
+	float32_t current;
+} SINGLE_MEAS;
+
+/* Structure for accurate measurements*/
+typedef struct {
+	float32_t distance;
+	float32_t angle;
+	float32_t frequency;
+	float32_t current;
+    float32_t distance_std_dev;
+    float32_t angle_std_dev;
+    float32_t frequency_std_dev;
+} ACCU_MEAS;
+
 /* Structure for distance and angle*/
 typedef struct {
-	float distance_r;
-	float angle_r;
-    float distance_l;
-    float angle_l;
-    float distance;
-    float angle;
+	float32_t distance_r;
+	float32_t distance_l;
+	float32_t distance;
+	float32_t angle;
 } DISTANCE_ANGLE;
 
-/* Structure for Polynomial coefficients*/
+/* Structure for Polynomial coefficients (Calibration)*/
 typedef struct {
-    float a_r;
-    float b_r;
-    float c_r;
-    float a_l;
-    float b_l;
-    float c_l;
-} POLY_COEFF;
-
-// extern Calibration values
-extern uint32_t Calibration_Data[12];
+	float32_t a_r;
+	float32_t b_r;
+	float32_t c_r;
+	float32_t a_l;
+	float32_t b_l;
+	float32_t c_l;
+} CALIBRATION;
 
 /******************************************************************************
  * Functions
  *****************************************************************************/
-FFT calculate_freq_and_signalstrength(uint8_t Channel, uint32_t* Samples);
-DISTANCE_ANGLE calculate_distance_and_angle(uint32_t* Samples);
+SINGLE_MEAS single_measurement(uint32_t* samples);
+ACCU_MEAS accurate_measurement(uint32_t* samples);
+CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[]);
+ACCU_FFT accurate_FFT(void);
+
 
 #endif	/* CALC_H_ */
 

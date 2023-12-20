@@ -106,7 +106,7 @@ Application/User/gui/Calibration_PadView.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
- ../../Core/Inc/FLASH_SECTOR_F4.h
+ ../../Core/Inc/arm_math.h ../../Core/Inc/FLASH_SECTOR_F4.h
 ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -214,4 +214,5 @@ Application/User/gui/Calibration_PadView.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../../Core/Inc/measuring.h:
 ../../Core/Inc/calculation.h:
+../../Core/Inc/arm_math.h:
 ../../Core/Inc/FLASH_SECTOR_F4.h:

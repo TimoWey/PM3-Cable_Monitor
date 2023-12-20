@@ -32,28 +32,27 @@ void Measurement_Single_Display_1PView::testGui()
 {
 #ifndef SIMULATOR
 
+	// Start measurement
 	uint32_t* Samples = MEAS_start_measure();
 
-	//callback to fft
-	FFT fft = calculate_freq_and_signalstrength(1, Samples);
-
-	DISTANCE_ANGLE distance_angle = calculate_distance_and_angle(Samples);
+	// calculate single measurement values
+	SINGLE_MEAS single_meas = single_measurement(Samples);
 
 	//update GUI values
 	//set gauge angle
-	SMD1_Gauge.setValue(distance_angle.angle);
+	SMD1_Gauge.setValue(single_meas.angle);
 	SMD1_Gauge.invalidate();
 
 	//set current value
-	Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f", distance_angle.angle);
+	Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f", 420.69);
 	SMD1_Current.invalidate();
 
 	//set frequency value
-	Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", fft.main_freq);
+	Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", single_meas.frequency);
 	SMD1_Frequency.invalidate();
 
 	//set distance value
-	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", distance_angle.distance);
+	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
 	SMD1_Distance.invalidate();
 
 #endif

@@ -2785,7 +2785,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 0, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "\r\n/**\r\n * @brief Handles the button callback events in the Calibration_PadViewBase class.\r\n * \r\n * This function is called when a button is clicked in the Calibration_PadViewBase screen.\r\n * It performs different actions based on the button that was clicked and stores\r\n * its associated value in the FLASH\r\n * \r\n * @param src The reference to the button that triggered the callback.\r\n */\r\n\r\n#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 0, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2797,7 +2797,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 1, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 1, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2809,7 +2809,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 2, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 2, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2820,7 +2820,7 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 3, 12);\r\n\r\nUnicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 3, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2832,7 +2832,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 4, 12);\r\n\r\nUnicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 4, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2844,7 +2844,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 5, 12);\r\n\r\nUnicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2856,7 +2856,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 6, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 6, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2868,7 +2868,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 7, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 7, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2880,7 +2880,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 8, 12);\r\n\r\nUnicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 8, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2892,7 +2892,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 9, 12);\r\n\r\nUnicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 9, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2904,7 +2904,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 10, 12);\r\n\r\nUnicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 10, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2916,7 +2916,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\nSwipeContainer swipeContainer = swipeContainer1;\r\nuint32_t* Samples = MEAS_start_measure();\r\n\r\nFFT fft = calculate_freq_and_signalstrength(1, Samples);\r\n\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)fft.signal_strength, 11, 12);\r\n\r\nUnicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, \"%d\", (uint32_t)fft.signal_strength);\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           }
         ]
