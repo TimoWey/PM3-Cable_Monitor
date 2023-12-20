@@ -9,10 +9,12 @@
 #include <gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Gauge.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class Measurement_Single_Display_3PViewBase : public touchgfx::View<Measurement_Single_Display_3PPresenter>
 {
@@ -30,13 +32,32 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
+    touchgfx::Image image_background;
+    touchgfx::ButtonWithLabel buttonWithLabel_return;
+    touchgfx::TextArea textArea_n90C;
+    touchgfx::TextArea textArea_p90C;
+    touchgfx::TextArea textArea_0C;
+    touchgfx::TextAreaWithOneWildcard SMD3_Current;
+    touchgfx::TextAreaWithOneWildcard SMD3_Frequency;
+    touchgfx::TextAreaWithOneWildcard SMD3_Distance;
+    touchgfx::Gauge SMD3_gauge;
+    touchgfx::Line line2;
+    touchgfx::PainterRGB565 line2Painter;
+    touchgfx::TextArea textArea_menu;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea3;
-    touchgfx::TextArea textArea1;
-    touchgfx::ButtonWithLabel buttonWithLabel3;
+    touchgfx::TextArea textArea_name;
+    touchgfx::TextArea textArea_title;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t SMD3_CURRENT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SMD3_CurrentBuffer[SMD3_CURRENT_SIZE];
+    static const uint16_t SMD3_FREQUENCY_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SMD3_FrequencyBuffer[SMD3_FREQUENCY_SIZE];
+    static const uint16_t SMD3_DISTANCE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SMD3_DistanceBuffer[SMD3_DISTANCE_SIZE];
 
 private:
 
