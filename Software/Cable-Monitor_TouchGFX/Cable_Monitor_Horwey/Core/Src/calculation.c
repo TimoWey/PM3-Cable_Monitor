@@ -86,7 +86,7 @@ CALC_meas_data_t;
 ///< pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm
 ///< (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
 #define D_P 19.7  ///< Distance from the board center to pad center
-#define ACCURATE_MEASUREMENT_LOOPS 10  ///< How many loops for accu. meas.
+#define ACCURATE_MEASUREMENT_LOOPS 50  ///< How many loops for accu. meas.
 #define POW2(x) ((x) * (x))            ///< Power of two
 
 /******************************************************************************
@@ -97,6 +97,9 @@ CALC_meas_data_t;
  * Functions
  * ****************************************************************************/
 
+void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
+FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
+DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
 /**
  * @brief Calculates the frequency and signal strength using FFT.
  *
@@ -163,7 +166,6 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[]) {
 
 
 SINGLE_MEAS single_measurement(uint32_t* samples) {
-    
     // Create an instance of the SINGLE_MEAS structure
     SINGLE_MEAS single_meas;
     // Create an instance of the FFT structure
@@ -206,6 +208,41 @@ SINGLE_MEAS single_measurement(uint32_t* samples) {
     return single_meas;
 }
 
+ACCU_MEAS accurate_measurement(uint32_t* samples){
+    // Create an instance of the ACCU_MEAS structure
+    ACCU_MEAS accu_meas;
+    // Create an instance of the FFT structure
+
+    float32_t distance[ACCURATE_MEASUREMENT_LOOPS];
+    float32_t angle[ACCURATE_MEASUREMENT_LOOPS];
+    float32_t frequency[ACCURATE_MEASUREMENT_LOOPS];
+
+    //float32_t current[ACCU_MEASUREMENT_LOOPS];
+    for(uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
+        SINGLE_MEAS single_meas = single_measurement(samples);
+        distance[i] = single_meas.distance;
+        angle[i] = single_meas.angle;
+        frequency[i] = single_meas.frequency;
+        //current[i] = single_meas.current;
+    }
+    // Calculate the mean value of the distance
+    arm_mean_f32(distance, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.distance);
+    // Calculate standard deviation of the distance
+    arm_std_f32(distance, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.distance_std_dev);
+    // Calculate the mean value of the angle
+    arm_mean_f32(angle, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.angle);
+    // Calculate standard deviation of the angle
+    arm_std_f32(angle, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.angle_std_dev);
+    // Calculate the mean value of the frequency
+    arm_mean_f32(frequency, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.frequency);
+    // Calculate standard deviation of the frequency
+    arm_std_f32(frequency, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.frequency_std_dev);
+    // Calculate the mean value of the current
+    //arm_mean_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current);
+    // Calculate standard deviation of the current
+    //arm_std_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current_std_dev);
+    return accu_meas;
+}
 DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l){
     // TODO: Put Calibration Values in another function
     float32_t distance[3] = {10, 50, 100};
@@ -230,6 +267,7 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
 
     // Calculate the distance
     dist_angle.distance = (dist_angle.distance_l + dist_angle.distance_r) / 2;
+
     // Calculate the angle using the trigonometry
     dist_angle.angle = atanf((dist_angle.distance_l - dist_angle.distance_r) / (2 * D_P)) * (180 / PI);
 

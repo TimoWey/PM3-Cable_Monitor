@@ -51,6 +51,17 @@ typedef struct {
 	float32_t current;
 } SINGLE_MEAS;
 
+/* Structure for accurate measurements*/
+typedef struct {
+	float32_t distance;
+	float32_t angle;
+	float32_t frequency;
+	float32_t current;
+    float32_t distance_std_dev;
+    float32_t angle_std_dev;
+    float32_t frequency_std_dev;
+} ACCU_MEAS;
+
 /* Structure for distance and angle*/
 typedef struct {
 	float32_t distance_r;
@@ -72,11 +83,9 @@ typedef struct {
 /******************************************************************************
  * Functions
  *****************************************************************************/
-FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
 SINGLE_MEAS single_measurement(uint32_t* samples);
-DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
+ACCU_MEAS accurate_measurement(uint32_t* samples);
 CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[]);
-void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
 
 
 #endif	/* CALC_H_ */
