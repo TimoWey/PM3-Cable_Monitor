@@ -20,7 +20,7 @@ Main_MenuViewBase::Main_MenuViewBase() :
     image_background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_2_RESIZED_4_ID));
     add(image_background);
 
-    textArea_auto_off.setXY(86, 308);
+    textArea_auto_off.setXY(87, 308);
     textArea_auto_off.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea_auto_off.setLinespacing(0);
     Unicode::snprintf(textArea_auto_offBuffer, TEXTAREA_AUTO_OFF_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_UQO1).getText());

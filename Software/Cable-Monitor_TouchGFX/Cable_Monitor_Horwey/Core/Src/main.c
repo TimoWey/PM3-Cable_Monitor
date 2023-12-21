@@ -174,9 +174,7 @@ void gyro_disable(void);
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
-
-//int isDisplayTouched = 0;
-int sleep_timeout_value = 60;
+int sleep_timeout_value = SCREEN_TIMEOUT;
 
 void gyro_disable(void)
 {
@@ -273,8 +271,10 @@ int main(void)
   MEAS_GPIO_analog_init();         // Configure GPIOs in analog mode
   MEAS_timer_init();               // Configure the timer
 
+
   //Read flash calibration values for further calculations
   Flash_Read_Data(SECTOR_23_ADDR, Calibration_Data, 12);
+  start_calibration();
 
   /* USER CODE END 2 */
 
@@ -1290,11 +1290,11 @@ void StartTimeoutTask(void *argument)
 
 	  if(sleep_timeout_value == 0)
 	  {
-		  sleep_timeout_value = 60;
+		  sleep_timeout_value = SCREEN_TIMEOUT;
 		  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);	//shut down device
 	  }
-	  if(sleep_timeout_value > 60 && sleep_timeout_value < 0)
-		  sleep_timeout_value = 60;
+	  if(sleep_timeout_value > SCREEN_TIMEOUT && sleep_timeout_value < 0)
+		  sleep_timeout_value = SCREEN_TIMEOUT;
 
 	  // Toggle onboard LED as heartbeat visual feedback
 	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);

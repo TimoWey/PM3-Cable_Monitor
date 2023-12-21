@@ -11,7 +11,9 @@ public:
     virtual ~Measurement_Single_Display_1PView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    virtual void testGui();
+    virtual void single_measure();
+
+//    extern int sleep_timeout_value;
 
 protected:
 };
