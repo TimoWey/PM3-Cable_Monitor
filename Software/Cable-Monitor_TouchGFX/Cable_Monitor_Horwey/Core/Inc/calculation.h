@@ -82,24 +82,19 @@ typedef struct {
 	float32_t angle;
 } DISTANCE_ANGLE;
 
-/* Structure for Polynomial coefficients (Calibration)*/
-typedef struct {
-	float32_t a_r;
-	float32_t b_r;
-	float32_t c_r;
-	float32_t a_l;
-	float32_t b_l;
-	float32_t c_l;
-} CALIBRATION;
-
 /******************************************************************************
  * Functions
  *****************************************************************************/
 SINGLE_MEAS single_measurement(uint32_t* samples);
 ACCU_MEAS accurate_measurement(uint32_t* samples);
-CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[]);
 ACCU_FFT accurate_FFT(void);
+void start_calibration(void);
 
+/******************************************************************************
+ * External variables (FLASH)
+ *****************************************************************************/
+
+extern uint32_t Calibration_Data[12];
 
 #endif	/* CALC_H_ */
 
