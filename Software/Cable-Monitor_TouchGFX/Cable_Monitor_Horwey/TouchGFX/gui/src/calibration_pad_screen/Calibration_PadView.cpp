@@ -66,15 +66,3 @@ void Calibration_PadView::Load_FLASH_Values()
 
 #endif
 }
-
-void Calibration_PadView::update_Coefficients()
-{
-#ifndef SIMULATOR
-
-	// Call start_calibration to update coefficients
-	//start_calibration();
-	int i = 0;
-	i++;
-
-#endif
-}

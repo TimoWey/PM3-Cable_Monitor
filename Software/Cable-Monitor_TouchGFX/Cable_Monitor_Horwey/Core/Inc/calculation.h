@@ -99,6 +99,7 @@ SINGLE_MEAS single_measurement(uint32_t* samples);
 ACCU_MEAS accurate_measurement(uint32_t* samples);
 CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[]);
 ACCU_FFT accurate_FFT(void);
+void calculate_coeff();
 
 #endif	/* CALC_H_ */
 

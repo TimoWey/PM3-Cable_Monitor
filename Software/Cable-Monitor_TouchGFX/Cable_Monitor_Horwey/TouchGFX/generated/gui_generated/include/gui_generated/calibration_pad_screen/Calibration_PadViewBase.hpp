@@ -42,10 +42,6 @@ public:
     {
         // Override and implement this function in Calibration_Pad
     }
-    virtual void update_Coefficients()
-    {
-        // Override and implement this function in Calibration_Pad
-    }
 
 protected:
     FrontendApplication& application() {
