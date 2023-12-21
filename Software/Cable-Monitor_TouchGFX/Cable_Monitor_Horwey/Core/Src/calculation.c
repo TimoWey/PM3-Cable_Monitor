@@ -49,7 +49,7 @@
  *
  * @image html approximation_constant.jpg
  *
- * @todo Accurate Measurement, Angle Calculation, Current Calculation, Calibration Pad, Calibration Hall Sensor
+ * @todo Optimize Angle Calculation, Current Calculation, Calibration Hall Sensor
  * ----------------------------------------------------------------------------
  * @author  Alejandro Horvat, horvaale@students.zhaw.ch
  * @date	12.28.2021
@@ -76,13 +76,19 @@
 ///< pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm
 ///< (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
 #define D_P 19.7  ///< Distance from the board center to pad center
-#define ACCURATE_MEASUREMENT_LOOPS 5  ///< How many loops for accu. meas.
+#define ACCURATE_MEASUREMENT_LOOPS 20  ///< How many loops for accu. meas.
 #define POW2(x) ((x) * (x))            ///< Power of two
 
 /******************************************************************************
  * Variables
  *****************************************************************************/
+float32_t a_r = 0;
+float32_t b_r = 0;
+float32_t c_r = 0;
 
+float32_t a_l = 0;
+float32_t b_l = 0;
+float32_t c_l = 0;
 /******************************************************************************
  * Functions
  * ****************************************************************************/
@@ -185,7 +191,7 @@ ACCU_FFT accurate_FFT(void){
     float32_t samples_HSR[buffer_size];
     float32_t samples_HSL[buffer_size];
 
-    for(uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
+    for (uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
         // Start the measurement
         samples = MEAS_start_measure();
 
@@ -209,13 +215,13 @@ ACCU_FFT accurate_FFT(void){
         //current[i] = single_meas.current;
     }
     arm_mean_f32(accu_strength_PR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr);
-    //arm_std_f32(accu_strength_PR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr_std_dev);
+    arm_std_f32(accu_strength_PR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr_std_dev);
     arm_mean_f32(accu_strength_PL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl);
-    //arm_std_f32(accu_strength_PL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl_std_dev);
+    arm_std_f32(accu_strength_PL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl_std_dev);
     arm_mean_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr);
-    //arm_std_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr_std_dev);
+    arm_std_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr_std_dev);
     arm_mean_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl);
-    //arm_std_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl_std_dev);
+    arm_std_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl_std_dev);
 
     return accu_fft;
 }
@@ -333,24 +339,17 @@ ACCU_MEAS accurate_measurement(uint32_t* samples){
  * @return The calculated distance and angle.
  */
 DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l){
-    // TODO: Put Calibration Values in another function
-    float32_t distance[3] = {10, 50, 100};
-    float32_t signal_r[3] = {1030, 717, 543};
-    float32_t signal_l[3] = {920, 655, 553};
-
-    // Create an instance of the CALIBRATION structure
-	CALIBRATION calibration = start_calibration(distance, signal_r, signal_l);
 
     // Create an instance of the DISTANCE_ANGLE structure
     DISTANCE_ANGLE dist_angle;
 
     // Calculate the distance using the coefficients and the actual signal strength
-    float32_t calc_distance = calibration.a_r + (calibration.b_r / signal_strength_r) + (calibration.c_r / POW2(signal_strength_r));
+    float32_t calc_distance = a_r + (b_r / signal_strength_r) + (c_r / POW2(signal_strength_r));
     // Set the calculated values
     dist_angle.distance_r = calc_distance;
 
     // Calculate the distance using the coefficients and the actual signal strength
-    calc_distance = calibration.a_l + (calibration.b_l / signal_strength_l) + (calibration.c_l / POW2(signal_strength_l));
+    calc_distance = a_l + (b_l / signal_strength_l) + (c_l / POW2(signal_strength_l));
     // Set the calculated values
     dist_angle.distance_l = calc_distance;
 
@@ -365,26 +364,24 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
 }
 
 /**
- * @brief Starts the calibration process for the pads.
+ * @brief Starts the calibration process.
  *
- * This function calculates the coefficients for the distance approximation from a second degree polynomial
- * based on the provided signal values and distance measurements.
+ * This function creates an array of distance measurements and initializes arrays with values from the calibration (flash memory).
+ * It then calculates the coefficients for the distance approximation from a second degree polynomial using the calculate_coefficients_single_pad function.
  *
- * @param distance An array of distance measurements.
- * @param signal_pr An array of signal values from the right pad.
- * @param signal_pl An array of signal values from the left pad.
- * @return The CALIBRATION structure containing the calculated coefficients.
+ * @return None
  */
-CALIBRATION start_calibration(float32_t distance[], float32_t signal_pr[], float32_t signal_pl[])
+void start_calibration(void)
 {
-    // create an instance of the CALIBRATION structure
-    CALIBRATION calibration;
+    // create an array of distance measurements
+    float32_t distance[3] = {10, 50, 100};
+    // initialize arrays with values from the calibration (flash memory)
+    float32_t signal_pr[3] = {Calibration_Data[3], Calibration_Data[4], Calibration_Data[5]};
+    float32_t signal_pl[3] = {Calibration_Data[0], Calibration_Data[1], Calibration_Data[2]};
 
     // Calculate the coefficients for the distance approximation from a second degree polynomial
-    calculate_coefficients_single_pad(signal_pr, distance, &calibration.a_r, &calibration.b_r, &calibration.c_r);
-    calculate_coefficients_single_pad(signal_pl, distance, &calibration.a_l, &calibration.b_l, &calibration.c_l);
-
-    return calibration;
+    calculate_coefficients_single_pad(signal_pr, distance, &a_r, &b_r, &c_r);
+    calculate_coefficients_single_pad(signal_pl, distance, &a_l, &b_l, &c_l);
 }
 
 /**
@@ -411,10 +408,4 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
     // -> Result of Nspire CAS
     *c = ((s[0] * (s[0] * (s[1] * (d[0] - d[1]) - s[2] * (d[0] - d[2])) + s[1] * s[2] * (d[1] - d[2])) * s[1] * s[2]))
     / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
-}
-
-void calculate_coeff()
-{
-	int i = 0;
-	i = 1 + 2;
 }
