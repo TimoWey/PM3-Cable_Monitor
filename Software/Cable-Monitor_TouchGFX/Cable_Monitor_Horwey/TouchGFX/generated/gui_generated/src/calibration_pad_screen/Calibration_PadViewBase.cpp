@@ -654,7 +654,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         #ifndef SIMULATOR
         
         // call function in calculation.c to calculate the coefficients
-        calculate_coeff();
+        start_calibration();
         
         #endif
     }
