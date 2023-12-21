@@ -147,8 +147,8 @@ void Measurement_Single_Display_1PViewBase::handleTickEvent()
     {
         //Interaction2
         //When every N tick call virtual function
-        //Call testGui
-        testGui();
+        //Call single_measure
+        single_measure();
         frameCountInteraction2Interval = 0;
     }
 }

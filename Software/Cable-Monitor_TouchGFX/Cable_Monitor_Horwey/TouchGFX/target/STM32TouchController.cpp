@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 
 /* USER CODE BEGIN STM32TouchController */
+#include "main.h"
 #include <STM32TouchController.hpp>
 #include "Components/stmpe811/stmpe811.h"
 
@@ -74,7 +75,7 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
     {
         x = state.X;
         y = state.Y;
-        sleep_timeout_value = 60;
+        sleep_timeout_value = SCREEN_TIMEOUT;
         return true;
     }
     return false;

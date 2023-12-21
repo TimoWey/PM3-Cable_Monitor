@@ -79,6 +79,9 @@ void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint
 
 /* USER CODE BEGIN Private defines */
 #define SECTOR_23_ADDR 0x081E0000
+#define SCREEN_TIMEOUT 180
+
+extern int sleep_timeout_value;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

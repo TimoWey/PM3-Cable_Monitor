@@ -6,9 +6,9 @@
 
 extern "C"
 {
+	#include "main.h"
 	#include "measuring.h"
 	#include "calculation.h"
-
 }
 
 #endif
@@ -28,9 +28,12 @@ void Measurement_Single_Display_1PView::tearDownScreen()
     Measurement_Single_Display_1PViewBase::tearDownScreen();
 }
 
-void Measurement_Single_Display_1PView::testGui()
+void Measurement_Single_Display_1PView::single_measure()
 {
 #ifndef SIMULATOR
+
+	// set the screen timeout value
+	sleep_timeout_value = SCREEN_TIMEOUT;
 
 	// Start measurement
 	uint32_t* Samples = MEAS_start_measure();
@@ -58,9 +61,6 @@ void Measurement_Single_Display_1PView::testGui()
 		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "0");
 	else
 		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "+200");
-
-
-	//Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
 	SMD1_Distance.invalidate();
 
 #endif

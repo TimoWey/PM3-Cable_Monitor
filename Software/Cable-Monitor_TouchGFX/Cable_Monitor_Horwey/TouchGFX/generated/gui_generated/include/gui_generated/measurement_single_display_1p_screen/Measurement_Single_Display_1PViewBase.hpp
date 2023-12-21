@@ -27,7 +27,7 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void testGui()
+    virtual void single_measure()
     {
         // Override and implement this function in Measurement_Single_Display_1P
     }
