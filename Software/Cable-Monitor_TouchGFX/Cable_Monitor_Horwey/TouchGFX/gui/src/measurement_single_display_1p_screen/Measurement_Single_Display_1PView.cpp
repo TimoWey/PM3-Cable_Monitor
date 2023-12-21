@@ -52,7 +52,15 @@ void Measurement_Single_Display_1PView::testGui()
 	SMD1_Frequency.invalidate();
 
 	//set distance value
-	Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
+	if(single_meas.distance >= 0 && single_meas.distance <= 200)
+		Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
+	else if(single_meas.distance < 0)
+		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "0");
+	else
+		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "+200");
+
+
+	//Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
 	SMD1_Distance.invalidate();
 
 #endif

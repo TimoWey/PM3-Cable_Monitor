@@ -1299,17 +1299,6 @@ void StartTimeoutTask(void *argument)
 	  // Toggle onboard LED as heartbeat visual feedback
 	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
 
-	  //pwm test
-	  static uint8_t prescaler = 140;
-	  HAL_TIM_PWM_Stop(&htim14, TIM_CHANNEL_1);
-	  htim14.Init.Prescaler = prescaler-1;
-	  HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
-	  prescaler = prescaler + 10;
-	  if(prescaler > 420)
-	  {
-		  prescaler = 140;
-	  }
-
 	  osDelay(1000);
   }
   /* USER CODE END StartTimeoutTask */
