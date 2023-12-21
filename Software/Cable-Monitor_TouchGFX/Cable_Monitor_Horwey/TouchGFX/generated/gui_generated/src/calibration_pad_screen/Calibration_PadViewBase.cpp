@@ -643,14 +643,20 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
     }
     if (&src == &buttonWithLabel3)
     {
-        //interaction_menu
+        //Interaction_menu
         //When buttonWithLabel3 clicked change screen to Main_Menu
-        //Go to Main_Menu with no screen transition
-        application().gotoMain_MenuScreenNoTransition();
-        //Interaction_coeff
-        //When buttonWithLabel3 clicked call virtual function
-        //Call update_Coefficients
-        update_Coefficients();
+        //Go to Main_Menu with screen transition towards West
+        application().gotoMain_MenuScreenWipeTransitionWest();
+    
+        //Interaction_calc_coeff
+        //When Interaction_menu completed execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        // call function in calculation.c to calculate the coefficients
+        calculate_coeff();
+        
+        #endif
     }
 }
 

@@ -412,3 +412,9 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
     *c = ((s[0] * (s[0] * (s[1] * (d[0] - d[1]) - s[2] * (d[0] - d[2])) + s[1] * s[2] * (d[1] - d[2])) * s[1] * s[2]))
     / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
 }
+
+void calculate_coeff()
+{
+	int i = 0;
+	i = 1 + 2;
+}
