@@ -257,26 +257,6 @@ uint32_t* MEAS_start_measure(void)
 }
 
 /** ***************************************************************************
- * @brief Get the number of channels
- * @return Number of channels
- *****************************************************************************/
-uint8_t MEAS_get_num_of_chan(void)
-{
-	return INPUT_COUNT;
-}
-
-
-/** ***************************************************************************
- * @brief Get the number of samples
- * @return Number of samples
- *****************************************************************************/
-uint8_t MEAS_get_num_of_samples(void)
-{
-	return ADC_NUMS;
-}
-
-
-/** ***************************************************************************
  * @brief Get the sampling frequency
  * @return Sampling frequency
  *****************************************************************************/

@@ -1,5 +1,5 @@
 Application/User/calculation.o: \
- C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Core/Src/calculation.c \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Core/Src/calculation.c \
  ../../Core/Inc/calculation.h \
  ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h \
