@@ -1,5 +1,5 @@
 Application/User/gui/Main_MenuView.o: \
- C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/main_menu_screen/Main_MenuView.cpp \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/main_menu_screen/Main_MenuView.cpp \
  ../../TouchGFX/gui/include/gui/main_menu_screen/Main_MenuView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/main_menu_screen/Main_MenuViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

@@ -1,5 +1,5 @@
 Application/User/generated/Shutting_OffViewBase.o: \
- C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/shutting_off_screen/Shutting_OffViewBase.cpp \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/shutting_off_screen/Shutting_OffViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/shutting_off_screen/Shutting_OffViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

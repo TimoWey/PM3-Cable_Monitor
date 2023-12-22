@@ -76,7 +76,7 @@
 ///< pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm
 ///< (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
 #define D_P 19.7  ///< Distance from the board center to pad center
-#define ACCURATE_MEASUREMENT_LOOPS 5  ///< How many loops for accu. meas.
+#define ACCURATE_MEASUREMENT_LOOPS 10  ///< How many loops for accu. meas.
 #define POW2(x) ((x) * (x))            ///< Power of two
 
 /******************************************************************************
@@ -96,6 +96,7 @@ float32_t c_l = 0;
 void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
 FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
 DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
+void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
 
 
 /**
@@ -177,10 +178,10 @@ ACCU_FFT accurate_FFT(void){
     // Create an instance of the FFT structure
     FFT fft;
 
-    float32_t accu_strength_PR[ACCURATE_MEASUREMENT_LOOPS];
-    float32_t accu_strength_PL[ACCURATE_MEASUREMENT_LOOPS];
-    float32_t accu_strength_HSR[ACCURATE_MEASUREMENT_LOOPS];
-    float32_t accu_strength_HSL[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_PR[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_PL[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_HSR[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_HSL[ACCURATE_MEASUREMENT_LOOPS];
 
     uint32_t* samples;
 
@@ -237,7 +238,9 @@ ACCU_FFT accurate_FFT(void){
  * @param samples Pointer to the array of samples.
  * @return The SINGLE_MEAS structure containing the calculated values.
  */
-SINGLE_MEAS single_measurement(uint32_t* samples) {
+SINGLE_MEAS single_measurement(void) {
+    // Start the measurement
+    uint32_t* samples = MEAS_start_measure();
     // Create an instance of the SINGLE_MEAS structure
     SINGLE_MEAS single_meas;
     // Create an instance of the FFT structure
@@ -289,7 +292,7 @@ SINGLE_MEAS single_measurement(uint32_t* samples) {
  * @param samples Pointer to the array of samples.
  * @return ACCU_MEAS The structure containing the accurate measurement results.
  */
-ACCU_MEAS accurate_measurement(uint32_t* samples){
+ACCU_MEAS accurate_measurement(void){
     // Create an instance of the ACCU_MEAS structure
     ACCU_MEAS accu_meas;
     // Create an instance of the FFT structure
@@ -300,7 +303,7 @@ ACCU_MEAS accurate_measurement(uint32_t* samples){
     //float32_t current[ACCU_MEASUREMENT_LOOPS];
 
     for(uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
-        SINGLE_MEAS single_meas = single_measurement(samples);
+        SINGLE_MEAS single_meas = single_measurement();
         distance[i] = single_meas.distance;
         angle[i] = single_meas.angle;
         frequency[i] = single_meas.frequency;
@@ -373,13 +376,20 @@ void start_calibration(void)
 {
     // create an array of distance measurements
     float32_t distance[3] = {10, 50, 100};
+    // Measured current is 5 A and 1.2 A
+    float32_t current_1 = 5;
+    float32_t current_2 = 1.2;
+
     // initialize arrays with values from the calibration (flash memory)
     float32_t signal_pr[3] = {Calibration_Data[3], Calibration_Data[4], Calibration_Data[5]};
     float32_t signal_pl[3] = {Calibration_Data[0], Calibration_Data[1], Calibration_Data[2]};
+    float32_t current_l[3] = {Calibration_Data[6], Calibration_Data[7], Calibration_Data[8]};
+    float32_t current_r[3] = {Calibration_Data[9], Calibration_Data[10], Calibration_Data[11]};
 
     // Calculate the coefficients for the distance approximation from a second degree polynomial
     calculate_coefficients_single_pad(signal_pr, distance, &a_r, &b_r, &c_r);
     calculate_coefficients_single_pad(signal_pl, distance, &a_l, &b_l, &c_l);
+    //a_current_1_l = current_1 /
 }
 
 /**
@@ -407,3 +417,4 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
     *c = ((s[0] * (s[0] * (s[1] * (d[0] - d[1]) - s[2] * (d[0] - d[2])) + s[1] * s[2] * (d[1] - d[2])) * s[1] * s[2]))
     / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
 }
+

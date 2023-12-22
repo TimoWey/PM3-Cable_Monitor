@@ -1,5 +1,5 @@
 Application/User/gui/Measurement_Accurate_DisplayPresenter.o: \
- C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.cpp \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.cpp \
  ../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
