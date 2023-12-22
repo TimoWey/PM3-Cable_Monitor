@@ -24,7 +24,6 @@ extern "C"
 {
 	#include "measuring.h"
 	#include "calculation.h"
-	#include "core_cm4.h"
 	#include <stdint.h>
 	#include <stdio.h>
 	#include "stm32f4xx.h"
