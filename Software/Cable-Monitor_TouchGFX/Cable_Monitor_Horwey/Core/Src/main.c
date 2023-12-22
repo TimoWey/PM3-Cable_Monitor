@@ -199,7 +199,7 @@ void gyro_disable(void)
 // 3-5:  Right Pad
 // 6-8:  Left Hall
 // 9-11: Right Hall
-uint32_t Calibration_Data[12]; // The CAlibration values are read after init
+uint32_t Calibration_Data[12]; // The Calibration values are read after init
 
 // read all 12 flash values since they get erased hen writing a new value
 // proceed to write the 23 values including the new one
