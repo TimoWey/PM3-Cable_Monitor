@@ -76,7 +76,7 @@
 ///< pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm
 ///< (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
 #define D_P 19.7  ///< Distance from the board center to pad center
-#define ACCURATE_MEASUREMENT_LOOPS 20  ///< How many loops for accu. meas.
+#define ACCURATE_MEASUREMENT_LOOPS 5  ///< How many loops for accu. meas.
 #define POW2(x) ((x) * (x))            ///< Power of two
 
 /******************************************************************************
@@ -111,32 +111,31 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
  * @return FFT structure containing the calculated main frequency and signal
  *strength.
  **/
-FFT calculate_freq_and_signalstrength(float32_t input_samples[]) {
-    // Perform FFT using CMSIS-DSP library
-    const uint8_t fft_size = MEAS_get_num_of_samples();
+FFT calculate_freq_and_signalstrength(float32_t input_samples[])
+{
     // remove DC component
-    for (uint32_t i = 0; i < fft_size; i++) {
+    for (uint32_t i = 0; i < SAMPLE_LEN; i++) {
         input_samples[i] -= 2047.5;
     }
     // Create an array for the FFT output
-    float32_t fft_complex_output[2 * fft_size];
+    float32_t fft_complex_output[2 * SAMPLE_LEN];
     // Create an instance of the FFT structure
     arm_rfft_fast_instance_f32 fft_struct;
     // Initialize the FFT structure
-    arm_rfft_fast_init_f32(&fft_struct, fft_size);
+    arm_rfft_fast_init_f32(&fft_struct, SAMPLE_LEN);
     // Perform the FFT on the input samples
     arm_rfft_fast_f32(&fft_struct, input_samples, fft_complex_output, 0);
     // Calculate magnitude of complex numbers
-    arm_cmplx_mag_f32(fft_complex_output, fft_complex_output, fft_size / 2);
+    arm_cmplx_mag_f32(fft_complex_output, fft_complex_output, SAMPLE_LEN / 2);
     // Find the index of the maximum magnitude in the first half of the array
     uint32_t maxIndex;
     float32_t maxValue;
-    arm_max_f32(fft_complex_output, fft_size / 2, &maxValue, &maxIndex);
+    arm_max_f32(fft_complex_output, SAMPLE_LEN / 2, &maxValue, &maxIndex);
     // Create an instance of the FFT structure
     FFT fft;
     // Calculate the main frequency
     float main_frequency =
-        (float)maxIndex * ((float)MEAS_get_samp_freq()) / fft_size;
+        (float)maxIndex * ((float)MEAS_get_samp_freq()) / SAMPLE_LEN;
     uint8_t given_frequency = 0;
     // Check if the main frequency is in the range of 45-55 Hz
     if (main_frequency <= 55 && main_frequency >= 45) {
@@ -147,13 +146,13 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[]) {
         given_frequency = 60;
     } else given_frequency = 0;
     // calculate the index of the given frequency
-    uint32_t index = (uint32_t)given_frequency * fft_size / MEAS_get_samp_freq();
+    uint32_t index = (uint32_t)given_frequency * SAMPLE_LEN / MEAS_get_samp_freq();
     // set the signal strength to 0
     float signal_strength = 0;
     // check if the given frequency is 50 or 60 Hz
     if (given_frequency != 0) {
         // calculate the signal strength
-        signal_strength = 2 * fft_complex_output[index] / fft_size;
+        signal_strength = 2 * fft_complex_output[index] / SAMPLE_LEN;
         fft.error = CALC_ERROR_NONE;
     } else fft.error = CALC_ERROR_FREQUENCY;  // if the given frequency is not 50 or 60 Hz
     // return the calculated values
@@ -185,22 +184,22 @@ ACCU_FFT accurate_FFT(void){
 
     uint32_t* samples;
 
-    uint8_t buffer_size = MEAS_get_num_of_samples();
-    float32_t samples_PR[buffer_size];
-    float32_t samples_PL[buffer_size];
-    float32_t samples_HSR[buffer_size];
-    float32_t samples_HSL[buffer_size];
+    static float32_t samples_PR[SAMPLE_LEN];
+    static float32_t samples_PL[SAMPLE_LEN];
+    static float32_t samples_HSR[SAMPLE_LEN];
+    static float32_t samples_HSL[SAMPLE_LEN];
 
     for (uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
         // Start the measurement
         samples = MEAS_start_measure();
 
         // Convert the samples to the specific channel
-        for (uint32_t j = 0; j < buffer_size; j++) {
-            samples_PR[j] = (float32_t)samples[j * MEAS_get_num_of_chan()];
-            samples_PL[j] = (float32_t)samples[j * MEAS_get_num_of_chan() + 1];
-            samples_HSR[j] = (float32_t)samples[j * MEAS_get_num_of_chan() + 2];
-            samples_HSL[j] = (float32_t)samples[j * MEAS_get_num_of_chan() + 3];
+        for (uint32_t j = 0; j < SAMPLE_LEN; j++)
+        {
+            samples_PR[j] = (float32_t)samples[j * CHANNEL_NUM];
+            samples_PL[j] = (float32_t)samples[j * CHANNEL_NUM + 1];
+            samples_HSR[j] = (float32_t)samples[j * CHANNEL_NUM + 2];
+            samples_HSL[j] = (float32_t)samples[j * CHANNEL_NUM + 3];
         }
         // Calculate the Signal Strength and the main frequency for each channel using FFT
 
@@ -244,18 +243,17 @@ SINGLE_MEAS single_measurement(uint32_t* samples) {
     // Create an instance of the FFT structure
     FFT fft;
 
-    uint8_t buffer_size = MEAS_get_num_of_samples();
-    float32_t samples_PR[buffer_size];
-    float32_t samples_PL[buffer_size];
-    float32_t samples_HSR[buffer_size];
-    float32_t samples_HSL[buffer_size];
+    static float32_t samples_PR[SAMPLE_LEN];
+    static float32_t samples_PL[SAMPLE_LEN];
+    static float32_t samples_HSR[SAMPLE_LEN];
+    static float32_t samples_HSL[SAMPLE_LEN];
 
     // Convert the samples to the specific channel
-    for (uint32_t i = 0; i < buffer_size; i++) {
-        samples_PR[i] = (float32_t)samples[i * MEAS_get_num_of_chan()];
-        samples_PL[i] = (float32_t)samples[i * MEAS_get_num_of_chan() + 1];
-        samples_HSR[i] = (float32_t)samples[i * MEAS_get_num_of_chan() + 2];
-        samples_HSL[i] = (float32_t)samples[i * MEAS_get_num_of_chan() + 3];
+    for (uint32_t i = 0; i < 64; i++) {
+        samples_PR[i] = (float32_t)samples[(i * CHANNEL_NUM)];
+        samples_PL[i] = (float32_t)samples[(i * CHANNEL_NUM) + 1];
+        samples_HSR[i] = (float32_t)samples[(i * CHANNEL_NUM) + 2];
+        samples_HSL[i] = (float32_t)samples[(i * CHANNEL_NUM) + 3];
     }
     // Calculate the Signal Strength and the main frequency for each channel using FFT
     fft = calculate_freq_and_signalstrength(samples_PR);

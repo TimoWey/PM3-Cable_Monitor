@@ -1,5 +1,5 @@
 Application/User/FLASH_SECTOR_F4.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Core/Src/FLASH_SECTOR_F4.c \
+ C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Core/Src/FLASH_SECTOR_F4.c \
  ../../Core/Inc/FLASH_SECTOR_F4.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \

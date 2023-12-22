@@ -365,7 +365,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
-        
+
         // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 0, 12);
         
