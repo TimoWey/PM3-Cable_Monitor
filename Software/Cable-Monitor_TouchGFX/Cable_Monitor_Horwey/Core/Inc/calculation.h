@@ -86,8 +86,8 @@ typedef struct {
 /******************************************************************************
  * Functions
  *****************************************************************************/
-SINGLE_MEAS single_measurement(uint32_t* samples);
-ACCU_MEAS accurate_measurement(uint32_t* samples);
+SINGLE_MEAS single_measurement(void);
+ACCU_MEAS accurate_measurement(void);
 ACCU_FFT accurate_FFT(void);
 void start_calibration(void);
 

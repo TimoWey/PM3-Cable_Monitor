@@ -35,11 +35,9 @@ void Measurement_Single_Display_1PView::single_measure()
 	// set the screen timeout value
 	sleep_timeout_value = SCREEN_TIMEOUT;
 
-	// Start measurement
-	uint32_t* Samples = MEAS_start_measure();
 
 	// calculate single measurement values
-	SINGLE_MEAS single_meas = single_measurement(Samples);
+	SINGLE_MEAS single_meas = single_measurement();
 
 	//update GUI values
 	//set gauge angle

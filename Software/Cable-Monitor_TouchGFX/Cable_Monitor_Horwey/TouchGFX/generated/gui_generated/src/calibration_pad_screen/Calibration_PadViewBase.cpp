@@ -363,14 +363,21 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
+        NVIC_DisableIRQ(DMA2D_IRQn);
+        NVIC_DisableIRQ(LTDC_IRQn);
+        
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
-
+        
         // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 0, 12);
         
+        
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pl);
+        
+        NVIC_EnableIRQ(DMA2D_IRQn);
+        NVIC_EnableIRQ(LTDC_IRQn);
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
