@@ -39,10 +39,10 @@ void Calibration_PadView::Load_FLASH_Values()
 #ifndef SIMULATOR
 
 	SwipeContainer swipeContainer = swipeContainer1;
-	uint32_t Rx_Data[12];
+	uint32_t Rx_Data[14];
 
 	//Load the 6 Calibration Values from the Flash
-	Flash_Read_Data(0x081E0000, Rx_Data, 12);
+	Flash_Read_Data(0x081E0000, Rx_Data, 14);
 
 	// Write current Data stored in the Flash to the GUI
 	//Left Pad
@@ -54,14 +54,23 @@ void Calibration_PadView::Load_FLASH_Values()
 	Unicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, "%d", Rx_Data[4]);
 	Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, "%d", Rx_Data[5]);
 
-	//Left Pad
-	Unicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, "%d", Rx_Data[6]);
-	Unicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, "%d", Rx_Data[7]);
-	Unicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, "%d", Rx_Data[8]);
-	//Right Pad
-	Unicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, "%d", Rx_Data[9]);
-	Unicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, "%d", Rx_Data[10]);
-	Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", Rx_Data[11]);
+	// Hall Left  1P 1.2A and 5A
+	Unicode::snprintf(textAreaCal_LH_1A_1PBuffer, TEXTAREACAL_LH_1A_1P_SIZE, "%d", Rx_Data[6]);
+	Unicode::snprintf(textAreaCal_LH_5A_1PBuffer, TEXTAREACAL_LH_5A_1P_SIZE, "%d", Rx_Data[7]);
+
+	// Hall Right 1P 1.2A and 5A
+	Unicode::snprintf(textAreaCal_RH_1A_1PBuffer, TEXTAREACAL_RH_1A_1P_SIZE, "%d", Rx_Data[8]);
+	Unicode::snprintf(textAreaCal_RH_5A_1PBuffer, TEXTAREACAL_RH_5A_1P_SIZE, "%d", Rx_Data[9]);
+
+	// Hall Left  3P 1.2A and 5A
+	Unicode::snprintf(textAreaCal_LH_1A_3PBuffer, TEXTAREACAL_LH_1A_3P_SIZE, "%d", Rx_Data[10]);
+	Unicode::snprintf(textAreaCal_LH_5A_3PBuffer, TEXTAREACAL_LH_5A_3P_SIZE, "%d", Rx_Data[11]);
+
+	// Hall Right 3P 1.2A and 5A
+	Unicode::snprintf(textAreaCal_RH_1A_3PBuffer, TEXTAREACAL_RH_1A_3P_SIZE, "%d", Rx_Data[12]);
+	Unicode::snprintf(textAreaCal_RH_5A_3PBuffer, TEXTAREACAL_RH_5A_3P_SIZE, "%d", Rx_Data[13]);
+
+	// update swipe container
 	swipeContainer1.invalidate();
 
 #endif
