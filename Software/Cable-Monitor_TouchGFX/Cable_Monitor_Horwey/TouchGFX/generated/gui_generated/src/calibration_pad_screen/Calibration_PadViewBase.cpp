@@ -321,7 +321,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1_CURRENTL_3P_5A.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TIG9));
     swipeContainerHallLeft3P.add(textArea1_CURRENTL_3P_5A);
 
-    textAreaCal_LH1_1A_3P.setXY(22, 45);
+    textAreaCal_LH1_1A_3P.setXY(22, 46);
     textAreaCal_LH1_1A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textAreaCal_LH1_1A_3P.setLinespacing(0);
     Unicode::snprintf(textAreaCal_LH1_1A_3PBuffer, TEXTAREACAL_LH1_1A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VGAC).getText());
@@ -381,7 +381,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1_CURRENTR_3P_5A.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1DAG));
     swipeContainerHallRight3P.add(textArea1_CURRENTR_3P_5A);
 
-    textAreaCal_LR1_1A_3P.setXY(22, 45);
+    textAreaCal_LR1_1A_3P.setXY(22, 46);
     textAreaCal_LR1_1A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textAreaCal_LR1_1A_3P.setLinespacing(0);
     Unicode::snprintf(textAreaCal_LR1_1A_3PBuffer, TEXTAREACAL_LR1_1A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_CQXU).getText());
