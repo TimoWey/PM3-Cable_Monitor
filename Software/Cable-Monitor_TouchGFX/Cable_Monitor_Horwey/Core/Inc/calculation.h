@@ -95,7 +95,7 @@ void start_calibration(void);
  * External variables (FLASH)
  *****************************************************************************/
 
-extern uint32_t Calibration_Data[12];
+extern uint32_t Calibration_Data[14];
 
 /******************************************************************************
  * Macros (For TouchGFX)
