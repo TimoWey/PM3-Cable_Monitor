@@ -1,7 +1,7 @@
-build/MINGW32_NT-6.2/gui/src/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.o: \
- gui/src/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.cpp \
- gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2View.hpp \
- generated/gui_generated/include/gui_generated/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2ViewBase.hpp \
+build/MINGW32_NT-6.2/gui/src/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.o: \
+ gui/src/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.cpp \
+ gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp \
+ generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp \
  gui/include/gui/common/FrontendApplication.hpp \
  generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
@@ -40,7 +40,7 @@ build/MINGW32_NT-6.2/gui/src/measurement_accurate_display_2_screen/Measurement_A
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  gui/include/gui/model/Model.hpp \
  ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
- gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp \
+ gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp \
  gui/include/gui/model/ModelListener.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
@@ -72,9 +72,9 @@ build/MINGW32_NT-6.2/gui/src/measurement_accurate_display_2_screen/Measurement_A
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp
 
-gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2View.hpp:
+gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp:
 
-generated/gui_generated/include/gui_generated/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2ViewBase.hpp:
+generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp:
 
 gui/include/gui/common/FrontendApplication.hpp:
 
@@ -152,7 +152,7 @@ gui/include/gui/model/Model.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
 
-gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp:
+gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp:
 
 gui/include/gui/model/ModelListener.hpp:
 
