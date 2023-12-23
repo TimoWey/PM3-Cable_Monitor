@@ -49,7 +49,7 @@ void Measurement_Accurate_DisplayView::accu_meas(){
 	AMD1_Gauge.invalidate();
 
 	//set current value
-	Unicode::snprintfFloat(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "%.2f", 420.69);
+	Unicode::snprintfFloat(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "%.2f", accu_meas.current);
 	AMD1_Current.invalidate();
 
 	//set frequency value

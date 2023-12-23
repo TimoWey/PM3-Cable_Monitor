@@ -76,7 +76,7 @@
 ///< pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm
 ///< (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
 #define D_P 19.7  ///< Distance from the board center to pad center
-#define ACCURATE_MEASUREMENT_LOOPS 10  ///< How many loops for accu. meas.
+#define ACCURATE_MEASUREMENT_LOOPS 15  ///< How many loops for accu. meas.
 #define POW2(x) ((x) * (x))            ///< Power of two
 
 /******************************************************************************
