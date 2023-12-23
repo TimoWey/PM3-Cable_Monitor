@@ -1,5 +1,5 @@
 Application/User/stm32f4xx_it.o: \
- C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Core/Src/stm32f4xx_it.c \
+ C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Core/Src/stm32f4xx_it.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \

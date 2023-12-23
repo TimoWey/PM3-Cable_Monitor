@@ -44,17 +44,20 @@ public:
 
     void gotoMeasurement_AccurateScreenWipeTransitionWest();
 
-    // Measurement_Accurate_Display
-    void gotoMeasurement_Accurate_DisplayScreenWipeTransitionEast();
+    // Measurement_Accurate_Display_1P
+    void gotoMeasurement_Accurate_Display_1PScreenWipeTransitionEast();
 
     // Measurement_Accurate_Display_3P
     void gotoMeasurement_Accurate_Display_3PScreenWipeTransitionEast();
 
-    // Calibration_Pad
-    void gotoCalibration_PadScreenWipeTransitionEast();
+    // Calibration
+    void gotoCalibrationScreenWipeTransitionEast();
 
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEast();
+
+    // Settings
+    void gotoSettingsScreenWipeTransitionEast();
 
     // Shutting_Off
     void gotoShutting_OffScreenNoTransition();
@@ -88,17 +91,20 @@ protected:
 
     void gotoMeasurement_AccurateScreenWipeTransitionWestImpl();
 
-    // Measurement_Accurate_Display
-    void gotoMeasurement_Accurate_DisplayScreenWipeTransitionEastImpl();
+    // Measurement_Accurate_Display_1P
+    void gotoMeasurement_Accurate_Display_1PScreenWipeTransitionEastImpl();
 
     // Measurement_Accurate_Display_3P
     void gotoMeasurement_Accurate_Display_3PScreenWipeTransitionEastImpl();
 
-    // Calibration_Pad
-    void gotoCalibration_PadScreenWipeTransitionEastImpl();
+    // Calibration
+    void gotoCalibrationScreenWipeTransitionEastImpl();
 
     // Project_Info
     void gotoProject_InfoScreenWipeTransitionEastImpl();
+
+    // Settings
+    void gotoSettingsScreenWipeTransitionEastImpl();
 
     // Shutting_Off
     void gotoShutting_OffScreenNoTransitionImpl();

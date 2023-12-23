@@ -94,6 +94,12 @@ Main_MenuViewBase::Main_MenuViewBase() :
     buttonWithIcon_turn_off.setIconXY(0, 0);
     buttonWithIcon_turn_off.setAction(buttonCallback);
     add(buttonWithIcon_turn_off);
+
+    buttonWithIcon_settings.setXY(6, 5);
+    buttonWithIcon_settings.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID));
+    buttonWithIcon_settings.setIconXY(0, 0);
+    buttonWithIcon_settings.setAction(buttonCallback);
+    add(buttonWithIcon_settings);
 }
 
 Main_MenuViewBase::~Main_MenuViewBase()
@@ -118,9 +124,9 @@ void Main_MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
     if (&src == &buttonWithLabel_Calibration)
     {
         //Interaction2
-        //When buttonWithLabel_Calibration clicked change screen to Calibration_Pad
-        //Go to Calibration_Pad with screen transition towards East
-        application().gotoCalibration_PadScreenWipeTransitionEast();
+        //When buttonWithLabel_Calibration clicked change screen to Calibration
+        //Go to Calibration with screen transition towards East
+        application().gotoCalibrationScreenWipeTransitionEast();
     }
     if (&src == &buttonWithLabel_ProjectInfo)
     {
@@ -141,5 +147,12 @@ void Main_MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
         //When buttonWithIcon_turn_off clicked change screen to Shutting_Off
         //Go to Shutting_Off with no screen transition
         application().gotoShutting_OffScreenNoTransition();
+    }
+    if (&src == &buttonWithIcon_settings)
+    {
+        //Interaction6
+        //When buttonWithIcon_settings clicked change screen to Settings
+        //Go to Settings with screen transition towards East
+        application().gotoSettingsScreenWipeTransitionEast();
     }
 }

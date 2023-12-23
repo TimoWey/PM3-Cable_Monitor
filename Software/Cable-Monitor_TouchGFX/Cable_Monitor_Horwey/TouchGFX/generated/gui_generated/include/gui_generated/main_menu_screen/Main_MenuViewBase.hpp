@@ -48,6 +48,7 @@ protected:
     touchgfx::TextArea textArea_name;
     touchgfx::TextArea textArea_title;
     touchgfx::ButtonWithIcon buttonWithIcon_turn_off;
+    touchgfx::ButtonWithIcon buttonWithIcon_settings;
 
     /*
      * Wildcard Buffers

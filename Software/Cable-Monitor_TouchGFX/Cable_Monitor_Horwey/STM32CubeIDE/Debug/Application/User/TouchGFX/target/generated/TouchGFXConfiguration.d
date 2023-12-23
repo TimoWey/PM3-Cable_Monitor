@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
- C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/target/generated/TouchGFXConfiguration.cpp \
+ C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/target/generated/TouchGFXConfiguration.cpp \
  ../../TouchGFX/generated/texts/include/texts/TypedTextDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
@@ -132,15 +132,15 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
- ../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp \
- ../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PPresenter.hpp \
  ../../TouchGFX/gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp \
  ../../TouchGFX/gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp \
- ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
- ../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
@@ -290,15 +290,15 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp:
 ../../TouchGFX/gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp:
-../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp:
-../../TouchGFX/gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp:
+../../TouchGFX/gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PViewBase.hpp:
+../../TouchGFX/gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PPresenter.hpp:
 ../../TouchGFX/gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp:
 ../../TouchGFX/gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp:
-../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp:
-../../TouchGFX/gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
+../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
+../../TouchGFX/gui/include/gui/calibration_screen/CalibrationPresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
