@@ -670,7 +670,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 6, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_LH_1A_1PBuffer, TEXTAREACAL_LH1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
+        Unicode::snprintf(textAreaCal_LH_1A_1PBuffer, TEXTAREACAL_LH_1A_1P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
@@ -700,7 +700,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 7, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
+        Unicode::snprintf(textAreaCal_LH_5A_1PBuffer, TEXTAREACAL_LH_5A_1P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
@@ -727,10 +727,10 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         ACCU_FFT accu_fft = accurate_FFT();
         
         // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 8, 14);
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 8, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
+        Unicode::snprintf(textAreaCal_RH_1A_1PBuffer, TEXTAREACAL_RH_1A_1P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
@@ -760,7 +760,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 9, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        Unicode::snprintf(textAreaCal_RH_5A_1PBuffer, TEXTAREACAL_RH_5A_1P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
@@ -787,10 +787,10 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         ACCU_FFT accu_fft = accurate_FFT();
         
         // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 10, 14);
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 10, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        Unicode::snprintf(textAreaCal_LH_1A_3PBuffer, TEXTAREACAL_LH_1A_3P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
@@ -817,10 +817,10 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         ACCU_FFT accu_fft = accurate_FFT();
         
         // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 14);
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 11, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        Unicode::snprintf(textAreaCal_LH_5A_3PBuffer, TEXTAREACAL_LH_5A_3P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
@@ -867,7 +867,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 12, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        Unicode::snprintf(textAreaCal_RH_1A_3PBuffer, TEXTAREACAL_RH_1A_3P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
@@ -897,7 +897,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 13, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
-        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        Unicode::snprintf(textAreaCal_RH_5A_3PBuffer, TEXTAREACAL_RH_5A_3P_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
         
         // Enable TouchGFX Interrupts after the accurate FFT values are calculated
         ENABLE_TOUCHGFX_INTERRUPTS();
