@@ -59,7 +59,7 @@ Measurement_Accurate_Display_2ViewBase::Measurement_Accurate_Display_2ViewBase()
     AMD3_Frequency.setLinespacing(0);
     Unicode::snprintf(AMD3_FrequencyBuffer, AMD3_FREQUENCY_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RCRP).getText());
     AMD3_Frequency.setWildcard(AMD3_FrequencyBuffer);
-    AMD3_Frequency.setTypedText(touchgfx::TypedText(T_AMD3_FREQUENCY));
+    AMD3_Frequency.setTypedText(touchgfx::TypedText(T_AMD1_FREQUENCY));
     add(AMD3_Frequency);
 
     AMD3_Distance.setPosition(0, 209, 240, 15);
@@ -67,7 +67,7 @@ Measurement_Accurate_Display_2ViewBase::Measurement_Accurate_Display_2ViewBase()
     AMD3_Distance.setLinespacing(0);
     Unicode::snprintf(AMD3_DistanceBuffer, AMD3_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VKRM).getText());
     AMD3_Distance.setWildcard(AMD3_DistanceBuffer);
-    AMD3_Distance.setTypedText(touchgfx::TypedText(T_AMD3_DISTANCE));
+    AMD3_Distance.setTypedText(touchgfx::TypedText(T_AMD1_DISTANCE));
     add(AMD3_Distance);
 
     AMD3_Gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));

@@ -89,6 +89,16 @@ float32_t c_r = 0;
 float32_t a_l = 0;
 float32_t b_l = 0;
 float32_t c_l = 0;
+
+float32_t a_magn1_l = 0;
+float32_t a_magn1_r = 0;
+
+float32_t a_magn2_l = 0;
+float32_t a_magn2_r = 0;
+
+float32_t a_magn3_l = 0;
+float32_t a_magn3_r = 0;
+
 /******************************************************************************
  * Functions
  * ****************************************************************************/
@@ -97,6 +107,7 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
 FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
 DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
 void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
+void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn);
 
 
 /**
@@ -251,6 +262,9 @@ SINGLE_MEAS single_measurement(void) {
     static float32_t samples_HSR[SAMPLE_LEN];
     static float32_t samples_HSL[SAMPLE_LEN];
 
+    float32_t current_l = 0;
+    float32_t current_r = 0;
+
     // Convert the samples to the specific channel
     for (uint32_t i = 0; i < 64; i++) {
         samples_PR[i] = (float32_t)samples[(i * CHANNEL_NUM)];
@@ -277,7 +291,21 @@ SINGLE_MEAS single_measurement(void) {
     single_meas.angle = dist_angle.angle;
 
     // TODO: Calculate current
-    single_meas.current = 0;
+    if(0 <= single_meas.distance && single_meas.distance <= 25){
+        current_l = a_magn1_l * single_meas.distance * signal_strength_HSL;
+        current_r = a_magn1_r * single_meas.distance * signal_strength_HSR;
+        single_meas.current = (current_l + current_r) / 2;
+    } else if(25 < single_meas.distance && single_meas.distance <= 75){
+        current_l = a_magn2_l * single_meas.distance * signal_strength_HSL;
+        current_r = a_magn2_r * single_meas.distance * signal_strength_HSR;
+        single_meas.current = (current_l + current_r) / 2;
+    } else if (75 < single_meas.distance && single_meas.distance <= 125){
+        current_l = a_magn3_l * single_meas.distance * signal_strength_HSL;
+        current_r = a_magn3_r * single_meas.distance * signal_strength_HSR;
+        single_meas.current = (current_l + current_r) / 2;
+    } else {
+        single_meas.current = 0;
+    }
 
     return single_meas;
 }
@@ -297,17 +325,17 @@ ACCU_MEAS accurate_measurement(void){
     ACCU_MEAS accu_meas;
     // Create an instance of the FFT structure
 
-    float32_t distance[ACCURATE_MEASUREMENT_LOOPS];
-    float32_t angle[ACCURATE_MEASUREMENT_LOOPS];
-    float32_t frequency[ACCURATE_MEASUREMENT_LOOPS];
-    //float32_t current[ACCU_MEASUREMENT_LOOPS];
+    static float32_t distance[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t angle[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t frequency[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t current[ACCURATE_MEASUREMENT_LOOPS];
 
     for(uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
         SINGLE_MEAS single_meas = single_measurement();
         distance[i] = single_meas.distance;
         angle[i] = single_meas.angle;
         frequency[i] = single_meas.frequency;
-        //current[i] = single_meas.current;
+        current[i] = single_meas.current;
     }
     // Calculate the mean value of the distance
     arm_mean_f32(distance, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.distance);
@@ -322,9 +350,9 @@ ACCU_MEAS accurate_measurement(void){
     // Calculate standard deviation of the frequency
     arm_std_f32(frequency, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.frequency_std_dev);
     // Calculate the mean value of the current
-    //arm_mean_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current);
+    arm_mean_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current);
     // Calculate standard deviation of the current
-    //arm_std_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current_std_dev);
+    arm_std_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current_std_dev);
     return accu_meas;
 }
 
@@ -375,21 +403,28 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
 void start_calibration(void)
 {
     // create an array of distance measurements
-    float32_t distance[3] = {10, 50, 100};
+    static float32_t distance[3] = {10, 50, 100};
+
     // Measured current is 5 A and 1.2 A
-    float32_t current_1 = 5;
+    static float32_t current_1 = 5;
     float32_t current_2 = 1.2;
 
     // initialize arrays with values from the calibration (flash memory)
-    float32_t signal_pr[3] = {Calibration_Data[3], Calibration_Data[4], Calibration_Data[5]};
     float32_t signal_pl[3] = {Calibration_Data[0], Calibration_Data[1], Calibration_Data[2]};
-    float32_t current_l[3] = {Calibration_Data[6], Calibration_Data[7], Calibration_Data[8]};
-    float32_t current_r[3] = {Calibration_Data[9], Calibration_Data[10], Calibration_Data[11]};
+    float32_t signal_pr[3] = {Calibration_Data[3], Calibration_Data[4], Calibration_Data[5]};
+    float32_t signal_current_l[3] = {Calibration_Data[6], Calibration_Data[7], Calibration_Data[8]};
+    float32_t signal_current_r[3] = {Calibration_Data[9], Calibration_Data[10], Calibration_Data[11]};
 
     // Calculate the coefficients for the distance approximation from a second degree polynomial
     calculate_coefficients_single_pad(signal_pr, distance, &a_r, &b_r, &c_r);
     calculate_coefficients_single_pad(signal_pl, distance, &a_l, &b_l, &c_l);
-    //a_current_1_l = current_1 /
+    // Calculate the coefficients for the current approximation from a constant
+    calculate_magnetic_coefficients(signal_current_l[0], distance[0], current_1, &a_magn1_l);
+    calculate_magnetic_coefficients(signal_current_r[0], distance[0], current_1, &a_magn1_r);
+    calculate_magnetic_coefficients(signal_current_l[1], distance[1], current_1, &a_magn2_l);
+    calculate_magnetic_coefficients(signal_current_r[1], distance[1], current_1, &a_magn2_r);
+    calculate_magnetic_coefficients(signal_current_l[2], distance[2], current_1, &a_magn3_l);
+    calculate_magnetic_coefficients(signal_current_r[2], distance[2], current_1, &a_magn3_r);
 }
 
 /**
@@ -416,5 +451,19 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
     // -> Result of Nspire CAS
     *c = ((s[0] * (s[0] * (s[1] * (d[0] - d[1]) - s[2] * (d[0] - d[2])) + s[1] * s[2] * (d[1] - d[2])) * s[1] * s[2]))
     / ((POW2(s[0]) - s[0] * (s[1] + s[2]) + s[1] * s[2]) * (s[1] - s[2]));
+}
+
+/**
+ * @brief Calculates the magnetic coefficients.
+ *
+ * This function calculates the magnetic coefficients based on the given parameters.
+ *
+ * @param s The value of signal at given distance d.
+ * @param d The value of distance.
+ * @param cal_current The value of the calibration current.
+ * @param a_magn Pointer to the variable where the calculated magnetic coefficients will be stored.
+ */
+void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn){
+    *a_magn = cal_current / (s * d);
 }
 

@@ -35,9 +35,14 @@ void Measurement_Single_Display_1PView::single_measure()
 	// set the screen timeout value
 	sleep_timeout_value = SCREEN_TIMEOUT;
 
+	// Disable TouchGFX Interrupts while the accurate measurement values are calculated
+	DISABLE_TOUCHGFX_INTERRUPTS();
 
 	// calculate single measurement values
 	SINGLE_MEAS single_meas = single_measurement();
+
+	// Enable TouchGFX Interrupts after the accurate measurement values are calculated
+	ENABLE_TOUCHGFX_INTERRUPTS();
 
 	//update GUI values
 	//set gauge angle
@@ -45,7 +50,7 @@ void Measurement_Single_Display_1PView::single_measure()
 	SMD1_Gauge.invalidate();
 
 	//set current value
-	Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f", 420.69);
+	Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f", single_meas.current);
 	SMD1_Current.invalidate();
 
 	//set frequency value

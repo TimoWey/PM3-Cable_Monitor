@@ -9,12 +9,11 @@
 #ifndef CALCULATION_H_
 #define CALCULATION_H_
 
-
 /******************************************************************************
  * Includes
  *****************************************************************************/
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
@@ -31,11 +30,8 @@
 /******************************************************************************
  * Types
  *****************************************************************************/
- /* enum for errors*/
-typedef enum {
-	CALC_ERROR_FREQUENCY = 0,
-    CALC_ERROR_NONE
-} CALC_ERROR_ITEM;
+/* enum for errors*/
+typedef enum { CALC_ERROR_FREQUENCY = 0, CALC_ERROR_NONE } CALC_ERROR_ITEM;
 
 /* Structure for FFT*/
 typedef struct {
@@ -58,29 +54,30 @@ typedef struct {
 
 /* Structure for measurements*/
 typedef struct {
-	float32_t distance;
-	float32_t angle;
-	float32_t frequency;
-	float32_t current;
+    float32_t distance;
+    float32_t angle;
+    float32_t frequency;
+    float32_t current;
 } SINGLE_MEAS;
 
 /* Structure for accurate measurements*/
 typedef struct {
-	float32_t distance;
-	float32_t angle;
-	float32_t frequency;
-	float32_t current;
+    float32_t distance;
+    float32_t angle;
+    float32_t frequency;
+    float32_t current;
     float32_t distance_std_dev;
     float32_t angle_std_dev;
     float32_t frequency_std_dev;
+    float32_t current_std_dev;
 } ACCU_MEAS;
 
 /* Structure for distance and angle*/
 typedef struct {
-	float32_t distance_r;
-	float32_t distance_l;
-	float32_t distance;
-	float32_t angle;
+    float32_t distance_r;
+    float32_t distance_l;
+    float32_t distance;
+    float32_t angle;
 } DISTANCE_ANGLE;
 
 /******************************************************************************
@@ -97,5 +94,21 @@ void start_calibration(void);
 
 extern uint32_t Calibration_Data[12];
 
-#endif	/* CALC_H_ */
+/******************************************************************************
+ * Macros (For TouchGFX)
+ *****************************************************************************/
+// Enables Interrupts used for TouchGFX UI handling
+#define ENABLE_TOUCHGFX_INTERRUPTS() \
+    do {                             \
+        NVIC_EnableIRQ(DMA2D_IRQn);  \
+        NVIC_EnableIRQ(LTDC_IRQn);   \
+    } while (0)
 
+// Disables Interrupts used for TouchGFX UI handling
+#define DISABLE_TOUCHGFX_INTERRUPTS() \
+    do {                              \
+        NVIC_DisableIRQ(DMA2D_IRQn);  \
+        NVIC_DisableIRQ(LTDC_IRQn);   \
+    } while (0)
+
+#endif /* CALC_H_ */

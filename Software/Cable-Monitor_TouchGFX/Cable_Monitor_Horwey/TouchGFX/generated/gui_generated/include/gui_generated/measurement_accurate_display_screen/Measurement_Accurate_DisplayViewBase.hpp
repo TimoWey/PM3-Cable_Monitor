@@ -22,6 +22,15 @@ public:
     Measurement_Accurate_DisplayViewBase();
     virtual ~Measurement_Accurate_DisplayViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void accu_meas()
+    {
+        // Override and implement this function in Measurement_Accurate_Display
+    }
 
 protected:
     FrontendApplication& application() {
@@ -76,6 +85,12 @@ private:
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+
+    /*
+     * Tick Counter Declarations
+     */
+    static const uint32_t TICK_INTERACTION_ACCU_MEAS_INTERVAL = 5;
+    uint32_t frameCountInteraction_ACCU_MEASInterval;
 
 };
 
