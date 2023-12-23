@@ -195,11 +195,13 @@ void gyro_disable(void)
 
 // Global Calibration values
 // At distance: 10mm, 50mm and 100mm
-// 0-2:  Left Pad
-// 3-5:  Right Pad
-// 6-8:  Left Hall
-// 9-11: Right Hall
-uint32_t Calibration_Data[12]; // The Calibration values are read after init
+// 0-2:    Left Pad
+// 3-5:    Right Pad
+// 6-7:    Hall Left  1P 1.2A and 5A
+// 8-9:    Hall Right 1P 1.2A and 5A
+// 10-11:  Hall Left  3P 1.2A and 5A
+// 12-13:  Hall Right 3P 1.2A and 5A
+uint32_t Calibration_Data[14]; // The Calibration values are read after init
 
 // read all 12 flash values since they get erased hen writing a new value
 // proceed to write the 23 values including the new one

@@ -1,5 +1,5 @@
 Application/User/gui/MeasurementView.o: \
- C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/measurement_screen/MeasurementView.cpp \
+ C:/Github/Cable-Monitor/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/measurement_screen/MeasurementView.cpp \
  ../../TouchGFX/gui/include/gui/measurement_screen/MeasurementView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_screen/MeasurementViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
