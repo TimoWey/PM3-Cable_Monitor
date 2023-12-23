@@ -26,12 +26,15 @@
  *****************************************************************************/
 #define SAMPLE_LEN 64
 #define CHANNEL_NUM 4
+#define SINGLE_PHASE 1
+#define THREE_PHASE 3
 
 /******************************************************************************
  * Types
  *****************************************************************************/
 /* enum for errors*/
 typedef enum { CALC_ERROR_FREQUENCY = 0, CALC_ERROR_NONE } CALC_ERROR_ITEM;
+
 
 /* Structure for FFT*/
 typedef struct {
@@ -83,8 +86,8 @@ typedef struct {
 /******************************************************************************
  * Functions
  *****************************************************************************/
-SINGLE_MEAS single_measurement(void);
-ACCU_MEAS accurate_measurement(void);
+SINGLE_MEAS single_measurement(uint8_t Phase);
+ACCU_MEAS accurate_measurement(uint8_t Phase);
 ACCU_FFT accurate_FFT(void);
 void start_calibration(void);
 

@@ -28,8 +28,8 @@
 #include <gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp>
-#include <gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2View.hpp>
-#include <gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp>
+#include <gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp>
+#include <gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadView.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
@@ -65,7 +65,7 @@ public:
             touchgfx::meta::TypeList< Measurement_Single_Display_3PView,
             touchgfx::meta::TypeList< Measurement_AccurateView,
             touchgfx::meta::TypeList< Measurement_Accurate_DisplayView,
-            touchgfx::meta::TypeList< Measurement_Accurate_Display_2View,
+            touchgfx::meta::TypeList< Measurement_Accurate_Display_3PView,
             touchgfx::meta::TypeList< Calibration_PadView,
             touchgfx::meta::TypeList< Project_InfoView,
             touchgfx::meta::TypeList< Shutting_OffView,
@@ -88,7 +88,7 @@ public:
             touchgfx::meta::TypeList< Measurement_Single_Display_3PPresenter,
             touchgfx::meta::TypeList< Measurement_AccuratePresenter,
             touchgfx::meta::TypeList< Measurement_Accurate_DisplayPresenter,
-            touchgfx::meta::TypeList< Measurement_Accurate_Display_2Presenter,
+            touchgfx::meta::TypeList< Measurement_Accurate_Display_3PPresenter,
             touchgfx::meta::TypeList< Calibration_PadPresenter,
             touchgfx::meta::TypeList< Project_InfoPresenter,
             touchgfx::meta::TypeList< Shutting_OffPresenter,

@@ -22,6 +22,15 @@ public:
     Measurement_Single_Display_3PViewBase();
     virtual ~Measurement_Single_Display_3PViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void single_meas_3PH()
+    {
+        // Override and implement this function in Measurement_Single_Display_3P
+    }
 
 protected:
     FrontendApplication& application() {
@@ -76,6 +85,12 @@ private:
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+
+    /*
+     * Tick Counter Declarations
+     */
+    static const uint32_t TICK_INTERACTION_SINGLE_3PHA_INTERVAL = 5;
+    uint32_t frameCountInteraction_Single_3PhaInterval;
 
 };
 

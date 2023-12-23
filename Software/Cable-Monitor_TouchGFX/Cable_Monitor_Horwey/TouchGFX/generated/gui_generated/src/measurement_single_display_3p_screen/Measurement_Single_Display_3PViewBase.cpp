@@ -8,7 +8,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Measurement_Single_Display_3PViewBase::Measurement_Single_Display_3PViewBase() :
-    buttonCallback(this, &Measurement_Single_Display_3PViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Measurement_Single_Display_3PViewBase::buttonCallbackHandler),
+    frameCountInteraction_Single_3PhaInterval(0)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -136,5 +137,18 @@ void Measurement_Single_Display_3PViewBase::buttonCallbackHandler(const touchgfx
         //When buttonWithLabel_return clicked change screen to Measurement_Single
         //Go to Measurement_Single with screen transition towards East
         application().gotoMeasurement_SingleScreenWipeTransitionEast();
+    }
+}
+
+void Measurement_Single_Display_3PViewBase::handleTickEvent()
+{
+    frameCountInteraction_Single_3PhaInterval++;
+    if(frameCountInteraction_Single_3PhaInterval == TICK_INTERACTION_SINGLE_3PHA_INTERVAL)
+    {
+        //Interaction_Single_3Pha
+        //When every N tick call virtual function
+        //Call single_meas_3PH
+        single_meas_3PH();
+        frameCountInteraction_Single_3PhaInterval = 0;
     }
 }

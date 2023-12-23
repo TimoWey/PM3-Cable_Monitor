@@ -38,7 +38,7 @@ void Measurement_Accurate_DisplayView::accu_meas(){
 	DISABLE_TOUCHGFX_INTERRUPTS();
 
 	// calculate single measurement values
-	ACCU_MEAS accu_meas = accurate_measurement();
+	ACCU_MEAS accu_meas = accurate_measurement(SINGLE_PHASE);
 
 	// Enable TouchGFX Interrupts after the accurate measurement values are calculated
 	ENABLE_TOUCHGFX_INTERRUPTS();
