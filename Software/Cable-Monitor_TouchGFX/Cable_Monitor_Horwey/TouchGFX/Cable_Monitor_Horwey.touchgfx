@@ -839,7 +839,7 @@
             "Y": 209,
             "Width": 240,
             "Height": 15,
-            "TextId": "AMD3_Distance",
+            "TextId": "AMD1_Distance",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1117,7 +1117,7 @@
             "Y": 209,
             "Width": 240,
             "Height": 15,
-            "TextId": "AMD3_Distance",
+            "TextId": "AMD1_Distance",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1571,7 +1571,7 @@
             "Y": 239,
             "Width": 240,
             "Height": 15,
-            "TextId": "AMD3_CurrentAMD1_Current",
+            "TextId": "AMD1_CurrentAMD1_Current",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1590,7 +1590,7 @@
             "Y": 224,
             "Width": 240,
             "Height": 15,
-            "TextId": "AMD3_Frequency",
+            "TextId": "AMD1_Frequency",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1609,7 +1609,7 @@
             "Y": 209,
             "Width": 240,
             "Height": 15,
-            "TextId": "AMD3_Distance",
+            "TextId": "AMD1_Distance",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1749,6 +1749,17 @@
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Measurement_Accurate"
             }
+          },
+          {
+            "InteractionName": "Interaction_ACCU_MEAS",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 5
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "accu_meas"
+            }
           }
         ]
       },
@@ -1857,7 +1868,7 @@
             "Y": 224,
             "Width": 240,
             "Height": 15,
-            "TextId": "AMD3_Frequency",
+            "TextId": "AMD1_Frequency",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1876,7 +1887,7 @@
             "Y": 209,
             "Width": 240,
             "Height": 15,
-            "TextId": "AMD3_Distance",
+            "TextId": "AMD1_Distance",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -2771,8 +2782,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "\r\n/**\r\n * @brief Handles the button callback events in the Calibration_PadViewBase class.\r\n * \r\n * This function is called when a button is clicked in the Calibration_PadViewBase screen.\r\n * It performs different actions based on the button that was clicked and stores\r\n * its associated value in the FLASH\r\n * \r\n * @param src The reference to the button that triggered the callback.\r\n */\r\n\r\n#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 0, 12);\r\n\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "\r\n/**\r\n * @brief Handles the button callback events in the Calibration_PadViewBase class.\r\n * \r\n * This function is called when a button is clicked in the Calibration_PadViewBase screen.\r\n * It performs different actions based on the button that was clicked and stores\r\n * its associated value in the FLASH\r\n * \r\n * @param src The reference to the button that triggered the callback.\r\n */\r\n\r\n#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 0, 12);\r\n\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2783,8 +2794,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 1, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 1, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2795,8 +2806,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 2, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pl, 2, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pl);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2807,8 +2818,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 3, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 3, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2819,8 +2830,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 4, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 4, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2831,8 +2842,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2843,8 +2854,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 6, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 6, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2855,8 +2866,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 7, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 7, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2867,8 +2878,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 8, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsl, 8, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsl);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2879,8 +2890,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 9, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 9, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2891,8 +2902,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 10, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 10, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -2903,8 +2914,8 @@
             },
             "Action": {
               "Type": "ActionExecuteCode",
-              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n\t#include <stdint.h>\r\n\t#include <stdio.h>\r\n\t#include \"stm32f4xx.h\"\r\n\t#include \"stm32f4xx_hal.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\nNVIC_DisableIRQ(DMA2D_IRQn);\r\nNVIC_DisableIRQ(LTDC_IRQn);\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\nNVIC_EnableIRQ(DMA2D_IRQn);\r\nNVIC_EnableIRQ(LTDC_IRQn);\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {

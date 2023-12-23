@@ -363,8 +363,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -376,8 +376,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pl);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -394,8 +394,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -406,8 +406,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pl);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -424,8 +424,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -436,8 +436,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pl);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -454,8 +454,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -466,8 +466,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pr);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -484,8 +484,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -496,8 +496,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pr);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -514,8 +514,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -526,8 +526,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pr);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -544,8 +544,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -556,8 +556,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_LH1Buffer, TEXTAREACAL_LH1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -574,8 +574,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -586,8 +586,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_LH2Buffer, TEXTAREACAL_LH2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -604,8 +604,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -616,8 +616,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_LH3Buffer, TEXTAREACAL_LH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsl);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -634,8 +634,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -646,8 +646,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_RH1Buffer, TEXTAREACAL_RH1_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -664,8 +664,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -676,8 +676,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_RH2Buffer, TEXTAREACAL_RH2_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();
@@ -694,8 +694,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Assign the swipeContainer1 to swipeContainer
         SwipeContainer swipeContainer = swipeContainer1;
         
-        NVIC_DisableIRQ(DMA2D_IRQn);
-        NVIC_DisableIRQ(LTDC_IRQn);
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
         
         // Init ACCU_fft struct and calculate signal strength
         ACCU_FFT accu_fft = accurate_FFT();
@@ -706,8 +706,8 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
         
-        NVIC_EnableIRQ(DMA2D_IRQn);
-        NVIC_EnableIRQ(LTDC_IRQn);
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
         
         // Invalidate the swipeContainer1 to trigger a GUI update
         swipeContainer1.invalidate();

@@ -11,6 +11,7 @@ public:
     virtual ~Measurement_Accurate_DisplayView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void accu_meas();
 protected:
 };
 

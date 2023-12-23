@@ -68,7 +68,7 @@ Measurement_Single_Display_1PViewBase::Measurement_Single_Display_1PViewBase() :
     SMD1_Distance.setLinespacing(0);
     Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LVUK).getText());
     SMD1_Distance.setWildcard(SMD1_DistanceBuffer);
-    SMD1_Distance.setTypedText(touchgfx::TypedText(T_AMD3_DISTANCE));
+    SMD1_Distance.setTypedText(touchgfx::TypedText(T_AMD1_DISTANCE));
     add(SMD1_Distance);
 
     SMD1_Gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));

@@ -8,7 +8,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
-    buttonCallback(this, &Measurement_Accurate_DisplayViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Measurement_Accurate_DisplayViewBase::buttonCallbackHandler),
+    frameCountInteraction_ACCU_MEASInterval(0)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -51,7 +52,7 @@ Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
     AMD1_Current.setLinespacing(0);
     Unicode::snprintf(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_DKHH).getText());
     AMD1_Current.setWildcard(AMD1_CurrentBuffer);
-    AMD1_Current.setTypedText(touchgfx::TypedText(T_AMD3_CURRENTAMD1_CURRENT));
+    AMD1_Current.setTypedText(touchgfx::TypedText(T_AMD1_CURRENTAMD1_CURRENT));
     add(AMD1_Current);
 
     AMD1_Frequency.setPosition(0, 224, 240, 15);
@@ -59,7 +60,7 @@ Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
     AMD1_Frequency.setLinespacing(0);
     Unicode::snprintf(AMD1_FrequencyBuffer, AMD1_FREQUENCY_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_23ZO).getText());
     AMD1_Frequency.setWildcard(AMD1_FrequencyBuffer);
-    AMD1_Frequency.setTypedText(touchgfx::TypedText(T_AMD3_FREQUENCY));
+    AMD1_Frequency.setTypedText(touchgfx::TypedText(T_AMD1_FREQUENCY));
     add(AMD1_Frequency);
 
     AMD1_Distance.setPosition(0, 209, 240, 15);
@@ -67,7 +68,7 @@ Measurement_Accurate_DisplayViewBase::Measurement_Accurate_DisplayViewBase() :
     AMD1_Distance.setLinespacing(0);
     Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7DZL).getText());
     AMD1_Distance.setWildcard(AMD1_DistanceBuffer);
-    AMD1_Distance.setTypedText(touchgfx::TypedText(T_AMD3_DISTANCE));
+    AMD1_Distance.setTypedText(touchgfx::TypedText(T_AMD1_DISTANCE));
     add(AMD1_Distance);
 
     AMD1_Gauge.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
@@ -136,5 +137,18 @@ void Measurement_Accurate_DisplayViewBase::buttonCallbackHandler(const touchgfx:
         //When buttonWithLabel_Return clicked change screen to Measurement_Accurate
         //Go to Measurement_Accurate with screen transition towards West
         application().gotoMeasurement_AccurateScreenWipeTransitionWest();
+    }
+}
+
+void Measurement_Accurate_DisplayViewBase::handleTickEvent()
+{
+    frameCountInteraction_ACCU_MEASInterval++;
+    if(frameCountInteraction_ACCU_MEASInterval == TICK_INTERACTION_ACCU_MEAS_INTERVAL)
+    {
+        //Interaction_ACCU_MEAS
+        //When every N tick call virtual function
+        //Call accu_meas
+        accu_meas();
+        frameCountInteraction_ACCU_MEASInterval = 0;
     }
 }
