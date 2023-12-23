@@ -2099,7 +2099,7 @@
             "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
             "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerHallLeft1P",
+            "SelectedPage": "swipeContainerHallRight1P",
             "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
             "Components": [
               {
@@ -2441,12 +2441,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_LH_5A_1P",
+                    "Name": "textAreaCal_LH_5A_1P",
                     "X": 22,
                     "Y": 104,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textArea_LH_5A_1P",
+                    "TextId": "textAreaCal_LH_5A_1P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -2478,12 +2478,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_LH_1A_1P",
+                    "Name": "textAreaCal_LH_1A_1P",
                     "X": 22,
                     "Y": 46,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textArea_LH_1A_1P",
+                    "TextId": "textAreaCal_LH_1A_1P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -2601,12 +2601,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textAreaCal_LR2_5A_1P",
+                    "Name": "textAreaCal_RH_5A_1P",
                     "X": 22,
                     "Y": 104,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textAreaCal_LR2_5A_1P",
+                    "TextId": "textAreaCal_RH_5A_1P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -2653,12 +2653,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textAreaCal_LR1_1A_1P",
+                    "Name": "textAreaCal_RH_1A_1P",
                     "X": 22,
                     "Y": 46,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textAreaCal_LR1_1A_1P",
+                    "TextId": "textAreaCal_RH_1A_1P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -2667,7 +2667,7 @@
                     },
                     "AutoSize": true,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_QVI8",
+                      "TextId": "__SingleUse_FLTJ",
                       "UseBuffer": true,
                       "BufferSize": 10
                     }
@@ -2731,12 +2731,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textAreaCal_LH2_5A_3P",
+                    "Name": "textAreaCal_LH_5A_3P",
                     "X": 22,
                     "Y": 104,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textAreaCal_LH2_5A_3P",
+                    "TextId": "textAreaCal_LH_5A_3P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -2783,12 +2783,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textAreaCal_LH1_1A_3P",
+                    "Name": "textAreaCal_LH_1A_3P",
                     "X": 22,
                     "Y": 46,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textAreaCal_LH1_1A_3P",
+                    "TextId": "textAreaCal_LH_1A_3P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -2891,12 +2891,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textAreaCal_LR2_5A_3P",
+                    "Name": "textAreaCal_RH_5A_3P",
                     "X": 22,
                     "Y": 104,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textAreaCal_LR2_5A_3P",
+                    "TextId": "textAreaCal_RH_5A_3P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -2928,12 +2928,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textAreaCal_LR1_1A_3P",
+                    "Name": "textAreaCal_RH_1A_3P",
                     "X": 22,
                     "Y": 46,
                     "Width": 167,
                     "Height": 23,
-                    "TextId": "textAreaCal_LR1_1A_3P",
+                    "TextId": "textAreaCal_RH_1A_3P",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -3147,7 +3147,7 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
-              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 14);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_pr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           },
           {
@@ -3211,9 +3211,10 @@
             }
           },
           {
-            "InteractionName": "Interaction_RH3",
+            "InteractionName": "Interaction_LH2_5A_3P",
             "Trigger": {
-              "Type": "TriggerClicked"
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_LH2_5A_3P"
             },
             "Action": {
               "Type": "ActionExecuteCode",
@@ -3245,6 +3246,30 @@
               "Type": "ActionExecuteCode",
               "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"calculation.h\"\r\n\r\n}\r\n\r\n#endif",
               "Code": "#ifndef SIMULATOR\r\n\r\n// call function in calculation.c to calculate the coefficients\r\nstart_calibration();\r\n\r\n#endif\r\n\r\n"
+            }
+          },
+          {
+            "InteractionName": "Interaction_RH1_1A_3P",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_RH1_1A_3P"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
+            }
+          },
+          {
+            "InteractionName": "Interaction_RH2_5A_3P",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_RH2_5A_3P"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"measuring.h\"\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\n// Assign the swipeContainer1 to swipeContainer\r\nSwipeContainer swipeContainer = swipeContainer1;\r\n\r\n// Disable TouchGFX Interrupts while the accurate FFT values are calculated\r\nDISABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Init ACCU_fft struct and calculate signal strength\r\nACCU_FFT accu_fft = accurate_FFT();\r\n\r\n// Save the mean amplitude in the flash memory at SECTOR_23_ADDR\r\nsetCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);\r\n\r\n// Display the mean amplitude on the GUI by formatting it as a string\r\nUnicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, \"%d\", (uint32_t)accu_fft.signal_strength_hsr);\r\n\r\n// Enable TouchGFX Interrupts after the accurate FFT values are calculated\r\nENABLE_TOUCHGFX_INTERRUPTS();\r\n\r\n// Invalidate the swipeContainer1 to trigger a GUI update\r\nswipeContainer1.invalidate();\r\n\r\n#endif"
             }
           }
         ]
