@@ -119,8 +119,8 @@ void Measurement_AccurateViewBase::buttonCallbackHandler(const touchgfx::Abstrac
     if (&src == &buttonWithLabel_1Phase)
     {
         //Interaction3
-        //When buttonWithLabel_1Phase clicked change screen to Measurement_Accurate_Display
-        //Go to Measurement_Accurate_Display with screen transition towards East
-        application().gotoMeasurement_Accurate_DisplayScreenWipeTransitionEast();
+        //When buttonWithLabel_1Phase clicked change screen to Measurement_Accurate_Display_1P
+        //Go to Measurement_Accurate_Display_1P with screen transition towards East
+        application().gotoMeasurement_Accurate_Display_1PScreenWipeTransitionEast();
     }
 }

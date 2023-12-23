@@ -26,14 +26,16 @@
 #include <gui/measurement_single_display_3p_screen/Measurement_Single_Display_3PPresenter.hpp>
 #include <gui/measurement_accurate_screen/Measurement_AccurateView.hpp>
 #include <gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp>
-#include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp>
-#include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp>
+#include <gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PView.hpp>
+#include <gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PPresenter.hpp>
 #include <gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp>
 #include <gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp>
-#include <gui/calibration_pad_screen/Calibration_PadView.hpp>
-#include <gui/calibration_pad_screen/Calibration_PadPresenter.hpp>
+#include <gui/calibration_screen/CalibrationView.hpp>
+#include <gui/calibration_screen/CalibrationPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
 #include <gui/project_info_screen/Project_InfoPresenter.hpp>
+#include <gui/settings_screen/SettingsView.hpp>
+#include <gui/settings_screen/SettingsPresenter.hpp>
 #include <gui/shutting_off_screen/Shutting_OffView.hpp>
 #include <gui/shutting_off_screen/Shutting_OffPresenter.hpp>
 
@@ -64,12 +66,13 @@ public:
             touchgfx::meta::TypeList< Measurement_Single_Display_1PView,
             touchgfx::meta::TypeList< Measurement_Single_Display_3PView,
             touchgfx::meta::TypeList< Measurement_AccurateView,
-            touchgfx::meta::TypeList< Measurement_Accurate_DisplayView,
+            touchgfx::meta::TypeList< Measurement_Accurate_Display_1PView,
             touchgfx::meta::TypeList< Measurement_Accurate_Display_3PView,
-            touchgfx::meta::TypeList< Calibration_PadView,
+            touchgfx::meta::TypeList< CalibrationView,
             touchgfx::meta::TypeList< Project_InfoView,
+            touchgfx::meta::TypeList< SettingsView,
             touchgfx::meta::TypeList< Shutting_OffView,
-            touchgfx::meta::Nil > > > > > > > > > >
+            touchgfx::meta::Nil > > > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -87,12 +90,13 @@ public:
             touchgfx::meta::TypeList< Measurement_Single_Display_1PPresenter,
             touchgfx::meta::TypeList< Measurement_Single_Display_3PPresenter,
             touchgfx::meta::TypeList< Measurement_AccuratePresenter,
-            touchgfx::meta::TypeList< Measurement_Accurate_DisplayPresenter,
+            touchgfx::meta::TypeList< Measurement_Accurate_Display_1PPresenter,
             touchgfx::meta::TypeList< Measurement_Accurate_Display_3PPresenter,
-            touchgfx::meta::TypeList< Calibration_PadPresenter,
+            touchgfx::meta::TypeList< CalibrationPresenter,
             touchgfx::meta::TypeList< Project_InfoPresenter,
+            touchgfx::meta::TypeList< SettingsPresenter,
             touchgfx::meta::TypeList< Shutting_OffPresenter,
-            touchgfx::meta::Nil > > > > > > > > > >
+            touchgfx::meta::Nil > > > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

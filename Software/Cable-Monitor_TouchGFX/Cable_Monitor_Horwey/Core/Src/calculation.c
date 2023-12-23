@@ -407,7 +407,7 @@ void start_calibration(void)
 
     // Measured current is 5 A and 1.2 A
     static float32_t current_1 = 5;
-    float32_t current_2 = 1.2;
+//    float32_t current_2 = 1.2;
 
     // initialize arrays with values from the calibration (flash memory)
     float32_t signal_pl[3] = {Calibration_Data[0], Calibration_Data[1], Calibration_Data[2]};

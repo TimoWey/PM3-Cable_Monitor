@@ -92,21 +92,25 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  gui/include/gui/measurement_accurate_screen/Measurement_AccurateView.hpp \
  generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measurement_AccurateViewBase.hpp \
  gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp \
- gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp \
- generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp \
- gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp \
+ gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PView.hpp \
+ generated/gui_generated/include/gui_generated/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PViewBase.hpp \
+ gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PPresenter.hpp \
  gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp \
  generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp \
  gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp \
- gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp \
- generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp \
- gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp \
+ gui/include/gui/calibration_screen/CalibrationView.hpp \
+ generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
+ gui/include/gui/calibration_screen/CalibrationPresenter.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
  gui/include/gui/project_info_screen/Project_InfoView.hpp \
  generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
  gui/include/gui/project_info_screen/Project_InfoPresenter.hpp \
+ gui/include/gui/settings_screen/SettingsView.hpp \
+ generated/gui_generated/include/gui_generated/settings_screen/SettingsViewBase.hpp \
+ gui/include/gui/settings_screen/SettingsPresenter.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
  gui/include/gui/shutting_off_screen/Shutting_OffView.hpp \
  generated/gui_generated/include/gui_generated/shutting_off_screen/Shutting_OffViewBase.hpp \
  gui/include/gui/shutting_off_screen/Shutting_OffPresenter.hpp \
@@ -298,11 +302,11 @@ generated/gui_generated/include/gui_generated/measurement_accurate_screen/Measur
 
 gui/include/gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp:
 
-gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp:
+gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PView.hpp:
 
-generated/gui_generated/include/gui_generated/measurement_accurate_display_screen/Measurement_Accurate_DisplayViewBase.hpp:
+generated/gui_generated/include/gui_generated/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PViewBase.hpp:
 
-gui/include/gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp:
+gui/include/gui/measurement_accurate_display_1p_screen/Measurement_Accurate_Display_1PPresenter.hpp:
 
 gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp:
 
@@ -310,11 +314,11 @@ generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_sc
 
 gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp:
 
-gui/include/gui/calibration_pad_screen/Calibration_PadView.hpp:
+gui/include/gui/calibration_screen/CalibrationView.hpp:
 
-generated/gui_generated/include/gui_generated/calibration_pad_screen/Calibration_PadViewBase.hpp:
+generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
 
-gui/include/gui/calibration_pad_screen/Calibration_PadPresenter.hpp:
+gui/include/gui/calibration_screen/CalibrationPresenter.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp:
 
@@ -327,6 +331,14 @@ gui/include/gui/project_info_screen/Project_InfoView.hpp:
 generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp:
 
 gui/include/gui/project_info_screen/Project_InfoPresenter.hpp:
+
+gui/include/gui/settings_screen/SettingsView.hpp:
+
+generated/gui_generated/include/gui_generated/settings_screen/SettingsViewBase.hpp:
+
+gui/include/gui/settings_screen/SettingsPresenter.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
 
 gui/include/gui/shutting_off_screen/Shutting_OffView.hpp:
 
