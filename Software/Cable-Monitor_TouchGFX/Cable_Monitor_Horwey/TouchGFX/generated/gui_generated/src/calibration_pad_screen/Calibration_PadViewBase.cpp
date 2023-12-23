@@ -179,14 +179,14 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1_LH.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F9FQ));
     swipeContainerHallLeft1P.add(textArea1_LH);
 
-    textArea_LH_5A_1P.setXY(22, 104);
-    textArea_LH_5A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea_LH_5A_1P.setLinespacing(0);
-    Unicode::snprintf(textArea_LH_5A_1PBuffer, TEXTAREA_LH_5A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_XQGX).getText());
-    textArea_LH_5A_1P.setWildcard(textArea_LH_5A_1PBuffer);
-    textArea_LH_5A_1P.resizeToCurrentText();
-    textArea_LH_5A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREA_LH_5A_1P));
-    swipeContainerHallLeft1P.add(textArea_LH_5A_1P);
+    textAreaCal_LH_5A_1P.setXY(22, 104);
+    textAreaCal_LH_5A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LH_5A_1P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_LH_5A_1PBuffer, TEXTAREACAL_LH_5A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_XQGX).getText());
+    textAreaCal_LH_5A_1P.setWildcard(textAreaCal_LH_5A_1PBuffer);
+    textAreaCal_LH_5A_1P.resizeToCurrentText();
+    textAreaCal_LH_5A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LH_5A_1P));
+    swipeContainerHallLeft1P.add(textAreaCal_LH_5A_1P);
 
     textArea1_CURRENTL_1P_5A.setXY(22, 89);
     textArea1_CURRENTL_1P_5A.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -194,14 +194,14 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1_CURRENTL_1P_5A.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4L3I));
     swipeContainerHallLeft1P.add(textArea1_CURRENTL_1P_5A);
 
-    textArea_LH_1A_1P.setXY(22, 46);
-    textArea_LH_1A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea_LH_1A_1P.setLinespacing(0);
-    Unicode::snprintf(textArea_LH_1A_1PBuffer, TEXTAREA_LH_1A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VYCK).getText());
-    textArea_LH_1A_1P.setWildcard(textArea_LH_1A_1PBuffer);
-    textArea_LH_1A_1P.resizeToCurrentText();
-    textArea_LH_1A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREA_LH_1A_1P));
-    swipeContainerHallLeft1P.add(textArea_LH_1A_1P);
+    textAreaCal_LH_1A_1P.setXY(22, 46);
+    textAreaCal_LH_1A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LH_1A_1P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_LH_1A_1PBuffer, TEXTAREACAL_LH_1A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VYCK).getText());
+    textAreaCal_LH_1A_1P.setWildcard(textAreaCal_LH_1A_1PBuffer);
+    textAreaCal_LH_1A_1P.resizeToCurrentText();
+    textAreaCal_LH_1A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LH_1A_1P));
+    swipeContainerHallLeft1P.add(textAreaCal_LH_1A_1P);
 
     textArea1_CURRENTL_1P_1A.setXY(22, 28);
     textArea1_CURRENTL_1P_1A.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -246,14 +246,14 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     buttonWithIcon_RH2_5A_1P.setAction(buttonCallback);
     swipeContainerHallRight1P.add(buttonWithIcon_RH2_5A_1P);
 
-    textAreaCal_LR2_5A_1P.setXY(22, 104);
-    textAreaCal_LR2_5A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textAreaCal_LR2_5A_1P.setLinespacing(0);
-    Unicode::snprintf(textAreaCal_LR2_5A_1PBuffer, TEXTAREACAL_LR2_5A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_96P2).getText());
-    textAreaCal_LR2_5A_1P.setWildcard(textAreaCal_LR2_5A_1PBuffer);
-    textAreaCal_LR2_5A_1P.resizeToCurrentText();
-    textAreaCal_LR2_5A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LR2_5A_1P));
-    swipeContainerHallRight1P.add(textAreaCal_LR2_5A_1P);
+    textAreaCal_RH_5A_1P.setXY(22, 104);
+    textAreaCal_RH_5A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_RH_5A_1P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_RH_5A_1PBuffer, TEXTAREACAL_RH_5A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_96P2).getText());
+    textAreaCal_RH_5A_1P.setWildcard(textAreaCal_RH_5A_1PBuffer);
+    textAreaCal_RH_5A_1P.resizeToCurrentText();
+    textAreaCal_RH_5A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RH_5A_1P));
+    swipeContainerHallRight1P.add(textAreaCal_RH_5A_1P);
 
     textArea1_CURRENTR_1P_5A.setXY(22, 89);
     textArea1_CURRENTR_1P_5A.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -267,14 +267,14 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     buttonWithIcon_RH1_1A_1P.setAction(buttonCallback);
     swipeContainerHallRight1P.add(buttonWithIcon_RH1_1A_1P);
 
-    textAreaCal_LR1_1A_1P.setXY(22, 46);
-    textAreaCal_LR1_1A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textAreaCal_LR1_1A_1P.setLinespacing(0);
-    Unicode::snprintf(textAreaCal_LR1_1A_1PBuffer, TEXTAREACAL_LR1_1A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QVI8).getText());
-    textAreaCal_LR1_1A_1P.setWildcard(textAreaCal_LR1_1A_1PBuffer);
-    textAreaCal_LR1_1A_1P.resizeToCurrentText();
-    textAreaCal_LR1_1A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LR1_1A_1P));
-    swipeContainerHallRight1P.add(textAreaCal_LR1_1A_1P);
+    textAreaCal_RH_1A_1P.setXY(22, 46);
+    textAreaCal_RH_1A_1P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_RH_1A_1P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_RH_1A_1PBuffer, TEXTAREACAL_RH_1A_1P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_FLTJ).getText());
+    textAreaCal_RH_1A_1P.setWildcard(textAreaCal_RH_1A_1PBuffer);
+    textAreaCal_RH_1A_1P.resizeToCurrentText();
+    textAreaCal_RH_1A_1P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RH_1A_1P));
+    swipeContainerHallRight1P.add(textAreaCal_RH_1A_1P);
 
     textArea1_CURRENTR_1P_1A.setXY(22, 28);
     textArea1_CURRENTR_1P_1A.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -301,18 +301,19 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     line1_LH_3P.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     swipeContainerHallLeft3P.add(line1_LH_3P);
 
-    textAreaCal_LH2_5A_3P.setXY(22, 104);
-    textAreaCal_LH2_5A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textAreaCal_LH2_5A_3P.setLinespacing(0);
-    Unicode::snprintf(textAreaCal_LH2_5A_3PBuffer, TEXTAREACAL_LH2_5A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZBRC).getText());
-    textAreaCal_LH2_5A_3P.setWildcard(textAreaCal_LH2_5A_3PBuffer);
-    textAreaCal_LH2_5A_3P.resizeToCurrentText();
-    textAreaCal_LH2_5A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LH2_5A_3P));
-    swipeContainerHallLeft3P.add(textAreaCal_LH2_5A_3P);
+    textAreaCal_LH_5A_3P.setXY(22, 104);
+    textAreaCal_LH_5A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LH_5A_3P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_LH_5A_3PBuffer, TEXTAREACAL_LH_5A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZBRC).getText());
+    textAreaCal_LH_5A_3P.setWildcard(textAreaCal_LH_5A_3PBuffer);
+    textAreaCal_LH_5A_3P.resizeToCurrentText();
+    textAreaCal_LH_5A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LH_5A_3P));
+    swipeContainerHallLeft3P.add(textAreaCal_LH_5A_3P);
 
     buttonWithIcon_LH2_5A_3P.setXY(194, 97);
     buttonWithIcon_LH2_5A_3P.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_LH2_5A_3P.setIconXY(0, 0);
+    buttonWithIcon_LH2_5A_3P.setAction(buttonCallback);
     swipeContainerHallLeft3P.add(buttonWithIcon_LH2_5A_3P);
 
     textArea1_CURRENTL_3P_5A.setXY(22, 89);
@@ -321,14 +322,14 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1_CURRENTL_3P_5A.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TIG9));
     swipeContainerHallLeft3P.add(textArea1_CURRENTL_3P_5A);
 
-    textAreaCal_LH1_1A_3P.setXY(22, 46);
-    textAreaCal_LH1_1A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textAreaCal_LH1_1A_3P.setLinespacing(0);
-    Unicode::snprintf(textAreaCal_LH1_1A_3PBuffer, TEXTAREACAL_LH1_1A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VGAC).getText());
-    textAreaCal_LH1_1A_3P.setWildcard(textAreaCal_LH1_1A_3PBuffer);
-    textAreaCal_LH1_1A_3P.resizeToCurrentText();
-    textAreaCal_LH1_1A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LH1_1A_3P));
-    swipeContainerHallLeft3P.add(textAreaCal_LH1_1A_3P);
+    textAreaCal_LH_1A_3P.setXY(22, 46);
+    textAreaCal_LH_1A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_LH_1A_3P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_LH_1A_3PBuffer, TEXTAREACAL_LH_1A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VGAC).getText());
+    textAreaCal_LH_1A_3P.setWildcard(textAreaCal_LH_1A_3PBuffer);
+    textAreaCal_LH_1A_3P.resizeToCurrentText();
+    textAreaCal_LH_1A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LH_1A_3P));
+    swipeContainerHallLeft3P.add(textAreaCal_LH_1A_3P);
 
     buttonWithIcon_LH1_1A_3P.setXY(193, 39);
     buttonWithIcon_LH1_1A_3P.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
@@ -364,16 +365,17 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     buttonWithIcon_RH2_5A_3P.setXY(194, 97);
     buttonWithIcon_RH2_5A_3P.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_RH2_5A_3P.setIconXY(0, 0);
+    buttonWithIcon_RH2_5A_3P.setAction(buttonCallback);
     swipeContainerHallRight3P.add(buttonWithIcon_RH2_5A_3P);
 
-    textAreaCal_LR2_5A_3P.setXY(22, 104);
-    textAreaCal_LR2_5A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textAreaCal_LR2_5A_3P.setLinespacing(0);
-    Unicode::snprintf(textAreaCal_LR2_5A_3PBuffer, TEXTAREACAL_LR2_5A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YG18).getText());
-    textAreaCal_LR2_5A_3P.setWildcard(textAreaCal_LR2_5A_3PBuffer);
-    textAreaCal_LR2_5A_3P.resizeToCurrentText();
-    textAreaCal_LR2_5A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LR2_5A_3P));
-    swipeContainerHallRight3P.add(textAreaCal_LR2_5A_3P);
+    textAreaCal_RH_5A_3P.setXY(22, 104);
+    textAreaCal_RH_5A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_RH_5A_3P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_RH_5A_3PBuffer, TEXTAREACAL_RH_5A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YG18).getText());
+    textAreaCal_RH_5A_3P.setWildcard(textAreaCal_RH_5A_3PBuffer);
+    textAreaCal_RH_5A_3P.resizeToCurrentText();
+    textAreaCal_RH_5A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RH_5A_3P));
+    swipeContainerHallRight3P.add(textAreaCal_RH_5A_3P);
 
     textArea1_CURRENTR_3P_5A.setXY(22, 89);
     textArea1_CURRENTR_3P_5A.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -381,18 +383,19 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
     textArea1_CURRENTR_3P_5A.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1DAG));
     swipeContainerHallRight3P.add(textArea1_CURRENTR_3P_5A);
 
-    textAreaCal_LR1_1A_3P.setXY(22, 46);
-    textAreaCal_LR1_1A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textAreaCal_LR1_1A_3P.setLinespacing(0);
-    Unicode::snprintf(textAreaCal_LR1_1A_3PBuffer, TEXTAREACAL_LR1_1A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_CQXU).getText());
-    textAreaCal_LR1_1A_3P.setWildcard(textAreaCal_LR1_1A_3PBuffer);
-    textAreaCal_LR1_1A_3P.resizeToCurrentText();
-    textAreaCal_LR1_1A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_LR1_1A_3P));
-    swipeContainerHallRight3P.add(textAreaCal_LR1_1A_3P);
+    textAreaCal_RH_1A_3P.setXY(22, 46);
+    textAreaCal_RH_1A_3P.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaCal_RH_1A_3P.setLinespacing(0);
+    Unicode::snprintf(textAreaCal_RH_1A_3PBuffer, TEXTAREACAL_RH_1A_3P_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_CQXU).getText());
+    textAreaCal_RH_1A_3P.setWildcard(textAreaCal_RH_1A_3PBuffer);
+    textAreaCal_RH_1A_3P.resizeToCurrentText();
+    textAreaCal_RH_1A_3P.setTypedText(touchgfx::TypedText(T_TEXTAREACAL_RH_1A_3P));
+    swipeContainerHallRight3P.add(textAreaCal_RH_1A_3P);
 
     buttonWithIcon_RH1_1A_3P.setXY(193, 39);
     buttonWithIcon_RH1_1A_3P.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID), touchgfx::Bitmap(BITMAP_CHECKMARK_ID));
     buttonWithIcon_RH1_1A_3P.setIconXY(0, 0);
+    buttonWithIcon_RH1_1A_3P.setAction(buttonCallback);
     swipeContainerHallRight3P.add(buttonWithIcon_RH1_1A_3P);
 
     textArea1_CURRENTR_3P_1A.setXY(22, 28);
@@ -403,7 +406,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
 
     swipeContainer1.add(swipeContainerHallRight3P);
 
-    swipeContainer1.setSelectedPage(2);
+    swipeContainer1.setSelectedPage(3);
     add(swipeContainer1);
 
     line1_1.setPosition(0, 75, 240, 10);
@@ -634,7 +637,7 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         ACCU_FFT accu_fft = accurate_FFT();
         
         // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
-        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 12);
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_pr, 5, 14);
         
         // Display the mean amplitude on the GUI by formatting it as a string
         Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_pr);
@@ -797,6 +800,36 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         
         #endif
     }
+    if (&src == &buttonWithIcon_LH2_5A_3P)
+    {
+        //Interaction_LH2_5A_3P
+        //When buttonWithIcon_LH2_5A_3P clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        // Assign the swipeContainer1 to swipeContainer
+        SwipeContainer swipeContainer = swipeContainer1;
+        
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
+        
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
+        
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);
+        
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
+        swipeContainer1.invalidate();
+        
+        #endif
+    }
     if (&src == &buttonWithLabel3)
     {
         //Interaction_menu
@@ -811,6 +844,66 @@ void Calibration_PadViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         
         // call function in calculation.c to calculate the coefficients
         start_calibration();
+        
+        #endif
+    }
+    if (&src == &buttonWithIcon_RH1_1A_3P)
+    {
+        //Interaction_RH1_1A_3P
+        //When buttonWithIcon_RH1_1A_3P clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        // Assign the swipeContainer1 to swipeContainer
+        SwipeContainer swipeContainer = swipeContainer1;
+        
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
+        
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
+        
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);
+        
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
+        swipeContainer1.invalidate();
+        
+        #endif
+    }
+    if (&src == &buttonWithIcon_RH2_5A_3P)
+    {
+        //Interaction_RH2_5A_3P
+        //When buttonWithIcon_RH2_5A_3P clicked execute C++ code
+        //Execute C++ code
+        #ifndef SIMULATOR
+        
+        // Assign the swipeContainer1 to swipeContainer
+        SwipeContainer swipeContainer = swipeContainer1;
+        
+        // Disable TouchGFX Interrupts while the accurate FFT values are calculated
+        DISABLE_TOUCHGFX_INTERRUPTS();
+        
+        // Init ACCU_fft struct and calculate signal strength
+        ACCU_FFT accu_fft = accurate_FFT();
+        
+        // Save the mean amplitude in the flash memory at SECTOR_23_ADDR
+        setCalibrationFlashValues(SECTOR_23_ADDR, (uint32_t)accu_fft.signal_strength_hsr, 11, 12);
+        
+        // Display the mean amplitude on the GUI by formatting it as a string
+        Unicode::snprintf(textAreaCal_RH3Buffer, TEXTAREACAL_RH3_SIZE, "%d", (uint32_t)accu_fft.signal_strength_hsr);
+        
+        // Enable TouchGFX Interrupts after the accurate FFT values are calculated
+        ENABLE_TOUCHGFX_INTERRUPTS();
+        
+        // Invalidate the swipeContainer1 to trigger a GUI update
+        swipeContainer1.invalidate();
         
         #endif
     }
