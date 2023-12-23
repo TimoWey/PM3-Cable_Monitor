@@ -249,7 +249,7 @@ ACCU_FFT accurate_FFT(void){
  * @param samples Pointer to the array of samples.
  * @return The SINGLE_MEAS structure containing the calculated values.
  */
-SINGLE_MEAS single_measurement(void) {
+SINGLE_MEAS single_measurement(uint8_t Phase) {
     // Start the measurement
     uint32_t* samples = MEAS_start_measure();
     // Create an instance of the SINGLE_MEAS structure
@@ -320,7 +320,7 @@ SINGLE_MEAS single_measurement(void) {
  * @param samples Pointer to the array of samples.
  * @return ACCU_MEAS The structure containing the accurate measurement results.
  */
-ACCU_MEAS accurate_measurement(void){
+ACCU_MEAS accurate_measurement(uint8_t Phase){
     // Create an instance of the ACCU_MEAS structure
     ACCU_MEAS accu_meas;
     // Create an instance of the FFT structure
@@ -331,7 +331,7 @@ ACCU_MEAS accurate_measurement(void){
     static float32_t current[ACCURATE_MEASUREMENT_LOOPS];
 
     for(uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
-        SINGLE_MEAS single_meas = single_measurement();
+        SINGLE_MEAS single_meas = single_measurement(Phase);
         distance[i] = single_meas.distance;
         angle[i] = single_meas.angle;
         frequency[i] = single_meas.frequency;

@@ -1,6 +1,6 @@
-Application/User/generated/Measurement_Accurate_Display_2ViewBase.o: \
- C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2ViewBase.cpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2ViewBase.hpp \
+Application/User/generated/Measurement_Accurate_Display_3PViewBase.o: \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.cpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
@@ -39,7 +39,7 @@ Application/User/generated/Measurement_Accurate_Display_2ViewBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
- ../../TouchGFX/gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp \
+ ../../TouchGFX/gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
@@ -74,7 +74,7 @@ Application/User/generated/Measurement_Accurate_Display_2ViewBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
-../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2ViewBase.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:
@@ -113,7 +113,7 @@ Application/User/generated/Measurement_Accurate_Display_2ViewBase.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
 ../../TouchGFX/gui/include/gui/model/Model.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
-../../TouchGFX/gui/include/gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp:
+../../TouchGFX/gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:

@@ -17,7 +17,4 @@ void Measurement_Accurate_Display_2Presenter::deactivate()
 
 }
 
-void Measurement_Accurate_Display_2Presenter::setTimeoutValue(int value)
-{
 
-}

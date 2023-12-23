@@ -11,6 +11,8 @@ public:
     virtual ~Measurement_Single_Display_3PView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void single_meas_3PH();
+
 protected:
 };
 

@@ -1257,6 +1257,17 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Measurement_Single"
             }
+          },
+          {
+            "InteractionName": "Interaction_Single_3Pha",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 5
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "single_meas_3PH"
+            }
           }
         ]
       },
@@ -1467,7 +1478,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "Measurement_Accurate_Display_2"
+              "ActionComponent": "Measurement_Accurate_Display_3P"
             }
           },
           {
@@ -1764,7 +1775,7 @@
         ]
       },
       {
-        "Name": "Measurement_Accurate_Display_2",
+        "Name": "Measurement_Accurate_Display_3P",
         "CanvasBufferSize": 3600,
         "Components": [
           {
@@ -2026,6 +2037,17 @@
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Measurement_Accurate"
+            }
+          },
+          {
+            "InteractionName": "Interaction_accu_3PH",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 5
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "accu_meas_3PH"
             }
           }
         ]

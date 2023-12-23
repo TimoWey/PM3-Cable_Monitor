@@ -23,8 +23,8 @@
 #include <gui/measurement_accurate_screen/Measurement_AccuratePresenter.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayView.hpp>
 #include <gui/measurement_accurate_display_screen/Measurement_Accurate_DisplayPresenter.hpp>
-#include <gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2View.hpp>
-#include <gui/measurement_accurate_display_2_screen/Measurement_Accurate_Display_2Presenter.hpp>
+#include <gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp>
+#include <gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PPresenter.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadView.hpp>
 #include <gui/calibration_pad_screen/Calibration_PadPresenter.hpp>
 #include <gui/project_info_screen/Project_InfoView.hpp>
@@ -174,17 +174,17 @@ void FrontendApplicationBase::gotoMeasurement_Accurate_DisplayScreenWipeTransiti
     touchgfx::makeTransition<Measurement_Accurate_DisplayView, Measurement_Accurate_DisplayPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Measurement_Accurate_Display_2
+// Measurement_Accurate_Display_3P
 
-void FrontendApplicationBase::gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoMeasurement_Accurate_Display_3PScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMeasurement_Accurate_Display_3PScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoMeasurement_Accurate_Display_2ScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoMeasurement_Accurate_Display_3PScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<Measurement_Accurate_Display_2View, Measurement_Accurate_Display_2Presenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<Measurement_Accurate_Display_3PView, Measurement_Accurate_Display_3PPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Calibration_Pad

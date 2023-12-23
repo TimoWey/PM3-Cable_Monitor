@@ -39,7 +39,7 @@ void Measurement_Single_Display_1PView::single_measure()
 	DISABLE_TOUCHGFX_INTERRUPTS();
 
 	// calculate single measurement values
-	SINGLE_MEAS single_meas = single_measurement();
+	SINGLE_MEAS single_meas = single_measurement(SINGLE_PHASE);
 
 	// Enable TouchGFX Interrupts after the accurate measurement values are calculated
 	ENABLE_TOUCHGFX_INTERRUPTS();
