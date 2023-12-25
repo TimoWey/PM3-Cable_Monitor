@@ -56,9 +56,15 @@ void Measurement_Single_Display_3PView::single_meas_3PH()
 		Unicode::snprintf(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "TOO FAR");
 		SMD3_Current.invalidate();
 	} else{
-		//set current value
-		Unicode::snprintfFloat(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "%.2f A", single_meas.current);
-		SMD3_Current.invalidate();
+		// set current value
+		// Check if current is within range of 0 - 10 A
+		if(single_meas.current >= 0 && single_meas.current <= 10){
+			Unicode::snprintfFloat(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "%.2f A", single_meas.current);
+			SMD3_Current.invalidate();
+		} else {
+			Unicode::snprintf(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "TOO FAR");
+			SMD3_Current.invalidate();
+		}
 	}
 
 	// Check if there is an error with the frequency
@@ -83,13 +89,14 @@ void Measurement_Single_Display_3PView::single_meas_3PH()
 		SMD3_Current.invalidate();
 	} else{
 		//set distance value
+		// Check if distance is within range of 0 to 200 mm
 		if(single_meas.distance >= 0 && single_meas.distance <= 200)
 			Unicode::snprintfFloat(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "%.2f mm", single_meas.distance);
 		else if(single_meas.distance < 0)
 			Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "0 mm");
 		else{
 			Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "+200 mm");
-			Unicode::snprintf(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "DISCONNECTED");
+			Unicode::snprintf(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "TOO FAR");
 		}
 		SMD3_Distance.invalidate();
 		SMD3_Current.invalidate();
