@@ -310,12 +310,14 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     }
 
     if(single_meas.distance > 0 && single_meas.distance < 200 && (State_BUZZER == false))
-    {
-//    	TIM14->CCR1 = 50;
     	TIM14->CCR1 = 50 + (single_meas.distance/4);
-    }
     else
     	TIM14->CCR1 = 0;
+
+    if(single_meas.distance > 0 && single_meas.distance < 200 && (State_LED == false))
+    	TIM5->CCR1 = abs(100 - (int)(single_meas.distance/2));
+    else
+    	TIM5->CCR1 = 0;
 
     return single_meas;
 }
@@ -497,12 +499,12 @@ void toggle_Buzzer_settings(bool btn)
 		if(State_LED == true)
 		{
 			State_LED = false;
-	//		ENABLE_LED();
+			ENABLE_LED();
 		}
 		else
 		{
 			State_LED = true;
-	//		DISABLE_LED();
+			DISABLE_LED();
 		}
 	}
 }
