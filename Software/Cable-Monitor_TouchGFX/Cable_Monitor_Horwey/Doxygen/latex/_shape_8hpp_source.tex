@@ -1,0 +1,99 @@
+\doxysection{Shape.\+hpp}
+\hypertarget{_shape_8hpp_source}{}\label{_shape_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp}}
+\mbox{\hyperlink{_shape_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_SHAPE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_SHAPE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_shape_8hpp}{touchgfx/widgets/canvas/AbstractShape.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_c_w_r_util_8hpp}{touchgfx/widgets/canvas/CWRUtil.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{template}\ <u\textcolor{keywordtype}{int}16\_t\ POINTS>}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_shape}{Shape}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_shape}{AbstractShape}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_shape_ab40cd0bda24df8eeee4814b20c097a09}{getNumPoints}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ POINTS;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_shape_a87c01fded8e9f2914a49610eb67ae9c2}{setCorner}}(\textcolor{keywordtype}{int}\ i,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ x,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ y)}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 0\ \&\&\ i\ <\ POINTS)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ xCorner[i]\ =\ x,\ yCorner[i]\ =\ y;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_shape_a3052823962db0c1039764d85a8a5c507}{getCornerX}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00052\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 0\ \&\&\ i\ <\ POINTS)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ xCorner[i];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ CWRUtil::toQ5<int>(0);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_shape_ae53f67e27aa83307fee7bd25956c8346}{getCornerY}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00061\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 0\ \&\&\ i\ <\ POINTS)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ yCorner[i];}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ CWRUtil::toQ5<int>(0);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_shape_abb3e50f0ec178c200f55501f3862571d}{setCache}}(\textcolor{keywordtype}{int}\ i,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ x,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ y)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 0\ \&\&\ i\ <\ POINTS)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ xCache[i]\ =\ x,\ yCache[i]\ =\ y;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_shape_a795b94abcb0d5d774bb4599dfddad8ed}{getCacheX}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00079\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 0\ \&\&\ i\ <\ POINTS)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ xCache[i];}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ CWRUtil::toQ5<int>(0);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_shape_a8d491b9b7a6bf52fda7d43b3caac5555}{getCacheY}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00088\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 0\ \&\&\ i\ <\ POINTS)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ yCache[i];}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ CWRUtil::toQ5<int>(0);}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ xCorner[POINTS];}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ yCorner[POINTS];}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ xCache[POINTS];}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ yCache[POINTS];}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_SHAPE\_HPP}}
+
+\end{DoxyCode}

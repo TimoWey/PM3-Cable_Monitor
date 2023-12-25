@@ -1,0 +1,103 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+test\+\_\+assert.h File Reference}
+\hypertarget{_s_d_l__test__assert_8h}{}\label{_s_d_l__test__assert_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_test\_assert.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_test\_assert.h}}
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__test__assert_8h_adc9dbc949d8699a6f6515211a2efa0cf}\label{_s_d_l__test__assert_8h_adc9dbc949d8699a6f6515211a2efa0cf} 
+\#define {\bfseries ASSERT\+\_\+\+FAIL}~0
+\begin{DoxyCompactList}\small\item\em Fails the assert. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__test__assert_8h_ae67a2f28e6df1e351df870754835a09a}\label{_s_d_l__test__assert_8h_ae67a2f28e6df1e351df870754835a09a} 
+\#define {\bfseries ASSERT\+\_\+\+PASS}~1
+\begin{DoxyCompactList}\small\item\em Passes the assert. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_s_d_l__test__assert_8h_a633252c9cb122f42c502ca43d6f842ad}{SDLTest\+\_\+\+Assert}} (int assert\+Condition, SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}assert\+Description,...) SDL\+\_\+\+PRINTF\+\_\+\+VARARG\+\_\+\+FUNC(2)
+\begin{DoxyCompactList}\small\item\em Assert that logs and break execution flow on failures. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab}{SDLTest\+\_\+\+Assert\+Check}} (int assert\+Condition, SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}assert\+Description,...) SDL\+\_\+\+PRINTF\+\_\+\+VARARG\+\_\+\+FUNC(2)
+\begin{DoxyCompactList}\small\item\em Assert for test cases that logs but does not break execution flow on failures. Updates assertion counters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9}{SDLTest\+\_\+\+Assert\+Pass}} (SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}assert\+Description,...) SDL\+\_\+\+PRINTF\+\_\+\+VARARG\+\_\+\+FUNC(1)
+\begin{DoxyCompactList}\small\item\em Explicitly pass without checking an assertion condition. Updates assertion counter. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__test__assert_8h_a64f6f1dfd462826ad4fbc33bc0658954}\label{_s_d_l__test__assert_8h_a64f6f1dfd462826ad4fbc33bc0658954} 
+void {\bfseries SDLTest\+\_\+\+Reset\+Assert\+Summary} ()
+\begin{DoxyCompactList}\small\item\em Resets the assert summary counters to zero. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__test__assert_8h_a91bf7c3d801ba6d0ded433e5ed661bbe}\label{_s_d_l__test__assert_8h_a91bf7c3d801ba6d0ded433e5ed661bbe} 
+void {\bfseries SDLTest\+\_\+\+Log\+Assert\+Summary} ()
+\begin{DoxyCompactList}\small\item\em Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_d_l__test__assert_8h_a2196b3c11e7eba93ec4ff797ed20bc3c}{SDLTest\+\_\+\+Assert\+Summary\+To\+Test\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Converts the current assert summary state to a test result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL test framework.
+
+This code is a part of the SDL2\+\_\+test library, not the main SDL library. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__test__assert_8h_a633252c9cb122f42c502ca43d6f842ad}\label{_s_d_l__test__assert_8h_a633252c9cb122f42c502ca43d6f842ad} 
+\index{SDL\_test\_assert.h@{SDL\_test\_assert.h}!SDLTest\_Assert@{SDLTest\_Assert}}
+\index{SDLTest\_Assert@{SDLTest\_Assert}!SDL\_test\_assert.h@{SDL\_test\_assert.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Assert()}{SDLTest\_Assert()}}
+{\footnotesize\ttfamily void SDLTest\+\_\+\+Assert (\begin{DoxyParamCaption}\item[{int}]{assert\+Condition,  }\item[{SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}}]{assert\+Description,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Assert that logs and break execution flow on failures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assert\+Condition} & Evaluated condition or variable to assert; fail (==0) or pass (!=0). \\
+\hline
+{\em assert\+Description} & Message to log with the assert describing it. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab}\label{_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab} 
+\index{SDL\_test\_assert.h@{SDL\_test\_assert.h}!SDLTest\_AssertCheck@{SDLTest\_AssertCheck}}
+\index{SDLTest\_AssertCheck@{SDLTest\_AssertCheck}!SDL\_test\_assert.h@{SDL\_test\_assert.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_AssertCheck()}{SDLTest\_AssertCheck()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Assert\+Check (\begin{DoxyParamCaption}\item[{int}]{assert\+Condition,  }\item[{SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}}]{assert\+Description,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Assert for test cases that logs but does not break execution flow on failures. Updates assertion counters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assert\+Condition} & Evaluated condition or variable to assert; fail (==0) or pass (!=0). \\
+\hline
+{\em assert\+Description} & Message to log with the assert describing it.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the assert\+Condition so it can be used to externally to break execution flow if desired. 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9}\label{_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9} 
+\index{SDL\_test\_assert.h@{SDL\_test\_assert.h}!SDLTest\_AssertPass@{SDLTest\_AssertPass}}
+\index{SDLTest\_AssertPass@{SDLTest\_AssertPass}!SDL\_test\_assert.h@{SDL\_test\_assert.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_AssertPass()}{SDLTest\_AssertPass()}}
+{\footnotesize\ttfamily void SDLTest\+\_\+\+Assert\+Pass (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}}]{assert\+Description,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Explicitly pass without checking an assertion condition. Updates assertion counter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assert\+Description} & Message to log with the assert describing it. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_s_d_l__test__assert_8h_a2196b3c11e7eba93ec4ff797ed20bc3c}\label{_s_d_l__test__assert_8h_a2196b3c11e7eba93ec4ff797ed20bc3c} 
+\index{SDL\_test\_assert.h@{SDL\_test\_assert.h}!SDLTest\_AssertSummaryToTestResult@{SDLTest\_AssertSummaryToTestResult}}
+\index{SDLTest\_AssertSummaryToTestResult@{SDLTest\_AssertSummaryToTestResult}!SDL\_test\_assert.h@{SDL\_test\_assert.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_AssertSummaryToTestResult()}{SDLTest\_AssertSummaryToTestResult()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Assert\+Summary\+To\+Test\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts the current assert summary state to a test result. 
+
+\begin{DoxyReturn}{Returns}
+TEST\+\_\+\+RESULT\+\_\+\+PASSED, TEST\+\_\+\+RESULT\+\_\+\+FAILED, or TEST\+\_\+\+RESULT\+\_\+\+NO\+\_\+\+ASSERT 
+\end{DoxyReturn}

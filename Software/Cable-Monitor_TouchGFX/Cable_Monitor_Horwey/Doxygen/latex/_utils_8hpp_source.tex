@@ -1,0 +1,89 @@
+\doxysection{Utils.\+hpp}
+\hypertarget{_utils_8hpp_source}{}\label{_utils_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp}}
+\mbox{\hyperlink{_utils_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_UTILS\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_UTILS\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#if\ defined(SIMULATOR)\ \&\&\ !defined(\_\_linux\_\_)}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ touchgfx\_enable\_stdio();}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ touchgfx\_enable\_stdio()}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifdef\ SIMULATOR}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ touchgfx\_printf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ ...);}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ touchgfx\_printf(format,\ ...)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetouchgfx_acf0eb29ab5799003b29406ae2ffa08ff}{memset}}(\textcolor{keywordtype}{void}*\ data,\ uint8\_t\ c,\ uint32\_t\ size);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00084\ \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{RenderingVariant}}\ \mbox{\hyperlink{namespacetouchgfx_a97c066a7eff2a0f94f0caa59b3c99774}{lookupNearestNeighborRenderVariant}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bitmap);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00094\ \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{RenderingVariant}}\ \mbox{\hyperlink{namespacetouchgfx_ab9fe3338e9a34bc45218c5fd202d29dd}{lookupBilinearRenderVariant}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bitmap);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00105\ T\ \mbox{\hyperlink{namespacetouchgfx_a869b95e7df114093b0cbb0056baedf9c}{abs}}(T\ d)}
+\DoxyCodeLine{00106\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ (d\ <\ 0)\ ?\ -\/d\ :\ d;}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00119\ T\ \mbox{\hyperlink{namespacetouchgfx_af9ccec0b1c2c7a516aee2276eea316cf}{sign}}(T\ d)}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ (d\ <\ 0)\ ?\ -\/1\ :\ ((d\ >\ 0)\ ?\ 1\ :\ 0);}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00134\ T\ \mbox{\hyperlink{namespacetouchgfx_a59c06314a1c4a83698403edf6c3423e0}{gcd}}(T\ a,\ T\ b)}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ ==\ 0)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ b\ \%=\ a;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ ==\ 0)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ a\ \%=\ b;}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00160\ int32\_t\ \mbox{\hyperlink{namespacetouchgfx_ab91dc48422fd4abb18201e52e4c331d8}{clz}}(int32\_t\ x);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00171\ int32\_t\ \mbox{\hyperlink{namespacetouchgfx_a27db6083d6446785bf5da0ba18e345e5}{clzu}}(uint32\_t\ x);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00191\ int32\_t\ \mbox{\hyperlink{namespacetouchgfx_a68ac725a2e6c1d44ee47ac8a672827c4}{muldiv}}(int32\_t\ factor1,\ int32\_t\ factor2,\ int32\_t\ divisor,\ int32\_t\&\ remainder);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00211\ uint32\_t\ \mbox{\hyperlink{namespacetouchgfx_aebb075340cef308ba6fdc25d8ac61cbf}{muldivu}}(uint32\_t\ factor1,\ uint32\_t\ factor2,\ uint32\_t\ divisor,\ uint32\_t\&\ remainder);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00228\ int32\_t\ \mbox{\hyperlink{namespacetouchgfx_a68ac725a2e6c1d44ee47ac8a672827c4}{muldiv}}(int32\_t\ factor1,\ int32\_t\ factor2,\ int32\_t\ divisor);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_UTILS\_HPP}}
+
+\end{DoxyCode}

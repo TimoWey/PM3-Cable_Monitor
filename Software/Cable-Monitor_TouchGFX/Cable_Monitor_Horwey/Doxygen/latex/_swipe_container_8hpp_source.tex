@@ -1,0 +1,120 @@
+\doxysection{Swipe\+Container.\+hpp}
+\hypertarget{_swipe_container_8hpp_source}{}\label{_swipe_container_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/SwipeContainer.hpp}}
+\mbox{\hyperlink{_swipe_container_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_SWIPECONTAINER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_SWIPECONTAINER\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_list_layout_8hpp}{touchgfx/containers/ListLayout.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_click_event_8hpp}{touchgfx/events/ClickEvent.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drag_event_8hpp}{touchgfx/events/DragEvent.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_gesture_event_8hpp}{touchgfx/events/GestureEvent.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8hpp}{touchgfx/widgets/Image.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_tiled_image_8hpp}{touchgfx/widgets/TiledImage.hpp}}>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_swipe_container}{SwipeContainer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container}{SwipeContainer}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container}{\string~SwipeContainer}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_ae405e78e7514372be0cec1da879fc1b1}{handleTickEvent}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a461531fcd4efcd58cfcfd3ac1224aa48}{handleClickEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_click_event}{ClickEvent}}\&\ event);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a13407676afbf2b41b4bf4171b760557b}{handleDragEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{DragEvent}}\&\ event);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_adc0864634b47e181cfe5b6bbeb8019d5}{handleGestureEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{GestureEvent}}\&\ event);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a1be3e0826e2dcf36ffc5244151fbb3cb}{add}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ page);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a988b5bde59ac5d3c038d3012d3876963}{remove}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ page);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a385cc952161cc18b96377aa1a9e9e4af}{setSwipeCutoff}}(uint16\_t\ cutoff);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a66291663588ce040924777a65c645888}{setPageIndicatorXY}}(int16\_t\ x,\ int16\_t\ y);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_ae742214ef6ea3e2c3bf2e00fd5d55dee}{setPageIndicatorXYWithCenteredX}}(int16\_t\ x,\ int16\_t\ y);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_aa862b780b20bae1bf4cff9a9a0af1145}{setPageIndicatorCenteredX}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_aa862b780b20bae1bf4cff9a9a0af1145}{setPageIndicatorCenteredX}}(int16\_t\ x);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a2bc97b03c067c0f7d3ff6c0c016e162d}{setPageIndicatorBitmaps}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ normalPage,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ highlightedPage);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a69304d900e4da968dd7b0774226e922c}{setEndSwipeElasticWidth}}(uint16\_t\ width);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a41a95e0d8542f06bf800f3cdaa3c0a36}{getNumberOfPages}}()}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pageIndicator.getNumberOfPages();}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a72c436a76b14494a4cb63dae55936e09}{setSelectedPage}}(uint8\_t\ pageIndex);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00170\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container_a03f6a6ef878fde6f19917afc47e61963}{getSelectedPage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int16\_t\ DRAG\_CANCEL\_THRESHOLD\ =\ 3;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{enum}\ States}
+\DoxyCodeLine{00176\ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ ANIMATE\_SWIPE\_CANCELLED\_LEFT,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ ANIMATE\_SWIPE\_CANCELLED\_RIGHT,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ ANIMATE\_LEFT,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ ANIMATE\_RIGHT,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ NO\_ANIMATION}
+\DoxyCodeLine{00182\ \ \ \ \ \}\ currentState;}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ uint8\_t\ animationCounter;}
+\DoxyCodeLine{00185\ \ \ \ \ uint16\_t\ swipeCutoff;}
+\DoxyCodeLine{00186\ \ \ \ \ int16\_t\ dragX;}
+\DoxyCodeLine{00187\ \ \ \ \ int16\_t\ animateDistance;}
+\DoxyCodeLine{00188\ \ \ \ \ int16\_t\ startX;}
+\DoxyCodeLine{00189\ \ \ \ \ uint16\_t\ endElasticWidth;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ ListLayout\ pages;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ adjustPages();}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ animateSwipeCancelledLeft();}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ animateSwipeCancelledRight();}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ animateLeft();}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ animateRight();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{class\ }PageIndicator\ :\ \textcolor{keyword}{public}\ Container}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ PageIndicator();}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setNumberOfPages(uint8\_t\ size);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setBitmaps(\textcolor{keyword}{const}\ Bitmap\&\ normalPage,\ \textcolor{keyword}{const}\ Bitmap\&\ highlightedPage);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ goRight();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ goLeft();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCurrentPage(uint8\_t\ page);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ uint8\_t\ getNumberOfPages()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ uint8\_t\ getCurrentPage()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ TiledImage\ unselectedPages;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ Image\ selectedPage;}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ uint8\_t\ numberOfPages;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ uint8\_t\ currentPage;}
+\DoxyCodeLine{00217\ \ \ \ \ \}\ pageIndicator;}
+\DoxyCodeLine{00218\ \};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_SWIPECONTAINER\_HPP}}
+
+\end{DoxyCode}

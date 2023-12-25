@@ -1,0 +1,97 @@
+\doxysection{jinclude.\+h}
+\hypertarget{jinclude_8h_source}{}\label{jinclude_8h_source}\index{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jinclude.h@{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jinclude.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ jinclude.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1991-\/1994,\ Thomas\ G.\ Lane.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Independent\ JPEG\ Group's\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ For\ conditions\ of\ distribution\ and\ use,\ see\ the\ accompanying\ README\ file.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ This\ file\ exists\ to\ provide\ a\ single\ place\ to\ fix\ any\ problems\ with}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ including\ the\ wrong\ system\ include\ files.\ \ (Common\ problems\ are\ taken}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ care\ of\ by\ the\ standard\ jconfig\ symbols,\ but\ on\ really\ weird\ systems}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ you\ may\ have\ to\ edit\ this\ file.)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ NOTE:\ this\ file\ is\ NOT\ intended\ to\ be\ included\ by\ applications\ using\ the}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ JPEG\ library.\ \ Most\ applications\ need\ only\ include\ jpeglib.h.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ Include\ auto-\/config\ file\ to\ find\ out\ which\ system\ include\ files\ we\ need.\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}jconfig.h"{}}\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ auto\ configuration\ options\ */}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ JCONFIG\_INCLUDED\ \ \ \ }\textcolor{comment}{/*\ so\ that\ jpeglib.h\ doesn't\ do\ it\ again\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ We\ need\ the\ NULL\ macro\ and\ size\_t\ typedef.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ On\ an\ ANSI-\/conforming\ system\ it\ is\ sufficient\ to\ include\ <stddef.h>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ Otherwise,\ we\ get\ them\ from\ <stdlib.h>\ or\ <stdio.h>;\ we\ may\ have\ to}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ pull\ in\ <sys/types.h>\ as\ well.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ Note\ that\ the\ core\ JPEG\ library\ does\ not\ require\ <stdio.h>;}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ only\ the\ default\ error\ handler\ and\ data\ source/destination\ modules\ do.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ But\ we\ must\ pull\ it\ in\ because\ of\ the\ references\ to\ FILE\ in\ jpeglib.h.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ You\ can\ remove\ those\ references\ if\ you\ want\ to\ compile\ without\ <stdio.h>.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ HAVE\_STDDEF\_H}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ HAVE\_STDLIB\_H}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ NEED\_SYS\_TYPES\_H}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ We\ need\ memory\ copying\ and\ zeroing\ functions,\ plus\ strncpy().}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ ANSI\ and\ System\ V\ implementations\ declare\ these\ in\ <string.h>.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ BSD\ doesn't\ have\ the\ mem()\ functions,\ but\ it\ does\ have\ bcopy()/bzero().}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ Some\ systems\ may\ declare\ memset\ and\ memcpy\ in\ <memory.h>.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ NOTE:\ we\ assume\ the\ size\ parameters\ to\ these\ functions\ are\ of\ type\ size\_t.}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ Change\ the\ casts\ in\ these\ macros\ if\ not!}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifdef\ NEED\_BSD\_STRINGS}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <strings.h>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ MEMZERO(target,size)\ \ \ \ bzero((void\ *)(target),\ (size\_t)(size))}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ MEMCOPY(dest,src,size)\ \ bcopy((const\ void\ *)(src),\ (void\ *)(dest),\ (size\_t)(size))}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ not\ BSD,\ assume\ ANSI/SysV\ string\ lib\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ MEMZERO(target,size)\ \ \ \ memset((void\ *)(target),\ 0,\ (size\_t)(size))}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ MEMCOPY(dest,src,size)\ \ memcpy((void\ *)(dest),\ (const\ void\ *)(src),\ (size\_t)(size))}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ In\ ANSI\ C,\ and\ indeed\ any\ rational\ implementation,\ size\_t\ is\ also\ the}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ type\ returned\ by\ sizeof().\ \ However,\ it\ seems\ there\ are\ some\ irrational}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ implementations\ out\ there,\ in\ which\ sizeof()\ returns\ an\ int\ even\ though}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ size\_t\ is\ defined\ as\ long\ or\ unsigned\ long.\ \ To\ ensure\ consistent\ results}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ we\ always\ use\ this\ SIZEOF()\ macro\ in\ place\ of\ using\ sizeof()\ directly.}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ SIZEOF(object)\ \ ((size\_t)\ sizeof(object))}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *\ The\ modules\ that\ use\ fread()\ and\ fwrite()\ always\ invoke\ them\ through}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ these\ macros.\ \ On\ some\ systems\ you\ may\ need\ to\ twiddle\ the\ argument\ casts.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *\ CAUTION:\ argument\ order\ is\ different\ from\ underlying\ functions!}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ JFREAD(file,buf,sizeofbuf)\ \ \(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ ((size\_t)\ fread((void\ *)\ (buf),\ (size\_t)\ 1,\ (size\_t)\ (sizeofbuf),\ (file)))}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ JFWRITE(file,buf,sizeofbuf)\ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ ((size\_t)\ fwrite((const\ void\ *)\ (buf),\ (size\_t)\ 1,\ (size\_t)\ (sizeofbuf),\ (file)))}}
+
+\end{DoxyCode}

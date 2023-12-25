@@ -1,0 +1,129 @@
+\doxysection{touchgfx\+::Animated\+Image\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_animated_image_button_style}{}\label{classtouchgfx_1_1_animated_image_button_style}\index{touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Animated\+Image\+Button\+Style.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Animated\+Image\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_animated_image_button_style}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style_a94ec9a7c24f03e3f51cc71c114938fac}{set\+Bitmaps}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap\+Start, const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap\+End)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style_a7e74049c9c7004dbc927ee5347b4c023}{set\+Bitmap\+XY}} (uint16\+\_\+t x, uint16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style_a0891d20bad119e589986e8a295b49e7b}{set\+Update\+Ticks\+Interval}} (uint8\+\_\+t update\+Interval)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style_a22e0a1fd779ac4bdf037387d2033d4c7}{handle\+Pressed\+Updated}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style_ad200c2cc689349d2c59c764ce74277eb}{handle\+Alpha\+Updated}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_button_style_ab1a5252fa33e7c658fa2a91171e1eb5e}\label{classtouchgfx_1_1_animated_image_button_style_ab1a5252fa33e7c658fa2a91171e1eb5e} 
+\mbox{\hyperlink{classtouchgfx_1_1_animated_image}{Animated\+Image}} {\bfseries button\+Animated\+Image}
+\begin{DoxyCompactList}\small\item\em The button animated image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Animated\+Image\+Button\+Style$<$ T $>$}
+An animated image button style. An animated image button style. This class is supposed to be used with one of the Button\+Trigger classes to create a functional button. This class will show the first or last image of an animated image depending on the state of the button (pressed or released). When the state changes the button will show the sequence of images in forward or reversed order.
+
+The \doxylink{classtouchgfx_1_1_animated_image_button_style}{Animated\+Image\+Button\+Style} will set the size of the enclosing container (normally \doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container}) to the size of the first \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. This can be overridden by calling set\+Width/set\+Height after setting the bitmaps.
+
+The position of the bitmap can be adjusted with set\+Bitmap\+XY (default is upper left corner).
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Generic type parameter. Typically a \doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container} subclass.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_animated_image_button_style_ad200c2cc689349d2c59c764ce74277eb}\label{classtouchgfx_1_1_animated_image_button_style_ad200c2cc689349d2c59c764ce74277eb} 
+\index{touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}!handleAlphaUpdated@{handleAlphaUpdated}}
+\index{handleAlphaUpdated@{handleAlphaUpdated}!touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleAlphaUpdated()}{handleAlphaUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style}{touchgfx\+::\+Animated\+Image\+Button\+Style}}$<$ T $>$\+::handle\+Alpha\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the alpha is updated.   \Hypertarget{classtouchgfx_1_1_animated_image_button_style_a22e0a1fd779ac4bdf037387d2033d4c7}\label{classtouchgfx_1_1_animated_image_button_style_a22e0a1fd779ac4bdf037387d2033d4c7} 
+\index{touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}!handlePressedUpdated@{handlePressedUpdated}}
+\index{handlePressedUpdated@{handlePressedUpdated}!touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handlePressedUpdated()}{handlePressedUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style}{touchgfx\+::\+Animated\+Image\+Button\+Style}}$<$ T $>$\+::handle\+Pressed\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the pressed state is updated.   \Hypertarget{classtouchgfx_1_1_animated_image_button_style_a94ec9a7c24f03e3f51cc71c114938fac}\label{classtouchgfx_1_1_animated_image_button_style_a94ec9a7c24f03e3f51cc71c114938fac} 
+\index{touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}!setBitmaps@{setBitmaps}}
+\index{setBitmaps@{setBitmaps}!touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setBitmaps()}{setBitmaps()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style}{touchgfx\+::\+Animated\+Image\+Button\+Style}}$<$ T $>$\+::set\+Bitmaps (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bitmap\+Start,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bitmap\+End }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the bitmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap\+Start} & The bitmap start. \\
+\hline
+{\em bitmap\+End} & The bitmap end. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_animated_image_button_style_a7e74049c9c7004dbc927ee5347b4c023}\label{classtouchgfx_1_1_animated_image_button_style_a7e74049c9c7004dbc927ee5347b4c023} 
+\index{touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}!setBitmapXY@{setBitmapXY}}
+\index{setBitmapXY@{setBitmapXY}!touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setBitmapXY()}{setBitmapXY()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style}{touchgfx\+::\+Animated\+Image\+Button\+Style}}$<$ T $>$\+::set\+Bitmap\+XY (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets bitmap x and y.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & An uint16\+\_\+t to process. \\
+\hline
+{\em y} & An uint16\+\_\+t to process. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_animated_image_button_style_a0891d20bad119e589986e8a295b49e7b}\label{classtouchgfx_1_1_animated_image_button_style_a0891d20bad119e589986e8a295b49e7b} 
+\index{touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}!setUpdateTicksInterval@{setUpdateTicksInterval}}
+\index{setUpdateTicksInterval@{setUpdateTicksInterval}!touchgfx::AnimatedImageButtonStyle$<$ T $>$@{touchgfx::AnimatedImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setUpdateTicksInterval()}{setUpdateTicksInterval()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_button_style}{touchgfx\+::\+Animated\+Image\+Button\+Style}}$<$ T $>$\+::set\+Update\+Ticks\+Interval (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{update\+Interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets update ticks interval.
+
+
+\begin{DoxyParams}{Parameters}
+{\em update\+Interval} & The update interval. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/buttons/\mbox{\hyperlink{_animated_image_button_style_8hpp}{Animated\+Image\+Button\+Style.\+hpp}}\end{DoxyCompactItemize}

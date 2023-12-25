@@ -1,0 +1,182 @@
+\doxysection{Paint\+RGB565\+Impl.\+hpp}
+\hypertarget{_paint_r_g_b565_impl_8hpp_source}{}\label{_paint_r_g_b565_impl_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintRGB565Impl.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintRGB565Impl.hpp}}
+\mbox{\hyperlink{_paint_r_g_b565_impl_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_PAINTRGB565IMPL\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_PAINTRGB565IMPL\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_color_8hpp}{touchgfx/Color.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_paint_8hpp}{touchgfx/hal/Paint.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_paint_impl_8hpp}{touchgfx/hal/PaintImpl.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }paint}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }rgb565}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{const}\ uint16\_t\ RMASK\ =\ 0xF800;\ \textcolor{comment}{//\ Mask\ for\ red\ \ \ (1111100000000000)}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{const}\ uint16\_t\ GMASK\ =\ 0x07E0;\ \textcolor{comment}{//\ Mask\ for\ green\ (0000011111100000)}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{const}\ uint16\_t\ BMASK\ =\ 0x001F;\ \textcolor{comment}{//\ Mask\ for\ blue\ \ (0000000000011111)}}
+\DoxyCodeLine{00036\ \}\ \textcolor{comment}{//namespace}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00050\ FORCE\_INLINE\_FUNCTION\ uint16\_t\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{alphaBlend}}(uint16\_t\ R,\ uint16\_t\ G,\ uint16\_t\ B,\ uint16\_t\ bufpix,\ uint8\_t\ alpha)}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ ialpha\ =\ 0xFF\ -\/\ alpha;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ (((R\ *\ alpha\ +\ (bufpix\ \&\ RMASK)\ *\ ialpha)\ /\ 255)\ \&\ RMASK)\ |}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ (((G\ *\ alpha\ +\ (bufpix\ \&\ GMASK)\ *\ ialpha)\ /\ 255)\ \&\ GMASK)\ |}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ (((B\ *\ alpha\ +\ (bufpix\ \&\ BMASK)\ *\ ialpha)\ /\ 255)\ \&\ BMASK);}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00068\ FORCE\_INLINE\_FUNCTION\ uint16\_t\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{alphaBlend}}(uint16\_t\ newpix,\ uint16\_t\ bufpix,\ uint8\_t\ alpha)}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{alphaBlend}}(newpix\ \&\ RMASK,\ newpix\ \&\ GMASK,\ newpix\ \&\ BMASK,\ bufpix,\ alpha);}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ FORCE\_INLINE\_FUNCTION\ uint16\_t\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a17f6ce6d8be93d8bfdab041e91cdf9d1}{getNativeColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color)}
+\DoxyCodeLine{00081\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ ((color\ >>\ 8)\ \&\ 0xF800)\ |\ ((color\ >>\ 5)\ \&\ 0x07E0)\ |\ ((color\ >>\ 3)\ \&\ 0x001F);}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_ae31b9beca5c98b230c2aa975b86a9d98}{lineFromColor}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint32\_t\ color,\ \textcolor{keyword}{const}\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ uint32\_t\ color565)}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ uint16\_t*\ framebuffer\ =\ ptr;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ lineEnd\ =\ framebuffer\ +\ count;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha\ ==\ 0xFF)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ color565;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ lineEnd);}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{alphaBlend}}(color565,\ *framebuffer,\ alpha);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ lineEnd);}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a017937212430095a4844e75b24301ac6}{lineFromRGB565}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)}
+\DoxyCodeLine{00106\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ uint16\_t*\ framebuffer\ =\ ptr;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t*\ bitmapPointer\ =\ data;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ chunkend\ =\ framebuffer\ +\ count;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha\ ==\ 0xFF)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ *bitmapPointer++;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ chunkend);}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{alphaBlend}}(*bitmapPointer++,\ *framebuffer,\ alpha);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ chunkend);}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a7bf1380bed40b89a1a9668095cd368ff}{lineFromARGB8888}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ uint16\_t*\ framebuffer\ =\ ptr;}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ bitmapPointer\ =\ data;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ chunkend\ =\ framebuffer\ +\ count;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ srcAlpha\ =\ (*bitmapPointer)\ >>\ 24;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ a\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(alpha\ *\ srcAlpha);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ ==\ 0xFF)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a17f6ce6d8be93d8bfdab041e91cdf9d1}{getNativeColor}}(*bitmapPointer);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (a)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ newpix\ =\ *bitmapPointer;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{alphaBlend}}((newpix\ >>\ 8)\ \&\ RMASK,\ (newpix\ >>\ 5)\ \&\ GMASK,\ (newpix\ >>\ 3)\ \&\ BMASK,\ *framebuffer,\ a);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ bitmapPointer++;}
+\DoxyCodeLine{00146\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ chunkend);}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_ae868991b9ec4441c0cce8442c4be065f}{lineFromL8RGB888}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ uint16\_t*\ framebuffer\ =\ ptr;}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ bitmapPointer\ =\ data;}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ chunkend\ =\ framebuffer\ +\ count;}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{if}\ (alpha\ ==\ 0xFF)}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ src\ =\ \&blendL8CLUT[*bitmapPointer++\ *\ 3];}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ alpha\ from\ covers\ directly}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ blue\ =\ *src++;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ green\ =\ *src++;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ red\ =\ *src;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ ((red\ <<\ 8)\ \&\ RMASK)\ |\ ((green\ <<\ 3)\ \&\ GMASK)\ |\ ((blue\ >>\ 3)\ \&\ BMASK);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ chunkend);}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00167\ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ src\ =\ \&blendL8CLUT[*bitmapPointer++\ *\ 3];}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ alpha\ from\ covers\ directly}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ blue\ =\ *src++;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ green\ =\ *src++;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ red\ =\ *src;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ ialpha\ =\ 0xFF\ -\/\ alpha;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ bufpix\ =\ *framebuffer;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ fbr\ =\ \mbox{\hyperlink{classtouchgfx_1_1_color_a6e0f40bcdd726b9df1dd3bf54d87146c}{Color::getRedFromRGB565}}(bufpix);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ fbg\ =\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2c4cedb5103986bf460eabc2e56ee2f7}{Color::getGreenFromRGB565}}(bufpix);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ fbb\ =\ \mbox{\hyperlink{classtouchgfx_1_1_color_a30227835de8caf3387f798913b4b917f}{Color::getBlueFromRGB565}}(bufpix);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ ((\mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(red\ *\ alpha\ +\ fbr\ *\ ialpha)\ <<\ 8)\ \&\ RMASK)\ |\ ((\mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(green\ *\ alpha\ +\ fbg\ *\ ialpha)\ <<\ 3)\ \&\ GMASK)\ |\ ((\mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(blue\ *\ alpha\ +\ fbb\ *\ ialpha)\ >>\ 3)\ \&\ BMASK);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ chunkend);}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a5cf198880107f8d45111ed8d5c2085cd}{lineFromL8ARGB8888}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)}
+\DoxyCodeLine{00186\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ uint16\_t*\ framebuffer\ =\ ptr;}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ bitmapPointer\ =\ data;}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ chunkend\ =\ framebuffer\ +\ count;}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ newpix\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint32\_t*\textcolor{keyword}{>}(blendL8CLUT)[*bitmapPointer++];}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ srcAlpha\ =\ newpix\ >>\ 24;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ a\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(alpha\ *\ srcAlpha);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ ==\ 0xFF)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a17f6ce6d8be93d8bfdab041e91cdf9d1}{getNativeColor}}(newpix);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (a)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ *framebuffer\ =\ \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{alphaBlend}}((newpix\ >>\ 8)\ \&\ RMASK,\ (newpix\ >>\ 5)\ \&\ GMASK,\ (newpix\ >>\ 3)\ \&\ BMASK,\ *framebuffer,\ a);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (++framebuffer\ <\ chunkend);}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \}\ \textcolor{comment}{//\ namespace\ rgb565}}
+\DoxyCodeLine{00207\ \}\ \textcolor{comment}{//\ namespace\ paint}}
+\DoxyCodeLine{00208\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_PAINTRGB565IMPL\_HPP}}
+
+\end{DoxyCode}

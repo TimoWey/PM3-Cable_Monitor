@@ -1,0 +1,331 @@
+\doxysection{Core/\+Src/calculation.c File Reference}
+\hypertarget{calculation_8c}{}\label{calculation_8c}\index{Core/Src/calculation.c@{Core/Src/calculation.c}}
+
+
+Calculations for displaying the measurements.  
+
+
+{\ttfamily \#include "{}calculation.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}measuring.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}arm\+\_\+math.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{calculation_8c_a42e162ee7b8b8c2663d1dbd31c7b590b}{ARM\+\_\+\+MATH\+\_\+\+CM4}}
+\item 
+\#define \mbox{\hyperlink{calculation_8c_a903c0e7083ad87b2f7420dcdcd409f99}{D\+\_\+P}}~19.\+7
+\begin{DoxyCompactList}\small\item\em Distance from the board center to pad center. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{calculation_8c_a55777447b30ba437527bda91f69b8fba}{ACCURATE\+\_\+\+MEASUREMENT\+\_\+\+LOOPS}}~10
+\begin{DoxyCompactList}\small\item\em How many loops for accu. meas. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{calculation_8c_aa43ea9575b79b5b1c302b382fe1f189e}{CALIBRATION\+\_\+\+MEASUREMENT\+\_\+\+LOOPS}}~50
+\begin{DoxyCompactList}\small\item\em How many loops for calibration meas. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{calculation_8c_a1ac0abc7c913167ecaf81778d57e7a17}{POW2}}(x)~((x) \texorpdfstring{$\ast$}{*} (x))
+\begin{DoxyCompactList}\small\item\em Power of two. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{calculation_8c_a9e58222624315d1b9029cc0bd7757b70}{calculate\+\_\+coefficients\+\_\+single\+\_\+pad}} (\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} s\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} d\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}a, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}b, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}c)
+\item 
+\mbox{\hyperlink{struct_f_f_t}{FFT}} \mbox{\hyperlink{calculation_8c_a9b4c4cf533fe366c1c5637d2853c823a}{calculate\+\_\+freq\+\_\+and\+\_\+signalstrength}} (\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} input\+\_\+samples\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Calculates the frequency and signal strength using Fast Fourier Transform (\doxylink{struct_f_f_t}{FFT}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_d_i_s_t_a_n_c_e___a_n_g_l_e}{DISTANCE\+\_\+\+ANGLE}} \mbox{\hyperlink{calculation_8c_a68538a6e3dec58db926981a4702d45fa}{calculate\+\_\+distance\+\_\+and\+\_\+angle}} (\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} signal\+\_\+strength\+\_\+r, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} signal\+\_\+strength\+\_\+l)
+\begin{DoxyCompactList}\small\item\em Calculates the distance and angle based on signal strengths. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{calculation_8c_a131fe6481430eaff914b335bbf3d565d}{calculate\+\_\+magnetic\+\_\+coefficients}} (\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} s, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} d, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} cal\+\_\+current, \mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}a\+\_\+magn)
+\begin{DoxyCompactList}\small\item\em Calculates the magnetic coefficients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_c_c_u___f_f_t}{ACCU\+\_\+\+FFT}} \mbox{\hyperlink{calculation_8c_a4fddab1b09b687be16e69a9784d5b97b}{accurate\+\_\+\+FFT}} (void)
+\begin{DoxyCompactList}\small\item\em Performs accurate \doxylink{struct_f_f_t}{FFT} calculation for signal strength and main frequency of each channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_n_g_l_e___m_e_a_s}{SINGLE\+\_\+\+MEAS}} \mbox{\hyperlink{calculation_8c_a6aee6a07a86ee73c7ba20e059b79c794}{single\+\_\+measurement}} (uint8\+\_\+t Phase)
+\begin{DoxyCompactList}\small\item\em Perform a single measurement for a specific phase. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_c_c_u___m_e_a_s}{ACCU\+\_\+\+MEAS}} \mbox{\hyperlink{calculation_8c_ac084ccf3f955bc4c19751d6b24aa3814}{accurate\+\_\+measurement}} (uint8\+\_\+t Phase)
+\begin{DoxyCompactList}\small\item\em Performs accurate measurement of various parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{calculation_8c_abac8ce1f5096ff3f393117cbfa98f888}{start\+\_\+calibration}} (void)
+\begin{DoxyCompactList}\small\item\em Starts the calibration process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{calculation_8c_a6b6736969ddf8f3f9f229c3ac4a24c23}{toggle\+\_\+\+Buzzer\+\_\+settings}} (bool btn)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{calculation_8c_a38561fdc926275e79fcc8d74e1d56373}{State\+\_\+\+BUZZER}} = true
+\item 
+bool \mbox{\hyperlink{calculation_8c_a505d7c6b96ad0efb16bb1cdecdadae93}{State\+\_\+\+LED}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Calculations for displaying the measurements. 
+
+\DoxyHorRuler{0}
+\hypertarget{calculation_8c_autotoc_md9}{}\doxysubsection{\texorpdfstring{Trigonometry used for distance and angle calculation}{Trigonometry used for distance and angle calculation}}\label{calculation_8c_autotoc_md9}
+\hypertarget{calculation_8c_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Calibration}{Calibration}}\label{calculation_8c_autotoc_md10}
+For calibration the angle is given, because the board is placed perpendicular to the wire. ~\newline
+ The equation for this trigonometry can be seen under the figure. ~\newline
+ d\+: Distance from wire to pad (left or right) ~\newline
+ l\+: Distance from the board center to wire ~\newline
+ x\+: Distance from the board center to pad \begin{DoxySeeAlso}{See also}
+\doxylink{calculation_8c_a903c0e7083ad87b2f7420dcdcd409f99}{D\+\_\+P} Distance from the board center to pad
+\end{DoxySeeAlso}
+\hypertarget{calculation_8c_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{Measure}{Measure}}\label{calculation_8c_autotoc_md11}
+The equation for this trigonometry can be seen under the figure.
+
+\hypertarget{calculation_8c_autotoc_md12}{}\doxysubsection{\texorpdfstring{Approximation used for calculations}{Approximation used for calculations}}\label{calculation_8c_autotoc_md12}
+\hypertarget{calculation_8c_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Distance}{Distance}}\label{calculation_8c_autotoc_md13}
+Approximation is done with a Laurent polynomial 2nd degree. ~\newline
+ For calibration only 3 measurements are needed. ~\newline
+ d1,d2,d3\+: Distance for each measurement ~\newline
+ s1,s2,s3\+: Signal for each measurement ~\newline
+ a,b,c\+: Coefficients for distance approximation
+
+\hypertarget{calculation_8c_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Current}{Current}}\label{calculation_8c_autotoc_md14}
+Approximation is done with a constant as seen in the figure. ~\newline
+ For calibration only 1 measurements is needed. ~\newline
+ U\+: Signal ~\newline
+ r\+: Distance from the board center to wire ~\newline
+ const\+: Constant for current approximation.
+
+\hypertarget{calculation_8c_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{@todo Optimize Angle Calculation, Current Calculation, Calibration Hall Sensor}{@todo Optimize Angle Calculation, Current Calculation, Calibration Hall Sensor}}\label{calculation_8c_autotoc_md15}
+\begin{DoxyAuthor}{Author}
+Alejandro Horvat, \href{mailto:horvaale@students.zhaw.ch}{\texttt{ horvaale@students.\+zhaw.\+ch}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+12.\+28.\+2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{calculation_8c_a55777447b30ba437527bda91f69b8fba}\label{calculation_8c_a55777447b30ba437527bda91f69b8fba} 
+\index{calculation.c@{calculation.c}!ACCURATE\_MEASUREMENT\_LOOPS@{ACCURATE\_MEASUREMENT\_LOOPS}}
+\index{ACCURATE\_MEASUREMENT\_LOOPS@{ACCURATE\_MEASUREMENT\_LOOPS}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{ACCURATE\_MEASUREMENT\_LOOPS}{ACCURATE\_MEASUREMENT\_LOOPS}}
+{\footnotesize\ttfamily \#define ACCURATE\+\_\+\+MEASUREMENT\+\_\+\+LOOPS~10}
+
+
+
+How many loops for accu. meas. 
+
+\Hypertarget{calculation_8c_a42e162ee7b8b8c2663d1dbd31c7b590b}\label{calculation_8c_a42e162ee7b8b8c2663d1dbd31c7b590b} 
+\index{calculation.c@{calculation.c}!ARM\_MATH\_CM4@{ARM\_MATH\_CM4}}
+\index{ARM\_MATH\_CM4@{ARM\_MATH\_CM4}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{ARM\_MATH\_CM4}{ARM\_MATH\_CM4}}
+{\footnotesize\ttfamily \#define ARM\+\_\+\+MATH\+\_\+\+CM4}
+
+\Hypertarget{calculation_8c_aa43ea9575b79b5b1c302b382fe1f189e}\label{calculation_8c_aa43ea9575b79b5b1c302b382fe1f189e} 
+\index{calculation.c@{calculation.c}!CALIBRATION\_MEASUREMENT\_LOOPS@{CALIBRATION\_MEASUREMENT\_LOOPS}}
+\index{CALIBRATION\_MEASUREMENT\_LOOPS@{CALIBRATION\_MEASUREMENT\_LOOPS}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{CALIBRATION\_MEASUREMENT\_LOOPS}{CALIBRATION\_MEASUREMENT\_LOOPS}}
+{\footnotesize\ttfamily \#define CALIBRATION\+\_\+\+MEASUREMENT\+\_\+\+LOOPS~50}
+
+
+
+How many loops for calibration meas. 
+
+\Hypertarget{calculation_8c_a903c0e7083ad87b2f7420dcdcd409f99}\label{calculation_8c_a903c0e7083ad87b2f7420dcdcd409f99} 
+\index{calculation.c@{calculation.c}!D\_P@{D\_P}}
+\index{D\_P@{D\_P}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{D\_P}{D\_P}}
+{\footnotesize\ttfamily \#define D\+\_\+P~19.\+7}
+
+
+
+Distance from the board center to pad center. 
+
+\texorpdfstring{$<$}{<} pad border to center of board 8.\+26 mm (Pad to Board Center) + 22.\+86 mm (Board Width) / 2 = 19.\+69 mm (rounded to 19.\+7 mm) \Hypertarget{calculation_8c_a1ac0abc7c913167ecaf81778d57e7a17}\label{calculation_8c_a1ac0abc7c913167ecaf81778d57e7a17} 
+\index{calculation.c@{calculation.c}!POW2@{POW2}}
+\index{POW2@{POW2}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{POW2}{POW2}}
+{\footnotesize\ttfamily \#define POW2(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) \texorpdfstring{$\ast$}{*} (x))}
+
+
+
+Power of two. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{calculation_8c_a4fddab1b09b687be16e69a9784d5b97b}\label{calculation_8c_a4fddab1b09b687be16e69a9784d5b97b} 
+\index{calculation.c@{calculation.c}!accurate\_FFT@{accurate\_FFT}}
+\index{accurate\_FFT@{accurate\_FFT}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{accurate\_FFT()}{accurate\_FFT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_c_c_u___f_f_t}{ACCU\+\_\+\+FFT}} accurate\+\_\+\+FFT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Performs accurate \doxylink{struct_f_f_t}{FFT} calculation for signal strength and main frequency of each channel. 
+
+This function calculates the signal strength and main frequency for each channel using \doxylink{struct_f_f_t}{FFT}. It performs accurate measurement loops and calculates the mean and standard deviation of the signal strength. If the standard deviation is larger than 100, it sets the error flag accordingly.
+
+\begin{DoxyReturn}{Returns}
+The calculated \doxylink{struct_a_c_c_u___f_f_t}{ACCU\+\_\+\+FFT} structure containing the signal strength, standard deviation, and error flag. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8c_ac084ccf3f955bc4c19751d6b24aa3814}\label{calculation_8c_ac084ccf3f955bc4c19751d6b24aa3814} 
+\index{calculation.c@{calculation.c}!accurate\_measurement@{accurate\_measurement}}
+\index{accurate\_measurement@{accurate\_measurement}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{accurate\_measurement()}{accurate\_measurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_c_c_u___m_e_a_s}{ACCU\+\_\+\+MEAS}} accurate\+\_\+measurement (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Phase }\end{DoxyParamCaption})}
+
+
+
+Performs accurate measurement of various parameters. 
+
+This function calculates the mean value and standard deviation of distance, angle, frequency, and current based on multiple single measurements. It checks for errors in the single measurements and sets the appropriate error flags. If the standard deviation of any parameter exceeds 100, it sets the error\+\_\+accu flag to CALC\+\_\+\+ERROR\+\_\+\+DEVIATION\+\_\+\+TOO\+\_\+\+HIGH.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Phase} & The phase for which the accurate measurement is performed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_a_c_c_u___m_e_a_s}{ACCU\+\_\+\+MEAS} The structure containing the calculated values and error flags. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8c_a9e58222624315d1b9029cc0bd7757b70}\label{calculation_8c_a9e58222624315d1b9029cc0bd7757b70} 
+\index{calculation.c@{calculation.c}!calculate\_coefficients\_single\_pad@{calculate\_coefficients\_single\_pad}}
+\index{calculate\_coefficients\_single\_pad@{calculate\_coefficients\_single\_pad}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_coefficients\_single\_pad()}{calculate\_coefficients\_single\_pad()}}
+{\footnotesize\ttfamily void calculate\+\_\+coefficients\+\_\+single\+\_\+pad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{s\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{d\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{a,  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{b,  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{c }\end{DoxyParamCaption})}
+
+Calculates the coefficients for the distance approximation from an approximation based on a second degree polynomial.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & An array of three float32\+\_\+t values representing x coordinates\+: x\+\_\+0, x\+\_\+1, x\+\_\+2. \\
+\hline
+{\em d} & An array of three float32\+\_\+t values representing y coordinates\+: y\+\_\+0, y\+\_\+1, y\+\_\+2. \\
+\hline
+{\em a} & Pointer to a float32\+\_\+t variable to store the calculated coefficient \textquotesingle{}a\textquotesingle{}. \\
+\hline
+{\em b} & Pointer to a float32\+\_\+t variable to store the calculated coefficient \textquotesingle{}b\textquotesingle{}. \\
+\hline
+{\em c} & Pointer to a float32\+\_\+t variable to store the calculated coefficient \textquotesingle{}c\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{calculation_8c_a68538a6e3dec58db926981a4702d45fa}\label{calculation_8c_a68538a6e3dec58db926981a4702d45fa} 
+\index{calculation.c@{calculation.c}!calculate\_distance\_and\_angle@{calculate\_distance\_and\_angle}}
+\index{calculate\_distance\_and\_angle@{calculate\_distance\_and\_angle}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_distance\_and\_angle()}{calculate\_distance\_and\_angle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_i_s_t_a_n_c_e___a_n_g_l_e}{DISTANCE\+\_\+\+ANGLE}} calculate\+\_\+distance\+\_\+and\+\_\+angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{signal\+\_\+strength\+\_\+r,  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{signal\+\_\+strength\+\_\+l }\end{DoxyParamCaption})}
+
+
+
+Calculates the distance and angle based on signal strengths. 
+
+This function takes the signal strengths of the right and left signals and calculates the distance and angle using predefined coefficients. The calculated values are stored in a \doxylink{struct_d_i_s_t_a_n_c_e___a_n_g_l_e}{DISTANCE\+\_\+\+ANGLE} structure and returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em signal\+\_\+strength\+\_\+r} & The signal strength of the right signal. \\
+\hline
+{\em signal\+\_\+strength\+\_\+l} & The signal strength of the left signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated distance and angle. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8c_a9b4c4cf533fe366c1c5637d2853c823a}\label{calculation_8c_a9b4c4cf533fe366c1c5637d2853c823a} 
+\index{calculation.c@{calculation.c}!calculate\_freq\_and\_signalstrength@{calculate\_freq\_and\_signalstrength}}
+\index{calculate\_freq\_and\_signalstrength@{calculate\_freq\_and\_signalstrength}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_freq\_and\_signalstrength()}{calculate\_freq\_and\_signalstrength()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_f_t}{FFT}} calculate\+\_\+freq\+\_\+and\+\_\+signalstrength (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{input\+\_\+samples\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Calculates the frequency and signal strength using Fast Fourier Transform (\doxylink{struct_f_f_t}{FFT}). 
+
+This function takes an array of input samples and performs the following steps\+:
+\begin{DoxyEnumerate}
+\item Removes the DC component from the input samples.
+\item Performs \doxylink{struct_f_f_t}{FFT} on the input samples to obtain the complex output.
+\item Calculates the magnitude of the complex numbers.
+\item Finds the index of the maximum magnitude in the first half of the array.
+\item Determines the main frequency based on the maximum magnitude index.
+\item Rounds the main frequency to either 50 Hz or 60 Hz.
+\item Calculates the index of the rounded frequency.
+\item Calculates the signal strength at the rounded frequency.
+\item Returns the calculated main frequency and signal strength in a structure.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+samples} & The array of input samples. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure containing the calculated main frequency and signal strength. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8c_a131fe6481430eaff914b335bbf3d565d}\label{calculation_8c_a131fe6481430eaff914b335bbf3d565d} 
+\index{calculation.c@{calculation.c}!calculate\_magnetic\_coefficients@{calculate\_magnetic\_coefficients}}
+\index{calculate\_magnetic\_coefficients@{calculate\_magnetic\_coefficients}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_magnetic\_coefficients()}{calculate\_magnetic\_coefficients()}}
+{\footnotesize\ttfamily void calculate\+\_\+magnetic\+\_\+coefficients (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{s,  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{d,  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{cal\+\_\+current,  }\item[{\mbox{\hyperlink{arm__math_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{a\+\_\+magn }\end{DoxyParamCaption})}
+
+
+
+Calculates the magnetic coefficients. 
+
+This function calculates the magnetic coefficients based on the given parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The value of s. \\
+\hline
+{\em d} & The value of d. \\
+\hline
+{\em cal\+\_\+current} & The calibration current. \\
+\hline
+{\em a\+\_\+magn} & Pointer to store the calculated magnetic coefficients. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{calculation_8c_a6aee6a07a86ee73c7ba20e059b79c794}\label{calculation_8c_a6aee6a07a86ee73c7ba20e059b79c794} 
+\index{calculation.c@{calculation.c}!single\_measurement@{single\_measurement}}
+\index{single\_measurement@{single\_measurement}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{single\_measurement()}{single\_measurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_i_n_g_l_e___m_e_a_s}{SINGLE\+\_\+\+MEAS}} single\+\_\+measurement (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Phase }\end{DoxyParamCaption})}
+
+
+
+Perform a single measurement for a specific phase. 
+
+This function starts the measurement, converts the samples to the specific channel, calculates the signal strength and main frequency for each channel using \doxylink{struct_f_f_t}{FFT}, calculates the distance and angle, and calculates the current using the magnetic coefficients. It also performs error testing and optimization on the calculated values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Phase} & The phase for which the measurement is performed (SINGLE\+\_\+\+PHASE or THREE\+\_\+\+PHASE). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated values including frequency, distance, angle, current, and error status. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8c_abac8ce1f5096ff3f393117cbfa98f888}\label{calculation_8c_abac8ce1f5096ff3f393117cbfa98f888} 
+\index{calculation.c@{calculation.c}!start\_calibration@{start\_calibration}}
+\index{start\_calibration@{start\_calibration}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{start\_calibration()}{start\_calibration()}}
+{\footnotesize\ttfamily void start\+\_\+calibration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Starts the calibration process. 
+
+This function initializes the necessary variables and arrays for calibration. It calculates the coefficients for distance approximation and current approximation based on the calibration data stored in flash memory. \Hypertarget{calculation_8c_a6b6736969ddf8f3f9f229c3ac4a24c23}\label{calculation_8c_a6b6736969ddf8f3f9f229c3ac4a24c23} 
+\index{calculation.c@{calculation.c}!toggle\_Buzzer\_settings@{toggle\_Buzzer\_settings}}
+\index{toggle\_Buzzer\_settings@{toggle\_Buzzer\_settings}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{toggle\_Buzzer\_settings()}{toggle\_Buzzer\_settings()}}
+{\footnotesize\ttfamily void toggle\+\_\+\+Buzzer\+\_\+settings (\begin{DoxyParamCaption}\item[{bool}]{btn }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{calculation_8c_a38561fdc926275e79fcc8d74e1d56373}\label{calculation_8c_a38561fdc926275e79fcc8d74e1d56373} 
+\index{calculation.c@{calculation.c}!State\_BUZZER@{State\_BUZZER}}
+\index{State\_BUZZER@{State\_BUZZER}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{State\_BUZZER}{State\_BUZZER}}
+{\footnotesize\ttfamily bool State\+\_\+\+BUZZER = true}
+
+\Hypertarget{calculation_8c_a505d7c6b96ad0efb16bb1cdecdadae93}\label{calculation_8c_a505d7c6b96ad0efb16bb1cdecdadae93} 
+\index{calculation.c@{calculation.c}!State\_LED@{State\_LED}}
+\index{State\_LED@{State\_LED}!calculation.c@{calculation.c}}
+\doxysubsubsection{\texorpdfstring{State\_LED}{State\_LED}}
+{\footnotesize\ttfamily bool State\+\_\+\+LED = true}
+

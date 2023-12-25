@@ -1,0 +1,896 @@
+\doxysection{touchgfx\+::LCD Class Reference}
+\hypertarget{classtouchgfx_1_1_l_c_d}{}\label{classtouchgfx_1_1_l_c_d}\index{touchgfx::LCD@{touchgfx::LCD}}
+
+
+{\ttfamily \#include $<$LCD.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::LCD\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classtouchgfx_1_1_l_c_d}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{Draw\+Texture\+Map\+Scan\+Line\+Base}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_l_c_d_1_1_string_visuals}{String\+Visuals}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_l_c_d_af23ed79c89716fd636a8142afe5c25fe}{LCD}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a8d3fbe745f6af77183a79aac5ef97418}{\texorpdfstring{$\sim$}{\string~}\+LCD}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_aebf86a4cd959cf240664a5080a8e9ff7}{draw\+Partial\+Bitmap}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap, int16\+\_\+t x, int16\+\_\+t y, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect, uint8\+\_\+t alpha=255, bool use\+Optimized=true)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a2408b5f5b8cc4239163cf1232a3ee247}{blit\+Copy}} (const uint16\+\_\+t \texorpdfstring{$\ast$}{*}source\+Data, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&source, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&blit\+Rect, uint8\+\_\+t alpha, bool has\+Transparent\+Pixels)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ac5d7afcad872daf1c84dbaa54722e6d5}{blit\+Copy}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}source\+Data, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} source\+Format, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&source, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&blit\+Rect, uint8\+\_\+t alpha, bool has\+Transparent\+Pixels)=0
+\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a24063814d26f5223d339c1b6f9db8edd}{copy\+Frame\+Buffer\+Region\+To\+Memory}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&region, const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} bitmap\+Id=\mbox{\hyperlink{namespacetouchgfx_a2f312092a35bbf31f0d4ab8551792743}{BITMAP\+\_\+\+ANIMATION\+\_\+\+STORAGE}})
+\item 
+virtual uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ae1cbe4fe64d9945b20cc6a530ff59368}{copy\+Frame\+Buffer\+Region\+To\+Memory}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&vis\+Region, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&abs\+Region, const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} bitmap\+Id)=0
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a5615820f1aa6ccd8381c5de6dada2112}{copy\+Frame\+Buffer\+Region\+To\+Memory}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&vis\+Region, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&abs\+Region, uint8\+\_\+t \texorpdfstring{$\ast$}{*}dst, int16\+\_\+t dst\+Width, int16\+\_\+t dst\+Height)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a9493a352c56a9e2821bf9d202b90585e}{copy\+Area\+From\+TFTTo\+Client\+Buffer}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&region)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ad91b3d6a891d588cc22fb5d25f1279cb}{fill\+Rect}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect, \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, uint8\+\_\+t alpha=255)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a59b76f673de42780545939f91fad8341}{fill\+Buffer}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}const destination, uint16\+\_\+t pixel\+Stride, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect, const \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, const uint8\+\_\+t alpha)=0
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a295706d697b3661ab702806b97e9f6de}{draw\+String}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} widget\+Area, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area, const \mbox{\hyperlink{structtouchgfx_1_1_l_c_d_1_1_string_visuals}{String\+Visuals}} \&string\+Visuals, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}format,...)
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a247e85c62e57f0b76c8ca061176940e5}{bit\+Depth}} () const =0
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a1f10f02b0fd6c1333387515e69330735}{framebuffer\+Format}} () const =0
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_aa1027301ceecf5ae413471aa928f51e0}{framebuffer\+Stride}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a2f67f4e8f4ae21de88178a1d715c3f70}{support\+Dynamic\+Bitmap\+Drawing}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} format)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a3dbba4eb6f0dee4e68adcc1dbdde409f}{set\+Default\+Color}} (\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color)
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ae3f80f93bc845d19d0e142c9bb1fae57}{get\+Default\+Color}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ab9d5f51190efdd33ae49c7f7940b20c1}{draw\+Texture\+Map\+Triangle}} (const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&dest, const \mbox{\hyperlink{structtouchgfx_1_1_point3_d}{Point3D}} \texorpdfstring{$\ast$}{*}vertices, const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&texture, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&absolute\+Rect, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&dirty\+Area\+Absolute, \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}} render\+Variant, uint8\+\_\+t alpha=255, uint16\+\_\+t sub\+Division\+Size=12)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_af2240698457e64d6aae89c30c4df176c}{draw\+Texture\+Map\+Quad}} (const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&dest, const \mbox{\hyperlink{structtouchgfx_1_1_point3_d}{Point3D}} \texorpdfstring{$\ast$}{*}vertices, const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&texture, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&absolute\+Rect, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&dirty\+Area\+Absolute, \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}} render\+Variant, uint8\+\_\+t alpha=255, uint16\+\_\+t sub\+Division\+Size=12)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{div255}} (uint16\+\_\+t num)
+\item 
+static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a4a10389bd358cdbd4fe41d2ee9ab8f17}{div255rb}} (uint32\+\_\+t pixelx\+Alpha)
+\item 
+static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ae05cf3c95e1a4a417b4313f4680fa28a}{div255g}} (uint32\+\_\+t pixelx\+Alpha)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{Draw\+Texture\+Map\+Scan\+Line\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a962e0ee1bda7ab97e0e38ece26616e64}{get\+Texture\+Mapper\+Draw\+Scan\+Line}} (const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&texture, \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}} render\+Variant, uint8\+\_\+t alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a1ad7bae37f40d162eb5ed10fa6da75a3}{draw\+Texture\+Map\+Scan\+Line}} (const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&dest, const \mbox{\hyperlink{structtouchgfx_1_1_gradients}{Gradients}} \&gradients, const \mbox{\hyperlink{structtouchgfx_1_1_edge}{Edge}} \texorpdfstring{$\ast$}{*}left\+Edge, const \mbox{\hyperlink{structtouchgfx_1_1_edge}{Edge}} \texorpdfstring{$\ast$}{*}right\+Edge, const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&texture, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&absolute\+Rect, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&dirty\+Area\+Absolute, \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}} render\+Variant, uint8\+\_\+t alpha, uint16\+\_\+t sub\+Division\+Size)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ac718e34633bdedcb0319dc05ee8ec6bc}{draw\+Glyph}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}wbuf16, \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} widget\+Area, int16\+\_\+t x, int16\+\_\+t y, uint16\+\_\+t offsetX, uint16\+\_\+t offsetY, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area, const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}glyph, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}glyph\+Data, uint8\+\_\+t byte\+Align\+Row, \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, uint8\+\_\+t bits\+Per\+Pixel, uint8\+\_\+t alpha, \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}} rotation)=0
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a183713599319a4e64a8342dcfe26e8f7}{draw\+String\+LTR}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&widget\+Area, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area, const \mbox{\hyperlink{structtouchgfx_1_1_l_c_d_1_1_string_visuals}{String\+Visuals}} \&visuals, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}format, va\+\_\+list p\+Arg)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ac339fcefdd5f6f961c1353c21d77655d}{draw\+String\+RTL}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&widget\+Area, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area, const \mbox{\hyperlink{structtouchgfx_1_1_l_c_d_1_1_string_visuals}{String\+Visuals}} \&visuals, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}format, va\+\_\+list p\+Arg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_af3d5b5487669d9fe99876d9da929ce37}{rotate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&canvas, const \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}} rotation)
+\item 
+static int \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_aadcf34945832b67777b6ea043fa4b3f9}{realX}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&widget\+Area, int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}} rotation)
+\item 
+static int \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a5cda80f876c97160cd72ddeb77472f45}{realY}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&widget\+Area, int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}} rotation)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_aa1759b99a604dc77af76e3bfcafe783d}{string\+Width}} (\mbox{\hyperlink{classtouchgfx_1_1_text_provider}{Text\+Provider}} \&text\+Provider, const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \&font, const int num\+Chars, \mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} text\+Direction)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ad71dd5c8b8e8369e52fe4b73e3e8d7b2}{get\+Num\+Lines}} (\mbox{\hyperlink{classtouchgfx_1_1_text_provider}{Text\+Provider}} \&text\+Provider, \mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7d}{Wide\+Text\+Action}} wide\+Text\+Action, \mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} text\+Direction, const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}font, int16\+\_\+t width)
+\item 
+static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a39008017fd25723ec5f23d4c2c0a9cef}{get\+Alpha\+From\+A4}} (const uint16\+\_\+t \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t offset)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_l_c_d_a61deb54bf4a44ea2c7d5b48dded9f423}\label{classtouchgfx_1_1_l_c_d_a61deb54bf4a44ea2c7d5b48dded9f423} 
+static const uint16\+\_\+t {\bfseries new\+Line} = 10
+\begin{DoxyCompactList}\small\item\em New\+Line value. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_l_c_d_accbda2ae3ddcd8e13c2400bb1bdfaab3}\label{classtouchgfx_1_1_l_c_d_accbda2ae3ddcd8e13c2400bb1bdfaab3} 
+static \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} {\bfseries default\+Color}
+\begin{DoxyCompactList}\small\item\em Default \doxylink{classtouchgfx_1_1_color}{Color} to use when displaying transparency-\/only elements, e.\+g. A4 bitmaps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_l_c_d_ad564b94b59dc295de3dfc4415d95cca8}\label{classtouchgfx_1_1_l_c_d_ad564b94b59dc295de3dfc4415d95cca8} 
+class {\bfseries Font}
+\item 
+\Hypertarget{classtouchgfx_1_1_l_c_d_ab64413b065c3156bc9e104f663d10e96}\label{classtouchgfx_1_1_l_c_d_ab64413b065c3156bc9e104f663d10e96} 
+class {\bfseries Text\+Area}
+\item 
+\Hypertarget{classtouchgfx_1_1_l_c_d_a9a078dbe79f831e90a304129dcabad15}\label{classtouchgfx_1_1_l_c_d_a9a078dbe79f831e90a304129dcabad15} 
+class {\bfseries Text\+Area\+With\+Wildcard\+Base}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class contains the various low-\/level drawing routines for drawing bitmaps, texts and rectangles/boxes. Normally, these draw operations are called from widgets, which also keep track of logical states such as visibility etc.
+
+The \doxylink{classtouchgfx_1_1_l_c_d}{LCD} class cannot be instantiated, instead use one of the subclasses which implements the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} drawing operations for a specific display configuration.
+
+\begin{DoxyNote}{Note}
+All coordinates sent to functions in the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} class are expected to be in absolute coordinates, i.\+e. (0, 0) is upper left corner of the display. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_l_c_d_af23ed79c89716fd636a8142afe5c25fe}\label{classtouchgfx_1_1_l_c_d_af23ed79c89716fd636a8142afe5c25fe} 
+\index{touchgfx::LCD@{touchgfx::LCD}!LCD@{LCD}}
+\index{LCD@{LCD}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{LCD()}{LCD()}}
+{\footnotesize\ttfamily touchgfx\+::\+LCD\+::\+LCD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} class. \Hypertarget{classtouchgfx_1_1_l_c_d_a8d3fbe745f6af77183a79aac5ef97418}\label{classtouchgfx_1_1_l_c_d_a8d3fbe745f6af77183a79aac5ef97418} 
+\index{touchgfx::LCD@{touchgfx::LCD}!````~LCD@{\texorpdfstring{$\sim$}{\string~}LCD}}
+\index{````~LCD@{\texorpdfstring{$\sim$}{\string~}LCD}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LCD()}{\string~LCD()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+LCD\+::\texorpdfstring{$\sim$}{\string~}\+LCD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a247e85c62e57f0b76c8ca061176940e5}\label{classtouchgfx_1_1_l_c_d_a247e85c62e57f0b76c8ca061176940e5} 
+\index{touchgfx::LCD@{touchgfx::LCD}!bitDepth@{bitDepth}}
+\index{bitDepth@{bitDepth}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{bitDepth()}{bitDepth()}}
+{\footnotesize\ttfamily virtual uint8\+\_\+t touchgfx\+::\+LCD\+::bit\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Number of bits per pixel used by the display.
+
+\begin{DoxyReturn}{Returns}
+The number of bits per pixel. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_af6904acd32b05405fe0c586c6eebb343}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ae26eae955dea9fc5fc933f48aeabbcda}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_af4e54ce2de0256fa8c5400f55df16681}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a5845e5cbfebe14c86f145dd58f98e03f}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a5a3c4567e33ab2327691d6701ec8a808}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_ad5d861bd65ab74a9c4944208c5ff512e}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a7e88cd7d8a23d7144c3cf11deaa261ea}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a4ac2d8a7eba8368d60cd62e6643d0a8b}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a1f4b4920ebeaebbf207e3f64d48fd3b8}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_aa226a8fac21ee9dbc51d79805f2c23e5}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_aaecda848ca348b35a6658c99d42a162f}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a8dcb4e6bc97ec9032541be2a35ddc682}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a2408b5f5b8cc4239163cf1232a3ee247}\label{classtouchgfx_1_1_l_c_d_a2408b5f5b8cc4239163cf1232a3ee247} 
+\index{touchgfx::LCD@{touchgfx::LCD}!blitCopy@{blitCopy}}
+\index{blitCopy@{blitCopy}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{blitCopy()}{blitCopy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::blit\+Copy (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{source\+Data,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{source,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{blit\+Rect,  }\item[{uint8\+\_\+t}]{alpha,  }\item[{bool}]{has\+Transparent\+Pixels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Blits (directly copies) a block of data to the framebuffer, performing alpha blending (and tranparency keying) as specified. Performs a software blend if \doxylink{classtouchgfx_1_1_h_a_l}{HAL} does not support BLIT\+\_\+\+COPY\+\_\+\+WITH\+\_\+\+ALPHA and alpha != 255 (solid).
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Data} & The source array pointer (points to the beginning of the data). The source\+Data must be stored in a format suitable for the selected display. \\
+\hline
+{\em source} & The position and dimensions of the source. The x and y of this rect should both be 0. \\
+\hline
+{\em blit\+Rect} & A rectangle describing what region of the {\itshape source\+Data} is to be copied to the framebuffer. \\
+\hline
+{\em alpha} & The alpha value to use for blending ranging from 0=invisible to 255=solid=no blending. \\
+\hline
+{\em has\+Transparent\+Pixels} & If true, this data copy contains transparent pixels and require hardware support for that to be enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_a66bcc54b6f056bca5880ce11b1a12ab0}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_af3647029c4f016383bef5b5628b4ec7d}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_ac46cf17f5704f3bf0794a28997ea42b2}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_ac98a91e1d2ea609e548ede94965b42ad}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a3645c3e3b6915412a943a46178675b26}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a003618acd89465bedc0b2d47bba101f8}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_ac7d0b58303ef2680fbb61319844f09c0}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_acf1720b0afa10bfa58b97bda3537c087}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_aacbbd04777bc57393c21a8110b229d18}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a1d274a1975485cb12d200688264d20e9}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a4f8c0de076748176a96087b2280c7c18}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a60a9b497790ce593ec6850e4bba44ca4}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_ac5d7afcad872daf1c84dbaa54722e6d5}\label{classtouchgfx_1_1_l_c_d_ac5d7afcad872daf1c84dbaa54722e6d5} 
+\index{touchgfx::LCD@{touchgfx::LCD}!blitCopy@{blitCopy}}
+\index{blitCopy@{blitCopy}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{blitCopy()}{blitCopy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::blit\+Copy (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{source\+Data,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}}}]{source\+Format,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{source,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{blit\+Rect,  }\item[{uint8\+\_\+t}]{alpha,  }\item[{bool}]{has\+Transparent\+Pixels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Blits (directly copies) a block of data to the framebuffer, performing alpha blending (and tranparency keying) as specified. Performs a software blend if \doxylink{classtouchgfx_1_1_h_a_l}{HAL} does not support BLIT\+\_\+\+COPY\+\_\+\+WITH\+\_\+\+ALPHA and alpha \texorpdfstring{$<$}{<} 255 (solid).
+
+If the display does not support the specified {\itshape source\+Format}, an {\itshape assert} will be raised.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Data} & The source array pointer (points to the beginning of the data). The source\+Data must be stored in a format suitable for the selected display. \\
+\hline
+{\em source\+Format} & The bitmap format used in the source data. \\
+\hline
+{\em source} & The position and dimensions of the source. The x and y of this rect should both be 0. \\
+\hline
+{\em blit\+Rect} & A rectangle describing what region of the {\itshape source\+Data} is to be copied to the framebuffer. \\
+\hline
+{\em alpha} & The alpha value to use for blending ranging from 0=invisible to 255=solid=no blending. \\
+\hline
+{\em has\+Transparent\+Pixels} & If true, this data copy contains transparent pixels and require hardware support for that to be enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_ad262f7b898f7eef618bff231dd5b9dce}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a05508368f567f9d181ad60aa5e38e908}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a4a84f3ec2abe3100f7dd02eef8bc3fae}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a5a839fa0f1c72518be20a7fec33acf80}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a349568f53b437cd4695f9a1ec521da53}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a1b70ef6397755fe9ca05d851711fa96c}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a6c11dc612074e0e5a17a30770e151530}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a082ebef9d1f164569ab55d04e8a547be}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a98ee3c1016e564b252c2b4d1961b891a}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a94645f9eea5bf51dc205920c2ce05d36}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a791839fbb857152de3fce7fad2690e15}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a0a1c5396f4f98c46828b3da917fc1747}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a9493a352c56a9e2821bf9d202b90585e}\label{classtouchgfx_1_1_l_c_d_a9493a352c56a9e2821bf9d202b90585e} 
+\index{touchgfx::LCD@{touchgfx::LCD}!copyAreaFromTFTToClientBuffer@{copyAreaFromTFTToClientBuffer}}
+\index{copyAreaFromTFTToClientBuffer@{copyAreaFromTFTToClientBuffer}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{copyAreaFromTFTToClientBuffer()}{copyAreaFromTFTToClientBuffer()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::copy\+Area\+From\+TFTTo\+Client\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{region }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Copies part of the displayed framebuffer to current framebuffer. The region given is the absolute region on screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em region} & A rectangle describing what region of the displayed framebuffer is to be copied to the framebuffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The copy is performed only when double buffering is enabled. Otherwise the given region in current framebuffer is left untouched. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_aae64e79c98e95e64f9803b29135acbb4}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_adfdf108c8542fb1c41be9a7322803b0a}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a66de6116c46c09ecb863235e59bbcc3d}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a0ea03e12018ca5af2ba38105e04c77b7}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a3aac35330547f1d4df04163f3d29f7e2}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_ae0021c60af802833b3703ddb632cefa7}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_aea4268a041d8397ecedfbf2ca1afd5ff}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_abc137af702e8a36e2a1246b95f3fb422}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_afb8fa722517928ffd057ce27cc63b23f}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_ab76f474f5b60c5c9107210e01d23a200}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a2336f67e4a639a5396fca79dc07504f3}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a5df69aeb58326b736369a4295c6266e8}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a24063814d26f5223d339c1b6f9db8edd}\label{classtouchgfx_1_1_l_c_d_a24063814d26f5223d339c1b6f9db8edd} 
+\index{touchgfx::LCD@{touchgfx::LCD}!copyFrameBufferRegionToMemory@{copyFrameBufferRegionToMemory}}
+\index{copyFrameBufferRegionToMemory@{copyFrameBufferRegionToMemory}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{copyFrameBufferRegionToMemory()}{copyFrameBufferRegionToMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily uint16\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+LCD\+::copy\+Frame\+Buffer\+Region\+To\+Memory (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{region,  }\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{bitmap\+Id = {\ttfamily \mbox{\hyperlink{namespacetouchgfx_a2f312092a35bbf31f0d4ab8551792743}{BITMAP\+\_\+\+ANIMATION\+\_\+\+STORAGE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copies part of the framebuffer to the data section of a bitmap. The bitmap must be a dynamic bitmap or animation storage (BITMAP\+\_\+\+ANIMATION\+\_\+\+STORAGE). Only the part specified with by parameter {\itshape region} is copied.
+
+If {\itshape region} has negative x/y coordinates of if width/height exceeds those of the given bitmap, only the visible and legal part of the framebuffer is copied. The rest of the bitmap image is left untouched.
+
+
+\begin{DoxyParams}{Parameters}
+{\em region} & The part of the framebuffer to copy. \\
+\hline
+{\em bitmap\+Id} & (Optional) The bitmap to store the data in. Default is to use Animation Storage.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the copy.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_a2408b5f5b8cc4239163cf1232a3ee247}{blit\+Copy}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+There is only one instance of animation storage. The content of the bitmap data (or animation storage) outside the given region is left untouched. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_l_c_d_ae1cbe4fe64d9945b20cc6a530ff59368}\label{classtouchgfx_1_1_l_c_d_ae1cbe4fe64d9945b20cc6a530ff59368} 
+\index{touchgfx::LCD@{touchgfx::LCD}!copyFrameBufferRegionToMemory@{copyFrameBufferRegionToMemory}}
+\index{copyFrameBufferRegionToMemory@{copyFrameBufferRegionToMemory}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{copyFrameBufferRegionToMemory()}{copyFrameBufferRegionToMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual uint16\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+LCD\+::copy\+Frame\+Buffer\+Region\+To\+Memory (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{vis\+Region,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{abs\+Region,  }\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{bitmap\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Copies part of the framebuffer to the data section of a bitmap. The bitmap must be a dynamic bitmap or animation storage (BITMAP\+\_\+\+ANIMATION\+\_\+\+STORAGE). The two regions given are the visible region and the absolute region on screen. This is used to copy only a part of the framebuffer. This might be the case if a \doxylink{classtouchgfx_1_1_snapshot_widget}{Snapshot\+Widget} is placed inside a \doxylink{classtouchgfx_1_1_container}{Container} where parts of the Snapshow\+Widget is outside the area defined by the \doxylink{classtouchgfx_1_1_container}{Container}. The visible region must be completely inside the absolute region.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vis\+Region} & The visible region. \\
+\hline
+{\em abs\+Region} & The absolute region. \\
+\hline
+{\em bitmap\+Id} & Identifier for the bitmap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Null if it fails, else a pointer to the data in the given bitmap.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_a2408b5f5b8cc4239163cf1232a3ee247}{blit\+Copy}, \doxylink{classtouchgfx_1_1_l_c_d_a5615820f1aa6ccd8381c5de6dada2112}{copy\+Frame\+Buffer\+Region\+To\+Memory(const Rect\&, const Rect\&, uint8\+\_\+t\texorpdfstring{$\ast$}{*}, int16\+\_\+t, int16\+\_\+t)}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+There is only one instance of animation storage. The content of the bitmap data /animation storage outside the given region is left untouched. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_a8e580af4ca93489f022513d2d33dd392}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_aae622c2842de88ea24c97f2843175c06}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a23f200294ea1b8c73c59965b2140a03f}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a038716e796cfcd09203b5948f02340fb}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a92372f926e4839105c282af479dbf2bc}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_ac32abf3dc7863e4d79c21c1b7885097a}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a519d1c53bd44b51b6f1f842c99f4e278}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_adae6cac195c6da9d4ff476971d9256fd}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a12acec80b689c7a2720c9dfaca360cb6}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a859e144456fce160c6626cace2407451}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a2d2d53c464f5c390712df330e3f087f9}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a49ffb11068e5dce896cbd89647431cc9}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a5615820f1aa6ccd8381c5de6dada2112}\label{classtouchgfx_1_1_l_c_d_a5615820f1aa6ccd8381c5de6dada2112} 
+\index{touchgfx::LCD@{touchgfx::LCD}!copyFrameBufferRegionToMemory@{copyFrameBufferRegionToMemory}}
+\index{copyFrameBufferRegionToMemory@{copyFrameBufferRegionToMemory}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{copyFrameBufferRegionToMemory()}{copyFrameBufferRegionToMemory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} touchgfx\+::\+LCD\+::copy\+Frame\+Buffer\+Region\+To\+Memory (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{vis\+Region,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{abs\+Region,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{int16\+\_\+t}]{dst\+Width,  }\item[{int16\+\_\+t}]{dst\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Copies part of the framebuffer to memory. The memory is assumed to have the same format as the framebuffer. The two regions given are the visible region and the absolute region on screen. This is used to copy only a part of the framebuffer. This might be the case if a \doxylink{classtouchgfx_1_1_snapshot_widget}{Snapshot\+Widget} is placed inside a \doxylink{classtouchgfx_1_1_container}{Container} where parts of the Snapshow\+Widget is outside the area defined by the \doxylink{classtouchgfx_1_1_container}{Container}. The visible region must be completely inside the absolute region.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em vis\+Region} & The visible region. \\
+\hline
+ & {\em abs\+Region} & The absolute region. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em dst} & Destination memory in same format as the framebuffer. \\
+\hline
+ & {\em dst\+Width} & Width of the destination. \\
+\hline
+ & {\em dst\+Height} & Height of the destination.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rect that was actually copied to the destination buffer.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_a2408b5f5b8cc4239163cf1232a3ee247}{blit\+Copy}, \doxylink{classtouchgfx_1_1_l_c_d_ae1cbe4fe64d9945b20cc6a530ff59368}{copy\+Frame\+Buffer\+Region\+To\+Memory(const Rect\&, const Rect\&, const Bitmap\+Id)}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+There is only one instance of animation storage. The content of the bitmap data /animation storage outside the given region is left untouched. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_ac46c31d7c80b77aa3a5fc457c8bc7d59}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a2fe8cab54a99677c8269d70f50df15c1}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a3eae903d826fbd3c8bb4743c422fbbbc}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a60834203565b2ccc80dffe0ab785c77f}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_adf13603c94c2c5ac493012c834455712}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_ad6cb172f243054fc4fd44ad9774fdf73}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a28e43cc51312a5d60219d31d1981bc76}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a2beafb51e72365ec729f4f9d61eead32}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a1ab7c32ae1a2ac44d97faddbfec24fe8}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a6301f543a578acbf79c097499ebe7b7d}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a39f4dfaa25a1f0e40ed82a1c242bcb5c}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a6cd5f0e778d8e8b71107e142202536c8}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}\label{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8} 
+\index{touchgfx::LCD@{touchgfx::LCD}!div255@{div255}}
+\index{div255@{div255}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{div255()}{div255()}}
+{\footnotesize\ttfamily static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+LCD\+::div255 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Approximates an integer division of a 16bit value by 255. Divides numerator num (e.\+g. the sum resulting from an alpha-\/blending operation) by 255.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num} & The numerator to divide by 255.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of a division by 255. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_ae05cf3c95e1a4a417b4313f4680fa28a}\label{classtouchgfx_1_1_l_c_d_ae05cf3c95e1a4a417b4313f4680fa28a} 
+\index{touchgfx::LCD@{touchgfx::LCD}!div255g@{div255g}}
+\index{div255g@{div255g}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{div255g()}{div255g()}}
+{\footnotesize\ttfamily static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint32\+\_\+t touchgfx\+::\+LCD\+::div255g (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{pixelx\+Alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Divides the green component of pixelx\+Alpha by 255.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pixelx\+Alpha} & The green component of a 32bit ARGB pixel multiplied by an alpha factor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pixelx\+Alpha with its green component divided by 255. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a4a10389bd358cdbd4fe41d2ee9ab8f17}\label{classtouchgfx_1_1_l_c_d_a4a10389bd358cdbd4fe41d2ee9ab8f17} 
+\index{touchgfx::LCD@{touchgfx::LCD}!div255rb@{div255rb}}
+\index{div255rb@{div255rb}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{div255rb()}{div255rb()}}
+{\footnotesize\ttfamily static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint32\+\_\+t touchgfx\+::\+LCD\+::div255rb (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{pixelx\+Alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Divides the red and blue components of pixelx\+Alpha by 255.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pixelx\+Alpha} & The red and blue components of a 32bit ARGB pixel multiplied by an alpha factor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pixelx\+Alpha with its red and blue components divided by 255. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_ac718e34633bdedcb0319dc05ee8ec6bc}\label{classtouchgfx_1_1_l_c_d_ac718e34633bdedcb0319dc05ee8ec6bc} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawGlyph@{drawGlyph}}
+\index{drawGlyph@{drawGlyph}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawGlyph()}{drawGlyph()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::draw\+Glyph (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{wbuf16,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}}]{widget\+Area,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{offsetX,  }\item[{uint16\+\_\+t}]{offsetY,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}}]{glyph,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{glyph\+Data,  }\item[{uint8\+\_\+t}]{byte\+Align\+Row,  }\item[{\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color,  }\item[{uint8\+\_\+t}]{bits\+Per\+Pixel,  }\item[{uint8\+\_\+t}]{alpha,  }\item[{\mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}}}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Private version of draw-\/glyph with explicit destination buffer pointer argument. For all parameters (except the buffer pointer) see the public function \doxylink{classtouchgfx_1_1_l_c_d_a295706d697b3661ab702806b97e9f6de}{draw\+String()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em wbuf16} & The destination (frame) buffer to draw to. \\
+\hline
+ & {\em widget\+Area} & The canvas to draw the glyph inside. \\
+\hline
+ & {\em x} & Horizontal offset to start drawing the glyph. \\
+\hline
+ & {\em y} & Vertical offset to start drawing the glyph. \\
+\hline
+ & {\em offsetX} & Horizontal offset in the glyph to start drawing from. \\
+\hline
+ & {\em offsetY} & Vertical offset in the glyph to start drawing from. \\
+\hline
+ & {\em invalidated\+Area} & The area to draw inside. \\
+\hline
+ & {\em glyph} & Specifications of the glyph to draw. \\
+\hline
+ & {\em glyph\+Data} & Data containing the actual glyph (dense format) \\
+\hline
+ & {\em byte\+Align\+Row} & Each row of glyph data starts in a new byte. \\
+\hline
+ & {\em color} & The color of the glyph. \\
+\hline
+ & {\em bits\+Per\+Pixel} & Bit depth of the glyph. \\
+\hline
+ & {\em alpha} & The transparency of the glyph. \\
+\hline
+ & {\em rotation} & Rotation to do before drawing the glyph. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_a51bea298a02cb13026cbe979e143266e}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a6943b7615daec1b7bb7ff5c2fb48a7d9}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_ac29bed8323477c5362e53e27b16d0727}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_acbf8687f312ef838c6553d283ecb80be}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a69d4fcb41ce7ae6ca412085ec78e2259}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_aaf971d489a8f8382bb9cda8ce436e595}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_aac1beee151f4a10e7957ae04a0bdf790}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a984198ac1fd1c434f905813c64a9be38}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a036487dc69a72d1c13be4b915cc70e00}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_acc9fd416de627dc5d793f8bdac695df5}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a70d02a4c57f7e31259ea312f3c0694f0}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_ab0f9c36f2f986a292b3730d1347732ef}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_aebf86a4cd959cf240664a5080a8e9ff7}\label{classtouchgfx_1_1_l_c_d_aebf86a4cd959cf240664a5080a8e9ff7} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawPartialBitmap@{drawPartialBitmap}}
+\index{drawPartialBitmap@{drawPartialBitmap}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawPartialBitmap()}{drawPartialBitmap()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::draw\+Partial\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bitmap,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect,  }\item[{uint8\+\_\+t}]{alpha = {\ttfamily 255},  }\item[{bool}]{use\+Optimized = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draws all (or a part) of a {\itshape bitmap}. The coordinates of the corner of the bitmap is given in ({\itshape x}, {\itshape y}) and {\itshape rect} describes which part of the {\itshape bitmap} should be drawn. The bitmap can be drawn as it is or more or less transparent depending on the value of {\itshape alpha}. The value of {\itshape alpha} is independent of the transparency of the individual pixels of the given {\itshape bitmap}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap to draw. \\
+\hline
+{\em x} & The absolute x coordinate to place (0, 0) of the bitmap on the screen. \\
+\hline
+{\em y} & The absolute y coordinate to place (0, 0) of the bitmap on the screen. \\
+\hline
+{\em rect} & A rectangle describing what region of the bitmap is to be drawn. \\
+\hline
+{\em alpha} & (Optional) Optional alpha value ranging from 0=invisible to 255=solid. Default is 255 (solid). \\
+\hline
+{\em use\+Optimized} & (Optional) if false, do not attempt to substitute (parts of) this bitmap with faster fillrects. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_a29de5f42464660c0fd8735f1ec22a85d}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_aedb541f040223e52e8136a9a7a48878b}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a17663d56031a25d0dbd956d2c566211c}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a06ea4c48e0fd04857332ad25c9b26bd8}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_aa81f428a24000432a34ed8f22588c94c}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a0d2a51a18eb11ffa9fbd03684ca36dae}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a934bec21387c459c7137539369d08fdf}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_aca17622d913e27807905d6a6ef4e6a6a}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a59b8d2f3ad85f4e659b6e4db62cd7b24}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a432e38271eaaad67230fb37c2aea6c6b}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a9d752b7cc8ea925725f508db0e776ae7}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_afa0836dfa5bd4f5c931c35ba2d28ea7d}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a295706d697b3661ab702806b97e9f6de}\label{classtouchgfx_1_1_l_c_d_a295706d697b3661ab702806b97e9f6de} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawString@{drawString}}
+\index{drawString@{drawString}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawString()}{drawString()}}
+{\footnotesize\ttfamily void touchgfx\+::\+LCD\+::draw\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx\+::\+Rect}}}]{widget\+Area,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_l_c_d_1_1_string_visuals}{String\+Visuals}} \&}]{string\+Visuals,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Draws the specified \doxylink{classtouchgfx_1_1_unicode}{Unicode} string. Breaks line on newline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget\+Area} & The area covered by the drawing widget in absolute coordinates. \\
+\hline
+{\em invalidated\+Area} & The (sub)region of the widget area to draw, expressed relative to the widget area. If the widget\+Area is x=10, y=10, width=20, height=20 and invalidated\+Area is x=5, y=5, width=6, height=6 the widget\+Area drawn on the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} is x=15, y=15, width=6, height=6. \\
+\hline
+{\em string\+Visuals} & The string visuals (font, alignment, line space, color) with which to draw this string. \\
+\hline
+{\em format} & A pointer to a null-\/terminated text string with optional additional wildcard arguments. \\
+\hline
+{\em ...} & Variable arguments providing additional information. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a183713599319a4e64a8342dcfe26e8f7}\label{classtouchgfx_1_1_l_c_d_a183713599319a4e64a8342dcfe26e8f7} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawStringLTR@{drawStringLTR}}
+\index{drawStringLTR@{drawStringLTR}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawStringLTR()}{drawStringLTR()}}
+{\footnotesize\ttfamily void touchgfx\+::\+LCD\+::draw\+String\+LTR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{widget\+Area,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_l_c_d_1_1_string_visuals}{String\+Visuals}} \&}]{visuals,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{va\+\_\+list}]{p\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Draws the specified \doxylink{classtouchgfx_1_1_unicode}{Unicode} string. Breaks line on newline. The string is assumed to contain only Latin characters written left-\/to-\/right.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em widget\+Area} & The area covered by the drawing widget in absolute coordinates. \\
+\hline
+ & {\em invalidated\+Area} & The (sub)region of the widget area to draw, expressed relative to the widget area. If the widget\+Area is x=10, y=10, width=20, height=20 and invalidated\+Area is x=5, y=5, width=6, height=6 the widget\+Area drawn on the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} is x=15, y=15, width=6, height=6. \\
+\hline
+\mbox{\texttt{ in}}  & {\em visuals} & The string visuals (font, alignment, line space, color) with which to draw this string. \\
+\hline
+ & {\em format} & A pointer to a null-\/terminated text string with optional additional wildcard arguments. \\
+\hline
+ & {\em p\+Arg} & Variable arguments providing additional information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_a295706d697b3661ab702806b97e9f6de}{draw\+String} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_l_c_d_ac339fcefdd5f6f961c1353c21d77655d}\label{classtouchgfx_1_1_l_c_d_ac339fcefdd5f6f961c1353c21d77655d} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawStringRTL@{drawStringRTL}}
+\index{drawStringRTL@{drawStringRTL}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawStringRTL()}{drawStringRTL()}}
+{\footnotesize\ttfamily void touchgfx\+::\+LCD\+::draw\+String\+RTL (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{widget\+Area,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_l_c_d_1_1_string_visuals}{String\+Visuals}} \&}]{visuals,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{va\+\_\+list}]{p\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Draws the specified \doxylink{classtouchgfx_1_1_unicode}{Unicode} string. Breaks line on newline. The string can be either right-\/to-\/left or left-\/to-\/right and may contain sequences of Arabic / Hebrew and Latin characters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em widget\+Area} & The area covered by the drawing widget in absolute coordinates. \\
+\hline
+ & {\em invalidated\+Area} & The (sub)region of the widget area to draw, expressed relative to the widget area. If the widget\+Area is x=10, y=10, width=20, height=20 and invalidated\+Area is x=5, y=5, width=6, height=6 the widget\+Area drawn on the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} is x=15, y=15, width=6, height=6. \\
+\hline
+\mbox{\texttt{ in}}  & {\em visuals} & The string visuals (font, alignment, line space, color) with which to draw this string. \\
+\hline
+ & {\em format} & A pointer to a null-\/terminated text string with optional additional wildcard arguments. \\
+\hline
+ & {\em p\+Arg} & Variable arguments providing additional information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_a295706d697b3661ab702806b97e9f6de}{draw\+String} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_l_c_d_af2240698457e64d6aae89c30c4df176c}\label{classtouchgfx_1_1_l_c_d_af2240698457e64d6aae89c30c4df176c} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawTextureMapQuad@{drawTextureMapQuad}}
+\index{drawTextureMapQuad@{drawTextureMapQuad}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawTextureMapQuad()}{drawTextureMapQuad()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::draw\+Texture\+Map\+Quad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&}]{dest,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_point3_d}{Point3D}} \texorpdfstring{$\ast$}{*}}]{vertices,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&}]{texture,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{absolute\+Rect,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{dirty\+Area\+Absolute,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}}}]{render\+Variant,  }\item[{uint8\+\_\+t}]{alpha = {\ttfamily 255},  }\item[{uint16\+\_\+t}]{sub\+Division\+Size = {\ttfamily 12} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Texture map quad. Draw a perspective correct texture mapped quad. The vertices describes the surface, the x,y,z coordinates and the u,v coordinates of the texture. The texture contains the image data to be drawn The quad line will be placed and clipped using the absolute and dirty rectangles The alpha will determine how the quad should be alpha blended. The sub\+Division\+Size will determine the size of the piecewise affine texture mapped portions of the quad.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & The description of where the texture is drawn -\/ can be used to issue a draw off screen. \\
+\hline
+{\em vertices} & The vertices of the quad. \\
+\hline
+{\em texture} & The texture. \\
+\hline
+{\em absolute\+Rect} & The containing rectangle in absolute coordinates. \\
+\hline
+{\em dirty\+Area\+Absolute} & The dirty area in absolute coordinates. \\
+\hline
+{\em render\+Variant} & The render variant -\/ includes the algorithm and the pixel format. \\
+\hline
+{\em alpha} & (Optional) the alpha. Default is 255 (solid). \\
+\hline
+{\em sub\+Division\+Size} & (Optional) the size of the subdivisions of the scan line. Default is 12. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a1ad7bae37f40d162eb5ed10fa6da75a3}\label{classtouchgfx_1_1_l_c_d_a1ad7bae37f40d162eb5ed10fa6da75a3} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawTextureMapScanLine@{drawTextureMapScanLine}}
+\index{drawTextureMapScanLine@{drawTextureMapScanLine}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawTextureMapScanLine()}{drawTextureMapScanLine()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::draw\+Texture\+Map\+Scan\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&}]{dest,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_gradients}{Gradients}} \&}]{gradients,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_edge}{Edge}} \texorpdfstring{$\ast$}{*}}]{left\+Edge,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_edge}{Edge}} \texorpdfstring{$\ast$}{*}}]{right\+Edge,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&}]{texture,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{absolute\+Rect,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{dirty\+Area\+Absolute,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}}}]{render\+Variant,  }\item[{uint8\+\_\+t}]{alpha,  }\item[{uint16\+\_\+t}]{sub\+Division\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Draw scan line. Draw one horizontal line of the texture map on screen. The scan line will be drawn using perspective correct texture mapping. The appearance of the line is determined by the left and right edge and the gradients structure. The edges contain the information about the x,y,z coordinates of the left and right side respectively and also information about the u,v coordinates of the texture map used. The gradients structure contains information about how to interpolate all the values across the scan line. The data drawn should be present in the texture argument.
+
+The scan line will be drawn using the additional arguments. The scan line will be placed and clipped using the absolute and dirty rectangles The alpha will determine how the scan line should be alpha blended. The sub\+Division\+Size will determine the size of the piecewise affine texture mapped lines.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & The description of where the texture is drawn -\/ can be used to issue a draw off screen. \\
+\hline
+{\em gradients} & The gradients using in interpolation across the scan line. \\
+\hline
+{\em left\+Edge} & The left edge of the scan line. \\
+\hline
+{\em right\+Edge} & The right edge of the scan line. \\
+\hline
+{\em texture} & The texture. \\
+\hline
+{\em absolute\+Rect} & The containing rectangle in absolute coordinates. \\
+\hline
+{\em dirty\+Area\+Absolute} & The dirty area in absolute coordinates. \\
+\hline
+{\em render\+Variant} & The render variant -\/ includes the algorithm and the pixel format. \\
+\hline
+{\em alpha} & The alpha. \\
+\hline
+{\em sub\+Division\+Size} & The size of the subdivisions of the scan line. A value of 1 will give a completely perspective correct texture mapped scan line. A large value will give an affine texture mapped scan line. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_adeb9fc71503ec94d6bcf092bf417e4e5}{touchgfx\+::\+LCD1bpp}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_ab9d5f51190efdd33ae49c7f7940b20c1}\label{classtouchgfx_1_1_l_c_d_ab9d5f51190efdd33ae49c7f7940b20c1} 
+\index{touchgfx::LCD@{touchgfx::LCD}!drawTextureMapTriangle@{drawTextureMapTriangle}}
+\index{drawTextureMapTriangle@{drawTextureMapTriangle}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{drawTextureMapTriangle()}{drawTextureMapTriangle()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::draw\+Texture\+Map\+Triangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&}]{dest,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_point3_d}{Point3D}} \texorpdfstring{$\ast$}{*}}]{vertices,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&}]{texture,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{absolute\+Rect,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{dirty\+Area\+Absolute,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}}}]{render\+Variant,  }\item[{uint8\+\_\+t}]{alpha = {\ttfamily 255},  }\item[{uint16\+\_\+t}]{sub\+Division\+Size = {\ttfamily 12} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Texture map triangle. Draw a perspective correct texture mapped triangle. The vertices describes the surface, the x,y,z coordinates and the u,v coordinates of the texture. The texture contains the image data to be drawn The triangle line will be placed and clipped using the absolute and dirty rectangles The alpha will determine how the triangle should be alpha blended. The sub\+Division\+Size will determine the size of the piecewise affine texture mapped portions of the triangle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & The description of where the texture is drawn -\/ can be used to issue a draw off screen. \\
+\hline
+{\em vertices} & The vertices of the triangle. \\
+\hline
+{\em texture} & The texture. \\
+\hline
+{\em absolute\+Rect} & The containing rectangle in absolute coordinates. \\
+\hline
+{\em dirty\+Area\+Absolute} & The dirty area in absolute coordinates. \\
+\hline
+{\em render\+Variant} & The render variant -\/ includes the algorithm and the pixel format. \\
+\hline
+{\em alpha} & (Optional) the alpha. Default is 255 (solid). \\
+\hline
+{\em sub\+Division\+Size} & (Optional) the size of the subdivisions of the scan line. Default is 12. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a59b76f673de42780545939f91fad8341}\label{classtouchgfx_1_1_l_c_d_a59b76f673de42780545939f91fad8341} 
+\index{touchgfx::LCD@{touchgfx::LCD}!fillBuffer@{fillBuffer}}
+\index{fillBuffer@{fillBuffer}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{fillBuffer()}{fillBuffer()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::fill\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{destination,  }\item[{uint16\+\_\+t}]{pixel\+Stride,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draws a filled rectangle in destination memory using the specified color and opacity. The destination memory must have the same format as the display framebuffer. By default the rectangle will be drawn as a solid box. The rectangle can be drawn with transparency by specifying alpha from 0=invisible to 255=solid.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em destination} & The start of the memory area to fill. \\
+\hline
+ & {\em pixel\+Stride} & The pixel stride, i.\+e. number of pixels in a row. \\
+\hline
+ & {\em rect} & The rectangle to fill absolute coordinates. \\
+\hline
+ & {\em color} & The rectangle color. \\
+\hline
+ & {\em alpha} & The rectangle opacity, from 0=invisible to 255=solid.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The pixel\+Stride is rounded up to nearest whole bytes for displays with more than one pixel per byte (\doxylink{classtouchgfx_1_1_l_c_d1bpp}{LCD1bpp}, \doxylink{classtouchgfx_1_1_l_c_d2bpp}{LCD2bpp} and \doxylink{classtouchgfx_1_1_l_c_d4bpp}{LCD4bpp}) 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_a76511b3cac5eead61829e80a45c9867d}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a619a52db3caf72f208f64083d8ca6b3e}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a30f79609d505b8942959d219090e3a54}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a7a6752048a90f6612d750df20d4df843}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a298c69727dcf4b91c913a78ab7951394}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a0368236df23d4c9f0510b89dc9881512}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a35a1a9ecd5b32e893c6719cc7141e9e1}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a528378d92fd5c41a9060f0dea404873c}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a3da95c9d69db00bf819bdf3e1eaecb3c}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_afdfb876e8d2776d376c5849eb3ca44be}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_aa4b9560c5d360d52f1a3d6608b121dbc}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_aba954090c0de6b9383d013e32ca417af}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_ad91b3d6a891d588cc22fb5d25f1279cb}\label{classtouchgfx_1_1_l_c_d_ad91b3d6a891d588cc22fb5d25f1279cb} 
+\index{touchgfx::LCD@{touchgfx::LCD}!fillRect@{fillRect}}
+\index{fillRect@{fillRect}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{fillRect()}{fillRect()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::fill\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect,  }\item[{\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color,  }\item[{uint8\+\_\+t}]{alpha = {\ttfamily 255} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draws a filled rectangle in the framebuffer in the specified color and opacity. By default the rectangle will be drawn as a solid box. The rectangle can be drawn with transparency by specifying alpha from 0=invisible to 255=solid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & The rectangle to draw in absolute display coordinates. \\
+\hline
+{\em color} & The rectangle color. \\
+\hline
+{\em alpha} & (Optional) The rectangle opacity, from 0=invisible to 255=solid.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_a59b76f673de42780545939f91fad8341}{fill\+Buffer} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_a7b1ded693d0f2c1d8e614ac42af4ed23}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a1348ded8eccd0b7db977bcb2a3ca8131}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_ac95d05e88775353122e781fea680a928}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a247edb0cc986d8e8833be105128338a4}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_ab9d43b33111abffdc14df968125cdf1e}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a7ef2617508a390e5b9be35a876e84809}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_aa1a03193739fcd992847ff9b98063348}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a99deac1b0ebf674bc7f614d5c9ced1b2}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_af5dbac4a8a7b52fb99d8f1797769a3ba}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a1f8bed29b2c7869cf0d6bda9bf28784a}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a1b3b946b3a3f5d5bee2d35d1c31d63ec}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a9b3504afa684fcc1a69394039c07be75}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a1f10f02b0fd6c1333387515e69330735}\label{classtouchgfx_1_1_l_c_d_a1f10f02b0fd6c1333387515e69330735} 
+\index{touchgfx::LCD@{touchgfx::LCD}!framebufferFormat@{framebufferFormat}}
+\index{framebufferFormat@{framebufferFormat}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{framebufferFormat()}{framebufferFormat()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} touchgfx\+::\+LCD\+::framebuffer\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Framebuffer format used by the display.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_a1be9f3df21df00dbad6f0afbdff26ef7}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a573a3ae89f286e894a7a3c788c7a127c}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_acbfca56b8fe3e8237115829a63d3d82c}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_ac0fbe53116821c93dcd955af271e7633}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a02412dcf0e1859dbd04ef87e664ab915}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a9f9d7746ce3c6ac1cd17662609c7b534}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a5e6d8c5e676ad87f539ad7c812216f61}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_acf3900bb92f4ba51c777142294bbedee}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a23e1432d25c2e0f629475f5ce03d0abd}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a50284597663f16624919d7abaec46306}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a708c5005dd0156a7520caf406de10764}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_af30cec37cf21df3e78d2e7bcecb0b6e4}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_aa1027301ceecf5ae413471aa928f51e0}\label{classtouchgfx_1_1_l_c_d_aa1027301ceecf5ae413471aa928f51e0} 
+\index{touchgfx::LCD@{touchgfx::LCD}!framebufferStride@{framebufferStride}}
+\index{framebufferStride@{framebufferStride}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{framebufferStride()}{framebufferStride()}}
+{\footnotesize\ttfamily virtual uint16\+\_\+t touchgfx\+::\+LCD\+::framebuffer\+Stride (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Framebuffer stride in bytes. The distance (in bytes) from the start of one framebuffer row, to the next.
+
+\begin{DoxyReturn}{Returns}
+The number of bytes in one framebuffer row. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_ad292717589aa16b34a48dbe22d1f5f9f}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_af55a397f87bb04188846e43fecae444f}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_aad73c8df47a849d9b1ae88722d6c75d6}{touchgfx\+::\+LCD1bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a73eef837c87251f55a4460c3888a5fa0}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_a87cec9c79103bbc13650c4950101b784}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a2f3f22a916e157ded840fc9917beef4a}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_ace91e54b58cf47b5245c73a45319d675}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a839ff5cadc622727475a3ca601b85a64}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a1958652c9c72f82eb47447acf329a41c}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a262b0cfc0ecec7f5bd4048a742e539bd}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_a4a794394f8a704d293424c22d0c08634}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_a9a656292c8abf3e35424f024f687302d}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_a39008017fd25723ec5f23d4c2c0a9cef}\label{classtouchgfx_1_1_l_c_d_a39008017fd25723ec5f23d4c2c0a9cef} 
+\index{touchgfx::LCD@{touchgfx::LCD}!getAlphaFromA4@{getAlphaFromA4}}
+\index{getAlphaFromA4@{getAlphaFromA4}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{getAlphaFromA4()}{getAlphaFromA4()}}
+{\footnotesize\ttfamily static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+LCD\+::get\+Alpha\+From\+A4 (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint32\+\_\+t}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+Gets alpha from A4 image at given offset. The value is scaled up from range 0-\/15 to 0-\/ 255.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to the start of the A4 data. \\
+\hline
+{\em offset} & The offset into the A4 image.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The alpha from A4 (0-\/255). 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_ae3f80f93bc845d19d0e142c9bb1fae57}\label{classtouchgfx_1_1_l_c_d_ae3f80f93bc845d19d0e142c9bb1fae57} 
+\index{touchgfx::LCD@{touchgfx::LCD}!getDefaultColor@{getDefaultColor}}
+\index{getDefaultColor@{getDefaultColor}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{getDefaultColor()}{getDefaultColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} touchgfx\+::\+LCD\+::get\+Default\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets default color previously set using set\+Default\+Color.
+
+\begin{DoxyReturn}{Returns}
+The default color.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_a3dbba4eb6f0dee4e68adcc1dbdde409f}{set\+Default\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_l_c_d_ad71dd5c8b8e8369e52fe4b73e3e8d7b2}\label{classtouchgfx_1_1_l_c_d_ad71dd5c8b8e8369e52fe4b73e3e8d7b2} 
+\index{touchgfx::LCD@{touchgfx::LCD}!getNumLines@{getNumLines}}
+\index{getNumLines@{getNumLines}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{getNumLines()}{getNumLines()}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+LCD\+::get\+Num\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_text_provider}{Text\+Provider}} \&}]{text\+Provider,  }\item[{\mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7d}{Wide\+Text\+Action}}}]{wide\+Text\+Action,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}}}]{text\+Direction,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}}]{font,  }\item[{int16\+\_\+t}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Gets number of lines for a given text taking word wrap into consideration. The font and width are required to find the number of lines in case word wrap is true.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text\+Provider} & The text provider. \\
+\hline
+ & {\em wide\+Text\+Action} & The wide text action in case lines are longer than the width of the text area. \\
+\hline
+ & {\em text\+Direction} & The text direction (LTR or RTL). \\
+\hline
+ & {\em font} & The font. \\
+\hline
+ & {\em width} & The width.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number lines. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a962e0ee1bda7ab97e0e38ece26616e64}\label{classtouchgfx_1_1_l_c_d_a962e0ee1bda7ab97e0e38ece26616e64} 
+\index{touchgfx::LCD@{touchgfx::LCD}!getTextureMapperDrawScanLine@{getTextureMapperDrawScanLine}}
+\index{getTextureMapperDrawScanLine@{getTextureMapperDrawScanLine}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{getTextureMapperDrawScanLine()}{getTextureMapperDrawScanLine()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{Draw\+Texture\+Map\+Scan\+Line\+Base}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+LCD\+::get\+Texture\+Mapper\+Draw\+Scan\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&}]{texture,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}}}]{render\+Variant,  }\item[{uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets pointer to object that can draw a scan line which allows for highly specialized and optimized implementation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture Surface. \\
+\hline
+{\em render\+Variant} & The render variant. \\
+\hline
+{\em alpha} & The global alpha.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Null if it fails, else the pointer to the texture mapper draw scan line object. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_ac032188cfc9f8f21cc8963a3de07b74d}{touchgfx\+::\+LCD16bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_aeaf2873a9df3d6bf613f385b19fdb20f}{touchgfx\+::\+LCD16bpp\+Serial\+Flash}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24bpp_a08eca690c1e3464a6d0848f547251514}{touchgfx\+::\+LCD24bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2bpp_af5adfa2d5c9631e02ff8626f7fe6e7d0}{touchgfx\+::\+LCD2bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp_a167ea9c18ce526da350a854df60abc66}{touchgfx\+::\+LCD32bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_ae63c29fe875270c4365ca9f2ff91eae6}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a6f3cee4e621fc8c857b90d47389c46b0}{touchgfx\+::\+LCD4bpp}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_b_g_r2222_a0985b9e75ada31a4d55cec4b449480d6}{touchgfx\+::\+LCD8bpp\+\_\+\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___a_r_g_b2222_a60c9ba87b5ca6fe53f1772997e02dcff}{touchgfx\+::\+LCD8bpp\+\_\+\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___b_g_r_a2222_ae6e2fe4db9c9dfc260e09721fc3b5244}{touchgfx\+::\+LCD8bpp\+\_\+\+BGRA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_aa28ac22af07238ee0f077cb3e681a261}{touchgfx\+::\+LCD8bpp\+\_\+\+RGBA2222}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_aadcf34945832b67777b6ea043fa4b3f9}\label{classtouchgfx_1_1_l_c_d_aadcf34945832b67777b6ea043fa4b3f9} 
+\index{touchgfx::LCD@{touchgfx::LCD}!realX@{realX}}
+\index{realX@{realX}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{realX()}{realX()}}
+{\footnotesize\ttfamily static int touchgfx\+::\+LCD\+::realX (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{widget\+Area,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}}}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Find the real, absolute x coordinate of a point inside a widget with regards to rotation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em widget\+Area} & The widget containing the point. \\
+\hline
+ & {\em x} & The x coordinate. \\
+\hline
+ & {\em y} & The y coordinate. \\
+\hline
+ & {\em rotation} & Rotation to perform.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The absolute x coordinate after applying appropriate rotation. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a5cda80f876c97160cd72ddeb77472f45}\label{classtouchgfx_1_1_l_c_d_a5cda80f876c97160cd72ddeb77472f45} 
+\index{touchgfx::LCD@{touchgfx::LCD}!realY@{realY}}
+\index{realY@{realY}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{realY()}{realY()}}
+{\footnotesize\ttfamily static int touchgfx\+::\+LCD\+::realY (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{widget\+Area,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}}}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Find the real, absolute y coordinate of a point inside a widget with regards to rotation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em widget\+Area} & The widget containing the point. \\
+\hline
+ & {\em x} & The x coordinate. \\
+\hline
+ & {\em y} & The y coordinate. \\
+\hline
+ & {\em rotation} & Rotation to perform.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The absolute y coordinate after applying appropriate rotation. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_af3d5b5487669d9fe99876d9da929ce37}\label{classtouchgfx_1_1_l_c_d_af3d5b5487669d9fe99876d9da929ce37} 
+\index{touchgfx::LCD@{touchgfx::LCD}!rotateRect@{rotateRect}}
+\index{rotateRect@{rotateRect}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{rotateRect()}{rotateRect()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+LCD\+::rotate\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{canvas,  }\item[{const \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{Text\+Rotation}}}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Rotate a rectangle inside another rectangle.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em rect} & The rectangle to rotate. \\
+\hline
+ & {\em canvas} & The rectangle containing the rect to rotate. \\
+\hline
+ & {\em rotation} & Rotation to perform on rect. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a3dbba4eb6f0dee4e68adcc1dbdde409f}\label{classtouchgfx_1_1_l_c_d_a3dbba4eb6f0dee4e68adcc1dbdde409f} 
+\index{touchgfx::LCD@{touchgfx::LCD}!setDefaultColor@{setDefaultColor}}
+\index{setDefaultColor@{setDefaultColor}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{setDefaultColor()}{setDefaultColor()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::set\+Default\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets default color as used by alpha level only bitmap formats, e.\+g. A4. The default color, if no color is set, is black.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_l_c_d_ae3f80f93bc845d19d0e142c9bb1fae57}{get\+Default\+Color} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4bpp_a2a8db584386160efb596b77f21756b20}{touchgfx\+::\+LCD4bpp}}.
+
+\Hypertarget{classtouchgfx_1_1_l_c_d_aa1759b99a604dc77af76e3bfcafe783d}\label{classtouchgfx_1_1_l_c_d_aa1759b99a604dc77af76e3bfcafe783d} 
+\index{touchgfx::LCD@{touchgfx::LCD}!stringWidth@{stringWidth}}
+\index{stringWidth@{stringWidth}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{stringWidth()}{stringWidth()}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+LCD\+::string\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_text_provider}{Text\+Provider}} \&}]{text\+Provider,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \&}]{font,  }\item[{const int}]{num\+Chars,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}}}]{text\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Find string width of the given number of ligatures read from the given \doxylink{classtouchgfx_1_1_text_provider}{Text\+Provider}. After the introduction of Arabic, Thai, Hindi and other languages, ligatures are counted instead of characters. For Latin languages, number of characters equal number of ligatures.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text\+Provider} & The text provider. \\
+\hline
+ & {\em font} & The font. \\
+\hline
+ & {\em num\+Chars} & Number of characters (ligatures). \\
+\hline
+ & {\em text\+Direction} & The text direction.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An int16\+\_\+t. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_a2f67f4e8f4ae21de88178a1d715c3f70}\label{classtouchgfx_1_1_l_c_d_a2f67f4e8f4ae21de88178a1d715c3f70} 
+\index{touchgfx::LCD@{touchgfx::LCD}!supportDynamicBitmapDrawing@{supportDynamicBitmapDrawing}}
+\index{supportDynamicBitmapDrawing@{supportDynamicBitmapDrawing}!touchgfx::LCD@{touchgfx::LCD}}
+\doxysubsubsection{\texorpdfstring{supportDynamicBitmapDrawing()}{supportDynamicBitmapDrawing()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+LCD\+::support\+Dynamic\+Bitmap\+Drawing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Check if \doxylink{classtouchgfx_1_1_l_c_d}{LCD} support dynamic bitmap drawing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & The dynamic bitmap format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if dynamic bitmap drawing is supported, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32bpp___x_r_g_b8888_a4fb010e5db7fafcd26ae793566776f65}{touchgfx\+::\+LCD32bpp\+\_\+\+XRGB8888}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/lcd/\mbox{\hyperlink{_l_c_d_8hpp}{LCD.\+hpp}}\item 
+Touch\+GFX/generated/texts/src/Texts.\+cpp\end{DoxyCompactItemize}

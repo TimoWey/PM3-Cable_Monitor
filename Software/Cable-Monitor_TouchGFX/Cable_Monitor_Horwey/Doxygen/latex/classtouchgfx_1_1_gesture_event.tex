@@ -1,0 +1,198 @@
+\doxysection{touchgfx\+::Gesture\+Event Class Reference}
+\hypertarget{classtouchgfx_1_1_gesture_event}{}\label{classtouchgfx_1_1_gesture_event}\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+
+
+{\ttfamily \#include $<$Gesture\+Event.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Gesture\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_gesture_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{Gesture\+Event\+Type}} \{ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fa92b5fa569e670fab28ac1727ca5216e2}{SWIPE\+\_\+\+HORIZONTAL}}
+, \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fab00e03e39e077d2622cbe9788dc0b608}{SWIPE\+\_\+\+VERTICAL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtouchgfx_1_1_event}{touchgfx\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event\+Type}} \{ \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a37c53941adc4710fce11c6d694ec362b}{EVENT\+\_\+\+CLICK}}
+, \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a36c8095692a9b7537f99bfc827908b12}{EVENT\+\_\+\+DRAG}}
+, \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a6377ac41957e2dea4314fb564c0eac98}{EVENT\+\_\+\+GESTURE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a43795fab8854c7b4ea9db34e92dbbc7a}{Gesture\+Event}} (\mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{Gesture\+Event\+Type}} type, int16\+\_\+t velocity, int16\+\_\+t x, int16\+\_\+t y)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a10d8af4975cd87d365d8a17ac4dc06e0}{Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&gesture\+Event)
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_aad52b06500f0ec6bbedc57c48ecda7bb}{get\+Velocity}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{Gesture\+Event\+Type}} \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a1fc615457fcb1aedda739c9255853ffa}{get\+Type}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a0470545df5e750e108f100f62a91d30a}{getX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a340646a7ddf7230d7f8158b2c59e193d}{getY}} () const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event\+::\+Event\+Type}} \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_abe56d1debb0f7dfe7f1033b55c2a331c}{get\+Event\+Type}} () const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \& \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a3d2733e4f245b18f6a31b7f24f9d29b3}{operator=}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&gesture\+Event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_event}{touchgfx\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_event_a5e7f8bff58b087455e9fd49a397e07bc}{Event}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_event_adbf7073f462dfd8340354132a2ba5bf6}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A gesture event. The only gesture events currently supported is \doxylink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fa92b5fa569e670fab28ac1727ca5216e2}{SWIPE\+\_\+\+HORIZONTAL} and \doxylink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fab00e03e39e077d2622cbe9788dc0b608}{SWIPE\+\_\+\+VERTICAL}, which will be issued every time the input system detects a swipe.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_event}{Event} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}\label{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!GestureEventType@{GestureEventType}}
+\index{GestureEventType@{GestureEventType}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{GestureEventType}{GestureEventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{touchgfx\+::\+Gesture\+Event\+::\+Gesture\+Event\+Type}}}
+
+Values that represent gesture types. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SWIPE\_HORIZONTAL@{SWIPE\_HORIZONTAL}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!SWIPE\_HORIZONTAL@{SWIPE\_HORIZONTAL}}}\Hypertarget{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fa92b5fa569e670fab28ac1727ca5216e2}\label{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fa92b5fa569e670fab28ac1727ca5216e2} 
+SWIPE\+\_\+\+HORIZONTAL&An enum constant representing a horizontal swipe. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SWIPE\_VERTICAL@{SWIPE\_VERTICAL}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!SWIPE\_VERTICAL@{SWIPE\_VERTICAL}}}\Hypertarget{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fab00e03e39e077d2622cbe9788dc0b608}\label{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fab00e03e39e077d2622cbe9788dc0b608} 
+SWIPE\+\_\+\+VERTICAL&An enum constant representing a vertical swipe. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_gesture_event_a43795fab8854c7b4ea9db34e92dbbc7a}\label{classtouchgfx_1_1_gesture_event_a43795fab8854c7b4ea9db34e92dbbc7a} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!GestureEvent@{GestureEvent}}
+\index{GestureEvent@{GestureEvent}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{GestureEvent()}{GestureEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily touchgfx\+::\+Gesture\+Event\+::\+Gesture\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{Gesture\+Event\+Type}}}]{type,  }\item[{int16\+\_\+t}]{velocity,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. Create a gesture event of the specified type with the specified coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the gesture event. \\
+\hline
+{\em velocity} & The velocity of this gesture (swipe) \\
+\hline
+{\em x} & The x coordinate of the gesture. \\
+\hline
+{\em y} & The y coordinate of the gesture. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_gesture_event_a10d8af4975cd87d365d8a17ac4dc06e0}\label{classtouchgfx_1_1_gesture_event_a10d8af4975cd87d365d8a17ac4dc06e0} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!GestureEvent@{GestureEvent}}
+\index{GestureEvent@{GestureEvent}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{GestureEvent()}{GestureEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily touchgfx\+::\+Gesture\+Event\+::\+Gesture\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&}]{gesture\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gesture\+Event} & The gesture event. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_gesture_event_abe56d1debb0f7dfe7f1033b55c2a331c}\label{classtouchgfx_1_1_gesture_event_abe56d1debb0f7dfe7f1033b55c2a331c} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!getEventType@{getEventType}}
+\index{getEventType@{getEventType}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{getEventType()}{getEventType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event\+::\+Event\+Type}} touchgfx\+::\+Gesture\+Event\+::get\+Event\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets event type.
+
+\begin{DoxyReturn}{Returns}
+The type of this event. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_event_aa4db37fe6ff139307d5847b0e2a792c2}{touchgfx\+::\+Event}}.
+
+\Hypertarget{classtouchgfx_1_1_gesture_event_a1fc615457fcb1aedda739c9255853ffa}\label{classtouchgfx_1_1_gesture_event_a1fc615457fcb1aedda739c9255853ffa} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!getType@{getType}}
+\index{getType@{getType}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{Gesture\+Event\+Type}} touchgfx\+::\+Gesture\+Event\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the type of this gesture event.
+
+\begin{DoxyReturn}{Returns}
+The type of this gesture event. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_gesture_event_aad52b06500f0ec6bbedc57c48ecda7bb}\label{classtouchgfx_1_1_gesture_event_aad52b06500f0ec6bbedc57c48ecda7bb} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Gesture\+Event\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the velocity of this gesture event.
+
+\begin{DoxyReturn}{Returns}
+The velocity of this gesture event. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_gesture_event_a0470545df5e750e108f100f62a91d30a}\label{classtouchgfx_1_1_gesture_event_a0470545df5e750e108f100f62a91d30a} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!getX@{getX}}
+\index{getX@{getX}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Gesture\+Event\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the x coordinate of this gesture event.
+
+\begin{DoxyReturn}{Returns}
+The x coordinate of this gesture event. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_gesture_event_a340646a7ddf7230d7f8158b2c59e193d}\label{classtouchgfx_1_1_gesture_event_a340646a7ddf7230d7f8158b2c59e193d} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!getY@{getY}}
+\index{getY@{getY}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Gesture\+Event\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the y coordinate of this gesture event.
+
+\begin{DoxyReturn}{Returns}
+The y coordinate of this gesture event. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_gesture_event_a3d2733e4f245b18f6a31b7f24f9d29b3}\label{classtouchgfx_1_1_gesture_event_a3d2733e4f245b18f6a31b7f24f9d29b3} 
+\index{touchgfx::GestureEvent@{touchgfx::GestureEvent}!operator=@{operator=}}
+\index{operator=@{operator=}!touchgfx::GestureEvent@{touchgfx::GestureEvent}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \& touchgfx\+::\+Gesture\+Event\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&}]{gesture\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assignment operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gesture\+Event} & The gesture event.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shallow copy of this object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/events/\mbox{\hyperlink{_gesture_event_8hpp}{Gesture\+Event.\+hpp}}\end{DoxyCompactItemize}

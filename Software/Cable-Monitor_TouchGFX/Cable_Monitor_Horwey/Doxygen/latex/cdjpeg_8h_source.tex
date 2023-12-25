@@ -1,0 +1,193 @@
+\doxysection{cdjpeg.\+h}
+\hypertarget{cdjpeg_8h_source}{}\label{cdjpeg_8h_source}\index{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/cdjpeg.h@{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/cdjpeg.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ cdjpeg.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1994-\/1997,\ Thomas\ G.\ Lane.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Independent\ JPEG\ Group's\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ For\ conditions\ of\ distribution\ and\ use,\ see\ the\ accompanying\ README\ file.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ This\ file\ contains\ common\ declarations\ for\ the\ sample\ applications}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ cjpeg\ and\ djpeg.\ \ It\ is\ NOT\ used\ by\ the\ core\ JPEG\ library.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ JPEG\_CJPEG\_DJPEG\ \ \ \ }\textcolor{comment}{/*\ define\ proper\ options\ in\ jconfig.h\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ JPEG\_INTERNAL\_OPTIONS\ \ \ }\textcolor{comment}{/*\ cjpeg.c,djpeg.c\ need\ to\ see\ xxx\_SUPPORTED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}jinclude.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}jpeglib.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}jerror.h"{}}\ \ \ \ \ \textcolor{comment}{/*\ get\ library\ error\ codes\ too\ */}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}cderror.h"{}}\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ get\ application-\/specific\ error\ codes\ */}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ Object\ interface\ for\ cjpeg's\ source\ file\ decoding\ modules}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_struct}}\ *\ \mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_struct}}\ \{}
+\DoxyCodeLine{00027\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ start\_input,\ (\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}}\ sinfo));}
+\DoxyCodeLine{00029\ \ \ JMETHOD(JDIMENSION,\ get\_pixel\_rows,\ (\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}}\ sinfo));}
+\DoxyCodeLine{00031\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ finish\_input,\ (\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}}\ sinfo));}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ FILE\ *input\_file;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ JSAMPARRAY\ buffer;}
+\DoxyCodeLine{00037\ \ \ JDIMENSION\ buffer\_height;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ Object\ interface\ for\ djpeg's\ output\ file\ encoding\ modules}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_struct}}\ *\ \mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_struct}}\ \{}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{/*\ start\_output\ is\ called\ after\ jpeg\_start\_decompress\ finishes.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ *\ The\ color\ map\ will\ be\ ready\ at\ this\ time,\ if\ one\ is\ needed.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00051\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ start\_output,\ (\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}}\ dinfo));}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{/*\ Emit\ the\ specified\ number\ of\ pixel\ rows\ from\ the\ buffer.\ */}}
+\DoxyCodeLine{00054\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ put\_pixel\_rows,\ (\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}}\ dinfo,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JDIMENSION\ rows\_supplied));}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{/*\ Finish\ up\ at\ the\ end\ of\ the\ image.\ */}}
+\DoxyCodeLine{00058\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ finish\_output,\ (\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}}\ dinfo));}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{/*\ Target\ file\ spec;\ filled\ in\ by\ djpeg.c\ after\ object\ is\ created.\ */}}
+\DoxyCodeLine{00062\ \ \ FILE\ *\ output\_file;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{/*\ Output\ pixel-\/row\ buffer.\ \ Created\ by\ module\ init\ or\ start\_output.}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ *\ Width\ is\ cinfo-\/>output\_width\ *\ cinfo-\/>output\_components;}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ *\ height\ is\ buffer\_height.}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00068\ \ \ JSAMPARRAY\ buffer;}
+\DoxyCodeLine{00069\ \ \ JDIMENSION\ buffer\_height;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ cjpeg/djpeg\ may\ need\ to\ perform\ extra\ passes\ to\ convert\ to\ or\ from}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ the\ source/destination\ file\ format.\ \ The\ JPEG\ library\ does\ not\ know}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ about\ these\ passes,\ but\ we'd\ like\ them\ to\ be\ counted\ by\ the\ progress}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ monitor.\ \ We\ use\ an\ expanded\ progress\ monitor\ object\ to\ hold\ the}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ additional\ pass\ count.}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcdjpeg__progress__mgr}{cdjpeg\_progress\_mgr}}\ \{}
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structjpeg__progress__mgr}{jpeg\_progress\_mgr}}\ pub;\ \ \ \ \textcolor{comment}{/*\ fields\ known\ to\ JPEG\ library\ */}}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{int}\ completed\_extra\_passes;\ \ \ \textcolor{comment}{/*\ extra\ passes\ completed\ */}}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{int}\ total\_extra\_passes;\ \ \ \textcolor{comment}{/*\ total\ extra\ */}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{/*\ last\ printed\ percentage\ stored\ here\ to\ avoid\ multiple\ printouts\ */}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{int}\ percent\_done;}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcdjpeg__progress__mgr}{cdjpeg\_progress\_mgr}}\ *\ \mbox{\hyperlink{structcdjpeg__progress__mgr}{cd\_progress\_ptr}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{/*\ Short\ forms\ of\ external\ names\ for\ systems\ with\ brain-\/damaged\ linkers.\ */}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#ifdef\ NEED\_SHORT\_EXTERNAL\_NAMES}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ jinit\_read\_bmp\ \ \ \ \ \ jIRdBMP}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ jinit\_write\_bmp\ \ \ \ \ jIWrBMP}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ jinit\_read\_gif\ \ \ \ \ \ jIRdGIF}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ jinit\_write\_gif\ \ \ \ \ jIWrGIF}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ jinit\_read\_ppm\ \ \ \ \ \ jIRdPPM}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ jinit\_write\_ppm\ \ \ \ \ jIWrPPM}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ jinit\_read\_rle\ \ \ \ \ \ jIRdRLE}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ jinit\_write\_rle\ \ \ \ \ jIWrRLE}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ jinit\_read\_targa\ \ \ \ jIRdTarga}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ jinit\_write\_targa\ \ \ jIWrTarga}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ read\_quant\_tables\ \ \ RdQTables}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ read\_scan\_script\ \ \ \ RdScnScript}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ set\_quality\_ratings\ \ \ \ \ SetQRates}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ set\_quant\_slots\ \ \ \ \ SetQSlots}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ set\_sample\_factors\ \ SetSFacts}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ read\_color\_map\ \ \ \ \ \ RdCMap}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ enable\_signal\_catcher\ \ \ EnSigCatcher}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ start\_progress\_monitor\ \ StProgMon}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ end\_progress\_monitor\ \ \ \ EnProgMon}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ read\_stdin\ \ \ \ \ \ RdStdin}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ write\_stdout\ \ \ \ \ \ \ \ WrStdout}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NEED\_SHORT\_EXTERNAL\_NAMES\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{/*\ Module\ selection\ routines\ for\ I/O\ modules.\ */}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ EXTERN(\mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}})\ jinit\_read\_bmp\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00121\ EXTERN(\mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}})\ jinit\_write\_bmp\ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ is\_os2));}
+\DoxyCodeLine{00123\ EXTERN(\mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}})\ jinit\_read\_gif\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00124\ EXTERN(\mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}})\ jinit\_write\_gif\ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00125\ EXTERN(\mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}})\ jinit\_read\_ppm\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00126\ EXTERN(\mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}})\ jinit\_write\_ppm\ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00127\ EXTERN(\mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}})\ jinit\_read\_rle\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00128\ EXTERN(\mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}})\ jinit\_write\_rle\ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00129\ EXTERN(\mbox{\hyperlink{structcjpeg__source__struct}{cjpeg\_source\_ptr}})\ jinit\_read\_targa\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00130\ EXTERN(\mbox{\hyperlink{structdjpeg__dest__struct}{djpeg\_dest\_ptr}})\ jinit\_write\_targa\ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo));}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{/*\ cjpeg\ support\ routines\ (in\ rdswitch.c)\ */}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ EXTERN(\textcolor{keywordtype}{boolean})\ read\_quant\_tables\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,\ \textcolor{keywordtype}{char}\ *\ filename,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ force\_baseline));}
+\DoxyCodeLine{00136\ EXTERN(\textcolor{keywordtype}{boolean})\ read\_scan\_script\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,\ \textcolor{keywordtype}{char}\ *\ filename));}
+\DoxyCodeLine{00137\ EXTERN(\textcolor{keywordtype}{boolean})\ set\_quality\_ratings\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,\ \textcolor{keywordtype}{char}\ *arg,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ force\_baseline));}
+\DoxyCodeLine{00139\ EXTERN(\textcolor{keywordtype}{boolean})\ set\_quant\_slots\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,\ \textcolor{keywordtype}{char}\ *arg));}
+\DoxyCodeLine{00140\ EXTERN(\textcolor{keywordtype}{boolean})\ set\_sample\_factors\ JPP((\mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ cinfo,\ \textcolor{keywordtype}{char}\ *arg));}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{comment}{/*\ djpeg\ support\ routines\ (in\ rdcolmap.c)\ */}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ EXTERN(\textcolor{keywordtype}{void})\ read\_color\_map\ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ FILE\ *\ infile));}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{/*\ common\ support\ routines\ (in\ cdjpeg.c)\ */}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ EXTERN(\textcolor{keywordtype}{void})\ enable\_signal\_catcher\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo));}
+\DoxyCodeLine{00149\ EXTERN(\textcolor{keywordtype}{void})\ start\_progress\_monitor\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcdjpeg__progress__mgr}{cd\_progress\_ptr}}\ progress));}
+\DoxyCodeLine{00151\ EXTERN(\textcolor{keywordtype}{void})\ end\_progress\_monitor\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo));}
+\DoxyCodeLine{00152\ EXTERN(\textcolor{keywordtype}{boolean})\ keymatch\ JPP((\textcolor{keywordtype}{char}\ *\ arg,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ keyword,\ \textcolor{keywordtype}{int}\ minchars));}
+\DoxyCodeLine{00153\ EXTERN(FILE\ *)\ read\_stdin\ JPP((\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{00154\ EXTERN(FILE\ *)\ write\_stdout\ JPP((\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{comment}{/*\ miscellaneous\ useful\ macros\ */}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#ifdef\ DONT\_USE\_B\_MODE\ \ \ \ \ \ }\textcolor{comment}{/*\ define\ mode\ parameters\ for\ fopen()\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ READ\_BINARY\ "{}r"{}}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ WRITE\_BINARY\ \ \ \ "{}w"{}}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#ifdef\ VMS\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ VMS\ is\ very\ nonstandard\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ READ\_BINARY\ "{}rb"{},\ "{}ctx=stm"{}}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ WRITE\_BINARY\ \ \ \ "{}wb"{},\ "{}ctx=stm"{}}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#else\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ standard\ ANSI-\/compliant\ case\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ READ\_BINARY\ "{}rb"{}}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ WRITE\_BINARY\ \ \ \ "{}wb"{}}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#ifndef\ EXIT\_FAILURE\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ define\ exit()\ codes\ if\ not\ provided\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ EXIT\_FAILURE\ \ 1}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#ifndef\ EXIT\_SUCCESS}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#ifdef\ VMS}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ EXIT\_SUCCESS\ \ 1\ \ \ \ \ }\textcolor{comment}{/*\ VMS\ is\ very\ nonstandard\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ EXIT\_SUCCESS\ \ 0}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#ifndef\ EXIT\_WARNING}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#ifdef\ VMS}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ EXIT\_WARNING\ \ 1\ \ \ \ \ }\textcolor{comment}{/*\ VMS\ is\ very\ nonstandard\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ EXIT\_WARNING\ \ 2}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

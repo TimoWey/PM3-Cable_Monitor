@@ -1,0 +1,597 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+audio.h File Reference}
+\hypertarget{_s_d_l__audio_8h}{}\label{_s_d_l__audio_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_audio.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_audio.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+error.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+endian.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+mutex.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+thread.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+rwops.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___audio_c_v_t}{SDL\+\_\+\+Audio\+CVT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{Indent}\textbf{ Audio flags}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__audio_8h_ade51417b52dbd9511d56066caae0038b}\label{_s_d_l__audio_8h_ade51417b52dbd9511d56066caae0038b} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+BITSIZE}~(0x\+FF)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a50b4779246a7fbf4a39205a396ec7ea6}\label{_s_d_l__audio_8h_a50b4779246a7fbf4a39205a396ec7ea6} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+DATATYPE}~(1$<$$<$8)
+\item 
+\Hypertarget{_s_d_l__audio_8h_ab070cdd4d92ee3824cafefe24c620326}\label{_s_d_l__audio_8h_ab070cdd4d92ee3824cafefe24c620326} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+ENDIAN}~(1$<$$<$12)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a06fc66d3c421c6c9b733854b73d104ce}\label{_s_d_l__audio_8h_a06fc66d3c421c6c9b733854b73d104ce} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+SIGNED}~(1$<$$<$15)
+\item 
+\Hypertarget{_s_d_l__audio_8h_abe2f2a9193ad3a8fa822787098df266d}\label{_s_d_l__audio_8h_abe2f2a9193ad3a8fa822787098df266d} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+BITSIZE}(x)~(x \& SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+BITSIZE)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a86ee1651c17955594a547e96b9c94890}\label{_s_d_l__audio_8h_a86ee1651c17955594a547e96b9c94890} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ISFLOAT}(x)~(x \& SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+DATATYPE)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a27e82da51370d77f83e4ea2098c9d38c}\label{_s_d_l__audio_8h_a27e82da51370d77f83e4ea2098c9d38c} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ISBIGENDIAN}(x)~(x \& SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+ENDIAN)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a518fa9273a6a8b8b6f1d599ccca71434}\label{_s_d_l__audio_8h_a518fa9273a6a8b8b6f1d599ccca71434} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ISSIGNED}(x)~(x \& SDL\+\_\+\+AUDIO\+\_\+\+MASK\+\_\+\+SIGNED)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a197decf956e451a5a10e7221974b0548}\label{_s_d_l__audio_8h_a197decf956e451a5a10e7221974b0548} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ISINT}(x)~(!SDL\+\_\+\+AUDIO\+\_\+\+ISFLOAT(x))
+\item 
+\Hypertarget{_s_d_l__audio_8h_a2026be07a23986f2b7681a3500c8c341}\label{_s_d_l__audio_8h_a2026be07a23986f2b7681a3500c8c341} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ISLITTLEENDIAN}(x)~(!SDL\+\_\+\+AUDIO\+\_\+\+ISBIGENDIAN(x))
+\item 
+\Hypertarget{_s_d_l__audio_8h_aa9f715eb12c43474ad0aae52976e5095}\label{_s_d_l__audio_8h_aa9f715eb12c43474ad0aae52976e5095} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ISUNSIGNED}(x)~(!SDL\+\_\+\+AUDIO\+\_\+\+ISSIGNED(x))
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Audio format flags}\par
+{\em Defaults to LSB byte order. }\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a6468b4b3fc53ada655eca866e491d75f}{AUDIO\+\_\+\+U8}}~0x0008
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a883b3d4539451e49bf014dde0f9cca29}{AUDIO\+\_\+\+S8}}~0x8008
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a06808f806896c4d211314990c354b7fc}{AUDIO\+\_\+\+U16\+LSB}}~0x0010
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a23838d612e88ce72d82c3e51460f831b}{AUDIO\+\_\+\+S16\+LSB}}~0x8010
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a3b8052d0c49d14a2e3edf08eade52d3a}{AUDIO\+\_\+\+U16\+MSB}}~0x1010
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a3109dfb1d7aab29dff2b62d630e690ca}{AUDIO\+\_\+\+S16\+MSB}}~0x9010
+\item 
+\Hypertarget{_s_d_l__audio_8h_adee2cdf7dbda44620da17cd58ca819ea}\label{_s_d_l__audio_8h_adee2cdf7dbda44620da17cd58ca819ea} 
+\#define {\bfseries AUDIO\+\_\+\+U16}~\mbox{\hyperlink{_s_d_l__audio_8h_a06808f806896c4d211314990c354b7fc}{AUDIO\+\_\+\+U16\+LSB}}
+\item 
+\Hypertarget{_s_d_l__audio_8h_a4f4950d8eee757ebed84e50fb9316b12}\label{_s_d_l__audio_8h_a4f4950d8eee757ebed84e50fb9316b12} 
+\#define {\bfseries AUDIO\+\_\+\+S16}~\mbox{\hyperlink{_s_d_l__audio_8h_a23838d612e88ce72d82c3e51460f831b}{AUDIO\+\_\+\+S16\+LSB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ int32 support}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_ac81f9cc5739cea67436daf2689d29559}{AUDIO\+\_\+\+S32\+LSB}}~0x8020
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a30641d7487680630c231b3415ecd47b6}{AUDIO\+\_\+\+S32\+MSB}}~0x9020
+\item 
+\Hypertarget{_s_d_l__audio_8h_aaffc0931336d0d79717a144039670223}\label{_s_d_l__audio_8h_aaffc0931336d0d79717a144039670223} 
+\#define {\bfseries AUDIO\+\_\+\+S32}~\mbox{\hyperlink{_s_d_l__audio_8h_ac81f9cc5739cea67436daf2689d29559}{AUDIO\+\_\+\+S32\+LSB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ float32 support}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_afaef57ecb718053b572c539e27e72d61}{AUDIO\+\_\+\+F32\+LSB}}~0x8120
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a2d57382c01fdcd78cbbbb480605d91ef}{AUDIO\+\_\+\+F32\+MSB}}~0x9120
+\item 
+\Hypertarget{_s_d_l__audio_8h_a4633772ee12935960a25ff8334c29990}\label{_s_d_l__audio_8h_a4633772ee12935960a25ff8334c29990} 
+\#define {\bfseries AUDIO\+\_\+\+F32}~\mbox{\hyperlink{_s_d_l__audio_8h_afaef57ecb718053b572c539e27e72d61}{AUDIO\+\_\+\+F32\+LSB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Native audio byte ordering}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__audio_8h_afafc9f93ee2c583130c4152e243ba5b8}\label{_s_d_l__audio_8h_afafc9f93ee2c583130c4152e243ba5b8} 
+\#define {\bfseries AUDIO\+\_\+\+U16\+SYS}~\mbox{\hyperlink{_s_d_l__audio_8h_a06808f806896c4d211314990c354b7fc}{AUDIO\+\_\+\+U16\+LSB}}
+\item 
+\Hypertarget{_s_d_l__audio_8h_a4722de7e16982dd078f2b8cc64b9bae7}\label{_s_d_l__audio_8h_a4722de7e16982dd078f2b8cc64b9bae7} 
+\#define {\bfseries AUDIO\+\_\+\+S16\+SYS}~\mbox{\hyperlink{_s_d_l__audio_8h_a23838d612e88ce72d82c3e51460f831b}{AUDIO\+\_\+\+S16\+LSB}}
+\item 
+\Hypertarget{_s_d_l__audio_8h_aafcbadd8f6fa14a878178bf18b883675}\label{_s_d_l__audio_8h_aafcbadd8f6fa14a878178bf18b883675} 
+\#define {\bfseries AUDIO\+\_\+\+S32\+SYS}~\mbox{\hyperlink{_s_d_l__audio_8h_ac81f9cc5739cea67436daf2689d29559}{AUDIO\+\_\+\+S32\+LSB}}
+\item 
+\Hypertarget{_s_d_l__audio_8h_af001a94efb4bea024c233cae0cf98e6b}\label{_s_d_l__audio_8h_af001a94efb4bea024c233cae0cf98e6b} 
+\#define {\bfseries AUDIO\+\_\+\+F32\+SYS}~\mbox{\hyperlink{_s_d_l__audio_8h_afaef57ecb718053b572c539e27e72d61}{AUDIO\+\_\+\+F32\+LSB}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}}
+\begin{DoxyCompactList}\small\item\em Audio format flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{Indent}\textbf{ Driver discovery functions}\par
+{\em These functions return the list of built in audio drivers, in the order that they are normally initialized by default. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__audio_8h_ae3cb6a3321d9ee32f3c05ea0794c5fb8}\label{_s_d_l__audio_8h_ae3cb6a3321d9ee32f3c05ea0794c5fb8} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Get\+Num\+Audio\+Drivers} (void)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a607058f35dad9277f3ca097c8fdae610}\label{_s_d_l__audio_8h_a607058f35dad9277f3ca097c8fdae610} 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+Get\+Audio\+Driver} (int index)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Audio lock functions}\par
+{\em The lock manipulated by these functions protects the callback function. During a SDL\+\_\+\+Lock\+Audio()/\+SDL\+\_\+\+Unlock\+Audio() pair, you can be guaranteed that the callback function is not running. Do not call these from the callback function or you will cause deadlock. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__audio_8h_a7ffa484f230f6085e271a4f43e678f06}\label{_s_d_l__audio_8h_a7ffa484f230f6085e271a4f43e678f06} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Lock\+Audio} (void)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a9769845303f88f084f051b99e55b62a1}\label{_s_d_l__audio_8h_a9769845303f88f084f051b99e55b62a1} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Lock\+Audio\+Device} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a76d8179bee14dad268e65378058d897d}\label{_s_d_l__audio_8h_a76d8179bee14dad268e65378058d897d} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Unlock\+Audio} (void)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a37427a5d47e10103f2fff8165d5f9000}\label{_s_d_l__audio_8h_a37427a5d47e10103f2fff8165d5f9000} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Unlock\+Audio\+Device} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_aa176acc650e66e1d38814cbed3ca258e}{SDL\+\_\+\+Close\+Audio}} (void)
+\item 
+\Hypertarget{_s_d_l__audio_8h_abd910f31079d53b6c0ea8bf32dac0ce6}\label{_s_d_l__audio_8h_abd910f31079d53b6c0ea8bf32dac0ce6} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Close\+Audio\+Device} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Allow change flags}
+Which audio format changes are allowed when opening a device. \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__audio_8h_a4b05381c3f0871e9a88b46959365f796}\label{_s_d_l__audio_8h_a4b05381c3f0871e9a88b46959365f796} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ALLOW\+\_\+\+FREQUENCY\+\_\+\+CHANGE}~0x00000001
+\item 
+\Hypertarget{_s_d_l__audio_8h_a32dbc13d28bdc43d7e07e080e24fb573}\label{_s_d_l__audio_8h_a32dbc13d28bdc43d7e07e080e24fb573} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ALLOW\+\_\+\+FORMAT\+\_\+\+CHANGE}~0x00000002
+\item 
+\Hypertarget{_s_d_l__audio_8h_aad9eab304c2cee512410508811268575}\label{_s_d_l__audio_8h_aad9eab304c2cee512410508811268575} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ALLOW\+\_\+\+CHANNELS\+\_\+\+CHANGE}~0x00000004
+\item 
+\Hypertarget{_s_d_l__audio_8h_acbee9b7a641274139377898c21df92e8}\label{_s_d_l__audio_8h_acbee9b7a641274139377898c21df92e8} 
+\#define {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+ALLOW\+\_\+\+ANY\+\_\+\+CHANGE}~(SDL\+\_\+\+AUDIO\+\_\+\+ALLOW\+\_\+\+FREQUENCY\+\_\+\+CHANGE\texorpdfstring{$\vert$}{|}SDL\+\_\+\+AUDIO\+\_\+\+ALLOW\+\_\+\+FORMAT\+\_\+\+CHANGE\texorpdfstring{$\vert$}{|}SDL\+\_\+\+AUDIO\+\_\+\+ALLOW\+\_\+\+CHANNELS\+\_\+\+CHANGE)
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_ac34fc6df953e2bae89919edaaa740ff3}{SDL\+\_\+\+AUDIOCVT\+\_\+\+PACKED}}
+\item 
+typedef void(SDLCALL \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_s_d_l__audio_8h_a379fcc25845e46bfa80cb3619fc2821c}{SDL\+\_\+\+Audio\+Callback}}) (void \texorpdfstring{$\ast$}{*}userdata, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}stream, int len)
+\item 
+typedef struct SDL\+\_\+\+Audio\+Spec \mbox{\hyperlink{_s_d_l__audio_8h_ae95b698a5abe9ae3b36f0ab4617e9e14}{SDL\+\_\+\+Audio\+Spec}}
+\item 
+\Hypertarget{_s_d_l__audio_8h_a55a1f0fd6570cebb7d0180b6056032cf}\label{_s_d_l__audio_8h_a55a1f0fd6570cebb7d0180b6056032cf} 
+typedef void(SDLCALL \texorpdfstring{$\ast$}{*} {\bfseries SDL\+\_\+\+Audio\+Filter}) (struct \mbox{\hyperlink{struct_s_d_l___audio_c_v_t}{SDL\+\_\+\+Audio\+CVT}} \texorpdfstring{$\ast$}{*}cvt, \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} format)
+\item 
+\Hypertarget{_s_d_l__audio_8h_afc284f22978d12646dbffa692fe0c0ae}\label{_s_d_l__audio_8h_afc284f22978d12646dbffa692fe0c0ae} 
+typedef struct SDL\+\_\+\+Audio\+CVT {\bfseries SDL\+\_\+\+Audio\+CVT}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Pause audio functions}
+These functions pause and unpause the audio callback processing. They should be called with a parameter of 0 after opening the audio device to start playing sound. This is so you can safely initialize data for your callback function after opening the audio device. Silence will be written to the audio device during the pause. \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__audio_8h_a611f76dc30ba9891239bcce3f9b472b5}{SDL\+\_\+\+Load\+WAV}}(file,  spec,  audio\+\_\+buf,  audio\+\_\+len)~    \mbox{\hyperlink{_s_d_l__audio_8h_a21df7371c70c5cb31d3b348adaf72c86}{SDL\+\_\+\+Load\+WAV\+\_\+\+RW}}(SDL\+\_\+\+RWFrom\+File(file, "{}rb"{}),1, spec,audio\+\_\+buf,audio\+\_\+len)
+\item 
+\Hypertarget{_s_d_l__audio_8h_afa8e5e92d4424b0c599e7c813c91f720}\label{_s_d_l__audio_8h_afa8e5e92d4424b0c599e7c813c91f720} 
+\#define {\bfseries SDL\+\_\+\+MIX\+\_\+\+MAXVOLUME}~128
+\item 
+\Hypertarget{_s_d_l__audio_8h_aa68e60a33666ff4f2d36f3827b1d6061}\label{_s_d_l__audio_8h_aa68e60a33666ff4f2d36f3827b1d6061} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Pause\+Audio} (int pause\+\_\+on)
+\item 
+\Hypertarget{_s_d_l__audio_8h_ab4c8e2a896ccf86599435af81fca928c}\label{_s_d_l__audio_8h_ab4c8e2a896ccf86599435af81fca928c} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Pause\+Audio\+Device} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev, int pause\+\_\+on)
+\item 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a21df7371c70c5cb31d3b348adaf72c86}{SDL\+\_\+\+Load\+WAV\+\_\+\+RW}} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src, int freesrc, \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}spec, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}audio\+\_\+buf, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \texorpdfstring{$\ast$}{*}audio\+\_\+len)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a631aa8624575603df2c5ab9257feee59}{SDL\+\_\+\+Free\+WAV}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}audio\+\_\+buf)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a41e1602bc7cd4edb87ca779cf01d40bb}{SDL\+\_\+\+Build\+Audio\+CVT}} (\mbox{\hyperlink{struct_s_d_l___audio_c_v_t}{SDL\+\_\+\+Audio\+CVT}} \texorpdfstring{$\ast$}{*}cvt, \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} src\+\_\+format, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} src\+\_\+channels, int src\+\_\+rate, \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} dst\+\_\+format, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} dst\+\_\+channels, int dst\+\_\+rate)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a8e8660222356e07002dde4928118b7df}{SDL\+\_\+\+Convert\+Audio}} (\mbox{\hyperlink{struct_s_d_l___audio_c_v_t}{SDL\+\_\+\+Audio\+CVT}} \texorpdfstring{$\ast$}{*}cvt)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_ab9ad945b4b15d816802f5a79da06c9f9}{SDL\+\_\+\+Mix\+Audio}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}dst, const \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} len, int volume)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a27a0ad33d17f87a2d7574be78d2f39b7}{SDL\+\_\+\+Mix\+Audio\+Format}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}dst, const \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} format, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} len, int volume)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio}} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev, const void \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} len)
+\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a11a1d59fd68f8a416fa72bf14f5c9ec3}{SDL\+\_\+\+Get\+Queued\+Audio\+Size}} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a073ed5d40cce01e839b34570c1c7ed50}{SDL\+\_\+\+Clear\+Queued\+Audio}} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Audio state}
+Get the current audio state. \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__audio_8h_a24a02745f01041dd2825d7e26502eef2}\label{_s_d_l__audio_8h_a24a02745f01041dd2825d7e26502eef2} 
+enum {\bfseries SDL\+\_\+\+Audio\+Status} \{ {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+STOPPED} = 0
+, {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+PLAYING}
+, {\bfseries SDL\+\_\+\+AUDIO\+\_\+\+PAUSED}
+ \}
+\item 
+\Hypertarget{_s_d_l__audio_8h_a568e10207e6ff53f8e238a0d562ef594}\label{_s_d_l__audio_8h_a568e10207e6ff53f8e238a0d562ef594} 
+DECLSPEC SDL\+\_\+\+Audio\+Status SDLCALL {\bfseries SDL\+\_\+\+Get\+Audio\+Status} (void)
+\item 
+\Hypertarget{_s_d_l__audio_8h_ac86fde79b1afda3f0fb8e9a027434a69}\label{_s_d_l__audio_8h_ac86fde79b1afda3f0fb8e9a027434a69} 
+DECLSPEC SDL\+\_\+\+Audio\+Status SDLCALL {\bfseries SDL\+\_\+\+Get\+Audio\+Device\+Status} (\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} dev)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Initialization and cleanup}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}}
+\item 
+\Hypertarget{_s_d_l__audio_8h_ae3667d6ba706a3ca7affd8611632fa2c}\label{_s_d_l__audio_8h_ae3667d6ba706a3ca7affd8611632fa2c} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Audio\+Init} (const char \texorpdfstring{$\ast$}{*}driver\+\_\+name)
+\item 
+\Hypertarget{_s_d_l__audio_8h_a478c602cbfaab8663cb4f58a62600323}\label{_s_d_l__audio_8h_a478c602cbfaab8663cb4f58a62600323} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Audio\+Quit} (void)
+\item 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a1fa49ad53602ae0e45f224d5625d64a9}{SDL\+\_\+\+Get\+Current\+Audio\+Driver}} (void)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio}} (\mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}desired, \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}obtained)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_ae165f64b3f0fecfebe1c97731600ca59}{SDL\+\_\+\+Get\+Num\+Audio\+Devices}} (int iscapture)
+\item 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_aac10198502a5a037a72dfa333bb06b7c}{SDL\+\_\+\+Get\+Audio\+Device\+Name}} (int index, int iscapture)
+\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} SDLCALL \mbox{\hyperlink{_s_d_l__audio_8h_af54523e415de7c7fdd0d48a76ab58bb3}{SDL\+\_\+\+Open\+Audio\+Device}} (const char \texorpdfstring{$\ast$}{*}device, int iscapture, const \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}desired, \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}obtained, int allowed\+\_\+changes)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Access to the raw audio mixing buffer for the SDL library. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_s_d_l__audio_8h_afaef57ecb718053b572c539e27e72d61}\label{_s_d_l__audio_8h_afaef57ecb718053b572c539e27e72d61} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_F32LSB@{AUDIO\_F32LSB}}
+\index{AUDIO\_F32LSB@{AUDIO\_F32LSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_F32LSB}{AUDIO\_F32LSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+F32\+LSB~0x8120}
+
+32-\/bit floating point samples \Hypertarget{_s_d_l__audio_8h_a2d57382c01fdcd78cbbbb480605d91ef}\label{_s_d_l__audio_8h_a2d57382c01fdcd78cbbbb480605d91ef} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_F32MSB@{AUDIO\_F32MSB}}
+\index{AUDIO\_F32MSB@{AUDIO\_F32MSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_F32MSB}{AUDIO\_F32MSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+F32\+MSB~0x9120}
+
+As above, but big-\/endian byte order \Hypertarget{_s_d_l__audio_8h_a23838d612e88ce72d82c3e51460f831b}\label{_s_d_l__audio_8h_a23838d612e88ce72d82c3e51460f831b} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_S16LSB@{AUDIO\_S16LSB}}
+\index{AUDIO\_S16LSB@{AUDIO\_S16LSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_S16LSB}{AUDIO\_S16LSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+S16\+LSB~0x8010}
+
+Signed 16-\/bit samples \Hypertarget{_s_d_l__audio_8h_a3109dfb1d7aab29dff2b62d630e690ca}\label{_s_d_l__audio_8h_a3109dfb1d7aab29dff2b62d630e690ca} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_S16MSB@{AUDIO\_S16MSB}}
+\index{AUDIO\_S16MSB@{AUDIO\_S16MSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_S16MSB}{AUDIO\_S16MSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+S16\+MSB~0x9010}
+
+As above, but big-\/endian byte order \Hypertarget{_s_d_l__audio_8h_ac81f9cc5739cea67436daf2689d29559}\label{_s_d_l__audio_8h_ac81f9cc5739cea67436daf2689d29559} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_S32LSB@{AUDIO\_S32LSB}}
+\index{AUDIO\_S32LSB@{AUDIO\_S32LSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_S32LSB}{AUDIO\_S32LSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+S32\+LSB~0x8020}
+
+32-\/bit integer samples \Hypertarget{_s_d_l__audio_8h_a30641d7487680630c231b3415ecd47b6}\label{_s_d_l__audio_8h_a30641d7487680630c231b3415ecd47b6} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_S32MSB@{AUDIO\_S32MSB}}
+\index{AUDIO\_S32MSB@{AUDIO\_S32MSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_S32MSB}{AUDIO\_S32MSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+S32\+MSB~0x9020}
+
+As above, but big-\/endian byte order \Hypertarget{_s_d_l__audio_8h_a883b3d4539451e49bf014dde0f9cca29}\label{_s_d_l__audio_8h_a883b3d4539451e49bf014dde0f9cca29} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_S8@{AUDIO\_S8}}
+\index{AUDIO\_S8@{AUDIO\_S8}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_S8}{AUDIO\_S8}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+S8~0x8008}
+
+Signed 8-\/bit samples \Hypertarget{_s_d_l__audio_8h_a06808f806896c4d211314990c354b7fc}\label{_s_d_l__audio_8h_a06808f806896c4d211314990c354b7fc} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_U16LSB@{AUDIO\_U16LSB}}
+\index{AUDIO\_U16LSB@{AUDIO\_U16LSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_U16LSB}{AUDIO\_U16LSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+U16\+LSB~0x0010}
+
+Unsigned 16-\/bit samples \Hypertarget{_s_d_l__audio_8h_a3b8052d0c49d14a2e3edf08eade52d3a}\label{_s_d_l__audio_8h_a3b8052d0c49d14a2e3edf08eade52d3a} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_U16MSB@{AUDIO\_U16MSB}}
+\index{AUDIO\_U16MSB@{AUDIO\_U16MSB}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_U16MSB}{AUDIO\_U16MSB}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+U16\+MSB~0x1010}
+
+As above, but big-\/endian byte order \Hypertarget{_s_d_l__audio_8h_a6468b4b3fc53ada655eca866e491d75f}\label{_s_d_l__audio_8h_a6468b4b3fc53ada655eca866e491d75f} 
+\index{SDL\_audio.h@{SDL\_audio.h}!AUDIO\_U8@{AUDIO\_U8}}
+\index{AUDIO\_U8@{AUDIO\_U8}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_U8}{AUDIO\_U8}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+U8~0x0008}
+
+Unsigned 8-\/bit samples \Hypertarget{_s_d_l__audio_8h_ac34fc6df953e2bae89919edaaa740ff3}\label{_s_d_l__audio_8h_ac34fc6df953e2bae89919edaaa740ff3} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_AUDIOCVT\_PACKED@{SDL\_AUDIOCVT\_PACKED}}
+\index{SDL\_AUDIOCVT\_PACKED@{SDL\_AUDIOCVT\_PACKED}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AUDIOCVT\_PACKED}{SDL\_AUDIOCVT\_PACKED}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+AUDIOCVT\+\_\+\+PACKED}
+
+A structure to hold a set of audio conversion filters and buffers. \Hypertarget{_s_d_l__audio_8h_a611f76dc30ba9891239bcce3f9b472b5}\label{_s_d_l__audio_8h_a611f76dc30ba9891239bcce3f9b472b5} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_LoadWAV@{SDL\_LoadWAV}}
+\index{SDL\_LoadWAV@{SDL\_LoadWAV}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_LoadWAV}{SDL\_LoadWAV}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+Load\+WAV(\begin{DoxyParamCaption}\item[{}]{file,  }\item[{}]{spec,  }\item[{}]{audio\+\_\+buf,  }\item[{}]{audio\+\_\+len }\end{DoxyParamCaption})~    \mbox{\hyperlink{_s_d_l__audio_8h_a21df7371c70c5cb31d3b348adaf72c86}{SDL\+\_\+\+Load\+WAV\+\_\+\+RW}}(SDL\+\_\+\+RWFrom\+File(file, "{}rb"{}),1, spec,audio\+\_\+buf,audio\+\_\+len)}
+
+Loads a WAV from a file. Compatibility convenience function. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_s_d_l__audio_8h_a379fcc25845e46bfa80cb3619fc2821c}\label{_s_d_l__audio_8h_a379fcc25845e46bfa80cb3619fc2821c} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_AudioCallback@{SDL\_AudioCallback}}
+\index{SDL\_AudioCallback@{SDL\_AudioCallback}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AudioCallback}{SDL\_AudioCallback}}
+{\footnotesize\ttfamily typedef void(SDLCALL \texorpdfstring{$\ast$}{*} SDL\+\_\+\+Audio\+Callback) (void \texorpdfstring{$\ast$}{*}userdata, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}stream, int len)}
+
+This function is called when the audio device needs more data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em userdata} & An application-\/specific parameter saved in the \doxylink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec} structure \\
+\hline
+{\em stream} & A pointer to the audio data buffer. \\
+\hline
+{\em len} & The length of that buffer in bytes.\\
+\hline
+\end{DoxyParams}
+Once the callback returns, the buffer will no longer be valid. Stereo samples are stored in a LRLRLR ordering.
+
+You can choose to avoid callbacks and use \doxylink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio()} instead, if you like. Just open your audio device with a NULL callback. \Hypertarget{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}\label{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_AudioDeviceID@{SDL\_AudioDeviceID}}
+\index{SDL\_AudioDeviceID@{SDL\_AudioDeviceID}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AudioDeviceID}{SDL\_AudioDeviceID}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}}}
+
+SDL Audio Device IDs.
+
+A successful call to \doxylink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio()} is always device id 1, and legacy SDL audio APIs assume you want this device ID. \doxylink{_s_d_l__audio_8h_af54523e415de7c7fdd0d48a76ab58bb3}{SDL\+\_\+\+Open\+Audio\+Device()} calls always returns devices \texorpdfstring{$>$}{>}= 2 on success. The legacy calls are good both for backwards compatibility and when you don\textquotesingle{}t care about multiple, specific, or capture devices. \Hypertarget{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}\label{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_AudioFormat@{SDL\_AudioFormat}}
+\index{SDL\_AudioFormat@{SDL\_AudioFormat}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AudioFormat}{SDL\_AudioFormat}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}}}
+
+
+
+Audio format flags. 
+
+These are what the 16 bits in SDL\+\_\+\+Audio\+Format currently mean... (Unspecified bits are always zero).
+
+\begin{DoxyVerb}++-----------------------sample is signed if set
+||
+||       ++-----------sample is bigendian if set
+||       ||
+||       ||          ++---sample is float if set
+||       ||          ||
+||       ||          || +---sample bit size---+
+||       ||          || |                     |
+15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00
+\end{DoxyVerb}
+
+
+There are macros in SDL 2.\+0 and later to query these bits. \Hypertarget{_s_d_l__audio_8h_ae95b698a5abe9ae3b36f0ab4617e9e14}\label{_s_d_l__audio_8h_ae95b698a5abe9ae3b36f0ab4617e9e14} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AudioSpec}{SDL\_AudioSpec}}
+{\footnotesize\ttfamily typedef struct SDL\+\_\+\+Audio\+Spec SDL\+\_\+\+Audio\+Spec}
+
+The calculated values in this structure are calculated by \doxylink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio()}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__audio_8h_a41e1602bc7cd4edb87ca779cf01d40bb}\label{_s_d_l__audio_8h_a41e1602bc7cd4edb87ca779cf01d40bb} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_BuildAudioCVT@{SDL\_BuildAudioCVT}}
+\index{SDL\_BuildAudioCVT@{SDL\_BuildAudioCVT}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_BuildAudioCVT()}{SDL\_BuildAudioCVT()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Build\+Audio\+CVT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l___audio_c_v_t}{SDL\+\_\+\+Audio\+CVT}} \texorpdfstring{$\ast$}{*}}]{cvt,  }\item[{\mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}}}]{src\+\_\+format,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}}]{src\+\_\+channels,  }\item[{int}]{src\+\_\+rate,  }\item[{\mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}}}]{dst\+\_\+format,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}}]{dst\+\_\+channels,  }\item[{int}]{dst\+\_\+rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function takes a source format and rate and a destination format and rate, and initializes the {\ttfamily cvt} structure with information needed by \doxylink{_s_d_l__audio_8h_a8e8660222356e07002dde4928118b7df}{SDL\+\_\+\+Convert\+Audio()} to convert a buffer of audio data from one format to the other.
+
+\begin{DoxyReturn}{Returns}
+-\/1 if the format conversion is not supported, 0 if there\textquotesingle{}s no conversion needed, or 1 if the audio filter is set up. 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__audio_8h_a073ed5d40cce01e839b34570c1c7ed50}\label{_s_d_l__audio_8h_a073ed5d40cce01e839b34570c1c7ed50} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_ClearQueuedAudio@{SDL\_ClearQueuedAudio}}
+\index{SDL\_ClearQueuedAudio@{SDL\_ClearQueuedAudio}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ClearQueuedAudio()}{SDL\_ClearQueuedAudio()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Clear\+Queued\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}}}]{dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Drop any queued audio data waiting to be sent to the hardware.
+
+Immediately after this call, \doxylink{_s_d_l__audio_8h_a11a1d59fd68f8a416fa72bf14f5c9ec3}{SDL\+\_\+\+Get\+Queued\+Audio\+Size()} will return 0 and the hardware will start playing silence if more audio isn\textquotesingle{}t queued.
+
+This will not prevent playback of queued audio that\textquotesingle{}s already been sent to the hardware, as we can not undo that, so expect there to be some fraction of a second of audio that might still be heard. This can be useful if you want to, say, drop any pending music during a level change in your game.
+
+You may not queue audio on a device that is using an application-\/supplied callback; calling this function on such a device is always a no-\/op. You have to use the audio callback or queue audio with \doxylink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio()}, but not both.
+
+You should not call SDL\+\_\+\+Lock\+Audio() on the device before clearing the queue; SDL handles locking internally for this function.
+
+This function always succeeds and thus returns void.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & The device ID of which to clear the audio queue.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio} 
+
+\doxylink{_s_d_l__audio_8h_a11a1d59fd68f8a416fa72bf14f5c9ec3}{SDL\+\_\+\+Get\+Queued\+Audio\+Size} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__audio_8h_aa176acc650e66e1d38814cbed3ca258e}\label{_s_d_l__audio_8h_aa176acc650e66e1d38814cbed3ca258e} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_CloseAudio@{SDL\_CloseAudio}}
+\index{SDL\_CloseAudio@{SDL\_CloseAudio}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_CloseAudio()}{SDL\_CloseAudio()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Close\+Audio (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function shuts down audio processing and closes the audio device. \Hypertarget{_s_d_l__audio_8h_a8e8660222356e07002dde4928118b7df}\label{_s_d_l__audio_8h_a8e8660222356e07002dde4928118b7df} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_ConvertAudio@{SDL\_ConvertAudio}}
+\index{SDL\_ConvertAudio@{SDL\_ConvertAudio}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ConvertAudio()}{SDL\_ConvertAudio()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Convert\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l___audio_c_v_t}{SDL\+\_\+\+Audio\+CVT}} \texorpdfstring{$\ast$}{*}}]{cvt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Once you have initialized the {\ttfamily cvt} structure using \doxylink{_s_d_l__audio_8h_a41e1602bc7cd4edb87ca779cf01d40bb}{SDL\+\_\+\+Build\+Audio\+CVT()}, created an audio buffer {\ttfamily cvt-\/\texorpdfstring{$>$}{>}buf}, and filled it with {\ttfamily cvt-\/\texorpdfstring{$>$}{>}len} bytes of audio data in the source format, this function will convert it in-\/place to the desired format.
+
+The data conversion may expand the size of the audio data, so the buffer {\ttfamily cvt-\/\texorpdfstring{$>$}{>}buf} should be allocated after the {\ttfamily cvt} structure is initialized by \doxylink{_s_d_l__audio_8h_a41e1602bc7cd4edb87ca779cf01d40bb}{SDL\+\_\+\+Build\+Audio\+CVT()}, and should be {\ttfamily cvt-\/\texorpdfstring{$>$}{>}len\texorpdfstring{$\ast$}{*}cvt-\/\texorpdfstring{$>$}{>}len\+\_\+mult} bytes long. \Hypertarget{_s_d_l__audio_8h_a631aa8624575603df2c5ab9257feee59}\label{_s_d_l__audio_8h_a631aa8624575603df2c5ab9257feee59} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_FreeWAV@{SDL\_FreeWAV}}
+\index{SDL\_FreeWAV@{SDL\_FreeWAV}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_FreeWAV()}{SDL\_FreeWAV()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Free\+WAV (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}}]{audio\+\_\+buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function frees data previously allocated with \doxylink{_s_d_l__audio_8h_a21df7371c70c5cb31d3b348adaf72c86}{SDL\+\_\+\+Load\+WAV\+\_\+\+RW()} \Hypertarget{_s_d_l__audio_8h_aac10198502a5a037a72dfa333bb06b7c}\label{_s_d_l__audio_8h_aac10198502a5a037a72dfa333bb06b7c} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_GetAudioDeviceName@{SDL\_GetAudioDeviceName}}
+\index{SDL\_GetAudioDeviceName@{SDL\_GetAudioDeviceName}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetAudioDeviceName()}{SDL\_GetAudioDeviceName()}}
+{\footnotesize\ttfamily DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Audio\+Device\+Name (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{iscapture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Get the human-\/readable name of a specific audio device. Must be a value between 0 and (number of audio devices-\/1). Only valid after a successfully initializing the audio subsystem. The values returned by this function reflect the latest call to \doxylink{_s_d_l__audio_8h_ae165f64b3f0fecfebe1c97731600ca59}{SDL\+\_\+\+Get\+Num\+Audio\+Devices()}; recall that function to redetect available hardware.
+
+The string returned by this function is UTF-\/8 encoded, read-\/only, and managed internally. You are not to free it. If you need to keep the string for any length of time, you should make your own copy of it, as it will be invalid next time any of several other SDL functions is called. \Hypertarget{_s_d_l__audio_8h_a1fa49ad53602ae0e45f224d5625d64a9}\label{_s_d_l__audio_8h_a1fa49ad53602ae0e45f224d5625d64a9} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_GetCurrentAudioDriver@{SDL\_GetCurrentAudioDriver}}
+\index{SDL\_GetCurrentAudioDriver@{SDL\_GetCurrentAudioDriver}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetCurrentAudioDriver()}{SDL\_GetCurrentAudioDriver()}}
+{\footnotesize\ttfamily DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Current\+Audio\+Driver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns the name of the current audio driver, or NULL if no driver has been initialized. \Hypertarget{_s_d_l__audio_8h_ae165f64b3f0fecfebe1c97731600ca59}\label{_s_d_l__audio_8h_ae165f64b3f0fecfebe1c97731600ca59} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_GetNumAudioDevices@{SDL\_GetNumAudioDevices}}
+\index{SDL\_GetNumAudioDevices@{SDL\_GetNumAudioDevices}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetNumAudioDevices()}{SDL\_GetNumAudioDevices()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Num\+Audio\+Devices (\begin{DoxyParamCaption}\item[{int}]{iscapture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Get the number of available devices exposed by the current driver. Only valid after a successfully initializing the audio subsystem. Returns -\/1 if an explicit list of devices can\textquotesingle{}t be determined; this is not an error. For example, if SDL is set up to talk to a remote audio server, it can\textquotesingle{}t list every one available on the Internet, but it will still allow a specific host to be specified to \doxylink{_s_d_l__audio_8h_af54523e415de7c7fdd0d48a76ab58bb3}{SDL\+\_\+\+Open\+Audio\+Device()}.
+
+In many common cases, when this function returns a value \texorpdfstring{$<$}{<}= 0, it can still successfully open the default device (NULL for first argument of \doxylink{_s_d_l__audio_8h_af54523e415de7c7fdd0d48a76ab58bb3}{SDL\+\_\+\+Open\+Audio\+Device()}). \Hypertarget{_s_d_l__audio_8h_a11a1d59fd68f8a416fa72bf14f5c9ec3}\label{_s_d_l__audio_8h_a11a1d59fd68f8a416fa72bf14f5c9ec3} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_GetQueuedAudioSize@{SDL\_GetQueuedAudioSize}}
+\index{SDL\_GetQueuedAudioSize@{SDL\_GetQueuedAudioSize}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetQueuedAudioSize()}{SDL\_GetQueuedAudioSize()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL SDL\+\_\+\+Get\+Queued\+Audio\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}}}]{dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Get the number of bytes of still-\/queued audio.
+
+This is the number of bytes that have been queued for playback with \doxylink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio()}, but have not yet been sent to the hardware.
+
+Once we\textquotesingle{}ve sent it to the hardware, this function can not decide the exact byte boundary of what has been played. It\textquotesingle{}s possible that we just gave the hardware several kilobytes right before you called this function, but it hasn\textquotesingle{}t played any of it yet, or maybe half of it, etc.
+
+You may not queue audio on a device that is using an application-\/supplied callback; calling this function on such a device always returns 0. You have to use the audio callback or queue audio with \doxylink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio()}, but not both.
+
+You should not call SDL\+\_\+\+Lock\+Audio() on the device before querying; SDL handles locking internally for this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & The device ID of which we will query queued audio size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes (not samples!) of queued audio.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio} 
+
+\doxylink{_s_d_l__audio_8h_a073ed5d40cce01e839b34570c1c7ed50}{SDL\+\_\+\+Clear\+Queued\+Audio} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__audio_8h_a21df7371c70c5cb31d3b348adaf72c86}\label{_s_d_l__audio_8h_a21df7371c70c5cb31d3b348adaf72c86} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_LoadWAV\_RW@{SDL\_LoadWAV\_RW}}
+\index{SDL\_LoadWAV\_RW@{SDL\_LoadWAV\_RW}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_LoadWAV\_RW()}{SDL\_LoadWAV\_RW()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Load\+WAV\+\_\+\+RW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}}]{src,  }\item[{int}]{freesrc,  }\item[{\mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}}]{spec,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{audio\+\_\+buf,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \texorpdfstring{$\ast$}{*}}]{audio\+\_\+len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function loads a WAVE from the data source, automatically freeing that source if {\ttfamily freesrc} is non-\/zero. For example, to load a WAVE file, you could do\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_s_d_l__audio_8h_a21df7371c70c5cb31d3b348adaf72c86}{SDL\_LoadWAV\_RW}}(SDL\_RWFromFile(\textcolor{stringliteral}{"{}sample.wav"{}},\ \textcolor{stringliteral}{"{}rb"{}}),\ 1,\ ...);}
+
+\end{DoxyCode}
+
+
+If this function succeeds, it returns the given \doxylink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}, filled with the audio data format of the wave data, and sets {\ttfamily \texorpdfstring{$\ast$}{*}audio\+\_\+buf} to a malloc()\textquotesingle{}d buffer containing the audio data, and sets {\ttfamily \texorpdfstring{$\ast$}{*}audio\+\_\+len} to the length of that audio buffer, in bytes. You need to free the audio buffer with \doxylink{_s_d_l__audio_8h_a631aa8624575603df2c5ab9257feee59}{SDL\+\_\+\+Free\+WAV()} when you are done with it.
+
+This function returns NULL and sets the SDL error message if the wave file cannot be opened, uses an unknown data format, or is corrupt. Currently raw and MS-\/\+ADPCM WAVE files are supported. \Hypertarget{_s_d_l__audio_8h_ab9ad945b4b15d816802f5a79da06c9f9}\label{_s_d_l__audio_8h_ab9ad945b4b15d816802f5a79da06c9f9} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_MixAudio@{SDL\_MixAudio}}
+\index{SDL\_MixAudio@{SDL\_MixAudio}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MixAudio()}{SDL\_MixAudio()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Mix\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{const \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{len,  }\item[{int}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This takes two audio buffers of the playing audio format and mixes them, performing addition, volume adjustment, and overflow clipping. The volume ranges from 0 -\/ 128, and should be set to SDL\+\_\+\+MIX\+\_\+\+MAXVOLUME for full audio volume. Note this does not change hardware volume. This is provided for convenience -- you can mix your own audio data. \Hypertarget{_s_d_l__audio_8h_a27a0ad33d17f87a2d7574be78d2f39b7}\label{_s_d_l__audio_8h_a27a0ad33d17f87a2d7574be78d2f39b7} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_MixAudioFormat@{SDL\_MixAudioFormat}}
+\index{SDL\_MixAudioFormat@{SDL\_MixAudioFormat}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MixAudioFormat()}{SDL\_MixAudioFormat()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Mix\+Audio\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{const \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}}}]{format,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{len,  }\item[{int}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This works like \doxylink{_s_d_l__audio_8h_ab9ad945b4b15d816802f5a79da06c9f9}{SDL\+\_\+\+Mix\+Audio()}, but you specify the audio format instead of using the format of audio device 1. Thus it can be used when no audio device is open at all. \Hypertarget{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}\label{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_OpenAudio@{SDL\_OpenAudio}}
+\index{SDL\_OpenAudio@{SDL\_OpenAudio}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_OpenAudio()}{SDL\_OpenAudio()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Open\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}}]{desired,  }\item[{\mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}}]{obtained }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function opens the audio device with the desired parameters, and returns 0 if successful, placing the actual hardware parameters in the structure pointed to by {\ttfamily obtained}. If {\ttfamily obtained} is NULL, the audio data passed to the callback function will be guaranteed to be in the requested format, and will be automatically converted to the hardware audio format if necessary. This function returns -\/1 if it failed to open the audio device, or couldn\textquotesingle{}t set up the audio thread.
+
+When filling in the desired audio spec structure,
+\begin{DoxyItemize}
+\item {\ttfamily desired-\/\texorpdfstring{$>$}{>}freq} should be the desired audio frequency in samples-\/per-\/ second.
+\item {\ttfamily desired-\/\texorpdfstring{$>$}{>}format} should be the desired audio format.
+\item {\ttfamily desired-\/\texorpdfstring{$>$}{>}samples} is the desired size of the audio buffer, in samples. This number should be a power of two, and may be adjusted by the audio driver to a value more suitable for the hardware. Good values seem to range between 512 and 8096 inclusive, depending on the application and CPU speed. Smaller values yield faster response time, but can lead to underflow if the application is doing heavy processing and cannot fill the audio buffer in time. A stereo sample consists of both right and left channels in LR ordering. Note that the number of samples is directly related to time by the following formula\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ms\ =\ (samples*1000)/freq\ }
+
+\end{DoxyCode}
+
+\item {\ttfamily desired-\/\texorpdfstring{$>$}{>}size} is the size in bytes of the audio buffer, and is calculated by \doxylink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio()}.
+\item {\ttfamily desired-\/\texorpdfstring{$>$}{>}silence} is the value used to set the buffer to silence, and is calculated by \doxylink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio()}.
+\item {\ttfamily desired-\/\texorpdfstring{$>$}{>}callback} should be set to a function that will be called when the audio device is ready for more data. It is passed a pointer to the audio buffer, and the length in bytes of the audio buffer. This function usually runs in a separate thread, and so you should protect data structures that it accesses by calling SDL\+\_\+\+Lock\+Audio() and SDL\+\_\+\+Unlock\+Audio() in your code. Alternately, you may pass a NULL pointer here, and call \doxylink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio()} with some frequency, to queue more audio samples to be played.
+\item {\ttfamily desired-\/\texorpdfstring{$>$}{>}userdata} is passed as the first parameter to your callback function. If you passed a NULL callback, this value is ignored.
+\end{DoxyItemize}
+
+The audio device starts out playing silence when it\textquotesingle{}s opened, and should be enabled for playing by calling {\ttfamily SDL\+\_\+\+Pause\+Audio(0)} when you are ready for your audio callback function to be called. Since the audio driver may modify the requested size of the audio buffer, you should allocate any local mixing buffers after you open the audio device. \Hypertarget{_s_d_l__audio_8h_af54523e415de7c7fdd0d48a76ab58bb3}\label{_s_d_l__audio_8h_af54523e415de7c7fdd0d48a76ab58bb3} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_OpenAudioDevice@{SDL\_OpenAudioDevice}}
+\index{SDL\_OpenAudioDevice@{SDL\_OpenAudioDevice}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_OpenAudioDevice()}{SDL\_OpenAudioDevice()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}} SDLCALL SDL\+\_\+\+Open\+Audio\+Device (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{device,  }\item[{int}]{iscapture,  }\item[{const \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}}]{desired,  }\item[{\mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\+\_\+\+Audio\+Spec}} \texorpdfstring{$\ast$}{*}}]{obtained,  }\item[{int}]{allowed\+\_\+changes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Open a specific audio device. Passing in a device name of NULL requests the most reasonable default (and is equivalent to calling \doxylink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio()}).
+
+The device name is a UTF-\/8 string reported by \doxylink{_s_d_l__audio_8h_aac10198502a5a037a72dfa333bb06b7c}{SDL\+\_\+\+Get\+Audio\+Device\+Name()}, but some drivers allow arbitrary and driver-\/specific strings, such as a hostname/\+IP address for a remote audio server, or a filename in the diskaudio driver.
+
+\begin{DoxyReturn}{Returns}
+0 on error, a valid device ID that is \texorpdfstring{$>$}{>}= 2 on success.
+\end{DoxyReturn}
+\doxylink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio()}, unlike this function, always acts on device ID 1. \Hypertarget{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}\label{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268} 
+\index{SDL\_audio.h@{SDL\_audio.h}!SDL\_QueueAudio@{SDL\_QueueAudio}}
+\index{SDL\_QueueAudio@{SDL\_QueueAudio}!SDL\_audio.h@{SDL\_audio.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_QueueAudio()}{SDL\_QueueAudio()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Queue\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__audio_8h_a677d9d2a6f77a7502a0dc8b45ad211bb}{SDL\+\_\+\+Audio\+Device\+ID}}}]{dev,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Queue more audio on non-\/callback devices.
+
+SDL offers two ways to feed audio to the device\+: you can either supply a callback that SDL triggers with some frequency to obtain more audio (pull method), or you can supply no callback, and then SDL will expect you to supply data at regular intervals (push method) with this function.
+
+There are no limits on the amount of data you can queue, short of exhaustion of address space. Queued data will drain to the device as necessary without further intervention from you. If the device needs audio but there is not enough queued, it will play silence to make up the difference. This means you will have skips in your audio playback if you aren\textquotesingle{}t routinely queueing sufficient data.
+
+This function copies the supplied data, so you are safe to free it when the function returns. This function is thread-\/safe, but queueing to the same device from two threads at once does not promise which buffer will be queued first.
+
+You may not queue audio on a device that is using an application-\/supplied callback; doing so returns an error. You have to use the audio callback or queue audio with this function, but not both.
+
+You should not call SDL\+\_\+\+Lock\+Audio() on the device before queueing; SDL handles locking internally for this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & The device ID to which we will queue audio. \\
+\hline
+{\em data} & The data to queue to the device for later playback. \\
+\hline
+{\em len} & The number of bytes (not samples!) to which (data) points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zero on success, -\/1 on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__audio_8h_a11a1d59fd68f8a416fa72bf14f5c9ec3}{SDL\+\_\+\+Get\+Queued\+Audio\+Size} 
+
+\doxylink{_s_d_l__audio_8h_a073ed5d40cce01e839b34570c1c7ed50}{SDL\+\_\+\+Clear\+Queued\+Audio} 
+\end{DoxySeeAlso}

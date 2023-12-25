@@ -1,0 +1,245 @@
+\doxysection{HALSDL2.\+hpp}
+\hypertarget{_h_a_l_s_d_l2_8hpp_source}{}\label{_h_a_l_s_d_l2_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/HALSDL2.hpp@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/HALSDL2.hpp}}
+\mbox{\hyperlink{_h_a_l_s_d_l2_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_HALSDL2\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_HALSDL2\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_touch_controller_8hpp}{platform/driver/touch/TouchController.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_h_a_l_8hpp}{touchgfx/hal/HAL.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8hpp}{touchgfx/lcd/LCD.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_s_d_l__render_8h}{SDL2/SDL\_render.h}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_s_d_l__video_8h}{SDL2/SDL\_video.h}}>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetouchgfx_a4f372e97b2c0b3b33e33081640e41a1d}{simulator\_enable\_stdio}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetouchgfx_a36b0e75109040aa9f7defea5a142fc43}{simulator\_printf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ va\_list\ pArg);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2}{HALSDL2}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{HAL}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a4ead0460499045a7916cc2fd0092a977}{HALSDL2}}(\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\_Interface}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa562e7a507aaa2e5f77115885a8912e2}{dma}},\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa8cd5177dc4773f2f450c31af443f15f}{lcd}},\ \mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{TouchController}}\&\ touchCtrl,\ uint16\_t\ width,\ uint16\_t\ height)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{HAL}}(\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa562e7a507aaa2e5f77115885a8912e2}{dma}},\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa8cd5177dc4773f2f450c31af443f15f}{lcd}},\ touchCtrl,\ width,\ height),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ portraitSkin(),}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ landscapeSkin(),}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ currentSkin(0),}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ isSkinActive(true),}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ isWindowBorderless(false),}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ isWindowVisible(true),}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ isConsoleVisible(true),}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ printFile(0),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ windowDrag(false)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a9bd2e1a32bd4a006fbc423d832bb66f3}{setVsyncInterval}}(30.f);\ \textcolor{comment}{//\ Simulate\ 20Hz\ per\ default\ for\ backward\ compatibility}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ updateCurrentSkin();}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a25096d59f5525d7db19d2ad2fe3f3dd1}{taskEntry}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ac5a0bedd2cdca7c6892fc6c9f6d0c1aa}{sampleKey}}(uint8\_t\&\ key);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ab2d6864fee805f61bbbec4178fedc2dd}{flushFrameBuffer}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ab2d6864fee805f61bbbec4178fedc2dd}{flushFrameBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a9bd2e1a32bd4a006fbc423d832bb66f3}{setVsyncInterval}}(\textcolor{keywordtype}{float}\ ms);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a05a747b2c155bd26bd521263a4d42d0f}{doSampleTouch}}(int32\_t\&\ x,\ int32\_t\&\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a602594142533986ab478cd242a2daed1}{setFrameBufferSize}}(uint16\_t\ width,\ uint16\_t\ height);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7e0d0ecf1cb60259546aad10b198cfce}{sdl\_init}}(\textcolor{keywordtype}{int}\ argcount,\ \textcolor{keywordtype}{char}**\ args);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a89e0908dc45adece36bd90c45f694d01}{setWindowTitle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a03cf7d85b5f65ae22b4fa5a551667c6a}{getWindowTitle}}();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a95c52b3d41cb96471a20cc8a4c226e7c}{loadSkin}}(\mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498}{DisplayOrientation}}\ orientation,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7000c3b817223e932561e13c989ca038}{saveScreenshot}}();}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a69f8b62dfcb402b0c4529346e103318b}{saveNextScreenshots}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7000c3b817223e932561e13c989ca038}{saveScreenshot}}(\textcolor{keywordtype}{char}*\ folder,\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a3bf2e25f55d0910c9a5d97c1b437cb1d}{copyScreenshotToClipboard}}();}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a688fc7694b3e281af7cd8c2ad0fc0940}{setFlashInvalidatedAreas}}(\textcolor{keywordtype}{bool}\ flash\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ac8ee11c9bbf5bb81d7951bcf6e214628}{setSingleStepping}}(\textcolor{keywordtype}{bool}\ singleStepping\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aa887eec2916ebe3e649e2efe0a06a2f6}{isSingleStepping}}();}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aeca2aaa7439e20abc34a2661d1bc3ee1}{singleStep}}(uint16\_t\ steps\ =\ 1);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aaabe329a9ad1e0b881309bc591749755}{stopApplication}}();}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#ifndef\ \_\_linux\_\_}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}**\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a6b6732eef93e6ccc3946cae4f20ca4d6}{getArgv}}(\textcolor{keywordtype}{int}*\ argc);}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keyword}{static}\ uint8\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7db14481373109ee4861cba7c3ba4c76}{scaleTo24bpp}}(uint16\_t*\ src,\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap::BitmapFormat}}\ format);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keyword}{static}\ uint8\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aad8237434597f3706b3415f271f14208}{doRotate}}(uint8\_t*\ src);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ae0a051b88d48b8201ea702f90f73a492}{setWindowVisible}}(\textcolor{keywordtype}{bool}\ visible,\ \textcolor{keywordtype}{bool}\ redrawWindow\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ isWindowVisible\ =\ visible;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ isConsoleVisible\ =\ visible;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (redrawWindow)}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ recreateWindow();}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a4f372e97b2c0b3b33e33081640e41a1d}{simulator\_enable\_stdio}}();}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ \}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_acd1314d40d035d84cebb40391e392387}{getWindowVisible}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00318\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isWindowVisible;}
+\DoxyCodeLine{00320\ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7b7dd0e5a37adaf548af294250b8b794}{setConsoleVisible}}(\textcolor{keywordtype}{bool}\ visible,\ \textcolor{keywordtype}{bool}\ redrawWindow\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00331\ \ \ \ \ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ isConsoleVisible\ =\ visible;}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (redrawWindow)}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ recreateWindow();}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a4f372e97b2c0b3b33e33081640e41a1d}{touchgfx::simulator\_enable\_stdio}}();}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ab1bb46704246b8180a6447a85e35c329}{getConsoleVisible}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00348\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isConsoleVisible;}
+\DoxyCodeLine{00350\ \ \ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a5badcb5f1aab9ea9a73c5514861aa47a}{printToFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00368\ \ \ \ \ FILE*\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a81de463d43169d5c0591fed3b7c23797}{getPrintFile}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00369\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ printFile;}
+\DoxyCodeLine{00371\ \ \ \ \ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ae211600471b2407f1e7b5acdd6560d26}{localFileName}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ buffer\_size,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a62bfb00e930e1956cc48dea1fd7283bc}{getTFTFrameBuffer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a67fa731f01911e0ec4b75e22f7a2d126}{setTFTFrameBuffer}}(uint16\_t*\ addr);}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a0c07752d97c229e85281fd3363ebb261}{renderLCD\_FrameBufferToMemory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ \_rectToUpdate,\ uint8\_t*\ frameBuffer);}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a6ad80a4df86a4cfdffbf829c4d2ae023}{disableInterrupts}}()}
+\DoxyCodeLine{00410\ \ \ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ace29847c70fa951d32ae742f0877c305}{enableInterrupts}}()}
+\DoxyCodeLine{00415\ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a44b26c64ee09a82974cf777bd854be76}{configureLCDInterrupt}}()}
+\DoxyCodeLine{00420\ \ \ \ \ \{}
+\DoxyCodeLine{00421\ \ \ \ \ \}}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_af6bb8612e00dc3a2d5f5755d39b37546}{enableLCDControllerInterrupt}}()}
+\DoxyCodeLine{00425\ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \}}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ad1bdb3d463381aacb2c23d577afecef4}{configureInterrupts}}()}
+\DoxyCodeLine{00433\ \ \ \ \ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ac299d739d0e6294adfb76dabe3c7b731}{performDisplayOrientationChange}}();}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordtype}{void}\ recreateWindow(\textcolor{keywordtype}{bool}\ updateContent\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{void}\ pushTouch(\textcolor{keywordtype}{bool}\ down)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordtype}{bool}\ popTouch()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ updateTitle();}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keywordtype}{void}\ alphaChannelCheck(\mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}*\ surface,\ \textcolor{keywordtype}{bool}\&\ isOpaque,\ \textcolor{keywordtype}{bool}\&\ hasSemiTransparency);}
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordtype}{void}\ updateCurrentSkin();}
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keywordtype}{int}\ getCurrentSkinX()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keywordtype}{int}\ getCurrentSkinY()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ debugInfoEnabled;}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{float}\ msBetweenTicks;}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{float}\ msPassed;}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ icon[];}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ customTitle;}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keyword}{class\ }SkinInfo}
+\DoxyCodeLine{00458\ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}*\ surface;}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isOpaque;}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasSemiTransparency;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offsetX;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offsetY;}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ SkinInfo()}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ :\ surface(0),\ isOpaque(true),\ hasSemiTransparency(false),\ offsetX(0),\ offsetY(0)}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~SkinInfo()}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00474\ \ \ \ \ \};}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{char}\ programPath[300];}
+\DoxyCodeLine{00477\ \ \ \ \ SkinInfo\ portraitSkin;}
+\DoxyCodeLine{00478\ \ \ \ \ SkinInfo\ landscapeSkin;}
+\DoxyCodeLine{00479\ \ \ \ \ SkinInfo*\ currentSkin;}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSkinActive;}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{bool}\ isWindowBorderless;}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{bool}\ isWindowVisible;}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordtype}{bool}\ isConsoleVisible;}
+\DoxyCodeLine{00484\ \ \ \ \ FILE*\ printFile;}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ flashInvalidatedRect;}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordtype}{bool}\ windowDrag;}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordtype}{int}\ windowDragX;}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordtype}{int}\ windowDragY;}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \textcolor{keyword}{static}\ int32\_t\ \_xMouse;}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keyword}{static}\ int32\_t\ \_yMouse;}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keyword}{static}\ int32\_t\ \_x;}
+\DoxyCodeLine{00494\ \ \ \ \ \textcolor{keyword}{static}\ int32\_t\ \_y;}
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isWindowBeingDragged;}
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ initialWindowX;}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ initialWindowY;}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ initialMouseX;}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ initialMouseY;}
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \_lastTouch;}
+\DoxyCodeLine{00501\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \_touches[5];}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \_numTouches;}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keyword}{static}\ uint8\_t\ keyPressed;}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ singleSteppingEnabled;}
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ singleSteppingSteps;}
+\DoxyCodeLine{00508\ \};}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_HALSDL2\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,123 @@
+\doxysection{Typed\+Text.\+hpp}
+\hypertarget{_typed_text_8hpp_source}{}\label{_typed_text_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp}}
+\mbox{\hyperlink{_typed_text_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_TYPEDTEXT\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_TYPEDTEXT\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_font_8hpp}{touchgfx/Font.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_texts_8hpp}{touchgfx/Texts.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_unicode_8hpp}{touchgfx/Unicode.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{TypedTextId}}\ \mbox{\hyperlink{namespacetouchgfx_a0f17a4efb6d5f33f6089b0826c7d7e8a}{TYPED\_TEXT\_INVALID}}\ =\ 0xFFFFU;\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#if\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ <\ 6000000)}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ Keil5\ compiler\ issues\ irrelevant\ warning\ relating\ to\ missing\ ctor\ initialization\ for\ TypedTextData.}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ diag\_suppress\ 368}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_typed_text}{TypedText}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data}{TypedTextData}}}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data_a4de3f3f8b7ec3ec06f63d9e179b05cfa}{fontIdx}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_a8495f460a7b4bb05f9f3b8bd7be47519}{Alignment}}\ \mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data_a0a7f783cca9c554f722e3fcbe9e59a17}{alignment}}\ :\ 2;\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{TextDirection}}\ \mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data_aa3ead6d0195bafc4e109f2baef14e151}{direction}}\ :\ 2;\ }
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_af3394223209f21b0d5518fa98b192b8d}{TypedText}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{TypedTextId}}\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{namespacetouchgfx_a0f17a4efb6d5f33f6089b0826c7d7e8a}{TYPED\_TEXT\_INVALID}})}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ :\ typedTextId(id)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a2aa829ba9b9b5b65313af8e2daa361e6}{\string~TypedText}}()}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{TypedTextId}}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_ad6d42525bfdc7aeb24417969e9db9f7f}{getId}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typedTextId;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}{hasValidId}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typedTextId\ <\ numberOfTypedTexts;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_add33251f36b5fd02aa6462c44575c30a}{getText}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00095\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ assert(typedTexts\ !=\ 0\ \&\&\ \textcolor{stringliteral}{"{}TypedText\ database\ has\ not\ been\ initialized."{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}{hasValidId}}()\ \&\&\ \textcolor{stringliteral}{"{}typedTextId\ larger\ than\ numberOfTypedTexts."{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ texts-\/>\mbox{\hyperlink{classtouchgfx_1_1_texts_a8d3409b1441e96eef3e81451ea322667}{getText}}(typedTextId);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}}*\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a466e4d965893506a5a4a23ba09cfaeba}{getFont}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00107\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ assert(typedTexts\ !=\ 0\ \&\&\ \textcolor{stringliteral}{"{}TypedText\ database\ has\ not\ been\ initialized."{}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}{hasValidId}}()\ \&\&\ \textcolor{stringliteral}{"{}typedTextId\ larger\ than\ numberOfTypedTexts."{}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fonts[typedTexts[typedTextId].\mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data_a4de3f3f8b7ec3ec06f63d9e179b05cfa}{fontIdx}}];}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{namespacetouchgfx_ab0e44c90ae4c1ef36dc2b940091825a2}{FontId}}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a4488b0cb019698f77ec7b0eeb3e4f4cf}{getFontId}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00119\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ assert(typedTexts\ !=\ 0\ \&\&\ \textcolor{stringliteral}{"{}TypedText\ database\ has\ not\ been\ initialized."{}});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}{hasValidId}}()\ \&\&\ \textcolor{stringliteral}{"{}typedTextId\ larger\ than\ numberOfTypedTexts."{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typedTexts[typedTextId].\mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data_a4de3f3f8b7ec3ec06f63d9e179b05cfa}{fontIdx}};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{namespacetouchgfx_a8495f460a7b4bb05f9f3b8bd7be47519}{Alignment}}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_ac77afe2f6bc58a110e5c98c243a3c396}{getAlignment}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00131\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ assert(typedTexts\ !=\ 0\ \&\&\ \textcolor{stringliteral}{"{}TypedText\ database\ has\ not\ been\ initialized."{}});}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}{hasValidId}}()\ \&\&\ \textcolor{stringliteral}{"{}typedTextId\ larger\ than\ numberOfTypedTexts."{}});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typedTexts[typedTextId].\mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data_a0a7f783cca9c554f722e3fcbe9e59a17}{alignment}};}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{TextDirection}}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_abe05fd62fe2b5ce6fa25c6b6b227cee4}{getTextDirection}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ assert(typedTexts\ !=\ 0\ \&\&\ \textcolor{stringliteral}{"{}TypedText\ database\ has\ not\ been\ initialized."{}});}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}{hasValidId}}()\ \&\&\ \textcolor{stringliteral}{"{}typedTextId\ larger\ than\ numberOfTypedTexts."{}});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typedTexts[typedTextId].\mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data_aa3ead6d0195bafc4e109f2baef14e151}{direction}};}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a3cc1fdd95e1d03e505c3151e0e3afa64}{registerTypedTextDatabase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data}{TypedTextData}}*\ data,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}}*\ \textcolor{keyword}{const}*\ f,\ \textcolor{keyword}{const}\ uint16\_t\ n)}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ typedTexts\ =\ data;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ fonts\ =\ f;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ numberOfTypedTexts\ =\ n;}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a1e31ff5b84519dffc9398380fb8fc2ca}{registerTexts}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_texts}{Texts}}*\ t)}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ texts\ =\ t;}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{TypedTextId}}\ typedTextId;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ TypedTextData*\ typedTexts;}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_texts}{Texts}}*\ texts;}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}}*\ \textcolor{keyword}{const}*\ fonts;}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ numberOfTypedTexts;}
+\DoxyCodeLine{00183\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_TYPEDTEXT\_HPP}}
+
+\end{DoxyCode}

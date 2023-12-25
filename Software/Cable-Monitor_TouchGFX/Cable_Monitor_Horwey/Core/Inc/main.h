@@ -18,6 +18,29 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
+/*! \mainpage
+ *
+ * \section intro_sec Introduction
+ *
+ * This is the documentation for the firmware of the Smart Mirror.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Download the firmware
+ *
+ * \subsection step2 Step 2: Compile the firmware
+ *
+ * \subsection step3 Step 3: Flash the firmware
+ *
+ * \section use_sec Usage
+ *
+ * \subsection step1 Step 1: Connect the Smart Mirror to a power source
+ *
+ * \subsection step2 Step 2: Connect the Smart Mirror to the internet
+ *
+ * \subsection step3 Step 3: Enjoy the Smart Mirror
+ *
+ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H

@@ -1,0 +1,97 @@
+\doxysection{Gesture\+Event.\+hpp}
+\hypertarget{_gesture_event_8hpp_source}{}\label{_gesture_event_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/events/GestureEvent.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/events/GestureEvent.hpp}}
+\mbox{\hyperlink{_gesture_event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_GESTUREEVENT\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_GESTUREEVENT\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_event_8hpp}{touchgfx/Event.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{GestureEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_event}{Event}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{GestureEventType}}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fa92b5fa569e670fab28ac1727ca5216e2}{SWIPE\_HORIZONTAL}},\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fab00e03e39e077d2622cbe9788dc0b608}{SWIPE\_VERTICAL}}\ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a43795fab8854c7b4ea9db34e92dbbc7a}{GestureEvent}}(\mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{GestureEventType}}\ type,\ int16\_t\ velocity,\ int16\_t\ x,\ int16\_t\ y)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ :\ gestureEventType(type),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ gestureVelocity(velocity),}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ gestureX(x),}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ gestureY(y)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a10d8af4975cd87d365d8a17ac4dc06e0}{GestureEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{GestureEvent}}\&\ gestureEvent)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ =\ gestureEvent;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_aad52b06500f0ec6bbedc57c48ecda7bb}{getVelocity}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ gestureVelocity;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{GestureEventType}}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a1fc615457fcb1aedda739c9255853ffa}{getType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ gestureEventType;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a0470545df5e750e108f100f62a91d30a}{getX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00095\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ gestureX;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a340646a7ddf7230d7f8158b2c59e193d}{getY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00105\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ gestureY;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event::EventType}}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_abe56d1debb0f7dfe7f1033b55c2a331c}{getEventType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a6377ac41957e2dea4314fb564c0eac98}{Event::EVENT\_GESTURE}};}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{GestureEvent}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_a3d2733e4f245b18f6a31b7f24f9d29b3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{GestureEvent}}\&\ gestureEvent)}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ gestureEventType\ =\ gestureEvent.gestureEventType;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ gestureVelocity\ =\ gestureEvent.gestureVelocity;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ gestureX\ =\ gestureEvent.gestureX;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ gestureY\ =\ gestureEvent.gestureY;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{GestureEvent}}()}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ :\ gestureEventType(\mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548fa92b5fa569e670fab28ac1727ca5216e2}{SWIPE\_HORIZONTAL}}),\ gestureVelocity(0),\ gestureX(0),\ gestureY(0)}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{GestureEventType}}\ gestureEventType;}
+\DoxyCodeLine{00143\ \ \ \ \ int16\_t\ gestureVelocity;}
+\DoxyCodeLine{00144\ \ \ \ \ int16\_t\ gestureX;}
+\DoxyCodeLine{00145\ \ \ \ \ int16\_t\ gestureY;}
+\DoxyCodeLine{00146\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_GESTUREEVENT\_HPP}}
+
+\end{DoxyCode}

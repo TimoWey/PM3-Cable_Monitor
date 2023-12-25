@@ -1,0 +1,716 @@
+\doxysection{Core/\+Src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{Core/Src/main.c@{Core/Src/main.c}}
+
+
+\+: Main program body  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}cmsis\+\_\+os.\+h"{}}\newline
+{\ttfamily \#include "{}app\+\_\+touchgfx.\+h"{}}\newline
+{\ttfamily \#include "{}Components/ili9341/ili9341.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}arm\+\_\+math.\+h"{}}\newline
+{\ttfamily \#include "{}FLASH\+\_\+\+SECTOR\+\_\+\+F4.\+h"{}}\newline
+{\ttfamily \#include "{}measuring.\+h"{}}\newline
+{\ttfamily \#include "{}calculation.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a42e162ee7b8b8c2663d1dbd31c7b590b}{ARM\+\_\+\+MATH\+\_\+\+CM4}}
+\item 
+\#define \mbox{\hyperlink{main_8c_abc1f890aab54c0fb4e137a46abce08ee}{REFRESH\+\_\+\+COUNT}}~((uint32\+\_\+t)1386)   /\texorpdfstring{$\ast$}{*} SDRAM refresh counter \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{main_8c_a16ba60f030cd56f8b4c8cf72b9e6e827}{SDRAM\+\_\+\+TIMEOUT}}~((uint32\+\_\+t)0x\+FFFF)
+\item 
+\#define \mbox{\hyperlink{main_8c_a61068cf2e3c483f373eae24f1b5c3443}{SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+1}}~((uint16\+\_\+t)0x0000)
+\begin{DoxyCompactList}\small\item\em FMC SDRAM Mode definition register defines. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8c_a9fc6a3f577d4d42a513126d72bfaf404}{SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+2}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{main_8c_ad7260e42b0f446bcca111ed1c2460fcf}{SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+4}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{main_8c_a8099aeb08148f1a3496f1b85c321c735}{SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+8}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{main_8c_aa2c532f3d1462c38d1abf5e080363acc}{SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+TYPE\+\_\+\+SEQUENTIAL}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{main_8c_aa874d1e0e48162b82282fe56334160c5}{SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+TYPE\+\_\+\+INTERLEAVED}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{main_8c_a91a6525b91764c093fa2f96ef20b9b40}{SDRAM\+\_\+\+MODEREG\+\_\+\+CAS\+\_\+\+LATENCY\+\_\+2}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{main_8c_a214d69a120da2d812bdae62420965884}{SDRAM\+\_\+\+MODEREG\+\_\+\+CAS\+\_\+\+LATENCY\+\_\+3}}~((uint16\+\_\+t)0x0030)
+\item 
+\#define \mbox{\hyperlink{main_8c_a0565961aa69d688c27e2d9e32e3a80e0}{SDRAM\+\_\+\+MODEREG\+\_\+\+OPERATING\+\_\+\+MODE\+\_\+\+STANDARD}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{main_8c_a58d6b913fe75b3ba070fca979144d13f}{SDRAM\+\_\+\+MODEREG\+\_\+\+WRITEBURST\+\_\+\+MODE\+\_\+\+PROGRAMMED}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{main_8c_a54dc88e23250d2904be75f94cfdf699f}{SDRAM\+\_\+\+MODEREG\+\_\+\+WRITEBURST\+\_\+\+MODE\+\_\+\+SINGLE}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{main_8c_ad098ae1519fcf91506b8da037855c437}{I2\+C3\+\_\+\+TIMEOUT\+\_\+\+MAX}}~0x3000 /\texorpdfstring{$\ast$}{*}$<$! The value of the maximal timeout for I2C waiting loops \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{main_8c_a31cbda8324bfabcbf9fb18cc6c945b88}{SPI5\+\_\+\+TIMEOUT\+\_\+\+MAX}}~0x1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a99d0fdb0434092bcb24d9c9af917e4e9}{Start\+Default\+Task}} (void \texorpdfstring{$\ast$}{*}argument)
+\begin{DoxyCompactList}\small\item\em Function implementing the default\+Task thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a94f37d950f9dce09a0ba811910276645}{Touch\+GFX\+\_\+\+Task}} (void \texorpdfstring{$\ast$}{*}argument)
+\item 
+void \mbox{\hyperlink{main_8c_a5e21ba58e8d97e9b0fa87ba4d2af6146}{Start\+Timeout\+Task}} (void \texorpdfstring{$\ast$}{*}argument)
+\begin{DoxyCompactList}\small\item\em Function implementing the Timeout\+Task thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_accf0a45e037a886f9b1a849bedd63735}{LCD\+\_\+\+IO\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_aae6ab499c7ca32f026708cbfb5153c97}{LCD\+\_\+\+IO\+\_\+\+Write\+Data}} (uint16\+\_\+t Reg\+Value)
+\begin{DoxyCompactList}\small\item\em Writes register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a435f47c3f7c327325ea17f71fae7cebc}{LCD\+\_\+\+IO\+\_\+\+Write\+Reg}} (uint8\+\_\+t Reg)
+\begin{DoxyCompactList}\small\item\em Writes register address. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_a10fd152b0ec2326173d80e922d8635fc}{LCD\+\_\+\+IO\+\_\+\+Read\+Data}} (uint16\+\_\+t Reg\+Value, uint8\+\_\+t Read\+Size)
+\begin{DoxyCompactList}\small\item\em Reads register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a884a2c8fc8d4239acadc649cb60c0a15}{LCD\+\_\+\+Delay}} (uint32\+\_\+t Delay)
+\begin{DoxyCompactList}\small\item\em Wait for loop in ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a20cd09e59bac7284d1342b6741733593}{IOE\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em IOE Low Level Initialization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ac33b368855363c8f6b05b7218bad4f7c}{IOE\+\_\+\+ITConfig}} (void)
+\begin{DoxyCompactList}\small\item\em IOE Low Level Interrupt configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_afe6384ff1973503e54b8daa35470b0ec}{IOE\+\_\+\+Delay}} (uint32\+\_\+t Delay)
+\begin{DoxyCompactList}\small\item\em IOE Delay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ac9aaccafd33dc8ce45ee7bce22ff361e}{IOE\+\_\+\+Write}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg, uint8\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em IOE Writes single data operation. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a1fb4704e1fedb443110f4a68d75c6150}{IOE\+\_\+\+Read}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg)
+\begin{DoxyCompactList}\small\item\em IOE Reads single data. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{main_8c_a8c1a6f29316f73b7f067e815f7ccca36}{IOE\+\_\+\+Read\+Multiple}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Buffer, uint16\+\_\+t Length)
+\begin{DoxyCompactList}\small\item\em IOE Reads multiple data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a2ac9c311ff05671105348142908ecda3}{gyro\+\_\+disable}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_aea7e5561eb9e6610bac506772ded41e3}{set\+Calibration\+Flash\+Values}} (uint32\+\_\+t Start\+Sector\+Address, uint32\+\_\+t value, uint32\+\_\+t index, uint16\+\_\+t numberofwords)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}{HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\begin{DoxyCompactList}\small\item\em Period elapsed callback in non blocking mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+CRC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_ae3358c54a01c6487322df1275618d6b1}{hcrc}}
+\item 
+I2\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a5ccf4a01a8d7f08d3190181f843f7515}{hi2c3}}
+\item 
+LTDC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a9ede3a77755ec81a9be03423cb915b05}{hltdc}}
+\item 
+SPI\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_afdea13a2cdf1c24e3a0edfc65c30b474}{hspi5}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a2c80fd5510e2990a59a5c90d745c716c}{htim2}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62}{htim3}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_ae4b8faf50eeb07577983d36e4c3894b8}{htim14}}
+\item 
+SDRAM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a6085f55189e4b7aa7b7e2673ff620418}{hsdram1}}
+\item 
+os\+Thread\+Id\+\_\+t \mbox{\hyperlink{main_8c_a6a263905468b0c37de4ee5e50ede4e74}{default\+Task\+Handle}}
+\item 
+const os\+Thread\+Attr\+\_\+t \mbox{\hyperlink{main_8c_a25fbb54afdba71c24ba51ed50166ac8d}{default\+Task\+\_\+attributes}}
+\item 
+os\+Thread\+Id\+\_\+t \mbox{\hyperlink{main_8c_a8391794660950cca34804d4f17eac262}{GUI\+\_\+\+Task\+Handle}}
+\item 
+const os\+Thread\+Attr\+\_\+t \mbox{\hyperlink{main_8c_aab6c75dec2009ee596a7a003d7944584}{GUI\+\_\+\+Task\+\_\+attributes}}
+\item 
+os\+Thread\+Id\+\_\+t \mbox{\hyperlink{main_8c_a5b33abfd3b89564f7905664da60c340a}{Timeout\+Task\+Handle}}
+\item 
+const os\+Thread\+Attr\+\_\+t \mbox{\hyperlink{main_8c_a64eb625ccae674c15f80381b82193723}{Timeout\+Task\+\_\+attributes}}
+\item 
+os\+Message\+Queue\+Id\+\_\+t \mbox{\hyperlink{main_8c_a6bcbe6a7ecfc9735e49451e9615dcd24}{Timeout\+Queue\+Handle}}
+\item 
+const os\+Message\+Queue\+Attr\+\_\+t \mbox{\hyperlink{main_8c_a72a73db148589ed4d6d0ce81cffc38b8}{Timeout\+Queue\+\_\+attributes}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_aff9dd4c7454b782271f9e22d4197ba4b}{I2c3\+Timeout}} = \mbox{\hyperlink{main_8c_ad098ae1519fcf91506b8da037855c437}{I2\+C3\+\_\+\+TIMEOUT\+\_\+\+MAX}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_af4e3feeb6f1fc7a4acd9570cbfce9617}{Spi5\+Timeout}} = \mbox{\hyperlink{main_8c_a31cbda8324bfabcbf9fb18cc6c945b88}{SPI5\+\_\+\+TIMEOUT\+\_\+\+MAX}}
+\item 
+int \mbox{\hyperlink{main_8c_afd60c544c217169ceebd6daf55f54e14}{sleep\+\_\+timeout\+\_\+value}} = \mbox{\hyperlink{main_8h_a28b01617eea2a7776c35e353a5b735c2}{SCREEN\+\_\+\+TIMEOUT}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_a43c98c20a1c370f9fd65564895637f19}{Calibration\+\_\+\+Data}} \mbox{[}14\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Main program body 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2020 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the "{}\+License"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8c_a42e162ee7b8b8c2663d1dbd31c7b590b}\label{main_8c_a42e162ee7b8b8c2663d1dbd31c7b590b} 
+\index{main.c@{main.c}!ARM\_MATH\_CM4@{ARM\_MATH\_CM4}}
+\index{ARM\_MATH\_CM4@{ARM\_MATH\_CM4}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ARM\_MATH\_CM4}{ARM\_MATH\_CM4}}
+{\footnotesize\ttfamily \#define ARM\+\_\+\+MATH\+\_\+\+CM4}
+
+\Hypertarget{main_8c_ad098ae1519fcf91506b8da037855c437}\label{main_8c_ad098ae1519fcf91506b8da037855c437} 
+\index{main.c@{main.c}!I2C3\_TIMEOUT\_MAX@{I2C3\_TIMEOUT\_MAX}}
+\index{I2C3\_TIMEOUT\_MAX@{I2C3\_TIMEOUT\_MAX}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{I2C3\_TIMEOUT\_MAX}{I2C3\_TIMEOUT\_MAX}}
+{\footnotesize\ttfamily \#define I2\+C3\+\_\+\+TIMEOUT\+\_\+\+MAX~0x3000 /\texorpdfstring{$\ast$}{*}$<$! The value of the maximal timeout for I2C waiting loops \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{main_8c_abc1f890aab54c0fb4e137a46abce08ee}\label{main_8c_abc1f890aab54c0fb4e137a46abce08ee} 
+\index{main.c@{main.c}!REFRESH\_COUNT@{REFRESH\_COUNT}}
+\index{REFRESH\_COUNT@{REFRESH\_COUNT}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{REFRESH\_COUNT}{REFRESH\_COUNT}}
+{\footnotesize\ttfamily \#define REFRESH\+\_\+\+COUNT~((uint32\+\_\+t)1386)   /\texorpdfstring{$\ast$}{*} SDRAM refresh counter \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{main_8c_a61068cf2e3c483f373eae24f1b5c3443}\label{main_8c_a61068cf2e3c483f373eae24f1b5c3443} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_BURST\_LENGTH\_1@{SDRAM\_MODEREG\_BURST\_LENGTH\_1}}
+\index{SDRAM\_MODEREG\_BURST\_LENGTH\_1@{SDRAM\_MODEREG\_BURST\_LENGTH\_1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_BURST\_LENGTH\_1}{SDRAM\_MODEREG\_BURST\_LENGTH\_1}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+1~((uint16\+\_\+t)0x0000)}
+
+
+
+FMC SDRAM Mode definition register defines. 
+
+\Hypertarget{main_8c_a9fc6a3f577d4d42a513126d72bfaf404}\label{main_8c_a9fc6a3f577d4d42a513126d72bfaf404} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_BURST\_LENGTH\_2@{SDRAM\_MODEREG\_BURST\_LENGTH\_2}}
+\index{SDRAM\_MODEREG\_BURST\_LENGTH\_2@{SDRAM\_MODEREG\_BURST\_LENGTH\_2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_BURST\_LENGTH\_2}{SDRAM\_MODEREG\_BURST\_LENGTH\_2}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+2~((uint16\+\_\+t)0x0001)}
+
+\Hypertarget{main_8c_ad7260e42b0f446bcca111ed1c2460fcf}\label{main_8c_ad7260e42b0f446bcca111ed1c2460fcf} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_BURST\_LENGTH\_4@{SDRAM\_MODEREG\_BURST\_LENGTH\_4}}
+\index{SDRAM\_MODEREG\_BURST\_LENGTH\_4@{SDRAM\_MODEREG\_BURST\_LENGTH\_4}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_BURST\_LENGTH\_4}{SDRAM\_MODEREG\_BURST\_LENGTH\_4}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+4~((uint16\+\_\+t)0x0002)}
+
+\Hypertarget{main_8c_a8099aeb08148f1a3496f1b85c321c735}\label{main_8c_a8099aeb08148f1a3496f1b85c321c735} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_BURST\_LENGTH\_8@{SDRAM\_MODEREG\_BURST\_LENGTH\_8}}
+\index{SDRAM\_MODEREG\_BURST\_LENGTH\_8@{SDRAM\_MODEREG\_BURST\_LENGTH\_8}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_BURST\_LENGTH\_8}{SDRAM\_MODEREG\_BURST\_LENGTH\_8}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+LENGTH\+\_\+8~((uint16\+\_\+t)0x0004)}
+
+\Hypertarget{main_8c_aa874d1e0e48162b82282fe56334160c5}\label{main_8c_aa874d1e0e48162b82282fe56334160c5} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_BURST\_TYPE\_INTERLEAVED@{SDRAM\_MODEREG\_BURST\_TYPE\_INTERLEAVED}}
+\index{SDRAM\_MODEREG\_BURST\_TYPE\_INTERLEAVED@{SDRAM\_MODEREG\_BURST\_TYPE\_INTERLEAVED}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_BURST\_TYPE\_INTERLEAVED}{SDRAM\_MODEREG\_BURST\_TYPE\_INTERLEAVED}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+TYPE\+\_\+\+INTERLEAVED~((uint16\+\_\+t)0x0008)}
+
+\Hypertarget{main_8c_aa2c532f3d1462c38d1abf5e080363acc}\label{main_8c_aa2c532f3d1462c38d1abf5e080363acc} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_BURST\_TYPE\_SEQUENTIAL@{SDRAM\_MODEREG\_BURST\_TYPE\_SEQUENTIAL}}
+\index{SDRAM\_MODEREG\_BURST\_TYPE\_SEQUENTIAL@{SDRAM\_MODEREG\_BURST\_TYPE\_SEQUENTIAL}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_BURST\_TYPE\_SEQUENTIAL}{SDRAM\_MODEREG\_BURST\_TYPE\_SEQUENTIAL}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+BURST\+\_\+\+TYPE\+\_\+\+SEQUENTIAL~((uint16\+\_\+t)0x0000)}
+
+\Hypertarget{main_8c_a91a6525b91764c093fa2f96ef20b9b40}\label{main_8c_a91a6525b91764c093fa2f96ef20b9b40} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_CAS\_LATENCY\_2@{SDRAM\_MODEREG\_CAS\_LATENCY\_2}}
+\index{SDRAM\_MODEREG\_CAS\_LATENCY\_2@{SDRAM\_MODEREG\_CAS\_LATENCY\_2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_CAS\_LATENCY\_2}{SDRAM\_MODEREG\_CAS\_LATENCY\_2}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+CAS\+\_\+\+LATENCY\+\_\+2~((uint16\+\_\+t)0x0020)}
+
+\Hypertarget{main_8c_a214d69a120da2d812bdae62420965884}\label{main_8c_a214d69a120da2d812bdae62420965884} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_CAS\_LATENCY\_3@{SDRAM\_MODEREG\_CAS\_LATENCY\_3}}
+\index{SDRAM\_MODEREG\_CAS\_LATENCY\_3@{SDRAM\_MODEREG\_CAS\_LATENCY\_3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_CAS\_LATENCY\_3}{SDRAM\_MODEREG\_CAS\_LATENCY\_3}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+CAS\+\_\+\+LATENCY\+\_\+3~((uint16\+\_\+t)0x0030)}
+
+\Hypertarget{main_8c_a0565961aa69d688c27e2d9e32e3a80e0}\label{main_8c_a0565961aa69d688c27e2d9e32e3a80e0} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_OPERATING\_MODE\_STANDARD@{SDRAM\_MODEREG\_OPERATING\_MODE\_STANDARD}}
+\index{SDRAM\_MODEREG\_OPERATING\_MODE\_STANDARD@{SDRAM\_MODEREG\_OPERATING\_MODE\_STANDARD}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_OPERATING\_MODE\_STANDARD}{SDRAM\_MODEREG\_OPERATING\_MODE\_STANDARD}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+OPERATING\+\_\+\+MODE\+\_\+\+STANDARD~((uint16\+\_\+t)0x0000)}
+
+\Hypertarget{main_8c_a58d6b913fe75b3ba070fca979144d13f}\label{main_8c_a58d6b913fe75b3ba070fca979144d13f} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_WRITEBURST\_MODE\_PROGRAMMED@{SDRAM\_MODEREG\_WRITEBURST\_MODE\_PROGRAMMED}}
+\index{SDRAM\_MODEREG\_WRITEBURST\_MODE\_PROGRAMMED@{SDRAM\_MODEREG\_WRITEBURST\_MODE\_PROGRAMMED}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_WRITEBURST\_MODE\_PROGRAMMED}{SDRAM\_MODEREG\_WRITEBURST\_MODE\_PROGRAMMED}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+WRITEBURST\+\_\+\+MODE\+\_\+\+PROGRAMMED~((uint16\+\_\+t)0x0000)}
+
+\Hypertarget{main_8c_a54dc88e23250d2904be75f94cfdf699f}\label{main_8c_a54dc88e23250d2904be75f94cfdf699f} 
+\index{main.c@{main.c}!SDRAM\_MODEREG\_WRITEBURST\_MODE\_SINGLE@{SDRAM\_MODEREG\_WRITEBURST\_MODE\_SINGLE}}
+\index{SDRAM\_MODEREG\_WRITEBURST\_MODE\_SINGLE@{SDRAM\_MODEREG\_WRITEBURST\_MODE\_SINGLE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_MODEREG\_WRITEBURST\_MODE\_SINGLE}{SDRAM\_MODEREG\_WRITEBURST\_MODE\_SINGLE}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+MODEREG\+\_\+\+WRITEBURST\+\_\+\+MODE\+\_\+\+SINGLE~((uint16\+\_\+t)0x0200)}
+
+\Hypertarget{main_8c_a16ba60f030cd56f8b4c8cf72b9e6e827}\label{main_8c_a16ba60f030cd56f8b4c8cf72b9e6e827} 
+\index{main.c@{main.c}!SDRAM\_TIMEOUT@{SDRAM\_TIMEOUT}}
+\index{SDRAM\_TIMEOUT@{SDRAM\_TIMEOUT}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SDRAM\_TIMEOUT}{SDRAM\_TIMEOUT}}
+{\footnotesize\ttfamily \#define SDRAM\+\_\+\+TIMEOUT~((uint32\+\_\+t)0x\+FFFF)}
+
+\Hypertarget{main_8c_a31cbda8324bfabcbf9fb18cc6c945b88}\label{main_8c_a31cbda8324bfabcbf9fb18cc6c945b88} 
+\index{main.c@{main.c}!SPI5\_TIMEOUT\_MAX@{SPI5\_TIMEOUT\_MAX}}
+\index{SPI5\_TIMEOUT\_MAX@{SPI5\_TIMEOUT\_MAX}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SPI5\_TIMEOUT\_MAX}{SPI5\_TIMEOUT\_MAX}}
+{\footnotesize\ttfamily \#define SPI5\+\_\+\+TIMEOUT\+\_\+\+MAX~0x1000}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a2ac9c311ff05671105348142908ecda3}\label{main_8c_a2ac9c311ff05671105348142908ecda3} 
+\index{main.c@{main.c}!gyro\_disable@{gyro\_disable}}
+\index{gyro\_disable@{gyro\_disable}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{gyro\_disable()}{gyro\_disable()}}
+{\footnotesize\ttfamily void gyro\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{main_8c_a8a3b0ad512a6e6c6157440b68d395eac} 
+\index{main.c@{main.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
+\index{HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_PeriodElapsedCallback()}{HAL\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim }\end{DoxyParamCaption})}
+
+
+
+Period elapsed callback in non blocking mode. 
+
+\begin{DoxyNote}{Note}
+This function is called when TIM6 interrupt took place, inside HAL\+\_\+\+TIM\+\_\+\+IRQHandler(). It makes a direct call to HAL\+\_\+\+Inc\+Tick() to increment a global variable "{}uw\+Tick"{} used as application time base. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & \+: TIM handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_afe6384ff1973503e54b8daa35470b0ec}\label{main_8c_afe6384ff1973503e54b8daa35470b0ec} 
+\index{main.c@{main.c}!IOE\_Delay@{IOE\_Delay}}
+\index{IOE\_Delay@{IOE\_Delay}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IOE\_Delay()}{IOE\_Delay()}}
+{\footnotesize\ttfamily void IOE\+\_\+\+Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Delay }\end{DoxyParamCaption})}
+
+
+
+IOE Delay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delay} & in ms \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8c_a20cd09e59bac7284d1342b6741733593}\label{main_8c_a20cd09e59bac7284d1342b6741733593} 
+\index{main.c@{main.c}!IOE\_Init@{IOE\_Init}}
+\index{IOE\_Init@{IOE\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IOE\_Init()}{IOE\_Init()}}
+{\footnotesize\ttfamily void IOE\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+IOE Low Level Initialization. 
+
+\Hypertarget{main_8c_ac33b368855363c8f6b05b7218bad4f7c}\label{main_8c_ac33b368855363c8f6b05b7218bad4f7c} 
+\index{main.c@{main.c}!IOE\_ITConfig@{IOE\_ITConfig}}
+\index{IOE\_ITConfig@{IOE\_ITConfig}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IOE\_ITConfig()}{IOE\_ITConfig()}}
+{\footnotesize\ttfamily void IOE\+\_\+\+ITConfig (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+IOE Low Level Interrupt configuration. 
+
+\Hypertarget{main_8c_a1fb4704e1fedb443110f4a68d75c6150}\label{main_8c_a1fb4704e1fedb443110f4a68d75c6150} 
+\index{main.c@{main.c}!IOE\_Read@{IOE\_Read}}
+\index{IOE\_Read@{IOE\_Read}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IOE\_Read()}{IOE\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t IOE\+\_\+\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Addr,  }\item[{uint8\+\_\+t}]{Reg }\end{DoxyParamCaption})}
+
+
+
+IOE Reads single data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addr} & I2C Address \\
+\hline
+{\em Reg} & Reg Address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & read data \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a8c1a6f29316f73b7f067e815f7ccca36}\label{main_8c_a8c1a6f29316f73b7f067e815f7ccca36} 
+\index{main.c@{main.c}!IOE\_ReadMultiple@{IOE\_ReadMultiple}}
+\index{IOE\_ReadMultiple@{IOE\_ReadMultiple}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IOE\_ReadMultiple()}{IOE\_ReadMultiple()}}
+{\footnotesize\ttfamily uint16\+\_\+t IOE\+\_\+\+Read\+Multiple (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Addr,  }\item[{uint8\+\_\+t}]{Reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Buffer,  }\item[{uint16\+\_\+t}]{Length }\end{DoxyParamCaption})}
+
+
+
+IOE Reads multiple data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addr} & I2C Address \\
+\hline
+{\em Reg} & Reg Address \\
+\hline
+{\em p\+Buffer} & pointer to data buffer \\
+\hline
+{\em Length} & length of the data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if no problems to read multiple data \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_ac9aaccafd33dc8ce45ee7bce22ff361e}\label{main_8c_ac9aaccafd33dc8ce45ee7bce22ff361e} 
+\index{main.c@{main.c}!IOE\_Write@{IOE\_Write}}
+\index{IOE\_Write@{IOE\_Write}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IOE\_Write()}{IOE\_Write()}}
+{\footnotesize\ttfamily void IOE\+\_\+\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Addr,  }\item[{uint8\+\_\+t}]{Reg,  }\item[{uint8\+\_\+t}]{Value }\end{DoxyParamCaption})}
+
+
+
+IOE Writes single data operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addr} & I2C Address \\
+\hline
+{\em Reg} & Reg Address \\
+\hline
+{\em Value} & Data to be written \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8c_a884a2c8fc8d4239acadc649cb60c0a15}\label{main_8c_a884a2c8fc8d4239acadc649cb60c0a15} 
+\index{main.c@{main.c}!LCD\_Delay@{LCD\_Delay}}
+\index{LCD\_Delay@{LCD\_Delay}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Delay()}{LCD\_Delay()}}
+{\footnotesize\ttfamily void LCD\+\_\+\+Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Delay }\end{DoxyParamCaption})}
+
+
+
+Wait for loop in ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delay} & in ms. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8c_accf0a45e037a886f9b1a849bedd63735}\label{main_8c_accf0a45e037a886f9b1a849bedd63735} 
+\index{main.c@{main.c}!LCD\_IO\_Init@{LCD\_IO\_Init}}
+\index{LCD\_IO\_Init@{LCD\_IO\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_IO\_Init()}{LCD\_IO\_Init()}}
+{\footnotesize\ttfamily void LCD\+\_\+\+IO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_a10fd152b0ec2326173d80e922d8635fc}\label{main_8c_a10fd152b0ec2326173d80e922d8635fc} 
+\index{main.c@{main.c}!LCD\_IO\_ReadData@{LCD\_IO\_ReadData}}
+\index{LCD\_IO\_ReadData@{LCD\_IO\_ReadData}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_IO\_ReadData()}{LCD\_IO\_ReadData()}}
+{\footnotesize\ttfamily uint32\+\_\+t LCD\+\_\+\+IO\+\_\+\+Read\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Reg\+Value,  }\item[{uint8\+\_\+t}]{Read\+Size }\end{DoxyParamCaption})}
+
+
+
+Reads register value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reg\+Value} & Address of the register to read \\
+\hline
+{\em Read\+Size} & Number of bytes to read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Content} & of the register value \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_aae6ab499c7ca32f026708cbfb5153c97}\label{main_8c_aae6ab499c7ca32f026708cbfb5153c97} 
+\index{main.c@{main.c}!LCD\_IO\_WriteData@{LCD\_IO\_WriteData}}
+\index{LCD\_IO\_WriteData@{LCD\_IO\_WriteData}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_IO\_WriteData()}{LCD\_IO\_WriteData()}}
+{\footnotesize\ttfamily void LCD\+\_\+\+IO\+\_\+\+Write\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Reg\+Value }\end{DoxyParamCaption})}
+
+
+
+Writes register value. 
+
+\Hypertarget{main_8c_a435f47c3f7c327325ea17f71fae7cebc}\label{main_8c_a435f47c3f7c327325ea17f71fae7cebc} 
+\index{main.c@{main.c}!LCD\_IO\_WriteReg@{LCD\_IO\_WriteReg}}
+\index{LCD\_IO\_WriteReg@{LCD\_IO\_WriteReg}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_IO\_WriteReg()}{LCD\_IO\_WriteReg()}}
+{\footnotesize\ttfamily void LCD\+\_\+\+IO\+\_\+\+Write\+Reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Reg }\end{DoxyParamCaption})}
+
+
+
+Writes register address. 
+
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_aea7e5561eb9e6610bac506772ded41e3}\label{main_8c_aea7e5561eb9e6610bac506772ded41e3} 
+\index{main.c@{main.c}!setCalibrationFlashValues@{setCalibrationFlashValues}}
+\index{setCalibrationFlashValues@{setCalibrationFlashValues}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{setCalibrationFlashValues()}{setCalibrationFlashValues()}}
+{\footnotesize\ttfamily void set\+Calibration\+Flash\+Values (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Start\+Sector\+Address,  }\item[{uint32\+\_\+t}]{value,  }\item[{uint32\+\_\+t}]{index,  }\item[{uint16\+\_\+t}]{numberofwords }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_a99d0fdb0434092bcb24d9c9af917e4e9}\label{main_8c_a99d0fdb0434092bcb24d9c9af917e4e9} 
+\index{main.c@{main.c}!StartDefaultTask@{StartDefaultTask}}
+\index{StartDefaultTask@{StartDefaultTask}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{StartDefaultTask()}{StartDefaultTask()}}
+{\footnotesize\ttfamily void Start\+Default\+Task (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argument }\end{DoxyParamCaption})}
+
+
+
+Function implementing the default\+Task thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & Not used \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a5e21ba58e8d97e9b0fa87ba4d2af6146}\label{main_8c_a5e21ba58e8d97e9b0fa87ba4d2af6146} 
+\index{main.c@{main.c}!StartTimeoutTask@{StartTimeoutTask}}
+\index{StartTimeoutTask@{StartTimeoutTask}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{StartTimeoutTask()}{StartTimeoutTask()}}
+{\footnotesize\ttfamily void Start\+Timeout\+Task (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argument }\end{DoxyParamCaption})}
+
+
+
+Function implementing the Timeout\+Task thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & Not used \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks\Hypertarget{main_8c_a94f37d950f9dce09a0ba811910276645}\label{main_8c_a94f37d950f9dce09a0ba811910276645} 
+\index{main.c@{main.c}!TouchGFX\_Task@{TouchGFX\_Task}}
+\index{TouchGFX\_Task@{TouchGFX\_Task}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TouchGFX\_Task()}{TouchGFX\_Task()}}
+{\footnotesize\ttfamily void Touch\+GFX\+\_\+\+Task (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argument }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a43c98c20a1c370f9fd65564895637f19}\label{main_8c_a43c98c20a1c370f9fd65564895637f19} 
+\index{main.c@{main.c}!Calibration\_Data@{Calibration\_Data}}
+\index{Calibration\_Data@{Calibration\_Data}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Calibration\_Data}{Calibration\_Data}}
+{\footnotesize\ttfamily uint32\+\_\+t Calibration\+\_\+\+Data\mbox{[}14\mbox{]}}
+
+\Hypertarget{main_8c_a25fbb54afdba71c24ba51ed50166ac8d}\label{main_8c_a25fbb54afdba71c24ba51ed50166ac8d} 
+\index{main.c@{main.c}!defaultTask\_attributes@{defaultTask\_attributes}}
+\index{defaultTask\_attributes@{defaultTask\_attributes}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{defaultTask\_attributes}{defaultTask\_attributes}}
+{\footnotesize\ttfamily const os\+Thread\+Attr\+\_\+t default\+Task\+\_\+attributes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ .name\ =\ \textcolor{stringliteral}{"{}defaultTask"{}},}
+\DoxyCodeLine{\ \ .stack\_size\ =\ 128\ *\ 4,}
+\DoxyCodeLine{\ \ .priority\ =\ (osPriority\_t)\ osPriorityNormal,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{main_8c_a6a263905468b0c37de4ee5e50ede4e74}\label{main_8c_a6a263905468b0c37de4ee5e50ede4e74} 
+\index{main.c@{main.c}!defaultTaskHandle@{defaultTaskHandle}}
+\index{defaultTaskHandle@{defaultTaskHandle}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{defaultTaskHandle}{defaultTaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id\+\_\+t default\+Task\+Handle}
+
+\Hypertarget{main_8c_aab6c75dec2009ee596a7a003d7944584}\label{main_8c_aab6c75dec2009ee596a7a003d7944584} 
+\index{main.c@{main.c}!GUI\_Task\_attributes@{GUI\_Task\_attributes}}
+\index{GUI\_Task\_attributes@{GUI\_Task\_attributes}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{GUI\_Task\_attributes}{GUI\_Task\_attributes}}
+{\footnotesize\ttfamily const os\+Thread\+Attr\+\_\+t GUI\+\_\+\+Task\+\_\+attributes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ .name\ =\ \textcolor{stringliteral}{"{}GUI\_Task"{}},}
+\DoxyCodeLine{\ \ .stack\_size\ =\ 8192\ *\ 4,}
+\DoxyCodeLine{\ \ .priority\ =\ (osPriority\_t)\ osPriorityNormal,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{main_8c_a8391794660950cca34804d4f17eac262}\label{main_8c_a8391794660950cca34804d4f17eac262} 
+\index{main.c@{main.c}!GUI\_TaskHandle@{GUI\_TaskHandle}}
+\index{GUI\_TaskHandle@{GUI\_TaskHandle}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{GUI\_TaskHandle}{GUI\_TaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id\+\_\+t GUI\+\_\+\+Task\+Handle}
+
+\Hypertarget{main_8c_ae3358c54a01c6487322df1275618d6b1}\label{main_8c_ae3358c54a01c6487322df1275618d6b1} 
+\index{main.c@{main.c}!hcrc@{hcrc}}
+\index{hcrc@{hcrc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hcrc}{hcrc}}
+{\footnotesize\ttfamily CRC\+\_\+\+Handle\+Type\+Def hcrc}
+
+\Hypertarget{main_8c_a5ccf4a01a8d7f08d3190181f843f7515}\label{main_8c_a5ccf4a01a8d7f08d3190181f843f7515} 
+\index{main.c@{main.c}!hi2c3@{hi2c3}}
+\index{hi2c3@{hi2c3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hi2c3}{hi2c3}}
+{\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def hi2c3}
+
+\Hypertarget{main_8c_a9ede3a77755ec81a9be03423cb915b05}\label{main_8c_a9ede3a77755ec81a9be03423cb915b05} 
+\index{main.c@{main.c}!hltdc@{hltdc}}
+\index{hltdc@{hltdc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hltdc}{hltdc}}
+{\footnotesize\ttfamily LTDC\+\_\+\+Handle\+Type\+Def hltdc}
+
+\Hypertarget{main_8c_a6085f55189e4b7aa7b7e2673ff620418}\label{main_8c_a6085f55189e4b7aa7b7e2673ff620418} 
+\index{main.c@{main.c}!hsdram1@{hsdram1}}
+\index{hsdram1@{hsdram1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hsdram1}{hsdram1}}
+{\footnotesize\ttfamily SDRAM\+\_\+\+Handle\+Type\+Def hsdram1}
+
+\Hypertarget{main_8c_afdea13a2cdf1c24e3a0edfc65c30b474}\label{main_8c_afdea13a2cdf1c24e3a0edfc65c30b474} 
+\index{main.c@{main.c}!hspi5@{hspi5}}
+\index{hspi5@{hspi5}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hspi5}{hspi5}}
+{\footnotesize\ttfamily SPI\+\_\+\+Handle\+Type\+Def hspi5}
+
+\Hypertarget{main_8c_ae4b8faf50eeb07577983d36e4c3894b8}\label{main_8c_ae4b8faf50eeb07577983d36e4c3894b8} 
+\index{main.c@{main.c}!htim14@{htim14}}
+\index{htim14@{htim14}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim14}{htim14}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def htim14}
+
+\Hypertarget{main_8c_a2c80fd5510e2990a59a5c90d745c716c}\label{main_8c_a2c80fd5510e2990a59a5c90d745c716c} 
+\index{main.c@{main.c}!htim2@{htim2}}
+\index{htim2@{htim2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim2}{htim2}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def htim2}
+
+\Hypertarget{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62}\label{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62} 
+\index{main.c@{main.c}!htim3@{htim3}}
+\index{htim3@{htim3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim3}{htim3}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def htim3}
+
+\Hypertarget{main_8c_acefaeaaa3856ddddae7083b2d220fe4b}\label{main_8c_acefaeaaa3856ddddae7083b2d220fe4b} 
+\index{main.c@{main.c}!htim5@{htim5}}
+\index{htim5@{htim5}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim5}{htim5}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def htim5}
+
+\Hypertarget{main_8c_aff9dd4c7454b782271f9e22d4197ba4b}\label{main_8c_aff9dd4c7454b782271f9e22d4197ba4b} 
+\index{main.c@{main.c}!I2c3Timeout@{I2c3Timeout}}
+\index{I2c3Timeout@{I2c3Timeout}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{I2c3Timeout}{I2c3Timeout}}
+{\footnotesize\ttfamily uint32\+\_\+t I2c3\+Timeout = \mbox{\hyperlink{main_8c_ad098ae1519fcf91506b8da037855c437}{I2\+C3\+\_\+\+TIMEOUT\+\_\+\+MAX}}}
+
+\Hypertarget{main_8c_afd60c544c217169ceebd6daf55f54e14}\label{main_8c_afd60c544c217169ceebd6daf55f54e14} 
+\index{main.c@{main.c}!sleep\_timeout\_value@{sleep\_timeout\_value}}
+\index{sleep\_timeout\_value@{sleep\_timeout\_value}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sleep\_timeout\_value}{sleep\_timeout\_value}}
+{\footnotesize\ttfamily int sleep\+\_\+timeout\+\_\+value = \mbox{\hyperlink{main_8h_a28b01617eea2a7776c35e353a5b735c2}{SCREEN\+\_\+\+TIMEOUT}}}
+
+\Hypertarget{main_8c_af4e3feeb6f1fc7a4acd9570cbfce9617}\label{main_8c_af4e3feeb6f1fc7a4acd9570cbfce9617} 
+\index{main.c@{main.c}!Spi5Timeout@{Spi5Timeout}}
+\index{Spi5Timeout@{Spi5Timeout}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Spi5Timeout}{Spi5Timeout}}
+{\footnotesize\ttfamily uint32\+\_\+t Spi5\+Timeout = \mbox{\hyperlink{main_8c_a31cbda8324bfabcbf9fb18cc6c945b88}{SPI5\+\_\+\+TIMEOUT\+\_\+\+MAX}}}
+
+\Hypertarget{main_8c_a72a73db148589ed4d6d0ce81cffc38b8}\label{main_8c_a72a73db148589ed4d6d0ce81cffc38b8} 
+\index{main.c@{main.c}!TimeoutQueue\_attributes@{TimeoutQueue\_attributes}}
+\index{TimeoutQueue\_attributes@{TimeoutQueue\_attributes}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TimeoutQueue\_attributes}{TimeoutQueue\_attributes}}
+{\footnotesize\ttfamily const os\+Message\+Queue\+Attr\+\_\+t Timeout\+Queue\+\_\+attributes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ .name\ =\ \textcolor{stringliteral}{"{}TimeoutQueue"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{main_8c_a6bcbe6a7ecfc9735e49451e9615dcd24}\label{main_8c_a6bcbe6a7ecfc9735e49451e9615dcd24} 
+\index{main.c@{main.c}!TimeoutQueueHandle@{TimeoutQueueHandle}}
+\index{TimeoutQueueHandle@{TimeoutQueueHandle}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TimeoutQueueHandle}{TimeoutQueueHandle}}
+{\footnotesize\ttfamily os\+Message\+Queue\+Id\+\_\+t Timeout\+Queue\+Handle}
+
+\Hypertarget{main_8c_a64eb625ccae674c15f80381b82193723}\label{main_8c_a64eb625ccae674c15f80381b82193723} 
+\index{main.c@{main.c}!TimeoutTask\_attributes@{TimeoutTask\_attributes}}
+\index{TimeoutTask\_attributes@{TimeoutTask\_attributes}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TimeoutTask\_attributes}{TimeoutTask\_attributes}}
+{\footnotesize\ttfamily const os\+Thread\+Attr\+\_\+t Timeout\+Task\+\_\+attributes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ .name\ =\ \textcolor{stringliteral}{"{}TimeoutTask"{}},}
+\DoxyCodeLine{\ \ .stack\_size\ =\ 128\ *\ 4,}
+\DoxyCodeLine{\ \ .priority\ =\ (osPriority\_t)\ osPriorityLow,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{main_8c_a5b33abfd3b89564f7905664da60c340a}\label{main_8c_a5b33abfd3b89564f7905664da60c340a} 
+\index{main.c@{main.c}!TimeoutTaskHandle@{TimeoutTaskHandle}}
+\index{TimeoutTaskHandle@{TimeoutTaskHandle}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TimeoutTaskHandle}{TimeoutTaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id\+\_\+t Timeout\+Task\+Handle}
+

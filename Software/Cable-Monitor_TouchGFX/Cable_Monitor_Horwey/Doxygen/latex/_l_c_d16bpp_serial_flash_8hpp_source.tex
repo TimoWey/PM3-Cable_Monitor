@@ -1,0 +1,670 @@
+\doxysection{LCD16bpp\+Serial\+Flash.\+hpp}
+\hypertarget{_l_c_d16bpp_serial_flash_8hpp_source}{}\label{_l_c_d16bpp_serial_flash_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bppSerialFlash.hpp@{Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bppSerialFlash.hpp}}
+\mbox{\hyperlink{_l_c_d16bpp_serial_flash_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_LCD16BPPSERIALFLASH\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_LCD16BPPSERIALFLASH\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_flash_data_reader_8hpp}{touchgfx/hal/FlashDataReader.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_h_a_l_8hpp}{touchgfx/hal/HAL.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8hpp}{touchgfx/lcd/LCD.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d16_debug_printer_8hpp}{touchgfx/lcd/LCD16DebugPrinter.hpp}}>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash}{LCD16bppSerialFlash}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a3139d200324204a15f898a53824b2136}{LCD16bppSerialFlash}}(\mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader}{FlashDataReader}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a24777aeb8d3c73d13ebc02011c2775ed}{flashReader}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_aedb541f040223e52e8136a9a7a48878b}{drawPartialBitmap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bitmap,\ int16\_t\ x,\ int16\_t\ y,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect,\ uint8\_t\ alpha\ =\ 255,\ \textcolor{keywordtype}{bool}\ useOptimized\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_af3647029c4f016383bef5b5628b4ec7d}{blitCopy}}(\textcolor{keyword}{const}\ uint16\_t*\ sourceData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha,\ \textcolor{keywordtype}{bool}\ hasTransparentPixels);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a05508368f567f9d181ad60aa5e38e908}{blitCopy}}(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap::BitmapFormat}}\ sourceFormat,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha,\ \textcolor{keywordtype}{bool}\ hasTransparentPixels);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_aae622c2842de88ea24c97f2843175c06}{copyFrameBufferRegionToMemory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ visRegion,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ absRegion,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ bitmapId);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a2fe8cab54a99677c8269d70f50df15c1}{copyFrameBufferRegionToMemory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ visRegion,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ absRegion,\ uint8\_t*\ dst,\ int16\_t\ dstWidth,\ int16\_t\ dstHeight);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_adfdf108c8542fb1c41be9a7322803b0a}{copyAreaFromTFTToClientBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ region);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a1348ded8eccd0b7db977bcb2a3ca8131}{fillRect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect,\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint8\_t\ alpha\ =\ 255);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a619a52db3caf72f208f64083d8ca6b3e}{fillBuffer}}(uint8\_t*\ \textcolor{keyword}{const}\ destination,\ uint16\_t\ pixelStride,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ae26eae955dea9fc5fc933f48aeabbcda}{bitDepth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00066\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 16;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap::BitmapFormat}}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a573a3ae89f286e894a7a3c788c7a127c}{framebufferFormat}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf4d7a1e0665a9b0cf938d200fbaace90}{Bitmap::RGB565}};}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_af55a397f87bb04188846e43fecae444f}{framebufferStride}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00076\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ab9930060db391bb05297dd70c8afa377}{getFramebufferStride}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ab9930060db391bb05297dd70c8afa377}{getFramebufferStride}}()}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{HAL::FRAME\_BUFFER\_WIDTH}}\ >\ 0\ \&\&\ \textcolor{stringliteral}{"{}HAL\ has\ not\ been\ initialized\ yet"{}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{HAL::FRAME\_BUFFER\_WIDTH}}\ *\ 2;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00101\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a8e791ccf5ff470918a80a2b906d5015b}{getNativeColorFromRGB}}(uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((red\ <<\ 8)\ \&\ 0xF800)\ |\ ((green\ <<\ 3)\ \&\ 0x07E0)\ |\ ((blue\ >>\ 3)\ \&\ 0x001F);}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a359dbfd55eb08ede8fe0443c78b2ca29}{getNativeColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((color\ >>\ 8)\ \&\ 0xF800)\ |\ ((color\ >>\ 5)\ \&\ 0x07E0)\ |\ ((color\ >>\ 3)\ \&\ 0x001F);}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a0419ed11390a283e075f766d42e31e5a}{enableTextureMapperAll}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a9a6ee1ed42a19702d83fde6e5ef96767}{enableTextureMapperL8\_RGB565}}();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_adc33cf9bae2dfc340097f61adcc52fb7}{enableTextureMapperL8\_RGB565\_BilinearInterpolation}}();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a2ae656c227274e215b54393d22f8a1d1}{enableTextureMapperL8\_RGB565\_NearestNeighbor}}();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a36f3b6487bda225a7608774f1fa64d20}{enableTextureMapperL8\_RGB888}}();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a28ad2c230f5b0279b96e0e4ecf9109c7}{enableTextureMapperL8\_RGB888\_BilinearInterpolation}}();}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a52b07111e7095e22b30d7f2890b352fd}{enableTextureMapperL8\_RGB888\_NearestNeighbor}}();}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a1971b31eec2d7bcd74e864e79349afed}{enableTextureMapperL8\_ARGB8888}}();}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ab075584c4166fc5a8a9c2ebf22b03935}{enableTextureMapperL8\_ARGB8888\_BilinearInterpolation}}();}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a12b96ad90de1b3fbf0d576ed8614c426}{enableTextureMapperL8\_ARGB8888\_NearestNeighbor}}();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a3f9d43883dacea084d3d20a1f9bee3e3}{enableTextureMapperRGB565}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_aa150bc41df9000c2b2a203e75c20f210}{enableTextureMapperRGB565\_Opaque\_BilinearInterpolation}}();}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a06cf3a43948259e0f2ba77a72fc60b51}{enableTextureMapperRGB565\_NonOpaque\_BilinearInterpolation}}();}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a5f76ebf9d389133ddf3b384727aba93b}{enableTextureMapperRGB565\_Opaque\_NearestNeighbor}}();}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a8bbb279b3786ab51a7adb35fe9cf2b22}{enableTextureMapperRGB565\_NonOpaque\_NearestNeighbor}}();}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a6b5649a949441eddcc46260bdb6fa528}{enableTextureMapperARGB8888}}();}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a770035e366aeb6e5f03f26b3b358d7af}{enableTextureMapperARGB8888\_BilinearInterpolation}}();}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ad9d3c625c6a767debc52e2104626c845}{enableTextureMapperARGB8888\_NearestNeighbor}}();}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a7da32b9abcf600b5fa69927026b6f09c}{enableTextureMapperA4}}();}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a2c89a58ff3936c939d80b2dffaa11885}{enableTextureMapperA4\_BilinearInterpolation}}();}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a35cb3ba68ddf1795c7ea1c361c19c1c4}{enableTextureMapperA4\_NearestNeighbor}}();}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a823cff387520c9f946026464913563f3}{enableDecompressorL8\_All}}();}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a1d8194b3bd98feb41ac7e8edddf1e366}{enableDecompressorL8\_L4}}();}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ae278bbf8309061c59830f0493a75e00e}{enableDecompressorL8\_RLE}}();}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a378029a0adab09451165b3f24c84e4fc}{enableDecompressorL8\_LZW9}}();}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_aeaf2873a9df3d6bf613f385b19fdb20f}{getTextureMapperDrawScanLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{TextureSurface}}\&\ texture,\ \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{RenderingVariant}}\ renderVariant,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader}{FlashDataReader}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a24777aeb8d3c73d13ebc02011c2775ed}{flashReader}};\ }
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ab68d3386b312b0ad1e6e5883b4472e5d}{nextPixel}}(\textcolor{keywordtype}{bool}\ rotatedDisplay,\ \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{TextRotation}}\ textRotation);}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a437e0fae42680bdc19dd85fe60ac6b18}{nextLine}}(\textcolor{keywordtype}{bool}\ rotatedDisplay,\ \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{TextRotation}}\ textRotation);}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a6943b7615daec1b7bb7ff5c2fb48a7d9}{drawGlyph}}(uint16\_t*\ wbuf16,\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ widgetArea,\ int16\_t\ x,\ int16\_t\ y,\ uint16\_t\ offsetX,\ uint16\_t\ offsetY,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{GlyphNode}}*\ glyph,\ \textcolor{keyword}{const}\ uint8\_t*\ glyphData,\ uint8\_t\ byteAlignRow,\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint8\_t\ bitsPerPixel,\ uint8\_t\ alpha,\ \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{TextRotation}}\ rotation);}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a830a1254c583679356bd6382e3118400}{blitCopyARGB8888}}(\textcolor{keyword}{const}\ uint32\_t*\ sourceData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a587c76104cd3299fa565cc1077a59e92}{blitCopyARGB8888Solid}}(\textcolor{keyword}{const}\ uint32\_t*\ sourceData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect);}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a8eb225dc344261cad14f232b96c7e382}{blitCopyRGB888}}(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a0ff0a5a5fd1fd85bba8985a3849b2224}{blitCopyL8}}(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_ac4add8cb98874af659da7e423231eae8}{blitCopyL8\_ARGB8888}}(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16bpp_serial_flash_a239d2ad7cdfe8a8f31015a04f861e161}{blitCopyL8\_RGB565}}(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00435\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB565\_Opaque\_NearestNeighbor\_GA;}
+\DoxyCodeLine{00436\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB565\_Opaque\_NearestNeighbor\_NoGA;}
+\DoxyCodeLine{00437\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB565\_Opaque\_BilinearInterpolation\_GA;}
+\DoxyCodeLine{00438\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB565\_Opaque\_BilinearInterpolation\_NoGA;}
+\DoxyCodeLine{00439\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB888\_Opaque\_NearestNeighbor\_GA;}
+\DoxyCodeLine{00440\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB888\_Opaque\_NearestNeighbor\_NoGA;}
+\DoxyCodeLine{00441\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB888\_Opaque\_BilinearInterpolation\_GA;}
+\DoxyCodeLine{00442\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_RGB888\_Opaque\_BilinearInterpolation\_NoGA;}
+\DoxyCodeLine{00443\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_ARGB8888\_NonOpaque\_NearestNeighbor\_GA;}
+\DoxyCodeLine{00444\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_ARGB8888\_NonOpaque\_NearestNeighbor\_NoGA;}
+\DoxyCodeLine{00445\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_ARGB8888\_NonOpaque\_BilinearInterpolation\_GA;}
+\DoxyCodeLine{00446\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_L8\_ARGB8888\_NonOpaque\_BilinearInterpolation\_NoGA;}
+\DoxyCodeLine{00447\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_NonOpaque\_NearestNeighbor\_GA;}
+\DoxyCodeLine{00448\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_NonOpaque\_NearestNeighbor\_NoGA;}
+\DoxyCodeLine{00449\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_Opaque\_NearestNeighbor\_GA;}
+\DoxyCodeLine{00450\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_Opaque\_NearestNeighbor\_NoGA;}
+\DoxyCodeLine{00451\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_NonOpaque\_BilinearInterpolation\_GA;}
+\DoxyCodeLine{00452\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_NonOpaque\_BilinearInterpolation\_NoGA;}
+\DoxyCodeLine{00453\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_Opaque\_BilinearInterpolation\_GA;}
+\DoxyCodeLine{00454\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_RGB565\_Opaque\_BilinearInterpolation\_NoGA;}
+\DoxyCodeLine{00455\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_ARGB8888\_NonOpaque\_NearestNeighbor\_GA;}
+\DoxyCodeLine{00456\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_ARGB8888\_NonOpaque\_NearestNeighbor\_NoGA;}
+\DoxyCodeLine{00457\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_ARGB8888\_NonOpaque\_BilinearInterpolation\_GA;}
+\DoxyCodeLine{00458\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_ARGB8888\_NonOpaque\_BilinearInterpolation\_NoGA;}
+\DoxyCodeLine{00459\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_A4\_NearestNeighbor\_GA;}
+\DoxyCodeLine{00460\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_A4\_NearestNeighbor\_NoGA;}
+\DoxyCodeLine{00461\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_A4\_BilinearInterpolation\_GA;}
+\DoxyCodeLine{00462\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{DrawTextureMapScanLineBase}}*\ textureMapper\_A4\_BilinearInterpolation\_NoGA;}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ expandRgb565(uint16\_t\ c)}
+\DoxyCodeLine{00465\ \ \ \ \ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((c\ \&\ 0x07E0)\ <<\ 16)\ |\ (c\ \&\ \string~0x07E0);}
+\DoxyCodeLine{00467\ \ \ \ \ \}}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint16\_t\ compactRgb565(uint32\_t\ c)}
+\DoxyCodeLine{00470\ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((c\ >>\ 16)\ \&\ 0x07E0)\ |\ (c\ \&\ \string~0x07E0);}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint16\_t\ bilinearInterpolate565(uint16\_t\ c00,\ uint16\_t\ c10,\ uint16\_t\ c01,\ uint16\_t\ c11,\ uint8\_t\ x,\ uint8\_t\ y)}
+\DoxyCodeLine{00475\ \ \ \ \ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ assert(x\ <\ 16\ \&\&\ y\ <\ 16);}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ uint32\_t\ a00\ =\ expandRgb565(c00);}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ uint32\_t\ a10\ =\ expandRgb565(c10);}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ uint32\_t\ a01\ =\ expandRgb565(c01);}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ uint32\_t\ a11\ =\ expandRgb565(c11);}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ uint8\_t\ xy\ =\ (x\ *\ y)\ >>\ 3;}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ compactRgb565((a00\ *\ (32\ -\/\ 2\ *\ y\ -\/\ 2\ *\ x\ +\ xy)\ +\ a10\ *\ (2\ *\ x\ -\/\ xy)\ +\ a01\ *\ (2\ *\ y\ -\/\ xy)\ +\ a11\ *\ xy)\ >>\ 5);}
+\DoxyCodeLine{00484\ \ \ \ \ \}}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint16\_t\ bilinearInterpolate565(uint16\_t\ c00,\ uint16\_t\ c10,\ uint8\_t\ x)}
+\DoxyCodeLine{00487\ \ \ \ \ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ assert(x\ <\ 16);}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ uint32\_t\ a00\ =\ expandRgb565(c00);}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ uint32\_t\ a10\ =\ expandRgb565(c10);}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ compactRgb565((a00\ *\ (32\ -\/\ 2\ *\ x)\ +\ a10\ *\ (2\ *\ x))\ >>\ 5);}
+\DoxyCodeLine{00493\ \ \ \ \ \}}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ bilinearInterpolate8(uint8\_t\ c00,\ uint8\_t\ c10,\ uint8\_t\ x)}
+\DoxyCodeLine{00496\ \ \ \ \ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ assert(x\ <\ 16);}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ uint16\_t\ xy10\ =\ 16\ *\ x;}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ uint16\_t\ xy00\ =\ 256\ -\/\ xy10;}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (c00\ *\ xy00\ +\ c10\ *\ xy10)\ >>\ 8;}
+\DoxyCodeLine{00502\ \ \ \ \ \}}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ bilinearInterpolate8(uint8\_t\ c00,\ uint8\_t\ c10,\ uint8\_t\ c01,\ uint8\_t\ c11,\ uint8\_t\ x,\ uint8\_t\ y)}
+\DoxyCodeLine{00505\ \ \ \ \ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ assert(x\ <\ 16\ \&\&\ y\ <\ 16);}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ uint16\_t\ xy11\ =\ x\ *\ y;}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ uint16\_t\ xy10\ =\ 16\ *\ x\ -\/\ xy11;}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ uint16\_t\ xy01\ =\ 16\ *\ y\ -\/\ xy11;}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ uint16\_t\ xy00\ =\ 256\ -\/\ (xy11\ +\ xy10\ +\ xy01);}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (c00\ *\ xy00\ +\ c10\ *\ xy10\ +\ c01\ *\ xy01\ +\ c11\ *\ xy11)\ >>\ 8;}
+\DoxyCodeLine{00513\ \ \ \ \ \}}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ bilinearInterpolate888(uint32\_t\ c00,\ uint32\_t\ c10,\ uint8\_t\ x)}
+\DoxyCodeLine{00516\ \ \ \ \ \{}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ assert(x\ <\ 16);}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ uint16\_t\ xy10\ =\ 16\ *\ x;}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ uint16\_t\ xy00\ =\ 256\ -\/\ xy10;}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((((c00\ \&\ 0xFF00FF)\ *\ xy00\ +\ (c10\ \&\ 0xFF00FF)\ *\ xy10)\ >>\ 8)\ \&\ 0xFF00FF)\ |}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((c00\ \&\ 0x00FF00)\ *\ xy00\ +\ (c10\ \&\ 0x00FF00)\ *\ xy10)\ >>\ 8)\ \&\ 0x00FF00);}
+\DoxyCodeLine{00523\ \ \ \ \ \}}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00525\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ bilinearInterpolate888(uint32\_t\ c00,\ uint32\_t\ c10,\ uint32\_t\ c01,\ uint32\_t\ c11,\ uint8\_t\ x,\ uint8\_t\ y)}
+\DoxyCodeLine{00526\ \ \ \ \ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ assert(x\ <\ 16\ \&\&\ y\ <\ 16);}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ uint16\_t\ xy11\ =\ x\ *\ y;}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ uint16\_t\ xy10\ =\ 16\ *\ x\ -\/\ xy11;}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ uint16\_t\ xy01\ =\ 16\ *\ y\ -\/\ xy11;}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ uint16\_t\ xy00\ =\ 256\ -\/\ (xy11\ +\ xy10\ +\ xy01);}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((((c00\ \&\ 0xFF00FF)\ *\ xy00\ +\ (c10\ \&\ 0xFF00FF)\ *\ xy10\ +\ (c01\ \&\ 0xFF00FF)\ *\ xy01\ +\ (c11\ \&\ 0xFF00FF)\ *\ xy11)\ >>\ 8)\ \&\ 0xFF00FF)\ |}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((c00\ \&\ 0x00FF00)\ *\ xy00\ +\ (c10\ \&\ 0x00FF00)\ *\ xy10\ +\ (c01\ \&\ 0x00FF00)\ *\ xy01\ +\ (c11\ \&\ 0x00FF00)\ *\ xy11)\ >>\ 8)\ \&\ 0x00FF00);}
+\DoxyCodeLine{00535\ \ \ \ \ \}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ div255\_888(uint32\_t\ val,\ uint8\_t\ factor)}
+\DoxyCodeLine{00538\ \ \ \ \ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a4a10389bd358cdbd4fe41d2ee9ab8f17}{div255rb}}((val\ \&\ 0xFF00FF)\ *\ factor)\ |\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_ae05cf3c95e1a4a417b4313f4680fa28a}{div255g}}((val\ \&\ 0x00FF00)\ *\ factor);}
+\DoxyCodeLine{00540\ \ \ \ \ \}}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ div255\_888\_FFcheck(uint32\_t\ val,\ uint8\_t\ factor)}
+\DoxyCodeLine{00543\ \ \ \ \ \{}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ factor\ <\ 0xFF\ ?\ div255\_888(val,\ factor)\ :\ val;}
+\DoxyCodeLine{00545\ \ \ \ \ \}}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ div31rb(uint16\_t\ val,\ uint8\_t\ factor)}
+\DoxyCodeLine{00548\ \ \ \ \ \{}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ uint32\_t\ val32\ =\ (val\ \&\ 0xF81F)\ *\ (factor\ >>\ 3);}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((val32\ +\ 0x0801\ +\ ((val32\ >>\ 5)\ \&\ 0xF81F))\ >>\ 5)\ \&\ 0xF81F;}
+\DoxyCodeLine{00551\ \ \ \ \ \}}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ div31g(uint16\_t\ val,\ uint8\_t\ factor)}
+\DoxyCodeLine{00554\ \ \ \ \ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ uint32\_t\ val32\ =\ (val\ \&\ 0x07E0)\ *\ factor;}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((val32\ +\ 0x0020\ +\ (val32\ >>\ 8))\ >>\ 8)\ \&\ 0x07E0;}
+\DoxyCodeLine{00557\ \ \ \ \ \}}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ div255\_565(uint16\_t\ val,\ uint8\_t\ factor)}
+\DoxyCodeLine{00560\ \ \ \ \ \{}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ div31rb(val,\ factor)\ |\ div31g(val,\ factor);}
+\DoxyCodeLine{00562\ \ \ \ \ \}}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ div255\_565\_FFcheck(uint16\_t\ val,\ uint8\_t\ factor)}
+\DoxyCodeLine{00565\ \ \ \ \ \{}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ factor\ <\ 0xFF\ ?\ div31rb(val,\ factor)\ |\ div31g(val,\ factor)\ :\ val;}
+\DoxyCodeLine{00567\ \ \ \ \ \}}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keyword}{class\ }DrawTextureMapScanLineBase16\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase}
+\DoxyCodeLine{00570\ \ \ \ \ \{}
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{bool}\ overrunCheckNearestNeighbor(uint16\_t*\&\ destBits,\ \textcolor{keywordtype}{int}\&\ pixelsToDraw,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\&\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\&\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keyword}{const}\ int16\_t\ maxWidth,\ \textcolor{keyword}{const}\ int16\_t\ maxHeight)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{bool}\ overrunCheckBilinearInterpolation(uint16\_t*\&\ destBits,\ \textcolor{keywordtype}{int}\&\ pixelsToDraw,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\&\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\&\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keyword}{const}\ int16\_t\ maxWidth,\ \textcolor{keyword}{const}\ int16\_t\ maxHeight)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00574\ \ \ \ \ \};}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB565\_Opaque\_NearestNeighbor\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00577\ \ \ \ \ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ palette16,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00583\ \ \ \ \ \};}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB565\_Opaque\_NearestNeighbor\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00586\ \ \ \ \ \{}
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ palette16,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00592\ \ \ \ \ \};}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB565\_Opaque\_BilinearInterpolation\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00595\ \ \ \ \ \{}
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ palette16,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ palette16,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00602\ \ \ \ \ \};}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB565\_Opaque\_BilinearInterpolation\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00605\ \ \ \ \ \{}
+\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00609\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ palette16,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ palette16,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00612\ \ \ \ \ \};}
+\DoxyCodeLine{00613\ }
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB888\_Opaque\_NearestNeighbor\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00615\ \ \ \ \ \{}
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ palette8,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00621\ \ \ \ \ \};}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB888\_Opaque\_NearestNeighbor\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00624\ \ \ \ \ \{}
+\DoxyCodeLine{00625\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ palette8,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00630\ \ \ \ \ \};}
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB888\_Opaque\_BilinearInterpolation\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00633\ \ \ \ \ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ palette8,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ palette8,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00640\ \ \ \ \ \};}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_RGB888\_Opaque\_BilinearInterpolation\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00643\ \ \ \ \ \{}
+\DoxyCodeLine{00644\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ palette8,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ palette8,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00650\ \ \ \ \ \};}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00652\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_ARGB8888\_NonOpaque\_NearestNeighbor\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00653\ \ \ \ \ \{}
+\DoxyCodeLine{00654\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00657\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ palette32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00659\ \ \ \ \ \};}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_ARGB8888\_NonOpaque\_NearestNeighbor\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00662\ \ \ \ \ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ palette32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00668\ \ \ \ \ \};}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_ARGB8888\_NonOpaque\_BilinearInterpolation\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00671\ \ \ \ \ \{}
+\DoxyCodeLine{00672\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00675\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ palette32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ palette32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00678\ \ \ \ \ \};}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_L8\_ARGB8888\_NonOpaque\_BilinearInterpolation\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00681\ \ \ \ \ \{}
+\DoxyCodeLine{00682\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00685\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ palette32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ textureBits8,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ palette32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00688\ \ \ \ \ \};}
+\DoxyCodeLine{00689\ }
+\DoxyCodeLine{00690\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_NonOpaque\_NearestNeighbor\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00691\ \ \ \ \ \{}
+\DoxyCodeLine{00692\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ alphaBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00697\ \ \ \ \ \};}
+\DoxyCodeLine{00698\ }
+\DoxyCodeLine{00699\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_NonOpaque\_NearestNeighbor\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00700\ \ \ \ \ \{}
+\DoxyCodeLine{00701\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00703\ }
+\DoxyCodeLine{00704\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ uint8\_t*\ alphaBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00706\ \ \ \ \ \};}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_Opaque\_NearestNeighbor\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00709\ \ \ \ \ \{}
+\DoxyCodeLine{00710\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00712\ }
+\DoxyCodeLine{00713\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00715\ \ \ \ \ \};}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00717\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_Opaque\_NearestNeighbor\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00718\ \ \ \ \ \{}
+\DoxyCodeLine{00719\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00721\ }
+\DoxyCodeLine{00722\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00724\ \ \ \ \ \};}
+\DoxyCodeLine{00725\ }
+\DoxyCodeLine{00726\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_NonOpaque\_BilinearInterpolation\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00727\ \ \ \ \ \{}
+\DoxyCodeLine{00728\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00730\ }
+\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ alphaBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ alphaBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00734\ \ \ \ \ \};}
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00736\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_NonOpaque\_BilinearInterpolation\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00737\ \ \ \ \ \{}
+\DoxyCodeLine{00738\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00740\ }
+\DoxyCodeLine{00741\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ alphaBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ alphaBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00744\ \ \ \ \ \};}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_Opaque\_BilinearInterpolation\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00747\ \ \ \ \ \{}
+\DoxyCodeLine{00748\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00750\ }
+\DoxyCodeLine{00751\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00754\ \ \ \ \ \};}
+\DoxyCodeLine{00755\ }
+\DoxyCodeLine{00756\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_RGB565\_Opaque\_BilinearInterpolation\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00757\ \ \ \ \ \{}
+\DoxyCodeLine{00758\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00760\ }
+\DoxyCodeLine{00761\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00764\ \ \ \ \ \};}
+\DoxyCodeLine{00765\ }
+\DoxyCodeLine{00766\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_ARGB8888\_NonOpaque\_NearestNeighbor\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00767\ \ \ \ \ \{}
+\DoxyCodeLine{00768\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00770\ }
+\DoxyCodeLine{00771\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ textureBits32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00773\ \ \ \ \ \};}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_ARGB8888\_NonOpaque\_NearestNeighbor\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00776\ \ \ \ \ \{}
+\DoxyCodeLine{00777\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ textureBits32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00782\ \ \ \ \ \};}
+\DoxyCodeLine{00783\ }
+\DoxyCodeLine{00784\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_ARGB8888\_NonOpaque\_BilinearInterpolation\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00785\ \ \ \ \ \{}
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00788\ }
+\DoxyCodeLine{00789\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ textureBits32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ textureBits32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00792\ \ \ \ \ \};}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_ARGB8888\_NonOpaque\_BilinearInterpolation\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00795\ \ \ \ \ \{}
+\DoxyCodeLine{00796\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00798\ }
+\DoxyCodeLine{00799\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ textureBits32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ textureBits32,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00802\ \ \ \ \ \};}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00804\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_A4\_NearestNeighbor\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00805\ \ \ \ \ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00808\ }
+\DoxyCodeLine{00809\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t\ a4,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00811\ \ \ \ \ \};}
+\DoxyCodeLine{00812\ }
+\DoxyCodeLine{00813\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_A4\_NearestNeighbor\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00814\ \ \ \ \ \{}
+\DoxyCodeLine{00815\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00818\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint8\_t\ a)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00820\ \ \ \ \ \};}
+\DoxyCodeLine{00821\ }
+\DoxyCodeLine{00822\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_A4\_BilinearInterpolation\_GA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00823\ \ \ \ \ \{}
+\DoxyCodeLine{00824\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00826\ }
+\DoxyCodeLine{00827\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ uint32\_t\ offset,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapStride,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac,\ \textcolor{keyword}{const}\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00830\ \ \ \ \ \};}
+\DoxyCodeLine{00831\ }
+\DoxyCodeLine{00832\ \ \ \ \ \textcolor{keyword}{class\ }TextureMapper\_A4\_BilinearInterpolation\_NoGA\ :\ \textcolor{keyword}{public}\ DrawTextureMapScanLineBase16}
+\DoxyCodeLine{00833\ \ \ \ \ \{}
+\DoxyCodeLine{00834\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawTextureMapScanLineSubdivisions(\textcolor{keywordtype}{int}\ subdivisions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ widthModLength,\ \textcolor{keywordtype}{int}\ pixelsToDraw,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ affineLength,\ \textcolor{keywordtype}{float}\ oneOverZRight,\ \textcolor{keywordtype}{float}\ UOverZRight,\ \textcolor{keywordtype}{float}\ VOverZRight,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ U,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ V,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaU,\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ deltaV,\ \textcolor{keywordtype}{float}\ ULeft,\ \textcolor{keywordtype}{float}\ VLeft,\ \textcolor{keywordtype}{float}\ URight,\ \textcolor{keywordtype}{float}\ VRight,\ \textcolor{keywordtype}{float}\ ZRight,\ \textcolor{keyword}{const}\ DrawingSurface\&\ dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ destY,\ \textcolor{keyword}{const}\ TextureSurface\&\ texture,\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dOneOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dUOverZdXAff,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dVOverZdXAff);}
+\DoxyCodeLine{00836\ }
+\DoxyCodeLine{00837\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ writePixel(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ uint32\_t\ offset,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writePixelOnEdge(uint16\_t*\ \textcolor{keyword}{const}\ destBits,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ textureBits,\ \textcolor{keyword}{const}\ int16\_t\ bitmapStride,\ \textcolor{keyword}{const}\ int16\_t\ bitmapWidth,\ \textcolor{keyword}{const}\ int16\_t\ bitmapHeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ UInt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ VInt,\ \textcolor{keyword}{const}\ uint8\_t\ UFrac,\ \textcolor{keyword}{const}\ uint8\_t\ VFrac)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00840\ \ \ \ \ \};}
+\DoxyCodeLine{00841\ }
+\DoxyCodeLine{00842\ \ \ \ \ \textcolor{keyword}{class\ }FlashDataProvider}
+\DoxyCodeLine{00843\ \ \ \ \ \{}
+\DoxyCodeLine{00844\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ FlashDataProvider(FlashDataReader\&\ \_flashReader);}
+\DoxyCodeLine{00846\ }
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize(\textcolor{keyword}{const}\ uint8\_t*\ \_sourceData,\ uint32\_t\ \_maxBytesToRead);}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ addressIsAddressable(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ address)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ increment();}
+\DoxyCodeLine{00850\ }
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ uint8\_t\ getCurrent()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00852\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *currentBytePtr;}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00855\ }
+\DoxyCodeLine{00856\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ readFromFlash();}
+\DoxyCodeLine{00858\ }
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ FlashDataReader\&\ flashReader;}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ sourceData;}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ uint32\_t\ maxBytesToRead;}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ uint32\_t\ bytesToRead;}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ bufferEnd;}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ currentBytePtr;}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isAddressable;}
+\DoxyCodeLine{00866\ }
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ MAX\_BYTES\_TO\_READ\ =\ 64;}
+\DoxyCodeLine{00868\ \ \ \ \ \};}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00870\ \ \ \ \ \textcolor{keyword}{class\ }DecompressorL8Base}
+\DoxyCodeLine{00871\ \ \ \ \ \{}
+\DoxyCodeLine{00872\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~DecompressorL8Base()}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00876\ }
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyRGB565(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha)\ =\ 0;}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyARGB8888(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha)\ =\ 0;}
+\DoxyCodeLine{00879\ \ \ \ \ \};}
+\DoxyCodeLine{00880\ }
+\DoxyCodeLine{00881\ \ \ \ \ \textcolor{keyword}{class\ }DecompressorL8\_L4\ :\ \textcolor{keyword}{public}\ DecompressorL8Base}
+\DoxyCodeLine{00882\ \ \ \ \ \{}
+\DoxyCodeLine{00883\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ DecompressorL8\_L4(FlashDataReader\&\ \_flashReader)}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \ \ \ \ :\ flashReader(\_flashReader)}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyRGB565(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyARGB8888(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00891\ }
+\DoxyCodeLine{00892\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ uint16\_t\ blendPixelRGB565(uint16\_t\ imagePixel,\ uint16\_t\ fbPixel,\ \textcolor{keywordtype}{int}\ alpha,\ \textcolor{keywordtype}{int}\ ialpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ uint16\_t\ blendPixelARGB8888(uint32\_t\ imagePixel,\ uint16\_t\ fbPixel,\ \textcolor{keywordtype}{int}\ alpha,\ uint8\_t\ alphapix)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ FlashDataReader\&\ flashReader;}
+\DoxyCodeLine{00896\ \ \ \ \ \};}
+\DoxyCodeLine{00897\ }
+\DoxyCodeLine{00898\ \ \ \ \ \textcolor{keyword}{class\ }DecompressorL8\_RLE\ :\ \textcolor{keyword}{public}\ DecompressorL8Base}
+\DoxyCodeLine{00899\ \ \ \ \ \{}
+\DoxyCodeLine{00900\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ DecompressorL8\_RLE(FlashDataReader\&\ \_flashReader)}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \ \ \ \ :\ flashDataProvider(\_flashReader)}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00905\ }
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyRGB565(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyARGB8888(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00908\ }
+\DoxyCodeLine{00909\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ FlashDataProvider\ flashDataProvider;}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ BLOCK\_SIZE\ =\ 1024U;}
+\DoxyCodeLine{00912\ \ \ \ \ \};}
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00914\ \ \ \ \ \textcolor{keyword}{class\ }DecompressorL8\_LZW9\ :\ \textcolor{keyword}{public}\ DecompressorL8Base}
+\DoxyCodeLine{00915\ \ \ \ \ \{}
+\DoxyCodeLine{00916\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ DecompressorL8\_LZW9(FlashDataReader\&\ \_flashReader)}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \ \ \ \ :\ flashDataProvider(\_flashReader)}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00921\ }
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyRGB565(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ blitCopyARGB8888(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \textcolor{keyword}{const}\ uint8\_t*\ clutData,\ \textcolor{keyword}{const}\ Rect\&\ source,\ \textcolor{keyword}{const}\ Rect\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00924\ }
+\DoxyCodeLine{00925\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ FlashDataProvider\ flashDataProvider;}
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ MAX\_DICT\_SIZE\ =\ 512U;}
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ BLOCK\_SIZE\ =\ 1024U;}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }LZW9DictionaryEntry}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ character;\ \ \ \ \textcolor{comment}{//\ Current\ character\ of\ the\ entry}}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ length;\ \ \ \ \ \ \ \textcolor{comment}{//\ Remaining\ length\ of\ the\ entry}}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ prefixIndex;\ \textcolor{comment}{//\ Index\ to\ previous\ character}}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00936\ }
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ LZW9DictionaryEntry\ lzw9Dictionary[MAX\_DICT\_SIZE];}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ uint8\_t\ entryBuffer[64];\ \textcolor{comment}{//\ Having\ 64byte\ max\ entry\ sizes\ entails\ 1\ +\ 2\ +\ ...\ +\ 63\ +\ 64\ =\ 2080px\ size\ image\ blocks}}
+\DoxyCodeLine{00939\ \ \ \ \ \};}
+\DoxyCodeLine{00940\ }
+\DoxyCodeLine{00941\ \ \ \ \ DecompressorL8Base*\ decompressorL8\_L4;}
+\DoxyCodeLine{00942\ \ \ \ \ DecompressorL8Base*\ decompressorL8\_RLE;}
+\DoxyCodeLine{00943\ \ \ \ \ DecompressorL8Base*\ decompressorL8\_LZW9;}
+\DoxyCodeLine{00944\ \};}
+\DoxyCodeLine{00945\ }
+\DoxyCodeLine{00946\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00947\ }
+\DoxyCodeLine{00948\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_LCD16BPPSERIALFLASH\_HPP}}
+
+\end{DoxyCode}

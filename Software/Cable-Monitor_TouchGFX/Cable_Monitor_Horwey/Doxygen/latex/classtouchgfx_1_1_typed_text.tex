@@ -1,0 +1,184 @@
+\doxysection{touchgfx\+::Typed\+Text Class Reference}
+\hypertarget{classtouchgfx_1_1_typed_text}{}\label{classtouchgfx_1_1_typed_text}\index{touchgfx::TypedText@{touchgfx::TypedText}}
+
+
+{\ttfamily \#include $<$Typed\+Text.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data}{Typed\+Text\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_typed_text_af3394223209f21b0d5518fa98b192b8d}{Typed\+Text}} (const \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{Typed\+Text\+Id}} id=\mbox{\hyperlink{namespacetouchgfx_a0f17a4efb6d5f33f6089b0826c7d7e8a}{TYPED\+\_\+\+TEXT\+\_\+\+INVALID}})
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a2aa829ba9b9b5b65313af8e2daa361e6}{\texorpdfstring{$\sim$}{\string~}\+Typed\+Text}} ()
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{Typed\+Text\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_typed_text_ad6d42525bfdc7aeb24417969e9db9f7f}{get\+Id}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}{has\+Valid\+Id}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_typed_text_add33251f36b5fd02aa6462c44575c30a}{get\+Text}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a466e4d965893506a5a4a23ba09cfaeba}{get\+Font}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_ab0e44c90ae4c1ef36dc2b940091825a2}{Font\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a4488b0cb019698f77ec7b0eeb3e4f4cf}{get\+Font\+Id}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_a8495f460a7b4bb05f9f3b8bd7be47519}{Alignment}} \mbox{\hyperlink{classtouchgfx_1_1_typed_text_ac77afe2f6bc58a110e5c98c243a3c396}{get\+Alignment}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} \mbox{\hyperlink{classtouchgfx_1_1_typed_text_abe05fd62fe2b5ce6fa25c6b6b227cee4}{get\+Text\+Direction}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a3cc1fdd95e1d03e505c3151e0e3afa64}{register\+Typed\+Text\+Database}} (const \mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data}{Typed\+Text\+Data}} \texorpdfstring{$\ast$}{*}data, const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*}f, const uint16\+\_\+t n)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a1e31ff5b84519dffc9398380fb8fc2ca}{register\+Texts}} (const \mbox{\hyperlink{classtouchgfx_1_1_texts}{Texts}} \texorpdfstring{$\ast$}{*}t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text} represents text (for characters) and typography (for font and alignment). \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text} provides methods for adjusting the text, font and alignment.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_area}{Text\+Area} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_typed_text_af3394223209f21b0d5518fa98b192b8d}\label{classtouchgfx_1_1_typed_text_af3394223209f21b0d5518fa98b192b8d} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!TypedText@{TypedText}}
+\index{TypedText@{TypedText}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{TypedText()}{TypedText()}}
+{\footnotesize\ttfamily touchgfx\+::\+Typed\+Text\+::\+Typed\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{Typed\+Text\+Id}}}]{id = {\ttfamily \mbox{\hyperlink{namespacetouchgfx_a0f17a4efb6d5f33f6089b0826c7d7e8a}{TYPED\+\_\+\+TEXT\+\_\+\+INVALID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & (Optional) The identifier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_typed_text_a2aa829ba9b9b5b65313af8e2daa361e6}\label{classtouchgfx_1_1_typed_text_a2aa829ba9b9b5b65313af8e2daa361e6} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!````~TypedText@{\texorpdfstring{$\sim$}{\string~}TypedText}}
+\index{````~TypedText@{\texorpdfstring{$\sim$}{\string~}TypedText}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TypedText()}{\string~TypedText()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Typed\+Text\+::\texorpdfstring{$\sim$}{\string~}\+Typed\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_typed_text_ac77afe2f6bc58a110e5c98c243a3c396}\label{classtouchgfx_1_1_typed_text_ac77afe2f6bc58a110e5c98c243a3c396} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!getAlignment@{getAlignment}}
+\index{getAlignment@{getAlignment}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{getAlignment()}{getAlignment()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_a8495f460a7b4bb05f9f3b8bd7be47519}{Alignment}} touchgfx\+::\+Typed\+Text\+::get\+Alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the alignment associated with this \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text}.
+
+\begin{DoxyReturn}{Returns}
+The alignment. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_typed_text_a466e4d965893506a5a4a23ba09cfaeba}\label{classtouchgfx_1_1_typed_text_a466e4d965893506a5a4a23ba09cfaeba} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!getFont@{getFont}}
+\index{getFont@{getFont}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Typed\+Text\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the font associated with this \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text}.
+
+\begin{DoxyReturn}{Returns}
+The font. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_typed_text_a4488b0cb019698f77ec7b0eeb3e4f4cf}\label{classtouchgfx_1_1_typed_text_a4488b0cb019698f77ec7b0eeb3e4f4cf} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!getFontId@{getFontId}}
+\index{getFontId@{getFontId}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{getFontId()}{getFontId()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_ab0e44c90ae4c1ef36dc2b940091825a2}{Font\+Id}} touchgfx\+::\+Typed\+Text\+::get\+Font\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the font ID associated with this \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text}.
+
+\begin{DoxyReturn}{Returns}
+The font. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_typed_text_ad6d42525bfdc7aeb24417969e9db9f7f}\label{classtouchgfx_1_1_typed_text_ad6d42525bfdc7aeb24417969e9db9f7f} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!getId@{getId}}
+\index{getId@{getId}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{Typed\+Text\+Id}} touchgfx\+::\+Typed\+Text\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the id of the typed text.
+
+\begin{DoxyReturn}{Returns}
+The id. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_typed_text_add33251f36b5fd02aa6462c44575c30a}\label{classtouchgfx_1_1_typed_text_add33251f36b5fd02aa6462c44575c30a} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!getText@{getText}}
+\index{getText@{getText}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Typed\+Text\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the text associated with this \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text}.
+
+\begin{DoxyReturn}{Returns}
+The text. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_typed_text_abe05fd62fe2b5ce6fa25c6b6b227cee4}\label{classtouchgfx_1_1_typed_text_abe05fd62fe2b5ce6fa25c6b6b227cee4} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!getTextDirection@{getTextDirection}}
+\index{getTextDirection@{getTextDirection}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{getTextDirection()}{getTextDirection()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION \mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} touchgfx\+::\+Typed\+Text\+::get\+Text\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the text direction associated with this \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text}.
+
+\begin{DoxyReturn}{Returns}
+The alignment. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a}\label{classtouchgfx_1_1_typed_text_ace3fcd1d8f66d9bd00bf917f1a28423a} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!hasValidId@{hasValidId}}
+\index{hasValidId@{hasValidId}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{hasValidId()}{hasValidId()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+Typed\+Text\+::has\+Valid\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Has the \doxylink{classtouchgfx_1_1_typed_text}{Typed\+Text} been set to a proper value?
+
+\begin{DoxyReturn}{Returns}
+Is the id valid. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_typed_text_a1e31ff5b84519dffc9398380fb8fc2ca}\label{classtouchgfx_1_1_typed_text_a1e31ff5b84519dffc9398380fb8fc2ca} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!registerTexts@{registerTexts}}
+\index{registerTexts@{registerTexts}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{registerTexts()}{registerTexts()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Typed\+Text\+::register\+Texts (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_texts}{Texts}} \texorpdfstring{$\ast$}{*}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Registers an array of texts. This function is called automatically from \doxylink{namespacetouchgfx_a435569c93df9a2768c281476ad289c50}{touchgfx\+\_\+generic\+\_\+init()}. Should not be called under normal circumstances.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The array of texts. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_typed_text_a3cc1fdd95e1d03e505c3151e0e3afa64}\label{classtouchgfx_1_1_typed_text_a3cc1fdd95e1d03e505c3151e0e3afa64} 
+\index{touchgfx::TypedText@{touchgfx::TypedText}!registerTypedTextDatabase@{registerTypedTextDatabase}}
+\index{registerTypedTextDatabase@{registerTypedTextDatabase}!touchgfx::TypedText@{touchgfx::TypedText}}
+\doxysubsubsection{\texorpdfstring{registerTypedTextDatabase()}{registerTypedTextDatabase()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Typed\+Text\+::register\+Typed\+Text\+Database (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_typed_text_1_1_typed_text_data}{Typed\+Text\+Data}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*}}]{f,  }\item[{const uint16\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Registers an array of typed texts. All typed text instances are bound to this database. This function is called automatically when setting a new language. Use \doxylink{classtouchgfx_1_1_texts_a5bd8aa52088eda586f51972ec7d84672}{Texts\+::set\+Language()} instead of calling this function directly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A reference to the \doxylink{structtouchgfx_1_1_typed_text_1_1_typed_text_data}{Typed\+Text\+Data} storage array. \\
+\hline
+{\em f} & The fonts associated with the array. \\
+\hline
+{\em n} & The number of typed texts in the array. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_typed_text_8hpp}{Typed\+Text.\+hpp}}\end{DoxyCompactItemize}

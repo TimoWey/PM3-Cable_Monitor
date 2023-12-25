@@ -1,0 +1,59 @@
+\doxysection{touchgfx\+::Partial\+Frame\+Buffer\+Manager Class Reference}
+\hypertarget{classtouchgfx_1_1_partial_frame_buffer_manager}{}\label{classtouchgfx_1_1_partial_frame_buffer_manager}\index{touchgfx::PartialFrameBufferManager@{touchgfx::PartialFrameBufferManager}}
+
+
+{\ttfamily \#include $<$Partial\+Frame\+Buffer\+Manager.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_partial_frame_buffer_manager_a9fb4de655e3d98e1950c6565bfa2c8bf}{transmit\+Remaining\+Blocks}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_partial_frame_buffer_manager_aef4b9c976e230ae0a600a6ea030e941a}{try\+Transmit\+Block}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_partial_frame_buffer_manager_ae6c13d0276bd1d25600d8dde1d814ad3}{try\+Transmit\+Block\+From\+IRQ}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class specifies strategies for transmitting block to the display using Partial Frame Buffer. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_partial_frame_buffer_manager_a9fb4de655e3d98e1950c6565bfa2c8bf}\label{classtouchgfx_1_1_partial_frame_buffer_manager_a9fb4de655e3d98e1950c6565bfa2c8bf} 
+\index{touchgfx::PartialFrameBufferManager@{touchgfx::PartialFrameBufferManager}!transmitRemainingBlocks@{transmitRemainingBlocks}}
+\index{transmitRemainingBlocks@{transmitRemainingBlocks}!touchgfx::PartialFrameBufferManager@{touchgfx::PartialFrameBufferManager}}
+\doxysubsubsection{\texorpdfstring{transmitRemainingBlocks()}{transmitRemainingBlocks()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Partial\+Frame\+Buffer\+Manager\+::transmit\+Remaining\+Blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transmit all remaining drawn Framebuffer blocks.
+
+\begin{DoxyNote}{Note}
+This function does not return before all blocks have been transmitted. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_partial_frame_buffer_manager_aef4b9c976e230ae0a600a6ea030e941a}\label{classtouchgfx_1_1_partial_frame_buffer_manager_aef4b9c976e230ae0a600a6ea030e941a} 
+\index{touchgfx::PartialFrameBufferManager@{touchgfx::PartialFrameBufferManager}!tryTransmitBlock@{tryTransmitBlock}}
+\index{tryTransmitBlock@{tryTransmitBlock}!touchgfx::PartialFrameBufferManager@{touchgfx::PartialFrameBufferManager}}
+\doxysubsubsection{\texorpdfstring{tryTransmitBlock()}{tryTransmitBlock()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Partial\+Frame\+Buffer\+Manager\+::try\+Transmit\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to transmit a drawn block.
+
+\begin{DoxyNote}{Note}
+Will return immediately if already transmitting. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_partial_frame_buffer_manager_ae6c13d0276bd1d25600d8dde1d814ad3}\label{classtouchgfx_1_1_partial_frame_buffer_manager_ae6c13d0276bd1d25600d8dde1d814ad3} 
+\index{touchgfx::PartialFrameBufferManager@{touchgfx::PartialFrameBufferManager}!tryTransmitBlockFromIRQ@{tryTransmitBlockFromIRQ}}
+\index{tryTransmitBlockFromIRQ@{tryTransmitBlockFromIRQ}!touchgfx::PartialFrameBufferManager@{touchgfx::PartialFrameBufferManager}}
+\doxysubsubsection{\texorpdfstring{tryTransmitBlockFromIRQ()}{tryTransmitBlockFromIRQ()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Partial\+Frame\+Buffer\+Manager\+::try\+Transmit\+Block\+From\+IRQ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to transmit a drawn block in interrupt context.
+
+\begin{DoxyNote}{Note}
+Will transmit next block immediately if drawn. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_partial_frame_buffer_manager_8hpp}{Partial\+Frame\+Buffer\+Manager.\+hpp}}\end{DoxyCompactItemize}

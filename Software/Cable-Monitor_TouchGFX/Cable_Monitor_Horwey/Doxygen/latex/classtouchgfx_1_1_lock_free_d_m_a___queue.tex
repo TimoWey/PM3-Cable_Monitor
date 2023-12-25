@@ -1,0 +1,161 @@
+\doxysection{touchgfx\+::Lock\+Free\+DMA\+\_\+\+Queue Class Reference}
+\hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue}{}\label{classtouchgfx_1_1_lock_free_d_m_a___queue}\index{touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}}
+
+
+{\ttfamily \#include $<$DMA.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Lock\+Free\+DMA\+\_\+\+Queue\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_lock_free_d_m_a___queue}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_aed4f417cd884fda0ffa59c6afa816c60}{Lock\+Free\+DMA\+\_\+\+Queue}} (\mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \texorpdfstring{$\ast$}{*}mem, atomic\+\_\+t n)
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_ad44f24989d5e227c36493673b75d618e}{is\+Empty}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_ac45cebe13f3cbb3360fbe127cce7f581}{is\+Full}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_ac3b61d999317f7b1f357b7b1303ef649}{push\+Copy\+Of}} (const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&op)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{touchgfx\+::\+DMA\+\_\+\+Queue}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a6fa1cb19b73fd035d6f34847df38cb01}{\texorpdfstring{$\sim$}{\string~}\+DMA\+\_\+\+Queue}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_acbfd906f482f9373a485c1ae61c0df97}{pop}} ()
+\item 
+virtual const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_a018a6c7fb0ddf88e9869a89c560d7611}{first}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{touchgfx\+::\+DMA\+\_\+\+Queue}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a38f494284bfec61360e18492a090a20f}{DMA\+\_\+\+Queue}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_a982c17acea8e197d56993314a8d6dfe6}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_a982c17acea8e197d56993314a8d6dfe6} 
+\mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \texorpdfstring{$\ast$}{*} {\bfseries q}
+\begin{DoxyCompactList}\small\item\em Pointer to the queue memory. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_af9aeccadb8850338342436f04c4d2558}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_af9aeccadb8850338342436f04c4d2558} 
+atomic\+\_\+t {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em The number of elements the queue can contain. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_a0f3144ac65a3948e9f29358dbeeb38d2}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_a0f3144ac65a3948e9f29358dbeeb38d2} 
+atomic\+\_\+t {\bfseries head}
+\begin{DoxyCompactList}\small\item\em Index to the head element. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_a0b759b8d967b4e7c4c1f3d4594c66043}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_a0b759b8d967b4e7c4c1f3d4594c66043} 
+atomic\+\_\+t {\bfseries tail}
+\begin{DoxyCompactList}\small\item\em Index to the tail element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This implements a simple lock-\/free FIFO queue (single producer, single consumer)
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_d_m_a___queue}{DMA\+\_\+\+Queue} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_aed4f417cd884fda0ffa59c6afa816c60}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_aed4f417cd884fda0ffa59c6afa816c60} 
+\index{touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}!LockFreeDMA\_Queue@{LockFreeDMA\_Queue}}
+\index{LockFreeDMA\_Queue@{LockFreeDMA\_Queue}!touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}}
+\doxysubsubsection{\texorpdfstring{LockFreeDMA\_Queue()}{LockFreeDMA\_Queue()}}
+{\footnotesize\ttfamily touchgfx\+::\+Lock\+Free\+DMA\+\_\+\+Queue\+::\+Lock\+Free\+DMA\+\_\+\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \texorpdfstring{$\ast$}{*}}]{mem,  }\item[{atomic\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Constructs a lock-\/free queue.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em mem} & Pointer to the memory used by the queue to store elements. \\
+\hline
+ & {\em n} & Number of elements the memory provided can contain. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_a018a6c7fb0ddf88e9869a89c560d7611}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_a018a6c7fb0ddf88e9869a89c560d7611} 
+\index{touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}!first@{first}}
+\index{first@{first}!touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Lock\+Free\+DMA\+\_\+\+Queue\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets the first element in the queue.
+
+\begin{DoxyReturn}{Returns}
+The first element in the queue. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_ab84ca47f3db2da4b78a56c5c6b09594b}{touchgfx\+::\+DMA\+\_\+\+Queue}}.
+
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_ad44f24989d5e227c36493673b75d618e}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_ad44f24989d5e227c36493673b75d618e} 
+\index{touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Lock\+Free\+DMA\+\_\+\+Queue\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query if this object is empty.
+
+\begin{DoxyReturn}{Returns}
+true if the queue is empty. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a0dfa6b5bd3f70ef9a2a64714ae1c3bcc}{touchgfx\+::\+DMA\+\_\+\+Queue}}.
+
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_ac45cebe13f3cbb3360fbe127cce7f581}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_ac45cebe13f3cbb3360fbe127cce7f581} 
+\index{touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}!isFull@{isFull}}
+\index{isFull@{isFull}!touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}}
+\doxysubsubsection{\texorpdfstring{isFull()}{isFull()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Lock\+Free\+DMA\+\_\+\+Queue\+::is\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query if this object is full.
+
+\begin{DoxyReturn}{Returns}
+true if the queue is full. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a1f7d844d6909a94d79a898de972e1413}{touchgfx\+::\+DMA\+\_\+\+Queue}}.
+
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_acbfd906f482f9373a485c1ae61c0df97}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_acbfd906f482f9373a485c1ae61c0df97} 
+\index{touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}!pop@{pop}}
+\index{pop@{pop}!touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Lock\+Free\+DMA\+\_\+\+Queue\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Pops an element from the queue. 
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_aad0eaa88fca79084b50c2b603097cb8f}{touchgfx\+::\+DMA\+\_\+\+Queue}}.
+
+\Hypertarget{classtouchgfx_1_1_lock_free_d_m_a___queue_ac3b61d999317f7b1f357b7b1303ef649}\label{classtouchgfx_1_1_lock_free_d_m_a___queue_ac3b61d999317f7b1f357b7b1303ef649} 
+\index{touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}!pushCopyOf@{pushCopyOf}}
+\index{pushCopyOf@{pushCopyOf}!touchgfx::LockFreeDMA\_Queue@{touchgfx::LockFreeDMA\_Queue}}
+\doxysubsubsection{\texorpdfstring{pushCopyOf()}{pushCopyOf()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Lock\+Free\+DMA\+\_\+\+Queue\+::push\+Copy\+Of (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds the specified blitop to the queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & The blitop to add. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a51c9c0297ad5172865c59f34cb9b4c27}{touchgfx\+::\+DMA\+\_\+\+Queue}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_d_m_a_8hpp}{DMA.\+hpp}}\end{DoxyCompactItemize}

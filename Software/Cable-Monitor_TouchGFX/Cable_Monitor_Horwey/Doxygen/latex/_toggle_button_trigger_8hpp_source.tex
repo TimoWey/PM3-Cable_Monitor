@@ -1,0 +1,76 @@
+\doxysection{Toggle\+Button\+Trigger.\+hpp}
+\hypertarget{_toggle_button_trigger_8hpp_source}{}\label{_toggle_button_trigger_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp}}
+\mbox{\hyperlink{_toggle_button_trigger_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_TOGGLEBUTTONTRIGGER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_TOGGLEBUTTONTRIGGER\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_button_container_8hpp}{touchgfx/containers/buttons/AbstractButtonContainer.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_click_event_8hpp}{touchgfx/events/ClickEvent.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger}{ToggleButtonTrigger}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button_container}{AbstractButtonContainer}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger}{ToggleButtonTrigger}}()}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button_container}{AbstractButtonContainer}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a9cded98d35ccb217b836640b9de0d4ef}{toggleCanceled}}(\textcolor{keyword}{false})}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a8f34215e1d853c71eb20713affc93327}{forceState}}(\textcolor{keywordtype}{bool}\ activeState)}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button_container_af8f7a76df833508245ce1f8071205bce}{AbstractButtonContainer::setPressed}}(activeState);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_aba36db8227c93077f33edb3427e394eb}{setToggleCanceled}}(\textcolor{keywordtype}{bool}\ isToggleCanceled)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a9cded98d35ccb217b836640b9de0d4ef}{toggleCanceled}}\ =\ isToggleCanceled;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a00288f68e2c0c78a211cd6bacb4765d3}{getToggleCanceled}}()}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a9cded98d35ccb217b836640b9de0d4ef}{toggleCanceled}};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a640cbf38c74220e5b8360c56dbc01e66}{handleClickEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_click_event}{ClickEvent}}\&\ event)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wasPressed\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button_container_a711718f3badd590bf0b9a1f1468046ac}{getPressed}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ newPressedValue\ =\ !\mbox{\hyperlink{classtouchgfx_1_1_abstract_button_container_a711718f3badd590bf0b9a1f1468046ac}{getPressed}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a9cded98d35ccb217b836640b9de0d4ef}{toggleCanceled}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a00288f68e2c0c78a211cd6bacb4765d3}{getToggleCanceled}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_aba36db8227c93077f33edb3427e394eb}{setToggleCanceled}}(event.getType()\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_click_event_a3238b664f8bd50c5d90686ec0ce7f0fca572442caf0eef6ce54db0c5778da6f87}{ClickEvent::CANCEL}});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (((newPressedValue\ \&\&\ !wasPressed)\ ||\ (!newPressedValue\ \&\&\ wasPressed))\ \&\&\ (event.getType()\ !=\ \mbox{\hyperlink{classtouchgfx_1_1_click_event_a3238b664f8bd50c5d90686ec0ce7f0fcaf334b0a2883a9e9d3b0ebfc90ff2c83f}{ClickEvent::RELEASED}})\ \&\&\ !\mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a9cded98d35ccb217b836640b9de0d4ef}{toggleCanceled}})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button_container_af8f7a76df833508245ce1f8071205bce}{setPressed}}(newPressedValue);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a9cded98d35ccb217b836640b9de0d4ef}{toggleCanceled}}\ \&\&\ (event.getType()\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_click_event_a3238b664f8bd50c5d90686ec0ce7f0fcaf334b0a2883a9e9d3b0ebfc90ff2c83f}{ClickEvent::RELEASED}}))}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button_container_a27a899b5bc504cb3ee8148431dd1ca8e}{executeAction}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_toggle_button_trigger_a9cded98d35ccb217b836640b9de0d4ef}{toggleCanceled}};\ }
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_TOGGLEBUTTONTRIGGER\_HPP}}
+
+\end{DoxyCode}

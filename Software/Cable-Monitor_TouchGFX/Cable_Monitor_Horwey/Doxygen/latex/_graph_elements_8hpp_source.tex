@@ -1,0 +1,619 @@
+\doxysection{Graph\+Elements.\+hpp}
+\hypertarget{_graph_elements_8hpp_source}{}\label{_graph_elements_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp}}
+\mbox{\hyperlink{_graph_elements_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_GRAPHELEMENTS\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_GRAPHELEMENTS\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_c_w_r_util_8hpp}{touchgfx/widgets/canvas/CWRUtil.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_canvas_8hpp}{touchgfx/widgets/canvas/Canvas.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_canvas_widget_8hpp}{touchgfx/widgets/canvas/CanvasWidget.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_data_graph_8hpp}{touchgfx/widgets/graph/AbstractDataGraph.hpp}}>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element}{AbstractGraphElement}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{CanvasWidget}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a0e15b1c038ffcd700ec7a35f1012a8f4}{AbstractGraphElement}}()}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{CanvasWidget}}()}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a38431a8ba693cc3dda7e963635558931}{invalidateGraphPointAt}}(int16\_t\ index)\ =\ 0;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00058\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a5cd71b2ebfa063230b52b451b8d8d30f}{getGraph}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a90b12ccd487f364b0da15f45ac7366c1}{parent}}\ ?\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*)(\mbox{\hyperlink{classtouchgfx_1_1_drawable_a90b12ccd487f364b0da15f45ac7366c1}{parent}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_drawable_afefe9761c1f3a27944f317a47c2f0636}{getParent}}())\ :\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*)0;}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00071\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ac915e4ff8f4bb6d32eb8eed07831a198}{valueToScreenXQ5}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keywordtype}{int}\ x)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00072\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>valueToScreenXQ5(x);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00084\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a02732c8ba0dcdf4907fde7768c21999e}{valueToScreenYQ5}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keywordtype}{int}\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>valueToScreenYQ5(y);}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00097\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a3b797e824f08bfbb3e24788325203eec}{indexToScreenXQ5}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ int16\_t\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>indexToScreenXQ5(index);}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ab09a168f824a5c97d7e11aa1c132667b}{indexToScreenYQ5}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ int16\_t\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00111\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>indexToScreenYQ5(index);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00126\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ae72be8dec3b7a7c5e5750a481c25e8f6}{xScreenRangeToIndexRange}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ int16\_t\ xMin,\ int16\_t\ xMax,\ int16\_t\&\ indexMin,\ int16\_t\&\ indexMax)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00127\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>xScreenRangeToIndexRange(xMin,\ xMax,\ indexMin,\ indexMax);}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ab83ff1cf353dd6b2ca88a6d71c4dc6b5}{rectFromQ5Coordinates}}(\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ screenXminQ5,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ screenYminQ5,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ screenXmaxQ5,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ screenYmaxQ5)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ac4bc62d1f5fa00d66ea45f537dc1df1e}{rectAround}}(\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ xQ5,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ yQ5,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ diameterQ5)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00163\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a91edef05820e73f11e25c0c44dc6310e}{roundQ5}}(\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ q5)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00164\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(q5.round());}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00177\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a36a4110a0b00d6921f5ee57983b48bfa}{convertToGraphScaleX}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keywordtype}{int}\ value,\ \textcolor{keywordtype}{int}\ scale)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00178\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a03712f0d3681f91fb3e6e6b202d9a607}{AbstractDataGraph::convertToNewScale}}(value,\ scale,\ graph-\/>getScaleX());}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00191\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ac1ceadfb4dbba3d123c9d476ba86f541}{convertToGraphScaleY}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keywordtype}{int}\ value,\ \textcolor{keywordtype}{int}\ scale)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00192\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a03712f0d3681f91fb3e6e6b202d9a607}{AbstractDataGraph::convertToNewScale}}(value,\ scale,\ graph-\/>getScaleY());}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00203\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a2f5550e9c4ca0cf5e43634499be0580e}{getIndexToXAxis}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ valueScaled,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ labelScaled)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00204\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>indexToXAxis(valueScaled,\ labelScaled);}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a8ff1c6e16ba6b44cf87035861c5125ca}{isCenterInvisible}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ int16\_t\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00217\ \};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00223\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r}{AbstractGraphElementNoCWR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element}{AbstractGraphElement}}}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r}{AbstractGraphElementNoCWR}}()}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r_a423b9933933558ce4acd30ec1f029526}{color}}(0)}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r_ae5b88a61259c7172b24b85b2273fe837}{setColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ newColor)}
+\DoxyCodeLine{00239\ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ color\ =\ newColor;}
+\DoxyCodeLine{00241\ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r_ac8239e2e7296680d9a2fb4bf8a256115}{getColor}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00251\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r_a423b9933933558ce4acd30ec1f029526}{color}};}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r_aa0e56edfb62e269124c6ce53aa0fa01f}{drawCanvasWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00256\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00261\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r_a423b9933933558ce4acd30ec1f029526}{color}};\ }
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r_a0d5670df85b5562da3e113e7c01d54eb}{normalizeRect}}(\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ r)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setPainter(\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}\&\ \textcolor{comment}{/*painter*/})}
+\DoxyCodeLine{00273\ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \};}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00281\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base}{GraphElementGridBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r}{AbstractGraphElementNoCWR}}}
+\DoxyCodeLine{00282\ \{}
+\DoxyCodeLine{00283\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a08aae8b8b891bb8a41da0958ddcde019}{GraphElementGridBase}}()}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}}(1),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}}(10),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_aa473a68247e6fabd41bdd9ba6091027c}{lineWidth}}(1),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a6833498ee633312fba522666fb7e3bd4}{majorGrid}}(0)}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_aa74c285bac996459f5e3be1e366ea269}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00301\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_ab552c2c2769706cbced559f50d625c25}{setScale}}(\textcolor{keywordtype}{int}\ scale)}
+\DoxyCodeLine{00302\ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ assert(scale\ !=\ 0);}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a03712f0d3681f91fb3e6e6b202d9a607}{AbstractDataGraph::convertToNewScale}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}},\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}},\ scale);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}}\ =\ scale;}
+\DoxyCodeLine{00306\ \ \ \ \ \}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00315\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a1f6ca882ab92c3ecab34e34b3f2b946c}{getScale}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00316\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}};}
+\DoxyCodeLine{00318\ \ \ \ \ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00329\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_ad03b1dc3e94481592fb48dab0978b984}{setInterval}}(\textcolor{keywordtype}{int}\ interval)}
+\DoxyCodeLine{00330\ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a78310760d1a472acf14ffb2c35078166}{setIntervalScaled}}(\mbox{\hyperlink{namespacetouchgfx_a869b95e7df114093b0cbb0056baedf9c}{abs}}(interval)\ *\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}});}
+\DoxyCodeLine{00332\ \ \ \ \ \}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00335\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a20b45deb27240abf5bc50c4d2a4f8218}{setInterval}}(\textcolor{keywordtype}{float}\ interval)}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a78310760d1a472acf14ffb2c35078166}{setIntervalScaled}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a2eb1162fc175a82f61f93c31b44174ee}{AbstractDataGraph::float2scaled}}(\mbox{\hyperlink{namespacetouchgfx_a869b95e7df114093b0cbb0056baedf9c}{abs}}(interval),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}}));}
+\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00345\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a78310760d1a472acf14ffb2c35078166}{setIntervalScaled}}(\textcolor{keywordtype}{int}\ interval)}
+\DoxyCodeLine{00346\ \ \ \ \ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}}\ =\ \mbox{\hyperlink{namespacetouchgfx_a869b95e7df114093b0cbb0056baedf9c}{abs}}(interval);}
+\DoxyCodeLine{00348\ \ \ \ \ \}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00357\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_aa517678be9647040e543b205ccf36207}{getIntervalAsInt}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00358\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a7611cb5c53736ab43409fedff04c7672}{AbstractDataGraph::scaled2int}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a709dd9dc3bc8c53b7428f2b969bec604}{getIntervalScaled}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}});}
+\DoxyCodeLine{00360\ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00363\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a6aa1a310dac513036d1e9b37d2681a20}{getIntervalAsFloat}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00364\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a046cd2117be5a28ee5afbf59a10dad5f}{AbstractDataGraph::scaled2float}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a709dd9dc3bc8c53b7428f2b969bec604}{getIntervalScaled}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}});}
+\DoxyCodeLine{00366\ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00373\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a709dd9dc3bc8c53b7428f2b969bec604}{getIntervalScaled}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00374\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}};}
+\DoxyCodeLine{00376\ \ \ \ \ \}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00385\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a49fd653b45831d8e220455d378fce2b7}{setMajorGrid}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base}{GraphElementGridBase}}\&\ major)}
+\DoxyCodeLine{00386\ \ \ \ \ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a6833498ee633312fba522666fb7e3bd4}{majorGrid}}\ =\ \&major;}
+\DoxyCodeLine{00388\ \ \ \ \ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00397\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_ab90f12a991a22b33184f06176241598d}{setLineWidth}}(uint8\_t\ width)}
+\DoxyCodeLine{00398\ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_aa473a68247e6fabd41bdd9ba6091027c}{lineWidth}}\ =\ width;}
+\DoxyCodeLine{00400\ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00409\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_ac96a10948e0e7168e7f613879795fad8}{getLineWidth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00410\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_aa473a68247e6fabd41bdd9ba6091027c}{lineWidth}};}
+\DoxyCodeLine{00412\ \ \ \ \ \}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a45f4a224d0002ccb4429b07a3cecd44f}{invalidateGraphPointAt}}(int16\_t)}
+\DoxyCodeLine{00415\ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_ac784e3c77e74944105a604459692f83d}{getCorrectlyScaledGridInterval}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_abe96edae1fd7225f2f2d26233d5a14e5}{getCorrectlyScaledMajorInterval}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00437\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a6833498ee633312fba522666fb7e3bd4}{majorGrid}}\ ==\ 0\ ?\ 0\ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a6833498ee633312fba522666fb7e3bd4}{majorGrid}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_ac784e3c77e74944105a604459692f83d}{getCorrectlyScaledGridInterval}}(graph);}
+\DoxyCodeLine{00439\ \ \ \ \ \}}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00444\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_aa473a68247e6fabd41bdd9ba6091027c}{lineWidth}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base}{GraphElementGridBase}}*\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a6833498ee633312fba522666fb7e3bd4}{majorGrid}};\ }
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_aa5f0c3bc0f23d7b819e94434045ad957}{drawLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea,\ int16\_t\ start,\ int16\_t\ length,\ int16\_t\ pos,\ int16\_t\ width,\ uint8\_t\ a)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a3df03ea5aa70ddbe62b8279b0c5cf79d}{enclosingArea}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_ae81893c6a0a9d8bd36ba21e74c9b87bb}{lineRect}}(int16\_t\ start,\ int16\_t\ length,\ int16\_t\ pos,\ int16\_t\ width)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a0b595cf0fcbc67d98aaa34bf1d6d3f4d}{getGraphRangeMinScaled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a807bb2b3116f5396ded69d9ecd20d40c}{getGraphRangeMaxScaled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a9de08ece79eae539d89ede42936b7dba}{getGraphAreaStart}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a809a2f68a8b23ccd2f1b3ffd96540be9}{getGraphAreaLength}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00527\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a8f346bf18124128f3139455c976fd997}{getGraphAreaStartPos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5aeee7e7bbe4c02e19894aa272dad3bf}{getGraphAreaEndPos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00548\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a47e48c1d7218b8f872abeacd2a5017e3}{valueToScreenQ5}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keywordtype}{int}\ value)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00549\ \};}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00557\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x}{GraphElementGridX}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base}{GraphElementGridBase}}}
+\DoxyCodeLine{00558\ \{}
+\DoxyCodeLine{00559\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_ab606573635a3484f3aa2753a033c5b96}{getCorrectlyScaledGridInterval}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00561\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a36a4110a0b00d6921f5ee57983b48bfa}{convertToGraphScaleX}}(graph,\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}},\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}});}
+\DoxyCodeLine{00563\ \ \ \ \ \}}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_acdbe533e54cfd5b101d26129842e1e6a}{enclosingArea}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00567\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}(0,\ graph-\/>getGraphAreaPaddingTop(),\ graph-\/>getGraphAreaWidthIncludingPadding(),\ graph-\/>getGraphAreaHeight());}
+\DoxyCodeLine{00569\ \ \ \ \ \}}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_a01bed9f8a3233ab303039feaa5c98381}{lineRect}}(int16\_t\ start,\ int16\_t\ length,\ int16\_t\ pos,\ int16\_t\ width)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00572\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}(pos,\ start,\ width,\ length);}
+\DoxyCodeLine{00574\ \ \ \ \ \}}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_a6ce72a5503d81af9400196224d6ff7aa}{getGraphRangeMinScaled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00577\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphRangeXMinScaled();}
+\DoxyCodeLine{00579\ \ \ \ \ \}}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_a40818615de4254d8413c889ed5ddaa9f}{getGraphRangeMaxScaled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00582\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphRangeXMaxScaled();}
+\DoxyCodeLine{00584\ \ \ \ \ \}}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_a3ab29b937a5fceaed62bae5cb8716480}{getGraphAreaStart}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00587\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaPaddingTop();}
+\DoxyCodeLine{00589\ \ \ \ \ \}}
+\DoxyCodeLine{00590\ }
+\DoxyCodeLine{00591\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_a9bf826c6487d888f9d3b993153524f0e}{getGraphAreaLength}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00592\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaHeight();}
+\DoxyCodeLine{00594\ \ \ \ \ \}}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_a77fef59a24d14cdfd0cb8eff566100fd}{getGraphAreaStartPos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00597\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaPaddingLeft();}
+\DoxyCodeLine{00599\ \ \ \ \ \}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_a93cfbae6997ef5a9b640179ee2c0df9e}{getGraphAreaEndPos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00602\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaWidth();}
+\DoxyCodeLine{00604\ \ \ \ \ \}}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_x_afeb620de8f4b6d524ef50b4a79145e2f}{valueToScreenQ5}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keywordtype}{int}\ value)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00607\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ac915e4ff8f4bb6d32eb8eed07831a198}{valueToScreenXQ5}}(graph,\ value);}
+\DoxyCodeLine{00609\ \ \ \ \ \}}
+\DoxyCodeLine{00610\ \};}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00618\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y}{GraphElementGridY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base}{GraphElementGridBase}}}
+\DoxyCodeLine{00619\ \{}
+\DoxyCodeLine{00620\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00621\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_aed929815827e76477e62ee40c177183e}{getCorrectlyScaledGridInterval}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00622\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_ac1ceadfb4dbba3d123c9d476ba86f541}{convertToGraphScaleY}}(graph,\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_a5eeeb58a85b4e7ad0372b71cac490756}{gridInterval}},\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_base_add17cb2e734cfc4cf29e342bd6e0c312}{dataScale}});}
+\DoxyCodeLine{00624\ \ \ \ \ \}}
+\DoxyCodeLine{00625\ }
+\DoxyCodeLine{00626\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00627\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_ab8ae0278dbbc52c5c871571437ae8dda}{enclosingArea}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00628\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}(graph-\/>getGraphAreaPaddingLeft(),\ 0,\ graph-\/>getGraphAreaWidth(),\ graph-\/>getGraphAreaHeightIncludingPadding());}
+\DoxyCodeLine{00630\ \ \ \ \ \}}
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_a836d7bf292d07323b5c0c8f1fdd7ad93}{lineRect}}(int16\_t\ start,\ int16\_t\ length,\ int16\_t\ pos,\ int16\_t\ width)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00633\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}(start,\ pos,\ length,\ width);}
+\DoxyCodeLine{00635\ \ \ \ \ \}}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_ae6ae3f34c0f9a79d5f3027fd949c7386}{getGraphRangeMinScaled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00638\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphRangeYMinScaled();}
+\DoxyCodeLine{00640\ \ \ \ \ \}}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_ab157c77e44420b08ea2536f019b57139}{getGraphRangeMaxScaled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00643\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphRangeYMaxScaled();}
+\DoxyCodeLine{00645\ \ \ \ \ \}}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_a93a0aa3e3c0a199d9df8e02d2414969d}{getGraphAreaStart}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00648\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaPaddingLeft();}
+\DoxyCodeLine{00650\ \ \ \ \ \}}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00652\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_a76179293c1b15265e498d5bd949b4cd1}{getGraphAreaLength}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00653\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaWidth();}
+\DoxyCodeLine{00655\ \ \ \ \ \}}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00657\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_abbc87474238ff0e9cfb4d26517e31da4}{getGraphAreaStartPos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00658\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaPaddingTop();}
+\DoxyCodeLine{00660\ \ \ \ \ \}}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00662\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_a3736619fd8382d5be828768a49f9a0e6}{getGraphAreaEndPos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00663\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ graph-\/>getGraphAreaHeight();}
+\DoxyCodeLine{00665\ \ \ \ \ \}}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00667\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_grid_y_a60f78a19667c535aa5214f44219636fe}{valueToScreenQ5}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ \textcolor{keywordtype}{int}\ value)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00668\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_a02732c8ba0dcdf4907fde7768c21999e}{valueToScreenYQ5}}(graph,\ value);}
+\DoxyCodeLine{00670\ \ \ \ \ \}}
+\DoxyCodeLine{00671\ \};}
+\DoxyCodeLine{00672\ }
+\DoxyCodeLine{00679\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_area}{GraphElementArea}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element}{AbstractGraphElement}}}
+\DoxyCodeLine{00680\ \{}
+\DoxyCodeLine{00681\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00682\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area}{GraphElementArea}}()}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}}(1),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_ab6d04bd5fc357c55d98ee8d67fac3e16}{yBaseline}}(0)}
+\DoxyCodeLine{00684\ \ \ \ \ \{}
+\DoxyCodeLine{00685\ \ \ \ \ \}}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00696\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a8e85acb6acb9932b3ed256f3c2496eec}{setScale}}(\textcolor{keywordtype}{int}\ scale)}
+\DoxyCodeLine{00697\ \ \ \ \ \{}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ assert(scale\ !=\ 0);}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_ab6d04bd5fc357c55d98ee8d67fac3e16}{yBaseline}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a03712f0d3681f91fb3e6e6b202d9a607}{AbstractDataGraph::convertToNewScale}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_ab6d04bd5fc357c55d98ee8d67fac3e16}{yBaseline}},\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}},\ scale);}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}}\ =\ scale;}
+\DoxyCodeLine{00701\ \ \ \ \ \}}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00710\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a948b8411864cf998067ddd548da317be}{getScale}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00711\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}};}
+\DoxyCodeLine{00713\ \ \ \ \ \}}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00726\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a260878d5ae7e8672e1c8a05aeb7bb694}{setBaseline}}(\textcolor{keywordtype}{int}\ baseline)}
+\DoxyCodeLine{00727\ \ \ \ \ \{}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a4d550882378e54c78b335d8911592760}{setBaselineScaled}}(baseline\ *\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}});}
+\DoxyCodeLine{00729\ \ \ \ \ \}}
+\DoxyCodeLine{00730\ }
+\DoxyCodeLine{00732\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_ad44bd0f7be92bbc909020e641e2f8144}{setBaseline}}(\textcolor{keywordtype}{float}\ baseline)}
+\DoxyCodeLine{00733\ \ \ \ \ \{}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a4d550882378e54c78b335d8911592760}{setBaselineScaled}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a2eb1162fc175a82f61f93c31b44174ee}{AbstractDataGraph::float2scaled}}(baseline,\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}}));}
+\DoxyCodeLine{00735\ \ \ \ \ \}}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00742\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a4d550882378e54c78b335d8911592760}{setBaselineScaled}}(\textcolor{keywordtype}{int}\ baseline)}
+\DoxyCodeLine{00743\ \ \ \ \ \{}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_ab6d04bd5fc357c55d98ee8d67fac3e16}{yBaseline}}\ =\ baseline;}
+\DoxyCodeLine{00745\ \ \ \ \ \}}
+\DoxyCodeLine{00746\ }
+\DoxyCodeLine{00754\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aa4cb3d2346565f281388857cbf697c95}{getBaselineAsInt}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00755\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a7611cb5c53736ab43409fedff04c7672}{AbstractDataGraph::scaled2int}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a438c28defee8faa6958ef5bacfa6bb0b}{getBaselineScaled}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}});}
+\DoxyCodeLine{00757\ \ \ \ \ \}}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00760\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a5aff260f84575c56869cd4515094e4f7}{getBaselineAsFloat}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00761\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a046cd2117be5a28ee5afbf59a10dad5f}{AbstractDataGraph::scaled2float}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a438c28defee8faa6958ef5bacfa6bb0b}{getBaselineScaled}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}});}
+\DoxyCodeLine{00763\ \ \ \ \ \}}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00770\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a438c28defee8faa6958ef5bacfa6bb0b}{getBaselineScaled}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00771\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_ab6d04bd5fc357c55d98ee8d67fac3e16}{yBaseline}};}
+\DoxyCodeLine{00773\ \ \ \ \ \}}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a71503f8b4c2bc6c2b6138ea84078293a}{drawCanvasWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_a96230a0dfa0cb3257b78b1425586243b}{invalidateGraphPointAt}}(int16\_t\ index);}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00779\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_aecafe643853cae1140c7b6839c52ab38}{dataScale}};\ }
+\DoxyCodeLine{00781\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_area_ab6d04bd5fc357c55d98ee8d67fac3e16}{yBaseline}};\ }
+\DoxyCodeLine{00782\ \};}
+\DoxyCodeLine{00783\ }
+\DoxyCodeLine{00790\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_line}{GraphElementLine}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element}{AbstractGraphElement}}}
+\DoxyCodeLine{00791\ \{}
+\DoxyCodeLine{00792\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00793\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line}{GraphElementLine}}()}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_a171af81b09326ee73f8e4e85109c803a}{lineWidth}}(2)}
+\DoxyCodeLine{00795\ \ \ \ \ \{}
+\DoxyCodeLine{00796\ \ \ \ \ \}}
+\DoxyCodeLine{00797\ }
+\DoxyCodeLine{00805\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_ac53e688302e0604394e3e3e8f5582122}{setLineWidth}}(uint8\_t\ width)}
+\DoxyCodeLine{00806\ \ \ \ \ \{}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_a171af81b09326ee73f8e4e85109c803a}{lineWidth}}\ =\ width;}
+\DoxyCodeLine{00808\ \ \ \ \ \}}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00817\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_afd8cde367c059beb61e4aaef97cda00d}{getLineWidth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00818\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_a171af81b09326ee73f8e4e85109c803a}{lineWidth}};}
+\DoxyCodeLine{00820\ \ \ \ \ \}}
+\DoxyCodeLine{00821\ }
+\DoxyCodeLine{00822\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_a580d95445e26fa73d52a0e45e1037b8b}{drawCanvasWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00823\ }
+\DoxyCodeLine{00824\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_a1cfa4e793ae23520cd0ec1e7d4d05113}{invalidateGraphPointAt}}(int16\_t\ index);}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00827\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_a171af81b09326ee73f8e4e85109c803a}{lineWidth}};\ }
+\DoxyCodeLine{00828\ }
+\DoxyCodeLine{00838\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_line_a9538f719a146b173f4244483fca3b1a8}{drawIndexRange}}(\mbox{\hyperlink{classtouchgfx_1_1_canvas}{Canvas}}\&\ canvas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ int16\_t\ indexMin,\ int16\_t\ indexMax)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00839\ \};}
+\DoxyCodeLine{00840\ }
+\DoxyCodeLine{00847\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line}{GraphElementVerticalGapLine}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r}{AbstractGraphElementNoCWR}}}
+\DoxyCodeLine{00848\ \{}
+\DoxyCodeLine{00849\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00858\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line_a91d4d0dc7d8f9cc8f1b8f1e2a43ea14b}{setGapLineWidth}}(uint16\_t\ width)}
+\DoxyCodeLine{00859\ \ \ \ \ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line_a0cad2174888bb878f2bd33e68d9671ce}{lineWidth}}\ =\ width;}
+\DoxyCodeLine{00861\ \ \ \ \ \}}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00868\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line_a1031446f7864a640dedf37316a65c1b0}{getGapLineWidth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00869\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line_a0cad2174888bb878f2bd33e68d9671ce}{lineWidth}};}
+\DoxyCodeLine{00871\ \ \ \ \ \}}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00873\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line_a6a8b977a51f170cc70bbb5542f2cd193}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00874\ }
+\DoxyCodeLine{00875\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line_a7d36fd1d7c3c29c8298f6e786540aecf}{invalidateGraphPointAt}}(int16\_t\ index);}
+\DoxyCodeLine{00876\ }
+\DoxyCodeLine{00877\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00878\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_vertical_gap_line_a0cad2174888bb878f2bd33e68d9671ce}{lineWidth}};\ }
+\DoxyCodeLine{00879\ }
+\DoxyCodeLine{00880\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00881\ \ \ \ \ \textcolor{keywordtype}{void}\ invalidateIndex(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph}{AbstractDataGraph}}*\ graph,\ int16\_t\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00882\ \};}
+\DoxyCodeLine{00883\ }
+\DoxyCodeLine{00891\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram}{GraphElementHistogram}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r}{AbstractGraphElementNoCWR}}}
+\DoxyCodeLine{00892\ \{}
+\DoxyCodeLine{00893\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00894\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram}{GraphElementHistogram}}()}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}}(1),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_afbf4b87a782cd3fd32f971e46e8bbca5}{yBaseline}}(0),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_af6a80609d8786d45ad33baa246553494}{barWidth}}(2),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a4f51374715749fc67b0335957c5f169a}{barOffset}}(0)}
+\DoxyCodeLine{00896\ \ \ \ \ \{}
+\DoxyCodeLine{00897\ \ \ \ \ \}}
+\DoxyCodeLine{00898\ }
+\DoxyCodeLine{00908\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a98c9b03a2ddd7bab02d2d7a0895c796f}{setScale}}(\textcolor{keywordtype}{int}\ scale)}
+\DoxyCodeLine{00909\ \ \ \ \ \{}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ assert(scale\ !=\ 0);}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_afbf4b87a782cd3fd32f971e46e8bbca5}{yBaseline}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a03712f0d3681f91fb3e6e6b202d9a607}{AbstractDataGraph::convertToNewScale}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_afbf4b87a782cd3fd32f971e46e8bbca5}{yBaseline}},\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}},\ scale);}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}}\ =\ scale;}
+\DoxyCodeLine{00913\ \ \ \ \ \}}
+\DoxyCodeLine{00914\ }
+\DoxyCodeLine{00922\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a8ef6fcc00a84d700439070ce22f9f9cf}{getScale}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00923\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}};}
+\DoxyCodeLine{00925\ \ \ \ \ \}}
+\DoxyCodeLine{00926\ }
+\DoxyCodeLine{00938\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a2b3e41b5e884b9143c12b1f4eea72f3b}{setBaseline}}(\textcolor{keywordtype}{int}\ baseline)}
+\DoxyCodeLine{00939\ \ \ \ \ \{}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a68e4d23b2169111402e4580e0a7ce393}{setBaselineScaled}}(baseline\ *\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}});}
+\DoxyCodeLine{00941\ \ \ \ \ \}}
+\DoxyCodeLine{00942\ }
+\DoxyCodeLine{00944\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a60769ad93d9a562ed12b2d3dbf7f9449}{setBaseline}}(\textcolor{keywordtype}{float}\ baseline)}
+\DoxyCodeLine{00945\ \ \ \ \ \{}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a68e4d23b2169111402e4580e0a7ce393}{setBaselineScaled}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a2eb1162fc175a82f61f93c31b44174ee}{AbstractDataGraph::float2scaled}}(baseline,\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}}));}
+\DoxyCodeLine{00947\ \ \ \ \ \}}
+\DoxyCodeLine{00948\ }
+\DoxyCodeLine{00954\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a68e4d23b2169111402e4580e0a7ce393}{setBaselineScaled}}(\textcolor{keywordtype}{int}\ baseline)}
+\DoxyCodeLine{00955\ \ \ \ \ \{}
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_afbf4b87a782cd3fd32f971e46e8bbca5}{yBaseline}}\ =\ baseline;}
+\DoxyCodeLine{00957\ \ \ \ \ \}}
+\DoxyCodeLine{00958\ }
+\DoxyCodeLine{00966\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_af879667e2cc2380abdd9b1fc4a00f70e}{getBaselineAsInt}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00967\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a7611cb5c53736ab43409fedff04c7672}{AbstractDataGraph::scaled2int}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a0a48e5a50bfb8034677d9843f6109495}{getBaselineScaled}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}});}
+\DoxyCodeLine{00969\ \ \ \ \ \}}
+\DoxyCodeLine{00970\ }
+\DoxyCodeLine{00972\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a9d72147a703168bed0ae2728080ffedb}{getBaselineAsFloat}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00973\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_data_graph_a046cd2117be5a28ee5afbf59a10dad5f}{AbstractDataGraph::scaled2float}}(\mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a0a48e5a50bfb8034677d9843f6109495}{getBaselineScaled}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}});}
+\DoxyCodeLine{00975\ \ \ \ \ \}}
+\DoxyCodeLine{00976\ }
+\DoxyCodeLine{00982\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a0a48e5a50bfb8034677d9843f6109495}{getBaselineScaled}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00983\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_afbf4b87a782cd3fd32f971e46e8bbca5}{yBaseline}};}
+\DoxyCodeLine{00985\ \ \ \ \ \}}
+\DoxyCodeLine{00986\ }
+\DoxyCodeLine{00994\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_ace3914d54f9d897830afe62ada29e00b}{setBarWidth}}(uint16\_t\ width)}
+\DoxyCodeLine{00995\ \ \ \ \ \{}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_af6a80609d8786d45ad33baa246553494}{barWidth}}\ =\ width;}
+\DoxyCodeLine{00997\ \ \ \ \ \}}
+\DoxyCodeLine{00998\ }
+\DoxyCodeLine{01006\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa7b578ce146c56b56f0b461bf71a2d51}{getBarWidth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{01007\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_af6a80609d8786d45ad33baa246553494}{barWidth}};}
+\DoxyCodeLine{01009\ \ \ \ \ \}}
+\DoxyCodeLine{01010\ }
+\DoxyCodeLine{01019\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a521fa19bf0538488422763a9882422de}{setBarOffset}}(int16\_t\ offset)}
+\DoxyCodeLine{01020\ \ \ \ \ \{}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a4f51374715749fc67b0335957c5f169a}{barOffset}}\ =\ offset;}
+\DoxyCodeLine{01022\ \ \ \ \ \}}
+\DoxyCodeLine{01023\ }
+\DoxyCodeLine{01032\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a4342a2053457e70a22b743cdc955c8cc}{getBarOffset}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{01033\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{01034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a4f51374715749fc67b0335957c5f169a}{barOffset}};}
+\DoxyCodeLine{01035\ \ \ \ \ \}}
+\DoxyCodeLine{01036\ }
+\DoxyCodeLine{01037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aba2072fcd1a10f30cea2b573b3813c1d}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01038\ }
+\DoxyCodeLine{01039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a808764cff217ca29f4e704f19929290f}{invalidateGraphPointAt}}(int16\_t\ index);}
+\DoxyCodeLine{01040\ }
+\DoxyCodeLine{01041\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{01042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_aa0ed74411f1df7ff0786d6e4ac934273}{dataScale}};\ \ \ \ \ }
+\DoxyCodeLine{01043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_afbf4b87a782cd3fd32f971e46e8bbca5}{yBaseline}};\ \ \ \ \ }
+\DoxyCodeLine{01044\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_af6a80609d8786d45ad33baa246553494}{barWidth}};\ }
+\DoxyCodeLine{01045\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_histogram_a4f51374715749fc67b0335957c5f169a}{barOffset}};\ }
+\DoxyCodeLine{01046\ \};}
+\DoxyCodeLine{01047\ }
+\DoxyCodeLine{01056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes}{GraphElementBoxes}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element_no_c_w_r}{AbstractGraphElementNoCWR}}}
+\DoxyCodeLine{01057\ \{}
+\DoxyCodeLine{01058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01059\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes}{GraphElementBoxes}}()}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_aa0e6b4eee41807b98efaabc3affd2cb4}{boxWidth}}(2)}
+\DoxyCodeLine{01061\ \ \ \ \ \{}
+\DoxyCodeLine{01062\ \ \ \ \ \}}
+\DoxyCodeLine{01063\ }
+\DoxyCodeLine{01071\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_ab0fccf2ac75128ab68b791d5c8bc482e}{setBoxWidth}}(uint16\_t\ width)}
+\DoxyCodeLine{01072\ \ \ \ \ \{}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_aa0e6b4eee41807b98efaabc3affd2cb4}{boxWidth}}\ =\ width;}
+\DoxyCodeLine{01074\ \ \ \ \ \}}
+\DoxyCodeLine{01075\ }
+\DoxyCodeLine{01083\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_a4a1ddd02041e1cfa09765deb0b417c60}{getBoxWidth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{01084\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_aa0e6b4eee41807b98efaabc3affd2cb4}{boxWidth}};}
+\DoxyCodeLine{01086\ \ \ \ \ \}}
+\DoxyCodeLine{01087\ }
+\DoxyCodeLine{01088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_a72e894cba15d7b7b7875532d50daaa79}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01089\ }
+\DoxyCodeLine{01090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_a14ef2b8770414d6a27510466a0ec486f}{invalidateGraphPointAt}}(int16\_t\ index);}
+\DoxyCodeLine{01091\ }
+\DoxyCodeLine{01092\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{01093\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_boxes_aa0e6b4eee41807b98efaabc3affd2cb4}{boxWidth}};\ }
+\DoxyCodeLine{01094\ \};}
+\DoxyCodeLine{01095\ }
+\DoxyCodeLine{01102\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots}{GraphElementDots}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element}{AbstractGraphElement}}}
+\DoxyCodeLine{01103\ \{}
+\DoxyCodeLine{01104\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01105\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots}{GraphElementDots}}()}
+\DoxyCodeLine{01106\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_a188c2d9d07859597f358bf04cc5e621b}{dotWidth}}(2)}
+\DoxyCodeLine{01107\ \ \ \ \ \{}
+\DoxyCodeLine{01108\ \ \ \ \ \}}
+\DoxyCodeLine{01109\ }
+\DoxyCodeLine{01117\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_a02048d217d77c06b9644a56c922438ab}{setDotWidth}}(uint8\_t\ width)}
+\DoxyCodeLine{01118\ \ \ \ \ \{}
+\DoxyCodeLine{01119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_a188c2d9d07859597f358bf04cc5e621b}{dotWidth}}\ =\ width;}
+\DoxyCodeLine{01120\ \ \ \ \ \}}
+\DoxyCodeLine{01121\ }
+\DoxyCodeLine{01129\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_a2a1cca2c11f0fd37bb32b18cd09eb7a0}{getDotWidth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{01130\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{01131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_a188c2d9d07859597f358bf04cc5e621b}{dotWidth}};}
+\DoxyCodeLine{01132\ \ \ \ \ \}}
+\DoxyCodeLine{01133\ }
+\DoxyCodeLine{01134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_a2ce7b649345d63e6c41bb6f695ae20bf}{drawCanvasWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01135\ }
+\DoxyCodeLine{01136\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_aba89a5868779d1930959e25fb53a8421}{invalidateGraphPointAt}}(int16\_t\ index);}
+\DoxyCodeLine{01137\ }
+\DoxyCodeLine{01138\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{01139\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_dots_a188c2d9d07859597f358bf04cc5e621b}{dotWidth}};\ }
+\DoxyCodeLine{01140\ \};}
+\DoxyCodeLine{01141\ }
+\DoxyCodeLine{01149\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds}{GraphElementDiamonds}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_graph_element}{AbstractGraphElement}}}
+\DoxyCodeLine{01150\ \{}
+\DoxyCodeLine{01151\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01152\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds}{GraphElementDiamonds}}()}
+\DoxyCodeLine{01153\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_af3a1edb6c5cd003abb1d81965876f540}{diamondWidth}}(2)}
+\DoxyCodeLine{01154\ \ \ \ \ \{}
+\DoxyCodeLine{01155\ \ \ \ \ \}}
+\DoxyCodeLine{01156\ }
+\DoxyCodeLine{01164\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_ac76af2967cdd71098227985b6546e673}{setDiamondWidth}}(uint8\_t\ width)}
+\DoxyCodeLine{01165\ \ \ \ \ \{}
+\DoxyCodeLine{01166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_af3a1edb6c5cd003abb1d81965876f540}{diamondWidth}}\ =\ width;}
+\DoxyCodeLine{01167\ \ \ \ \ \}}
+\DoxyCodeLine{01168\ }
+\DoxyCodeLine{01176\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_ada59ef014d0c098da6a9f1b96df7ad57}{getDiamondWidth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{01177\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{01178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_af3a1edb6c5cd003abb1d81965876f540}{diamondWidth}};}
+\DoxyCodeLine{01179\ \ \ \ \ \}}
+\DoxyCodeLine{01180\ }
+\DoxyCodeLine{01181\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_ab20d881a23dc310fa4e47d77caf68947}{drawCanvasWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01182\ }
+\DoxyCodeLine{01183\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_a1c0b2df530a2a186fdc986856adc689d}{invalidateGraphPointAt}}(int16\_t\ index);}
+\DoxyCodeLine{01184\ }
+\DoxyCodeLine{01185\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{01186\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_graph_element_diamonds_af3a1edb6c5cd003abb1d81965876f540}{diamondWidth}};\ }
+\DoxyCodeLine{01187\ \};}
+\DoxyCodeLine{01188\ }
+\DoxyCodeLine{01189\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{01190\ }
+\DoxyCodeLine{01191\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_GRAPHELEMENTS\_HPP}}
+
+\end{DoxyCode}

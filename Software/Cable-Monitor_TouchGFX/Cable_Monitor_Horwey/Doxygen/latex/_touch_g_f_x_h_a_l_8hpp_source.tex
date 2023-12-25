@@ -1,0 +1,53 @@
+\doxysection{Touch\+GFXHAL.\+hpp}
+\hypertarget{_touch_g_f_x_h_a_l_8hpp_source}{}\label{_touch_g_f_x_h_a_l_8hpp_source}\index{TouchGFX/target/TouchGFXHAL.hpp@{TouchGFX/target/TouchGFXHAL.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ TouchGFXHAL\_HPP}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ TouchGFXHAL\_HPP}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TouchGFXHAL.hpp\ */}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <TouchGFXGeneratedHAL.hpp>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_touch_g_f_x_h_a_l}{TouchGFXHAL}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_touch_g_f_x_generated_h_a_l}{TouchGFXGeneratedHAL}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_a669d2b415fa62e0d2c01caf86bf4b288}{TouchGFXHAL}}(\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx::DMA\_Interface}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa562e7a507aaa2e5f77115885a8912e2}{dma}},\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{touchgfx::LCD}}\&\ display,\ \mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{touchgfx::TouchController}}\&\ tc,\ uint16\_t\ width,\ uint16\_t\ height)\ :\ \mbox{\hyperlink{class_touch_g_f_x_generated_h_a_l}{TouchGFXGeneratedHAL}}(\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa562e7a507aaa2e5f77115885a8912e2}{dma}},\ display,\ tc,\ width,\ height)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_aa95ac5ba851e22501dd221d76c6f262c}{initialize}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*\ Overwriting\ default\ implementation\ of\ taskEntry\ */}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_ac8c3d2962e678c29c6b16130f3de351d}{taskEntry}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_a4907a4f18ed46161ec5095974ec78f91}{disableInterrupts}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_a45aaaa80b41fd5b87c7d63a592fa07d8}{enableInterrupts}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_ae5f13042e42c988cdd42c2044d16633b}{configureInterrupts}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_addaf48b7daaba0383163db3ccc9efdc9}{enableLCDControllerInterrupt}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_abe9f8b308f6b0676e5bf2b49973ebda0}{flushFrameBuffer}}()}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_touch_g_f_x_generated_h_a_l_ae7417645d98f8e6671f2882415ead180}{TouchGFXGeneratedHAL::flushFrameBuffer}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_abe9f8b308f6b0676e5bf2b49973ebda0}{flushFrameBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx::Rect}}\&\ rect);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t*\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_a932e09b9a73c7d3423caed162b955c8c}{getTFTFrameBuffer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_touch_g_f_x_h_a_l_aa13633a231eb4db228128775bc4100ce}{setTFTFrameBuffer}}(uint16\_t*\ adr);}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ USER\ CODE\ END\ TouchGFXHAL.hpp\ */}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TouchGFXHAL\_HPP}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

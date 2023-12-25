@@ -1,0 +1,65 @@
+\doxysection{touchgfx\+::Button\+Controller Class Reference}
+\hypertarget{classtouchgfx_1_1_button_controller}{}\label{classtouchgfx_1_1_button_controller}\index{touchgfx::ButtonController@{touchgfx::ButtonController}}
+
+
+{\ttfamily \#include $<$Button\+Controller.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_button_controller_a11f5401cb6b2e7f5542d2230aeda7ff9}{\texorpdfstring{$\sim$}{\string~}\+Button\+Controller}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_button_controller_a31645edb610895429835dc98cfb619b4}{init}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_button_controller_aaee52f2789de356db9f3760a557951d3}{sample}} (uint8\+\_\+t \&key)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_button_controller_a8978fdeb6919177fc9cf05754f990313}{reset}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for sampling external key events. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_button_controller_a11f5401cb6b2e7f5542d2230aeda7ff9}\label{classtouchgfx_1_1_button_controller_a11f5401cb6b2e7f5542d2230aeda7ff9} 
+\index{touchgfx::ButtonController@{touchgfx::ButtonController}!````~ButtonController@{\texorpdfstring{$\sim$}{\string~}ButtonController}}
+\index{````~ButtonController@{\texorpdfstring{$\sim$}{\string~}ButtonController}!touchgfx::ButtonController@{touchgfx::ButtonController}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ButtonController()}{\string~ButtonController()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Button\+Controller\+::\texorpdfstring{$\sim$}{\string~}\+Button\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_button_controller}{Button\+Controller} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_button_controller_a31645edb610895429835dc98cfb619b4}\label{classtouchgfx_1_1_button_controller_a31645edb610895429835dc98cfb619b4} 
+\index{touchgfx::ButtonController@{touchgfx::ButtonController}!init@{init}}
+\index{init@{init}!touchgfx::ButtonController@{touchgfx::ButtonController}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Button\+Controller\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Initializes button controller. \Hypertarget{classtouchgfx_1_1_button_controller_a8978fdeb6919177fc9cf05754f990313}\label{classtouchgfx_1_1_button_controller_a8978fdeb6919177fc9cf05754f990313} 
+\index{touchgfx::ButtonController@{touchgfx::ButtonController}!reset@{reset}}
+\index{reset@{reset}!touchgfx::ButtonController@{touchgfx::ButtonController}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Button\+Controller\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Resets button controller. Does nothing in the default implementation. \Hypertarget{classtouchgfx_1_1_button_controller_aaee52f2789de356db9f3760a557951d3}\label{classtouchgfx_1_1_button_controller_aaee52f2789de356db9f3760a557951d3} 
+\index{touchgfx::ButtonController@{touchgfx::ButtonController}!sample@{sample}}
+\index{sample@{sample}!touchgfx::ButtonController@{touchgfx::ButtonController}}
+\doxysubsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Button\+Controller\+::sample (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sample external key events.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em key} & Output parameter that will be set to the key value if a keypress was detected.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a keypress was detected and the "{}key"{} parameter is set to a value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/platform/driver/button/\mbox{\hyperlink{_button_controller_8hpp}{Button\+Controller.\+hpp}}\end{DoxyCompactItemize}

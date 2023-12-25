@@ -1,0 +1,65 @@
+\doxysection{Painter\+RGB565\+Bitmap.\+hpp}
+\hypertarget{_painter_r_g_b565_bitmap_8hpp_source}{}\label{_painter_r_g_b565_bitmap_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp}}
+\mbox{\hyperlink{_painter_r_g_b565_bitmap_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_PAINTERRGB565BITMAP\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_PAINTERRGB565BITMAP\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_display_transformation_8hpp}{touchgfx/transforms/DisplayTransformation.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_painter_bitmap_8hpp}{touchgfx/widgets/canvas/AbstractPainterBitmap.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_painter_r_g_b565_8hpp}{touchgfx/widgets/canvas/AbstractPainterRGB565.hpp}}>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap}{PainterRGB565Bitmap}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_r_g_b565}{AbstractPainterRGB565}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap}{AbstractPainterBitmap}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap_afae5dc2043edaa24fbe5f2ea1c5ed058}{PainterRGB565Bitmap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bmp\ =\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}(\mbox{\hyperlink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\_INVALID}}))}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_r_g_b565}{AbstractPainterRGB565}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap}{AbstractPainterBitmap}}(bmp)}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap_a9792a973b9622e95fd0a22264d855c59}{setBitmap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bmp);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap_a7d4eec469e2490b62b75a5587aefea3f}{setup}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ widgetRect)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a75ed1fcb8fb4cc3b763e18dc0d41b891}{AbstractPainterRGB565::setup}}(widgetRect))}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2586f4eebebba168f487f8109bf6243a}{updateBitmapOffsets}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_ac11fbc73937ad3859d98b8ed099f13de}{widgetWidth}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bitmap.getId()\ !=\ \mbox{\hyperlink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\_INVALID}};}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ paint(uint8\_t*\ destination,\ int16\_t\ offset,\ int16\_t\ widgetX,\ int16\_t\ widgetY,\ int16\_t\ count,\ uint8\_t\ alpha)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap_aa86368ff6ddb577ef679793bd878c17f}{tearDown}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2}{HAL::RenderingMethod}}\ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap_a868e6ea0cd0b2a9362e7d2590880f34c}{getRenderingMethod}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9621f6b299c2c32eab7ff043e07a34ef}{HAL::getInstance}}()-\/>\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a3c3ec96153a86a4010e7778d4f649171}{getDMAType}}()\ ==\ \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9a800ebeb906760f5c205bc3cbf6ec430a}{DMA\_TYPE\_CHROMART}}\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2ad9421b73fe9bcee85e34ffd2d3e36eae}{HAL::HARDWARE}}\ :\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2aebfe7051d96000ada443e9dff50912bf}{HAL::SOFTWARE}};}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap_a5e9bb633a5e7d6cee7e44b92bd3e44df}{bitmapExtraData}};\ }
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_PAINTERRGB565BITMAP\_HPP}}
+
+\end{DoxyCode}

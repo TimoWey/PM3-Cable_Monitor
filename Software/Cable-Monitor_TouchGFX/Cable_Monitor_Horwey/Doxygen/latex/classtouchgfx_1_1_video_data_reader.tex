@@ -1,0 +1,79 @@
+\doxysection{touchgfx\+::Video\+Data\+Reader Class Reference}
+\hypertarget{classtouchgfx_1_1_video_data_reader}{}\label{classtouchgfx_1_1_video_data_reader}\index{touchgfx::VideoDataReader@{touchgfx::VideoDataReader}}
+
+
+{\ttfamily \#include $<$Video\+Controller.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_video_data_reader_aa3afeb0d83b22a0d4df64ecf2031497c}{\texorpdfstring{$\sim$}{\string~}\+Video\+Data\+Reader}} ()
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_video_data_reader_aea62cee7097aea7a502f32c9bd349977}{get\+Data\+Length}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_data_reader_a5577674ac37aa02e73a8e14ef6d5746d}{seek}} (uint32\+\_\+t position)=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_video_data_reader_a66c78aaca0caa446b94f209d56cbaa30}{read\+Data}} (void \texorpdfstring{$\ast$}{*}dst, uint32\+\_\+t bytes)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for classes reading video data from non-\/memory-\/mapped flash storage. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_video_data_reader_aa3afeb0d83b22a0d4df64ecf2031497c}\label{classtouchgfx_1_1_video_data_reader_aa3afeb0d83b22a0d4df64ecf2031497c} 
+\index{touchgfx::VideoDataReader@{touchgfx::VideoDataReader}!````~VideoDataReader@{\texorpdfstring{$\sim$}{\string~}VideoDataReader}}
+\index{````~VideoDataReader@{\texorpdfstring{$\sim$}{\string~}VideoDataReader}!touchgfx::VideoDataReader@{touchgfx::VideoDataReader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VideoDataReader()}{\string~VideoDataReader()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Video\+Data\+Reader\+::\texorpdfstring{$\sim$}{\string~}\+Video\+Data\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Virtual destructor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_video_data_reader_aea62cee7097aea7a502f32c9bd349977}\label{classtouchgfx_1_1_video_data_reader_aea62cee7097aea7a502f32c9bd349977} 
+\index{touchgfx::VideoDataReader@{touchgfx::VideoDataReader}!getDataLength@{getDataLength}}
+\index{getDataLength@{getDataLength}!touchgfx::VideoDataReader@{touchgfx::VideoDataReader}}
+\doxysubsubsection{\texorpdfstring{getDataLength()}{getDataLength()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t touchgfx\+::\+Video\+Data\+Reader\+::get\+Data\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the length of the data (file).
+
+\begin{DoxyReturn}{Returns}
+The length of the data. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_video_data_reader_a66c78aaca0caa446b94f209d56cbaa30}\label{classtouchgfx_1_1_video_data_reader_a66c78aaca0caa446b94f209d56cbaa30} 
+\index{touchgfx::VideoDataReader@{touchgfx::VideoDataReader}!readData@{readData}}
+\index{readData@{readData}!touchgfx::VideoDataReader@{touchgfx::VideoDataReader}}
+\doxysubsubsection{\texorpdfstring{readData()}{readData()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Video\+Data\+Reader\+::read\+Data (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint32\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Read data from flash to a buffer. This must be a synchrony method that does not return until the copy is done.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em dst} & Address of destination buffer in RAM. \\
+\hline
+ & {\em bytes} & Number of bytes to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if read was successful. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_video_data_reader_a5577674ac37aa02e73a8e14ef6d5746d}\label{classtouchgfx_1_1_video_data_reader_a5577674ac37aa02e73a8e14ef6d5746d} 
+\index{touchgfx::VideoDataReader@{touchgfx::VideoDataReader}!seek@{seek}}
+\index{seek@{seek}!touchgfx::VideoDataReader@{touchgfx::VideoDataReader}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Data\+Reader\+::seek (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Seek to a specific position in the data (file).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Byte position in the data that is needed next. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/Video\+Controller.\+hpp\end{DoxyCompactItemize}

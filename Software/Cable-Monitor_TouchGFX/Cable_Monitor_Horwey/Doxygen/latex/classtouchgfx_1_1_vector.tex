@@ -1,0 +1,231 @@
+\doxysection{touchgfx\+::Vector\texorpdfstring{$<$}{<} T, capacity \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_vector}{}\label{classtouchgfx_1_1_vector}\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+
+
+{\ttfamily \#include $<$Types.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_vector_a546787fa67338a622f6b5373215cff01}{Vector}} ()
+\item 
+T \& \mbox{\hyperlink{classtouchgfx_1_1_vector_aaeb6fb8ac00dfa6ac924031614493559}{operator\mbox{[}$\,$\mbox{]}}} (uint16\+\_\+t idx)
+\item 
+const T \& \mbox{\hyperlink{classtouchgfx_1_1_vector_ab0b629b63654eb43ed3a72e611421aec}{operator\mbox{[}$\,$\mbox{]}}} (uint16\+\_\+t idx) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_vector_ace880e5f54c99dc3dadb627567a33bd6}{add}} (T e)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_vector_a325ce65f5d09c7be9d8a1cd16467dff1}{remove}} (T e)
+\item 
+T \mbox{\hyperlink{classtouchgfx_1_1_vector_aa1b8d3a21d1eb2eff01aa2c66336f7a9}{remove\+At}} (uint16\+\_\+t index)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_vector_a698c54a73bc0439c75c63652733120c2}{quick\+Remove\+At}} (uint16\+\_\+t index)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_vector_abcc8298e904bb4dac718ee963216afdc}{reverse}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_vector_ae5f664b54b1925f1c604389f65f70e18}{contains}} (T elem)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_vector_a53fa4dd0f358a42d7af0da583f06f6c0}{size}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_vector_a511f75c163eaef685d7ccda0b35966e7}{is\+Empty}} () const
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_vector_ae75e9356ccfd8fc3c7b15e24e37e1f19}{max\+Capacity}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_vector_a0a9ecd00ee82cdd98ae204d64c4bb542}{clear}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T, uint16\+\_\+t capacity$>$\newline
+class touchgfx\+::\+Vector$<$ T, capacity $>$}
+A very simple container class using pre-\/allocated memory.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of objects this container works on. \\
+\hline
+{\em capacity} & The maximum number of objects this container can store. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_vector_a546787fa67338a622f6b5373215cff01}\label{classtouchgfx_1_1_vector_a546787fa67338a622f6b5373215cff01} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+\mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Constructs an empty vector. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_vector_ace880e5f54c99dc3dadb627567a33bd6}\label{classtouchgfx_1_1_vector_ace880e5f54c99dc3dadb627567a33bd6} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!add@{add}}
+\index{add@{add}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::add (\begin{DoxyParamCaption}\item[{T}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds an element to the \doxylink{classtouchgfx_1_1_vector}{Vector} if the \doxylink{classtouchgfx_1_1_vector}{Vector} is not full.
+
+Adds an element to the \doxylink{classtouchgfx_1_1_vector}{Vector} if the \doxylink{classtouchgfx_1_1_vector}{Vector} is not full. Does nothing if the \doxylink{classtouchgfx_1_1_vector}{Vector} is full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The element to add to the \doxylink{classtouchgfx_1_1_vector}{Vector}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_vector_a0a9ecd00ee82cdd98ae204d64c4bb542}\label{classtouchgfx_1_1_vector_a0a9ecd00ee82cdd98ae204d64c4bb542} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!clear@{clear}}
+\index{clear@{clear}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears the contents of the container. It does not destruct any of the elements in the \doxylink{classtouchgfx_1_1_vector}{Vector}. \Hypertarget{classtouchgfx_1_1_vector_ae5f664b54b1925f1c604389f65f70e18}\label{classtouchgfx_1_1_vector_ae5f664b54b1925f1c604389f65f70e18} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!contains@{contains}}
+\index{contains@{contains}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+bool \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::contains (\begin{DoxyParamCaption}\item[{T}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if the \doxylink{classtouchgfx_1_1_vector}{Vector} contains an element. The == operator of the element is used when comparing it with the elements in the \doxylink{classtouchgfx_1_1_vector}{Vector}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & The element.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the \doxylink{classtouchgfx_1_1_vector}{Vector} contains the element, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_vector_a511f75c163eaef685d7ccda0b35966e7}\label{classtouchgfx_1_1_vector_a511f75c163eaef685d7ccda0b35966e7} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+bool \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query if this object is empty.
+
+\begin{DoxyReturn}{Returns}
+true if the \doxylink{classtouchgfx_1_1_vector}{Vector} contains no elements. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_vector_ae75e9356ccfd8fc3c7b15e24e37e1f19}\label{classtouchgfx_1_1_vector_ae75e9356ccfd8fc3c7b15e24e37e1f19} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!maxCapacity@{maxCapacity}}
+\index{maxCapacity@{maxCapacity}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{maxCapacity()}{maxCapacity()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::max\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query the maximum capacity of the vector.
+
+\begin{DoxyReturn}{Returns}
+The capacity the \doxylink{classtouchgfx_1_1_vector}{Vector} was initialized with. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_vector_aaeb6fb8ac00dfa6ac924031614493559}\label{classtouchgfx_1_1_vector_aaeb6fb8ac00dfa6ac924031614493559} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+T \& \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Index operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index of the element to obtain.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the element placed at index idx. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_vector_ab0b629b63654eb43ed3a72e611421aec}\label{classtouchgfx_1_1_vector_ab0b629b63654eb43ed3a72e611421aec} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+const T \& \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Const version of the index operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index of the element to obtain.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A const reference to the element placed at index idx. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_vector_a698c54a73bc0439c75c63652733120c2}\label{classtouchgfx_1_1_vector_a698c54a73bc0439c75c63652733120c2} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!quickRemoveAt@{quickRemoveAt}}
+\index{quickRemoveAt@{quickRemoveAt}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{quickRemoveAt()}{quickRemoveAt()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::quick\+Remove\+At (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes an element at the specified index of the \doxylink{classtouchgfx_1_1_vector}{Vector}. The last element in the list is moved to the position where the element is removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_vector_a325ce65f5d09c7be9d8a1cd16467dff1}\label{classtouchgfx_1_1_vector_a325ce65f5d09c7be9d8a1cd16467dff1} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!remove@{remove}}
+\index{remove@{remove}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes an element from the \doxylink{classtouchgfx_1_1_vector}{Vector} if found in the \doxylink{classtouchgfx_1_1_vector}{Vector}. Does nothing if the element is not found in the \doxylink{classtouchgfx_1_1_vector}{Vector}. The == operator of the element is used when comparing it with the elements in the \doxylink{classtouchgfx_1_1_vector}{Vector}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The element to remove from the \doxylink{classtouchgfx_1_1_vector}{Vector}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_vector_aa1b8d3a21d1eb2eff01aa2c66336f7a9}\label{classtouchgfx_1_1_vector_aa1b8d3a21d1eb2eff01aa2c66336f7a9} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!removeAt@{removeAt}}
+\index{removeAt@{removeAt}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{removeAt()}{removeAt()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+T \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::remove\+At (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes an element at the specified index of the \doxylink{classtouchgfx_1_1_vector}{Vector}. Will "{}bubble-\/down"{} any remaining elements after the specified index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the removed element. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_vector_abcc8298e904bb4dac718ee963216afdc}\label{classtouchgfx_1_1_vector_abcc8298e904bb4dac718ee963216afdc} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!reverse@{reverse}}
+\index{reverse@{reverse}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::reverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reverses the ordering of the elements in the \doxylink{classtouchgfx_1_1_vector}{Vector}. \Hypertarget{classtouchgfx_1_1_vector_a53fa4dd0f358a42d7af0da583f06f6c0}\label{classtouchgfx_1_1_vector_a53fa4dd0f358a42d7af0da583f06f6c0} 
+\index{touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}!size@{size}}
+\index{size@{size}!touchgfx::Vector$<$ T, capacity $>$@{touchgfx::Vector$<$ T, capacity $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class T , uint16\+\_\+t capacity$>$ \\
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}}$<$ T, capacity $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the current size of the \doxylink{classtouchgfx_1_1_vector}{Vector} which is the number of elements contained in the \doxylink{classtouchgfx_1_1_vector}{Vector}.
+
+Gets the current size of the \doxylink{classtouchgfx_1_1_vector}{Vector} which is the number of elements contained in the \doxylink{classtouchgfx_1_1_vector}{Vector}.
+
+\begin{DoxyReturn}{Returns}
+The size of the \doxylink{classtouchgfx_1_1_vector}{Vector}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_types_8hpp}{Types.\+hpp}}\end{DoxyCompactItemize}

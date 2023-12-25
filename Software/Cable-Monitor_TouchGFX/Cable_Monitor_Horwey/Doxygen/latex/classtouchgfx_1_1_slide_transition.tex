@@ -1,0 +1,117 @@
+\doxysection{touchgfx\+::Slide\+Transition\texorpdfstring{$<$}{<} template\+Direction \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_slide_transition}{}\label{classtouchgfx_1_1_slide_transition}\index{touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}}
+
+
+{\ttfamily \#include $<$Slide\+Transition.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Slide\+Transition\texorpdfstring{$<$}{<} template\+Direction \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_slide_transition}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_slide_transition_a1efb2eb7b4982b9cfb4f55cac3741cfd}{Slide\+Transition}} (const uint8\+\_\+t transition\+Steps=20)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_slide_transition_af0d552c4787b3b2164c1ce1520900471}{handle\+Tick\+Event}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_slide_transition_ae73d42861d6165fdca9c0fccbbaeaf39}{tear\+Down}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_slide_transition_ab1061df7a70ed9c06bc75bf90e56456c}{init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_transition}{touchgfx\+::\+Transition}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_transition_a24cce3d30a67e8d245b1b346682c4f3a}{Transition}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_transition_a6ed9dde24db455453661e98e31368fd5}{\texorpdfstring{$\sim$}{\string~}\+Transition}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_transition_a0805cafb3a0001173a36766e13976379}{is\+Done}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_a3f4024a58615e5b9cdd874ab47df8f4e}{invalidate}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_afdfcaf170c7c61490f06893ace96a900}{set\+Screen\+Container}} (\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \&cont)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_slide_transition_abd53767663b859b4222180bc715fae1a}\label{classtouchgfx_1_1_slide_transition_abd53767663b859b4222180bc715fae1a} 
+\mbox{\hyperlink{classtouchgfx_1_1_snapshot_widget}{Snapshot\+Widget}} {\bfseries snapshot}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classtouchgfx_1_1_snapshot_widget}{Snapshot\+Widget} that is moved when transitioning. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_transition}{touchgfx\+::\+Transition}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \texorpdfstring{$\ast$}{*} {\bfseries screen\+Container}
+\begin{DoxyCompactList}\small\item\em The screen \doxylink{classtouchgfx_1_1_container}{Container} of the \doxylink{classtouchgfx_1_1_screen}{Screen} transitioning to. \end{DoxyCompactList}\item 
+bool {\bfseries done}
+\begin{DoxyCompactList}\small\item\em Flag that indicates when the transition is done. This should be set by implementing classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$\newline
+class touchgfx\+::\+Slide\+Transition$<$ template\+Direction $>$}
+A \doxylink{classtouchgfx_1_1_transition}{Transition} that slides from one screen to the next. It does so by moving a Snap\+Shot\+Widget with a snapshot of the \doxylink{classtouchgfx_1_1_screen}{Screen} transitioning away from, and by moving the contents of \doxylink{classtouchgfx_1_1_screen}{Screen} transitioning to.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_transition}{Transition} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_slide_transition_a1efb2eb7b4982b9cfb4f55cac3741cfd}\label{classtouchgfx_1_1_slide_transition_a1efb2eb7b4982b9cfb4f55cac3741cfd} 
+\index{touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}!SlideTransition@{SlideTransition}}
+\index{SlideTransition@{SlideTransition}!touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{SlideTransition()}{SlideTransition()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+\mbox{\hyperlink{classtouchgfx_1_1_slide_transition}{touchgfx\+::\+Slide\+Transition}}$<$ template\+Direction $>$\+::\+Slide\+Transition (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{transition\+Steps = {\ttfamily 20} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_slide_transition}{Slide\+Transition} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transition\+Steps} & (Optional) Number of steps (ticks) in the transition animation, default is 20. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_slide_transition_af0d552c4787b3b2164c1ce1520900471}\label{classtouchgfx_1_1_slide_transition_af0d552c4787b3b2164c1ce1520900471} 
+\index{touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_slide_transition}{touchgfx\+::\+Slide\+Transition}}$<$ template\+Direction $>$\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Handles the tick event when transitioning. It moves the contents of the \doxylink{classtouchgfx_1_1_screen}{Screen}\textquotesingle{}s container and a \doxylink{classtouchgfx_1_1_snapshot_widget}{Snapshot\+Widget} with a snapshot of the previous \doxylink{classtouchgfx_1_1_screen}{Screen}. The direction of the transition determines the direction the contents of the container and the \doxylink{classtouchgfx_1_1_snapshot_widget}{Snapshot\+Widget} moves. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_slide_transition_ab1061df7a70ed9c06bc75bf90e56456c}\label{classtouchgfx_1_1_slide_transition_ab1061df7a70ed9c06bc75bf90e56456c} 
+\index{touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}!init@{init}}
+\index{init@{init}!touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_slide_transition}{touchgfx\+::\+Slide\+Transition}}$<$ template\+Direction $>$\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Initializes the transition. Called after the constructor is called, when the application changes the transition. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_slide_transition_ae73d42861d6165fdca9c0fccbbaeaf39}\label{classtouchgfx_1_1_slide_transition_ae73d42861d6165fdca9c0fccbbaeaf39} 
+\index{touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!touchgfx::SlideTransition$<$ templateDirection $>$@{touchgfx::SlideTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_slide_transition}{touchgfx\+::\+Slide\+Transition}}$<$ template\+Direction $>$\+::tear\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Tears down the Animation. Called before the destructor is called, when the application changes the transition. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a12f4562bbd1f1c2226d4a33a6869b012}{touchgfx\+::\+Transition}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/transitions/\mbox{\hyperlink{_slide_transition_8hpp}{Slide\+Transition.\+hpp}}\end{DoxyCompactItemize}

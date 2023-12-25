@@ -1,0 +1,103 @@
+\doxysection{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+1\+PView\+Base.\+hpp}
+\hypertarget{_measurement___single___display__1_p_view_base_8hpp_source}{}\label{_measurement___single___display__1_p_view_base_8hpp_source}\index{TouchGFX/generated/gui\_generated/include/gui\_generated/measurement\_single\_display\_1p\_screen/Measurement\_Single\_Display\_1PViewBase.hpp@{TouchGFX/generated/gui\_generated/include/gui\_generated/measurement\_single\_display\_1p\_screen/Measurement\_Single\_Display\_1PViewBase.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/**********\ THIS\ FILE\ IS\ GENERATED\ BY\ TOUCHGFX\ DESIGNER,\ DO\ NOT\ MODIFY\ ***********/}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ MEASUREMENT\_SINGLE\_DISPLAY\_1PVIEWBASE\_HPP}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ MEASUREMENT\_SINGLE\_DISPLAY\_1PVIEWBASE\_HPP}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <gui/common/FrontendApplication.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_view_8hpp}{mvp/View.hpp}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <gui/measurement\_single\_display\_1p\_screen/Measurement\_Single\_Display\_1PPresenter.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_box_8hpp}{touchgfx/widgets/Box.hpp}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8hpp}{touchgfx/widgets/Image.hpp}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_button_with_label_8hpp}{touchgfx/widgets/ButtonWithLabel.hpp}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_8hpp}{touchgfx/widgets/TextArea.hpp}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_with_wildcard_8hpp}{touchgfx/widgets/TextAreaWithWildcard.hpp}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_gauge_8hpp}{touchgfx/widgets/Gauge.hpp}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_line_8hpp}{touchgfx/widgets/canvas/Line.hpp}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_painter_r_g_b565_8hpp}{touchgfx/widgets/canvas/PainterRGB565.hpp}}>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_measurement___single___display__1_p_view_base}{Measurement\_Single\_Display\_1PViewBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_view}{touchgfx::View}}<Measurement\_Single\_Display\_1PPresenter>}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_measurement___single___display__1_p_view_base}{Measurement\_Single\_Display\_1PViewBase}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_measurement___single___display__1_p_view_base}{\string~Measurement\_Single\_Display\_1PViewBase}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_measurement___single___display__1_p_view_base_a3f9e4d4dfaa00f0c306332bab720780d}{setupScreen}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_measurement___single___display__1_p_view_base_a5fb4d158161ec101f12bebd96d8565c2}{handleTickEvent}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ *\ Virtual\ Action\ Handlers}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ single\_measure()}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Override\ and\ implement\ this\ function\ in\ Measurement\_Single\_Display\_1P}}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_frontend_application}{FrontendApplication}}\&\ application()\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_frontend_application}{FrontendApplication}}*\textcolor{keyword}{>}(\mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{touchgfx::Application::getInstance}}());}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ \ \ \ *\ Member\ Declarations}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box}{touchgfx::Box}}\ \_\_background;}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_image}{touchgfx::Image}}\ image\_background;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_label}{touchgfx::ButtonWithLabel}}\ buttonWithLabel\_return;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_n90C;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_p90C;}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_0C;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ SMD1\_Current;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ SMD1\_Frequency;}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ SMD1\_Distance;}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gauge}{touchgfx::Gauge}}\ SMD1\_Gauge;}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line2;}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line2Painter;}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_menu;}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1Painter;}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_name;}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_titel;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ \ *\ Wildcard\ Buffers}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ SMD1\_CURRENT\_SIZE\ =\ 14;}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ SMD1\_CurrentBuffer[SMD1\_CURRENT\_SIZE];}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ SMD1\_FREQUENCY\_SIZE\ =\ 10;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ SMD1\_FrequencyBuffer[SMD1\_FREQUENCY\_SIZE];}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ SMD1\_DISTANCE\_SIZE\ =\ 14;}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ SMD1\_DistanceBuffer[SMD1\_DISTANCE\_SIZE];}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ \ *\ Canvas\ Buffer\ Size}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ CANVAS\_BUFFER\_SIZE\ =\ 3600;}
+\DoxyCodeLine{00077\ \ \ \ \ uint8\_t\ canvasBuffer[CANVAS\_BUFFER\_SIZE];}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ \ *\ Callback\ Declarations}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_callback}{touchgfx::Callback<Measurement\_Single\_Display\_1PViewBase,\ const\ touchgfx::AbstractButton\&>}}\ buttonCallback;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ \ \ *\ Callback\ Handler\ Declarations}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ buttonCallbackHandler(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button}{touchgfx::AbstractButton}}\&\ src);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ \ \ *\ Tick\ Counter\ Declarations}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ TICK\_INTERACTION2\_INTERVAL\ =\ 5;}
+\DoxyCodeLine{00093\ \ \ \ \ uint32\_t\ frameCountInteraction2Interval;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MEASUREMENT\_SINGLE\_DISPLAY\_1PVIEWBASE\_HPP}}
+
+\end{DoxyCode}

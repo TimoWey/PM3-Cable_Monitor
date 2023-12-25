@@ -1,0 +1,92 @@
+\doxysection{touchgfx\+::Abstract\+Painter\+Color Class Reference}
+\hypertarget{classtouchgfx_1_1_abstract_painter_color}{}\label{classtouchgfx_1_1_abstract_painter_color}\index{touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}}
+
+
+{\ttfamily \#include $<$Abstract\+Painter\+Color.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Abstract\+Painter\+Color\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classtouchgfx_1_1_abstract_painter_color}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_color_a275a9a73b4e1dc16ee13431fce55dfad}{Abstract\+Painter\+Color}} (\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color=0)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_color_a07a4392fcfc07047d7863be81ec1de54}{\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter\+Color}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_color_ab81082164c19e71ee6ea6567d41b5cb5}{set\+Color}} (\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color)
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_color_affc2ed420a2cf954e21e26f5ffeac3fd}{get\+Color}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_color_a963d636e152660eff414d590e539edf1}\label{classtouchgfx_1_1_abstract_painter_color_a963d636e152660eff414d590e539edf1} 
+\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} {\bfseries painter\+Color}
+\begin{DoxyCompactList}\small\item\em The color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class for creating painter classes for drawing canvas widgets. All canvas widgets need a painter to fill the shape drawn with a \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer}. The painter must provide the color of a pixel on a given coordinate, which will the be blended into the framebuffer depending on the position of the canvas widget and the transparency of the given pixel.
+
+The \doxylink{classtouchgfx_1_1_abstract_painter}{Abstract\+Painter} also implements a function which will blend each pixel in a scanline snippet into the framebuffer, but for better performance, the function should be reimplemented in each painter. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_color_a275a9a73b4e1dc16ee13431fce55dfad}\label{classtouchgfx_1_1_abstract_painter_color_a275a9a73b4e1dc16ee13431fce55dfad} 
+\index{touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}!AbstractPainterColor@{AbstractPainterColor}}
+\index{AbstractPainterColor@{AbstractPainterColor}!touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}}
+\doxysubsubsection{\texorpdfstring{AbstractPainterColor()}{AbstractPainterColor()}}
+{\footnotesize\ttfamily touchgfx\+::\+Abstract\+Painter\+Color\+::\+Abstract\+Painter\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & (Optional) The color to use in the painter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_color_a07a4392fcfc07047d7863be81ec1de54}\label{classtouchgfx_1_1_abstract_painter_color_a07a4392fcfc07047d7863be81ec1de54} 
+\index{touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}!````~AbstractPainterColor@{\texorpdfstring{$\sim$}{\string~}AbstractPainterColor}}
+\index{````~AbstractPainterColor@{\texorpdfstring{$\sim$}{\string~}AbstractPainterColor}!touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AbstractPainterColor()}{\string~AbstractPainterColor()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Abstract\+Painter\+Color\+::\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_color_affc2ed420a2cf954e21e26f5ffeac3fd}\label{classtouchgfx_1_1_abstract_painter_color_affc2ed420a2cf954e21e26f5ffeac3fd} 
+\index{touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}!getColor@{getColor}}
+\index{getColor@{getColor}!touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} touchgfx\+::\+Abstract\+Painter\+Color\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the current color.
+
+\begin{DoxyReturn}{Returns}
+The color. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_color_ab81082164c19e71ee6ea6567d41b5cb5}\label{classtouchgfx_1_1_abstract_painter_color_ab81082164c19e71ee6ea6567d41b5cb5} 
+\index{touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}!setColor@{setColor}}
+\index{setColor@{setColor}!touchgfx::AbstractPainterColor@{touchgfx::AbstractPainterColor}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Abstract\+Painter\+Color\+::set\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets color to use when drawing the \doxylink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_painter_a_b_g_r2222_a6f8aaea85b65ba1a660c045dd4fa10a9}{touchgfx\+::\+Painter\+ABGR2222}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_a_r_g_b2222_ab68bcfab3e0ee5be7090cbdc558223b2}{touchgfx\+::\+Painter\+ARGB2222}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_a_r_g_b8888_aa4a890e8855e31a2988e62b94be4f155}{touchgfx\+::\+Painter\+ARGB8888}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_b_g_r_a2222_a9457a1ccbfdd648166b77baeaf8025aa}{touchgfx\+::\+Painter\+BGRA2222}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_b_w_a1f1fb9e0399c8034ece77158d52cfa60}{touchgfx\+::\+Painter\+BW}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_g_r_a_y2_a386d2cc31635128ae0003412db0e1828}{touchgfx\+::\+Painter\+GRAY2}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_g_r_a_y4_a359f6b37bb2109cff9607dad5fc1289f}{touchgfx\+::\+Painter\+GRAY4}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_a8e12a0a05a7ebdbc1a22d2699a73901f}{touchgfx\+::\+Painter\+RGB565}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b888_af1438dd23d8fe16b4f62512db2ba559f}{touchgfx\+::\+Painter\+RGB888}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b_a2222_a59b5095b6d8784ba966351abebbfd650}{touchgfx\+::\+Painter\+RGBA2222}}, and \mbox{\hyperlink{classtouchgfx_1_1_painter_x_r_g_b8888_a978a2951d7e54018ffe24073b82698a4}{touchgfx\+::\+Painter\+XRGB8888}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/canvas/Abstract\+Painter\+Color.\+hpp\end{DoxyCompactItemize}

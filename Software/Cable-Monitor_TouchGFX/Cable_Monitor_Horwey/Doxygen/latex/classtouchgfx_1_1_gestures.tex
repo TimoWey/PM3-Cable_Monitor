@@ -1,0 +1,112 @@
+\doxysection{touchgfx\+::Gestures Class Reference}
+\hypertarget{classtouchgfx_1_1_gestures}{}\label{classtouchgfx_1_1_gestures}\index{touchgfx::Gestures@{touchgfx::Gestures}}
+
+
+{\ttfamily \#include $<$Gestures.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_gestures_a0f0a91652490762e5490807e2a08f631}{Gestures}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_gestures_abb846e3b9abfe51ed8fb7a6fe651d483}{register\+Event\+Listener}} (\mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener}{UIEvent\+Listener}} \&l)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_gestures_aba7afcc68fe6d03b3ab35e8f8f40cf79}{tick}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_gestures_a97a4f906975ecd9ee2b8a9f9ca39707b}{register\+Drag\+Event}} (uint16\+\_\+t oldX, uint16\+\_\+t oldY, uint16\+\_\+t newX, uint16\+\_\+t newY)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_gestures_a19b71c3fccd11e04d4402cdcbfc74cce}{register\+Click\+Event}} (\mbox{\hyperlink{classtouchgfx_1_1_click_event_a3238b664f8bd50c5d90686ec0ce7f0fc}{Click\+Event\+::\+Click\+Event\+Type}} event, uint16\+\_\+t x, uint16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_gestures_aab4eb026b3584e77e54e14e0107aea88}{set\+Drag\+Threshold}} (uint16\+\_\+t val)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements the detection of gestures. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_gestures_a0f0a91652490762e5490807e2a08f631}\label{classtouchgfx_1_1_gestures_a0f0a91652490762e5490807e2a08f631} 
+\index{touchgfx::Gestures@{touchgfx::Gestures}!Gestures@{Gestures}}
+\index{Gestures@{Gestures}!touchgfx::Gestures@{touchgfx::Gestures}}
+\doxysubsubsection{\texorpdfstring{Gestures()}{Gestures()}}
+{\footnotesize\ttfamily touchgfx\+::\+Gestures\+::\+Gestures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Does nothing. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_gestures_a19b71c3fccd11e04d4402cdcbfc74cce}\label{classtouchgfx_1_1_gestures_a19b71c3fccd11e04d4402cdcbfc74cce} 
+\index{touchgfx::Gestures@{touchgfx::Gestures}!registerClickEvent@{registerClickEvent}}
+\index{registerClickEvent@{registerClickEvent}!touchgfx::Gestures@{touchgfx::Gestures}}
+\doxysubsubsection{\texorpdfstring{registerClickEvent()}{registerClickEvent()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Gestures\+::register\+Click\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_click_event_a3238b664f8bd50c5d90686ec0ce7f0fc}{Click\+Event\+::\+Click\+Event\+Type}}}]{event,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Register a click event and figure out if this is a drag event, too.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The type of the click event. \\
+\hline
+{\em x} & The x coordinate of the click event. \\
+\hline
+{\em y} & The y coordinate of the click event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_gestures_a97a4f906975ecd9ee2b8a9f9ca39707b}\label{classtouchgfx_1_1_gestures_a97a4f906975ecd9ee2b8a9f9ca39707b} 
+\index{touchgfx::Gestures@{touchgfx::Gestures}!registerDragEvent@{registerDragEvent}}
+\index{registerDragEvent@{registerDragEvent}!touchgfx::Gestures@{touchgfx::Gestures}}
+\doxysubsubsection{\texorpdfstring{registerDragEvent()}{registerDragEvent()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Gestures\+::register\+Drag\+Event (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{oldX,  }\item[{uint16\+\_\+t}]{oldY,  }\item[{uint16\+\_\+t}]{newX,  }\item[{uint16\+\_\+t}]{newY }\end{DoxyParamCaption})}
+
+Register a drag event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldX} & The x coordinate of the drag start position (dragged from) \\
+\hline
+{\em oldY} & The y coordinate of the drag start position (dragged from) \\
+\hline
+{\em newX} & The x coordinate of the new position (dragged to) \\
+\hline
+{\em newY} & The y coordinate of the new position (dragged to)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the drag exceeds threshold value (and therefore was reported as a drag), or false if the drag did not exceed threshold (and therefore was discarded). 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_gestures_abb846e3b9abfe51ed8fb7a6fe651d483}\label{classtouchgfx_1_1_gestures_abb846e3b9abfe51ed8fb7a6fe651d483} 
+\index{touchgfx::Gestures@{touchgfx::Gestures}!registerEventListener@{registerEventListener}}
+\index{registerEventListener@{registerEventListener}!touchgfx::Gestures@{touchgfx::Gestures}}
+\doxysubsubsection{\texorpdfstring{registerEventListener()}{registerEventListener()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Gestures\+::register\+Event\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener}{UIEvent\+Listener}} \&}]{l }\end{DoxyParamCaption})}
+
+Register the event listener.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em l} & The Event\+Listener to register. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_gestures_aab4eb026b3584e77e54e14e0107aea88}\label{classtouchgfx_1_1_gestures_aab4eb026b3584e77e54e14e0107aea88} 
+\index{touchgfx::Gestures@{touchgfx::Gestures}!setDragThreshold@{setDragThreshold}}
+\index{setDragThreshold@{setDragThreshold}!touchgfx::Gestures@{touchgfx::Gestures}}
+\doxysubsubsection{\texorpdfstring{setDragThreshold()}{setDragThreshold()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Gestures\+::set\+Drag\+Threshold (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Configure the threshold for reporting drag events. A touch input movement must exceed this value in either axis in order to report a drag. Default value is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & New threshold value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_gestures_aba7afcc68fe6d03b3ab35e8f8f40cf79}\label{classtouchgfx_1_1_gestures_aba7afcc68fe6d03b3ab35e8f8f40cf79} 
+\index{touchgfx::Gestures@{touchgfx::Gestures}!tick@{tick}}
+\index{tick@{tick}!touchgfx::Gestures@{touchgfx::Gestures}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Gestures\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Has to be called during the timer tick. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_gestures_8hpp}{Gestures.\+hpp}}\end{DoxyCompactItemize}

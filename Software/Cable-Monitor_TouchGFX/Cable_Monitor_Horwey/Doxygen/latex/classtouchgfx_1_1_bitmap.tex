@@ -1,0 +1,841 @@
+\doxysection{touchgfx\+::Bitmap Class Reference}
+\hypertarget{classtouchgfx_1_1_bitmap}{}\label{classtouchgfx_1_1_bitmap}\index{touchgfx::Bitmap@{touchgfx::Bitmap}}
+
+
+{\ttfamily \#include $<$Bitmap.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_bitmap_1_1_bitmap_data}{Bitmap\+Data}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_bitmap_1_1_cache_table_entry}{Cache\+Table\+Entry}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_bitmap_1_1_dynamic_bitmap_data}{Dynamic\+Bitmap\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb}{Clut\+Format}} \{ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba95eabac44151961963abd64395c8c2b2}{CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+ARGB8888}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bbafea8ef193f5219a2610015d3b0f38ec2}{CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+RGB888}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba5e8032490a82bf78c4e4a96f06e2986b}{CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+RGB565}}
+ \}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+Format}} \{ \newline
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf4d7a1e0665a9b0cf938d200fbaace90}{RGB565}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcac06fa4950c5f30e1b8ac33c706d788cd}{RGB888}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca7f92b0cc7c3bb17a8f34bdbcd5cb240e}{ARGB8888}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf61a3cebcb13f2b7c74780994e1f7ab6}{BW}}
+, \newline
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca260d86fb08d746e92e1e8338657ea8f4}{BW\+\_\+\+RLE}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca27920a53279e9d82117b5c3a7bcd9bc1}{GRAY2}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcae86a583012204bcacfa600d691fb2628}{GRAY4}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca15c179b29b6772867364428d1e6e2767}{ARGB2222}}
+, \newline
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcafcb41352bcfdbe2325729b8fa40ce80d}{ABGR2222}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca75b09d500e0668df256194f2bc921891}{RGBA2222}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca67b30e8552dc5e0302e520c2f1c85be6}{BGRA2222}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaa14b2e60eb175910fb571c65c861d013}{L8}}
+, \newline
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca208a068eaf6766233d13511a8bbc31a2}{A4}}
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca7c868bec406b292b490b97467beec6ea}{CUSTOM}}
+ \}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602f}{Compression}} \{ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fa2a9e7209f5b11433f1fd47bf1ce89c84}{COMPRESSION\+\_\+\+L8\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602facb52acf70c47c641abf6bc6a4fcae9ef}{COMPRESSION\+\_\+\+L8\+\_\+\+L4}} = 1
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fabbc93824e282185db432781cd014d6e9}{COMPRESSION\+\_\+\+L8\+\_\+\+RLE}} = 2
+, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fa619c796dbbaab3e7c7296f8039791fe1}{COMPRESSION\+\_\+\+L8\+\_\+\+LZW9}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a29d3025b4068d6b91557cb606f4d794f}{Bitmap}} (const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id=\mbox{\hyperlink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\+\_\+\+INVALID}})
+\item 
+\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a3118557d1269547c48f55d0b3df9274a}{get\+Id}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a1d56e88447efd2496c92bd9a465d8846}{operator Bitmap\+Id}} () const
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a93b33823cd1606da88de607fa4af0805}{get\+Data}} () const
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a71829dad85ab08f4df8f94f1438af541}{get\+Extra\+Data}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+Format}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_ae7048f0fb18a1f25509ea35dd0c3a858}{get\+Format}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a2d02a7eaa46639c7a1d404074fa8cd87}{get\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a531fe65df92d25a7aa22b2775f8a31bc}{get\+Height}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a050b1cf676db49a00b6e43003520edef}{get\+Rect}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a3a81410ad7444ede91277968a7a0e508}{is\+Alpha\+Per\+Pixel}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_aeca782c7e696d0f5a6fff30b9815ec1d}{get\+Solid\+Rect}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_ad1daa4ef08a3e0783d6d20383392aaef}{has\+Transparent\+Pixels}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_bitmap_ab5fe2094f56c8e84c180a8eb9394e5aa}{register\+Bitmap\+Database}} (const \mbox{\hyperlink{structtouchgfx_1_1_bitmap_1_1_bitmap_data}{Bitmap\+Data}} \texorpdfstring{$\ast$}{*}data, const uint16\+\_\+t n, uint16\+\_\+t \texorpdfstring{$\ast$}{*}cachep=0, uint32\+\_\+t csize=0, uint32\+\_\+t number\+Of\+Dynamic\+Bitmaps=0)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a35bcd1e06d967efe71fd86dc18edcd03}{cache}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_add06a143a5f19328f0d9ffbfa98d925c}{cache\+Replace\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} out, \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} in)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_aa0cb127507c26b1aba77ad246b48d5ea}{cache\+Remove\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_ab0eb8558441b84eb0df3d8935da998a3}{cache\+Get\+Address}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a23ef0fb4bddc2de4dc16dc80a3ae126a}{cache\+Is\+Cached}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a900b490599caeca0c0637496e4e47118}{cache\+All}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a67321d1601a26a5cb61763ae14797a36}{clear\+Cache}} ()
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a6bd9aebb6337ac812b9724856a3294b9}{decompress}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id, uint16\+\_\+t \texorpdfstring{$\ast$}{*}buffer=0)
+\item 
+static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}{dynamic\+Bitmap\+Create}} (const uint16\+\_\+t width, const uint16\+\_\+t height, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+Format}} format, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb}{Clut\+Format}} clut\+Format=\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba95eabac44151961963abd64395c8c2b2}{CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+ARGB8888}})
+\item 
+static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a71bc95a5c7bd65d5f95254439dffa431}{dynamic\+Bitmap\+Create\+Copy}} (const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_af37721a3879e42aafa328f873a356002}{dynamic\+Bitmap\+Create\+L8}} (const uint16\+\_\+t width, const uint16\+\_\+t height, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb}{Clut\+Format}} clut\+Format, uint16\+\_\+t clut\+Size=256)
+\item 
+static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_ab9603c290991a17b6f6171e37c4754fa}{dynamic\+Bitmap\+Create\+Custom}} (const uint16\+\_\+t width, const uint16\+\_\+t height, uint8\+\_\+t custom\+Subformat, uint32\+\_\+t size)
+\item 
+static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a85266c8d8c432ab7e7a301e6814ed4d9}{dynamic\+Bitmap\+Create\+External}} (const uint16\+\_\+t width, const uint16\+\_\+t height, const void \texorpdfstring{$\ast$}{*}pixels, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+Format}} format, uint8\+\_\+t custom\+Subformat=0)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a6dddd7a7c6f1338dbac549d4687f7c44}{dynamic\+Bitmap\+Fill}} (const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id, const \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, const uint8\+\_\+t alpha=255)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_bitmap_abcc01a34ab051b40e48ec26fb15f65a5}{dynamic\+Bitmap\+Fill\+Rect}} (const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect, const \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, const uint8\+\_\+t alpha=255)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a8775b36bdd2c3cbd6264e48b553b840f}{dynamic\+Bitmap\+Delete}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_aea9a95ac1e70be43500431631fb55a47}{is\+Dynamic\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670}{dynamic\+Bitmap\+Get\+Address}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a77cbf9ceb1a82755a45205070bfc5f3a}{dynamic\+Bitmap\+Set\+Solid\+Rect}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&solid\+Rect)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a001d5b74bf21a016ca7ae0cca931b725}{dynamic\+Bitmap\+Add\+Solid\+Rect}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&solid\+Rect)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a7c20eca408ae252c66556e0e7e056552}{set\+Cache}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}cachep, uint32\+\_\+t csize, uint32\+\_\+t number\+Of\+Dynamic\+Bitmaps=0)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a90d75c8b59f503366a54aff05ff6ca0e}{remove\+Cache}} ()
+\item 
+static uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_bitmap_abf74321a2d8616c831d20f4e99643121}{get\+Cache\+Top\+Address}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a9f156063b4c5f2eefc1cc1c16d6cba06}{compact\+Cache}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class provides a proxy object for a bitmap image stored in the application specific bitmap database. The proxy provides access to the raw bitmap data as well as metadata. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!BitmapFormat@{BitmapFormat}}
+\index{BitmapFormat@{BitmapFormat}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{BitmapFormat}{BitmapFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{touchgfx\+::\+Bitmap\+::\+Bitmap\+Format}}}
+
+Data of a bitmap can be stored in the following formats. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB565@{RGB565}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!RGB565@{RGB565}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf4d7a1e0665a9b0cf938d200fbaace90}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf4d7a1e0665a9b0cf938d200fbaace90} 
+RGB565&16-\/bit, 5 bits for red, 6 bits for green, 5 bits for blue. No alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB888@{RGB888}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!RGB888@{RGB888}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcac06fa4950c5f30e1b8ac33c706d788cd}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcac06fa4950c5f30e1b8ac33c706d788cd} 
+RGB888&24-\/bit, 8 bits for each of red, green and blue. No alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARGB8888@{ARGB8888}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!ARGB8888@{ARGB8888}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca7f92b0cc7c3bb17a8f34bdbcd5cb240e}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca7f92b0cc7c3bb17a8f34bdbcd5cb240e} 
+ARGB8888&32-\/bit, 8 bits for each of red, green, blue and alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BW@{BW}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!BW@{BW}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf61a3cebcb13f2b7c74780994e1f7ab6}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf61a3cebcb13f2b7c74780994e1f7ab6} 
+BW&1-\/bit, black / white. No alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BW\_RLE@{BW\_RLE}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!BW\_RLE@{BW\_RLE}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca260d86fb08d746e92e1e8338657ea8f4}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca260d86fb08d746e92e1e8338657ea8f4} 
+BW\+\_\+\+RLE&1-\/bit, black / white. No alpha channel. \doxylink{classtouchgfx_1_1_image}{Image} is compressed with horizontal RLE \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRAY2@{GRAY2}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!GRAY2@{GRAY2}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca27920a53279e9d82117b5c3a7bcd9bc1}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca27920a53279e9d82117b5c3a7bcd9bc1} 
+GRAY2&2-\/bit grayscale \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRAY4@{GRAY4}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!GRAY4@{GRAY4}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcae86a583012204bcacfa600d691fb2628}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcae86a583012204bcacfa600d691fb2628} 
+GRAY4&4-\/bit grayscale \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARGB2222@{ARGB2222}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!ARGB2222@{ARGB2222}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca15c179b29b6772867364428d1e6e2767}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca15c179b29b6772867364428d1e6e2767} 
+ARGB2222&8-\/bit color \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ABGR2222@{ABGR2222}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!ABGR2222@{ABGR2222}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcafcb41352bcfdbe2325729b8fa40ce80d}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcafcb41352bcfdbe2325729b8fa40ce80d} 
+ABGR2222&8-\/bit color \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGBA2222@{RGBA2222}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!RGBA2222@{RGBA2222}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca75b09d500e0668df256194f2bc921891}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca75b09d500e0668df256194f2bc921891} 
+RGBA2222&8-\/bit color \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGRA2222@{BGRA2222}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!BGRA2222@{BGRA2222}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca67b30e8552dc5e0302e520c2f1c85be6}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca67b30e8552dc5e0302e520c2f1c85be6} 
+BGRA2222&8-\/bit color \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L8@{L8}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!L8@{L8}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaa14b2e60eb175910fb571c65c861d013}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaa14b2e60eb175910fb571c65c861d013} 
+L8&8-\/bit indexed color \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A4@{A4}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!A4@{A4}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca208a068eaf6766233d13511a8bbc31a2}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca208a068eaf6766233d13511a8bbc31a2} 
+A4&4-\/bit alpha level \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CUSTOM@{CUSTOM}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!CUSTOM@{CUSTOM}}}\Hypertarget{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca7c868bec406b292b490b97467beec6ea}\label{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca7c868bec406b292b490b97467beec6ea} 
+CUSTOM&Non-\/standard platform specific format. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb}\label{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!ClutFormat@{ClutFormat}}
+\index{ClutFormat@{ClutFormat}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{ClutFormat}{ClutFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb}{touchgfx\+::\+Bitmap\+::\+Clut\+Format}}}
+
+\doxylink{classtouchgfx_1_1_color}{Color} data of a clut can be stored in the following formats. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLUT\_FORMAT\_L8\_ARGB8888@{CLUT\_FORMAT\_L8\_ARGB8888}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!CLUT\_FORMAT\_L8\_ARGB8888@{CLUT\_FORMAT\_L8\_ARGB8888}}}\Hypertarget{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba95eabac44151961963abd64395c8c2b2}\label{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba95eabac44151961963abd64395c8c2b2} 
+CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+ARGB8888&32-\/bit, 8 bits for each of red, green, blue and alpha \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLUT\_FORMAT\_L8\_RGB888@{CLUT\_FORMAT\_L8\_RGB888}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!CLUT\_FORMAT\_L8\_RGB888@{CLUT\_FORMAT\_L8\_RGB888}}}\Hypertarget{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bbafea8ef193f5219a2610015d3b0f38ec2}\label{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bbafea8ef193f5219a2610015d3b0f38ec2} 
+CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+RGB888&24-\/bit, 8 bits for each of red, green and blue. No per pixel alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLUT\_FORMAT\_L8\_RGB565@{CLUT\_FORMAT\_L8\_RGB565}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!CLUT\_FORMAT\_L8\_RGB565@{CLUT\_FORMAT\_L8\_RGB565}}}\Hypertarget{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba5e8032490a82bf78c4e4a96f06e2986b}\label{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba5e8032490a82bf78c4e4a96f06e2986b} 
+CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+RGB565&16-\/bit, 5 bits for red, 6 bits for green, 5 bits for blue. No per pixel alpha channel \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602f}\label{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602f} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!Compression@{Compression}}
+\index{Compression@{Compression}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{Compression}{Compression}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602f}{touchgfx\+::\+Bitmap\+::\+Compression}}}
+
+Algorithms used for L8 images compression can be stored in the following formats. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPRESSION\_L8\_NONE@{COMPRESSION\_L8\_NONE}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!COMPRESSION\_L8\_NONE@{COMPRESSION\_L8\_NONE}}}\Hypertarget{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fa2a9e7209f5b11433f1fd47bf1ce89c84}\label{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fa2a9e7209f5b11433f1fd47bf1ce89c84} 
+COMPRESSION\+\_\+\+L8\+\_\+\+NONE&No compression applied on the L8 image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPRESSION\_L8\_L4@{COMPRESSION\_L8\_L4}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!COMPRESSION\_L8\_L4@{COMPRESSION\_L8\_L4}}}\Hypertarget{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602facb52acf70c47c641abf6bc6a4fcae9ef}\label{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602facb52acf70c47c641abf6bc6a4fcae9ef} 
+COMPRESSION\+\_\+\+L8\+\_\+\+L4&L4 compression applied on the L8 image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPRESSION\_L8\_RLE@{COMPRESSION\_L8\_RLE}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!COMPRESSION\_L8\_RLE@{COMPRESSION\_L8\_RLE}}}\Hypertarget{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fabbc93824e282185db432781cd014d6e9}\label{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fabbc93824e282185db432781cd014d6e9} 
+COMPRESSION\+\_\+\+L8\+\_\+\+RLE&RLE compression applied on the L8 image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPRESSION\_L8\_LZW9@{COMPRESSION\_L8\_LZW9}!touchgfx::Bitmap@{touchgfx::Bitmap}}\index{touchgfx::Bitmap@{touchgfx::Bitmap}!COMPRESSION\_L8\_LZW9@{COMPRESSION\_L8\_LZW9}}}\Hypertarget{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fa619c796dbbaab3e7c7296f8039791fe1}\label{classtouchgfx_1_1_bitmap_a0edbb453f09d1c16d8d6b2bd14b4602fa619c796dbbaab3e7c7296f8039791fe1} 
+COMPRESSION\+\_\+\+L8\+\_\+\+LZW9&LZW9 compression applied on the L8 image. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_bitmap_a29d3025b4068d6b91557cb606f4d794f}\label{classtouchgfx_1_1_bitmap_a29d3025b4068d6b91557cb606f4d794f} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!Bitmap@{Bitmap}}
+\index{Bitmap@{Bitmap}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{Bitmap()}{Bitmap()}}
+{\footnotesize\ttfamily touchgfx\+::\+Bitmap\+::\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id = {\ttfamily \mbox{\hyperlink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\+\_\+\+INVALID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates and binds a \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} instance to the corresponding entry in the \doxylink{structtouchgfx_1_1_bitmap_1_1_bitmap_data}{Bitmap\+Data} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & (Optional) The unique bitmap identifier. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_bitmap_a35bcd1e06d967efe71fd86dc18edcd03}\label{classtouchgfx_1_1_bitmap_a35bcd1e06d967efe71fd86dc18edcd03} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!cache@{cache}}
+\index{cache@{cache}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{cache()}{cache()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Cache this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} into unused RAM in the bitmap cache. A memory region large enough to hold this bitmap must be configured and a large enough part of it must be available. Caching of a bitmap may involve a defragmentation of the bitmap cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to cache.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if caching went well, false otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_ab5fe2094f56c8e84c180a8eb9394e5aa}{register\+Bitmap\+Database}, \doxylink{classtouchgfx_1_1_bitmap_a9f156063b4c5f2eefc1cc1c16d6cba06}{compact\+Cache} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_a900b490599caeca0c0637496e4e47118}\label{classtouchgfx_1_1_bitmap_a900b490599caeca0c0637496e4e47118} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!cacheAll@{cacheAll}}
+\index{cacheAll@{cacheAll}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{cacheAll()}{cacheAll()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::cache\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Cache all bitmaps from the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} Database into RAM. A memory region large enough to hold all bitmaps must be configured.
+
+\begin{DoxyReturn}{Returns}
+True if all bitmaps where cached.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_a35bcd1e06d967efe71fd86dc18edcd03}{cache} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_ab0eb8558441b84eb0df3d8935da998a3}\label{classtouchgfx_1_1_bitmap_ab0eb8558441b84eb0df3d8935da998a3} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!cacheGetAddress@{cacheGetAddress}}
+\index{cacheGetAddress@{cacheGetAddress}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{cacheGetAddress()}{cacheGetAddress()}}
+{\footnotesize\ttfamily static uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Bitmap\+::cache\+Get\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get address of cache buffer for this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} in cache.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address if \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} was found, zero otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The address is only valid until next \doxylink{classtouchgfx_1_1_bitmap_a35bcd1e06d967efe71fd86dc18edcd03}{Bitmap\+::cache()} call. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_bitmap_a23ef0fb4bddc2de4dc16dc80a3ae126a}\label{classtouchgfx_1_1_bitmap_a23ef0fb4bddc2de4dc16dc80a3ae126a} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!cacheIsCached@{cacheIsCached}}
+\index{cacheIsCached@{cacheIsCached}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{cacheIsCached()}{cacheIsCached()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::cache\+Is\+Cached (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is cached.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is cached. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_aa0cb127507c26b1aba77ad246b48d5ea}\label{classtouchgfx_1_1_bitmap_aa0cb127507c26b1aba77ad246b48d5ea} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!cacheRemoveBitmap@{cacheRemoveBitmap}}
+\index{cacheRemoveBitmap@{cacheRemoveBitmap}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{cacheRemoveBitmap()}{cacheRemoveBitmap()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::cache\+Remove\+Bitmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Remove this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} from the RAM cache. Unless the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is otherwise stored in (slower) memory it can not be drawn anymore and must be cached again before use. The RAM freed can be used for caching of another bitmap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to cache.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} was found and removed, false otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_ab5fe2094f56c8e84c180a8eb9394e5aa}{register\+Bitmap\+Database} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_add06a143a5f19328f0d9ffbfa98d925c}\label{classtouchgfx_1_1_bitmap_add06a143a5f19328f0d9ffbfa98d925c} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!cacheReplaceBitmap@{cacheReplaceBitmap}}
+\index{cacheReplaceBitmap@{cacheReplaceBitmap}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{cacheReplaceBitmap()}{cacheReplaceBitmap()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::cache\+Replace\+Bitmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{out,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Replace a \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} in RAM with another \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. The Bitmaps must have same size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & The id of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to remove from the cache. \\
+\hline
+{\em in} & The id of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to cache.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the replacement went well, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a67321d1601a26a5cb61763ae14797a36}\label{classtouchgfx_1_1_bitmap_a67321d1601a26a5cb61763ae14797a36} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!clearCache@{clearCache}}
+\index{clearCache@{clearCache}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{clearCache()}{clearCache()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Bitmap\+::clear\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Clears the cached bitmaps from RAM. \Hypertarget{classtouchgfx_1_1_bitmap_a9f156063b4c5f2eefc1cc1c16d6cba06}\label{classtouchgfx_1_1_bitmap_a9f156063b4c5f2eefc1cc1c16d6cba06} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!compactCache@{compactCache}}
+\index{compactCache@{compactCache}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{compactCache()}{compactCache()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Bitmap\+::compact\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Compact the bitmap cache to get continuous free memory on top. This method is called by \doxylink{classtouchgfx_1_1_bitmap_a35bcd1e06d967efe71fd86dc18edcd03}{Bitmap\+::cache} when required. \Hypertarget{classtouchgfx_1_1_bitmap_a6bd9aebb6337ac812b9724856a3294b9}\label{classtouchgfx_1_1_bitmap_a6bd9aebb6337ac812b9724856a3294b9} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!decompress@{decompress}}
+\index{decompress@{decompress}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::decompress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id,  }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Decompress a compressed bitmap into the bitmap cache. The decompressed bitmap will automatically be used by all Widgets.
+
+Only compressed L8 images can be decompressed. The decompressed bitmap will be L8 with an unchanged palette.
+
+When decompressing L8 bitmaps compressed with LZW an array of size 2048 bytes (16 bit aligned) must be supplied. The array is only used during decompressing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to decompress. \\
+\hline
+{\em buffer} & Pointer to a buffer for LZW decompression. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the bitmap was decompressed. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a001d5b74bf21a016ca7ae0cca931b725}\label{classtouchgfx_1_1_bitmap_a001d5b74bf21a016ca7ae0cca931b725} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapAddSolidRect@{dynamicBitmapAddSolidRect}}
+\index{dynamicBitmapAddSolidRect@{dynamicBitmapAddSolidRect}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapAddSolidRect()}{dynamicBitmapAddSolidRect()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Add\+Solid\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{solid\+Rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Updates the solid rectangle of a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to include the given rectangle. Only relevant for ARGB8888 bitmap and 8bpp bitmap formats, as these formats include an alpha channel. The solid part of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is drawn faster than the transparent parts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier. \\
+\hline
+{\em solid\+Rect} & The solid rectangle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}\label{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapCreate@{dynamicBitmapCreate}}
+\index{dynamicBitmapCreate@{dynamicBitmapCreate}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapCreate()}{dynamicBitmapCreate()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Create (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{width,  }\item[{const uint16\+\_\+t}]{height,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+Format}}}]{format,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb}{Clut\+Format}}}]{clut\+Format = {\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bba95eabac44151961963abd64395c8c2b2}{CLUT\+\_\+\+FORMAT\+\_\+\+L8\+\_\+\+ARGB8888}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. The clut\+Format parameter is ignored for bitmaps not in L8 format (consider using dynamic\+Bitmap\+Create\+L8 instead). Creation of a new dynamic bitmap may cause existing dynamic bitmaps to be moved in memory. Do not rely on bitmap memory addresses of dynamic bitmaps obtained from \doxylink{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670}{dynamic\+Bitmap\+Get\+Address()} to be valid across calls to \doxylink{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}{dynamic\+Bitmap\+Create()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. \\
+\hline
+{\em height} & Height of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. \\
+\hline
+{\em format} & \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} format of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. \\
+\hline
+{\em clut\+Format} & (Optional) \doxylink{classtouchgfx_1_1_color}{Color} Look\+Up Table format of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} (only used if format is \doxylink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaa14b2e60eb175910fb571c65c861d013}{Bitmap\+::\+L8}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bitmap\+Id of the new \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} or \doxylink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\+\_\+\+INVALID} if cache memory is full.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structtouchgfx_1_1_bitmap_1_1_dynamic_bitmap_data}{Dynamic\+Bitmap\+Data}, \doxylink{classtouchgfx_1_1_bitmap_af37721a3879e42aafa328f873a356002}{dynamic\+Bitmap\+Create\+L8}, \doxylink{classtouchgfx_1_1_bitmap_a71bc95a5c7bd65d5f95254439dffa431}{dynamic\+Bitmap\+Create\+Copy} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_a71bc95a5c7bd65d5f95254439dffa431}\label{classtouchgfx_1_1_bitmap_a71bc95a5c7bd65d5f95254439dffa431} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapCreateCopy@{dynamicBitmapCreateCopy}}
+\index{dynamicBitmapCreateCopy@{dynamicBitmapCreateCopy}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapCreateCopy()}{dynamicBitmapCreateCopy()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Create\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} as a copy of an existing bitmap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the bitmap to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bitmap\+Id of the new \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} or \doxylink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\+\_\+\+INVALID} if cache memory is full.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}{dynamic\+Bitmap\+Create} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_ab9603c290991a17b6f6171e37c4754fa}\label{classtouchgfx_1_1_bitmap_ab9603c290991a17b6f6171e37c4754fa} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapCreateCustom@{dynamicBitmapCreateCustom}}
+\index{dynamicBitmapCreateCustom@{dynamicBitmapCreateCustom}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapCreateCustom()}{dynamicBitmapCreateCustom()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Create\+Custom (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{width,  }\item[{const uint16\+\_\+t}]{height,  }\item[{uint8\+\_\+t}]{custom\+Subformat,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a dynamic bitmap in custom format. size number of bytes is reserved in the dynamic bitmap cache. A more specific format can be given in the custom\+Subformat parameter for use when handling more than one CUSTOM format. Set the solid rect if applicable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the bitmap. \\
+\hline
+{\em height} & Height of the bitmap. \\
+\hline
+{\em custom\+Subformat} & Custom format specifier \\
+\hline
+{\em size} & Size in bytes of the dynamic bitmap\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bitmap\+Id of the new bitmap or BITMAP\+\_\+\+INVALID if cache memory is full.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Creation of a new dynamic bitmap may cause existing dynamic bitmaps to be moved in memory. Do not rely on bitmap memory addresses of dynamic bitmaps obtained from \doxylink{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670}{dynamic\+Bitmap\+Get\+Address()} to be valid across calls to \doxylink{classtouchgfx_1_1_bitmap_ab9603c290991a17b6f6171e37c4754fa}{dynamic\+Bitmap\+Create\+Custom()} .
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670}{dynamic\+Bitmap\+Get\+Address}, \doxylink{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}{dynamic\+Bitmap\+Create}, \doxylink{classtouchgfx_1_1_bitmap_a77cbf9ceb1a82755a45205070bfc5f3a}{dynamic\+Bitmap\+Set\+Solid\+Rect} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_a85266c8d8c432ab7e7a301e6814ed4d9}\label{classtouchgfx_1_1_bitmap_a85266c8d8c432ab7e7a301e6814ed4d9} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapCreateExternal@{dynamicBitmapCreateExternal}}
+\index{dynamicBitmapCreateExternal@{dynamicBitmapCreateExternal}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapCreateExternal()}{dynamicBitmapCreateExternal()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Create\+External (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{width,  }\item[{const uint16\+\_\+t}]{height,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{pixels,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+Format}}}]{format,  }\item[{uint8\+\_\+t}]{custom\+Subformat = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a dynamic bitmap without reserving memory in the dynamic bitmap cache. The pixels must be already available in the memory, e.\+g. in flash. No copying is performed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the bitmap. \\
+\hline
+{\em height} & Height of the bitmap. \\
+\hline
+{\em pixels} & Pointer to the bitmap pixels. \\
+\hline
+{\em format} & \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} format of the bitmap. \\
+\hline
+{\em custom\+Subformat} & Custom format specifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bitmap\+Id of the new bitmap or BITMAP\+\_\+\+INVALID if not possible.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670}{dynamic\+Bitmap\+Get\+Address}, \doxylink{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}{dynamic\+Bitmap\+Create}, \doxylink{classtouchgfx_1_1_bitmap_a77cbf9ceb1a82755a45205070bfc5f3a}{dynamic\+Bitmap\+Set\+Solid\+Rect} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_af37721a3879e42aafa328f873a356002}\label{classtouchgfx_1_1_bitmap_af37721a3879e42aafa328f873a356002} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapCreateL8@{dynamicBitmapCreateL8}}
+\index{dynamicBitmapCreateL8@{dynamicBitmapCreateL8}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapCreateL8()}{dynamicBitmapCreateL8()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Create\+L8 (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{width,  }\item[{const uint16\+\_\+t}]{height,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a62c90056cce2355f19108ff59a9ee7bb}{Clut\+Format}}}]{clut\+Format,  }\item[{uint16\+\_\+t}]{clut\+Size = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a dynamic L8 \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. Creation of a new dynamic bitmap may cause existing dynamic bitmaps to be moved in memory. Do not rely on bitmap memory addresses of dynamic bitmaps obtained from \doxylink{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670}{dynamic\+Bitmap\+Get\+Address()} to be valid across calls to \doxylink{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}{dynamic\+Bitmap\+Create()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. \\
+\hline
+{\em height} & Height of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. \\
+\hline
+{\em clut\+Format} & \doxylink{classtouchgfx_1_1_color}{Color} Look\+Up Table format of the L8 \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. \\
+\hline
+{\em clut\+Size} & (Optional) \doxylink{classtouchgfx_1_1_color}{Color} Look\+Up Table palette size (default=256).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bitmap\+Id of the new \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} or \doxylink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\+\_\+\+INVALID} if cache memory is full.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{structtouchgfx_1_1_bitmap_1_1_dynamic_bitmap_data}{Dynamic\+Bitmap\+Data}, \doxylink{classtouchgfx_1_1_bitmap_a2850fa96da3522f130594e33b3ed43b1}{dynamic\+Bitmap\+Create} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_a8775b36bdd2c3cbd6264e48b553b840f}\label{classtouchgfx_1_1_bitmap_a8775b36bdd2c3cbd6264e48b553b840f} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapDelete@{dynamicBitmapDelete}}
+\index{dynamicBitmapDelete@{dynamicBitmapDelete}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapDelete()}{dynamicBitmapDelete()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Delete a dynamic bitmap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The Bitmap\+Id of the dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a6dddd7a7c6f1338dbac549d4687f7c44}\label{classtouchgfx_1_1_bitmap_a6dddd7a7c6f1338dbac549d4687f7c44} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapFill@{dynamicBitmapFill}}
+\index{dynamicBitmapFill@{dynamicBitmapFill}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapFill()}{dynamicBitmapFill()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Fill (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color,  }\item[{const uint8\+\_\+t}]{alpha = {\ttfamily 255} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Fill a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} with a color. If alpha is less than 255, the color will be blended onto the existing data in the dynamic bitmap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the dynamic bitmap to fill. \\
+\hline
+{\em color} & The color. \\
+\hline
+{\em alpha} & (Optional) The alpha (default is 255, i.\+e. solid).\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_a71bc95a5c7bd65d5f95254439dffa431}{dynamic\+Bitmap\+Create\+Copy}, \doxylink{classtouchgfx_1_1_bitmap_abcc01a34ab051b40e48ec26fb15f65a5}{dynamic\+Bitmap\+Fill\+Rect} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_abcc01a34ab051b40e48ec26fb15f65a5}\label{classtouchgfx_1_1_bitmap_abcc01a34ab051b40e48ec26fb15f65a5} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapFillRect@{dynamicBitmapFillRect}}
+\index{dynamicBitmapFillRect@{dynamicBitmapFillRect}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapFillRect()}{dynamicBitmapFillRect()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Fill\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color,  }\item[{const uint8\+\_\+t}]{alpha = {\ttfamily 255} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Fill parts of a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} with a color. If alpha is less than 255, the color will be blended onto the existing data in the dynamic bitmap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the dynamic bitmap to fill. \\
+\hline
+{\em rect} & The rectangle to fill. \\
+\hline
+{\em color} & The color. \\
+\hline
+{\em alpha} & (Optional) The alpha (default is 255, i.\+e. solid).\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_bitmap_a71bc95a5c7bd65d5f95254439dffa431}{dynamic\+Bitmap\+Create\+Copy}, \doxylink{classtouchgfx_1_1_bitmap_a6dddd7a7c6f1338dbac549d4687f7c44}{dynamic\+Bitmap\+Fill} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670}\label{classtouchgfx_1_1_bitmap_a33c3a98af900c659e2f23981835a2670} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapGetAddress@{dynamicBitmapGetAddress}}
+\index{dynamicBitmapGetAddress@{dynamicBitmapGetAddress}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapGetAddress()}{dynamicBitmapGetAddress()}}
+{\footnotesize\ttfamily static uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Get\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the address of the dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} data. It is important that the address of a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is not stored elsewhere as a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} may be moved in memory when other bitmaps are added and removed. Only store the Bitmap\+Id and ask for the address of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} data when needed. The address of a dynamic bitmap may change when other dynamic bitmaps are added and removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The Bitmap\+Id of the dynamic bitmap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null if it fails, else an uint8\+\_\+t\texorpdfstring{$\ast$}{*}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Never keep the address of dynamic images, only store the Bitmap\+Id as that will not change. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_bitmap_a77cbf9ceb1a82755a45205070bfc5f3a}\label{classtouchgfx_1_1_bitmap_a77cbf9ceb1a82755a45205070bfc5f3a} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!dynamicBitmapSetSolidRect@{dynamicBitmapSetSolidRect}}
+\index{dynamicBitmapSetSolidRect@{dynamicBitmapSetSolidRect}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{dynamicBitmapSetSolidRect()}{dynamicBitmapSetSolidRect()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::dynamic\+Bitmap\+Set\+Solid\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{solid\+Rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Set the solid rectangle of a dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. Only relevant for ARGB8888 \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} and 8bpp \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} formats, as these formats include an alpha channel. The solid part of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is drawn faster than the transparent parts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier. \\
+\hline
+{\em solid\+Rect} & The solid rectangle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_abf74321a2d8616c831d20f4e99643121}\label{classtouchgfx_1_1_bitmap_abf74321a2d8616c831d20f4e99643121} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getCacheTopAddress@{getCacheTopAddress}}
+\index{getCacheTopAddress@{getCacheTopAddress}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getCacheTopAddress()}{getCacheTopAddress()}}
+{\footnotesize\ttfamily static uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Bitmap\+::get\+Cache\+Top\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets the address of the first unused memory in the cache. Can be used in advanced application to reduce power consumption of external RAM by turning off unused RAM.
+
+\begin{DoxyReturn}{Returns}
+Returns the highest used address in the cache. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a93b33823cd1606da88de607fa4af0805}\label{classtouchgfx_1_1_bitmap_a93b33823cd1606da88de607fa4af0805} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getData@{getData}}
+\index{getData@{getData}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Bitmap\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets a pointer to the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} data.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the raw \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} data.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is cached, it will return the cached version of \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} data. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_bitmap_a71829dad85ab08f4df8f94f1438af541}\label{classtouchgfx_1_1_bitmap_a71829dad85ab08f4df8f94f1438af541} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getExtraData@{getExtraData}}
+\index{getExtraData@{getExtraData}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getExtraData()}{getExtraData()}}
+{\footnotesize\ttfamily const uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Bitmap\+::get\+Extra\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets a pointer to the extra (alpha) data, if present in the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. For images stored in L8 format, a pointer to the CLUT will be returned. For non-\/opaque RGB565 images, a pointer to the alpha channel will be returned.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the raw alpha channel data or CLUT. If no alpha channel or CLUT exist for the given \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}, 0 is returned.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is cached, it will return the cached version of alpha data for this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_bitmap_ae7048f0fb18a1f25509ea35dd0c3a858}\label{classtouchgfx_1_1_bitmap_ae7048f0fb18a1f25509ea35dd0c3a858} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getFormat()}{getFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+Format}} touchgfx\+::\+Bitmap\+::get\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the format of how the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} is stored.
+
+\begin{DoxyReturn}{Returns}
+The format of how the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} data is stored. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a531fe65df92d25a7aa22b2775f8a31bc}\label{classtouchgfx_1_1_bitmap_a531fe65df92d25a7aa22b2775f8a31bc} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Bitmap\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the height of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} in pixels.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} height in pixels. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a3118557d1269547c48f55d0b3df9274a}\label{classtouchgfx_1_1_bitmap_a3118557d1269547c48f55d0b3df9274a} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getId@{getId}}
+\index{getId@{getId}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} touchgfx\+::\+Bitmap\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the id of this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.
+
+\begin{DoxyReturn}{Returns}
+The id of this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a050b1cf676db49a00b6e43003520edef}\label{classtouchgfx_1_1_bitmap_a050b1cf676db49a00b6e43003520edef} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getRect@{getRect}}
+\index{getRect@{getRect}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} touchgfx\+::\+Bitmap\+::get\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the rectangle describing the dimensions of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.
+
+\begin{DoxyReturn}{Returns}
+a \doxylink{classtouchgfx_1_1_rect}{Rect} describing the dimensions of this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_aeca782c7e696d0f5a6fff30b9815ec1d}\label{classtouchgfx_1_1_bitmap_aeca782c7e696d0f5a6fff30b9815ec1d} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getSolidRect@{getSolidRect}}
+\index{getSolidRect@{getSolidRect}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getSolidRect()}{getSolidRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} touchgfx\+::\+Bitmap\+::get\+Solid\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the largest solid, i.\+e. not transparent, rectangle in the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.
+
+\begin{DoxyReturn}{Returns}
+The maximum solid rectangle of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a2d02a7eaa46639c7a1d404074fa8cd87}\label{classtouchgfx_1_1_bitmap_a2d02a7eaa46639c7a1d404074fa8cd87} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Bitmap\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the width of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} in pixels.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} width in pixels. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_ad1daa4ef08a3e0783d6d20383392aaef}\label{classtouchgfx_1_1_bitmap_ad1daa4ef08a3e0783d6d20383392aaef} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!hasTransparentPixels@{hasTransparentPixels}}
+\index{hasTransparentPixels@{hasTransparentPixels}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{hasTransparentPixels()}{hasTransparentPixels()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Bitmap\+::has\+Transparent\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Query if this object has transparent pixels.
+
+\begin{DoxyReturn}{Returns}
+True if this bitmap has transparent pixels. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a3a81410ad7444ede91277968a7a0e508}\label{classtouchgfx_1_1_bitmap_a3a81410ad7444ede91277968a7a0e508} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!isAlphaPerPixel@{isAlphaPerPixel}}
+\index{isAlphaPerPixel@{isAlphaPerPixel}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{isAlphaPerPixel()}{isAlphaPerPixel()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Bitmap\+::is\+Alpha\+Per\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query if this object has an alpha channel.
+
+\begin{DoxyReturn}{Returns}
+True if the bitmap contains an alpha channel (an alpha value for each pixel) 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_aea9a95ac1e70be43500431631fb55a47}\label{classtouchgfx_1_1_bitmap_aea9a95ac1e70be43500431631fb55a47} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!isDynamicBitmap@{isDynamicBitmap}}
+\index{isDynamicBitmap@{isDynamicBitmap}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{isDynamicBitmap()}{isDynamicBitmap()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Bitmap\+::is\+Dynamic\+Bitmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if a given bitmap id is the id of a dynamic bitmap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The Bitmap\+Id of the dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the bitmap is dynamic, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_a1d56e88447efd2496c92bd9a465d8846}\label{classtouchgfx_1_1_bitmap_a1d56e88447efd2496c92bd9a465d8846} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!operator BitmapId@{operator BitmapId}}
+\index{operator BitmapId@{operator BitmapId}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{operator BitmapId()}{operator BitmapId()}}
+{\footnotesize\ttfamily touchgfx\+::\+Bitmap\+::operator \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the id of this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.
+
+\begin{DoxyReturn}{Returns}
+The id of this \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_bitmap_ab5fe2094f56c8e84c180a8eb9394e5aa}\label{classtouchgfx_1_1_bitmap_ab5fe2094f56c8e84c180a8eb9394e5aa} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!registerBitmapDatabase@{registerBitmapDatabase}}
+\index{registerBitmapDatabase@{registerBitmapDatabase}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{registerBitmapDatabase()}{registerBitmapDatabase()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Bitmap\+::register\+Bitmap\+Database (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_bitmap_1_1_bitmap_data}{Bitmap\+Data}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{const uint16\+\_\+t}]{n,  }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{cachep = {\ttfamily 0},  }\item[{uint32\+\_\+t}]{csize = {\ttfamily 0},  }\item[{uint32\+\_\+t}]{number\+Of\+Dynamic\+Bitmaps = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Registers an array of bitmaps. All \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} instances are bound to this database. This function is called automatically from HAL\+::touchgfx\+\_\+generic\+\_\+init().
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em data} & A reference to the \doxylink{structtouchgfx_1_1_bitmap_1_1_bitmap_data}{Bitmap\+Data} storage array. \\
+\hline
+ & {\em n} & The number of bitmaps in the array. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cachep} & (Optional) Pointer to memory region in which bitmap data can be cached. \\
+\hline
+ & {\em csize} & (Optional) Size of cache memory region in bytes (0 if unused) \\
+\hline
+ & {\em number\+Of\+Dynamic\+Bitmaps} & (Optional) Number of dynamic bitmaps to be allowed in the cache. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_bitmap_a90d75c8b59f503366a54aff05ff6ca0e}\label{classtouchgfx_1_1_bitmap_a90d75c8b59f503366a54aff05ff6ca0e} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!removeCache@{removeCache}}
+\index{removeCache@{removeCache}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{removeCache()}{removeCache()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Bitmap\+::remove\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Removes the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} cache. The memory can hereafter be used for other purposes. All dynamic \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} IDs are invalid after this. \Hypertarget{classtouchgfx_1_1_bitmap_a7c20eca408ae252c66556e0e7e056552}\label{classtouchgfx_1_1_bitmap_a7c20eca408ae252c66556e0e7e056552} 
+\index{touchgfx::Bitmap@{touchgfx::Bitmap}!setCache@{setCache}}
+\index{setCache@{setCache}!touchgfx::Bitmap@{touchgfx::Bitmap}}
+\doxysubsubsection{\texorpdfstring{setCache()}{setCache()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Bitmap\+::set\+Cache (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{cachep,  }\item[{uint32\+\_\+t}]{csize,  }\item[{uint32\+\_\+t}]{number\+Of\+Dynamic\+Bitmaps = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Register a memory region in which \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} data can be cached.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cachep} & Pointer to memory region in which bitmap data can be cached. \\
+\hline
+ & {\em csize} & Size of cache memory region in bytes. \\
+\hline
+ & {\em number\+Of\+Dynamic\+Bitmaps} & (Optional) Number of dynamic bitmaps to be allowed in the cache. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_bitmap_8hpp}{Bitmap.\+hpp}}\end{DoxyCompactItemize}

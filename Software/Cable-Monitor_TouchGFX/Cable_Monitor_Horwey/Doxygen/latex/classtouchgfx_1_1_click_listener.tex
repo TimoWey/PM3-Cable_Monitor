@@ -1,0 +1,85 @@
+\doxysection{touchgfx\+::Click\+Listener\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_click_listener}{}\label{classtouchgfx_1_1_click_listener}\index{touchgfx::ClickListener$<$ T $>$@{touchgfx::ClickListener$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Click\+Listener.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Click\+Listener\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_click_listener}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_click_listener_a67dabaed32d99825251652dea365db49}{Click\+Listener}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_click_listener_ad686351e05d58eba6617e78a28d41eb6}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_click_listener_a96a553cbc67db4c5eb0a647f5d568e98}{set\+Click\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const T \&, const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \& $>$ \&callback)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_click_listener_a445c51acfd422991d0ad74a73a6b1f62}\label{classtouchgfx_1_1_click_listener_a445c51acfd422991d0ad74a73a6b1f62} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const T \&, const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \& $>$ \texorpdfstring{$\ast$}{*} {\bfseries click\+Action}
+\begin{DoxyCompactList}\small\item\em The callback to be executed when T is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Click\+Listener$<$ T $>$}
+Mix-\/in class that extends a class with a click action event that is called when the class receives a click event.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & specifies the type to extend with the \doxylink{classtouchgfx_1_1_click_listener}{Click\+Listener} behavior. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_click_listener_a67dabaed32d99825251652dea365db49}\label{classtouchgfx_1_1_click_listener_a67dabaed32d99825251652dea365db49} 
+\index{touchgfx::ClickListener$<$ T $>$@{touchgfx::ClickListener$<$ T $>$}!ClickListener@{ClickListener}}
+\index{ClickListener@{ClickListener}!touchgfx::ClickListener$<$ T $>$@{touchgfx::ClickListener$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ClickListener()}{ClickListener()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classtouchgfx_1_1_click_listener}{touchgfx\+::\+Click\+Listener}}$<$ T $>$\+::\+Click\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_click_listener}{Click\+Listener} class. Make the object touchable. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_click_listener_ad686351e05d58eba6617e78a28d41eb6}\label{classtouchgfx_1_1_click_listener_ad686351e05d58eba6617e78a28d41eb6} 
+\index{touchgfx::ClickListener$<$ T $>$@{touchgfx::ClickListener$<$ T $>$}!handleClickEvent@{handleClickEvent}}
+\index{handleClickEvent@{handleClickEvent}!touchgfx::ClickListener$<$ T $>$@{touchgfx::ClickListener$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleClickEvent()}{handleClickEvent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_click_listener}{touchgfx\+::\+Click\+Listener}}$<$ T $>$\+::handle\+Click\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Ensures that the click\+Event is propagated to the super class T and to the click\+Action listener.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Information about the click. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_click_listener_a96a553cbc67db4c5eb0a647f5d568e98}\label{classtouchgfx_1_1_click_listener_a96a553cbc67db4c5eb0a647f5d568e98} 
+\index{touchgfx::ClickListener$<$ T $>$@{touchgfx::ClickListener$<$ T $>$}!setClickAction@{setClickAction}}
+\index{setClickAction@{setClickAction}!touchgfx::ClickListener$<$ T $>$@{touchgfx::ClickListener$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setClickAction()}{setClickAction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_click_listener}{touchgfx\+::\+Click\+Listener}}$<$ T $>$\+::set\+Click\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const T \&, const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \& $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the class T is clicked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback to be executed. The callback will be given a reference to T. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/mixins/\mbox{\hyperlink{_click_listener_8hpp}{Click\+Listener.\+hpp}}\end{DoxyCompactItemize}

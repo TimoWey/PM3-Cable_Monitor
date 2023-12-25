@@ -1,0 +1,167 @@
+\doxysection{DMA.\+hpp}
+\hypertarget{_d_m_a_8hpp_source}{}\label{_d_m_a_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/DMA.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/DMA.hpp}}
+\mbox{\hyperlink{_d_m_a_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_DMA\_HPP}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DMA\_HPP}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_atomic_8hpp}{touchgfx/hal/Atomic.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_blit_op_8hpp}{touchgfx/hal/BlitOp.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }DMA\_Interface;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\_Queue}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\_Interface}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a0dfa6b5bd3f70ef9a2a64714ae1c3bcc}{isEmpty}}()\ =\ 0;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a1f7d844d6909a94d79a898de972e1413}{isFull}}()\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a51c9c0297ad5172865c59f34cb9b4c27}{pushCopyOf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}\&\ op)\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a6fa1cb19b73fd035d6f34847df38cb01}{\string~DMA\_Queue}}()}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_a38f494284bfec61360e18492a090a20f}{DMA\_Queue}}()}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_aad0eaa88fca79084b50c2b603097cb8f}{pop}}()\ =\ 0;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}*\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue_ab84ca47f3db2da4b78a56c5c6b09594b}{first}}()\ =\ 0;}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue}{LockFreeDMA\_Queue}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\_Queue}}}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_aed4f417cd884fda0ffa59c6afa816c60}{LockFreeDMA\_Queue}}(\mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}*\ mem,\ atomic\_t\ n);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_ad44f24989d5e227c36493673b75d618e}{isEmpty}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_ac45cebe13f3cbb3360fbe127cce7f581}{isFull}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_ac3b61d999317f7b1f357b7b1303ef649}{pushCopyOf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}\&\ op);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_acbfd906f482f9373a485c1ae61c0df97}{pop}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}*\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_a018a6c7fb0ddf88e9869a89c560d7611}{first}}();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}*\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_a982c17acea8e197d56993314a8d6dfe6}{q}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ atomic\_t\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_af9aeccadb8850338342436f04c4d2558}{capacity}};\ }
+\DoxyCodeLine{00111\ \ \ \ \ atomic\_t\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_a0f3144ac65a3948e9f29358dbeeb38d2}{head}};\ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ atomic\_t\ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue_a0b759b8d967b4e7c4c1f3d4594c66043}{tail}};\ \ \ \ \ }
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\_Interface}}}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{BlitOperations}}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a91da807f94bc3ebedb469712a68b6638}{getBlitCaps}}()\ =\ 0;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a26a52486264a5dc201ec3756c59fb84c}{addToQueue}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}\&\ op);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a690b61b18a8d4573941f6251fe951a51}{flush}}()}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a4288ec23ffd7a044ac831ed808b1b943}{waitForFrameBufferSemaphore}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ace767d5a54b614b76ac7ccfba5970f65}{initialize}}()}
+\DoxyCodeLine{00145\ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a4cc162f33b980ff25cb528276d1f1db3}{isDMARunning}}()}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac114166d2a88ea21c39b237e0c58fdd0}{isRunning}};}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a614ad4829f3beabab4c5017375d5f35b}{setAllowed}}(\textcolor{keywordtype}{bool}\ allowed)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ad58027665ebb04b49ac83dd5c247f02b}{isAllowed}}\ =\ allowed;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a29592480ae38bb1bfef1d22bc9aabd3c}{getAllowed}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00176\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ad58027665ebb04b49ac83dd5c247f02b}{isAllowed}};}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a182a0506ce9595c47f8e8fec33486250}{setReserved}}(\textcolor{keywordtype}{bool}\ reserved)}
+\DoxyCodeLine{00187\ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0c55c098b1976e9f1585cde67040c39a}{isReserved}}\ =\ reserved;}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ae87179b63decdbb4b49ad34c0195e482}{getReserved}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00198\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0c55c098b1976e9f1585cde67040c39a}{isReserved}};}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a95ab5d9fc65e64acb44fa5e7beb8aea3}{start}}();}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac6f2516c8b5e47fda0e3854d1c4eed31}{signalDMAInterrupt}}()\ =\ 0;}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00219\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0811374ec33b7d47cfb41f8f8d77df67}{isDmaQueueEmpty}}();}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00226\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac525786acff2893aa0f264357e135afc}{isDmaQueueFull}}();}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9}{DMAType}}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac548c1fc4a6cab9770593f8186ae6f4a}{getDMAType}}()}
+\DoxyCodeLine{00235\ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9a053f3011725d051da7bce888805d1e68}{DMA\_TYPE\_GENERIC}};}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a92759b375e45bd0b648bdf3c048d2fb9}{\string~DMA\_Interface}}()}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_aa408de6b515bf9712ee5234a4e96e5d5}{DMA\_Interface}}(\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\_Queue}}\&\ dmaQueue)}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac57c6fb3ab6512c256eb8f82f69099ad}{queue}}(dmaQueue),\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac114166d2a88ea21c39b237e0c58fdd0}{isRunning}}(false),\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ad58027665ebb04b49ac83dd5c247f02b}{isAllowed}}(false)}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_adc5a1bcd9ae415051f3a4a39f9e01b09}{execute}}();}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ae75aca8f689a9bc1ac83ca54ff6ab626}{executeCompleted}}();}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a28f8f95558177f97c52bdf3f03e914a2}{seedExecution}}();}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a8118b5ea7bd6e990fe0117fd745dd76d}{setupDataCopy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}\&\ blitOp)\ =\ 0;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_af3180b67d2b2dccdedaa54c12e54058a}{setupDataFill}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}\&\ blitOp)\ =\ 0;}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0e30cf2b0706356a43d5b74186e7023e}{enableAlpha}}(uint8\_t\ alpha);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a366c332352363500da97e91b5a62f78e}{disableAlpha}}();}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a808b76c5232934600c8910fd1fcba18c}{enableCopyWithTransparentPixels}}(uint8\_t\ alpha);}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a4288ec23ffd7a044ac831ed808b1b943}{waitForFrameBufferSemaphore}}();}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\_Queue}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac57c6fb3ab6512c256eb8f82f69099ad}{queue}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac114166d2a88ea21c39b237e0c58fdd0}{isRunning}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ad58027665ebb04b49ac83dd5c247f02b}{isAllowed}};\ \ }
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0c55c098b1976e9f1585cde67040c39a}{isReserved}};\ }
+\DoxyCodeLine{00311\ \};}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_DMA\_HPP}}
+
+\end{DoxyCode}

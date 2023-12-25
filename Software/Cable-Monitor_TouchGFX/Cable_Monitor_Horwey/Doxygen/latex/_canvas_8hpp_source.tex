@@ -1,0 +1,130 @@
+\doxysection{Canvas.\+hpp}
+\hypertarget{_canvas_8hpp_source}{}\label{_canvas_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp}}
+\mbox{\hyperlink{_canvas_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_CANVAS\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_CANVAS\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_c_w_r_util_8hpp}{touchgfx/widgets/canvas/CWRUtil.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_canvas_widget_8hpp}{touchgfx/widgets/canvas/CanvasWidget.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_canvas}{Canvas}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a72eced6ee0d805d98f66ad3bbe0803bb}{Canvas}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{CanvasWidget}}*\ \_widget,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a0b421abfc92bcd700f0ccb2053f7ad4e}{\string~Canvas}}()}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_afe5aaf65377906f712bedbacdb73380c}{setFillingRule}}(Rasterizer::FillingRule\ rule)}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ rasterizer.setFillingRule(rule);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \ \ Rasterizer::FillingRule\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a0e388aa24947ec0af6a1959d17433541}{getFillingRule}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00081\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rasterizer.getFillingRule();}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}{moveTo}}(\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ x,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ y);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{lineTo}}(\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ x,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ y);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a53f916f622d8452a1c0c3c069ce4743e}{quadraticBezierTo}}(\textcolor{keywordtype}{float}\ x0,\ \textcolor{keywordtype}{float}\ y0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ recursiveQuadraticBezier(x0,\ y0,\ x1,\ y1,\ x,\ y,\ 0);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{lineTo}}(CWRUtil::toQ5<float>(x),\ CWRUtil::toQ5<float>(y));}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a28e43a37e13c1af4823912f60b5b299e}{cubicBezierTo}}(\textcolor{keywordtype}{float}\ x0,\ \textcolor{keywordtype}{float}\ y0,\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ recursiveCubicBezier(x0,\ y0,\ x1,\ y1,\ x2,\ y2,\ x,\ y,\ 0);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{lineTo}}(CWRUtil::toQ5<float>(x),\ CWRUtil::toQ5<float>(y));}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a9b0c71b946c4e1ef88a3bbbda1aa39f9}{close}}();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a080c91a4e00299ad652f4d26224cee75}{moveTo}}(T\ x,\ T\ y)}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}{moveTo}}(CWRUtil::toQ5<T>(x),\ CWRUtil::toQ5<T>(y));}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a13b39f002fce94e9977f8ed4820fd872}{lineTo}}(T\ x,\ T\ y)}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{lineTo}}(CWRUtil::toQ5<T>(x),\ CWRUtil::toQ5<T>(y));}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_ac8224f2cf0e2cb613fadc0645cb36357}{render}}(uint8\_t\ customAlpha\ =\ 255);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00196\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a02f7332bca408a5988c6b57ac27c5280}{wasOutlineTooComplex}}()}
+\DoxyCodeLine{00197\ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rasterizer.wasOutlineTooComplex();}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ widget\ using\ the\ Canvas}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{CanvasWidget}}*\ widget;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{//\ Invalidate\ area\ in\ Q5\ coordinates}}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ invalidatedAreaX;}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ invalidatedAreaY;}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ invalidatedAreaWidth;}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ invalidatedAreaHeight;}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{//\ For\ drawing}}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ dirtyAreaAbsolute;}
+\DoxyCodeLine{00213\ \ \ \ \ Rasterizer\ rasterizer;}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//\ Used\ for\ optimization\ of\ drawing\ algorithm}}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPenDown;}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasPenDown;}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ previousX;}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ previousY;}
+\DoxyCodeLine{00220\ \ \ \ \ uint8\_t\ previousOutside;}
+\DoxyCodeLine{00221\ \ \ \ \ uint8\_t\ penDownOutside;}
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ initialMoveToX;}
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ initialMoveToY;}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00226\ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ POINT\_IS\_ABOVE\ =\ 1\ <<\ 0,}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ POINT\_IS\_BELOW\ =\ 1\ <<\ 1,}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ POINT\_IS\_LEFT\ =\ 1\ <<\ 2,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ POINT\_IS\_RIGHT\ =\ 1\ <<\ 3}
+\DoxyCodeLine{00231\ \ \ \ \ \};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint8\_t\ isOutside(\textcolor{keyword}{const}\ CWRUtil::Q5\&\ x,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ y,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ width,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ height)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00234\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((y\ <\ 0)\ ?\ (POINT\_IS\_ABOVE)\ :\ (y\ >=\ height\ ?\ POINT\_IS\_BELOW\ :\ 0))\ |}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((x\ <\ 0)\ ?\ (POINT\_IS\_LEFT)\ :\ (x\ >=\ width\ ?\ POINT\_IS\_RIGHT\ :\ 0));}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{void}\ transformFrameBufferToDisplay(CWRUtil::Q5\&\ x,\ CWRUtil::Q5\&\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ recursiveQuadraticBezier(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x3,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y3,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ level);}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ recursiveCubicBezier(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x3,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y3,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x4,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y4,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ level);}
+\DoxyCodeLine{00243\ \};}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_CANVAS\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,145 @@
+\doxysection{Keyboard.\+hpp}
+\hypertarget{_keyboard_8hpp_source}{}\label{_keyboard_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Keyboard.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Keyboard.hpp}}
+\mbox{\hyperlink{_keyboard_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_KEYBOARD\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_KEYBOARD\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_typed_text_8hpp}{touchgfx/TypedText.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_unicode_8hpp}{touchgfx/Unicode.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_click_event_8hpp}{touchgfx/events/ClickEvent.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drag_event_8hpp}{touchgfx/events/DragEvent.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8hpp}{touchgfx/widgets/Image.hpp}}>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_with_wildcard_8hpp}{touchgfx/widgets/TextAreaWithWildcard.hpp}}>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_keyboard}{Keyboard}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key}{Key}}}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_a84d413174beff1ba470b6d550a8ff467}{keyId}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_a2fc4d715a1763b60000f72d68f787a9a}{keyArea}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_a293425edad969802d2cd83efe46842ef}{highlightBitmapId}};\ }
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area}{CallbackArea}}}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area_a36c824935b337930a2126806b2ecb5a7}{keyArea}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ GenericCallback<>*\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area_a4f600f3b2bf9a20dfba9d72a18ea7fdc}{callback}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area_ab74d439400ce2590d78378bf14e84874}{highlightBitmapId}};\ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}}}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_ad0453792db10324295541fd7c77de377}{bitmap}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key}{Key}}*\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_af214a4da3059d4dbb6c1a3fa99f2907d}{keyArray}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_a1315c2a3ba84bb9b7c3a15c6311dd28b}{numberOfKeys}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area}{CallbackArea}}*\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_abd76900bc061ad82465f079f16dadc8d}{callbackAreaArray}};\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_a6589ddae6904ed9308e34ea87f4a1e7c}{numberOfCallbackAreas}};\ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_a8c86bc1c13b9d5e38967cd6f3d43299f}{textAreaPosition}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_typed_text}{TypedText}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_a7a69772510cc8ec4396a7ce87d4e229d}{textAreaFont}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_a785aa10282ca1b50e5818735d5f5787b}{textAreaFontColor}};\ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ab0e44c90ae4c1ef36dc2b940091825a2}{FontId}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_aa41b9ca02b932bfc3793f23fd236399e}{keyFont}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout_aeef1257420c4ce0d168c1f99892ed766}{keyFontColor}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping}{KeyMapping}}}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_a42a8d6e0e71f4779228763b7150bb7d3}{keyId}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_ace741496091c266fe96ea280797f27b2}{keyValue}};\ }
+\DoxyCodeLine{00093\ \ \ \ \ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{KeyMappingList}}}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping}{KeyMapping}}*\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list_a94945e34b8b09a1f24f5903634dc5d6a}{keyMappingArray}};\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list_ad6ac7e75cae73417e3bc56e39b386dba}{numberOfKeys}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_keyboard}{Keyboard}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a3ad304d5b2ee38c201029b3fd5e28165}{setBuffer}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}*\ newBuffer,\ uint16\_t\ newBufferSize);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a5c4058aa6728f75cfc7a00ccd999f0fa}{setLayout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}}*\ newLayout);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a15443cf09f2fcde592a7131b737ba077}{setTextIndentation}}();}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}}*\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ad6c7d1196c980348a0a9bf791b8b5f93}{getLayout}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a7dd4e9f142caafb29d9944fd88114d54}{layout}};}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a4d95fdb7fa895cafe4451c553dd9cdbb}{setKeymappingList}}(\textcolor{keyword}{const}\ KeyMappingList*\ newKeyMappingList);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{KeyMappingList}}*\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a00e5e896b59aae24017677715926f8cb}{getKeyMappingList}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00162\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_acf7c0e5ca6dac6a93e9459dbc614cd89}{keyMappingList}};}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a8b40391d05d8065b92767edc18dcc01f}{setBufferPosition}}(uint16\_t\ newPos);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00187\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a18c2fcbb050d3443bb360410e3aa4844}{getBufferPosition}}()}
+\DoxyCodeLine{00188\ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a3d88273a78e2147dc1fdcc16e4ce03c4}{bufferPosition}};}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ab1aaf8487953a62b26b07bba52cad127}{getBuffer}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00200\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_aa1ede8220c0a1c73d18ed3b98631232b}{buffer}};}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ae833d1617f1d0ea39f033af62041922e}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a0409498861fff2bb26f0d514141c8b74}{handleClickEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_click_event}{ClickEvent}}\&\ event);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_affae1a3ea32d1abcfacb39a20a7e6c7f}{handleDragEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{DragEvent}}\&\ event);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a7868bf1f4beadb57db94e911e62a775c}{setKeyListener}}(GenericCallback<Unicode::UnicodeChar>\&\ callback)}
+\DoxyCodeLine{00242\ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a421f592e5d87748c5a9f39b2f51cd306}{keyListener}}\ =\ \&callback;}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00247\ \ \ \ \ GenericCallback<Unicode::UnicodeChar>*\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a421f592e5d87748c5a9f39b2f51cd306}{keyListener}};\ }
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_aa1ede8220c0a1c73d18ed3b98631232b}{buffer}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00250\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a937ba644fb2d88c2b769c26f306840b9}{bufferSize}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00251\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a3d88273a78e2147dc1fdcc16e4ce03c4}{bufferPosition}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_image}{Image}}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a9183a1e05b198d4e4269d521ab2addf3}{image}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{TextAreaWithOneWildcard}}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a833e4bf7d0743214ccecd68584a118fb}{enteredText}};\ \ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}}*\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a7dd4e9f142caafb29d9944fd88114d54}{layout}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{KeyMappingList}}*\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_acf7c0e5ca6dac6a93e9459dbc614cd89}{keyMappingList}};\ }
+\DoxyCodeLine{00256\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_image}{Image}}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a05024bc11594ff2f3d89074da853f3a3}{highlightImage}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a111f2c68cb9f155db47c9f67b1574e8e}{cancelIsEmitted}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key}{Key}}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ad89ec87e93e76a550d3a57fa90af9d77}{getKeyForCoordinates}}(int16\_t\ x,\ int16\_t\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a117dc5c3fe5319111974aeb6a6b381f7}{getCharForKey}}(uint8\_t\ keyId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area}{CallbackArea}}\ \mbox{\hyperlink{classtouchgfx_1_1_keyboard_affe3908a367be34dfec16028040ea541}{getCallbackAreaForCoordinates}}(int16\_t\ x,\ int16\_t\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setupDrawChain(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea,\ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}**\ nextPreviousElement);}
+\DoxyCodeLine{00299\ \};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_KEYBOARD\_HPP}}
+
+\end{DoxyCode}

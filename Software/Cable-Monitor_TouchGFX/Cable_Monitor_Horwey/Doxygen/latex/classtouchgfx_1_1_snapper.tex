@@ -1,0 +1,137 @@
+\doxysection{touchgfx\+::Snapper\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_snapper}{}\label{classtouchgfx_1_1_snapper}\index{touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Snapper.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Snapper\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtouchgfx_1_1_snapper}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_snapper_a2ba1e768c9c39a0cacd7839f5d71aa83}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_snapper_a579b3f8553eb71aa1830b92728b8e761}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_snapper_abdb095de1cb93980e9259fb75867687e}{set\+Snap\+Position}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_snapper_a95351e43e3254c755882dacb5aee2e81}{set\+Drag\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \& $>$ \&callback)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_snapper_a5a60b5c49c316b07be99b5b236e9df70}{set\+Snapped\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$$>$ \&callback)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_draggable}{touchgfx\+::\+Draggable$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_draggable_a2d0145fc78034b6ef47401793f915730}{Draggable}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Snapper$<$ T $>$}
+A mix-\/in that will make class T draggable and able to snap to a position when a drag operation has ended. The mix-\/in is able to perform callbacks when the snapper gets dragged and when the \doxylink{classtouchgfx_1_1_snapper}{Snapper} snaps to its snap position.
+
+\begin{DoxySeeAlso}{See also}
+Draggable$<$\+T$>$
+\end{DoxySeeAlso}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & specifies the type to enable the Snap behavior to. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_snapper_a579b3f8553eb71aa1830b92728b8e761}\label{classtouchgfx_1_1_snapper_a579b3f8553eb71aa1830b92728b8e761} 
+\index{touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}!handleClickEvent@{handleClickEvent}}
+\index{handleClickEvent@{handleClickEvent}!touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleClickEvent()}{handleClickEvent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_snapper}{touchgfx\+::\+Snapper}}$<$ T $>$\+::handle\+Click\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Handles the click events when the \doxylink{classtouchgfx_1_1_snapper}{Snapper} is clicked. It saves its current position as the snap position if the \doxylink{classtouchgfx_1_1_snapper}{Snapper} is pressed. This happens when the drag operation starts.
+
+The snapper will then move to the snap position when the click is released. This happens when the drag operation ends.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The click event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_snapper_a2ba1e768c9c39a0cacd7839f5d71aa83}\label{classtouchgfx_1_1_snapper_a2ba1e768c9c39a0cacd7839f5d71aa83} 
+\index{touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}!handleDragEvent@{handleDragEvent}}
+\index{handleDragEvent@{handleDragEvent}!touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleDragEvent()}{handleDragEvent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_snapper}{touchgfx\+::\+Snapper}}$<$ T $>$\+::handle\+Drag\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called when dragging the \doxylink{classtouchgfx_1_1_draggable}{Draggable} object. The object is moved according to the drag event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The drag event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_draggable_ac0abdef3dd0284e7f9c756b8b2cf34f6}{touchgfx\+::\+Draggable$<$ T $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_snapper_a95351e43e3254c755882dacb5aee2e81}\label{classtouchgfx_1_1_snapper_a95351e43e3254c755882dacb5aee2e81} 
+\index{touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}!setDragAction@{setDragAction}}
+\index{setDragAction@{setDragAction}!touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setDragAction()}{setDragAction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_snapper}{touchgfx\+::\+Snapper}}$<$ T $>$\+::set\+Drag\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \& $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the \doxylink{classtouchgfx_1_1_snapper}{Snapper} is dragged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback will be executed with the \doxylink{classtouchgfx_1_1_drag_event}{Drag\+Event}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_generic_callback}{Generic\+Callback} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_snapper_a5a60b5c49c316b07be99b5b236e9df70}\label{classtouchgfx_1_1_snapper_a5a60b5c49c316b07be99b5b236e9df70} 
+\index{touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}!setSnappedAction@{setSnappedAction}}
+\index{setSnappedAction@{setSnappedAction}!touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setSnappedAction()}{setSnappedAction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_snapper}{touchgfx\+::\+Snapper}}$<$ T $>$\+::set\+Snapped\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$$>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the \doxylink{classtouchgfx_1_1_snapper}{Snapper} is snapped.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & The callback to be executed on snap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_generic_callback}{Generic\+Callback} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_snapper_abdb095de1cb93980e9259fb75867687e}\label{classtouchgfx_1_1_snapper_abdb095de1cb93980e9259fb75867687e} 
+\index{touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}!setSnapPosition@{setSnapPosition}}
+\index{setSnapPosition@{setSnapPosition}!touchgfx::Snapper$<$ T $>$@{touchgfx::Snapper$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setSnapPosition()}{setSnapPosition()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_snapper}{touchgfx\+::\+Snapper}}$<$ T $>$\+::set\+Snap\+Position (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the position the \doxylink{classtouchgfx_1_1_snapper}{Snapper} should snap to. This position will be overridden with the Snappers current position when the \doxylink{classtouchgfx_1_1_snapper}{Snapper} is pressed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate. \\
+\hline
+{\em y} & The y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/mixins/\mbox{\hyperlink{_snapper_8hpp}{Snapper.\+hpp}}\end{DoxyCompactItemize}

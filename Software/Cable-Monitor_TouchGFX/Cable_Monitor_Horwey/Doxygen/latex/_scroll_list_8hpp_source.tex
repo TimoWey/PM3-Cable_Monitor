@@ -1,0 +1,76 @@
+\doxysection{Scroll\+List.\+hpp}
+\hypertarget{_scroll_list_8hpp_source}{}\label{_scroll_list_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollList.hpp}}
+\mbox{\hyperlink{_scroll_list_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_SCROLLLIST\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_SCROLLLIST\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drawable_list_8hpp}{touchgfx/containers/scrollers/DrawableList.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_scroll_base_8hpp}{touchgfx/containers/scrollers/ScrollBase.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_click_event_8hpp}{touchgfx/events/ClickEvent.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_scroll_list}{ScrollList}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_base}{ScrollBase}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list}{ScrollList}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_ad4206a7baf23dc976ddb568d8c057882}{setWidth}}(int16\_t\ width);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a90422e20d7f346df955d74097edf65dd}{setHeight}}(int16\_t\ height);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a2a847ae120fdbd79199d00c9b70cdec2}{setDrawableSize}}(int16\_t\ drawableSize,\ int16\_t\ drawableMargin);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a096661aa8c23cb951f78a2afd5d27e85}{setDrawables}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}\&\ drawableListItems,\ GenericCallback<DrawableListItemsInterface*,\ int16\_t,\ int16\_t>\&\ updateDrawableCallback);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a9f7cc791cfbb122b0a19cc11a6ae7ce8}{setWindowSize}}(int16\_t\ items);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_abccd4342ff0b9716e984b65c94c15663}{setPadding}}(int16\_t\ paddingBefore,\ int16\_t\ paddingAfter);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_aaacaeb6437287b3ba6044455ecefaa6c}{getPaddingBefore}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_ac7fd29b47dc87f8b1f434e7d3d4cf741}{getPaddingAfter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a3468d62cadacd2909bb5867ceca80f59}{setSnapping}}(\textcolor{keywordtype}{bool}\ snap);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a1c56929068ffed17023797c90679717a}{getSnapping}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00130\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a63b642d9fa8e69ed8d9ed2a763704446}{getItem}}(int16\_t\ drawableIndex)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_base_aba1bc587a13e046f72347e77bc0c2455}{list}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a0d194f1e1bc3580b41ceaf0b71592744}{getItemIndex}}(drawableIndex);}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a6ec9607579f3227fa6ff50a7da8be942}{handleClickEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_click_event}{ClickEvent}}\&\ event);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a555e86516b670d39555cb773a9843935}{getPositionForItem}}(int16\_t\ itemIndex);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_acdbef84a5eec84b5cc722c670fc3d836}{getNearestAlignedOffset}}(int32\_t\ offset)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_aabbdb5b90e38508abdc96e4a011d17f0}{keepOffsetInsideLimits}}(int32\_t\ newOffset,\ int16\_t\ overShoot)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_ae7bb62bef02b0d491587433e71554874}{paddingAfterLastItem}};\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a4b3f347500b088d738f29a522087a30f}{snapping}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_list_a5dedfb9f8f2f5314b6c5298d4d7b5562}{windowSize}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_SCROLLLIST\_HPP}}
+
+\end{DoxyCode}

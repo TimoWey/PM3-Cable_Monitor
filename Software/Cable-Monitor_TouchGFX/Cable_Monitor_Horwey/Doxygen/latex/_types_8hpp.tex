@@ -1,0 +1,181 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\+Types.hpp File Reference}
+\hypertarget{_types_8hpp}{}\label{_types_8hpp}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp}}
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$touchgfx/hal/\+Config.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1colortype}{touchgfx\+::colortype}}
+\item 
+class \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx\+::\+Rect}}
+\item 
+class \mbox{\hyperlink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector$<$ T, capacity $>$}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_point}{touchgfx\+::\+Point}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_pair}{touchgfx\+::\+Pair$<$ T1, T2 $>$}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_point3_d}{touchgfx\+::\+Point3D}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{touchgfx\+::\+Texture\+Surface}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{touchgfx\+::\+Drawing\+Surface}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_l_z_w9_dictionary_entry}{touchgfx\+::\+LZW9\+Dictionary\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetouchgfx}{touchgfx}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_types_8hpp_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(a,  b)~(((a) $<$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{_types_8hpp_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}(a,  b)~(((a) $>$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{_types_8hpp_aa4825a8339db7fdd4e1f6b9c39157cc4}{ROUNDUP}}(num,  multiple)~((multiple) == 0 ? (num) \+: ((num) + (abs(multiple) -\/ ((num) \% abs(multiple))) \% abs(multiple)))
+\item 
+\#define \mbox{\hyperlink{_types_8hpp_a5fd3280d51c4dd4eaf181a8a504d7414}{ROUNDDOWN}}(num,  multiple)~(-\/(\mbox{\hyperlink{_types_8hpp_aa4825a8339db7fdd4e1f6b9c39157cc4}{ROUNDUP}}(-\/(num), multiple)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{namespacetouchgfx_a8495f460a7b4bb05f9f3b8bd7be47519}{touchgfx\+::\+Alignment}}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{touchgfx\+::\+Text\+Direction}}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{touchgfx\+::\+Rendering\+Variant}}
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{touchgfx\+::fixed28\+\_\+4}}
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{touchgfx\+::fixed16\+\_\+16}}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{namespacetouchgfx_a89f4fee87850363255e1c28e7b137259}{touchgfx\+::\+Typed\+Text\+Id}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{touchgfx\+::\+Direction}} \{ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ad70ef04ee382c777b21b87ebc92b5590}{touchgfx\+::\+NORTH}}
+, \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ab55e06157c018e7047bb6738d58274d5}{touchgfx\+::\+SOUTH}}
+, \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a18f37db8f060364702c14dddb171e1ea}{touchgfx\+::\+EAST}}
+, \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a76198d41f9ca65e0d5d07fe1d0292fb1}{touchgfx\+::\+WEST}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_a379ddc4ad9250c969fc3c9ddcb574e72}{touchgfx\+::\+Frame\+Buffer}} \{ \mbox{\hyperlink{namespacetouchgfx_a379ddc4ad9250c969fc3c9ddcb574e72aa5556f96c5c1a34494e75bfbb8a69570}{touchgfx\+::\+FB\+\_\+\+PRIMARY}}
+, \mbox{\hyperlink{namespacetouchgfx_a379ddc4ad9250c969fc3c9ddcb574e72a5b49086026fc534e639581a8a322ed9c}{touchgfx\+::\+FB\+\_\+\+SECONDARY}}
+, \mbox{\hyperlink{namespacetouchgfx_a379ddc4ad9250c969fc3c9ddcb574e72a69530da22fe474182c3f0f87830a5421}{touchgfx\+::\+FB\+\_\+\+TERTIARY}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_af7474d3e876a0bc900dca7ade13f16bd}{touchgfx\+::\+Gradient}} \{ \mbox{\hyperlink{namespacetouchgfx_af7474d3e876a0bc900dca7ade13f16bdafd5fb473f0ecfbe749b3e5d2a6c0382f}{touchgfx\+::\+GRADIENT\+\_\+\+HORIZONTAL}}
+, \mbox{\hyperlink{namespacetouchgfx_af7474d3e876a0bc900dca7ade13f16bdad02fca6b0e6d335bcbcb7c55fe57cebe}{touchgfx\+::\+GRADIENT\+\_\+\+VERTICAL}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_ae8c781d7b6f62fbbf961e9ff7b98c4bc}{touchgfx\+::\+Display\+Rotation}} \{ \mbox{\hyperlink{namespacetouchgfx_ae8c781d7b6f62fbbf961e9ff7b98c4bca74aca4427407af52c2c54a442d517c3d}{touchgfx\+::rotate0}}
+, \mbox{\hyperlink{namespacetouchgfx_ae8c781d7b6f62fbbf961e9ff7b98c4bcad890d407dc71097603eb59712fc01854}{touchgfx\+::rotate90}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498}{touchgfx\+::\+Display\+Orientation}} \{ \mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498a466d8bef6e8b5c020df2f7568e6b5bc8}{touchgfx\+::\+ORIENTATION\+\_\+\+LANDSCAPE}}
+, \mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498a2559e2b6fea478593ebf99db33733668}{touchgfx\+::\+ORIENTATION\+\_\+\+PORTRAIT}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{touchgfx\+::\+Text\+Rotation}} \{ \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4ac44a3e7382f27bb28226d84c8ee52b0b}{touchgfx\+::\+TEXT\+\_\+\+ROTATE\+\_\+0}}
+, \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4a01b7b9aea8018129bab8fe331418bee3}{touchgfx\+::\+TEXT\+\_\+\+ROTATE\+\_\+90}}
+, \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4a0d7aed91c00f75cef626b0afb49afd50}{touchgfx\+::\+TEXT\+\_\+\+ROTATE\+\_\+180}}
+, \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4a0a800b6813af96abdbba7117ccaea4cd}{touchgfx\+::\+TEXT\+\_\+\+ROTATE\+\_\+270}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7d}{touchgfx\+::\+Wide\+Text\+Action}} \{ \newline
+\mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7dacc458e6475f560567ee73491376159fa}{touchgfx\+::\+WIDE\+\_\+\+TEXT\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7da2f900ff07169f7cd47de4eb687b94704}{touchgfx\+::\+WIDE\+\_\+\+TEXT\+\_\+\+WORDWRAP}}
+, \mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7da49978f6fdcdf354e9756de313e3b1a06}{touchgfx\+::\+WIDE\+\_\+\+TEXT\+\_\+\+WORDWRAP\+\_\+\+ELLIPSIS}}
+, \mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7dacd63e7606423620a6de5876cc364dae8}{touchgfx\+::\+WIDE\+\_\+\+TEXT\+\_\+\+WORDWRAP\+\_\+\+ELLIPSIS\+\_\+\+AFTER\+\_\+\+SPACE}}
+, \newline
+\mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7da7e498f77548edf4531d511d699f77f22}{touchgfx\+::\+WIDE\+\_\+\+TEXT\+\_\+\+CHARWRAP}}
+, \mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7daed0ce349173cc99d5e337b960dae869e}{touchgfx\+::\+WIDE\+\_\+\+TEXT\+\_\+\+CHARWRAP\+\_\+\+ELLIPSIS}}
+, \mbox{\hyperlink{namespacetouchgfx_acec29a2f0bd043566b87db2fe2f27f7da6ad074f815790e28ef0614a9d1973ee8}{touchgfx\+::\+WIDE\+\_\+\+TEXT\+\_\+\+CHARWRAP\+\_\+\+DOUBLE\+\_\+\+ELLIPSIS}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9}{touchgfx\+::\+DMAType}} \{ \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9a053f3011725d051da7bce888805d1e68}{touchgfx\+::\+DMA\+\_\+\+TYPE\+\_\+\+GENERIC}}
+, \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9a800ebeb906760f5c205bc3cbf6ec430a}{touchgfx\+::\+DMA\+\_\+\+TYPE\+\_\+\+CHROMART}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232}{touchgfx\+::\+Vector\+Primitives}} \{ \newline
+\mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232acb139eb8bac7cef3647a11aadee6d8b8}{touchgfx\+::\+VECTOR\+\_\+\+PRIM\+\_\+\+CLOSE}} = 0
+, \mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232a1171500e489c007b5164484fa5221beb}{touchgfx\+::\+VECTOR\+\_\+\+PRIM\+\_\+\+MOVE}} = 1
+, \mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232ad98ace9e4f49f5603a34368d6c07ca9d}{touchgfx\+::\+VECTOR\+\_\+\+PRIM\+\_\+\+LINE}} = 2
+, \mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232a71411ac90b284b0165215a8a9ce35c74}{touchgfx\+::\+VECTOR\+\_\+\+PRIM\+\_\+\+HLINE}} = 3
+, \newline
+\mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232a930a8be42bc1eb5c8cdab745e3a26be7}{touchgfx\+::\+VECTOR\+\_\+\+PRIM\+\_\+\+VLINE}} = 4
+, \mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232ab1e06f7404cfe987cf30a99edfc02876}{touchgfx\+::\+VECTOR\+\_\+\+PRIM\+\_\+\+BEZIER\+\_\+\+QUAD}} = 5
+, \mbox{\hyperlink{namespacetouchgfx_adca11271318102dfde003760fedff232a876caaaf56963c2db28c368b0925faa6}{touchgfx\+::\+VECTOR\+\_\+\+PRIM\+\_\+\+BEZIER\+\_\+\+CUBIC}} = 6
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares the \doxylink{structtouchgfx_1_1colortype}{touchgfx\+::colortype}, \doxylink{classtouchgfx_1_1_rect}{touchgfx\+::\+Rect}, \doxylink{classtouchgfx_1_1_vector}{touchgfx\+::\+Vector}, \doxylink{structtouchgfx_1_1_point}{touchgfx\+::\+Point}, \doxylink{structtouchgfx_1_1_pair}{touchgfx\+::\+Pair} classes as well as some less used classes and structs. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_types_8hpp_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{_types_8hpp_afa99ec4acc4ecb2dc3c2d05da15d0e3f} 
+\index{Types.hpp@{Types.hpp}!MAX@{MAX}}
+\index{MAX@{MAX}!Types.hpp@{Types.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $>$ (b)) ? (a) \+: (b))}
+
+A macro that returns the largest of two items.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first item. \\
+\hline
+{\em b} & The second item. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_types_8hpp_a3acffbd305ee72dcd4593c0d8af64a4f}\label{_types_8hpp_a3acffbd305ee72dcd4593c0d8af64a4f} 
+\index{Types.hpp@{Types.hpp}!MIN@{MIN}}
+\index{MIN@{MIN}!Types.hpp@{Types.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define MIN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $<$ (b)) ? (a) \+: (b))}
+
+A macro that returns the smallest of two items.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first item. \\
+\hline
+{\em b} & The second item. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_types_8hpp_a5fd3280d51c4dd4eaf181a8a504d7414}\label{_types_8hpp_a5fd3280d51c4dd4eaf181a8a504d7414} 
+\index{Types.hpp@{Types.hpp}!ROUNDDOWN@{ROUNDDOWN}}
+\index{ROUNDDOWN@{ROUNDDOWN}!Types.hpp@{Types.hpp}}
+\doxysubsubsection{\texorpdfstring{ROUNDDOWN}{ROUNDDOWN}}
+{\footnotesize\ttfamily \#define ROUNDDOWN(\begin{DoxyParamCaption}\item[{}]{num,  }\item[{}]{multiple }\end{DoxyParamCaption})~(-\/(\mbox{\hyperlink{_types_8hpp_aa4825a8339db7fdd4e1f6b9c39157cc4}{ROUNDUP}}(-\/(num), multiple)))}
+
+A macro that rounds a number down to the next multiple. Works for negative numbers, too.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number to round down. \\
+\hline
+{\em multiple} & The multiple. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_types_8hpp_aa4825a8339db7fdd4e1f6b9c39157cc4}\label{_types_8hpp_aa4825a8339db7fdd4e1f6b9c39157cc4} 
+\index{Types.hpp@{Types.hpp}!ROUNDUP@{ROUNDUP}}
+\index{ROUNDUP@{ROUNDUP}!Types.hpp@{Types.hpp}}
+\doxysubsubsection{\texorpdfstring{ROUNDUP}{ROUNDUP}}
+{\footnotesize\ttfamily \#define ROUNDUP(\begin{DoxyParamCaption}\item[{}]{num,  }\item[{}]{multiple }\end{DoxyParamCaption})~((multiple) == 0 ? (num) \+: ((num) + (abs(multiple) -\/ ((num) \% abs(multiple))) \% abs(multiple)))}
+
+A macro that rounds a number up to the next multiple. Works for negative numbers, too.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number to round up. \\
+\hline
+{\em multiple} & The multiple. \\
+\hline
+\end{DoxyParams}

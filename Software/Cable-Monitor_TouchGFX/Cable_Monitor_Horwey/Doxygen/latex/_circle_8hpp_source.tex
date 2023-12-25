@@ -1,0 +1,267 @@
+\doxysection{Circle.\+hpp}
+\hypertarget{_circle_8hpp_source}{}\label{_circle_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp}}
+\mbox{\hyperlink{_circle_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_CIRCLE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_CIRCLE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_c_w_r_util_8hpp}{touchgfx/widgets/canvas/CWRUtil.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_canvas_8hpp}{touchgfx/widgets/canvas/Canvas.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_canvas_widget_8hpp}{touchgfx/widgets/canvas/CanvasWidget.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_circle}{Circle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{CanvasWidget}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_circle}{Circle}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a90a15e68861d71607e419f2dc265ef90}{setCircle}}(\textcolor{keyword}{const}\ T\ x,\ \textcolor{keyword}{const}\ T\ y,\ \textcolor{keyword}{const}\ T\ r)}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ setCenter<T>(x,\ y);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ setRadius<T>(r);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a8a0578dbee1876cb4030e9d54d5fc3c1}{setCircle}}(\textcolor{keyword}{const}\ int16\_t\ x,\ \textcolor{keyword}{const}\ int16\_t\ y,\ \textcolor{keyword}{const}\ int16\_t\ r)}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ setCircle<int>(x,\ y,\ r);}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a835d00e57fa0c8c23d0be42533357e7f}{setCenter}}(\textcolor{keyword}{const}\ T\ x,\ \textcolor{keyword}{const}\ T\ y)}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ this-\/>circleCenterX\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(x);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ this-\/>circleCenterY\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(y);}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_ad21174ad6ce66b9ef7afcdf660aa6cc2}{setCenter}}(\textcolor{keyword}{const}\ int16\_t\ x,\ \textcolor{keyword}{const}\ int16\_t\ y)}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ setCenter<int>(x,\ y);}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_ad81b821edaaa575bace15ccbb20e3edb}{setPixelCenter}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ int32\_t\ half\ =\ (int32\_t)\mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(1)\ /\ 2;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ setCenter<CWRUtil::Q5>(\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}((int32\_t)\mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(x)\ +\ half),\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}((int32\_t)\mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(y)\ +\ half));}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a07ee7c3643f5935324aacb65d135d46d}{getCenter}}(T\&\ x,\ T\&\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00146\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ x\ =\ circleCenterX.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ y\ =\ circleCenterY.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_aecf933b9a8a52bff34b9149a1d97edde}{setRadius}}(\textcolor{keyword}{const}\ T\ r)}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ this-\/>circleRadius\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(r);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ this-\/>circleRadius\ =\ MAX(\mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(0),\ this-\/>circleRadius);}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a271855fd5cbc57fd5111cc6f2a0e8195}{getRadius}}(T\&\ r)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00176\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ r\ =\ circleRadius.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_ac48b8997268d609ec68e929edb54a6e4}{setArc}}(\textcolor{keyword}{const}\ T\ startAngle,\ \textcolor{keyword}{const}\ T\ endAngle)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ circleArcAngleStart\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(startAngle);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ circleArcAngleEnd\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(endAngle);}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_ad89aa9cf789425c5f5cbc1c45eecc2dc}{setArc}}(\textcolor{keyword}{const}\ int16\_t\ startAngle,\ \textcolor{keyword}{const}\ int16\_t\ endAngle)}
+\DoxyCodeLine{00215\ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ setArc<int>(startAngle,\ endAngle);}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a700f94e45e43265d2e6c659ab54b05e2}{getArc}}(T\&\ startAngle,\ T\&\ endAngle)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00232\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ startAngle\ =\ circleArcAngleStart.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ endAngle\ =\ circleArcAngleEnd.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00246\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a2f9670f23501b56c9d5dbed49cadac70}{getArcStart}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00247\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ circleArcAngleStart.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00249\ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_ab95b9f75426b42b706ea364ebc8036a7}{getArcStart}}(T\&\ angle)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00263\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ angle\ =\ circleArcAngleStart.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00276\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a2d61e3fdee6cf1c258c76981c36c29bd}{getArcEnd}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00277\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ circleArcAngleEnd.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a4cef3480f70c1b102f6ce141f007e99a}{getArcEnd}}(T\&\ angle)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00291\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ angle\ =\ circleArcAngleEnd.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_aa4b2a7bfd96c4e86486cfa068abdd986}{updateArcStart}}(\textcolor{keyword}{const}\ T\ startAngle)}
+\DoxyCodeLine{00308\ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ startAngleQ5\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(startAngle);}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (circleArcAngleStart\ ==\ startAngleQ5)}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ minimalRect\ =\ getMinimalRectForUpdatedStartAngle(startAngleQ5);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ circleArcAngleStart\ =\ startAngleQ5;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidateRect}}(minimalRect);}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a3850886743388696f1933494d90ab3f9}{updateArcEnd}}(\textcolor{keyword}{const}\ T\ endAngle)}
+\DoxyCodeLine{00332\ \ \ \ \ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ endAngleQ5\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(endAngle);}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (circleArcAngleEnd\ ==\ endAngleQ5)}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ minimalRect\ =\ getMinimalRectForUpdatedEndAngle(endAngleQ5);}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ circleArcAngleEnd\ =\ endAngleQ5;}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidateRect}}(minimalRect);}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a34355146e12ddbf401864ce62a06de0e}{updateArc}}(\textcolor{keyword}{const}\ T\ startAngle,\ \textcolor{keyword}{const}\ T\ endAngle)}
+\DoxyCodeLine{00358\ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_circle_a34355146e12ddbf401864ce62a06de0e}{updateArc}}(\mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(startAngle),\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(endAngle));}
+\DoxyCodeLine{00360\ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a89b752aa1cf20339f200c6fbce256903}{setLineWidth}}(\textcolor{keyword}{const}\ T\ width)}
+\DoxyCodeLine{00375\ \ \ \ \ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ this-\/>circleLineWidth\ =\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(width);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ this-\/>circleLineWidth\ =\ MAX(\mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a838d1977f20a59379cb8e834f7ecc962}{CWRUtil::toQ5}}(0),\ this-\/>circleLineWidth);}
+\DoxyCodeLine{00378\ \ \ \ \ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a7366378dbfbda66af04dc8c7ab31e877}{getLineWidth}}(T\&\ width)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00390\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ width\ =\ circleLineWidth.\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5_a9265f82e5d794962f359c227e3ab8915}{to}}<T>();}
+\DoxyCodeLine{00392\ \ \ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a8c24cf76093ce842ef48f20e9ef749ef}{setPrecision}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision);}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a64619866a04f1a5d5af5eb709145087c}{getPrecision}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a06ab904a790dcddbea22850a46efbab8}{setCapPrecision}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ precision);}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a095d45f9f14596159e41041fe359a215}{getCapPrecision}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a021501f29924d4fddd74e348dd66b49e}{drawCanvasWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a6cc5dce4d2b1350f83caf6e3ff0755d6}{getMinimalRect}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00445\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a6cc5dce4d2b1350f83caf6e3ff0755d6}{getMinimalRect}}(circleArcAngleStart,\ circleArcAngleEnd);}
+\DoxyCodeLine{00447\ \ \ \ \ \}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00457\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_aec691a0d6172939639f8718b2817ce9b}{getMinimalRect}}(int16\_t\ arcStart,\ int16\_t\ arcEnd)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00458\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a6cc5dce4d2b1350f83caf6e3ff0755d6}{getMinimalRect}}(CWRUtil::toQ5<int>(arcStart),\ CWRUtil::toQ5<int>(arcEnd));}
+\DoxyCodeLine{00460\ \ \ \ \ \}}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00470\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a6cc5dce4d2b1350f83caf6e3ff0755d6}{getMinimalRect}}(\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ arcStart,\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ arcEnd)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_a34355146e12ddbf401864ce62a06de0e}{updateArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ setStartAngleQ5,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ setEndAngleQ5);}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00487\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ circleCenterX;}
+\DoxyCodeLine{00488\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ circleCenterY;}
+\DoxyCodeLine{00489\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ circleRadius;}
+\DoxyCodeLine{00490\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ circleArcAngleStart;}
+\DoxyCodeLine{00491\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ circleArcAngleEnd;}
+\DoxyCodeLine{00492\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\ circleLineWidth;}
+\DoxyCodeLine{00493\ \ \ \ \ uint8\_t\ circleArcIncrement;}
+\DoxyCodeLine{00494\ \ \ \ \ uint8\_t\ circleCapArcIncrement;}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ moveToAngleRadius2(\mbox{\hyperlink{classtouchgfx_1_1_canvas}{Canvas}}\&\ canvas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\&\ angle,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil::Q5}}\&\ r2)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00497\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ canvas.moveTo(circleCenterX\ +\ ((r2\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a32909edd3df114dccffdf6e609c8fc92}{CWRUtil::sine}}(angle))\ /\ 2),\ circleCenterY\ -\/\ ((r2\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a2310cfb809993ac23e701ca9c347e04b}{CWRUtil::cosine}}(angle))\ /\ 2));}
+\DoxyCodeLine{00499\ \ \ \ \ \}}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ lineToAngleRadius2(Canvas\&\ canvas,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ angle,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ r2)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00502\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ lineToXYAngleRadius2(canvas,\ circleCenterX,\ circleCenterY,\ angle,\ r2);}
+\DoxyCodeLine{00504\ \ \ \ \ \}}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ lineToXYAngleRadius2(Canvas\&\ canvas,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ x,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ y,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ angle,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ r2)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00507\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ canvas.lineTo(x\ +\ ((r2\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a32909edd3df114dccffdf6e609c8fc92}{CWRUtil::sine}}(angle))\ /\ 2),\ y\ -\/\ ((r2\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a2310cfb809993ac23e701ca9c347e04b}{CWRUtil::cosine}}(angle))\ /\ 2));}
+\DoxyCodeLine{00509\ \ \ \ \ \}}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ updateMinMaxAngleLine(\textcolor{keyword}{const}\ CWRUtil::Q5\&\ angle,\ \textcolor{keyword}{const}\ CWRUtil::Q5\&\ halfLineWidth,\ CWRUtil::Q5\&\ xMin,\ CWRUtil::Q5\&\ xMax,\ CWRUtil::Q5\&\ yMin,\ CWRUtil::Q5\&\ yMax)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00512\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CWRUtil::Q5\ xNew\ =\ circleCenterX\ +\ (circleRadius\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a32909edd3df114dccffdf6e609c8fc92}{CWRUtil::sine}}(angle));}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ updateMinMaxX(xNew\ -\/\ halfLineWidth,\ xMin,\ xMax);}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ updateMinMaxX(xNew\ +\ halfLineWidth,\ xMin,\ xMax);}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CWRUtil::Q5\ yNew\ =\ circleCenterY\ -\/\ (circleRadius\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a2310cfb809993ac23e701ca9c347e04b}{CWRUtil::cosine}}(angle));}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ updateMinMaxY(yNew\ -\/\ halfLineWidth,\ yMin,\ yMax);}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ updateMinMaxY(yNew\ +\ halfLineWidth,\ yMin,\ yMax);}
+\DoxyCodeLine{00519\ \ \ \ \ \}}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ updateMinMaxAngleSolid(\textcolor{keyword}{const}\ CWRUtil::Q5\&\ angle,\ CWRUtil::Q5\&\ xMin,\ CWRUtil::Q5\&\ xMax,\ CWRUtil::Q5\&\ yMin,\ CWRUtil::Q5\&\ yMax)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00522\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ updateMinMaxX(circleCenterX\ +\ (circleRadius\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a32909edd3df114dccffdf6e609c8fc92}{CWRUtil::sine}}(angle)),\ xMin,\ xMax);}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ updateMinMaxY(circleCenterY\ -\/\ (circleRadius\ *\ \mbox{\hyperlink{structtouchgfx_1_1_c_w_r_util_a2310cfb809993ac23e701ca9c347e04b}{CWRUtil::cosine}}(angle)),\ yMin,\ yMax);}
+\DoxyCodeLine{00525\ \ \ \ \ \}}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ updateMinMaxX(\textcolor{keyword}{const}\ CWRUtil::Q5\&\ xNew,\ CWRUtil::Q5\&\ xMin,\ CWRUtil::Q5\&\ xMax)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00528\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (xNew\ <\ xMin)}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ xMin\ =\ xNew;}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (xNew\ >\ xMax)}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ xMax\ =\ xNew;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00537\ \ \ \ \ \}}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ updateMinMaxY(\textcolor{keyword}{const}\ CWRUtil::Q5\&\ yNew,\ CWRUtil::Q5\&\ yMin,\ CWRUtil::Q5\&\ yMax)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00540\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (yNew\ <\ yMin)}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ yMin\ =\ yNew;}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (yNew\ >\ yMax)}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ yMax\ =\ yNew;}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00549\ \ \ \ \ \}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateMinimalRect(CWRUtil::Q5\ arcStart,\ CWRUtil::Q5\ arcEnd,\ CWRUtil::Q5\&\ xMin,\ CWRUtil::Q5\&\ xMax,\ CWRUtil::Q5\&\ yMin,\ CWRUtil::Q5\&\ yMax)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00552\ \ \ \ \ Rect\ getMinimalRectForUpdatedStartAngle(\textcolor{keyword}{const}\ CWRUtil::Q5\&\ startAngleQ5)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00553\ \ \ \ \ Rect\ getMinimalRectForUpdatedEndAngle(\textcolor{keyword}{const}\ CWRUtil::Q5\&\ endAngleQ5)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00554\ \};}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_CIRCLE\_HPP}}
+
+\end{DoxyCode}

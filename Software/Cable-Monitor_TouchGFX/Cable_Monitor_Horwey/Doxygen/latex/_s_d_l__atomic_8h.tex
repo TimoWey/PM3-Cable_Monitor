@@ -1,0 +1,231 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+atomic.h File Reference}
+\hypertarget{_s_d_l__atomic_8h}{}\label{_s_d_l__atomic_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_atomic.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_atomic.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+platform.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em A type representing an atomic integer value. It is a struct so people don\textquotesingle{}t accidentally use numeric operations on it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{SDL Atomic\+Lock}
+The atomic locks are efficient spinlocks using CPU instructions, but are vulnerable to starvation and can spin forever if a thread holding a lock has been terminated. For this reason you should minimize the code executed inside an atomic lock and never do expensive things like API or system calls while holding them.
+
+The atomic locks are not safe to lock recursively.
+
+Porting Note\+: The spin lock functions and type are required and can not be emulated because they are used in the atomic emulation code. \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__atomic_8h_a36d435d444dc115a5cc11fa7027576ec}{SDL\+\_\+\+Compiler\+Barrier}}()~\{ SDL\+\_\+\+Spin\+Lock \+\_\+tmp = 0; \mbox{\hyperlink{_s_d_l__atomic_8h_a95ecd72190ba8e5ed6ed78d5d1b36509}{SDL\+\_\+\+Atomic\+Lock}}(\&\+\_\+tmp); \mbox{\hyperlink{_s_d_l__atomic_8h_a3fb14c56b17347349ac2fb5300205bac}{SDL\+\_\+\+Atomic\+Unlock}}(\&\+\_\+tmp); \}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__atomic_8h_a041cb5705236fe51b35cb3d59c1fbba7}{SDL\+\_\+\+Memory\+Barrier\+Release}}()~\mbox{\hyperlink{_s_d_l__atomic_8h_a36d435d444dc115a5cc11fa7027576ec}{SDL\+\_\+\+Compiler\+Barrier}}()
+\item 
+\Hypertarget{_s_d_l__atomic_8h_aa33019d94c637a106218dde56b46a20a}\label{_s_d_l__atomic_8h_aa33019d94c637a106218dde56b46a20a} 
+\#define {\bfseries SDL\+\_\+\+Memory\+Barrier\+Acquire}()~\mbox{\hyperlink{_s_d_l__atomic_8h_a36d435d444dc115a5cc11fa7027576ec}{SDL\+\_\+\+Compiler\+Barrier}}()
+\item 
+\Hypertarget{_s_d_l__atomic_8h_a9c3b04a6ce4b6907bfb6e2ea4649ff64}\label{_s_d_l__atomic_8h_a9c3b04a6ce4b6907bfb6e2ea4649ff64} 
+\#define {\bfseries SDL\+\_\+\+Atomic\+Inc\+Ref}(a)~\mbox{\hyperlink{_s_d_l__atomic_8h_a36cadfcf8e2bda1974fbce6afdc6d529}{SDL\+\_\+\+Atomic\+Add}}(a, 1)
+\begin{DoxyCompactList}\small\item\em Increment an atomic variable used as a reference count. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_s_d_l__atomic_8h_a1602c33647cfdfa8ae49a2eef10341c9}{SDL\+\_\+\+Atomic\+Dec\+Ref}}(a)~(\mbox{\hyperlink{_s_d_l__atomic_8h_a36cadfcf8e2bda1974fbce6afdc6d529}{SDL\+\_\+\+Atomic\+Add}}(a, -\/1) == 1)
+\begin{DoxyCompactList}\small\item\em Decrement an atomic variable used as a reference count. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__atomic_8h_a59179ff8d21c65b9d9a544f3c2088e81}\label{_s_d_l__atomic_8h_a59179ff8d21c65b9d9a544f3c2088e81} 
+typedef int {\bfseries SDL\+\_\+\+Spin\+Lock}
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_a5410c5f832f0d862282cd65fc432fc0b}{SDL\+\_\+\+Atomic\+Try\+Lock}} (SDL\+\_\+\+Spin\+Lock \texorpdfstring{$\ast$}{*}lock)
+\begin{DoxyCompactList}\small\item\em Try to lock a spin lock by setting it to a non-\/zero value. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_a95ecd72190ba8e5ed6ed78d5d1b36509}{SDL\+\_\+\+Atomic\+Lock}} (SDL\+\_\+\+Spin\+Lock \texorpdfstring{$\ast$}{*}lock)
+\begin{DoxyCompactList}\small\item\em Lock a spin lock by setting it to a non-\/zero value. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_a3fb14c56b17347349ac2fb5300205bac}{SDL\+\_\+\+Atomic\+Unlock}} (SDL\+\_\+\+Spin\+Lock \texorpdfstring{$\ast$}{*}lock)
+\begin{DoxyCompactList}\small\item\em Unlock a spin lock by setting it to 0. Always returns immediately. \end{DoxyCompactList}\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_ad6b90be91abb896260930d3908c0437b}{SDL\+\_\+\+Atomic\+CAS}} (\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}} \texorpdfstring{$\ast$}{*}a, int oldval, int newval)
+\begin{DoxyCompactList}\small\item\em Set an atomic variable to a new value if it is currently an old value. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_a95b659308ebb16226d5c0cbf2188e51d}{SDL\+\_\+\+Atomic\+Set}} (\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}} \texorpdfstring{$\ast$}{*}a, int v)
+\begin{DoxyCompactList}\small\item\em Set an atomic variable to a value. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__atomic_8h_a633c2661709f59c98f128f99aea36d96}\label{_s_d_l__atomic_8h_a633c2661709f59c98f128f99aea36d96} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Atomic\+Get} (\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}} \texorpdfstring{$\ast$}{*}a)
+\begin{DoxyCompactList}\small\item\em Get the value of an atomic variable. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_a36cadfcf8e2bda1974fbce6afdc6d529}{SDL\+\_\+\+Atomic\+Add}} (\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}} \texorpdfstring{$\ast$}{*}a, int v)
+\begin{DoxyCompactList}\small\item\em Add to an atomic variable. \end{DoxyCompactList}\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_aa3070cf7f391b522e08595822c2f0eba}{SDL\+\_\+\+Atomic\+CASPtr}} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}a, void \texorpdfstring{$\ast$}{*}oldval, void \texorpdfstring{$\ast$}{*}newval)
+\begin{DoxyCompactList}\small\item\em Set a pointer to a new value if it is currently an old value. \end{DoxyCompactList}\item 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__atomic_8h_a3207340e57c812760328fa4f15198919}{SDL\+\_\+\+Atomic\+Set\+Ptr}} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}a, void \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Set a pointer to a value atomically. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__atomic_8h_abbfdbca42b03cce91ab5a5f7f5078d4d}\label{_s_d_l__atomic_8h_abbfdbca42b03cce91ab5a5f7f5078d4d} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+Atomic\+Get\+Ptr} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}a)
+\begin{DoxyCompactList}\small\item\em Get the value of a pointer atomically. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Atomic operations.
+
+IMPORTANT\+: If you are not an expert in concurrent lockless programming, you should only be using the atomic lock and reference counting functions in this file. In all other cases you should be protecting your data structures with full mutexes.
+
+The list of "{}safe"{} functions to use are\+: \doxylink{_s_d_l__atomic_8h_a95ecd72190ba8e5ed6ed78d5d1b36509}{SDL\+\_\+\+Atomic\+Lock()} \doxylink{_s_d_l__atomic_8h_a3fb14c56b17347349ac2fb5300205bac}{SDL\+\_\+\+Atomic\+Unlock()} \doxylink{_s_d_l__atomic_8h_a9c3b04a6ce4b6907bfb6e2ea4649ff64}{SDL\+\_\+\+Atomic\+Inc\+Ref()} \doxylink{_s_d_l__atomic_8h_a1602c33647cfdfa8ae49a2eef10341c9}{SDL\+\_\+\+Atomic\+Dec\+Ref()}
+
+Seriously, here be dragons! \texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}
+
+You can find out a little more about lockless programming and the subtle issues that can arise here\+: \href{http://msdn.microsoft.com/en-us/library/ee418650\%28v=vs.85\%29.aspx}{\texttt{ http\+://msdn.\+microsoft.\+com/en-\/us/library/ee418650\%28v=vs.\+85\%29.\+aspx}}
+
+There\textquotesingle{}s also lots of good information here\+: \href{http://www.1024cores.net/home/lock-free-algorithms}{\texttt{ http\+://www.\+1024cores.\+net/home/lock-\/free-\/algorithms}} \href{http://preshing.com/}{\texttt{ http\+://preshing.\+com/}}
+
+These operations may or may not actually be implemented using processor specific atomic operations. When possible they are implemented as true processor specific atomic operations. When that is not possible the are implemented using locks that {\itshape do} use the available atomic operations.
+
+All of the atomic operations that modify memory are full memory barriers. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_s_d_l__atomic_8h_a1602c33647cfdfa8ae49a2eef10341c9}\label{_s_d_l__atomic_8h_a1602c33647cfdfa8ae49a2eef10341c9} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicDecRef@{SDL\_AtomicDecRef}}
+\index{SDL\_AtomicDecRef@{SDL\_AtomicDecRef}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicDecRef}{SDL\_AtomicDecRef}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+Atomic\+Dec\+Ref(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~(\mbox{\hyperlink{_s_d_l__atomic_8h_a36cadfcf8e2bda1974fbce6afdc6d529}{SDL\+\_\+\+Atomic\+Add}}(a, -\/1) == 1)}
+
+
+
+Decrement an atomic variable used as a reference count. 
+
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+TRUE if the variable reached zero after decrementing, SDL\+\_\+\+FALSE otherwise 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__atomic_8h_a36d435d444dc115a5cc11fa7027576ec}\label{_s_d_l__atomic_8h_a36d435d444dc115a5cc11fa7027576ec} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_CompilerBarrier@{SDL\_CompilerBarrier}}
+\index{SDL\_CompilerBarrier@{SDL\_CompilerBarrier}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_CompilerBarrier}{SDL\_CompilerBarrier}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+Compiler\+Barrier(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\{ SDL\+\_\+\+Spin\+Lock \+\_\+tmp = 0; \mbox{\hyperlink{_s_d_l__atomic_8h_a95ecd72190ba8e5ed6ed78d5d1b36509}{SDL\+\_\+\+Atomic\+Lock}}(\&\+\_\+tmp); \mbox{\hyperlink{_s_d_l__atomic_8h_a3fb14c56b17347349ac2fb5300205bac}{SDL\+\_\+\+Atomic\+Unlock}}(\&\+\_\+tmp); \}}
+
+The compiler barrier prevents the compiler from reordering reads and writes to globally visible variables across the call. \Hypertarget{_s_d_l__atomic_8h_a041cb5705236fe51b35cb3d59c1fbba7}\label{_s_d_l__atomic_8h_a041cb5705236fe51b35cb3d59c1fbba7} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_MemoryBarrierRelease@{SDL\_MemoryBarrierRelease}}
+\index{SDL\_MemoryBarrierRelease@{SDL\_MemoryBarrierRelease}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MemoryBarrierRelease}{SDL\_MemoryBarrierRelease}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+Memory\+Barrier\+Release(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{_s_d_l__atomic_8h_a36d435d444dc115a5cc11fa7027576ec}{SDL\+\_\+\+Compiler\+Barrier}}()}
+
+Memory barriers are designed to prevent reads and writes from being reordered by the compiler and being seen out of order on multi-\/core CPUs.
+
+A typical pattern would be for thread A to write some data and a flag, and for thread B to read the flag and get the data. In this case you would insert a release barrier between writing the data and the flag, guaranteeing that the data write completes no later than the flag is written, and you would insert an acquire barrier between reading the flag and reading the data, to ensure that all the reads associated with the flag have completed.
+
+In this pattern you should always see a release barrier paired with an acquire barrier and you should gate the data reads/writes with a single flag variable.
+
+For more information on these semantics, take a look at the blog post\+: \href{http://preshing.com/20120913/acquire-and-release-semantics}{\texttt{ http\+://preshing.\+com/20120913/acquire-\/and-\/release-\/semantics}} 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__atomic_8h_a36cadfcf8e2bda1974fbce6afdc6d529}\label{_s_d_l__atomic_8h_a36cadfcf8e2bda1974fbce6afdc6d529} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicAdd@{SDL\_AtomicAdd}}
+\index{SDL\_AtomicAdd@{SDL\_AtomicAdd}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicAdd()}{SDL\_AtomicAdd()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Atomic\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{a,  }\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Add to an atomic variable. 
+
+\begin{DoxyReturn}{Returns}
+The previous value of the atomic variable.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This same style can be used for any number operation 
+\end{DoxyNote}
+\Hypertarget{_s_d_l__atomic_8h_ad6b90be91abb896260930d3908c0437b}\label{_s_d_l__atomic_8h_ad6b90be91abb896260930d3908c0437b} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicCAS@{SDL\_AtomicCAS}}
+\index{SDL\_AtomicCAS@{SDL\_AtomicCAS}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicCAS()}{SDL\_AtomicCAS()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Atomic\+CAS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{a,  }\item[{int}]{oldval,  }\item[{int}]{newval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set an atomic variable to a new value if it is currently an old value. 
+
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+TRUE if the atomic variable was set, SDL\+\_\+\+FALSE otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you don\textquotesingle{}t know what this function is for, you shouldn\textquotesingle{}t use it! 
+\end{DoxyNote}
+\Hypertarget{_s_d_l__atomic_8h_aa3070cf7f391b522e08595822c2f0eba}\label{_s_d_l__atomic_8h_aa3070cf7f391b522e08595822c2f0eba} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicCASPtr@{SDL\_AtomicCASPtr}}
+\index{SDL\_AtomicCASPtr@{SDL\_AtomicCASPtr}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicCASPtr()}{SDL\_AtomicCASPtr()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Atomic\+CASPtr (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{a,  }\item[{void \texorpdfstring{$\ast$}{*}}]{oldval,  }\item[{void \texorpdfstring{$\ast$}{*}}]{newval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set a pointer to a new value if it is currently an old value. 
+
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+TRUE if the pointer was set, SDL\+\_\+\+FALSE otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you don\textquotesingle{}t know what this function is for, you shouldn\textquotesingle{}t use it! 
+\end{DoxyNote}
+\Hypertarget{_s_d_l__atomic_8h_a95ecd72190ba8e5ed6ed78d5d1b36509}\label{_s_d_l__atomic_8h_a95ecd72190ba8e5ed6ed78d5d1b36509} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicLock@{SDL\_AtomicLock}}
+\index{SDL\_AtomicLock@{SDL\_AtomicLock}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicLock()}{SDL\_AtomicLock()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Atomic\+Lock (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Spin\+Lock \texorpdfstring{$\ast$}{*}}]{lock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Lock a spin lock by setting it to a non-\/zero value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lock} & Points to the lock. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_s_d_l__atomic_8h_a95b659308ebb16226d5c0cbf2188e51d}\label{_s_d_l__atomic_8h_a95b659308ebb16226d5c0cbf2188e51d} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicSet@{SDL\_AtomicSet}}
+\index{SDL\_AtomicSet@{SDL\_AtomicSet}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicSet()}{SDL\_AtomicSet()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Atomic\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\+\_\+atomic\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{a,  }\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set an atomic variable to a value. 
+
+\begin{DoxyReturn}{Returns}
+The previous value of the atomic variable. 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__atomic_8h_a3207340e57c812760328fa4f15198919}\label{_s_d_l__atomic_8h_a3207340e57c812760328fa4f15198919} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicSetPtr@{SDL\_AtomicSetPtr}}
+\index{SDL\_AtomicSetPtr@{SDL\_AtomicSetPtr}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicSetPtr()}{SDL\_AtomicSetPtr()}}
+{\footnotesize\ttfamily DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Atomic\+Set\+Ptr (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{a,  }\item[{void \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set a pointer to a value atomically. 
+
+\begin{DoxyReturn}{Returns}
+The previous value of the pointer. 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__atomic_8h_a5410c5f832f0d862282cd65fc432fc0b}\label{_s_d_l__atomic_8h_a5410c5f832f0d862282cd65fc432fc0b} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicTryLock@{SDL\_AtomicTryLock}}
+\index{SDL\_AtomicTryLock@{SDL\_AtomicTryLock}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicTryLock()}{SDL\_AtomicTryLock()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Atomic\+Try\+Lock (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Spin\+Lock \texorpdfstring{$\ast$}{*}}]{lock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Try to lock a spin lock by setting it to a non-\/zero value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lock} & Points to the lock.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+TRUE if the lock succeeded, SDL\+\_\+\+FALSE if the lock is already held. 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__atomic_8h_a3fb14c56b17347349ac2fb5300205bac}\label{_s_d_l__atomic_8h_a3fb14c56b17347349ac2fb5300205bac} 
+\index{SDL\_atomic.h@{SDL\_atomic.h}!SDL\_AtomicUnlock@{SDL\_AtomicUnlock}}
+\index{SDL\_AtomicUnlock@{SDL\_AtomicUnlock}!SDL\_atomic.h@{SDL\_atomic.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AtomicUnlock()}{SDL\_AtomicUnlock()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Atomic\+Unlock (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Spin\+Lock \texorpdfstring{$\ast$}{*}}]{lock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Unlock a spin lock by setting it to 0. Always returns immediately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lock} & Points to the lock. \\
+\hline
+\end{DoxyParams}

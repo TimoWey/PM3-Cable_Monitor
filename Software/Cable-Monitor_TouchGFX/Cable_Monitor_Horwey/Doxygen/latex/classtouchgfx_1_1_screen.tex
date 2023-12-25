@@ -1,0 +1,419 @@
+\doxysection{touchgfx\+::Screen Class Reference}
+\hypertarget{classtouchgfx_1_1_screen}{}\label{classtouchgfx_1_1_screen}\index{touchgfx::Screen@{touchgfx::Screen}}
+
+
+{\ttfamily \#include $<$Screen.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Screen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.129199cm]{classtouchgfx_1_1_screen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_screen_aea8a79da1f33e0dc9cda64d8ed08ec03}{Screen}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_screen_a430344c203d3cd01c3e37e432d4c8cf4}{\texorpdfstring{$\sim$}{\string~}\+Screen}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_ae794bc377fdad34627b73443c7193344}{draw}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_a07b89dc3d2f9f30b35d3dbb3ab84c0a5}{start\+SMOC}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_a2570bb63519059f0f1ad90f84cbe4552}{JSMOC}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}widget\+To\+Draw)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_a0735b76587c830bef3c32fc3b13acdc3}{draw}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_a87655fe68696b81b740f3d30b4093f42}{setup\+Screen}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_af27efaecc9e7d632ec76bdff91239036}{after\+Transition}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_a8c20a257c77fc1841895ba7d2ff8e37a}{tear\+Down\+Screen}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_a20e9631c786a4c4b65b8b7b5db10830e}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_a05fc86a7c9a5564f09f5f77a85aaf077}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_a3fa938bb510f9a8dfd0ca0bfb9d7787d}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_ad68f7365eb479c1778aa9c44724792c5}{handle\+Tick\+Event}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_screen_adf73c6f3fbbb94bde1e8fbb4ff13a519}{handle\+Key\+Event}} (uint8\+\_\+t key)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_screen_a3b1cc1b34edccb9633192597153d6e35}{using\+SMOC}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_a9dcad7640bef27025f9db9049f032ce1}{bind\+Transition}} (\mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}} \&trans)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \& \mbox{\hyperlink{classtouchgfx_1_1_screen_aa1aeda04d4102063013e7893336da1ff}{get\+Root\+Container}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_screen_ad7ff95a4a1792651644445f5ed045b3c}{get\+Screen\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_screen_a1dc07bfb4f27cf59b76b6498a3f37b3c}{get\+Screen\+Height}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_a4f260222a1609f31a8e3f050f6691851}{use\+SMOCDrawing}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_a776815b672fc7bb3182b3573ee5175dd}{add}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_a8f7eaf8c17ae49424fc50993a7539666}{insert}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}previous, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_a7fafa30d3ad727dbd4ce8c02d3c9a449}{invalidate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_ad237b0c9b03dfe96aab1e48885996c99}{invalidate}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_screen_ac8fa0e564aa70ddf3657963e1dcc4a09}{remove}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_screen_a2f8bb0b3903663328e44169caea60997}\label{classtouchgfx_1_1_screen_a2f8bb0b3903663328e44169caea60997} 
+\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} {\bfseries container}
+\begin{DoxyCompactList}\small\item\em The container contains the contents of the screen. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_screen_a09f535e250c68181162462885006a8a4}\label{classtouchgfx_1_1_screen_a09f535e250c68181162462885006a8a4} 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries focus}
+\begin{DoxyCompactList}\small\item\em The drawable currently in focus (set when DOWN\+\_\+\+PRESSED is received). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classtouchgfx_1_1_screen}{Screen} represents a full-\/screen drawable area. Applications create specific screens by subclassing this class. Each \doxylink{classtouchgfx_1_1_screen}{Screen} has a root container to which drawables are added. The \doxylink{classtouchgfx_1_1_screen}{Screen} makes sure to delegate draw requests and various events to the appropriate drawables in correct order. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_screen_aea8a79da1f33e0dc9cda64d8ed08ec03}\label{classtouchgfx_1_1_screen_aea8a79da1f33e0dc9cda64d8ed08ec03} 
+\index{touchgfx::Screen@{touchgfx::Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{Screen()}{Screen()}}
+{\footnotesize\ttfamily touchgfx\+::\+Screen\+::\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_screen}{Screen} class. \Hypertarget{classtouchgfx_1_1_screen_a430344c203d3cd01c3e37e432d4c8cf4}\label{classtouchgfx_1_1_screen_a430344c203d3cd01c3e37e432d4c8cf4} 
+\index{touchgfx::Screen@{touchgfx::Screen}!````~Screen@{\texorpdfstring{$\sim$}{\string~}Screen}}
+\index{````~Screen@{\texorpdfstring{$\sim$}{\string~}Screen}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Screen()}{\string~Screen()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Screen\+::\texorpdfstring{$\sim$}{\string~}\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_screen}{Screen} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_screen_a776815b672fc7bb3182b3573ee5175dd}\label{classtouchgfx_1_1_screen_a776815b672fc7bb3182b3573ee5175dd} 
+\index{touchgfx::Screen@{touchgfx::Screen}!add@{add}}
+\index{add@{add}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Add a drawable to the content container.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em d} & The \doxylink{classtouchgfx_1_1_drawable}{Drawable} to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Must not be called with a \doxylink{classtouchgfx_1_1_drawable}{Drawable} that was already added to the screen. If in doubt, call \doxylink{classtouchgfx_1_1_screen_ac8fa0e564aa70ddf3657963e1dcc4a09}{remove()} first. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_screen_af27efaecc9e7d632ec76bdff91239036}\label{classtouchgfx_1_1_screen_af27efaecc9e7d632ec76bdff91239036} 
+\index{touchgfx::Screen@{touchgfx::Screen}!afterTransition@{afterTransition}}
+\index{afterTransition@{afterTransition}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{afterTransition()}{afterTransition()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::after\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called by \doxylink{classtouchgfx_1_1_application_a5a2d535267608055dd2748ff34822d81}{Application\+::handle\+Tick\+Event()} when the transition to the screen is done. Base version does nothing, but override to do screen specific initialization code that has to be done after the transition to the screen.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a5a2d535267608055dd2748ff34822d81}{Application\+::handle\+Tick\+Event} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_screen_a9dcad7640bef27025f9db9049f032ce1}\label{classtouchgfx_1_1_screen_a9dcad7640bef27025f9db9049f032ce1} 
+\index{touchgfx::Screen@{touchgfx::Screen}!bindTransition@{bindTransition}}
+\index{bindTransition@{bindTransition}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{bindTransition()}{bindTransition()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::bind\+Transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}} \&}]{trans }\end{DoxyParamCaption})}
+
+Enables the transition to access the containers.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em trans} & The transition to bind. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_screen_ae794bc377fdad34627b73443c7193344}\label{classtouchgfx_1_1_screen_ae794bc377fdad34627b73443c7193344} 
+\index{touchgfx::Screen@{touchgfx::Screen}!draw@{draw}}
+\index{draw@{draw}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tells the screen to draw its entire area.
+
+\begin{DoxyNote}{Note}
+The more specific draw(\doxylink{classtouchgfx_1_1_rect}{Rect}\&) version is preferred when possible. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_screen_a0735b76587c830bef3c32fc3b13acdc3}\label{classtouchgfx_1_1_screen_a0735b76587c830bef3c32fc3b13acdc3} 
+\index{touchgfx::Screen@{touchgfx::Screen}!draw@{draw}}
+\index{draw@{draw}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Tell the screen to draw the specified area. Will traverse the drawables tree from in z-\/order and delegate draw to them.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rect} & The area in absolute coordinates.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The given rect must be in absolute coordinates. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_screen_aa1aeda04d4102063013e7893336da1ff}\label{classtouchgfx_1_1_screen_aa1aeda04d4102063013e7893336da1ff} 
+\index{touchgfx::Screen@{touchgfx::Screen}!getRootContainer@{getRootContainer}}
+\index{getRootContainer@{getRootContainer}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{getRootContainer()}{getRootContainer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \& touchgfx\+::\+Screen\+::get\+Root\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Obtain a reference to the root container of this screen.
+
+\begin{DoxyReturn}{Returns}
+The root container. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_screen_a1dc07bfb4f27cf59b76b6498a3f37b3c}\label{classtouchgfx_1_1_screen_a1dc07bfb4f27cf59b76b6498a3f37b3c} 
+\index{touchgfx::Screen@{touchgfx::Screen}!getScreenHeight@{getScreenHeight}}
+\index{getScreenHeight@{getScreenHeight}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{getScreenHeight()}{getScreenHeight()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Screen\+::get\+Screen\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets height of the current screen. In most cases, this is the same as \doxylink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL\+::\+DISPLAY\+\_\+\+HEIGHT}.
+
+\begin{DoxyReturn}{Returns}
+The screen height. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_screen_ad7ff95a4a1792651644445f5ed045b3c}\label{classtouchgfx_1_1_screen_ad7ff95a4a1792651644445f5ed045b3c} 
+\index{touchgfx::Screen@{touchgfx::Screen}!getScreenWidth@{getScreenWidth}}
+\index{getScreenWidth@{getScreenWidth}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{getScreenWidth()}{getScreenWidth()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Screen\+::get\+Screen\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets width of the current screen. In most cases, this is the same as \doxylink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL\+::\+DISPLAY\+\_\+\+WIDTH}.
+
+\begin{DoxyReturn}{Returns}
+The screen width. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_screen_a20e9631c786a4c4b65b8b7b5db10830e}\label{classtouchgfx_1_1_screen_a20e9631c786a4c4b65b8b7b5db10830e} 
+\index{touchgfx::Screen@{touchgfx::Screen}!handleClickEvent@{handleClickEvent}}
+\index{handleClickEvent@{handleClickEvent}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{handleClickEvent()}{handleClickEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::handle\+Click\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Traverse the drawables in reverse z-\/order and notify them of a click event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event to handle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_screen_a05fc86a7c9a5564f09f5f77a85aaf077}\label{classtouchgfx_1_1_screen_a05fc86a7c9a5564f09f5f77a85aaf077} 
+\index{touchgfx::Screen@{touchgfx::Screen}!handleDragEvent@{handleDragEvent}}
+\index{handleDragEvent@{handleDragEvent}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{handleDragEvent()}{handleDragEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::handle\+Drag\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Traverse the drawables in reverse z-\/order and notify them of a drag event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event to handle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_screen_a3fa938bb510f9a8dfd0ca0bfb9d7787d}\label{classtouchgfx_1_1_screen_a3fa938bb510f9a8dfd0ca0bfb9d7787d} 
+\index{touchgfx::Screen@{touchgfx::Screen}!handleGestureEvent@{handleGestureEvent}}
+\index{handleGestureEvent@{handleGestureEvent}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{handleGestureEvent()}{handleGestureEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::handle\+Gesture\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle gestures. Traverses drawables in reverse-\/z and notifies them of the gesture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event to handle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_screen_adf73c6f3fbbb94bde1e8fbb4ff13a519}\label{classtouchgfx_1_1_screen_adf73c6f3fbbb94bde1e8fbb4ff13a519} 
+\index{touchgfx::Screen@{touchgfx::Screen}!handleKeyEvent@{handleKeyEvent}}
+\index{handleKeyEvent@{handleKeyEvent}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{handleKeyEvent()}{handleKeyEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::handle\+Key\+Event (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called by the \doxylink{classtouchgfx_1_1_application}{Application} on the reception of a "{}key"{}, the meaning of which is platform/application specific. Default implementation does nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to handle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_screen_ad68f7365eb479c1778aa9c44724792c5}\label{classtouchgfx_1_1_screen_ad68f7365eb479c1778aa9c44724792c5} 
+\index{touchgfx::Screen@{touchgfx::Screen}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called by the \doxylink{classtouchgfx_1_1_application}{Application} on the current screen with a frequency of \doxylink{classtouchgfx_1_1_application_a2ba4b3a002e55d947f616996805815aa}{Application\+::\+TICK\+\_\+\+INTERVAL\+\_\+\+MS}. 
+
+Reimplemented in \mbox{\hyperlink{class_measurement___accurate___display__1_p_view_base_abe58201146fef41e9e3cb91f7a8feb38}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+1\+PView\+Base}}, \mbox{\hyperlink{class_measurement___accurate___display__3_p_view_base_a94c3dc120b858413790524f9bb64674d}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+3\+PView\+Base}}, \mbox{\hyperlink{class_measurement___single___display__1_p_view_base_a5fb4d158161ec101f12bebd96d8565c2}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+1\+PView\+Base}}, and \mbox{\hyperlink{class_measurement___single___display__3_p_view_base_a8b75feaaf6f973ad9f3ed8a6c205ae9a}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+3\+PView\+Base}}.
+
+\Hypertarget{classtouchgfx_1_1_screen_a8f7eaf8c17ae49424fc50993a7539666}\label{classtouchgfx_1_1_screen_a8f7eaf8c17ae49424fc50993a7539666} 
+\index{touchgfx::Screen@{touchgfx::Screen}!insert@{insert}}
+\index{insert@{insert}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{previous,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Inserts a \doxylink{classtouchgfx_1_1_drawable}{Drawable} after a specific child node. See \doxylink{classtouchgfx_1_1_container_ae7f9e387582f56c079ef4b05d0905526}{Container\+::insert}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em previous} & The \doxylink{classtouchgfx_1_1_drawable}{Drawable} to insert after. If null, insert as header. \\
+\hline
+\mbox{\texttt{ in}}  & {\em d} & The \doxylink{classtouchgfx_1_1_drawable}{Drawable} to insert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_container_ae7f9e387582f56c079ef4b05d0905526}{Container\+::insert}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+As with add, do not add the same drawable twice. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_screen_ad237b0c9b03dfe96aab1e48885996c99}\label{classtouchgfx_1_1_screen_ad237b0c9b03dfe96aab1e48885996c99} 
+\index{touchgfx::Screen@{touchgfx::Screen}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{invalidate()}{invalidate()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::invalidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Tell the framework that this entire \doxylink{classtouchgfx_1_1_screen}{Screen} needs to be redrawn.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{Container\+::invalidate} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_screen_a7fafa30d3ad727dbd4ce8c02d3c9a449}\label{classtouchgfx_1_1_screen_a7fafa30d3ad727dbd4ce8c02d3c9a449} 
+\index{touchgfx::Screen@{touchgfx::Screen}!invalidateRect@{invalidateRect}}
+\index{invalidateRect@{invalidateRect}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{invalidateRect()}{invalidateRect()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::invalidate\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Request that a region of this root container on the screen is redrawn. See \doxylink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{Container\+::invalidate\+Rect}.
+
+To invalidate the entire \doxylink{classtouchgfx_1_1_screen}{Screen}, use \doxylink{classtouchgfx_1_1_screen_ad237b0c9b03dfe96aab1e48885996c99}{invalidate()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em invalidated\+Area} & The area of this drawable to redraw expressed in coordinates relative to the root container.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{Container\+::invalidate\+Rect}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+The invalidated\+Area position is relative to the root container, which is usually the same as the \doxylink{classtouchgfx_1_1_screen}{Screen} coordinates. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_screen_a2570bb63519059f0f1ad90f84cbe4552}\label{classtouchgfx_1_1_screen_a2570bb63519059f0f1ad90f84cbe4552} 
+\index{touchgfx::Screen@{touchgfx::Screen}!JSMOC@{JSMOC}}
+\index{JSMOC@{JSMOC}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{JSMOC()}{JSMOC()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::\+JSMOC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{widget\+To\+Draw }\end{DoxyParamCaption})}
+
+Recursive JSMOC function. This is the actual occlusion culling implementation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em invalidated\+Area} & The area to redraw, expressed in absolute coordinates. \\
+\hline
+\mbox{\texttt{ in}}  & {\em widget\+To\+Draw} & \doxylink{classtouchgfx_1_1_widget}{Widget} currently being drawn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+JSMOC is an abbreviation of {\itshape Jesper, S{\o}ren \& Martin\textquotesingle{}s Occlusion Culling}. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_screen_ac8fa0e564aa70ddf3657963e1dcc4a09}\label{classtouchgfx_1_1_screen_ac8fa0e564aa70ddf3657963e1dcc4a09} 
+\index{touchgfx::Screen@{touchgfx::Screen}!remove@{remove}}
+\index{remove@{remove}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Removes a drawable from the content container. Safe to call even if the drawable was never added (in which case nothing happens).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em d} & The \doxylink{classtouchgfx_1_1_drawable}{Drawable} to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_screen_a87655fe68696b81b740f3d30b4093f42}\label{classtouchgfx_1_1_screen_a87655fe68696b81b740f3d30b4093f42} 
+\index{touchgfx::Screen@{touchgfx::Screen}!setupScreen@{setupScreen}}
+\index{setupScreen@{setupScreen}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{setupScreen()}{setupScreen()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::setup\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called by \doxylink{classtouchgfx_1_1_application_ad7a28d1bbcace9887edc7bdad6a3d1ee}{Application\+::switch\+Screen()} when this screen is going to be displayed. Base version does nothing, but place any screen specific initialization code in an overridden version.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_ad7a28d1bbcace9887edc7bdad6a3d1ee}{Application\+::switch\+Screen} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{class_calibration_view_base_a9dd94a7258fabc68dd7e8a78b8df4fb6}{Calibration\+View\+Base}}, \mbox{\hyperlink{class_main___menu_view_base_aa837f6db7700497af8fd16a98245de04}{Main\+\_\+\+Menu\+View\+Base}}, \mbox{\hyperlink{class_measurement___accurate___display__1_p_view_base_af1072c058943c40903b7f7036d9aba6e}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+1\+PView\+Base}}, \mbox{\hyperlink{class_measurement___accurate___display__3_p_view_base_a2c9371bf548484d25d671a42109cd382}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+3\+PView\+Base}}, \mbox{\hyperlink{class_measurement___accurate_view_base_af09d4b2ed9b33fbcaa41c6c879e5e44c}{Measurement\+\_\+\+Accurate\+View\+Base}}, \mbox{\hyperlink{class_measurement_view_base_a69b17572a1c4fe7fd1582ae6ea0de60c}{Measurement\+View\+Base}}, \mbox{\hyperlink{class_measurement___single___display__1_p_view_base_a3f9e4d4dfaa00f0c306332bab720780d}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+1\+PView\+Base}}, \mbox{\hyperlink{class_measurement___single___display__3_p_view_base_a8dc1fd0ed2c0cf891a8ddf5f892084a4}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+3\+PView\+Base}}, \mbox{\hyperlink{class_measurement___single_view_base_ae37d598c734b8a3061c7ad4eca818345}{Measurement\+\_\+\+Single\+View\+Base}}, \mbox{\hyperlink{class_project___info_view_base_abc161dfbf8b727e86479c9f7e6d1e4eb}{Project\+\_\+\+Info\+View\+Base}}, \mbox{\hyperlink{class_settings_view_base_a1c693c634eb48b7b4950317ee36ff4f3}{Settings\+View\+Base}}, \mbox{\hyperlink{class_shutting___off_view_base_a9bd5259b1a3c8c4f017dd475d0c9b01e}{Shutting\+\_\+\+Off\+View\+Base}}, \mbox{\hyperlink{class_calibration_view_ae52d1c3c82319892eba820ff497929b4}{Calibration\+View}}, \mbox{\hyperlink{class_main___menu_view_a15d090849d6c756aee39ac28b41fadfc}{Main\+\_\+\+Menu\+View}}, \mbox{\hyperlink{class_measurement___accurate___display__1_p_view_a184870419d45763d5357664166601de1}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+1\+PView}}, \mbox{\hyperlink{class_measurement___accurate___display__3_p_view_a99883509593688fbf785123333858b5c}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+3\+PView}}, \mbox{\hyperlink{class_measurement___accurate_view_a86ec0b5ce6320468cf4b6a00906bff8a}{Measurement\+\_\+\+Accurate\+View}}, \mbox{\hyperlink{class_measurement_view_af59c5d7d2e7681568d666f62a639920d}{Measurement\+View}}, \mbox{\hyperlink{class_measurement___single___display__1_p_view_a3e581d403751b1c991569267a3aa98c0}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+1\+PView}}, \mbox{\hyperlink{class_measurement___single___display__3_p_view_a7ae3b0fc322b79cbec3a994c645c2da2}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+3\+PView}}, \mbox{\hyperlink{class_measurement___single_view_a43336ddf18161ca4c987685abdc56c9e}{Measurement\+\_\+\+Single\+View}}, \mbox{\hyperlink{class_project___info_view_acd2b484fe951bba161fa9e90e17af10c}{Project\+\_\+\+Info\+View}}, \mbox{\hyperlink{class_settings_view_a6819768ca6e81ef351c4efb7eff9e20c}{Settings\+View}}, and \mbox{\hyperlink{class_shutting___off_view_ae3a1e9275728ef865edf1f747c82b875}{Shutting\+\_\+\+Off\+View}}.
+
+\Hypertarget{classtouchgfx_1_1_screen_a07b89dc3d2f9f30b35d3dbb3ab84c0a5}\label{classtouchgfx_1_1_screen_a07b89dc3d2f9f30b35d3dbb3ab84c0a5} 
+\index{touchgfx::Screen@{touchgfx::Screen}!startSMOC@{startSMOC}}
+\index{startSMOC@{startSMOC}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{startSMOC()}{startSMOC()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::start\+SMOC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area }\end{DoxyParamCaption})}
+
+Starts a JSMOC run, analyzing what parts of what widgets should be redrawn.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em invalidated\+Area} & The area to redraw, expressed in absolute coordinates.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+SMOC is an abbreviation of {\itshape S{\o}ren \& Martin\textquotesingle{}s Occlusion Culling}. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_screen_a8c20a257c77fc1841895ba7d2ff8e37a}\label{classtouchgfx_1_1_screen_a8c20a257c77fc1841895ba7d2ff8e37a} 
+\index{touchgfx::Screen@{touchgfx::Screen}!tearDownScreen@{tearDownScreen}}
+\index{tearDownScreen@{tearDownScreen}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{tearDownScreen()}{tearDownScreen()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Screen\+::tear\+Down\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called by \doxylink{classtouchgfx_1_1_application_ad7a28d1bbcace9887edc7bdad6a3d1ee}{Application\+::switch\+Screen()} when this screen will no longer be displayed. Base version does nothing, but place any screen specific cleanup code in an overridden version.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_ad7a28d1bbcace9887edc7bdad6a3d1ee}{Application\+::switch\+Screen} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{class_calibration_view_a5b6487df0fd71f8275d1985ccb557470}{Calibration\+View}}, \mbox{\hyperlink{class_main___menu_view_a9768cf5bff44f68e749dd5a6825daacc}{Main\+\_\+\+Menu\+View}}, \mbox{\hyperlink{class_measurement___accurate___display__1_p_view_adf03e9eb1b24f137ec329165048829bf}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+1\+PView}}, \mbox{\hyperlink{class_measurement___accurate___display__3_p_view_ab01fadd9662cfb5def4996a2181ac8ba}{Measurement\+\_\+\+Accurate\+\_\+\+Display\+\_\+3\+PView}}, \mbox{\hyperlink{class_measurement___accurate_view_a3f052939de761e56a5c01d4336cfebb7}{Measurement\+\_\+\+Accurate\+View}}, \mbox{\hyperlink{class_measurement_view_a7a3d7c0fb41896bf2e175e3e5f67142d}{Measurement\+View}}, \mbox{\hyperlink{class_measurement___single___display__1_p_view_a711beab5e7a75edfa138b2399d1f093e}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+1\+PView}}, \mbox{\hyperlink{class_measurement___single___display__3_p_view_af5484f3194633b3aa94636879e0f7390}{Measurement\+\_\+\+Single\+\_\+\+Display\+\_\+3\+PView}}, \mbox{\hyperlink{class_measurement___single_view_a8bb52d909960799fd5106e0d64c1c62f}{Measurement\+\_\+\+Single\+View}}, \mbox{\hyperlink{class_project___info_view_aabd101b0ca9272e4191280750ff68c7b}{Project\+\_\+\+Info\+View}}, \mbox{\hyperlink{class_settings_view_a886e6636e68357fc6e50d697d15a666c}{Settings\+View}}, and \mbox{\hyperlink{class_shutting___off_view_af13b6c4908c008f342119063e533ebbb}{Shutting\+\_\+\+Off\+View}}.
+
+\Hypertarget{classtouchgfx_1_1_screen_a4f260222a1609f31a8e3f050f6691851}\label{classtouchgfx_1_1_screen_a4f260222a1609f31a8e3f050f6691851} 
+\index{touchgfx::Screen@{touchgfx::Screen}!useSMOCDrawing@{useSMOCDrawing}}
+\index{useSMOCDrawing@{useSMOCDrawing}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{useSMOCDrawing()}{useSMOCDrawing()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Screen\+::use\+SMOCDrawing (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines whether to use JSMOC or painter\textquotesingle{}s algorithm for drawing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & true if JSMOC should be enabled, false if disabled (meaning painter\textquotesingle{}s algorithm is employed instead). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_screen_a3b1cc1b34edccb9633192597153d6e35}\label{classtouchgfx_1_1_screen_a3b1cc1b34edccb9633192597153d6e35} 
+\index{touchgfx::Screen@{touchgfx::Screen}!usingSMOC@{usingSMOC}}
+\index{usingSMOC@{usingSMOC}!touchgfx::Screen@{touchgfx::Screen}}
+\doxysubsubsection{\texorpdfstring{usingSMOC()}{usingSMOC()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Screen\+::using\+SMOC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if using JSMOC.
+
+\begin{DoxyReturn}{Returns}
+true if this screen uses the JSMOC drawing algorithm. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_screen_8hpp}{Screen.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,258 @@
+\doxysection{CWRVector\+Renderer.\+hpp}
+\hypertarget{_c_w_r_vector_renderer_8hpp_source}{}\label{_c_w_r_vector_renderer_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp}}
+\mbox{\hyperlink{_c_w_r_vector_renderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_CWRVECTORRENDERER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_CWRVECTORRENDERER\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_vector_renderer_8hpp}{touchgfx/hal/VectorRenderer.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_widget_8hpp}{touchgfx/widgets/Widget.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <touchgfx/widgets/canvas/AbstractPainterColor.hpp>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_painter_linear_gradient_8hpp}{touchgfx/widgets/canvas/AbstractPainterLinearGradient.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_canvas_8hpp}{touchgfx/widgets/canvas/Canvas.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_canvas_widget_8hpp}{touchgfx/widgets/canvas/CanvasWidget.hpp}}>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_painter_r_g_b565_8hpp}{touchgfx/widgets/canvas/PainterRGB565.hpp}}>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_painter_r_g_b565_linear_gradient_8hpp}{touchgfx/widgets/canvas/PainterRGB565LinearGradient.hpp}}>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_painter_r_g_b888_8hpp}{touchgfx/widgets/canvas/PainterRGB888.hpp}}>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_painter_r_g_b888_linear_gradient_8hpp}{touchgfx/widgets/canvas/PainterRGB888LinearGradient.hpp}}>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer}{CWRVectorRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_vector_renderer}{VectorRenderer}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_ae8d60086411fe46b15f6c692d34784ce}{setup}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_widget}{Widget}}\&\ renderer,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ drawingArea);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a34ba000187934162befa7c04bf0264b0}{setMode}}(\mbox{\hyperlink{classtouchgfx_1_1_vector_renderer_a954117398bf817ed707e141ae03ee642}{DrawMode}}\ mode)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ drawMode\ =\ mode;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a818f36ba7950dffff484919aaa7bc8bd}{setStrokeMiterLimit}}(\textcolor{keywordtype}{float}\ miterLimit)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ strokeMiterLimit\ =\ miterLimit;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_aa3af7817b1b0a562c4e7f4e84806a22c}{setStrokeLineJoin}}(\mbox{\hyperlink{namespacetouchgfx_ae2fa1ca285a49f53afa667e9149ef9bf}{VGStrokeLineJoin}}\ lineJoin)}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ strokeLineJoin\ =\ lineJoin;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_afa2947c42d17d1a6cac3bac22a2cdbaa}{setStrokeLineCap}}(\mbox{\hyperlink{namespacetouchgfx_a7b5172e950be22ef46f8cc70e6dcd109}{VGStrokeLineCap}}\ lineCap)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ strokeLineCap\ =\ lineCap;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a30387cdb7432f8764c7a6ab778346ca5}{tearDown}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_ad6c0998d80ce66f482fbf50bd6d10ff4}{drawPath}}(\textcolor{keyword}{const}\ uint8\_t*\ cmds,\ uint32\_t\ nCmds,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ points,\ uint32\_t\ nPoints,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ bbox\ =\ 0);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a5bc6a8aaf4a2240e547c06e64519cd49}{setStrokeWidth}}(\textcolor{keywordtype}{float}\ w);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a7fed50fa7c6791e36e12d63ac105f36b}{setColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ c);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a10005362b6b231b14c47c3a55b5e9d7a}{setAlpha}}(uint8\_t\ a);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a0e969bd67f7cc25dc67919d94c4a4f63}{setLinearGradient}}(\textcolor{keywordtype}{float}\ x0,\ \textcolor{keywordtype}{float}\ y0,\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ stops,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ stopPositions,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ stopColors,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ width,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ solid,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ palette);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_a9a01c6cea8b64f32f907c07c23ae1193}{setTransformationMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}}\&\ m);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_vector_renderer_a954117398bf817ed707e141ae03ee642}{DrawMode}}\ drawMode;}
+\DoxyCodeLine{00168\ \ \ \ \ uint8\_t\ alpha;}
+\DoxyCodeLine{00169\ \ \ \ \ uint8\_t\ colorAlpha;}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{float}\ strokeMiterLimit;}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae2fa1ca285a49f53afa667e9149ef9bf}{VGStrokeLineJoin}}\ strokeLineJoin;}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a7b5172e950be22ef46f8cc70e6dcd109}{VGStrokeLineCap}}\ strokeLineCap;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ drawArea;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{float}\ strokeWidth;}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}}\ matrix;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{class\ }StrokeCanvas;}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient}{AbstractPainterLinearGradient}}\&\ getLinearPainter()\ =\ 0;}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_color}{AbstractPainterColor}}\&\ getColorPainterColor()\ =\ 0;}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}\&\ getColorPainter()\ =\ 0;}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ drawPathArea(\textcolor{keyword}{const}\ uint8\_t*\ cmds,\ uint32\_t\ nCmds,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ points,\ uint32\_t\ nPoints,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ area)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{bool}\ drawFill(\textcolor{keyword}{const}\ uint8\_t*\ cmds,\ uint32\_t\ nCmds,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ points,\ uint32\_t\ nPoints,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ area)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{bool}\ drawStroke(\textcolor{keyword}{const}\ uint8\_t*\ cmds,\ uint32\_t\ nCmds,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ points,\ uint32\_t\ nPoints,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ area)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ drawStrokeBackwards(uint32\_t\ cmdInxPathStart,\ uint32\_t\ cmdInx,\ uint32\_t\ pointInx,\ \textcolor{keyword}{const}\ uint8\_t*\ cmds,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ points,\ \textcolor{keywordtype}{bool}\ drawLineCaps,\ StrokeCanvas\&\ canvas)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ getPreviousDestination(\textcolor{keywordtype}{float}\&\ positionX,\ \textcolor{keywordtype}{float}\&\ positionY,\ uint32\_t\ cmdInx,\ uint32\_t\ pointInx,\ \textcolor{keyword}{const}\ uint8\_t*\ cmds,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ points)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{class\ }CanvasWidgetProxy\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{CanvasWidget}}}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ drawCanvasWidget(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00192\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setParent(\mbox{\hyperlink{classtouchgfx_1_1_drawable_a7e96d82c7fcf819f57486ecc5f350c4c}{Drawable}}*\ p)}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a90b12ccd487f364b0da15f45ac7366c1}{parent}}\ =\ p;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \}\ proxyWidget;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{class\ }StrokeCanvas\ :\ \textcolor{keyword}{private}\ Canvas}
+\DoxyCodeLine{00204\ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ StrokeCanvas(\textcolor{keyword}{const}\ CanvasWidget*\ widget,\ \textcolor{keyword}{const}\ Rect\&\ invalidatedArea,\ \textcolor{keyword}{const}\ Matrix3x3\&\ m)}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a72eced6ee0d805d98f66ad3bbe0803bb}{Canvas}}(widget,\ invalidatedArea),}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matrix(m),}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstLineTo(false),\ noLineHasBeenDrawn(true),\ drawLineCapInsteadOfLineJoin(false),}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strokeWidthHalf(1.0f),\ miterLimitSquared(0.0f),\ strokeLineJoin(VG\_STROKE\_LINEJOIN\_BEVEL),\ strokeLineCap(VG\_STROKE\_LINECAP\_BUTT),\ strokeAlpha(255),}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastX(0.0f),\ lastY(0.0f),}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initialStrokeStartX(0.0f),\ initialStrokeStartY(0.0f),\ initialStrokeEndX(0.0f),\ initialStrokeEndY(0.0f),}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastStrokeStartX(0.0f),\ lastStrokeStartY(0.0f),\ lastStrokeEndX(0.0f),\ lastStrokeEndY(0.0f)}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_afe5aaf65377906f712bedbacdb73380c}{setFillingRule}}(Rasterizer::FILL\_NON\_ZERO);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ strokeMoveTo(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ strokeLineTo(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ strokeClose(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ strokeDrawDoubleLineCap();}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ strokeBezierQuad(\textcolor{keywordtype}{float}\ x0,\ \textcolor{keywordtype}{float}\ y0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a53f916f622d8452a1c0c3c069ce4743e}{Canvas::quadraticBezierTo}}(x0,\ y0,\ x1,\ y1,\ x,\ y);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ strokeBezierCubic(\textcolor{keywordtype}{float}\ x0,\ \textcolor{keywordtype}{float}\ y0,\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a28e43a37e13c1af4823912f60b5b299e}{Canvas::cubicBezierTo}}(x0,\ y0,\ x1,\ y1,\ x2,\ y2,\ x,\ y);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ strokeRender()}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_canvas_ac8224f2cf0e2cb613fadc0645cb36357}{Canvas::render}}(strokeAlpha);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setStroke(\textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ miterLimit,\ \mbox{\hyperlink{namespacetouchgfx_ae2fa1ca285a49f53afa667e9149ef9bf}{VGStrokeLineJoin}}\ lineJoin,\ \mbox{\hyperlink{namespacetouchgfx_a7b5172e950be22ef46f8cc70e6dcd109}{VGStrokeLineCap}}\ lineCap,\ uint8\_t\ alpha)}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ strokeWidthHalf\ =\ \mbox{\hyperlink{namespacetouchgfx_a869b95e7df114093b0cbb0056baedf9c}{abs}}(width)\ /\ 2.0f;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ miterLimitSquared\ =\ miterLimit\ *\ strokeWidthHalf\ *\ miterLimit\ *\ strokeWidthHalf;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ strokeLineJoin\ =\ lineJoin;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ strokeLineCap\ =\ lineCap;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ strokeAlpha\ =\ alpha;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ lineCapInsteadOfLineJoin(\textcolor{keywordtype}{bool}\ drawLineCaps);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ drawFinalLineCap();}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Matrix3x3\&\ matrix;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ firstLineTo;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ noLineHasBeenDrawn;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ drawLineCapInsteadOfLineJoin;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ strokeWidthHalf;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ miterLimitSquared;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae2fa1ca285a49f53afa667e9149ef9bf}{VGStrokeLineJoin}}\ strokeLineJoin;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a7b5172e950be22ef46f8cc70e6dcd109}{VGStrokeLineCap}}\ strokeLineCap;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ uint8\_t\ strokeAlpha;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lastX;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lastY;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ initialStrokeStartX;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ initialStrokeStartY;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ initialStrokeEndX;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ initialStrokeEndY;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lastStrokeStartX;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lastStrokeStartY;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lastStrokeEndX;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lastStrokeEndY;}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ strokeDrawLineJoin(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2,\ \textcolor{keywordtype}{float}\ x3,\ \textcolor{keywordtype}{float}\ y3,\ \textcolor{keywordtype}{float}\ x4,\ \textcolor{keywordtype}{float}\ y4);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ strokeDrawLineJoinRound(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2,\ \textcolor{keywordtype}{float}\ x3,\ \textcolor{keywordtype}{float}\ y3,\ \textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ strokeDrawLineCap(\textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2,\ \textcolor{keywordtype}{float}\ x3,\ \textcolor{keywordtype}{float}\ y3);}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ lineTo(CWRUtil::Q5\ x,\ CWRUtil::Q5\ y)}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ function\ is\ called\ from\ the\ Canvas\ Bezier\ curve\ functions,\ so\ we\ need\ to\ call\ our\ own\ function\ to\ draw\ the\ stroke.}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ strokeLineTo(x.to<\textcolor{keywordtype}{float}>(),\ y.to<\textcolor{keywordtype}{float}>());}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ moveToWithTransform(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ Matrix3x3::Point\ point\ =\ matrix.affineTransform(x,\ y);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}{Canvas::moveTo}}(CWRUtil::toQ5<float>(point.x),\ CWRUtil::toQ5<float>(point.y));}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ lineToWithTransform(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ Matrix3x3::Point\ point\ =\ matrix.affineTransform(x,\ y);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{Canvas::lineTo}}(CWRUtil::toQ5<float>(point.x),\ CWRUtil::toQ5<float>(point.y));}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ \};}
+\DoxyCodeLine{00294\ \};}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00300\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_r_g_b565}{CWRVectorRendererRGB565}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer}{CWRVectorRenderer}}}
+\DoxyCodeLine{00301\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient}{AbstractPainterLinearGradient}}\&\ getLinearPainter()}
+\DoxyCodeLine{00303\ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ linearPainter;}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_color}{AbstractPainterColor}}\&\ getColorPainterColor()}
+\DoxyCodeLine{00308\ \ \ \ \ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorPainter;}
+\DoxyCodeLine{00310\ \ \ \ \ \}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}\&\ getColorPainter()}
+\DoxyCodeLine{00313\ \ \ \ \ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorPainter;}
+\DoxyCodeLine{00315\ \ \ \ \ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{PainterRGB565}}\ colorPainter;}
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_linear_gradient}{PainterRGB565LinearGradient}}\ linearPainter;}
+\DoxyCodeLine{00320\ \};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00326\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer_r_g_b888}{CWRVectorRendererRGB888}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_vector_renderer}{CWRVectorRenderer}}}
+\DoxyCodeLine{00327\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient}{AbstractPainterLinearGradient}}\&\ getLinearPainter()}
+\DoxyCodeLine{00329\ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ linearPainter;}
+\DoxyCodeLine{00331\ \ \ \ \ \}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_color}{AbstractPainterColor}}\&\ getColorPainterColor()}
+\DoxyCodeLine{00334\ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorPainter;}
+\DoxyCodeLine{00336\ \ \ \ \ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}\&\ getColorPainter()}
+\DoxyCodeLine{00339\ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorPainter;}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00344\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b888}{PainterRGB888}}\ colorPainter;}
+\DoxyCodeLine{00345\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b888_linear_gradient}{PainterRGB888LinearGradient}}\ linearPainter;}
+\DoxyCodeLine{00346\ \};}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_CWRVECTORRENDERER\_HPP}}
+
+\end{DoxyCode}

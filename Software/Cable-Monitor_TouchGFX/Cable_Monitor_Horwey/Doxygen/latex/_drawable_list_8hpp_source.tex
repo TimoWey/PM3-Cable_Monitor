@@ -1,0 +1,135 @@
+\doxysection{Drawable\+List.\+hpp}
+\hypertarget{_drawable_list_8hpp_source}{}\label{_drawable_list_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp}}
+\mbox{\hyperlink{_drawable_list_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_DRAWABLELIST\_HPP}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DRAWABLELIST\_HPP}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drawable_8hpp}{touchgfx/Drawable.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_acc2856a45a76450a589fa0b99f5a73f8}{\string~DrawableListItemsInterface}}()}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}*\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_a8ad0aad7d560a7d95c3709644ec471a6}{getDrawable}}(int16\_t\ index)\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_af507ec9a7acbf39b22ce8791b8b045bb}{getNumberOfDrawables}}()\ =\ 0;}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ TYPE,\ \textcolor{keywordtype}{int}\ SIZE>}
+\DoxyCodeLine{00079\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items}{DrawableListItems}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}*\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_ae7463635d1f48c69769758001674ec08}{getDrawable}}(int16\_t\ index)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ assert(index\ >=\ 0\ \&\&\ index\ <\ SIZE);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_afc811066137152488c3f88280131de62}{element}}[index];}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \ \ \ \ TYPE\&\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_a762e9cf53c8055ed1074571527b75f9b}{operator[]}}(\textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ assert(index\ >=\ 0\ \&\&\ index\ <\ SIZE);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_afc811066137152488c3f88280131de62}{element}}[index];}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_a32e3d20cdfe058257d04a5e370e958d5}{getNumberOfDrawables}}()}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SIZE;}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ TYPE\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_afc811066137152488c3f88280131de62}{element}}[SIZE];\ }
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_drawable_list}{DrawableList}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}}}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list}{DrawableList}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_abd3c0b18b7f1bd845a6506dc48f94149}{setWidth}}(int16\_t\ width);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a049bfd40499b42a8750578372855e089}{setHeight}}(int16\_t\ height);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a28e0de341ef1e614564ef67425718883}{setHorizontal}}(\textcolor{keywordtype}{bool}\ horizontal);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_aa1a9bc8247606b91b07bdc4083294b41}{getHorizontal}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a0e8ff9c6a45fff4bd4f2817b8296b989}{setCircular}}(\textcolor{keywordtype}{bool}\ circular);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a66f69ccf847b5c967b28ff5a4ceef812}{getCircular}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a0e66604b155a27093fa4de2e3494aa58}{setDrawableSize}}(int16\_t\ drawableSize,\ int16\_t\ drawableMargin);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_ac902d4906864fbb59fe1bcf17e09c06a}{getItemSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a053a3f024c69fef822a02dc6636e7a55}{getDrawableSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a850a2c2fab87d0b494d505bdc8a1d5dd}{getDrawableMargin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_ab27057863ec0cd0e670864b3e1eddf04}{setDrawables}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}\&\ drawableListItems,}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int16\_t\ drawableItemIndexOffset,}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GenericCallback<DrawableListItemsInterface*,\ int16\_t,\ int16\_t>\&\ updateDrawableCallback);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00250\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_aa4c8ae19ba80fc69444effad68ffea10}{getNumberOfDrawables}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_ad0f41bf643f29331a3e94024af3f3cb8}{setNumberOfItems}}(int16\_t\ numberOfItems);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00269\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a08aaeb3abab0c692ed2bcbb38e46699b}{getNumberOfItems}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00286\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_aae463c7d339be7403dcc84628a6bdd03}{getRequiredNumberOfDrawables}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_ae76604cf727cee815b2f3660bed1200b}{setOffset}}(int32\_t\ ofs);}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00314\ \ \ \ \ int32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_af4ff7a077c7557d37d91a5216b387486}{getOffset}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00323\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a0d194f1e1bc3580b41ceaf0b71592744}{getItemIndex}}(int16\_t\ drawableIndex)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00339\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a9bd21f3697de9516fbaca6fb7328e871}{getDrawableIndices}}(int16\_t\ itemIndex,\ int16\_t*\ drawableIndexArray,\ int16\_t\ arraySize)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00357\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_ace6789f923da399f50c61912841e6d8e}{getDrawableIndex}}(int16\_t\ itemIndex,\ int16\_t\ prevDrawableIndex\ =\ -\/1)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_aebf9ab2a0335e8812ac86e793dc1c3e6}{refreshDrawables}}();}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_a789972dd52f4719b28cb540ef7253aed}{itemChanged}}(int16\_t\ itemIndex);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordtype}{bool}\ isHorizontal;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordtype}{bool}\ isCircular;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00380\ \ \ \ \ int32\_t\ offset;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00381\ \ \ \ \ int16\_t\ itemSize;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00382\ \ \ \ \ int16\_t\ itemMargin;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00383\ \ \ \ \ int16\_t\ numItems;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00384\ \ \ \ \ int16\_t\ numDrawables;\ \ \ \ \ \ }
+\DoxyCodeLine{00385\ \ \ \ \ int16\_t\ firstItem;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00386\ \ \ \ \ int16\_t\ firstDrawable;\ \ \ \ \ }
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keywordtype}{bool}\ drawablesInitialized;\ }
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ int16\_t\ firstDrawableIndex;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00390\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}*\ drawableItems;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00391\ \ \ \ \ GenericCallback<DrawableListItemsInterface*,\ int16\_t,\ int16\_t>*\ updateDrawable;\ }
+\DoxyCodeLine{00392\ \};}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_DRAWABLELIST\_HPP}}
+
+\end{DoxyCode}

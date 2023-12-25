@@ -1,0 +1,140 @@
+\doxysection{Abstract\+Painter\+Bitmap.\+hpp}
+\hypertarget{_abstract_painter_bitmap_8hpp_source}{}\label{_abstract_painter_bitmap_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterBitmap.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterBitmap.hpp}}
+\mbox{\hyperlink{_abstract_painter_bitmap_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_ABSTRACTPAINTERBITMAP\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_ABSTRACTPAINTERBITMAP\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_h_a_l_8hpp}{touchgfx/hal/HAL.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_display_transformation_8hpp}{touchgfx/transforms/DisplayTransformation.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap}{AbstractPainterBitmap}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_ab5ea48c81de13790bdaca9602994dbc5}{AbstractPainterBitmap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bmp\ =\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}(\mbox{\hyperlink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\_INVALID}}))}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ :\ bitmap(bmp),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a7aa270c0eb773afc017868df365ee501}{bitmapFormat}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a3a0bc2447e45300d7d2b1e896c63c7d0}{bitmapData}}(0),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716}{xOffset}}(0),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6}{yOffset}}(0),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2b76db95292e3ac0ba5d0d7a3dddaf1b}{isTiled}}(false)}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a35bf7ff8cd0aeee7f6b0143af0477406}{setBitmap}}(bmp);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a8d3d63db2f225124d9600672b469c0e1}{\string~AbstractPainterBitmap}}()}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a35bf7ff8cd0aeee7f6b0143af0477406}{setBitmap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bmp)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ bitmap\ =\ bmp;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a7aa270c0eb773afc017868df365ee501}{bitmapFormat}}\ =\ bitmap.getFormat();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}\ =\ bitmap.getRect();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_a2604f15e0cac605ba096f77c044d2a0b}{DisplayTransformation::transformDisplayToFrameBuffer}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a3a0bc2447e45300d7d2b1e896c63c7d0}{bitmapData}}\ =\ bitmap.getData();}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a89152655bd65ca9073b592f90628acf9}{getBitmap}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_ac1c43d9f329134a09788919a07af25cb}{bitmap}};}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a340eb416b74fe54f45c46584e7d53479}{setTiled}}(\textcolor{keywordtype}{bool}\ tiled)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2b76db95292e3ac0ba5d0d7a3dddaf1b}{isTiled}}\ =\ tiled;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_ad339212b2cb04caf0b6d8ca6b82e33f0}{getTiled}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00100\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2b76db95292e3ac0ba5d0d7a3dddaf1b}{isTiled}};}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a4a83b47170d88a4240001a4f25ea6e44}{setOffset}}(int16\_t\ x,\ int16\_t\ y)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716}{xOffset}}\ =\ x;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6}{yOffset}}\ =\ y;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a4b79d111d34b58302545f05d391c5cde}{getOffset}}(int16\_t\&\ x,\ int16\_t\&\ y)}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716}{xOffset}};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6}{yOffset}};}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_ac1c43d9f329134a09788919a07af25cb}{bitmap}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap::BitmapFormat}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a7aa270c0eb773afc017868df365ee501}{bitmapFormat}};\ }
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a3a0bc2447e45300d7d2b1e896c63c7d0}{bitmapData}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716}{xOffset}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6}{yOffset}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2b76db95292e3ac0ba5d0d7a3dddaf1b}{isTiled}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2586f4eebebba168f487f8109bf6243a}{updateBitmapOffsets}}(int16\_t\ widgetWidth)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ xDelta\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a6a416dc4f159b66ee10951db4d8a47aa}{HAL::DISPLAY\_ROTATION}}\ ==\ \mbox{\hyperlink{namespacetouchgfx_ae8c781d7b6f62fbbf961e9ff7b98c4bca74aca4427407af52c2c54a442d517c3d}{rotate0}})\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716}{xOffset}}\ :\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6}{yOffset}};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ yDelta\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a6a416dc4f159b66ee10951db4d8a47aa}{HAL::DISPLAY\_ROTATION}}\ ==\ \mbox{\hyperlink{namespacetouchgfx_ae8c781d7b6f62fbbf961e9ff7b98c4bca74aca4427407af52c2c54a442d517c3d}{rotate0}})\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6}{yOffset}}\ :\ -\/(\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716}{xOffset}}\ +\ (widgetWidth\ -\/\ bitmap.getWidth()));}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_aa3a68ca56a9fae80086cdaccf6668d81}{adjustBitmapXY}}(int16\_t\&\ bitmapX,\ int16\_t\&\ bitmapY,\ int16\_t\&\ offset,\ int16\_t\&\ count)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00167\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ bitmapX\ +=\ xDelta;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ bitmapY\ +=\ yDelta;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2b76db95292e3ac0ba5d0d7a3dddaf1b}{isTiled}})}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ bitmapX\ \%=\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bitmapX\ <\ 0)}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitmapX\ +=\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ bitmapY\ \%=\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bitmapY\ <\ 0)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitmapY\ +=\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bitmapX\ <\ 0)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bitmapX\ +\ count\ <=\ 0)}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ count\ +=\ bitmapX;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ offset\ -\/=\ bitmapX;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ bitmapX\ =\ 0;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((bitmapX\ >=\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}})\ ||\ (bitmapY\ <\ 0)\ ||\ (bitmapY\ >=\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}}))}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bitmapX\ +\ (\textcolor{keywordtype}{int})count\ >\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}})}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ count\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}{bitmapRect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}}\ -\/\ bitmapX;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{mutable}\ int16\_t\ xDelta;}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{mutable}\ int16\_t\ yDelta;}
+\DoxyCodeLine{00209\ \};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_ABSTRACTPAINTERBITMAP\_HPP}}
+
+\end{DoxyCode}

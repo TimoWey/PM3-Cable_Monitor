@@ -1,0 +1,76 @@
+\doxysection{MJPEGDecoder.\+hpp}
+\hypertarget{_m_j_p_e_g_decoder_8hpp_source}{}\label{_m_j_p_e_g_decoder_8hpp_source}\index{TouchGFX/generated/simulator/include/simulator/video/MJPEGDecoder.hpp@{TouchGFX/generated/simulator/include/simulator/video/MJPEGDecoder.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/**********\ THIS\ FILE\ IS\ GENERATED\ BY\ TOUCHGFX\ DESIGNER,\ DO\ NOT\ MODIFY\ ***********/}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_MJPEGDECODER\_HPP}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_MJPEGDECODER\_HPP}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <touchgfx/hal/VideoController.hpp>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_m_j_p_e_g_decoder}{\string~MJPEGDecoder}}()}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//Set\ video\ data\ for\ the\ decoder}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setVideoData(\textcolor{keyword}{const}\ uint8\_t*\ movie,\ \textcolor{keyword}{const}\ uint32\_t\ length)\ =\ 0;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//Set\ video\ data\ for\ the\ decoder}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setVideoData(\mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{touchgfx::VideoDataReader}}\&\ reader)\ =\ 0;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_j_p_e_g_decoder_a2c1e087e1bcd41b75cc08275a3f665d8}{hasVideo}}()\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//Increment\ position\ to\ next\ frame\ and\ decode\ and\ convert\ to\ RGB}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ decodeNextFrame(uint8\_t*\ buffer,\ uint16\_t\ width,\ uint16\_t\ height,\ uint32\_t\ stride)\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//Increment\ position\ to\ next\ frame\ and\ decode.\ Used\ with\ decodeFrame.}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ gotoNextFrame()\ =\ 0;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//Decode\ part\ of\ the\ current\ frame,\ framebuffer\ is\ locked,\ area\ is\ drawn\ relative\ to\ frameBuffer}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ decodeFrame(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx::Rect}}\&\ area,\ uint8\_t*\ frameBuffer,\ uint32\_t\ framebufferStride)\ =\ 0;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//Decode\ thumbnail,\ assumes\ buffer\ stride\ is\ width}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ decodeThumbnail(uint32\_t\ frameno,\ uint8\_t*\ buffer,\ uint16\_t\ width,\ uint16\_t\ height)\ =\ 0;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//Set\ current\ frame\ number}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ gotoFrame(uint32\_t\ frameno)\ =\ 0;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//Get\ current\ frame\ number}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ uint32\_t\ getCurrentFrameNumber()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//Get\ number\ of\ frames\ in\ video}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ uint32\_t\ getNumberOfFrames()\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//Read\ video\ information}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ getVideoInfo(\mbox{\hyperlink{structtouchgfx_1_1_video_information}{touchgfx::VideoInformation}}*\ data)\ =\ 0;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{enum}\ AVIErrors}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ AVI\_NO\_ERROR,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ AVI\_NO\_BUFFERS,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ AVI\_NO\_FILE,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ AVI\_ERROR\_NOT\_RIFF,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ AVI\_ERROR\_AVI\_HEADER\_NOT\_FOUND,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ AVI\_ERROR\_AVI\_LIST\_NOT\_FOUND,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ AVI\_ERROR\_AVI\_HDRL\_NOT\_FOUND,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ AVI\_ERROR\_AVI\_AVIH\_NOT\_FOUND,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ AVI\_ERROR\_AVI\_HEADER\_TO\_SHORT,\ \textcolor{comment}{//not\ full\ header\ provided}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ AVI\_ERROR\_FILE\_BUFFER\_TO\_SMALL,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ AVI\_ERROR\_MOVI\_NOT\_FOUND,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ AVI\_ERROR\_IDX1\_NOT\_FOUND,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ AVI\_ERROR\_FRAMENO\_TO\_HIGH,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ AVI\_ERROR\_EOF\_REACHED}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ AVIErrors\ \textcolor{keyword}{virtual}\ getLastError()\ =\ 0;}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_MJPEGDECODER\_HPP}}
+
+\end{DoxyCode}

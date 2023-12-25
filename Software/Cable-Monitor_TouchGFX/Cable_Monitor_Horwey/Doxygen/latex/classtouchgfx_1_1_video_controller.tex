@@ -1,0 +1,368 @@
+\doxysection{touchgfx\+::Video\+Controller Class Reference}
+\hypertarget{classtouchgfx_1_1_video_controller}{}\label{classtouchgfx_1_1_video_controller}\index{touchgfx::VideoController@{touchgfx::VideoController}}
+
+
+{\ttfamily \#include $<$Video\+Controller.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Video\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_video_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27}{Command}} \{ \newline
+\mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aea498b6320d266fc1571e8c98886e01e}{PLAY}}
+, \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a2111015c1348ec654c6cdad8a8c2904a}{PAUSE}}
+, \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aa56b64e55e77b811513dea0c6d2bcc5c}{SEEK}}
+, \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a74039d230674dcec48315643c7abc1da}{SHOW}}
+, \newline
+\mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a252e61b23cd5a4a849a2b4998a53ba08}{STOP}}
+, \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a52442e746069c3bc94689d89f54eae28}{SET\+\_\+\+REPEAT}}
+ \}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a6737275c47589b23964ac0beb53e1e05}{\texorpdfstring{$\sim$}{\string~}\+Video\+Controller}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a4eb4a62d0cb95ac8703f611d19d40c88}{register\+Video\+Widget}} (\mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \&widget)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a019ad98d9cd9146a239a3c89948d6125}{unregister\+Video\+Widget}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac2ac814e323370cdfc69f0fdeffd2121}{set\+Frame\+Rate}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle, uint32\+\_\+t ui\+\_\+frames, uint32\+\_\+t video\+\_\+frames)=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a50f64906ecf16d42bc9c7b01124bca00}{update\+Frame}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle, \mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \&widget)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a9037f0b22e6fa3e06da401b89184bed8}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area, const \mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \&widget)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac8239057c8bbe0b765548b084dbcb159}{set\+Video\+Data}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}movie, const uint32\+\_\+t length)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a5187610b193425899096913446b5fa36}{set\+Video\+Data}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle, \mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{Video\+Data\+Reader}} \&reader)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a55014d66faf9964371e8eb3cbefe9985}{set\+Command}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle, \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27}{Command}} cmd, uint32\+\_\+t param)=0
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a85d3671a6f5b84199a518512e883cb06}{get\+Current\+Frame\+Number}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a0ee852e6100f80ec0d9b4b7dfa1e02dc}{get\+Video\+Information}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle, \mbox{\hyperlink{structtouchgfx_1_1_video_information}{Video\+Information}} \texorpdfstring{$\ast$}{*}data)=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a5428a7ee578e014ff9ac89415789f91e}{get\+Is\+Playing}} (const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} handle)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_video_controller}{Video\+Controller}} \& \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a9d784e9a26833efc8f8afeaed4de49ce}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classtouchgfx_1_1_video_controller}{Video\+Controller} is an abstract interface for the video decoder. A concrete implementation will be generated by the Touch\+GFX Generator.
+
+The \doxylink{classtouchgfx_1_1_video_controller}{Video\+Controller} can control multiple video streams in multiple Video\+Widgets. These are recognized by their Handle.
+
+\doxylink{classtouchgfx_1_1_application}{Application} code should only interact with the \doxylink{classtouchgfx_1_1_video_widget}{Video\+Widget} class.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_video_widget}{Video\+Widget} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}\label{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!Handle@{Handle}}
+\index{Handle@{Handle}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{Handle}{Handle}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{touchgfx\+::\+Video\+Controller\+::\+Handle}}}
+
+Type to identify a video stream. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27}\label{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!Command@{Command}}
+\index{Command@{Command}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{Command}{Command}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27}{touchgfx\+::\+Video\+Controller\+::\+Command}}}
+
+The commands send to the Controller. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAY@{PLAY}!touchgfx::VideoController@{touchgfx::VideoController}}\index{touchgfx::VideoController@{touchgfx::VideoController}!PLAY@{PLAY}}}\Hypertarget{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aea498b6320d266fc1571e8c98886e01e}\label{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aea498b6320d266fc1571e8c98886e01e} 
+PLAY&Play the video. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSE@{PAUSE}!touchgfx::VideoController@{touchgfx::VideoController}}\index{touchgfx::VideoController@{touchgfx::VideoController}!PAUSE@{PAUSE}}}\Hypertarget{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a2111015c1348ec654c6cdad8a8c2904a}\label{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a2111015c1348ec654c6cdad8a8c2904a} 
+PAUSE&Pause the playing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEEK@{SEEK}!touchgfx::VideoController@{touchgfx::VideoController}}\index{touchgfx::VideoController@{touchgfx::VideoController}!SEEK@{SEEK}}}\Hypertarget{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aa56b64e55e77b811513dea0c6d2bcc5c}\label{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aa56b64e55e77b811513dea0c6d2bcc5c} 
+SEEK&Seek to frame. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHOW@{SHOW}!touchgfx::VideoController@{touchgfx::VideoController}}\index{touchgfx::VideoController@{touchgfx::VideoController}!SHOW@{SHOW}}}\Hypertarget{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a74039d230674dcec48315643c7abc1da}\label{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a74039d230674dcec48315643c7abc1da} 
+SHOW&Show a frame. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOP@{STOP}!touchgfx::VideoController@{touchgfx::VideoController}}\index{touchgfx::VideoController@{touchgfx::VideoController}!STOP@{STOP}}}\Hypertarget{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a252e61b23cd5a4a849a2b4998a53ba08}\label{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a252e61b23cd5a4a849a2b4998a53ba08} 
+STOP&Stop the video. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SET\_REPEAT@{SET\_REPEAT}!touchgfx::VideoController@{touchgfx::VideoController}}\index{touchgfx::VideoController@{touchgfx::VideoController}!SET\_REPEAT@{SET\_REPEAT}}}\Hypertarget{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a52442e746069c3bc94689d89f54eae28}\label{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a52442e746069c3bc94689d89f54eae28} 
+SET\+\_\+\+REPEAT&Set repeat mode. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_video_controller_a6737275c47589b23964ac0beb53e1e05}\label{classtouchgfx_1_1_video_controller_a6737275c47589b23964ac0beb53e1e05} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!````~VideoController@{\texorpdfstring{$\sim$}{\string~}VideoController}}
+\index{````~VideoController@{\texorpdfstring{$\sim$}{\string~}VideoController}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VideoController()}{\string~VideoController()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Video\+Controller\+::\texorpdfstring{$\sim$}{\string~}\+Video\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Virtual destructor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_video_controller_a9037f0b22e6fa3e06da401b89184bed8}\label{classtouchgfx_1_1_video_controller_a9037f0b22e6fa3e06da401b89184bed8} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!draw@{draw}}
+\index{draw@{draw}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Controller\+::draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \&}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draw the video content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The stream handle. \\
+\hline
+{\em invalidated\+Area} & The area of the widget that must be redrawn. \\
+\hline
+{\em widget} & Reference to the widget. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ac15a01e92f53444af546f1271e74475b}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a85d3671a6f5b84199a518512e883cb06}\label{classtouchgfx_1_1_video_controller_a85d3671a6f5b84199a518512e883cb06} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!getCurrentFrameNumber@{getCurrentFrameNumber}}
+\index{getCurrentFrameNumber@{getCurrentFrameNumber}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{getCurrentFrameNumber()}{getCurrentFrameNumber()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t touchgfx\+::\+Video\+Controller\+::get\+Current\+Frame\+Number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the current frame number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The stream handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the current frame number. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a919c6dbd3b14a614cb282da98846c4de}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a9d784e9a26833efc8f8afeaed4de49ce}\label{classtouchgfx_1_1_video_controller_a9d784e9a26833efc8f8afeaed4de49ce} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_video_controller}{Video\+Controller}} \& touchgfx\+::\+Video\+Controller\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the \doxylink{classtouchgfx_1_1_video_controller}{Video\+Controller} instance.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classtouchgfx_1_1_video_controller}{Video\+Controller} instance. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_video_controller_a5428a7ee578e014ff9ac89415789f91e}\label{classtouchgfx_1_1_video_controller_a5428a7ee578e014ff9ac89415789f91e} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!getIsPlaying@{getIsPlaying}}
+\index{getIsPlaying@{getIsPlaying}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{getIsPlaying()}{getIsPlaying()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Video\+Controller\+::get\+Is\+Playing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Check if the video stream is playing (not paused or stopped).
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The stream handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the video is playing. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_aefb257beb94b72e3b4aa7b2371ef1f04}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a0ee852e6100f80ec0d9b4b7dfa1e02dc}\label{classtouchgfx_1_1_video_controller_a0ee852e6100f80ec0d9b4b7dfa1e02dc} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!getVideoInformation@{getVideoInformation}}
+\index{getVideoInformation@{getVideoInformation}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{getVideoInformation()}{getVideoInformation()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Controller\+::get\+Video\+Information (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle,  }\item[{\mbox{\hyperlink{structtouchgfx_1_1_video_information}{Video\+Information}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get Video information.
+
+Get information from the video data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em handle} & The stream handle. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em data} & Pointer to \doxylink{structtouchgfx_1_1_video_information}{Video\+Information} where information should be stored. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_aa82a3c0bcfa4a96f2f190da5fdad66a4}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a4eb4a62d0cb95ac8703f611d19d40c88}\label{classtouchgfx_1_1_video_controller_a4eb4a62d0cb95ac8703f611d19d40c88} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!registerVideoWidget@{registerVideoWidget}}
+\index{registerVideoWidget@{registerVideoWidget}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{registerVideoWidget()}{registerVideoWidget()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}} touchgfx\+::\+Video\+Controller\+::register\+Video\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \&}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Register a \doxylink{classtouchgfx_1_1_video_widget}{Video\+Widget} to get a Handle.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em widget} & The \doxylink{classtouchgfx_1_1_video_widget}{Video\+Widget}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A video stream handle. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a3cd2785659d9b9e0aa443c752128314c}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a55014d66faf9964371e8eb3cbefe9985}\label{classtouchgfx_1_1_video_controller_a55014d66faf9964371e8eb3cbefe9985} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!setCommand@{setCommand}}
+\index{setCommand@{setCommand}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{setCommand()}{setCommand()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Controller\+::set\+Command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27}{Command}}}]{cmd,  }\item[{uint32\+\_\+t}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pass a command from the \doxylink{classtouchgfx_1_1_widget}{Widget} to the Controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The stream handle. \\
+\hline
+{\em cmd} & The Command. \\
+\hline
+{\em param} & A parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ab9f5c12c87ef76a3e2cf48fd2d454ef0}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_ac2ac814e323370cdfc69f0fdeffd2121}\label{classtouchgfx_1_1_video_controller_ac2ac814e323370cdfc69f0fdeffd2121} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!setFrameRate@{setFrameRate}}
+\index{setFrameRate@{setFrameRate}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{setFrameRate()}{setFrameRate()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Controller\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle,  }\item[{uint32\+\_\+t}]{ui\+\_\+frames,  }\item[{uint32\+\_\+t}]{video\+\_\+frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the framerate for video using a qoutient of screen frames /video frames.
+
+To get 20 video frames pr second on a 60 fps display use video\+\_\+frames = 20 and ui\+\_\+frames = 60.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The stream handle. \\
+\hline
+{\em ui\+\_\+frames} & Number of UI frames (divider) \\
+\hline
+{\em video\+\_\+frames} & Number of video\+\_\+frames (dividend) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_af3fd8ac9e1958c79f584b64e11063dd4}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_ac8239057c8bbe0b765548b084dbcb159}\label{classtouchgfx_1_1_video_controller_ac8239057c8bbe0b765548b084dbcb159} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!setVideoData@{setVideoData}}
+\index{setVideoData@{setVideoData}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{setVideoData()}{setVideoData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Controller\+::set\+Video\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{movie,  }\item[{const uint32\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the video data for the stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The stream handle. \\
+\hline
+{\em movie} & Pointer to the video data. \\
+\hline
+{\em length} & Length of the video data. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ae337cb942859ca7859dcc516f3183ea4}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a5187610b193425899096913446b5fa36}\label{classtouchgfx_1_1_video_controller_a5187610b193425899096913446b5fa36} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!setVideoData@{setVideoData}}
+\index{setVideoData@{setVideoData}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{setVideoData()}{setVideoData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Controller\+::set\+Video\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{Video\+Data\+Reader}} \&}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the video data for the stream.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em handle} & The stream handle. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em reader} & Reference to a \doxylink{classtouchgfx_1_1_video_data_reader}{Video\+Data\+Reader} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_adc176a17113cd0c00d4dddf7286a66d1}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a019ad98d9cd9146a239a3c89948d6125}\label{classtouchgfx_1_1_video_controller_a019ad98d9cd9146a239a3c89948d6125} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!unregisterVideoWidget@{unregisterVideoWidget}}
+\index{unregisterVideoWidget@{unregisterVideoWidget}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{unregisterVideoWidget()}{unregisterVideoWidget()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Video\+Controller\+::unregister\+Video\+Widget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Unregister a \doxylink{classtouchgfx_1_1_video_widget}{Video\+Widget} to release the handle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The stream handle. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a269333bd931998c375859ccc0e11c6a0}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_video_controller_a50f64906ecf16d42bc9c7b01124bca00}\label{classtouchgfx_1_1_video_controller_a50f64906ecf16d42bc9c7b01124bca00} 
+\index{touchgfx::VideoController@{touchgfx::VideoController}!updateFrame@{updateFrame}}
+\index{updateFrame@{updateFrame}!touchgfx::VideoController@{touchgfx::VideoController}}
+\doxysubsubsection{\texorpdfstring{updateFrame()}{updateFrame()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Video\+Controller\+::update\+Frame (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}}]{handle,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \&}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Signal that the widget can be invalidated (tick\+Event).
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em handle} & The stream handle. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em widget} & The \doxylink{classtouchgfx_1_1_widget}{Widget}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if video has more frames (i.\+e. false on the last frame). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a739992d5667833b56b33175b2aed9a36}{Direct\+Frame\+Buffer\+Video\+Controller$<$ no\+\_\+streams, output\+\_\+format $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/Video\+Controller.\+hpp\end{DoxyCompactItemize}

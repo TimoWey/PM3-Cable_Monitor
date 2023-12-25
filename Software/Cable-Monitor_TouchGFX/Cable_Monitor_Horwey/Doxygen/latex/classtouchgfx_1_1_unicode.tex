@@ -1,0 +1,626 @@
+\doxysection{touchgfx\+::Unicode Class Reference}
+\hypertarget{classtouchgfx_1_1_unicode}{}\label{classtouchgfx_1_1_unicode}\index{touchgfx::Unicode@{touchgfx::Unicode}}
+
+
+{\ttfamily \#include $<$Unicode.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3769f50fac8824134c41cc0529f5b87a}{strlen}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}str)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_a7d83270f609e96bf794e9ce334607a68}{strlen}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_aeb149427bcd83af292edad0aec54a399}{strncpy}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} dst, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} src, uint16\+\_\+t maxchars)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_a4c8703bd6996d46d6147ddc964620598}{strncpy}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} dst, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} src, uint16\+\_\+t maxchars)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa10fe9978066d5875a9195acc5e18bc3}{itoa}} (int32\+\_\+t value, \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}buffer, uint16\+\_\+t buffer\+Size, int radix)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_unicode_af28c9495d1d24d8bc74ab3dd09c18374}{utoa}} (uint32\+\_\+t value, \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}buffer, uint16\+\_\+t buffer\+Size, int radix)
+\item 
+static int \mbox{\hyperlink{classtouchgfx_1_1_unicode_a9d97529f421a238fd51e138557b72784}{atoi}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}s)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}format,...)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a13576e2abe6e95daa300538d8bdf0ecf}{vsnprintf}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}format, va\+\_\+list p\+Arg)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a10ede5ebf0ce09541bf651845501fdf8}{snprintf}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const char \texorpdfstring{$\ast$}{*}format,...)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a13350e800e63807fbe5fc52571919660}{vsnprintf}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const char \texorpdfstring{$\ast$}{*}format, va\+\_\+list p\+Arg)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}format, const float \texorpdfstring{$\ast$}{*}values)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{snprintf\+Float}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}format, const float value)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a9d8466471e6b55ef385ad80a4b4f606b}{snprintf\+Floats}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const char \texorpdfstring{$\ast$}{*}format, const float \texorpdfstring{$\ast$}{*}values)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_unicode_a833dfbadd43209959b80b6c23cefbbd6}{snprintf\+Float}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t dst\+Size, const char \texorpdfstring{$\ast$}{*}format, const float value)
+\item 
+static int \mbox{\hyperlink{classtouchgfx_1_1_unicode_a2a0c7d11dd43d0116788998e7da50927}{strncmp}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} str1, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} str2, uint16\+\_\+t maxchars)
+\item 
+static int \mbox{\hyperlink{classtouchgfx_1_1_unicode_a43b0d0714fc591df46a0b03052a7bc3e}{strncmp\+\_\+ignore\+\_\+whitespace}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} str1, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} str2, uint16\+\_\+t maxchars)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3c366b14573f1484137c274dacf67a0d}{from\+UTF8}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}utf8, \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}dst, uint16\+\_\+t maxchars)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_a186538c6bdd4598290a2bab59cfb2c8f}{to\+UTF8}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}unicode, uint8\+\_\+t \texorpdfstring{$\ast$}{*}utf8, uint16\+\_\+t maxbytes)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class provides simple helper functions for working with strings which are stored as a null-\/terminated array of 16-\/bit characters. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}\label{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!UnicodeChar@{UnicodeChar}}
+\index{UnicodeChar@{UnicodeChar}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{UnicodeChar}{UnicodeChar}}
+{\footnotesize\ttfamily typedef uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx\+::\+Unicode\+::\+Unicode\+Char}}}
+
+Use the Unicode\+Char typename when referring to characters in a string. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_unicode_a9d97529f421a238fd51e138557b72784}\label{classtouchgfx_1_1_unicode_a9d97529f421a238fd51e138557b72784} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!atoi@{atoi}}
+\index{atoi@{atoi}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{atoi()}{atoi()}}
+{\footnotesize\ttfamily static int touchgfx\+::\+Unicode\+::atoi (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+String to integer conversion. Starts conversion at the start of the string. Running digits from here are converted. Only radix 10 supported.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Radix 10, null-\/terminated \doxylink{classtouchgfx_1_1_unicode}{Unicode} string to convert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted integer value of the string, 0 if the string does not start with a digit. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_unicode_a3c366b14573f1484137c274dacf67a0d}\label{classtouchgfx_1_1_unicode_a3c366b14573f1484137c274dacf67a0d} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!fromUTF8@{fromUTF8}}
+\index{fromUTF8@{fromUTF8}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{fromUTF8()}{fromUTF8()}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+Unicode\+::from\+UTF8 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{utf8,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{maxchars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convert a string from UTF8 to \doxylink{classtouchgfx_1_1_unicode}{Unicode}. The conversion stops if there is no more room in the destination or if the terminating zero character has been converted.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em utf8} & The UTF8 string. \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & The destination buffer for the converted string. \\
+\hline
+ & {\em maxchars} & The maximum number of chars that the dst array can hold.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters successfully converted from UTF8 to \doxylink{classtouchgfx_1_1_unicode}{Unicode} including the terminating zero. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_unicode_aa10fe9978066d5875a9195acc5e18bc3}\label{classtouchgfx_1_1_unicode_aa10fe9978066d5875a9195acc5e18bc3} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!itoa@{itoa}}
+\index{itoa@{itoa}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{itoa()}{itoa()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Unicode\+::itoa (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{uint16\+\_\+t}]{buffer\+Size,  }\item[{int}]{radix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Integer to ASCII conversion. Supports radix 2 to radix 36.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em value} & to convert. \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & to place result in. \\
+\hline
+ & {\em buffer\+Size} & Size of buffer (number of Unicode\+Char\textquotesingle{}s). \\
+\hline
+ & {\em radix} & to use (8 for octal, 10 for decimal, 16 for hex) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_unicode_a10ede5ebf0ce09541bf651845501fdf8}\label{classtouchgfx_1_1_unicode_a10ede5ebf0ce09541bf651845501fdf8} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!snprintf@{snprintf}}
+\index{snprintf@{snprintf}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{snprintf()}{snprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::snprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Formats a string and adds null termination. The string is formatted like when the standard printf is used.
+
+Support formats\+: \%c (element type\+: char), \%s (element type\+: null-\/terminated Unicode\+Char list), \%u, \%i, \%d, \%o, \%x (all these are integers formatted in radix 10, 10, 10, 8, 16 respectively).
+
+The number formats (\%u, \%i, \%d, \%o and \%x) all support \begin{DoxyVerb}\%[flags][width][.precision]X
+\end{DoxyVerb}
+ Where flags can be\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}-\/\textquotesingle{}\+: left justify the field (see width).
+\item \textquotesingle{}+\textquotesingle{}\+: force sign.
+\item \textquotesingle{} \textquotesingle{}\+: insert space if value is positive.
+\item \textquotesingle{}0\textquotesingle{}\+: left pad with zeros instead of spaces (see width).
+\end{DoxyItemize}
+
+Where width is the desired width of the output. If the value is larger, more characters may be generated, but not more than the parameter dst\+Size. If width is \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} the actual width is read from the parameters passed to this function.
+
+Where precision is the number of number of digits after the decimal point, default is
+\begin{DoxyEnumerate}
+\item Use "{}\textbackslash{}\%.\+f"{} to not generate any numbers after the decimal point. If precision is \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} the actual precision is read from the parameters passed to this function.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string. \\
+\hline
+ & {\em ...} & The values to insert in the format string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{snprintf\+Float}, \doxylink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+\%f is not supported by this function because floats are converted to doubles when given as parameters in a variable argument list (va\+\_\+list). Use snprintf\+Float or snprintf\+Floats instead.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{snprintf\+Float}, \doxylink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}\label{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!snprintf@{snprintf}}
+\index{snprintf@{snprintf}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{snprintf()}{snprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::snprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Formats a string and adds null termination. The string is formatted like when the standard printf is used.
+
+Support formats\+: \%c (element type\+: char), \%s (element type\+: null-\/terminated Unicode\+Char list), \%u, \%i, \%d, \%o, \%x (all these are integers formatted in radix 10, 10, 10, 8, 16 respectively).
+
+The number formats (\%u, \%i, \%d, \%o and \%x) all support \%\mbox{[}0\mbox{]}\mbox{[}length\mbox{]}X to specify the size of the generated field (length) and whether the number should be prefixed with zeros (or blanks).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string. \\
+\hline
+ & {\em ...} & The values to insert in the format string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{snprintf\+Float}, \doxylink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+\%f is not supported by this function because floats are converted to doubles when given as parameters in a variable argument list (va\+\_\+list). Use snprintf\+Float or snprintf\+Floats instead. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_unicode_a833dfbadd43209959b80b6c23cefbbd6}\label{classtouchgfx_1_1_unicode_a833dfbadd43209959b80b6c23cefbbd6} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!snprintfFloat@{snprintfFloat}}
+\index{snprintfFloat@{snprintfFloat}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{snprintfFloat()}{snprintfFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::snprintf\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{const float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Variant of \doxylink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats()} for exactly one float only.
+
+The number format supports only one \%f with flags/modifiers. The following is supported\+: \begin{DoxyVerb}\%[flags][width][.precision]f
+\end{DoxyVerb}
+ Where flags can be\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}-\/\textquotesingle{}\+: left justify the field (see width).
+\item \textquotesingle{}+\textquotesingle{}\+: force sign.
+\item \textquotesingle{} \textquotesingle{}\+: insert space if value is positive.
+\item \textquotesingle{}\#\textquotesingle{}\+: insert decimal point even if there are not decimals.
+\item \textquotesingle{}0\textquotesingle{}\+: left pad with zeros instead of spaces (see width).
+\end{DoxyItemize}
+
+Where width is the desired width of the output. If the value is larger, more characters may be generated, but not more than the parameter dst\+Size.
+
+Where precision is the number of number of digits after the decimal point, default is "{}3"{}. Use "{}\textbackslash{}\%.\+f"{} to not generate any numbers after the decimal point. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}\ buffer[20];}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%6.4f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}3.1416"{}}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%\#6.f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}\ \ \ \ 3."{}}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%6f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}\ 3.142"{}}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%+06.f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}+00003"{}}}
+
+\end{DoxyCode}
+
+
+If more control over the output is needed, see snprintf\+Floats which can have more than a single "{}\textbackslash{}\%f"{} in the string and also supports "{}\texorpdfstring{$\ast$}{*}"{} in place of a number.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string containing exactly on occurrence of f. \\
+\hline
+ & {\em value} & The floating point value to insert for f.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf}, \doxylink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}\label{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!snprintfFloat@{snprintfFloat}}
+\index{snprintfFloat@{snprintfFloat}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{snprintfFloat()}{snprintfFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::snprintf\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{const float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Variant of \doxylink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats()} for exactly one float only.
+
+The number format supports only one \%f with flags/modifiers. The following is supported\+: \begin{DoxyVerb}\%[flags][width][.precision]f
+\end{DoxyVerb}
+ Where flags can be\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}-\/\textquotesingle{}\+: left justify the field (see width).
+\item \textquotesingle{}+\textquotesingle{}\+: force sign.
+\item \textquotesingle{} \textquotesingle{}\+: insert space if value is positive.
+\item \textquotesingle{}\#\textquotesingle{}\+: insert decimal point even if there are not decimals.
+\item \textquotesingle{}0\textquotesingle{}\+: left pad with zeros instead of spaces (see width).
+\end{DoxyItemize}
+
+Where width is the desired width of the output. If the value is larger, more characters may be generated, but not more than the parameter dst\+Size.
+
+Where precision is the number of number of digits after the decimal point, default is "{}3"{}. Use "{}\textbackslash{}\%.\+f"{} to not generate any numbers after the decimal point. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}\ buffer[20];}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%6.4f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}3.1416"{}}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%\#6.f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}\ \ \ \ 3."{}}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%6f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}\ 3.142"{}}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{Unicode::snprintfFloat}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%+06.f"{}},\ 3.14159f);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}+00003"{}}}
+
+\end{DoxyCode}
+
+
+If more control over the output is needed, see snprintf\+Floats which can have more than a single "{}\textbackslash{}\%f"{} in the string and also supports "{}\texorpdfstring{$\ast$}{*}"{} in place of a number.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string containing exactly on occurrence of f. \\
+\hline
+ & {\em value} & The floating point value to insert for f.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf}, \doxylink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintf\+Floats} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_unicode_a9d8466471e6b55ef385ad80a4b4f606b}\label{classtouchgfx_1_1_unicode_a9d8466471e6b55ef385ad80a4b4f606b} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!snprintfFloats@{snprintfFloats}}
+\index{snprintfFloats@{snprintfFloats}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{snprintfFloats()}{snprintfFloats()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::snprintf\+Floats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{const float \texorpdfstring{$\ast$}{*}}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Variant of snprintf for floats only. The format supports several \%f with flags/modifiers. The following is supported\+: \begin{DoxyVerb}\%[flags][width][.precision]f
+\end{DoxyVerb}
+ Where flags can be\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}-\/\textquotesingle{}\+: left justify the field (see width).
+\item \textquotesingle{}+\textquotesingle{}\+: force sign.
+\item \textquotesingle{} \textquotesingle{}\+: insert space if value is positive
+\item \textquotesingle{}\#\textquotesingle{}\+: insert decimal point even if there are not decimals
+\item \textquotesingle{}0\textquotesingle{}\+: left pad with zeros instead of spaces (see width)
+\end{DoxyItemize}
+
+Where width is the desired width of the output. If the value is larger, more characters may be generated, but not more than the parameter dst\+Size. If width is \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} the actual width is read from the list of values passed to this function.
+
+Where precision is the number of number of digits after the decimal point, default is
+\begin{DoxyEnumerate}
+\item Use "{}\textbackslash{}\%.\+f"{} to not generate any numbers after the decimal point. If precision is \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} the actual precision is read from the list of values passed to this function. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ param1[3]\ =\ \{\ 6.0f,\ 4.0f,\ 3.14159f\ \};}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{Unicode::snprintfFloats}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%*.*f"{}},\ param1);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}3.1416"{}\ float\ param2[2]\ =\ \{\ 3.14159f,\ -\/123.4f\ \};}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{Unicode::snprintfFloats}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%f\ \%f"{}},\ param2);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}3.142\ -\/123.400"{}}}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string containing f\textquotesingle{}s. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The floating point values to insert for f. The number of elements in the array must match the number of f\textquotesingle{}s in the format string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf}, \doxylink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{snprintf\+Float} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}\label{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!snprintfFloats@{snprintfFloats}}
+\index{snprintfFloats@{snprintfFloats}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{snprintfFloats()}{snprintfFloats()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::snprintf\+Floats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{const float \texorpdfstring{$\ast$}{*}}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Variant of snprintf for floats only. The format supports several \%f with flags/modifiers. The following is supported\+: \begin{DoxyVerb}\%[flags][width][.precision]f
+\end{DoxyVerb}
+ Where flags can be\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}-\/\textquotesingle{}\+: left justify the field (see width).
+\item \textquotesingle{}+\textquotesingle{}\+: force sign.
+\item \textquotesingle{} \textquotesingle{}\+: insert space if value is positive
+\item \textquotesingle{}\#\textquotesingle{}\+: insert decimal point even if there are not decimals
+\item \textquotesingle{}0\textquotesingle{}\+: left pad with zeros instead of spaces (see width)
+\end{DoxyItemize}
+
+Where width is the desired width of the output. If the value is larger, more characters may be generated, but not more than the parameter dst\+Size. If width is \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} the actual width is read from the list of values passed to this function.
+
+Where precision is the number of number of digits after the decimal point, default is
+\begin{DoxyEnumerate}
+\item Use "{}\textbackslash{}\%.\+f"{} to not generate any numbers after the decimal point. If precision is \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} the actual precision is read from the list of values passed to this function. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ param1[3]\ =\ \{\ 6.0f,\ 4.0f,\ 3.14159f\ \};}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{Unicode::snprintfFloats}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%*.*f"{}},\ param1);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}3.1416"{}\ float\ param2[2]\ =\ \{\ 3.14159f,\ -\/123.4f\ \};}}
+\DoxyCodeLine{\mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{Unicode::snprintfFloats}}(buffer,\ 20,\ \textcolor{stringliteral}{"{}\%f\ \%f"{}},\ param2);}
+\DoxyCodeLine{\textcolor{comment}{//\ buffer="{}3.142\ -\/123.400"{}}}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string containing f\textquotesingle{}s. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The floating point values to insert for f. The number of elements in the array must match the number of f\textquotesingle{}s in the format string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf}, \doxylink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{snprintf\+Float} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_unicode_a7d83270f609e96bf794e9ce334607a68}\label{classtouchgfx_1_1_unicode_a7d83270f609e96bf794e9ce334607a68} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!strlen@{strlen}}
+\index{strlen@{strlen}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{strlen()}{strlen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+Unicode\+::strlen (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the length of a null-\/terminated string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of string. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_unicode_a3769f50fac8824134c41cc0529f5b87a}\label{classtouchgfx_1_1_unicode_a3769f50fac8824134c41cc0529f5b87a} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!strlen@{strlen}}
+\index{strlen@{strlen}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{strlen()}{strlen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+Unicode\+::strlen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the length of a null-\/terminated \doxylink{classtouchgfx_1_1_unicode}{Unicode} string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string in question.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of string. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_unicode_a2a0c7d11dd43d0116788998e7da50927}\label{classtouchgfx_1_1_unicode_a2a0c7d11dd43d0116788998e7da50927} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!strncmp@{strncmp}}
+\index{strncmp@{strncmp}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{strncmp()}{strncmp()}}
+{\footnotesize\ttfamily static int touchgfx\+::\+Unicode\+::strncmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{str1,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{str2,  }\item[{uint16\+\_\+t}]{maxchars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Compares up to maxchars characters in two strings. One character from each buffer is compared, one at a time until the characters differ, until a terminating null-\/ character is reached, or until maxchars characters match in both strings, whichever happens first.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & The first string. \\
+\hline
+{\em str2} & The second string. \\
+\hline
+{\em maxchars} & The maximum number of chars to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integral value indicating the relationship between the strings\+: A zero value indicates that the characters compared in both strings are all equal. A value greater than zero indicates that the first character that does not match has a greater value in str1 than in str2; And a value less than zero indicates the opposite. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_unicode_a43b0d0714fc591df46a0b03052a7bc3e}\label{classtouchgfx_1_1_unicode_a43b0d0714fc591df46a0b03052a7bc3e} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!strncmp\_ignore\_whitespace@{strncmp\_ignore\_whitespace}}
+\index{strncmp\_ignore\_whitespace@{strncmp\_ignore\_whitespace}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{strncmp\_ignore\_whitespace()}{strncmp\_ignore\_whitespace()}}
+{\footnotesize\ttfamily static int touchgfx\+::\+Unicode\+::strncmp\+\_\+ignore\+\_\+whitespace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{str1,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{str2,  }\item[{uint16\+\_\+t}]{maxchars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Like strncmp except that ignore any whitespaces in the two strings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & The first string. \\
+\hline
+{\em str2} & The second string. \\
+\hline
+{\em maxchars} & The maximum number of chars to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integral value indicating the relationship between the strings\+: A zero value indicates that the characters compared in both strings are all equal. A value greater than zero indicates that the first character that does not match has a greater value in str1 than in str2; And a value less than zero indicates the opposite. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_unicode_a4c8703bd6996d46d6147ddc964620598}\label{classtouchgfx_1_1_unicode_a4c8703bd6996d46d6147ddc964620598} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!strncpy@{strncpy}}
+\index{strncpy@{strncpy}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{strncpy()}{strncpy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+Unicode\+::strncpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{dst,  }\item[{const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{src,  }\item[{uint16\+\_\+t}]{maxchars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Copy a string to a destination buffer, char to Unicode\+Char version. Stops after copying maxchars \doxylink{classtouchgfx_1_1_unicode}{Unicode} characters or after copying the ending null-\/termination Unicode\+Char.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & The destination buffer. Must have a size of at least maxchars. \\
+\hline
+\mbox{\texttt{ in}}  & {\em src} & The source string. \\
+\hline
+ & {\em maxchars} & Maximum number of chars to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters copied (excluding null-\/termination if encountered)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If there is no null-\/termination among the first n Unicode\+Chars of src, the string placed in destination will NOT be null-\/terminated! 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_unicode_aeb149427bcd83af292edad0aec54a399}\label{classtouchgfx_1_1_unicode_aeb149427bcd83af292edad0aec54a399} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!strncpy@{strncpy}}
+\index{strncpy@{strncpy}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{strncpy()}{strncpy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+Unicode\+::strncpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{dst,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}}]{src,  }\item[{uint16\+\_\+t}]{maxchars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Copy a string to a destination buffer, Unicode\+Char to Unicode\+Char version. Stops after copying maxchars \doxylink{classtouchgfx_1_1_unicode}{Unicode} characters or after copying the ending zero termination Unicode\+Char.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & The destination buffer. Must have a size of at least maxchars. \\
+\hline
+\mbox{\texttt{ in}}  & {\em src} & The source string. \\
+\hline
+ & {\em maxchars} & Maximum number of Unicode\+Chars to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters copied (excluding null-\/termination if encountered)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If there is no null-\/termination among the first n Unicode\+Chars of src, the string placed in destination will NOT be null-\/terminated! 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_unicode_a186538c6bdd4598290a2bab59cfb2c8f}\label{classtouchgfx_1_1_unicode_a186538c6bdd4598290a2bab59cfb2c8f} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!toUTF8@{toUTF8}}
+\index{toUTF8@{toUTF8}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{toUTF8()}{toUTF8()}}
+{\footnotesize\ttfamily static uint16\+\_\+t touchgfx\+::\+Unicode\+::to\+UTF8 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{unicode,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{utf8,  }\item[{uint16\+\_\+t}]{maxbytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts a string from \doxylink{classtouchgfx_1_1_unicode}{Unicode} to UTF8. The conversion stops if there is no more room in the destination or if the terminating zero character has been converted. U+10000 through U+10\+FFFF are skipped.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em unicode} & The \doxylink{classtouchgfx_1_1_unicode}{Unicode} string. \\
+\hline
+\mbox{\texttt{ out}}  & {\em utf8} & The destination buffer for the converted string. \\
+\hline
+ & {\em maxbytes} & The maximum number of bytes that the UTF8 array can hold.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters successfully converted from \doxylink{classtouchgfx_1_1_unicode}{Unicode} to UTF8 including the terminating zero. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_unicode_af28c9495d1d24d8bc74ab3dd09c18374}\label{classtouchgfx_1_1_unicode_af28c9495d1d24d8bc74ab3dd09c18374} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!utoa@{utoa}}
+\index{utoa@{utoa}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{utoa()}{utoa()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Unicode\+::utoa (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{uint16\+\_\+t}]{buffer\+Size,  }\item[{int}]{radix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Integer to ASCII conversion. Supports radix 2 to radix 36.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em value} & to convert. \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & to place result in. \\
+\hline
+ & {\em buffer\+Size} & Size of buffer (number of Unicode\+Char\textquotesingle{}s). \\
+\hline
+ & {\em radix} & to use (8 for octal, 10 for decimal, 16 for hex) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_unicode_a13350e800e63807fbe5fc52571919660}\label{classtouchgfx_1_1_unicode_a13350e800e63807fbe5fc52571919660} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!vsnprintf@{vsnprintf}}
+\index{vsnprintf@{vsnprintf}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{vsnprintf()}{vsnprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::vsnprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{va\+\_\+list}]{p\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Variant of snprintf.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string. \\
+\hline
+ & {\em p\+Arg} & The values to insert in the format string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_unicode_a13576e2abe6e95daa300538d8bdf0ecf}\label{classtouchgfx_1_1_unicode_a13576e2abe6e95daa300538d8bdf0ecf} 
+\index{touchgfx::Unicode@{touchgfx::Unicode}!vsnprintf@{vsnprintf}}
+\index{vsnprintf@{vsnprintf}!touchgfx::Unicode@{touchgfx::Unicode}}
+\doxysubsubsection{\texorpdfstring{vsnprintf()}{vsnprintf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Unicode\+::vsnprintf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint16\+\_\+t}]{dst\+Size,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{va\+\_\+list}]{p\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Variant of snprintf.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dst} & Buffer for the formatted string. \\
+\hline
+ & {\em dst\+Size} & Size of the dst buffer measured by number of Unicode\+Chars the buffer can hold. \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & The format string. \\
+\hline
+ & {\em p\+Arg} & The values to insert in the format string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first element in the buffer where the formatted string is placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_unicode_8hpp}{Unicode.\+hpp}}\end{DoxyCompactItemize}

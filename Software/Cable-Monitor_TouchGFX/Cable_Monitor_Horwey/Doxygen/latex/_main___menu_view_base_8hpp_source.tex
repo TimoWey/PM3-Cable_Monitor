@@ -1,0 +1,85 @@
+\doxysection{Main\+\_\+\+Menu\+View\+Base.\+hpp}
+\hypertarget{_main___menu_view_base_8hpp_source}{}\label{_main___menu_view_base_8hpp_source}\index{TouchGFX/generated/gui\_generated/include/gui\_generated/main\_menu\_screen/Main\_MenuViewBase.hpp@{TouchGFX/generated/gui\_generated/include/gui\_generated/main\_menu\_screen/Main\_MenuViewBase.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/**********\ THIS\ FILE\ IS\ GENERATED\ BY\ TOUCHGFX\ DESIGNER,\ DO\ NOT\ MODIFY\ ***********/}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ MAIN\_MENUVIEWBASE\_HPP}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ MAIN\_MENUVIEWBASE\_HPP}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <gui/common/FrontendApplication.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_view_8hpp}{mvp/View.hpp}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <gui/main\_menu\_screen/Main\_MenuPresenter.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_box_8hpp}{touchgfx/widgets/Box.hpp}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8hpp}{touchgfx/widgets/Image.hpp}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_with_wildcard_8hpp}{touchgfx/widgets/TextAreaWithWildcard.hpp}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_button_with_label_8hpp}{touchgfx/widgets/ButtonWithLabel.hpp}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_line_8hpp}{touchgfx/widgets/canvas/Line.hpp}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_painter_r_g_b565_8hpp}{touchgfx/widgets/canvas/PainterRGB565.hpp}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_8hpp}{touchgfx/widgets/TextArea.hpp}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_button_with_icon_8hpp}{touchgfx/widgets/ButtonWithIcon.hpp}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ SIMULATOR}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main___menu_view_base}{Main\_MenuViewBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_view}{touchgfx::View}}<Main\_MenuPresenter>}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_main___menu_view_base}{Main\_MenuViewBase}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_main___menu_view_base}{\string~Main\_MenuViewBase}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main___menu_view_base_aa837f6db7700497af8fd16a98245de04}{setupScreen}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_frontend_application}{FrontendApplication}}\&\ application()\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_frontend_application}{FrontendApplication}}*\textcolor{keyword}{>}(\mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{touchgfx::Application::getInstance}}());}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ *\ Member\ Declarations}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box}{touchgfx::Box}}\ \_\_background;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_image}{touchgfx::Image}}\ image\_background;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textArea\_auto\_off;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_label}{touchgfx::ButtonWithLabel}}\ buttonWithLabel\_ProjectInfo;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_label}{touchgfx::ButtonWithLabel}}\ buttonWithLabel\_Calibration;}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_label}{touchgfx::ButtonWithLabel}}\ buttonWithLabel\_Measure;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line2;}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line2Painter;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_menu;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1Painter;}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_name;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea\_title;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_turn\_off;}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_settings;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ \ *\ Wildcard\ Buffers}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREA\_AUTO\_OFF\_SIZE\ =\ 4;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textArea\_auto\_offBuffer[TEXTAREA\_AUTO\_OFF\_SIZE];}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ \ *\ Canvas\ Buffer\ Size}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ CANVAS\_BUFFER\_SIZE\ =\ 3600;}
+\DoxyCodeLine{00065\ \ \ \ \ uint8\_t\ canvasBuffer[CANVAS\_BUFFER\_SIZE];}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ \ *\ Callback\ Declarations}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_callback}{touchgfx::Callback<Main\_MenuViewBase,\ const\ touchgfx::AbstractButton\&>}}\ buttonCallback;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ \ \ \ *\ Callback\ Handler\ Declarations}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ buttonCallbackHandler(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button}{touchgfx::AbstractButton}}\&\ src);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAIN\_MENUVIEWBASE\_HPP}}
+
+\end{DoxyCode}

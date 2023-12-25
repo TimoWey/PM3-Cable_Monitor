@@ -1,0 +1,96 @@
+\doxysection{Scroll\+Wheel\+With\+Selection\+Style.\+hpp}
+\hypertarget{_scroll_wheel_with_selection_style_8hpp_source}{}\label{_scroll_wheel_with_selection_style_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp}}
+\mbox{\hyperlink{_scroll_wheel_with_selection_style_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_SCROLLWHEELWITHSELECTIONSTYLE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_SCROLLWHEELWITHSELECTIONSTYLE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drawable_list_8hpp}{touchgfx/containers/scrollers/DrawableList.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_scroll_wheel_base_8hpp}{touchgfx/containers/scrollers/ScrollWheelBase.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style}{ScrollWheelWithSelectionStyle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_base}{ScrollWheelBase}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style}{ScrollWheelWithSelectionStyle}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a437d5998fd311dbcb8686d2aefeb6ff2}{setWidth}}(int16\_t\ width);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_ac8cdb75ffd2e358f8914e10752283359}{setHeight}}(int16\_t\ height);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_acb3cc4f091f662926911650ac3c9ddb1}{setHorizontal}}(\textcolor{keywordtype}{bool}\ horizontal);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a78a4812d3903da6e1e494359366cf615}{setCircular}}(\textcolor{keywordtype}{bool}\ circular);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a9f8410dec6e0af5252764211749341dc}{setNumberOfItems}}(int16\_t\ numberOfItems);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a18fd330d06ee7fa9d496a0e7ea035464}{setSelectedItemOffset}}(int16\_t\ offset);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a2542915e806536d3864142faa7b20451}{setSelectedItemExtraSize}}(int16\_t\ extraSizeBefore,\ int16\_t\ extraSizeAfter);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a09d01c672f52618cc5d0806abd273195}{getSelectedItemExtraSizeBefore}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a60623292d864a126bbe43f635757a5d5}{getSelectedItemExtraSizeAfter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_aeb397fe6e295d700b2be6714ffb9666d}{setSelectedItemMargin}}(int16\_t\ marginBefore,\ int16\_t\ marginAfter);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a58960f83c1d1518a6ce2334c1b25f3ed}{getSelectedItemMarginBefore}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_acdf70b38a27789ec5f7fb7fa571f171b}{getSelectedItemMarginAfter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a87debbdf2b7d745309df649e92d2c85e}{setSelectedItemPosition}}(int16\_t\ offset,\ int16\_t\ extraSizeBefore,\ int16\_t\ extraSizeAfter,\ int16\_t\ marginBefore,\ int16\_t\ marginAfter);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a19d30413c8748ce06fac0f87b6af307f}{setDrawableSize}}(int16\_t\ drawableSize,\ int16\_t\ drawableMargin);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a472c39359300751df50331ee4606c3d3}{setDrawables}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}\&\ drawableListItems,\ GenericCallback<DrawableListItemsInterface*,\ int16\_t,\ int16\_t>\&\ updateDrawableCallback,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}\&\ centerDrawableListItems,\ GenericCallback<DrawableListItemsInterface*,\ int16\_t,\ int16\_t>\&\ updateCenterDrawableCallback);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a5ab3154d3c3e03900537aefff412e11c}{itemChanged}}(\textcolor{keywordtype}{int}\ itemIndex);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a4e8b414d7444b29d0e52e8d32a1bd03f}{initialize}}()}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scroll_base_a8cf921a1862ce65a7bed9c1b5afed134}{ScrollWheelBase::initialize}}();}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a2dc2624dcf9a30f8e3f9fd0011e0ea1a}{listCenter}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_aebf9ab2a0335e8812ac86e793dc1c3e6}{refreshDrawables}}();}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a3aef729c05f794359ff2cf39e867b821}{listAfter}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_list_aebf9ab2a0335e8812ac86e793dc1c3e6}{refreshDrawables}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_ab042d6ea5237ab727ec7d3d5acf37e4e}{setOffset}}(int32\_t\ offset);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a396584b10da69e03c3692a313bb4a569}{refreshDrawableListsLayout}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_ad39e40be621ea2b72502caa7bf164384}{drawablesInFirstList}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list}{DrawableList}}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a2dc2624dcf9a30f8e3f9fd0011e0ea1a}{listCenter}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list}{DrawableList}}\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a3aef729c05f794359ff2cf39e867b821}{listAfter}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_ad1295e290a96a82e274e1d0154b4fc6a}{extraSizeBeforeSelectedItem}};\ }
+\DoxyCodeLine{00174\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a8bd50814622a268cd11a5512263b8cf9}{extraSizeAfterSelectedItem}};\ \ }
+\DoxyCodeLine{00175\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a8b7b3a3795cfa41ccb9fa1e8bf1283f9}{marginBeforeSelectedItem}};\ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a9a9309bc6f43f4c0aa6e377c17c15cfb}{marginAfterSelectedItem}};\ \ \ \ \ }
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}*\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_ab00c37c1aac53cb5a7418ddf6fae0eaa}{drawables}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{DrawableListItemsInterface}}*\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_aaae44f3dc3c4ff346a248761b1dfd46a}{centerDrawables}};\ }
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ GenericCallback<DrawableListItemsInterface*,\ int16\_t,\ int16\_t>*\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a0497d437fd3f26509accd6256a21b9ea}{originalUpdateDrawableCallback}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ GenericCallback<DrawableListItemsInterface*,\ int16\_t,\ int16\_t>*\ \mbox{\hyperlink{classtouchgfx_1_1_scroll_wheel_with_selection_style_ab16b06573c748965eb31967a3aeadc3a}{originalUpdateCenterDrawableCallback}};\ }
+\DoxyCodeLine{00183\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_SCROLLWHEELWITHSELECTIONSTYLE\_HPP}}
+
+\end{DoxyCode}

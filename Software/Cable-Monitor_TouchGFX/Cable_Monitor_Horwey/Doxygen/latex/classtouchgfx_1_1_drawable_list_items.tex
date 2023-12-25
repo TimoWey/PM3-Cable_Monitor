@@ -1,0 +1,116 @@
+\doxysection{touchgfx\+::Drawable\+List\+Items\texorpdfstring{$<$}{<} TYPE, SIZE \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_drawable_list_items}{}\label{classtouchgfx_1_1_drawable_list_items}\index{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$@{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$}}
+
+
+{\ttfamily \#include $<$Drawable\+List.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Drawable\+List\+Items\texorpdfstring{$<$}{<} TYPE, SIZE \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_drawable_list_items}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_ae7463635d1f48c69769758001674ec08}{get\+Drawable}} (int16\+\_\+t index)
+\item 
+TYPE \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_a762e9cf53c8055ed1074571527b75f9b}{operator\mbox{[}$\,$\mbox{]}}} (int index)
+\item 
+virtual int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_a32e3d20cdfe058257d04a5e370e958d5}{get\+Number\+Of\+Drawables}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface}{touchgfx\+::\+Drawable\+List\+Items\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_acc2856a45a76450a589fa0b99f5a73f8}{\texorpdfstring{$\sim$}{\string~}\+Drawable\+List\+Items\+Interface}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_drawable_list_items_afc811066137152488c3f88280131de62}\label{classtouchgfx_1_1_drawable_list_items_afc811066137152488c3f88280131de62} 
+TYPE {\bfseries element} \mbox{[}SIZE\mbox{]}
+\begin{DoxyCompactList}\small\item\em The array of drawables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class TYPE, int SIZE$>$\newline
+class touchgfx\+::\+Drawable\+List\+Items$<$ TYPE, SIZE $>$}
+An array of drawables used by \doxylink{classtouchgfx_1_1_drawable_list}{Drawable\+List}. This class is used to ease the setup of a callback function to get access to a specific drawable in the array.
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ NUMBER\_OF\_DRAWABLES\ =\ 5;}
+\DoxyCodeLine{DrawableListItems<TextAreaWithOneWildcardContainer,\ NUMBER\_OF\_DRAWABLES>\ menuItems;}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TYPE} & Type of the drawables. Can be a simple drawable, such as \doxylink{classtouchgfx_1_1_image}{Image} or a more complex container. \\
+\hline
+{\em SIZE} & Size of the array. This is the number of drawables to allocate and should be all visible drawables on the screen at any given time. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_drawable_list_items_ae7463635d1f48c69769758001674ec08}\label{classtouchgfx_1_1_drawable_list_items_ae7463635d1f48c69769758001674ec08} 
+\index{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$@{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$}!getDrawable@{getDrawable}}
+\index{getDrawable@{getDrawable}!touchgfx::DrawableListItems$<$ TYPE, SIZE $>$@{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$}}
+\doxysubsubsection{\texorpdfstring{getDrawable()}{getDrawable()}}
+{\footnotesize\ttfamily template$<$class TYPE , int SIZE$>$ \\
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items}{touchgfx\+::\+Drawable\+List\+Items}}$<$ TYPE, SIZE $>$\+::get\+Drawable (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets a drawable at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero-\/based index of the drawable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Null if it fails, else the drawable. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_a8ad0aad7d560a7d95c3709644ec471a6}{touchgfx\+::\+Drawable\+List\+Items\+Interface}}.
+
+\Hypertarget{classtouchgfx_1_1_drawable_list_items_a32e3d20cdfe058257d04a5e370e958d5}\label{classtouchgfx_1_1_drawable_list_items_a32e3d20cdfe058257d04a5e370e958d5} 
+\index{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$@{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$}!getNumberOfDrawables@{getNumberOfDrawables}}
+\index{getNumberOfDrawables@{getNumberOfDrawables}!touchgfx::DrawableListItems$<$ TYPE, SIZE $>$@{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$}}
+\doxysubsubsection{\texorpdfstring{getNumberOfDrawables()}{getNumberOfDrawables()}}
+{\footnotesize\ttfamily template$<$class TYPE , int SIZE$>$ \\
+virtual int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items}{touchgfx\+::\+Drawable\+List\+Items}}$<$ TYPE, SIZE $>$\+::get\+Number\+Of\+Drawables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets number of drawables.
+
+\begin{DoxyReturn}{Returns}
+The number of drawables. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_af507ec9a7acbf39b22ce8791b8b045bb}{touchgfx\+::\+Drawable\+List\+Items\+Interface}}.
+
+\Hypertarget{classtouchgfx_1_1_drawable_list_items_a762e9cf53c8055ed1074571527b75f9b}\label{classtouchgfx_1_1_drawable_list_items_a762e9cf53c8055ed1074571527b75f9b} 
+\index{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$@{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!touchgfx::DrawableListItems$<$ TYPE, SIZE $>$@{touchgfx::DrawableListItems$<$ TYPE, SIZE $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$class TYPE , int SIZE$>$ \\
+TYPE \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items}{touchgfx\+::\+Drawable\+List\+Items}}$<$ TYPE, SIZE $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Array indexer operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero-\/based index of elements to access.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The indexed value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/scrollers/\mbox{\hyperlink{_drawable_list_8hpp}{Drawable\+List.\+hpp}}\end{DoxyCompactItemize}

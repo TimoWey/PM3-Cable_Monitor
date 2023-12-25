@@ -1,0 +1,566 @@
+\doxysection{touchgfx\+::Application Class Reference}
+\hypertarget{classtouchgfx_1_1_application}{}\label{classtouchgfx_1_1_application}\index{touchgfx::Application@{touchgfx::Application}}
+
+
+{\ttfamily \#include $<$Application.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classtouchgfx_1_1_application}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets}{Timer\+Widgets}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a16c811e2927552aaa2fe25ae73d1b4af}{change\+To\+Start\+Screen}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_ad7a28d1bbcace9887edc7bdad6a3d1ee}{switch\+Screen}} (\mbox{\hyperlink{classtouchgfx_1_1_screen}{Screen}} \texorpdfstring{$\ast$}{*}new\+Screen)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a23a307505e002323252f1be0fcb28b40}{app\+Switch\+Screen}} (uint8\+\_\+t screen\+Id)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a1680f574fc9e8b8927a2a916b542412c}{request\+Redraw}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a28de0522e8b91e31391ae149a3c03808}{request\+Redraw}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a46560bd56561ce841893300e516dbbb4}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a1cb8be53423c60c6c92b09da125f756e}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_aed159c8e041b7aa95951a3a8ee6783ba}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a5a2d535267608055dd2748ff34822d81}{handle\+Tick\+Event}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a4b958928ec3b10a3ce7be72cbc44461b}{handle\+Key\+Event}} (uint8\+\_\+t c)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_af4b51a396e610f147622006ce378ede9}{handle\+Pending\+Screen\+Transition}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a1396ab1357118702825fbb14b2d34b0e}{clear\+Cached\+Areas}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_ab087f0704a886e6a11be2e9187aab1a1}{draw\+Cached\+Areas}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_a98c934c57d886b342e8ba3a301ceedf7}{copy\+Invalidated\+Areas\+From\+TFTTo\+Client\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb}{register\+Timer\+Widget}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}w)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_a0f52ae6bb0f0568e801d93e3ecd49ff9}{clear\+All\+Timer\+Widgets}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_a638e341a82d1cc246be7e83d998c4c9d}{unregister\+Timer\+Widget}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}w)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_application_ac266e8921bcb04d62d95838719fe1b42}{get\+Number\+Of\+Registered\+Timer\+Widgets}} () const
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_application_a4c581a95799d0dc5f4992847202afd05}{get\+Timer\+Widget\+Count\+For\+Drawable}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}w) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_af00c0b457af958e9cfbfd882ca394be4}{invalidate}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_aebc078458e5c78ed0270f688a735b945}{invalidate\+Area}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} area)
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_vector}{Vector}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}, 8 $>$ \& \mbox{\hyperlink{classtouchgfx_1_1_application_a2d15d989b5365a3b8b162fdbe614478a}{get\+Invalidated\+Areas}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener}{touchgfx\+::\+UIEvent\+Listener}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener_aabf984db0bc3e5d928a28778cfa2c09a}{\texorpdfstring{$\sim$}{\string~}\+UIEvent\+Listener}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_application}{Application}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_screen}{Screen}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_application_adb2bb4b3f860a91cf3c460536ef814eb}{get\+Current\+Screen}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_application_a0d220993d0571d99deb4c455f53c9091}{set\+Debug\+Printer}} (\mbox{\hyperlink{classtouchgfx_1_1_debug_printer}{Debug\+Printer}} \texorpdfstring{$\ast$}{*}printer)
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_debug_printer}{Debug\+Printer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_application_aca59f270a45f28c96bfb5ba93d445646}{get\+Debug\+Printer}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_application_a7cbc6e650bfdd6598ccef1d12104dcce}{invalidate\+Debug\+Region}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_application_a127ddcff6524fdde9ffab54a0e1d679d}{set\+Debug\+String}} (const char \texorpdfstring{$\ast$}{*}string)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_application_ad86acb613249b69226e546c86783a1ec}{MAX\+\_\+\+TIMER\+\_\+\+WIDGETS}} = 32
+\begin{DoxyCompactList}\small\item\em Maximum number of widgets receiving ticks. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_a2ba4b3a002e55d947f616996805815aa}\label{classtouchgfx_1_1_application_a2ba4b3a002e55d947f616996805815aa} 
+static const uint16\+\_\+t {\bfseries TICK\+\_\+\+INTERVAL\+\_\+\+MS} = 10
+\begin{DoxyCompactList}\small\item\em Deprecated, do not use this constant. Tick interval depends on VSYNC of your target platform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_application_ab5baa6d3d789ed7fa7ca579e028066cf}\label{classtouchgfx_1_1_application_ab5baa6d3d789ed7fa7ca579e028066cf} 
+typedef \mbox{\hyperlink{classtouchgfx_1_1_vector}{Vector}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}, 8 $>$ {\bfseries Rect\+Vector\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Type to ensure the same number of rects are in the \doxylink{classtouchgfx_1_1_vector}{Vector}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_application_a3921b1490bd2d4e2646230e526279564}{Application}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_a4cd293756f59641c93829d558351e03c}{draw}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_application_ac6a5097ad7fe264f6065392575dc60c9}{draw}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_application_add7147291539b8b13386acc57d60edd7}\label{classtouchgfx_1_1_application_add7147291539b8b13386acc57d60edd7} 
+class \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets}{touchgfx\+::\+Application\+::\+Timer\+Widgets}} {\bfseries timer\+Widgets}
+\begin{DoxyCompactList}\small\item\em The timer widgets. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_abba9dc1979946f4817899c0ca8cf4f79}\label{classtouchgfx_1_1_application_abba9dc1979946f4817899c0ca8cf4f79} 
+\mbox{\hyperlink{classtouchgfx_1_1_application_ab5baa6d3d789ed7fa7ca579e028066cf}{Rect\+Vector\+\_\+t}} {\bfseries cached\+Dirty\+Areas}
+\begin{DoxyCompactList}\small\item\em When draw caching is enabled, these rects keeps track of the dirty screen area. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_afed2e32f0c47b36a765df0c139ca40f1}\label{classtouchgfx_1_1_application_afed2e32f0c47b36a765df0c139ca40f1} 
+\mbox{\hyperlink{classtouchgfx_1_1_application_ab5baa6d3d789ed7fa7ca579e028066cf}{Rect\+Vector\+\_\+t}} {\bfseries last\+Rects}
+\begin{DoxyCompactList}\small\item\em The dirty areas from last frame that needs to be redrawn because we have swapped frame buffers. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_a589bb814696347a3c8192f56e902988e}\label{classtouchgfx_1_1_application_a589bb814696347a3c8192f56e902988e} 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} {\bfseries redraw}
+\begin{DoxyCompactList}\small\item\em \doxylink{classtouchgfx_1_1_rect}{Rect} describing application requested invalidate area. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_a21302ef4ef5e06d76112daa613d98eb9}\label{classtouchgfx_1_1_application_a21302ef4ef5e06d76112daa613d98eb9} 
+bool {\bfseries transition\+Handled}
+\begin{DoxyCompactList}\small\item\em True if the transition is done and \doxylink{classtouchgfx_1_1_screen_af27efaecc9e7d632ec76bdff91239036}{Screen\+::after\+Transition} has been called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_application_a6cb31e01344cac9555eae4a6a694327a}\label{classtouchgfx_1_1_application_a6cb31e01344cac9555eae4a6a694327a} 
+static \mbox{\hyperlink{classtouchgfx_1_1_screen}{Screen}} \texorpdfstring{$\ast$}{*} {\bfseries current\+Screen}
+\begin{DoxyCompactList}\small\item\em Pointer to currently displayed \doxylink{classtouchgfx_1_1_screen}{Screen}. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_ae9b346e22be76e546c82a9ba9f19b3ca}\label{classtouchgfx_1_1_application_ae9b346e22be76e546c82a9ba9f19b3ca} 
+static \mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}} \texorpdfstring{$\ast$}{*} {\bfseries current\+Transition}
+\begin{DoxyCompactList}\small\item\em Pointer to current transition. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_application}{Application}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_application_a9c4bc1fa2669ac301a99195e0d476efc}{instance}}
+\begin{DoxyCompactList}\small\item\em Pointer to the instance of the Application-\/derived subclass. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_a430b15169a7c777c3b780d098423ad19}\label{classtouchgfx_1_1_application_a430b15169a7c777c3b780d098423ad19} 
+static \mbox{\hyperlink{classtouchgfx_1_1_debug_printer}{Debug\+Printer}} \texorpdfstring{$\ast$}{*} {\bfseries debug\+Printer}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} instance. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_application_a3689c15d391ce35ccf57ef6a85c1e138}\label{classtouchgfx_1_1_application_a3689c15d391ce35ccf57ef6a85c1e138} 
+static \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} {\bfseries debug\+Region\+Invalid\+Rect}
+\begin{DoxyCompactList}\small\item\em Invalidated Debug Region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classtouchgfx_1_1_application}{Application} class is the main interface for manipulating screen contents. It holds a pointer to the currently displayed \doxylink{classtouchgfx_1_1_screen}{Screen}, and delegates draw requests and events to that \doxylink{classtouchgfx_1_1_screen}{Screen}. Additionally it contains some global application settings. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_application_a3921b1490bd2d4e2646230e526279564}\label{classtouchgfx_1_1_application_a3921b1490bd2d4e2646230e526279564} 
+\index{touchgfx::Application@{touchgfx::Application}!Application@{Application}}
+\index{Application@{Application}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily touchgfx\+::\+Application\+::\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Protected constructor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_application_a23a307505e002323252f1be0fcb28b40}\label{classtouchgfx_1_1_application_a23a307505e002323252f1be0fcb28b40} 
+\index{touchgfx::Application@{touchgfx::Application}!appSwitchScreen@{appSwitchScreen}}
+\index{appSwitchScreen@{appSwitchScreen}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{appSwitchScreen()}{appSwitchScreen()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::app\+Switch\+Screen (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{screen\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+An application specific function for switching screen. Overloading this can provide a means to switch screen from places that does not have access to a pointer to the new screen. Base implementation is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+Id} & An id that maps to the desired screen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_a16c811e2927552aaa2fe25ae73d1b4af}\label{classtouchgfx_1_1_application_a16c811e2927552aaa2fe25ae73d1b4af} 
+\index{touchgfx::Application@{touchgfx::Application}!changeToStartScreen@{changeToStartScreen}}
+\index{changeToStartScreen@{changeToStartScreen}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{changeToStartScreen()}{changeToStartScreen()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::change\+To\+Start\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This function can be called to send your application back to the start screen. The simulator will call this function when F5 is pressed. To make this work, please implement this function in \doxylink{class_frontend_application}{Frontend\+Application}.
+
+\begin{DoxyNote}{Note}
+The application will not make a complete restart -\/ if your \doxylink{class_model}{Model} contains data, this will not be reset, unless this is explicitly done in your \doxylink{classtouchgfx_1_1_application_a16c811e2927552aaa2fe25ae73d1b4af}{Frontend\+Application\+::change\+To\+Start\+Screen()}. 
+\end{DoxyNote}
+
+
+Reimplemented in \mbox{\hyperlink{class_frontend_application_base_a3553a34400e7a5dd882bd0c7534f7de3}{Frontend\+Application\+Base}}.
+
+\Hypertarget{classtouchgfx_1_1_application_a0f52ae6bb0f0568e801d93e3ecd49ff9}\label{classtouchgfx_1_1_application_a0f52ae6bb0f0568e801d93e3ecd49ff9} 
+\index{touchgfx::Application@{touchgfx::Application}!clearAllTimerWidgets@{clearAllTimerWidgets}}
+\index{clearAllTimerWidgets@{clearAllTimerWidgets}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{clearAllTimerWidgets()}{clearAllTimerWidgets()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::clear\+All\+Timer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears all currently registered timer widgets. \Hypertarget{classtouchgfx_1_1_application_a1396ab1357118702825fbb14b2d34b0e}\label{classtouchgfx_1_1_application_a1396ab1357118702825fbb14b2d34b0e} 
+\index{touchgfx::Application@{touchgfx::Application}!clearCachedAreas@{clearCachedAreas}}
+\index{clearCachedAreas@{clearCachedAreas}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{clearCachedAreas()}{clearCachedAreas()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::clear\+Cached\+Areas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears the cached areas so coming calls to invalidate are collected for future drawing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_ab087f0704a886e6a11be2e9187aab1a1}{draw\+Cached\+Areas} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_application_a98c934c57d886b342e8ba3a301ceedf7}\label{classtouchgfx_1_1_application_a98c934c57d886b342e8ba3a301ceedf7} 
+\index{touchgfx::Application@{touchgfx::Application}!copyInvalidatedAreasFromTFTToClientBuffer@{copyInvalidatedAreasFromTFTToClientBuffer}}
+\index{copyInvalidatedAreasFromTFTToClientBuffer@{copyInvalidatedAreasFromTFTToClientBuffer}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{copyInvalidatedAreasFromTFTToClientBuffer()}{copyInvalidatedAreasFromTFTToClientBuffer()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::copy\+Invalidated\+Areas\+From\+TFTTo\+Client\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function copies the parts that were updated in the previous frame (in the TFT buffer) to the active framebuffer (client buffer).
+
+This function only copies pixels in double buffering mode. \Hypertarget{classtouchgfx_1_1_application_a4cd293756f59641c93829d558351e03c}\label{classtouchgfx_1_1_application_a4cd293756f59641c93829d558351e03c} 
+\index{touchgfx::Application@{touchgfx::Application}!draw@{draw}}
+\index{draw@{draw}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Initiate a draw operation of the entire screen. Standard implementation is to delegate draw request to the current \doxylink{classtouchgfx_1_1_screen}{Screen}. \Hypertarget{classtouchgfx_1_1_application_ac6a5097ad7fe264f6065392575dc60c9}\label{classtouchgfx_1_1_application_ac6a5097ad7fe264f6065392575dc60c9} 
+\index{touchgfx::Application@{touchgfx::Application}!draw@{draw}}
+\index{draw@{draw}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Initiate a draw operation of the specified region of the screen. Standard implementation is to delegate draw request to the current \doxylink{classtouchgfx_1_1_screen}{Screen}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rect} & The area to draw.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Unlike \doxylink{classtouchgfx_1_1_drawable_a9ad1411de4b9e2c6c6abb107d349c021}{Widget\+::draw} this is safe to call from user code as it will properly traverse widgets in z-\/order. 
+
+The coordinates given must be absolute coordinates. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_application_ab087f0704a886e6a11be2e9187aab1a1}\label{classtouchgfx_1_1_application_ab087f0704a886e6a11be2e9187aab1a1} 
+\index{touchgfx::Application@{touchgfx::Application}!drawCachedAreas@{drawCachedAreas}}
+\index{drawCachedAreas@{drawCachedAreas}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{drawCachedAreas()}{drawCachedAreas()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::draw\+Cached\+Areas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Draws all cached, invalidated areas on the screen.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a1396ab1357118702825fbb14b2d34b0e}{clear\+Cached\+Areas} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_application_adb2bb4b3f860a91cf3c460536ef814eb}\label{classtouchgfx_1_1_application_adb2bb4b3f860a91cf3c460536ef814eb} 
+\index{touchgfx::Application@{touchgfx::Application}!getCurrentScreen@{getCurrentScreen}}
+\index{getCurrentScreen@{getCurrentScreen}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{getCurrentScreen()}{getCurrentScreen()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_screen}{Screen}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Application\+::get\+Current\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets the current screen.
+
+\begin{DoxyReturn}{Returns}
+The current screen. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_aca59f270a45f28c96bfb5ba93d445646}\label{classtouchgfx_1_1_application_aca59f270a45f28c96bfb5ba93d445646} 
+\index{touchgfx::Application@{touchgfx::Application}!getDebugPrinter@{getDebugPrinter}}
+\index{getDebugPrinter@{getDebugPrinter}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{getDebugPrinter()}{getDebugPrinter()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_debug_printer}{Debug\+Printer}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Application\+::get\+Debug\+Printer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the \doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} object associated with the application.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} The \doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} object. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}\label{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710} 
+\index{touchgfx::Application@{touchgfx::Application}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtouchgfx_1_1_application}{Application}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Application\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the single instance application.
+
+\begin{DoxyReturn}{Returns}
+The instance of this application. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_a2d15d989b5365a3b8b162fdbe614478a}\label{classtouchgfx_1_1_application_a2d15d989b5365a3b8b162fdbe614478a} 
+\index{touchgfx::Application@{touchgfx::Application}!getInvalidatedAreas@{getInvalidatedAreas}}
+\index{getInvalidatedAreas@{getInvalidatedAreas}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{getInvalidatedAreas()}{getInvalidatedAreas()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtouchgfx_1_1_vector}{Vector}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}, 8 $>$ \& touchgfx\+::\+Application\+::get\+Invalidated\+Areas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get list of the invalidated areas in the current frame. The list is cleared in the beginning of \doxylink{classtouchgfx_1_1_h_a_l_acc0987b8a315d5946c1f1732055c0fa0}{HAL\+::tick}.
+
+The list can be usefull on some platforms where the information can be used to reduce the amount of pixels sent to the display.
+
+\begin{DoxyReturn}{Returns}
+Const reference to the list. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_ac266e8921bcb04d62d95838719fe1b42}\label{classtouchgfx_1_1_application_ac266e8921bcb04d62d95838719fe1b42} 
+\index{touchgfx::Application@{touchgfx::Application}!getNumberOfRegisteredTimerWidgets@{getNumberOfRegisteredTimerWidgets}}
+\index{getNumberOfRegisteredTimerWidgets@{getNumberOfRegisteredTimerWidgets}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{getNumberOfRegisteredTimerWidgets()}{getNumberOfRegisteredTimerWidgets()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Application\+::get\+Number\+Of\+Registered\+Timer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+gets the number of timer widgets that are registered and active.
+
+\begin{DoxyReturn}{Returns}
+The size of timer\+Widgets. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_a4c581a95799d0dc5f4992847202afd05}\label{classtouchgfx_1_1_application_a4c581a95799d0dc5f4992847202afd05} 
+\index{touchgfx::Application@{touchgfx::Application}!getTimerWidgetCountForDrawable@{getTimerWidgetCountForDrawable}}
+\index{getTimerWidgetCountForDrawable@{getTimerWidgetCountForDrawable}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{getTimerWidgetCountForDrawable()}{getTimerWidgetCountForDrawable()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Application\+::get\+Timer\+Widget\+Count\+For\+Drawable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the number of timer events registered to a widget, i.\+e. how many times a drawable must be unregistered until it no longer receives timer ticks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The widget to to get count from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the drawable is not registered as a timer widget, otherwise returns how many times the drawable is currently registered. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_a46560bd56561ce841893300e516dbbb4}\label{classtouchgfx_1_1_application_a46560bd56561ce841893300e516dbbb4} 
+\index{touchgfx::Application@{touchgfx::Application}!handleClickEvent@{handleClickEvent}}
+\index{handleClickEvent@{handleClickEvent}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{handleClickEvent()}{handleClickEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::handle\+Click\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle a click event. Standard implementation is to delegate the event to the current screen. Called by the framework when a click is detected by some platform specific means.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{classtouchgfx_1_1_click_event}{Click\+Event}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener_a89684f7281ab7cc45ed24aaf149b11e4}{touchgfx\+::\+UIEvent\+Listener}}.
+
+\Hypertarget{classtouchgfx_1_1_application_a1cb8be53423c60c6c92b09da125f756e}\label{classtouchgfx_1_1_application_a1cb8be53423c60c6c92b09da125f756e} 
+\index{touchgfx::Application@{touchgfx::Application}!handleDragEvent@{handleDragEvent}}
+\index{handleDragEvent@{handleDragEvent}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{handleDragEvent()}{handleDragEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::handle\+Drag\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle drag events. Called by the framework when a drag is detected by some platform specific means. Standard implementation is to delegate drag event to current screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The drag event, expressed in absolute coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener_a1cdf08ff4b5b0223a6544c9a0c04ab70}{touchgfx\+::\+UIEvent\+Listener}}.
+
+\Hypertarget{classtouchgfx_1_1_application_aed159c8e041b7aa95951a3a8ee6783ba}\label{classtouchgfx_1_1_application_aed159c8e041b7aa95951a3a8ee6783ba} 
+\index{touchgfx::Application@{touchgfx::Application}!handleGestureEvent@{handleGestureEvent}}
+\index{handleGestureEvent@{handleGestureEvent}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{handleGestureEvent()}{handleGestureEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::handle\+Gesture\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle gestures. Called by the framework when a gesture is detected by some platform specific means. Standard implementation is to delegate drag event to current screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The gesture event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener_a65b3938010fbb75c9fee1cf9c76398eb}{touchgfx\+::\+UIEvent\+Listener}}.
+
+\Hypertarget{classtouchgfx_1_1_application_a4b958928ec3b10a3ce7be72cbc44461b}\label{classtouchgfx_1_1_application_a4b958928ec3b10a3ce7be72cbc44461b} 
+\index{touchgfx::Application@{touchgfx::Application}!handleKeyEvent@{handleKeyEvent}}
+\index{handleKeyEvent@{handleKeyEvent}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{handleKeyEvent()}{handleKeyEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::handle\+Key\+Event (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle an incoming character received by the \doxylink{classtouchgfx_1_1_h_a_l}{HAL} layer. Standard implementation delegates to current screen (which, in turn, does nothing).
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The incoming character to handle. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener_ac59713944b4494c11b1cd7cf106a5d08}{touchgfx\+::\+UIEvent\+Listener}}.
+
+\Hypertarget{classtouchgfx_1_1_application_af4b51a396e610f147622006ce378ede9}\label{classtouchgfx_1_1_application_af4b51a396e610f147622006ce378ede9} 
+\index{touchgfx::Application@{touchgfx::Application}!handlePendingScreenTransition@{handlePendingScreenTransition}}
+\index{handlePendingScreenTransition@{handlePendingScreenTransition}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{handlePendingScreenTransition()}{handlePendingScreenTransition()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::handle\+Pending\+Screen\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Evaluates the pending \doxylink{structtouchgfx_1_1_callback}{Callback} instances. If a callback is valid, it is executed and a \doxylink{classtouchgfx_1_1_screen}{Screen} transition is executed. This base implementation is empty and does nothing. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener_a6cd7e6c959827f85bb803c92d75954a4}{touchgfx\+::\+UIEvent\+Listener}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_ab50411781d9955dfa2ab44caf6d15085}{touchgfx\+::\+MVPApplication}}.
+
+\Hypertarget{classtouchgfx_1_1_application_a5a2d535267608055dd2748ff34822d81}\label{classtouchgfx_1_1_application_a5a2d535267608055dd2748ff34822d81} 
+\index{touchgfx::Application@{touchgfx::Application}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle tick. Standard implementation is to delegate tick to the widgets that have registered to receive one. Called by some platform specific means. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener_ae678eeb9ab84726b3254e6fe0ded9193}{touchgfx\+::\+UIEvent\+Listener}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_frontend_application_af4a8d388fee4a0f3840547123a7c3be3}{Frontend\+Application}}.
+
+\Hypertarget{classtouchgfx_1_1_application_af00c0b457af958e9cfbfd882ca394be4}\label{classtouchgfx_1_1_application_af00c0b457af958e9cfbfd882ca394be4} 
+\index{touchgfx::Application@{touchgfx::Application}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{invalidate()}{invalidate()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::invalidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Invalidates the entire screen. \Hypertarget{classtouchgfx_1_1_application_aebc078458e5c78ed0270f688a735b945}\label{classtouchgfx_1_1_application_aebc078458e5c78ed0270f688a735b945} 
+\index{touchgfx::Application@{touchgfx::Application}!invalidateArea@{invalidateArea}}
+\index{invalidateArea@{invalidateArea}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{invalidateArea()}{invalidateArea()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::invalidate\+Area (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}}]{area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Invalidates the given area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em area} & The area to invalidate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_a7cbc6e650bfdd6598ccef1d12104dcce}\label{classtouchgfx_1_1_application_a7cbc6e650bfdd6598ccef1d12104dcce} 
+\index{touchgfx::Application@{touchgfx::Application}!invalidateDebugRegion@{invalidateDebugRegion}}
+\index{invalidateDebugRegion@{invalidateDebugRegion}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{invalidateDebugRegion()}{invalidateDebugRegion()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Application\+::invalidate\+Debug\+Region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sets the debug string to be displayed onscreen on top of the framebuffer. \Hypertarget{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb}\label{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb} 
+\index{touchgfx::Application@{touchgfx::Application}!registerTimerWidget@{registerTimerWidget}}
+\index{registerTimerWidget@{registerTimerWidget}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{registerTimerWidget()}{registerTimerWidget()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::register\+Timer\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a widget to the list of widgets receiving ticks every frame (typically 16.\+67ms)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em w} & The widget to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a638e341a82d1cc246be7e83d998c4c9d}{unregister\+Timer\+Widget}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+The framework keeps track of the number of times a specific widget is registered. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_application_a1680f574fc9e8b8927a2a916b542412c}\label{classtouchgfx_1_1_application_a1680f574fc9e8b8927a2a916b542412c} 
+\index{touchgfx::Application@{touchgfx::Application}!requestRedraw@{requestRedraw}}
+\index{requestRedraw@{requestRedraw}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{requestRedraw()}{requestRedraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::request\+Redraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+An application specific function for requesting redraw of entire screen. \Hypertarget{classtouchgfx_1_1_application_a28de0522e8b91e31391ae149a3c03808}\label{classtouchgfx_1_1_application_a28de0522e8b91e31391ae149a3c03808} 
+\index{touchgfx::Application@{touchgfx::Application}!requestRedraw@{requestRedraw}}
+\index{requestRedraw@{requestRedraw}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{requestRedraw()}{requestRedraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::request\+Redraw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+An application specific function for requesting redraw of given \doxylink{classtouchgfx_1_1_rect}{Rect}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em rect} & The \doxylink{classtouchgfx_1_1_rect}{Rect} that must be redrawn. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_a0d220993d0571d99deb4c455f53c9091}\label{classtouchgfx_1_1_application_a0d220993d0571d99deb4c455f53c9091} 
+\index{touchgfx::Application@{touchgfx::Application}!setDebugPrinter@{setDebugPrinter}}
+\index{setDebugPrinter@{setDebugPrinter}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{setDebugPrinter()}{setDebugPrinter()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Application\+::set\+Debug\+Printer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_debug_printer}{Debug\+Printer}} \texorpdfstring{$\ast$}{*}}]{printer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sets the \doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} object to be used by the application to print debug messages.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em printer} & The debug printer to configure. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_a127ddcff6524fdde9ffab54a0e1d679d}\label{classtouchgfx_1_1_application_a127ddcff6524fdde9ffab54a0e1d679d} 
+\index{touchgfx::Application@{touchgfx::Application}!setDebugString@{setDebugString}}
+\index{setDebugString@{setDebugString}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{setDebugString()}{setDebugString()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Application\+::set\+Debug\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sets the debug string to be displayed onscreen on top of the framebuffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em string} & The debug string to display onscreen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_ad7a28d1bbcace9887edc7bdad6a3d1ee}\label{classtouchgfx_1_1_application_ad7a28d1bbcace9887edc7bdad6a3d1ee} 
+\index{touchgfx::Application@{touchgfx::Application}!switchScreen@{switchScreen}}
+\index{switchScreen@{switchScreen}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{switchScreen()}{switchScreen()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Application\+::switch\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_screen}{Screen}} \texorpdfstring{$\ast$}{*}}]{new\+Screen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Switch to another \doxylink{classtouchgfx_1_1_screen}{Screen}. Will call tear\+Down\+Screen on current \doxylink{classtouchgfx_1_1_screen}{Screen} before switching, and subsequently call setup\+Screen and draw automatically for the new \doxylink{classtouchgfx_1_1_screen}{Screen}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+Screen} & A pointer to the new screen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_a638e341a82d1cc246be7e83d998c4c9d}\label{classtouchgfx_1_1_application_a638e341a82d1cc246be7e83d998c4c9d} 
+\index{touchgfx::Application@{touchgfx::Application}!unregisterTimerWidget@{unregisterTimerWidget}}
+\index{unregisterTimerWidget@{unregisterTimerWidget}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{unregisterTimerWidget()}{unregisterTimerWidget()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::unregister\+Timer\+Widget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes a widget from the list of widgets receiving ticks every frame (typically 16.\+67ms) milliseconds.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em w} & The widget to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If widget has been registered multiple times, an equal number of calls to unregister are required to stop widget from receiving tick events. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtouchgfx_1_1_application_a9c4bc1fa2669ac301a99195e0d476efc}\label{classtouchgfx_1_1_application_a9c4bc1fa2669ac301a99195e0d476efc} 
+\index{touchgfx::Application@{touchgfx::Application}!instance@{instance}}
+\index{instance@{instance}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_application}{Application}}\texorpdfstring{$\ast$}{*} touchgfx\+::\+Application\+::instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Pointer to the instance of the Application-\/derived subclass. 
+
+\begin{DoxyNote}{Note}
+Must be set by subclass constructor! 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_application_ad86acb613249b69226e546c86783a1ec}\label{classtouchgfx_1_1_application_ad86acb613249b69226e546c86783a1ec} 
+\index{touchgfx::Application@{touchgfx::Application}!MAX\_TIMER\_WIDGETS@{MAX\_TIMER\_WIDGETS}}
+\index{MAX\_TIMER\_WIDGETS@{MAX\_TIMER\_WIDGETS}!touchgfx::Application@{touchgfx::Application}}
+\doxysubsubsection{\texorpdfstring{MAX\_TIMER\_WIDGETS}{MAX\_TIMER\_WIDGETS}}
+{\footnotesize\ttfamily const uint8\+\_\+t touchgfx\+::\+Application\+::\+MAX\+\_\+\+TIMER\+\_\+\+WIDGETS = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Maximum number of widgets receiving ticks. 
+
+\begin{DoxyRemark}{Remarks}
+Memory impact\+: x \texorpdfstring{$\ast$}{*} (sizeof(\+Drawable\texorpdfstring{$\ast$}{*})+1) 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_application_8hpp}{Application.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\doxysection{MJPEGDecoder Class Reference}
+\hypertarget{class_m_j_p_e_g_decoder}{}\label{class_m_j_p_e_g_decoder}\index{MJPEGDecoder@{MJPEGDecoder}}
+Inheritance diagram for MJPEGDecoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_j_p_e_g_decoder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_a2feab99f846e2f1d721b66d067fa44eb}\label{class_m_j_p_e_g_decoder_a2feab99f846e2f1d721b66d067fa44eb} 
+enum {\bfseries AVIErrors} \{ \newline
+{\bfseries AVI\+\_\+\+NO\+\_\+\+ERROR}
+, {\bfseries AVI\+\_\+\+NO\+\_\+\+BUFFERS}
+, {\bfseries AVI\+\_\+\+NO\+\_\+\+FILE}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+NOT\+\_\+\+RIFF}
+, \newline
+{\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+HEADER\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+LIST\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+HDRL\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+AVIH\+\_\+\+NOT\+\_\+\+FOUND}
+, \newline
+{\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+HEADER\+\_\+\+TO\+\_\+\+SHORT}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+FILE\+\_\+\+BUFFER\+\_\+\+TO\+\_\+\+SMALL}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+MOVI\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+IDX1\+\_\+\+NOT\+\_\+\+FOUND}
+, \newline
+{\bfseries AVI\+\_\+\+ERROR\+\_\+\+FRAMENO\+\_\+\+TO\+\_\+\+HIGH}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+EOF\+\_\+\+REACHED}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_ad804ff8a35a49c93a1487e54567630a2}\label{class_m_j_p_e_g_decoder_ad804ff8a35a49c93a1487e54567630a2} 
+virtual void {\bfseries set\+Video\+Data} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}movie, const uint32\+\_\+t length)=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_a3a96fb69577d26e5af54ca70c7d9d003}\label{class_m_j_p_e_g_decoder_a3a96fb69577d26e5af54ca70c7d9d003} 
+virtual void {\bfseries set\+Video\+Data} (\mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{touchgfx\+::\+Video\+Data\+Reader}} \&reader)=0
+\item 
+virtual bool \mbox{\hyperlink{class_m_j_p_e_g_decoder_a2c1e087e1bcd41b75cc08275a3f665d8}{has\+Video}} ()=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_a222f44066ad0d69680a475a3221b2fe0}\label{class_m_j_p_e_g_decoder_a222f44066ad0d69680a475a3221b2fe0} 
+virtual bool {\bfseries decode\+Next\+Frame} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t stride)=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_aceb12d3a1605b746e91e89e4b2cf963a}\label{class_m_j_p_e_g_decoder_aceb12d3a1605b746e91e89e4b2cf963a} 
+virtual bool {\bfseries goto\+Next\+Frame} ()=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_ab4cb1eed1a459cf372fb748451910d8b}\label{class_m_j_p_e_g_decoder_ab4cb1eed1a459cf372fb748451910d8b} 
+virtual bool {\bfseries decode\+Frame} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx\+::\+Rect}} \&area, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+Buffer, uint32\+\_\+t framebuffer\+Stride)=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_a368d9113b9d8761b963a9215ff46543a}\label{class_m_j_p_e_g_decoder_a368d9113b9d8761b963a9215ff46543a} 
+virtual bool {\bfseries decode\+Thumbnail} (uint32\+\_\+t frameno, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, uint16\+\_\+t width, uint16\+\_\+t height)=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_a65aa5e667ce35fc6675320e4b832fd71}\label{class_m_j_p_e_g_decoder_a65aa5e667ce35fc6675320e4b832fd71} 
+virtual void {\bfseries goto\+Frame} (uint32\+\_\+t frameno)=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_afc3cfe7dbe8a311967805af2a64e6564}\label{class_m_j_p_e_g_decoder_afc3cfe7dbe8a311967805af2a64e6564} 
+virtual uint32\+\_\+t {\bfseries get\+Current\+Frame\+Number} () const =0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_a9031ed7305a9305dfae608d4919356d6}\label{class_m_j_p_e_g_decoder_a9031ed7305a9305dfae608d4919356d6} 
+virtual uint32\+\_\+t {\bfseries get\+Number\+Of\+Frames} ()=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_ae1abe9bdfcc7f2fe7d5442b88f4f4bb8}\label{class_m_j_p_e_g_decoder_ae1abe9bdfcc7f2fe7d5442b88f4f4bb8} 
+virtual void {\bfseries get\+Video\+Info} (\mbox{\hyperlink{structtouchgfx_1_1_video_information}{touchgfx\+::\+Video\+Information}} \texorpdfstring{$\ast$}{*}data)=0
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_ac8d82b20359826f75063fae51ee57406}\label{class_m_j_p_e_g_decoder_ac8d82b20359826f75063fae51ee57406} 
+virtual AVIErrors {\bfseries get\+Last\+Error} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_j_p_e_g_decoder_a2c1e087e1bcd41b75cc08275a3f665d8}\label{class_m_j_p_e_g_decoder_a2c1e087e1bcd41b75cc08275a3f665d8} 
+\index{MJPEGDecoder@{MJPEGDecoder}!hasVideo@{hasVideo}}
+\index{hasVideo@{hasVideo}!MJPEGDecoder@{MJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{hasVideo()}{hasVideo()}}
+{\footnotesize\ttfamily virtual bool MJPEGDecoder\+::has\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Check if \doxylink{class_m_j_p_e_g_decoder}{MJPEGDecoder} has a video.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the \doxylink{class_m_j_p_e_g_decoder}{MJPEGDecoder} has a video. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_a0a35615904f18e90dbe1a01bff3bb5f3}{Software\+MJPEGDecoder}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Touch\+GFX/generated/simulator/include/simulator/video/MJPEGDecoder.\+hpp\end{DoxyCompactItemize}

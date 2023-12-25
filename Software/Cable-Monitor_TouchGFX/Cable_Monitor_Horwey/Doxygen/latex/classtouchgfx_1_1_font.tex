@@ -1,0 +1,574 @@
+\doxysection{touchgfx\+::Font Class Reference}
+\hypertarget{classtouchgfx_1_1_font}{}\label{classtouchgfx_1_1_font}\index{touchgfx::Font@{touchgfx::Font}}
+
+
+{\ttfamily \#include $<$Font.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Font\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.043478cm]{classtouchgfx_1_1_font}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_font_aa3ed4d8a45aee05890773ed1b16346d0}{\texorpdfstring{$\sim$}{\string~}\+Font}} ()
+\item 
+virtual const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_font_a795878e5b49ad6f2d903a811117207a2}{get\+Glyph}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} unicode, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\&pixel\+Data, uint8\+\_\+t \&bits\+Per\+Pixel) const =0
+\item 
+virtual const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_font_aa4a4424c6965b90e06556a3929e704f6}{get\+Glyph}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} unicode) const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \mbox{\hyperlink{classtouchgfx_1_1_font_a03917897b8fbd8512b8919d10975b9de}{get\+Fallback\+Char}} () const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \mbox{\hyperlink{classtouchgfx_1_1_font_ab6e36de3a848afc96a19f2167e4997aa}{get\+Ellipsis\+Char}} () const
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_ad0a2e611010097f197be8b5bff3c1f78}{get\+String\+Width}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text,...) const
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_aa54cb0d0b2191b6a9046bae250279d7b}{get\+String\+Width}} (\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} text\+Direction, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text,...) const
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a3732fad6d82f88a2dec28807218da5db}{get\+Char\+Width}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} c) const
+\item 
+virtual int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a5a4e6263165e7591cb2426d0d2f59ac9}{get\+Spacing\+Above}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text,...) const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_font_a56dc6c7bd57a541e310650824d8110f8}{TOUCHGFX\+\_\+\+DEPRECATED}} ("{}Please use \mbox{\hyperlink{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53}{get\+Height}}() instead."{}, virtual uint16\+\_\+t get\+Max\+Text\+Height(const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text,...) const)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_font_a05762e87c104c3e3e88026dac251fbaa}{TOUCHGFX\+\_\+\+DEPRECATED}} ("{}Please use \mbox{\hyperlink{classtouchgfx_1_1_font_a821d162e7bdcd5ff64232194ad49325a}{get\+Baseline}}() instead."{}, virtual uint16\+\_\+t get\+Font\+Height() const)
+\item 
+virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a821d162e7bdcd5ff64232194ad49325a}{get\+Baseline}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_font_acb5a39f51ea6313bac4399b3029f7115}{TOUCHGFX\+\_\+\+DEPRECATED}} ("{}Please use \mbox{\hyperlink{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53}{get\+Height}}() instead."{}, virtual uint16\+\_\+t get\+Minimum\+Text\+Height() const)
+\item 
+virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53}{get\+Height}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a3480194521c651007151597bce352d53}{get\+Pixels\+Above\+Top}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a8025ab9d2160592a6d4eeaf2d0b3ca02}{get\+Pixels\+Below\+Bottom}} () const
+\item 
+virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a106ca27546f2a9edbd2ddbe54c1d163f}{get\+Bits\+Per\+Pixel}} () const
+\item 
+virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a4fab6512dc8a9538cfbacd37d707fa48}{get\+Byte\+Align\+Row}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a7abc43fef081253bd3321807d2b749cb}{get\+Max\+Pixels\+Left}} () const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a2bb17ffec8605bdce0bf83862ae9c46e}{get\+Max\+Pixels\+Right}} () const
+\item 
+virtual int8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a321bb4c9ba35e30ce737a4a2cbf0059b}{get\+Kerning}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} prev\+Char, const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}glyph) const
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a5f12e00e1451ac26e71aac3ca5b3d9ab}{get\+Number\+Of\+Lines}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text,...) const
+\item 
+virtual const uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_font_a216b00f8f55cb8ec36949a9748f98003}{get\+GSUBTable}} () const
+\item 
+virtual const \mbox{\hyperlink{structtouchgfx_1_1_font_contextual_forms_table}{Font\+Contextual\+Forms\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_font_a47ceceb77cf50703c6453ac3a55e3411}{get\+Contextual\+Forms\+Table}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_font_a891aaa81493b6947cbc1b540dbeb9013}{is\+Invisible\+Zero\+Width}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} character)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a750d5396fee4c8d037a1b9d8364cc6a7}{get\+String\+Width\+LTR}} (\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} text\+Direction, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text, va\+\_\+list p\+Arg) const
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_font_a79c07e37cd1b703e88b6a182aca2b939}{get\+String\+Width\+RTL}} (\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} text\+Direction, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text, va\+\_\+list p\+Arg) const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_font_a60eeb2b9b681fb5812b0d664b93974c3}{Font}} (uint16\+\_\+t height, uint16\+\_\+t baseline, uint8\+\_\+t pix\+Above\+Top, uint8\+\_\+t pix\+Below\+Bottom, uint8\+\_\+t bits\+Per\+Pixel, uint8\+\_\+t byte\+Align\+Row, uint8\+\_\+t max\+Left, uint8\+\_\+t max\+Right, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} fallback\+Char, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} ellipsis\+Char)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_font_a7992fc8c7a650f823f835460e14b8d56}\label{classtouchgfx_1_1_font_a7992fc8c7a650f823f835460e14b8d56} 
+uint16\+\_\+t {\bfseries font\+Height}
+\begin{DoxyCompactList}\small\item\em The font height in pixels. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_a83bddf6bf16a7a352790c88b3e20f0bd}\label{classtouchgfx_1_1_font_a83bddf6bf16a7a352790c88b3e20f0bd} 
+uint16\+\_\+t {\bfseries baseline\+Height}
+\begin{DoxyCompactList}\small\item\em The baseline. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_ab4c1067bea048762ce80dae682c13486}\label{classtouchgfx_1_1_font_ab4c1067bea048762ce80dae682c13486} 
+uint8\+\_\+t {\bfseries pixels\+Above\+Top}
+\begin{DoxyCompactList}\small\item\em The number of pixels above the top. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_ac013ab1fbf606a38c9b3f69a3607628e}\label{classtouchgfx_1_1_font_ac013ab1fbf606a38c9b3f69a3607628e} 
+uint8\+\_\+t {\bfseries pixels\+Below\+Bottom}
+\begin{DoxyCompactList}\small\item\em The number of pixels below the bottom. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_a5b9c0fbe546f20a5909d53e8a4549ad3}\label{classtouchgfx_1_1_font_a5b9c0fbe546f20a5909d53e8a4549ad3} 
+uint8\+\_\+t {\bfseries b\+Per\+Pixel}\+: 7
+\begin{DoxyCompactList}\small\item\em The number of bits per pixel. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_a10f4c087754e26d736eb9e772cb862a1}\label{classtouchgfx_1_1_font_a10f4c087754e26d736eb9e772cb862a1} 
+uint8\+\_\+t {\bfseries b\+Align\+Row}\+: 1
+\begin{DoxyCompactList}\small\item\em The glyphs are saved with each row byte aligned. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_a07537ccac8603f294b37dcd218eb882e}\label{classtouchgfx_1_1_font_a07537ccac8603f294b37dcd218eb882e} 
+uint8\+\_\+t {\bfseries max\+Pixels\+Left}
+\begin{DoxyCompactList}\small\item\em The maximum number of pixels a glyph extends to the left. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_ad576fe62a6361c4d5f09cd0025f3b93c}\label{classtouchgfx_1_1_font_ad576fe62a6361c4d5f09cd0025f3b93c} 
+uint8\+\_\+t {\bfseries max\+Pixels\+Right}
+\begin{DoxyCompactList}\small\item\em The maximum number of pixels a glyph extends to the right. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_a2061a4fef2f735413fe79fc173e8d446}\label{classtouchgfx_1_1_font_a2061a4fef2f735413fe79fc173e8d446} 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} {\bfseries fallback\+Character}
+\begin{DoxyCompactList}\small\item\em The fallback character to use when no glyph exists for the wanted character. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_font_a04976df0bf0085779cf53ca25ebdee20}\label{classtouchgfx_1_1_font_a04976df0bf0085779cf53ca25ebdee20} 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} {\bfseries ellipsis\+Character}
+\begin{DoxyCompactList}\small\item\em The ellipsis character used for truncating long texts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The font base class. This class is abstract and requires the implementation of get\+Glyph. It provides utility functions such as obtaining string width and font height. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_font_aa3ed4d8a45aee05890773ed1b16346d0}\label{classtouchgfx_1_1_font_aa3ed4d8a45aee05890773ed1b16346d0} 
+\index{touchgfx::Font@{touchgfx::Font}!````~Font@{\texorpdfstring{$\sim$}{\string~}Font}}
+\index{````~Font@{\texorpdfstring{$\sim$}{\string~}Font}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Font()}{\string~Font()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Font\+::\texorpdfstring{$\sim$}{\string~}\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_font}{Font} class. \Hypertarget{classtouchgfx_1_1_font_a60eeb2b9b681fb5812b0d664b93974c3}\label{classtouchgfx_1_1_font_a60eeb2b9b681fb5812b0d664b93974c3} 
+\index{touchgfx::Font@{touchgfx::Font}!Font@{Font}}
+\index{Font@{Font}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}}
+{\footnotesize\ttfamily touchgfx\+::\+Font\+::\+Font (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{height,  }\item[{uint16\+\_\+t}]{baseline,  }\item[{uint8\+\_\+t}]{pix\+Above\+Top,  }\item[{uint8\+\_\+t}]{pix\+Below\+Bottom,  }\item[{uint8\+\_\+t}]{bits\+Per\+Pixel,  }\item[{uint8\+\_\+t}]{byte\+Align\+Row,  }\item[{uint8\+\_\+t}]{max\+Left,  }\item[{uint8\+\_\+t}]{max\+Right,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}}}]{fallback\+Char,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}}}]{ellipsis\+Char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_font}{Font} class. The protected constructor of a \doxylink{classtouchgfx_1_1_font}{Font}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The font height in pixels. \\
+\hline
+{\em baseline} & The baseline. \\
+\hline
+{\em pix\+Above\+Top} & The maximum number of pixels above the top of the text. \\
+\hline
+{\em pix\+Below\+Bottom} & The number of pixels below the base line. \\
+\hline
+{\em bits\+Per\+Pixel} & The number of bits per pixel. \\
+\hline
+{\em byte\+Align\+Row} & The glyphs are saved with each row byte aligned. \\
+\hline
+{\em max\+Left} & The maximum left extend for a glyph in the font. \\
+\hline
+{\em max\+Right} & The maximum right extend for a glyph in the font. \\
+\hline
+{\em fallback\+Char} & The fallback character for the typography in case no glyph is available. \\
+\hline
+{\em ellipsis\+Char} & The ellipsis character used for truncating long texts. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_font_a821d162e7bdcd5ff64232194ad49325a}\label{classtouchgfx_1_1_font_a821d162e7bdcd5ff64232194ad49325a} 
+\index{touchgfx::Font@{touchgfx::Font}!getBaseline@{getBaseline}}
+\index{getBaseline@{getBaseline}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getBaseline()}{getBaseline()}}
+{\footnotesize\ttfamily virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t touchgfx\+::\+Font\+::get\+Baseline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the position of the baseline of this font in pixels from the top of the line.
+
+\begin{DoxyReturn}{Returns}
+The baseline position.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+It is not sufficient to allocate text areas with this height. Use get\+Height for this. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_font_a106ca27546f2a9edbd2ddbe54c1d163f}\label{classtouchgfx_1_1_font_a106ca27546f2a9edbd2ddbe54c1d163f} 
+\index{touchgfx::Font@{touchgfx::Font}!getBitsPerPixel@{getBitsPerPixel}}
+\index{getBitsPerPixel@{getBitsPerPixel}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getBitsPerPixel()}{getBitsPerPixel()}}
+{\footnotesize\ttfamily virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+Font\+::get\+Bits\+Per\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets bits per pixel for this font.
+
+\begin{DoxyReturn}{Returns}
+The number of bits used per pixel in this font. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a4fab6512dc8a9538cfbacd37d707fa48}\label{classtouchgfx_1_1_font_a4fab6512dc8a9538cfbacd37d707fa48} 
+\index{touchgfx::Font@{touchgfx::Font}!getByteAlignRow@{getByteAlignRow}}
+\index{getByteAlignRow@{getByteAlignRow}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getByteAlignRow()}{getByteAlignRow()}}
+{\footnotesize\ttfamily virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+Font\+::get\+Byte\+Align\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Are the glyphs saved with each glyph row byte aligned?
+
+\begin{DoxyReturn}{Returns}
+True if each glyph row is stored byte aligned, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a3732fad6d82f88a2dec28807218da5db}\label{classtouchgfx_1_1_font_a3732fad6d82f88a2dec28807218da5db} 
+\index{touchgfx::Font@{touchgfx::Font}!getCharWidth@{getCharWidth}}
+\index{getCharWidth@{getCharWidth}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getCharWidth()}{getCharWidth()}}
+{\footnotesize\ttfamily virtual uint16\+\_\+t touchgfx\+::\+Font\+::get\+Char\+Width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}}}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the width in pixels of the specified character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The \doxylink{classtouchgfx_1_1_unicode}{Unicode} character.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The width in pixels of the specified character. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a47ceceb77cf50703c6453ac3a55e3411}\label{classtouchgfx_1_1_font_a47ceceb77cf50703c6453ac3a55e3411} 
+\index{touchgfx::Font@{touchgfx::Font}!getContextualFormsTable@{getContextualFormsTable}}
+\index{getContextualFormsTable@{getContextualFormsTable}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getContextualFormsTable()}{getContextualFormsTable()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structtouchgfx_1_1_font_contextual_forms_table}{Font\+Contextual\+Forms\+Table}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Font\+::get\+Contextual\+Forms\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the contextual forms table used in arabic fonts.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{structtouchgfx_1_1_font_contextual_forms_table}{Font\+Contextual\+Forms\+Table} or null if the font has no table. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_cached_font_a43a336f979dc0a8543fd89801140e962}{touchgfx\+::\+Cached\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_generated_font_a508b0581023ae969d743a8a989d294a0}{touchgfx\+::\+Generated\+Font}}, and \mbox{\hyperlink{classtouchgfx_1_1_unmapped_data_font_ae31cdebe0ee160fafd6b8104b910afab}{touchgfx\+::\+Unmapped\+Data\+Font}}.
+
+\Hypertarget{classtouchgfx_1_1_font_ab6e36de3a848afc96a19f2167e4997aa}\label{classtouchgfx_1_1_font_ab6e36de3a848afc96a19f2167e4997aa} 
+\index{touchgfx::Font@{touchgfx::Font}!getEllipsisChar@{getEllipsisChar}}
+\index{getEllipsisChar@{getEllipsisChar}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getEllipsisChar()}{getEllipsisChar()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} touchgfx\+::\+Font\+::get\+Ellipsis\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets ellipsis character for the given font. This is the character which is used when truncating long lines.
+
+\begin{DoxyReturn}{Returns}
+The ellipsis character for the typography.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_area_af40e74fcf1cb1ed4f49ba81511f51dd7}{Text\+Area\+::set\+Wide\+Text\+Action} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_font_a03917897b8fbd8512b8919d10975b9de}\label{classtouchgfx_1_1_font_a03917897b8fbd8512b8919d10975b9de} 
+\index{touchgfx::Font@{touchgfx::Font}!getFallbackChar@{getFallbackChar}}
+\index{getFallbackChar@{getFallbackChar}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getFallbackChar()}{getFallbackChar()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} touchgfx\+::\+Font\+::get\+Fallback\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets fallback character for the given font. The fallback character is the character used when no glyph is available for some character. If 0 (zero) is returned, there is no default character.
+
+\begin{DoxyReturn}{Returns}
+The default character for the typography in case no glyph is available. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_aa4a4424c6965b90e06556a3929e704f6}\label{classtouchgfx_1_1_font_aa4a4424c6965b90e06556a3929e704f6} 
+\index{touchgfx::Font@{touchgfx::Font}!getGlyph@{getGlyph}}
+\index{getGlyph@{getGlyph}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getGlyph()}{getGlyph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Font\+::get\+Glyph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}}}]{unicode }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the glyph data associated with the specified \doxylink{classtouchgfx_1_1_unicode}{Unicode}. Please note that in case of Thai letters and Arabic letters where diacritics can be placed relative to the previous character(s), please use \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{Text\+Provider\+::get\+Next\+Ligature()} instead as it will create a temporary \doxylink{structtouchgfx_1_1_glyph_node}{Glyph\+Node} that will be adjusted with respect to X/Y position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em unicode} & The character to look up.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the glyph node or null if the glyph was not found.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{Text\+Provider\+::get\+Next\+Ligature} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_const_font_aa4a4424c6965b90e06556a3929e704f6}{touchgfx\+::\+Const\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_generated_font_aa4a4424c6965b90e06556a3929e704f6}{touchgfx\+::\+Generated\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_fused_font_aa4a4424c6965b90e06556a3929e704f6}{touchgfx\+::\+Fused\+Font}}, and \mbox{\hyperlink{classtouchgfx_1_1_unmapped_data_font_aa4a4424c6965b90e06556a3929e704f6}{touchgfx\+::\+Unmapped\+Data\+Font}}.
+
+\Hypertarget{classtouchgfx_1_1_font_a795878e5b49ad6f2d903a811117207a2}\label{classtouchgfx_1_1_font_a795878e5b49ad6f2d903a811117207a2} 
+\index{touchgfx::Font@{touchgfx::Font}!getGlyph@{getGlyph}}
+\index{getGlyph@{getGlyph}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getGlyph()}{getGlyph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Font\+::get\+Glyph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}}}]{unicode,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\&}]{pixel\+Data,  }\item[{uint8\+\_\+t \&}]{bits\+Per\+Pixel }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the glyph data associated with the specified \doxylink{classtouchgfx_1_1_unicode}{Unicode}. Please note that in case of Thai letters and Arabic letters where diacritics can be placed relative to the previous character(s), please use \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{Text\+Provider\+::get\+Next\+Ligature()} instead as it will create a temporary \doxylink{structtouchgfx_1_1_glyph_node}{Glyph\+Node} that will be adjusted with respect to X/Y position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em unicode} & The character to look up. \\
+\hline
+ & {\em pixel\+Data} & Pointer to the pixel data for the glyph if the glyph is found. This is set by this method. \\
+\hline
+\mbox{\texttt{ out}}  & {\em bits\+Per\+Pixel} & Reference where to place the number of bits per pixel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the glyph node or null if the glyph was not found. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_const_font_a7549a3564a2ea01b2f590a2eb4448349}{touchgfx\+::\+Const\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_cached_font_a8e42f5da36070056d2ccf80f8b982155}{touchgfx\+::\+Cached\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_generated_font_a7549a3564a2ea01b2f590a2eb4448349}{touchgfx\+::\+Generated\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_fused_font_a7549a3564a2ea01b2f590a2eb4448349}{touchgfx\+::\+Fused\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_fused_font_a9b9b1a6ca7f1a9e63564ede5716718de}{touchgfx\+::\+Fused\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_unmapped_data_font_a358310382dd92ef9fe4b40be95a1ad15}{touchgfx\+::\+Unmapped\+Data\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_generated_font_a795878e5b49ad6f2d903a811117207a2}{touchgfx\+::\+Generated\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_const_font_a48991b525b035a49a9f5224b70ccce0e}{touchgfx\+::\+Const\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_fused_font_a48991b525b035a49a9f5224b70ccce0e}{touchgfx\+::\+Fused\+Font}}, and \mbox{\hyperlink{classtouchgfx_1_1_unmapped_data_font_a48991b525b035a49a9f5224b70ccce0e}{touchgfx\+::\+Unmapped\+Data\+Font}}.
+
+\Hypertarget{classtouchgfx_1_1_font_a216b00f8f55cb8ec36949a9748f98003}\label{classtouchgfx_1_1_font_a216b00f8f55cb8ec36949a9748f98003} 
+\index{touchgfx::Font@{touchgfx::Font}!getGSUBTable@{getGSUBTable}}
+\index{getGSUBTable@{getGSUBTable}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getGSUBTable()}{getGSUBTable()}}
+{\footnotesize\ttfamily virtual const uint16\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Font\+::get\+GSUBTable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets GSUB table. Currently only used for Devanagari fonts.
+
+\begin{DoxyReturn}{Returns}
+The GSUB table or null if font has GSUB no table. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_cached_font_a302d8419329e4d1019b41b894b5e119f}{touchgfx\+::\+Cached\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_generated_font_a991eaf85482755e29a525a7645b2f9ac}{touchgfx\+::\+Generated\+Font}}, and \mbox{\hyperlink{classtouchgfx_1_1_unmapped_data_font_a663e245226e996d655233d4d2134f122}{touchgfx\+::\+Unmapped\+Data\+Font}}.
+
+\Hypertarget{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53}\label{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53} 
+\index{touchgfx::Font@{touchgfx::Font}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily virtual FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t touchgfx\+::\+Font\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the height of a font. The font may exceed the top by \doxylink{classtouchgfx_1_1_font_a3480194521c651007151597bce352d53}{get\+Pixels\+Above\+Top()} or the bottom by get\+Pixels\+Below\+Bottom.
+
+\begin{DoxyReturn}{Returns}
+The font height. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a321bb4c9ba35e30ce737a4a2cbf0059b}\label{classtouchgfx_1_1_font_a321bb4c9ba35e30ce737a4a2cbf0059b} 
+\index{touchgfx::Font@{touchgfx::Font}!getKerning@{getKerning}}
+\index{getKerning@{getKerning}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getKerning()}{getKerning()}}
+{\footnotesize\ttfamily virtual int8\+\_\+t touchgfx\+::\+Font\+::get\+Kerning (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}}}]{prev\+Char,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}}]{glyph }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the kerning distance between two characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev\+Char} & The \doxylink{classtouchgfx_1_1_unicode}{Unicode} value of the previous character. \\
+\hline
+{\em glyph} & the glyph object for the current character.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The kerning distance between prev\+Char and glyph char. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_internal_flash_font_a24597bd9fd32544b3fac07566a7aa0c4}{touchgfx\+::\+Internal\+Flash\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_cached_font_a44384b88b21965677bfff78e91223174}{touchgfx\+::\+Cached\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_generated_font_a99da28d0bc0314142f737896cc5a9530}{touchgfx\+::\+Generated\+Font}}, \mbox{\hyperlink{classtouchgfx_1_1_unmapped_data_font_a129469eb10d2ac87b414ecbff83831c5}{touchgfx\+::\+Unmapped\+Data\+Font}}, and \mbox{\hyperlink{classtouchgfx_1_1_const_font_a620101b571939a7d83410184e72d1956}{touchgfx\+::\+Const\+Font}}.
+
+\Hypertarget{classtouchgfx_1_1_font_a7abc43fef081253bd3321807d2b749cb}\label{classtouchgfx_1_1_font_a7abc43fef081253bd3321807d2b749cb} 
+\index{touchgfx::Font@{touchgfx::Font}!getMaxPixelsLeft@{getMaxPixelsLeft}}
+\index{getMaxPixelsLeft@{getMaxPixelsLeft}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getMaxPixelsLeft()}{getMaxPixelsLeft()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+Font\+::get\+Max\+Pixels\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets maximum pixels left of any glyph in the font. This is the max value of "{}left"{} for all glyphs. The value is negated so if a "{}g"{} has left=-\/6 max\+Pixels\+Left is 6. This value is calculated by the font converter.
+
+\begin{DoxyReturn}{Returns}
+The maximum pixels left. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a2bb17ffec8605bdce0bf83862ae9c46e}\label{classtouchgfx_1_1_font_a2bb17ffec8605bdce0bf83862ae9c46e} 
+\index{touchgfx::Font@{touchgfx::Font}!getMaxPixelsRight@{getMaxPixelsRight}}
+\index{getMaxPixelsRight@{getMaxPixelsRight}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getMaxPixelsRight()}{getMaxPixelsRight()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+Font\+::get\+Max\+Pixels\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets maximum pixels right of any glyph in the font. This is the max value of "{}width+left-\/advance"{} for all glyphs. The is the number of pixels a glyph reaches to the right of its normal area. This value is calculated by the font converter.
+
+\begin{DoxyReturn}{Returns}
+The maximum pixels right. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a5f12e00e1451ac26e71aac3ca5b3d9ab}\label{classtouchgfx_1_1_font_a5f12e00e1451ac26e71aac3ca5b3d9ab} 
+\index{touchgfx::Font@{touchgfx::Font}!getNumberOfLines@{getNumberOfLines}}
+\index{getNumberOfLines@{getNumberOfLines}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getNumberOfLines()}{getNumberOfLines()}}
+{\footnotesize\ttfamily virtual uint16\+\_\+t touchgfx\+::\+Font\+::get\+Number\+Of\+Lines (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{text,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Count the number of lines in a given text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text. \\
+\hline
+{\em ...} & Variable arguments providing additional information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of lines. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a3480194521c651007151597bce352d53}\label{classtouchgfx_1_1_font_a3480194521c651007151597bce352d53} 
+\index{touchgfx::Font@{touchgfx::Font}!getPixelsAboveTop@{getPixelsAboveTop}}
+\index{getPixelsAboveTop@{getPixelsAboveTop}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getPixelsAboveTop()}{getPixelsAboveTop()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t touchgfx\+::\+Font\+::get\+Pixels\+Above\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets pixels above top of the normal text height. For most fonts this is 0, for some \textquotesingle{}wedding\textquotesingle{} fonts the number may be positive.
+
+\begin{DoxyReturn}{Returns}
+The pixels above top of normal text. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a8025ab9d2160592a6d4eeaf2d0b3ca02}\label{classtouchgfx_1_1_font_a8025ab9d2160592a6d4eeaf2d0b3ca02} 
+\index{touchgfx::Font@{touchgfx::Font}!getPixelsBelowBottom@{getPixelsBelowBottom}}
+\index{getPixelsBelowBottom@{getPixelsBelowBottom}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getPixelsBelowBottom()}{getPixelsBelowBottom()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t touchgfx\+::\+Font\+::get\+Pixels\+Below\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets number of pixel rows below the bottom of the font.
+
+\begin{DoxyReturn}{Returns}
+The pixels below bottom. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a5a4e6263165e7591cb2426d0d2f59ac9}\label{classtouchgfx_1_1_font_a5a4e6263165e7591cb2426d0d2f59ac9} 
+\index{touchgfx::Font@{touchgfx::Font}!getSpacingAbove@{getSpacingAbove}}
+\index{getSpacingAbove@{getSpacingAbove}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getSpacingAbove()}{getSpacingAbove()}}
+{\footnotesize\ttfamily virtual int16\+\_\+t touchgfx\+::\+Font\+::get\+Spacing\+Above (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{text,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the number of blank pixels at the top of the given text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A null-\/terminated \doxylink{classtouchgfx_1_1_unicode}{Unicode} string. \\
+\hline
+{\em ...} & Variable arguments providing additional information inserted at wildcard placeholders.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of blank pixels above the text. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_ad0a2e611010097f197be8b5bff3c1f78}\label{classtouchgfx_1_1_font_ad0a2e611010097f197be8b5bff3c1f78} 
+\index{touchgfx::Font@{touchgfx::Font}!getStringWidth@{getStringWidth}}
+\index{getStringWidth@{getStringWidth}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getStringWidth()}{getStringWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Font\+::get\+String\+Width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{text,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the width in pixels of the specified string. If the string contains multiple lines, the width of the widest line is found. Please note that the correct number of arguments must be given if the text contains wildcards.
+
+It is recommended to use the \doxylink{classtouchgfx_1_1_font_ad0a2e611010097f197be8b5bff3c1f78}{get\+String\+Width()} implementation with the Text\+Direction parameter to ensure correct calculation of the width. Kerning could result in different results depending on the Text\+Direction. This method assumes Text\+Direction to be TEXT\+\_\+\+DIRECTION\+\_\+\+LTR.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A null-\/terminated \doxylink{classtouchgfx_1_1_unicode}{Unicode} string with arguments to insert if the text contains wildcards. \\
+\hline
+{\em ...} & Variable arguments providing additional information inserted at wildcard placeholders.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The width in pixels of the longest line of the specified string. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_aa54cb0d0b2191b6a9046bae250279d7b}\label{classtouchgfx_1_1_font_aa54cb0d0b2191b6a9046bae250279d7b} 
+\index{touchgfx::Font@{touchgfx::Font}!getStringWidth@{getStringWidth}}
+\index{getStringWidth@{getStringWidth}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getStringWidth()}{getStringWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Font\+::get\+String\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{touchgfx\+::\+Text\+Direction}}}]{text\+Direction,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{text,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the width in pixels of the specified string. If the string contains multiple lines, the width of the widest line is found. Please note that the correct number of arguments must be given if the text contains wildcards.
+
+The Text\+Direction should be set correctly for the text supplied. For example the string "{}10 20 30"{} will be calculated differently depending on the Text\+Direction. If Text\+Direction is TEXT\+\_\+\+DIRECTION\+\_\+\+LTR the width is calculated as the with of "{}10 20 30"{} (with kerning between all characters) but for TEXT\+\_\+\+DIRECTION\+\_\+\+RTL it is calculated as "{}10"{}+"{} "{}+"{}20"{}+"{} "{}+"{}30"{} (with kerning only between characters in the substrings and not between substrings). For most fonts there might not be a difference between the two calculations, but some fonts might cause slightly different results.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+Direction} & The text direction. \\
+\hline
+{\em text} & A null-\/terminated \doxylink{classtouchgfx_1_1_unicode}{Unicode} string with arguments to insert if the text contains wildcards. \\
+\hline
+{\em ...} & Variable arguments providing additional information inserted at wildcard placeholders.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The width in pixels of the longest line of the specified string. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a750d5396fee4c8d037a1b9d8364cc6a7}\label{classtouchgfx_1_1_font_a750d5396fee4c8d037a1b9d8364cc6a7} 
+\index{touchgfx::Font@{touchgfx::Font}!getStringWidthLTR@{getStringWidthLTR}}
+\index{getStringWidthLTR@{getStringWidthLTR}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getStringWidthLTR()}{getStringWidthLTR()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Font\+::get\+String\+Width\+LTR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}}}]{text\+Direction,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{text,  }\item[{va\+\_\+list}]{p\+Arg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gets the width in pixels of the specified string. If the string contains multiple lines, the width of the widest line is found. Please note that the correct number of arguments must be given if the text contains wildcards.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+Direction} & The text direction. \\
+\hline
+{\em text} & A null-\/terminated \doxylink{classtouchgfx_1_1_unicode}{Unicode} string with arguments to insert if the text contains wildcards. \\
+\hline
+{\em p\+Arg} & Variable arguments providing additional information inserted at wildcard placeholders.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The width in pixels of the longest line of the specified string.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The string is assumed to be purely left-\/to-\/right. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_font_a79c07e37cd1b703e88b6a182aca2b939}\label{classtouchgfx_1_1_font_a79c07e37cd1b703e88b6a182aca2b939} 
+\index{touchgfx::Font@{touchgfx::Font}!getStringWidthRTL@{getStringWidthRTL}}
+\index{getStringWidthRTL@{getStringWidthRTL}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{getStringWidthRTL()}{getStringWidthRTL()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Font\+::get\+String\+Width\+RTL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}}}]{text\+Direction,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{text,  }\item[{va\+\_\+list}]{p\+Arg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gets the width in pixels of the specified string. If the string contains multiple lines, the width of the widest line is found. Please note that the correct number of arguments must be given if the text contains wildcards.
+
+The string is handled as a right-\/to-\/left string and subdivided into smaller text strings to correctly handle mixing of left-\/to-\/right and right-\/to-\/left strings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+Direction} & The text direction. \\
+\hline
+{\em text} & A null-\/terminated \doxylink{classtouchgfx_1_1_unicode}{Unicode} string with arguments to insert if the text contains wildcards. \\
+\hline
+{\em p\+Arg} & Variable arguments providing additional information inserted at wildcard placeholders.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string width RTL. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a891aaa81493b6947cbc1b540dbeb9013}\label{classtouchgfx_1_1_font_a891aaa81493b6947cbc1b540dbeb9013} 
+\index{touchgfx::Font@{touchgfx::Font}!isInvisibleZeroWidth@{isInvisibleZeroWidth}}
+\index{isInvisibleZeroWidth@{isInvisibleZeroWidth}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{isInvisibleZeroWidth()}{isInvisibleZeroWidth()}}
+{\footnotesize\ttfamily static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+Font\+::is\+Invisible\+Zero\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}}}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Query if \textquotesingle{}character\textquotesingle{} is invisible, zero width.
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if invisible, zero width, false if not. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_font_a05762e87c104c3e3e88026dac251fbaa}\label{classtouchgfx_1_1_font_a05762e87c104c3e3e88026dac251fbaa} 
+\index{touchgfx::Font@{touchgfx::Font}!TOUCHGFX\_DEPRECATED@{TOUCHGFX\_DEPRECATED}}
+\index{TOUCHGFX\_DEPRECATED@{TOUCHGFX\_DEPRECATED}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{TOUCHGFX\_DEPRECATED()}{TOUCHGFX\_DEPRECATED()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily touchgfx\+::\+Font\+::\+TOUCHGFX\+\_\+\+DEPRECATED (\begin{DoxyParamCaption}\item[{"{}Please use \mbox{\hyperlink{classtouchgfx_1_1_font_a821d162e7bdcd5ff64232194ad49325a}{get\+Baseline}}() instead."{}}]{,  }\item[{virtual uint16\+\_\+t get\+Font\+Height() const}]{ }\end{DoxyParamCaption})}
+
+Returns the height in pixels of this font. The returned value corresponds to the maximum height occupied by a character in the font.
+
+\begin{DoxyReturn}{Returns}
+The height in pixels of this font.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+It is not sufficient to allocate text areas with this height. Use get\+Minimum\+Text\+Height for this.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000040}{Deprecated}}]Please use \doxylink{classtouchgfx_1_1_font_a821d162e7bdcd5ff64232194ad49325a}{get\+Baseline()} instead. \end{DoxyRefDesc}
+\Hypertarget{classtouchgfx_1_1_font_a56dc6c7bd57a541e310650824d8110f8}\label{classtouchgfx_1_1_font_a56dc6c7bd57a541e310650824d8110f8} 
+\index{touchgfx::Font@{touchgfx::Font}!TOUCHGFX\_DEPRECATED@{TOUCHGFX\_DEPRECATED}}
+\index{TOUCHGFX\_DEPRECATED@{TOUCHGFX\_DEPRECATED}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{TOUCHGFX\_DEPRECATED()}{TOUCHGFX\_DEPRECATED()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily touchgfx\+::\+Font\+::\+TOUCHGFX\+\_\+\+DEPRECATED (\begin{DoxyParamCaption}\item[{"{}Please use \mbox{\hyperlink{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53}{get\+Height}}() instead."{}}]{,  }\item[{virtual uint16\+\_\+t get\+Max\+Text\+Height(const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}text,...) const}]{ }\end{DoxyParamCaption})}
+
+Gets the height of the highest character in a given string. The height includes the spacing above the text which is included in the font.
+
+\begin{DoxyReturn}{Returns}
+The height if the given text.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000039}{Deprecated}}]Please use get\+Height instead. \end{DoxyRefDesc}
+\Hypertarget{classtouchgfx_1_1_font_acb5a39f51ea6313bac4399b3029f7115}\label{classtouchgfx_1_1_font_acb5a39f51ea6313bac4399b3029f7115} 
+\index{touchgfx::Font@{touchgfx::Font}!TOUCHGFX\_DEPRECATED@{TOUCHGFX\_DEPRECATED}}
+\index{TOUCHGFX\_DEPRECATED@{TOUCHGFX\_DEPRECATED}!touchgfx::Font@{touchgfx::Font}}
+\doxysubsubsection{\texorpdfstring{TOUCHGFX\_DEPRECATED()}{TOUCHGFX\_DEPRECATED()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily touchgfx\+::\+Font\+::\+TOUCHGFX\+\_\+\+DEPRECATED (\begin{DoxyParamCaption}\item[{"{}Please use \mbox{\hyperlink{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53}{get\+Height}}() instead."{}}]{,  }\item[{virtual uint16\+\_\+t get\+Minimum\+Text\+Height() const}]{ }\end{DoxyParamCaption})}
+
+Returns the height of a font. The font may exceed the top by \doxylink{classtouchgfx_1_1_font_a3480194521c651007151597bce352d53}{get\+Pixels\+Above\+Top()}.
+
+\begin{DoxyReturn}{Returns}
+The font height.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000041}{Deprecated}}]Please use \doxylink{classtouchgfx_1_1_font_a6f830231ae4309320a236ac915144c53}{get\+Height()} instead. \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_font_8hpp}{Font.\+hpp}}\item 
+Touch\+GFX/generated/texts/src/Texts.\+cpp\end{DoxyCompactItemize}

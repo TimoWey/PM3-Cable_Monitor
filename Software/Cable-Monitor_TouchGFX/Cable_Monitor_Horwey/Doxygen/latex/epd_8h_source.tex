@@ -1,0 +1,40 @@
+\doxysection{epd.\+h}
+\hypertarget{epd_8h_source}{}\label{epd_8h_source}\index{Drivers/BSP/Components/Common/epd.h@{Drivers/BSP/Components/Common/epd.h}}
+\mbox{\hyperlink{epd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifndef\ \_\_EPD\_H}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ \_\_EPD\_H}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ void\ \ \ \ \ (*Init)(void);}
+\DoxyCodeLine{00076\ \ \ void\ \ \ \ \ (*WritePixel)(uint8\_t);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{/*\ Optimized\ operation\ */}}
+\DoxyCodeLine{00079\ \ \ void\ \ \ \ \ (*SetDisplayWindow)(uint16\_t,\ uint16\_t,\ uint16\_t,\ uint16\_t);}
+\DoxyCodeLine{00080\ \ \ void\ \ \ \ \ (*RefreshDisplay)(void);}
+\DoxyCodeLine{00081\ \ \ void\ \ \ \ \ (*CloseChargePump)(void);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ uint16\_t\ (*GetEpdPixelWidth)(void);}
+\DoxyCodeLine{00084\ \ \ uint16\_t\ (*GetEpdPixelHeight)(void);}
+\DoxyCodeLine{00085\ \ \ void\ \ \ \ \ (*DrawImage)(uint16\_t,\ uint16\_t,\ uint16\_t,\ uint16\_t,\ uint8\_t*);}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{struct_e_p_d___drv_type_def}{EPD\_DrvTypeDef}};}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EPD\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

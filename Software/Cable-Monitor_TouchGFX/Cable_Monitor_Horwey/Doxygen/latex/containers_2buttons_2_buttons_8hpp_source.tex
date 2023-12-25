@@ -1,0 +1,112 @@
+\doxysection{Buttons.\+hpp}
+\hypertarget{containers_2buttons_2_buttons_8hpp_source}{}\label{containers_2buttons_2_buttons_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp}}
+\mbox{\hyperlink{containers_2buttons_2_buttons_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_BUTTONS\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_BUTTONS\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_animated_image_button_style_8hpp}{touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_box_with_border_button_style_8hpp}{touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_click_button_trigger_8hpp}{touchgfx/containers/buttons/ClickButtonTrigger.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_icon_button_style_8hpp}{touchgfx/containers/buttons/IconButtonStyle.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_button_style_8hpp}{touchgfx/containers/buttons/ImageButtonStyle.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_repeat_button_trigger_8hpp}{touchgfx/containers/buttons/RepeatButtonTrigger.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_button_style_8hpp}{touchgfx/containers/buttons/TextButtonStyle.hpp}}>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_tiled_image_button_style_8hpp}{touchgfx/containers/buttons/TiledImageButtonStyle.hpp}}>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_toggle_button_trigger_8hpp}{touchgfx/containers/buttons/ToggleButtonTrigger.hpp}}>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_touch_button_trigger_8hpp}{touchgfx/containers/buttons/TouchButtonTrigger.hpp}}>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_two_wildcard_text_button_style_8hpp}{touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_wildcard_text_button_style_8hpp}{touchgfx/containers/buttons/WildcardTextButtonStyle.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ BoxWithBorderButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a39545f876af76918e8a8c8877a737004}{BoxClickButton}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ BoxWithBorderButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_ad1984a03e3703f6b85db1dd927c38771}{BoxRepeatButton}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ BoxWithBorderButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a023072ff0cc999117b2775d0a5fa3bf9}{BoxToggleButton}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ BoxWithBorderButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_aaa4adae60c7a403db9a4005b03a027dd}{BoxTouchButton}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ ImageButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_ab0b98649d968ff3fdf7d157984239653}{ImageClickButton}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ ImageButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a93840f157ee73a6b46bd1909462772c5}{ImageRepeatButton}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ ImageButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_ae9e471021e92984d727317177b8b3a83}{ImageTouchButton}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ ImageButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_ac5d3a30ac2eafce731af97c6bafe7a17}{ImageToggleButton}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ IconButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a16cce6be57d80fb4fd6146ec620b5603}{IconClickButton}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ IconButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a142e990080d7c07cc8984ad82f2b5adb}{IconRepeatButton}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ IconButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a2aa2f637352005e86345d2e836633022}{IconTouchButton}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ IconButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a82a85e0d4b1aa8d44b8572a780ef48ff}{IconToggleButton}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ ImageButtonStyle<IconButtonStyle<ClickButtonTrigger>\ >\ \mbox{\hyperlink{namespacetouchgfx_a3ee1c52dbfa0f39bc1bd020c8dbff489}{IconImageClickButton}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ ImageButtonStyle<IconButtonStyle<RepeatButtonTrigger>\ >\ \mbox{\hyperlink{namespacetouchgfx_a0e28fef6489d28be80761d92cf8d6a59}{IconImageRepeatButton}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ ImageButtonStyle<IconButtonStyle<TouchButtonTrigger>\ >\ \mbox{\hyperlink{namespacetouchgfx_aafd07423b7df192bd119c46d4ff914fb}{IconImageTouchButton}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{typedef}\ ImageButtonStyle<IconButtonStyle<ToggleButtonTrigger>\ >\ \mbox{\hyperlink{namespacetouchgfx_abdf7d6e3316fc3a316be6a8f750c8b91}{IconImageToggleButton}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{typedef}\ TextButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a6f21aae4be22ed1ce893c4c7d4ef4a60}{TextClickButton}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ TextButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a8cc900af660ec6bf7ad43bcff640f8b9}{TextRepeatButton}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{typedef}\ TextButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a8438f246f02c3b69c7933b7ef6145fe6}{TextTouchButton}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{typedef}\ TextButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a6ca4055d88b8f288a5897ee1ff5e1b1f}{TextToggleButton}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ TiledImageButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a30f4c5f0debf36aa680ff66c41957e2b}{TiledImageClickButton}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{typedef}\ TiledImageButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a8b61f553b3d18b5addfee33e2a47f4d2}{TiledImageRepeatButton}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{typedef}\ TiledImageButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a5a78ba9963f8db2bdf77911c1e40fddc}{TiledImageTouchButton}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ TiledImageButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_adb6383fa1cc4e64236df23ab163acb0d}{TiledImageToggleButton}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{typedef}\ WildcardTextButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_ad94e5571a2d79462cbad9431e8474b1b}{WildcardTextClickButton}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{typedef}\ WildcardTextButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a393758c3978e4d235065e977c47e256f}{WildcardTextRepeatButton}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{typedef}\ WildcardTextButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_ad55a6e6145c313b6b643235138e5e556}{WildcardTextTouchButton}};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{typedef}\ WildcardTextButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_abd59b75182b0de1ef035e9bf71cdd86a}{WildcardTextToggleButton}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{typedef}\ TwoWildcardTextButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a5f99b8260615e243f5ee95337723b622}{TwoWildcardTextClickButton}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{typedef}\ TwoWildcardTextButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a8c0b341d8250d373f332c09fb257c848}{TwoWildcardTextRepeatButton}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{typedef}\ TwoWildcardTextButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_ab5e668045213feea8106997f4c4b968c}{TwoWildcardTextTouchButton}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{typedef}\ TwoWildcardTextButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a51ea89370ca9aff292b977e91ba44eb4}{TwoWildcardTextToggleButton}};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{typedef}\ AnimatedImageButtonStyle<ClickButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a0bc8f2267fc70e5d048ba1b6616f74e8}{AnimatedImageClickButton}};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{typedef}\ AnimatedImageButtonStyle<RepeatButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a024a47e9002fe3648c18d63b9bad1d92}{AnimatedImageRepeatButton}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{typedef}\ AnimatedImageButtonStyle<TouchButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a9c25b63edcdfb93004d933350b0c6427}{AnimatedImageTouchButton}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00143\ \textcolor{keyword}{typedef}\ AnimatedImageButtonStyle<ToggleButtonTrigger>\ \mbox{\hyperlink{namespacetouchgfx_a9b7eb1134464962d07334b7767dbee74}{AnimatedImageToggleButton}};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_BUTTONS\_HPP}}
+
+\end{DoxyCode}

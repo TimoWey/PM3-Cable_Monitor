@@ -1,0 +1,118 @@
+\doxysection{touchgfx\+::Wipe\+Transition\texorpdfstring{$<$}{<} template\+Direction \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_wipe_transition}{}\label{classtouchgfx_1_1_wipe_transition}\index{touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}}
+
+
+{\ttfamily \#include $<$Wipe\+Transition.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Wipe\+Transition\texorpdfstring{$<$}{<} template\+Direction \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_wipe_transition}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_a2bcad88b3bdc6cd35f4ae780e8799910}{Wipe\+Transition}} (const uint8\+\_\+t transition\+Steps=20)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_aa1a95746acab87f3dd6c039ea07859a7}{handle\+Tick\+Event}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_a24d8182f3745fb69a18c1185f3e26d21}{tear\+Down}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_adcc23d928cee5f1927096187cc25dc57}{init}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_a04814a8c962abbda1947ad60be419fa8}{invalidate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_transition}{touchgfx\+::\+Transition}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_transition_a24cce3d30a67e8d245b1b346682c4f3a}{Transition}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_transition_a6ed9dde24db455453661e98e31368fd5}{\texorpdfstring{$\sim$}{\string~}\+Transition}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_transition_a0805cafb3a0001173a36766e13976379}{is\+Done}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_afdfcaf170c7c61490f06893ace96a900}{set\+Screen\+Container}} (\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \&cont)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_transition}{touchgfx\+::\+Transition}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \texorpdfstring{$\ast$}{*} {\bfseries screen\+Container}
+\begin{DoxyCompactList}\small\item\em The screen \doxylink{classtouchgfx_1_1_container}{Container} of the \doxylink{classtouchgfx_1_1_screen}{Screen} transitioning to. \end{DoxyCompactList}\item 
+bool {\bfseries done}
+\begin{DoxyCompactList}\small\item\em Flag that indicates when the transition is done. This should be set by implementing classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$\newline
+class touchgfx\+::\+Wipe\+Transition$<$ template\+Direction $>$}
+A \doxylink{classtouchgfx_1_1_transition}{Transition} that expands the new screen over the previous from the given direction. This transition only draws the pixels in the framebuffer once, and never moves any pixels. It is therefore very useful on MCUs with limited performance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_wipe_transition_a2bcad88b3bdc6cd35f4ae780e8799910}\label{classtouchgfx_1_1_wipe_transition_a2bcad88b3bdc6cd35f4ae780e8799910} 
+\index{touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}!WipeTransition@{WipeTransition}}
+\index{WipeTransition@{WipeTransition}!touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{WipeTransition()}{WipeTransition()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+\mbox{\hyperlink{classtouchgfx_1_1_wipe_transition}{touchgfx\+::\+Wipe\+Transition}}$<$ template\+Direction $>$\+::\+Wipe\+Transition (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{transition\+Steps = {\ttfamily 20} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_wipe_transition}{Wipe\+Transition} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transition\+Steps} & (Optional) Number of steps in the transition animation. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_wipe_transition_aa1a95746acab87f3dd6c039ea07859a7}\label{classtouchgfx_1_1_wipe_transition_aa1a95746acab87f3dd6c039ea07859a7} 
+\index{touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition}{touchgfx\+::\+Wipe\+Transition}}$<$ template\+Direction $>$\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Handles the tick event when transitioning. It uncovers and invalidates increasing parts of the new screen elements. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_wipe_transition_adcc23d928cee5f1927096187cc25dc57}\label{classtouchgfx_1_1_wipe_transition_adcc23d928cee5f1927096187cc25dc57} 
+\index{touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}!init@{init}}
+\index{init@{init}!touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition}{touchgfx\+::\+Wipe\+Transition}}$<$ template\+Direction $>$\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Initializes the transition. Called after the constructor is called, when the application changes the transition. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_wipe_transition_a04814a8c962abbda1947ad60be419fa8}\label{classtouchgfx_1_1_wipe_transition_a04814a8c962abbda1947ad60be419fa8} 
+\index{touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{invalidate()}{invalidate()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition}{touchgfx\+::\+Wipe\+Transition}}$<$ template\+Direction $>$\+::invalidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Wipe transition does not require an invalidation. Invalidation is handled by the class. Do no invalidation initially. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a3f4024a58615e5b9cdd874ab47df8f4e}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_wipe_transition_a24d8182f3745fb69a18c1185f3e26d21}\label{classtouchgfx_1_1_wipe_transition_a24d8182f3745fb69a18c1185f3e26d21} 
+\index{touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!touchgfx::WipeTransition$<$ templateDirection $>$@{touchgfx::WipeTransition$<$ templateDirection $>$}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}} template\+Direction$>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition}{touchgfx\+::\+Wipe\+Transition}}$<$ template\+Direction $>$\+::tear\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Tears down the Animation. Called before the destructor is called, when the application changes the transition. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a12f4562bbd1f1c2226d4a33a6869b012}{touchgfx\+::\+Transition}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/transitions/\mbox{\hyperlink{_wipe_transition_8hpp}{Wipe\+Transition.\+hpp}}\end{DoxyCompactItemize}

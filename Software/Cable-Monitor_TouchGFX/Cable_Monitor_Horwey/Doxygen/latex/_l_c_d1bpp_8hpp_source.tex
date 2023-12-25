@@ -1,0 +1,207 @@
+\doxysection{LCD1bpp.\+hpp}
+\hypertarget{_l_c_d1bpp_8hpp_source}{}\label{_l_c_d1bpp_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD1bpp.hpp@{Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD1bpp.hpp}}
+\mbox{\hyperlink{_l_c_d1bpp_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_LCD1BPP\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_LCD1BPP\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_color_8hpp}{touchgfx/Color.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_h_a_l_8hpp}{touchgfx/hal/HAL.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8hpp}{touchgfx/lcd/LCD.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d1_debug_printer_8hpp}{touchgfx/lcd/LCD1DebugPrinter.hpp}}>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }GlyphNode;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp}{LCD1bpp}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a17663d56031a25d0dbd956d2c566211c}{drawPartialBitmap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bitmap,\ int16\_t\ x,\ int16\_t\ y,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect,\ uint8\_t\ alpha\ =\ 255,\ \textcolor{keywordtype}{bool}\ useOptimized\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_ac46cf17f5704f3bf0794a28997ea42b2}{blitCopy}}(\textcolor{keyword}{const}\ uint16\_t*\ sourceData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha,\ \textcolor{keywordtype}{bool}\ hasTransparentPixels);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a4a84f3ec2abe3100f7dd02eef8bc3fae}{blitCopy}}(\textcolor{keyword}{const}\ uint8\_t*\ sourceData,\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap::BitmapFormat}}\ sourceFormat,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha,\ \textcolor{keywordtype}{bool}\ hasTransparentPixels);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a23f200294ea1b8c73c59965b2140a03f}{copyFrameBufferRegionToMemory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ visRegion,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ absRegion,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ bitmapId);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a3eae903d826fbd3c8bb4743c422fbbbc}{copyFrameBufferRegionToMemory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ visRegion,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ absRegion,\ uint8\_t*\ dst,\ int16\_t\ dstWidth,\ int16\_t\ dstHeight);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a66de6116c46c09ecb863235e59bbcc3d}{copyAreaFromTFTToClientBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ region);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_ac95d05e88775353122e781fea680a928}{fillRect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect,\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint8\_t\ alpha\ =\ 255);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a30f79609d505b8942959d219090e3a54}{fillBuffer}}(uint8\_t*\ \textcolor{keyword}{const}\ destination,\ uint16\_t\ pixelStride,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_af4e54ce2de0256fa8c5400f55df16681}{bitDepth}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap::BitmapFormat}}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_acbfca56b8fe3e8237115829a63d3d82c}{framebufferFormat}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00065\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcaf61a3cebcb13f2b7c74780994e1f7ab6}{Bitmap::BW}};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_aad73c8df47a849d9b1ae88722d6c75d6}{framebufferStride}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a552081217f0e5519859296dbcb8e2828}{getFramebufferStride}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00080\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a552081217f0e5519859296dbcb8e2828}{getFramebufferStride}}()}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{HAL::FRAME\_BUFFER\_WIDTH}}\ >\ 0\ \&\&\ \textcolor{stringliteral}{"{}HAL\ has\ not\ been\ initialized\ yet"{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{HAL::FRAME\_BUFFER\_WIDTH}}\ +\ 7)\ /\ 8;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00095\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a27c1fb9e79df0fbade806ab53ef1130d}{getNativeColorFromRGB}}(uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ GRAY\ value\ (http://en.wikipedia.org/wiki/Luma\_\%28video\%29)\ rounded\ to\ nearest\ integer}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (red\ *\ 54\ +\ green\ *\ 183\ +\ blue\ *\ 19)\ >>\ 15;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a7b5610e8dee4a0de87f296dcd3ddc39b}{getNativeColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a27c1fb9e79df0fbade806ab53ef1130d}{getNativeColorFromRGB}}(\mbox{\hyperlink{classtouchgfx_1_1_color_a2676f6a78eb94b9579bcea06597e28c8}{Color::getRed}}(color),\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2d3331abbfeb025284a72f48662ae5a3}{Color::getGreen}}(color),\ \mbox{\hyperlink{classtouchgfx_1_1_color_adea3016812f2d9428c194a8f3297cd59}{Color::getBlue}}(color));}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a3c8920779973c3c9910ab9f2f6b9e176}{enableTextureMapperAll}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_adeb9fc71503ec94d6bcf092bf417e4e5}{drawTextureMapScanLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{DrawingSurface}}\&\ \textcolor{comment}{/*dest*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients}{Gradients}}\&\ \textcolor{comment}{/*gradients*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_edge}{Edge}}*\ \textcolor{comment}{/*leftEdge*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_edge}{Edge}}*\ \textcolor{comment}{/*rightEdge*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{TextureSurface}}\&\ \textcolor{comment}{/*texture*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ \textcolor{comment}{/*absoluteRect*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ \textcolor{comment}{/*dirtyAreaAbsolute*/},\ \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{RenderingVariant}}\ \textcolor{comment}{/*renderVariant*/},\ uint8\_t\ \textcolor{comment}{/*alpha*/},\ uint16\_t\ \textcolor{comment}{/*subDivisionSize*/})}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}Texture\ mapping\ not\ supported\ for\ 1bpp"{}});}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_adfa69d4d35b3c4e379a209c4951d6758}{nextPixel}}(\textcolor{keywordtype}{bool}\ rotatedDisplay,\ \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{TextRotation}}\ textRotation);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a84a2dcce4579b8344c309e1397223e11}{nextLine}}(\textcolor{keywordtype}{bool}\ rotatedDisplay,\ \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{TextRotation}}\ textRotation);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_ac29bed8323477c5362e53e27b16d0727}{drawGlyph}}(uint16\_t*\ wbuf16,\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ widgetArea,\ int16\_t\ x,\ int16\_t\ y,\ uint16\_t\ offsetX,\ uint16\_t\ offsetY,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{GlyphNode}}*\ glyph,\ \textcolor{keyword}{const}\ uint8\_t*\ glyphData,\ uint8\_t\ byteAlignRow,\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint8\_t\ bitsPerPixel,\ uint8\_t\ alpha,\ \mbox{\hyperlink{namespacetouchgfx_aebccdee6bddcb76a1074a0ef127c85a4}{TextRotation}}\ rotation);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_add90369b99a62037d8d76a9700c3bebf}{fillMemory}}(\textcolor{keywordtype}{void}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ dst,\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint16\_t\ bytesToFill);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_a320c256dfc5830c65f53a9e116ca0fc1}{blitCopyRLE}}(\textcolor{keyword}{const}\ uint16\_t*\ \_sourceData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ source,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ blitRect,\ uint8\_t\ alpha);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1bpp_afe163d0e37c859ada03c87c4e3ae793b}{copyRect}}(\textcolor{keyword}{const}\ uint8\_t*\ srcAddress,\ int16\_t\ srcStride,\ uint8\_t\ srcPixelOffset,\ uint8\_t*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ dstAddress,\ int16\_t\ dstStride,\ uint8\_t\ dstPixelOffset,\ int16\_t\ width,\ int16\_t\ height)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{class\ }bwRLEdata}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ bwRLEdata(\textcolor{keyword}{const}\ uint8\_t*\ src\ =\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ :\ data(src),\ thisHalfByte(0),\ nextHalfByte(0),\ rleByte(0),\ firstHalfByte(true),\ color(0),\ length(0)}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ init(src);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init(\textcolor{keyword}{const}\ uint8\_t*\ src)}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ data\ =\ src;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ rleByte\ =\ 0;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ firstHalfByte\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \string~0;\ \textcolor{comment}{//\ Will\ be\ flipped\ to\ 0\ by\ first\ call\ to\ getNextLength()\ below}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (src)}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ two\ half-\/bytes\ ahead}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisHalfByte\ =\ getNextHalfByte();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nextHalfByte\ =\ getNextHalfByte();}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getNextLength();}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ skipNext(int32\_t\ skip)}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ >\ skip)\ \textcolor{comment}{//\ Is\ the\ current\ length\ enough?}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ length\ -\/=\ skip;\ \textcolor{comment}{//\ Reduce\ the\ length}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skip\ =\ 0;\ \ \ \ \ \ \ \textcolor{comment}{//\ No\ more\ to\ skip}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Done!}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skip\ -\/=\ length;\ \ \textcolor{comment}{//\ Skip\ the\ entire\ run}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getNextLength();\ \textcolor{comment}{//\ Swap\ colors\ and\ Read\ length\ of\ next\ run}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ uint8\_t\ getColor()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00232\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ color;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ int32\_t\ getLength()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00237\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ length;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ getNextLength()}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ length\ =\ thisHalfByte;\ \textcolor{comment}{//\ Length\ is\ the\ next\ byte}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ read\ ahead\ buffer}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ thisHalfByte\ =\ nextHalfByte;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ nextHalfByte\ =\ getNextHalfByte();}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \string~color;\ \textcolor{comment}{//\ Update\ the\ color\ of\ next\ run}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ number\ after\ 'length'\ is\ 0}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (thisHalfByte\ ==\ 0)}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ length\ <<=\ 4;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Multiply\ length\ by\ 16\ and}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ length\ +=\ nextHalfByte;\ \textcolor{comment}{//\ add\ the\ number\ after\ 0}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ have\ used\ the\ next\ two\ half\ bytes,\ read\ two\ new\ ones}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisHalfByte\ =\ getNextHalfByte();}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nextHalfByte\ =\ getNextHalfByte();}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ ==\ 0)}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getNextLength();}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ uint8\_t\ getNextHalfByte()}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ assert(data\ !=\ 0\ \&\&\ \textcolor{stringliteral}{"{}class\ bwRLEdata\ not\ properly\ initialized"{}});}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (firstHalfByte)\ \textcolor{comment}{//\ Start\ of\ new\ byte,\ read\ data\ from\ BW\_RLE\ stream}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rleByte\ =\ *data++;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ len\ =\ rleByte\ \&\ 0xF;\ \textcolor{comment}{//\ Read\ lower\ half}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ rleByte\ >>=\ 4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shift\ upper\ half\ down\ to\ make\ it\ ready}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ firstHalfByte\ =\ !firstHalfByte;\ \ \ \ \textcolor{comment}{//\ Toggle\ 'start\ of\ byte'}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ data;\ \ \textcolor{comment}{//\ Pointer\ to\ compressed\ data\ (BW\_RLE)}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ uint8\_t\ thisHalfByte;\ \textcolor{comment}{//\ The\ next\ half\ byte\ from\ the\ input}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ uint8\_t\ nextHalfByte;\ \textcolor{comment}{//\ The\ next\ half\ byte\ after\ 'thisHalfByte'}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ uint8\_t\ rleByte;\ \ \ \ \ \ \textcolor{comment}{//\ Byte\ read\ from\ compressed\ data}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ firstHalfByte;\ \ \ \textcolor{comment}{//\ Are\ we\ about\ to\ process\ first\ half\ byte\ of\ rleByte?}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ uint8\_t\ color;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Current\ color}}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ int32\_t\ length;\ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ pixels\ with\ the\ given\ color}}
+\DoxyCodeLine{00284\ \ \ \ \ \};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }PainterBWBitmap;}
+\DoxyCodeLine{00287\ \};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_LCD1BPP\_HPP}}
+
+\end{DoxyCode}

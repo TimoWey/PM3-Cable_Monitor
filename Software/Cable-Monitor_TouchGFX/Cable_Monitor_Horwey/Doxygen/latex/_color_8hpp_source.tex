@@ -1,0 +1,235 @@
+\doxysection{Color.\+hpp}
+\hypertarget{_color_8hpp_source}{}\label{_color_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp}}
+\mbox{\hyperlink{_color_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_COLOR\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_COLOR\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8hpp}{touchgfx/lcd/LCD.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_color}{Color}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_color_ac103ed74c2b74e3f70e0a27b8ad62520}{getColorFromRGB}}(uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0xFF000000\ |\ (red\ <<\ 16)\ |\ (green\ <<\ 8)\ |\ (blue);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2676f6a78eb94b9579bcea06597e28c8}{getRed}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ color\ >>\ 16;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2d3331abbfeb025284a72f48662ae5a3}{getGreen}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ color\ >>\ 8;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_color_adea3016812f2d9428c194a8f3297cd59}{getBlue}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color)}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ color;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_a3ca2aa78eb1a553681ae4f7c43d3aed9}{getRGBFromHSV}}(uint8\_t\ hue,\ uint8\_t\ saturation,\ uint8\_t\ value,\ uint8\_t\&\ red,\ uint8\_t\&\ green,\ uint8\_t\&\ blue)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (saturation\ ==\ 0)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ red\ =\ green\ =\ blue\ =\ value;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ region\ =\ (hue\ *\ 6)\ >>\ 8;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ next\_region\_start\ =\ ((((region\ +\ 1)\ <<\ 8)\ +\ 5)\ /\ 6);\ \textcolor{comment}{//\ Can\ go\ up\ to\ 256,\ uint8\_t\ not\ enough}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ region\_size\ =\ next\_region\_start\ -\/\ (((region\ <<\ 8)\ +\ 5)\ /\ 6);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ remainder\ =\ 255\ -\/\ (next\_region\_start\ -\/\ hue)\ *\ 255\ /\ region\_size;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ p\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(value\ *\ (255\ -\/\ saturation));}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ q\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(value\ *\ (255\ -\/\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(saturation\ *\ remainder)));}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ t\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(value\ *\ (255\ -\/\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(saturation\ *\ (255\ -\/\ remainder))));}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (region)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ red\ =\ value;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ green\ =\ t;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ blue\ =\ p;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ red\ =\ q;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ green\ =\ value;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ blue\ =\ p;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ red\ =\ p;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ green\ =\ value;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ blue\ =\ t;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ red\ =\ p;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ green\ =\ q;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ blue\ =\ value;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ red\ =\ t;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ green\ =\ p;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ blue\ =\ value;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ red\ =\ value;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ green\ =\ p;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ blue\ =\ q;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_a6105d1b2b874c0870786682f251f4458}{getHSVFromRGB}}(uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue,\ uint8\_t\&\ hue,\ uint8\_t\&\ saturation,\ uint8\_t\&\ value)}
+\DoxyCodeLine{00158\ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ rgbMin\ =\ MIN(MIN(red,\ green),\ blue);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ rgbMax\ =\ MAX(MAX(red,\ green),\ blue);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ rgbRange\ =\ rgbMax\ -\/\ rgbMin;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ value\ =\ rgbMax;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ 0)}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ hue\ =\ 0;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ saturation\ =\ 0;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ saturation\ =\ 255\ *\ rgbRange\ /\ value;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (saturation\ ==\ 0)}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ hue\ =\ 0;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (rgbMax\ ==\ red)}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (green\ <\ blue)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hue\ =\ 0\ +\ (42\ *\ (green\ -\/\ blue)\ +\ rgbRange\ /\ 2)\ /\ rgbRange;\ \textcolor{comment}{//\ [0-\/42;\ 0]\ =\ [214;\ 0]}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hue\ =\ 0\ +\ (43\ *\ (green\ -\/\ blue)\ +\ rgbRange\ /\ 2)\ /\ rgbRange;\ \textcolor{comment}{//\ [0;\ 0+43]\ =\ [0;\ 43]}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (rgbMax\ ==\ green)}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (blue\ <\ red)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hue\ =\ 86\ +\ (43\ *\ (blue\ -\/\ red)\ +\ rgbRange\ /\ 2)\ /\ rgbRange;\ \textcolor{comment}{//\ [86-\/43;\ 86]\ =\ [43;\ 86]}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hue\ =\ 86\ +\ (42\ *\ (blue\ -\/\ red)\ +\ rgbRange\ /\ 2)\ /\ rgbRange;\ \textcolor{comment}{//\ [86;\ 86+42]\ =\ [86;\ 128]}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ hue\ =\ 171\ +\ (43\ *\ (red\ -\/\ green)\ +\ rgbRange\ /\ 2)\ /\ rgbRange;\ \textcolor{comment}{//\ [171-\/43;\ 171+43]\ =\ [128;\ 214]}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00214\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_color_a6504c09ae00b77a21a81153bf49ee5ad}{getColorFromHSV}}(uint8\_t\ hue,\ uint8\_t\ saturation,\ uint8\_t\ value)}
+\DoxyCodeLine{00215\ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ uint8\_t\ red,\ green,\ blue;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_a3ca2aa78eb1a553681ae4f7c43d3aed9}{getRGBFromHSV}}(hue,\ saturation,\ value,\ red,\ green,\ blue);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_color_ac103ed74c2b74e3f70e0a27b8ad62520}{getColorFromRGB}}(red,\ green,\ blue);}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00229\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_a0fde95980c2a4e4efde734078d50d748}{getRGBFromColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint8\_t\&\ red,\ uint8\_t\&\ green,\ uint8\_t\&\ blue)}
+\DoxyCodeLine{00230\ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ red\ =\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2676f6a78eb94b9579bcea06597e28c8}{getRed}}(color);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ green\ =\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2d3331abbfeb025284a72f48662ae5a3}{getGreen}}(color);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ blue\ =\ \mbox{\hyperlink{classtouchgfx_1_1_color_adea3016812f2d9428c194a8f3297cd59}{getBlue}}(color);}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00246\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_acb7df821b9e9192f8a30f82479ba69aa}{getHSVFromColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint8\_t\&\ hue,\ uint8\_t\&\ saturation,\ uint8\_t\&\ value)}
+\DoxyCodeLine{00247\ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_a6105d1b2b874c0870786682f251f4458}{getHSVFromRGB}}(\mbox{\hyperlink{classtouchgfx_1_1_color_a2676f6a78eb94b9579bcea06597e28c8}{getRed}}(color),\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2d3331abbfeb025284a72f48662ae5a3}{getGreen}}(color),\ \mbox{\hyperlink{classtouchgfx_1_1_color_adea3016812f2d9428c194a8f3297cd59}{getBlue}}(color),\ hue,\ saturation,\ value);}
+\DoxyCodeLine{00249\ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00261\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_af2baa9336c8a3eee63668cffec5257e1}{getHSVFromHSL}}(uint8\_t\ hsl\_hue,\ uint8\_t\ hsl\_saturation,\ uint8\_t\ hsl\_luminance,\ uint8\_t\&\ hsv\_hue,\ uint8\_t\&\ hsv\_saturation,\ uint8\_t\&\ hsv\_value)}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ hsv\_hue\ =\ hsl\_hue;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ hsv\_value\ =\ hsl\_luminance\ +\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(hsl\_saturation\ *\ MIN(hsl\_luminance,\ 255\ -\/\ hsl\_luminance));}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ hsv\_saturation\ =\ hsv\_value\ ==\ 0\ ?\ 0\ :\ 510\ -\/\ ((hsl\_luminance\ *\ 510)\ /\ hsv\_value);}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00278\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_ab26a2103c62d483d11410acd433059ef}{getHSLFromHSV}}(uint8\_t\ hsv\_hue,\ uint8\_t\ hsv\_saturation,\ uint8\_t\ hsv\_value,\ uint8\_t\&\ hsl\_hue,\ uint8\_t\&\ hsl\_saturation,\ uint8\_t\&\ hsl\_luminance)}
+\DoxyCodeLine{00279\ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ hsl\_hue\ =\ hsv\_hue;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ uint16\_t\ luminance2\ =\ (hsv\_value\ *\ (510\ -\/\ hsv\_saturation))\ /\ 255;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ hsl\_luminance\ =\ luminance2\ >>\ 1;}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ hsl\_saturation\ =\ (hsl\_luminance\ ==\ 0\ ||\ hsl\_luminance\ ==\ 255)\ ?\ 0\ :\ (uint8\_t)(((hsv\_value\ *\ 2\ -\/\ luminance2)\ *\ 255)\ /\ MIN(luminance2,\ 510\ -\/\ luminance2));}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00298\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_af8a121466058e1d7285514e40998fbb1}{getRGBFromHSL}}(uint8\_t\ hue,\ uint8\_t\ saturation,\ uint8\_t\ luminance,\ uint8\_t\&\ red,\ uint8\_t\&\ green,\ uint8\_t\&\ blue)}
+\DoxyCodeLine{00299\ \ \ \ \ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ uint8\_t\ hsv\_hue,\ hsv\_saturation,\ hsv\_value;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_af2baa9336c8a3eee63668cffec5257e1}{getHSVFromHSL}}(hue,\ saturation,\ luminance,\ hsv\_hue,\ hsv\_saturation,\ hsv\_value);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_a3ca2aa78eb1a553681ae4f7c43d3aed9}{getRGBFromHSV}}(hsv\_hue,\ hsv\_saturation,\ hsv\_value,\ red,\ green,\ blue);}
+\DoxyCodeLine{00303\ \ \ \ \ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00317\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_af1895d46cad4e76fb37b354c8002dae0}{getHSLFromRGB}}(uint8\_t\ red,\ uint8\_t\ green,\ uint8\_t\ blue,\ uint8\_t\&\ hue,\ uint8\_t\&\ saturation,\ uint8\_t\&\ luminance)}
+\DoxyCodeLine{00318\ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ uint8\_t\ hsv\_hue,\ hsv\_saturation,\ hsv\_value;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_a6105d1b2b874c0870786682f251f4458}{getHSVFromRGB}}(red,\ green,\ blue,\ hsv\_hue,\ hsv\_saturation,\ hsv\_value);}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_ab26a2103c62d483d11410acd433059ef}{getHSLFromHSV}}(hsv\_hue,\ hsv\_saturation,\ hsv\_value,\ hue,\ saturation,\ luminance);}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00335\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_color_abc72d7039203130195c747d61ebbf9eb}{getColorFromHSL}}(uint8\_t\ hue,\ uint8\_t\ saturation,\ uint8\_t\ luminance)}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ uint8\_t\ red,\ green,\ blue;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_af8a121466058e1d7285514e40998fbb1}{getRGBFromHSL}}(hue,\ saturation,\ luminance,\ red,\ green,\ blue);}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_color_ac103ed74c2b74e3f70e0a27b8ad62520}{getColorFromRGB}}(red,\ green,\ blue);}
+\DoxyCodeLine{00340\ \ \ \ \ \}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00352\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_color_a9ecb694dbfb10cd6278175364c429fd3}{getHSLFromColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color,\ uint8\_t\&\ hue,\ uint8\_t\&\ saturation,\ uint8\_t\&\ luminance)}
+\DoxyCodeLine{00353\ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_color_af1895d46cad4e76fb37b354c8002dae0}{getHSLFromRGB}}(\mbox{\hyperlink{classtouchgfx_1_1_color_a2676f6a78eb94b9579bcea06597e28c8}{getRed}}(color),\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2d3331abbfeb025284a72f48662ae5a3}{getGreen}}(color),\ \mbox{\hyperlink{classtouchgfx_1_1_color_adea3016812f2d9428c194a8f3297cd59}{getBlue}}(color),\ hue,\ saturation,\ luminance);}
+\DoxyCodeLine{00355\ \ \ \ \ \}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00366\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_color_a6e0f40bcdd726b9df1dd3bf54d87146c}{getRedFromRGB565}}(uint16\_t\ color)}
+\DoxyCodeLine{00367\ \ \ \ \ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ red\ =\ (color\ >>\ 8)\ \&\ 0xF8;}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ red\ |\ (red\ >>\ 5);}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00381\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_color_a2c4cedb5103986bf460eabc2e56ee2f7}{getGreenFromRGB565}}(uint16\_t\ color)}
+\DoxyCodeLine{00382\ \ \ \ \ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ green\ =\ (color\ >>\ 3)\ \&\ 0xFC;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ green\ |\ (green\ >>\ 6);}
+\DoxyCodeLine{00385\ \ \ \ \ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00396\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_color_a30227835de8caf3387f798913b4b917f}{getBlueFromRGB565}}(uint16\_t\ color)}
+\DoxyCodeLine{00397\ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ blue\ =\ color\ <<\ 3;}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blue\ |\ (blue\ >>\ 5);}
+\DoxyCodeLine{00400\ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00412\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_color_a54386079393a27e32a1ca8a29cf06601}{rgb565toXrgb8888}}(uint16\_t\ rgb565)}
+\DoxyCodeLine{00413\ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classtouchgfx_1_1_color_a6e0f40bcdd726b9df1dd3bf54d87146c}{getRedFromRGB565}}(rgb565)\ <<\ 16)\ |\ (\mbox{\hyperlink{classtouchgfx_1_1_color_a2c4cedb5103986bf460eabc2e56ee2f7}{getGreenFromRGB565}}(rgb565)\ <<\ 8)\ |\ \mbox{\hyperlink{classtouchgfx_1_1_color_a30227835de8caf3387f798913b4b917f}{getBlueFromRGB565}}(rgb565);}
+\DoxyCodeLine{00415\ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \};}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_COLOR\_HPP}}
+
+\end{DoxyCode}

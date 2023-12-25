@@ -1,0 +1,123 @@
+\doxysection{Config.\+hpp}
+\hypertarget{_config_8hpp_source}{}\label{_config_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp}}
+\mbox{\hyperlink{_config_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_CONFIG\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_CONFIG\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ STR(X)\ STR\_I(X)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ STR\_I(X)\ \#X}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifdef\ SIMULATOR}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA(name)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA\_NOLOAD(name)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE(name)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE\_NOLOAD(name)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ FORCE\_INLINE\_FUNCTION\ inline}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ decl\ \_\_attribute\_\_((deprecated(message)))}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#elif\ \_MSC\_VER\ >=\ 1900}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ Visual\ Studio\ 2015\ or\ newer}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ [[deprecated("{}Deprecated:\ "{}\ message)]]\ decl}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ decl}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ !defined(\_\_ARMCC\_VERSION)}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ xgcc}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA(name)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA\_NOLOAD(name)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE(name)\ \_\_attribute\_\_((section(STR(name))))\ \_\_attribute\_\_((aligned(4)))}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE\_NOLOAD(name)\ \_\_attribute\_\_((section(STR(name))))\ \_\_attribute\_\_((aligned(4)))}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ FORCE\_INLINE\_FUNCTION\ \_\_attribute\_\_((always\_inline))\ inline}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ [[deprecated(message)]]\ decl}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#elif\ defined\ \_\_ICCARM\_\_}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ IAR}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA(name)\ \_Pragma(STR(location\ =\ name))}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA\_NOLOAD(name)\ \_Pragma(STR(location\ =\ name))}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE(name)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE\_NOLOAD(name)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ FORCE\_INLINE\_FUNCTION\ \_Pragma("{}inline=forced"{})}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#if\ \_\_IAR\_SYSTEMS\_ICC\_\_\ >=\ 9}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ [[deprecated(message)]]\ decl}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ decl}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#pragma\ diag\_suppress\ =\ Pe236}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ Keil}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA(name)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA\_NOLOAD(name)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE(name)\ \_\_attribute\_\_((section(name)))\ \_\_attribute\_\_((aligned(4)))}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE\_NOLOAD(name)\ \_\_attribute\_\_((section(name),\ zero\_init))\ \_\_attribute\_\_((aligned(4)))}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ FORCE\_INLINE\_FUNCTION\ inline}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#if\ \_\_ARMCC\_VERSION\ >=\ 6000000}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ Only\ newer\ Keil\ support\ message\ to\ be\ given}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ decl\ \_\_attribute\_\_((deprecated(message)))}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ decl\ \_\_attribute\_\_((deprecated))}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ Other/Unknown}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA(name)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ LOCATION\_PRAGMA\_NOLOAD(name)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE(name)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ LOCATION\_ATTRIBUTE\_NOLOAD(name)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ FORCE\_INLINE\_FUNCTION}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEPRECATED(message,\ decl)\ decl}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ FONT\_GLYPH\_LOCATION\_FLASH\_PRAGMA\ LOCATION\_PRAGMA("{}FontFlashSection"{})}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ FONT\_GLYPH\_LOCATION\_FLASH\_ATTRIBUTE\ LOCATION\_ATTRIBUTE("{}FontFlashSection"{})}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ FONT\_TABLE\_LOCATION\_FLASH\_PRAGMA\ LOCATION\_PRAGMA("{}FontFlashSection"{})}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ FONT\_TABLE\_LOCATION\_FLASH\_ATTRIBUTE\ LOCATION\_ATTRIBUTE("{}FontFlashSection"{})}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ FONT\_SEARCHTABLE\_LOCATION\_FLASH\_PRAGMA\ LOCATION\_PRAGMA("{}FontSearchFlashSection"{})}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ FONT\_SEARCHTABLE\_LOCATION\_FLASH\_ATTRIBUTE\ LOCATION\_ATTRIBUTE("{}FontSearchFlashSection"{})}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ FONT\_KERNING\_LOCATION\_FLASH\_PRAGMA\ LOCATION\_PRAGMA("{}FontSearchFlashSection"{})}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ FONT\_KERNING\_LOCATION\_FLASH\_ATTRIBUTE\ LOCATION\_ATTRIBUTE("{}FontSearchFlashSection"{})}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ TEXT\_LOCATION\_FLASH\_PRAGMA\ LOCATION\_PRAGMA("{}TextFlashSection"{})}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ TEXT\_LOCATION\_FLASH\_ATTRIBUTE\ LOCATION\_ATTRIBUTE("{}TextFlashSection"{})}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LOCATION\_EXTFLASH\_PRAGMA\ LOCATION\_PRAGMA("{}ExtFlashSection"{})}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LOCATION\_EXTFLASH\_ATTRIBUTE\ LOCATION\_ATTRIBUTE("{}ExtFlashSection"{})}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ RESTRICT\ \_\_restrict\_\_}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ RESTRICT}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#ifdef\ \_\_ICCARM\_\_}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ KEEP\ \_\_root}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ KEEP}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_CONFIG\_HPP}}
+
+\end{DoxyCode}

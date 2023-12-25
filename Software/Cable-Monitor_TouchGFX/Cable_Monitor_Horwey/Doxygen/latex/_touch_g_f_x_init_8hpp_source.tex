@@ -1,0 +1,78 @@
+\doxysection{Touch\+GFXInit.\+hpp}
+\hypertarget{_touch_g_f_x_init_8hpp_source}{}\label{_touch_g_f_x_init_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/common/TouchGFXInit.hpp@{Middlewares/ST/touchgfx/framework/include/common/TouchGFXInit.hpp}}
+\mbox{\hyperlink{_touch_g_f_x_init_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_TOUCHGFXINIT\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_TOUCHGFXINIT\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_touch_controller_8hpp}{platform/driver/touch/TouchController.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_application_8hpp}{touchgfx/Application.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_texts_8hpp}{touchgfx/Texts.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_typed_text_8hpp}{touchgfx/TypedText.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_d_m_a_8hpp}{touchgfx/hal/DMA.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_h_a_l_8hpp}{touchgfx/hal/HAL.hpp}}>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8hpp}{touchgfx/lcd/LCD.hpp}}>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <BitmapDatabase.hpp>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <fonts/ApplicationFontProvider.hpp>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <texts/TypedTextDatabase.hpp>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <gui/common/FrontendHeap.hpp>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_application_font_provider}{ApplicationFontProvider}}\ fontProvider;\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_texts}{Texts}}\ texts;\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00047\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{HAL}}\&\ getHAL(\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\_Interface}}\&\ dma,\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}}\&\ display,\ \mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{TouchController}}\&\ tc,\ int16\_t\ width,\ int16\_t\ height)}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ T\ hal(dma,\ display,\ tc,\ width,\ height);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ hal;}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ HALType>}
+\DoxyCodeLine{00089\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{HAL}}\&\ \mbox{\hyperlink{namespacetouchgfx_a435569c93df9a2768c281476ad289c50}{touchgfx\_generic\_init}}(\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\_Interface}}\&\ dma,\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}}\&\ display,\ \mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{TouchController}}\&\ tc,\ int16\_t\ width,\ int16\_t\ height,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t*\ bitmapCache,\ uint32\_t\ bitmapCacheSize,\ uint32\_t\ numberOfDynamicBitmaps\ =\ 0)}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{HAL}}\&\ hal\ =\ getHAL<HALType>(dma,\ display,\ tc,\ width,\ height);}
+\DoxyCodeLine{00093\ \ \ \ \ hal.\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaff7933fb96415e766d4b932d202da45}{initialize}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap_ab5fe2094f56c8e84c180a8eb9394e5aa}{Bitmap::registerBitmapDatabase}}(BitmapDatabase::getInstance(),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BitmapDatabase::getInstanceSize(),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitmapCache,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bitmapCacheSize,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numberOfDynamicBitmaps);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_typed_text_a1e31ff5b84519dffc9398380fb8fc2ca}{TypedText::registerTexts}}(\&texts);}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_texts_a5bd8aa52088eda586f51972ec7d84672}{Texts::setLanguage}}(0);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_font_manager_a90966679a11ef12f9956f70bf9b43d98}{FontManager::setFontProvider}}(\&fontProvider);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ FrontendHeap::getInstance();\ \textcolor{comment}{//\ We\ need\ to\ initialize\ the\ frontend\ heap.}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ hal.\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aef1bc91717b253212637bea2b276b0a8}{registerEventListener}}(*(\mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{Application::getInstance}}()));}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{return}\ hal;}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_TOUCHGFXINIT\_HPP}}
+
+\end{DoxyCode}

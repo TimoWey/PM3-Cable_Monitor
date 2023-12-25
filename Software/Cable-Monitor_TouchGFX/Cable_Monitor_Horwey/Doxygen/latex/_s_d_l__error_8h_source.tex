@@ -1,0 +1,70 @@
+\doxysection{SDL\+\_\+error.\+h}
+\hypertarget{_s_d_l__error_8h_source}{}\label{_s_d_l__error_8h_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_error.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_error.h}}
+\mbox{\hyperlink{_s_d_l__error_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Simple\ DirectMedia\ Layer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ Copyright\ (C)\ 1997-\/2016\ Sam\ Lantinga\ <slouken@libsdl.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ warranty.\ \ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ \_SDL\_error\_h}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \_SDL\_error\_h}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{comment}{/*\ Set\ up\ for\ C\ function\ definitions,\ even\ when\ using\ C++\ */}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Public\ functions\ */}}
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ SDL\_SetError()\ unconditionally\ returns\ -\/1.\ */}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ SDL\_SetError(SDL\_PRINTF\_FORMAT\_STRING\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt,\ ...)\ SDL\_PRINTF\_VARARG\_FUNC(1);}
+\DoxyCodeLine{00042\ extern\ DECLSPEC\ const\ \textcolor{keywordtype}{char}\ *SDLCALL\ SDL\_GetError(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00043\ extern\ DECLSPEC\ \textcolor{keywordtype}{void}\ SDLCALL\ SDL\_ClearError(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ @\{\ */}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ SDL\_OutOfMemory()\ \ \ SDL\_Error(SDL\_ENOMEM)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SDL\_Unsupported()\ \ \ SDL\_Error(SDL\_UNSUPPORTED)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SDL\_InvalidParamError(param)\ \ \ \ SDL\_SetError("{}Parameter\ '\%s'\ is\ invalid"{},\ (param))}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ SDL\_ENOMEM,}
+\DoxyCodeLine{00058\ \ \ \ \ SDL\_EFREAD,}
+\DoxyCodeLine{00059\ \ \ \ \ SDL\_EFWRITE,}
+\DoxyCodeLine{00060\ \ \ \ \ SDL\_EFSEEK,}
+\DoxyCodeLine{00061\ \ \ \ \ SDL\_UNSUPPORTED,}
+\DoxyCodeLine{00062\ \ \ \ \ SDL\_LASTERROR}
+\DoxyCodeLine{00063\ \}\ SDL\_errorcode;}
+\DoxyCodeLine{00064\ \textcolor{comment}{/*\ SDL\_Error()\ unconditionally\ returns\ -\/1.\ */}}
+\DoxyCodeLine{00065\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ SDL\_Error(SDL\_errorcode\ code);}
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ @\}\ */}\textcolor{comment}{/*\ Internal\ error\ functions\ */}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{/*\ Ends\ C\ function\ definitions\ when\ using\ C++\ */}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SDL\_error\_h\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{/*\ vi:\ set\ ts=4\ sw=4\ expandtab:\ */}}
+
+\end{DoxyCode}

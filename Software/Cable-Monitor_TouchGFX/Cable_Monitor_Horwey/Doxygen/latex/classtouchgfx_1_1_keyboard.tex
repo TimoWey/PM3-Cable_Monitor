@@ -1,0 +1,495 @@
+\doxysection{touchgfx\+::Keyboard Class Reference}
+\hypertarget{classtouchgfx_1_1_keyboard}{}\label{classtouchgfx_1_1_keyboard}\index{touchgfx::Keyboard@{touchgfx::Keyboard}}
+
+
+{\ttfamily \#include $<$Keyboard.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Keyboard\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtouchgfx_1_1_keyboard}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area}{Callback\+Area}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key}{Key}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping}{Key\+Mapping}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a3ad304d5b2ee38c201029b3fd5e28165}{set\+Buffer}} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}new\+Buffer, uint16\+\_\+t new\+Buffer\+Size)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a5c4058aa6728f75cfc7a00ccd999f0fa}{set\+Layout}} (const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}} \texorpdfstring{$\ast$}{*}new\+Layout)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a15443cf09f2fcde592a7131b737ba077}{set\+Text\+Indentation}} ()
+\item 
+const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ad6c7d1196c980348a0a9bf791b8b5f93}{get\+Layout}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a4d95fdb7fa895cafe4451c553dd9cdbb}{set\+Keymapping\+List}} (const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}} \texorpdfstring{$\ast$}{*}new\+Key\+Mapping\+List)
+\item 
+const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a00e5e896b59aae24017677715926f8cb}{get\+Key\+Mapping\+List}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a8b40391d05d8065b92767edc18dcc01f}{set\+Buffer\+Position}} (uint16\+\_\+t new\+Pos)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a18c2fcbb050d3443bb360410e3aa4844}{get\+Buffer\+Position}} ()
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ab1aaf8487953a62b26b07bba52cad127}{get\+Buffer}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ae833d1617f1d0ea39f033af62041922e}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a0409498861fff2bb26f0d514141c8b74}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_affae1a3ea32d1abcfacb39a20a7e6c7f}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a7868bf1f4beadb57db94e911e62a775c}{set\+Key\+Listener}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} $>$ \&callback)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a2db56c03a79254f635c13dab2fd6a964}{add}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a42892e8dc8c2b0d72ba7f585de0ab39c}{remove}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_adec2a66c9696b2341d7c80e2c9b2bf4f}{remove\+All}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a0e52c074bde6985ec4f14573545d29a3}{unlink}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_container_a735fecb585a1187d4e497e60bc5dbe30}{contains}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_ae7f9e387582f56c079ef4b05d0905526}{insert}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}previous, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a35a4ef068b0404679b6a7f3234cc1499}{get\+Last\+Child}} (int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a3f86e82c2a502453d2c8b09d3c2a39db}{get\+Last\+Child\+Near}} (int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last, int16\+\_\+t \texorpdfstring{$\ast$}{*}finger\+AdjustmentX, int16\+\_\+t \texorpdfstring{$\ast$}{*}finger\+AdjustmentY)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_container_a34dfa7ec5557ab8ad54fcd7d57cef49d}{get\+Solid\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_af812955f5f1b185a13421ec36ff7c356}{for\+Each\+Child}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \& $>$ \texorpdfstring{$\ast$}{*}function)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_container_a189adb3887f73b2aee9234c0642c2b35}{get\+First\+Child}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable_a7e96d82c7fcf819f57486ecc5f350c4c}{Drawable}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_a449ee29257a3cfac31bb01ad2a9a7f03}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0b8b93fb5b2af43364f8d6818485e09d}{invalidate\+Content}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad2f199fc52c4acce810f48ab5a1a88aa}{get\+Next\+Sibling}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aaece284803180a1581d10ecfaf08c981}{get\+Solid\+Rect\+Absolute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a67ffb816a2dd9252a3159dd8610b4a25}{get\+Visible\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}) const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_a50b898d044f548a4eaec275141dec0ca}{get\+Rect}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_adee868bcfb5c413bd3e37bdf6c649ea8}{get\+Absolute\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a58fdcf048cbd3ec550115caedaf54b2a}{translate\+Rect\+To\+Absolute}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{set\+Position}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4448236a68ced5ebd67cde7f56d872c3}{expand}} (int margin=0)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59d59e11909259d9452588f3a0180398}{center}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab7b0e3f307228823cf6f2d859cc07198}{centerX}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0392a74d988a06e28c6b3ea79076b4bd}{centerY}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a1870ba0e9ef62c1eb6a19a9013cf6895}{getX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a6451fb9a4bc22e6e4a0950844e5104de}{getY}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{get\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{get\+Height}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}} (int16\+\_\+t x)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3aae6f7f6cb9a43a53d26772d7eeb1fa}{setY}} (int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{set\+XY}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{set\+Width}} (int16\+\_\+t width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{set\+Height}} (int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a181c4ecac0494440425e5b5afa4ce109}{child\+Geometry\+Changed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_acf2ed17311bb7ca228dabc3195d3225d}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{set\+Width\+Height}} (int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2f2d18d6edf70b6ec51d843c52c826c8}{set\+Position}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9b84be70989de6d15abb2c4bfe445707}{set\+XY}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7973faddf5b669b1ba7570b90053aeed}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a24b027fa86aebb44768b63b0d534e6b4}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9aeaa5baa9e47055a17f11968dbc1b37}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&other)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d0b43ec46e2644959854fdd697d2bc8}{handle\+Tick\+Event}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab27c897bb2d508cdf67ea7ffcfb40b14}{set\+Visible}} (bool vis)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a68b74845725451fda32fa94da7b7be18}{set\+Touchable}} (bool touch)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d9fac715c5114951a23492c6cc78b25}{is\+Visible}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a30a509142ffe76e5a2ed46aab5adf19b}{is\+Touchable}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_afefe9761c1f3a27944f317a47c2f0636}{get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a37d7afe3e065453bc3d23481fa446a55}{move\+Relative}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a602c55c069e516153167c3ebc7da4c0d}{move\+To}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_adab6837b035a409dde74c51f622a6e63}{draw\+To\+Dynamic\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key}{Key}} \mbox{\hyperlink{classtouchgfx_1_1_keyboard_ad89ec87e93e76a550d3a57fa90af9d77}{get\+Key\+For\+Coordinates}} (int16\+\_\+t x, int16\+\_\+t y) const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \mbox{\hyperlink{classtouchgfx_1_1_keyboard_a117dc5c3fe5319111974aeb6a6b381f7}{get\+Char\+For\+Key}} (uint8\+\_\+t key\+Id) const
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area}{Callback\+Area}} \mbox{\hyperlink{classtouchgfx_1_1_keyboard_affe3908a367be34dfec16028040ea541}{get\+Callback\+Area\+For\+Coordinates}} (int16\+\_\+t x, int16\+\_\+t y) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_container_a2c6156e664e01e9113ff400a7c09bc64}{get\+Contained\+Area}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a2d5920db13b22f9f3567c58f2373f912}{move\+Children\+Relative}} (int16\+\_\+t deltaX, int16\+\_\+t deltaY)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a421f592e5d87748c5a9f39b2f51cd306}\label{classtouchgfx_1_1_keyboard_a421f592e5d87748c5a9f39b2f51cd306} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} $>$ \texorpdfstring{$\ast$}{*} {\bfseries key\+Listener}
+\begin{DoxyCompactList}\small\item\em Pointer to callback being executed when a key is pressed. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_aa1ede8220c0a1c73d18ed3b98631232b}\label{classtouchgfx_1_1_keyboard_aa1ede8220c0a1c73d18ed3b98631232b} 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*} {\bfseries buffer}
+\begin{DoxyCompactList}\small\item\em Pointer to null-\/terminated buffer where the entered text is being displayed. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a937ba644fb2d88c2b769c26f306840b9}\label{classtouchgfx_1_1_keyboard_a937ba644fb2d88c2b769c26f306840b9} 
+uint16\+\_\+t {\bfseries buffer\+Size}
+\begin{DoxyCompactList}\small\item\em Size of the buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a3d88273a78e2147dc1fdcc16e4ce03c4}\label{classtouchgfx_1_1_keyboard_a3d88273a78e2147dc1fdcc16e4ce03c4} 
+uint16\+\_\+t {\bfseries buffer\+Position}
+\begin{DoxyCompactList}\small\item\em Current position in buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a9183a1e05b198d4e4269d521ab2addf3}\label{classtouchgfx_1_1_keyboard_a9183a1e05b198d4e4269d521ab2addf3} 
+\mbox{\hyperlink{classtouchgfx_1_1_image}{Image}} {\bfseries image}
+\begin{DoxyCompactList}\small\item\em \doxylink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout} bitmap. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a833e4bf7d0743214ccecd68584a118fb}\label{classtouchgfx_1_1_keyboard_a833e4bf7d0743214ccecd68584a118fb} 
+\mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{Text\+Area\+With\+One\+Wildcard}} {\bfseries entered\+Text}
+\begin{DoxyCompactList}\small\item\em \doxylink{classtouchgfx_1_1_widget}{Widget} capable of displaying the entered text buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a7dd4e9f142caafb29d9944fd88114d54}\label{classtouchgfx_1_1_keyboard_a7dd4e9f142caafb29d9944fd88114d54} 
+const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}} \texorpdfstring{$\ast$}{*} {\bfseries layout}
+\begin{DoxyCompactList}\small\item\em Pointer to layout. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_acf7c0e5ca6dac6a93e9459dbc614cd89}\label{classtouchgfx_1_1_keyboard_acf7c0e5ca6dac6a93e9459dbc614cd89} 
+const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}} \texorpdfstring{$\ast$}{*} {\bfseries key\+Mapping\+List}
+\begin{DoxyCompactList}\small\item\em Pointer to key mapping. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a05024bc11594ff2f3d89074da853f3a3}\label{classtouchgfx_1_1_keyboard_a05024bc11594ff2f3d89074da853f3a3} 
+\mbox{\hyperlink{classtouchgfx_1_1_image}{Image}} {\bfseries highlight\+Image}
+\begin{DoxyCompactList}\small\item\em \doxylink{classtouchgfx_1_1_image}{Image} to display when a key is highlighted. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_keyboard_a111f2c68cb9f155db47c9f67b1574e8e}\label{classtouchgfx_1_1_keyboard_a111f2c68cb9f155db47c9f67b1574e8e} 
+bool {\bfseries cancel\+Is\+Emitted}
+\begin{DoxyCompactList}\small\item\em Tells if a cancel is emitted to check when a key is released. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries first\+Child}
+\begin{DoxyCompactList}\small\item\em Pointer to the first child of this container. Subsequent children can be found through first\+Child\textquotesingle{}s next\+Sibling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em Pointer to this drawable\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2c34a36e7eb05c8a0e1e5b0c4d664a9f}{next\+Sibling}}
+\item 
+bool {\bfseries touchable}
+\begin{DoxyCompactList}\small\item\em True if this drawable should receive touch events. \end{DoxyCompactList}\item 
+bool {\bfseries visible}
+\begin{DoxyCompactList}\small\item\em True if this drawable should be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The keyboard provides text input for touch devices. It is configured using a \doxylink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout} and a \doxylink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}, both of which can be changed at runtime. The class using the keyboard must provide a buffer where the entered text is placed. The \doxylink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout} contains a bitmap id for the image to display and two mappings\+: rectangles to key ids and rectangles to callback methods.
+
+The \doxylink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List} maps key ids to \doxylink{classtouchgfx_1_1_unicode}{Unicode} characters. When the user presses a key, the keyboard looks in its layout for a rectangle containing the coordinates pressed. If it finds a mapping to a callback method, it will invoke that method. If it finds a mapping to a key it will look up the \doxylink{classtouchgfx_1_1_unicode}{Unicode} character for that key and place it in a text buffer. The sequence is\+: (x,y) -\/\texorpdfstring{$>$}{>} Key\+Id -\/\texorpdfstring{$>$}{>} Unicode\+Char.
+
+A keyboard with multiple key mappings e.\+g. lower case alpha, upper case alpha and numeric mappings can be created by implementing callback methods for shift and mode areas in the provided bitmap and then changing the \doxylink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List} when those areas are pressed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_keyboard_ae833d1617f1d0ea39f033af62041922e}\label{classtouchgfx_1_1_keyboard_ae833d1617f1d0ea39f033af62041922e} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!draw@{draw}}
+\index{draw@{draw}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Overrides the draw implementation on the \doxylink{classtouchgfx_1_1_container}{Container}. First invokes the container draw implementation to draw the keyboard bitmap and text area holding the entered text. If additional drawables have been added to the keyboard, they will also be draw. After invoking the container draw, the glyphs mapped to keys are drawn and if a key has been pressed, it will be highlighted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em invalidated\+Area} & The area to draw. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_container_a02275ab5673c5eb38c8f70da74242f58}{touchgfx\+::\+Container}}.
+
+\Hypertarget{classtouchgfx_1_1_keyboard_ab1aaf8487953a62b26b07bba52cad127}\label{classtouchgfx_1_1_keyboard_ab1aaf8487953a62b26b07bba52cad127} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{getBuffer()}{getBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Keyboard\+::get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the buffer.
+
+\begin{DoxyReturn}{Returns}
+The buffer containing entered text currently being displayed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_keyboard_a3ad304d5b2ee38c201029b3fd5e28165}{set\+Buffer} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_keyboard_a18c2fcbb050d3443bb360410e3aa4844}\label{classtouchgfx_1_1_keyboard_a18c2fcbb050d3443bb360410e3aa4844} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!getBufferPosition@{getBufferPosition}}
+\index{getBufferPosition@{getBufferPosition}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{getBufferPosition()}{getBufferPosition()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Keyboard\+::get\+Buffer\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets buffer position.
+
+\begin{DoxyReturn}{Returns}
+the buffer position, i.\+e. the current index where new characters will be placed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_keyboard_a8b40391d05d8065b92767edc18dcc01f}{set\+Buffer\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_keyboard_affe3908a367be34dfec16028040ea541}\label{classtouchgfx_1_1_keyboard_affe3908a367be34dfec16028040ea541} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!getCallbackAreaForCoordinates@{getCallbackAreaForCoordinates}}
+\index{getCallbackAreaForCoordinates@{getCallbackAreaForCoordinates}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{getCallbackAreaForCoordinates()}{getCallbackAreaForCoordinates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_callback_area}{Keyboard\+::\+Callback\+Area}} touchgfx\+::\+Keyboard\+::get\+Callback\+Area\+For\+Coordinates (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gets the callback area defined by the layout for the specified coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate to perform key look up with. \\
+\hline
+{\em y} & The y coordinate to perform key look up with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{structtouchgfx_1_1_keyboard_1_1_callback_area}{Callback\+Area}, which is empty if not found. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_keyboard_a117dc5c3fe5319111974aeb6a6b381f7}\label{classtouchgfx_1_1_keyboard_a117dc5c3fe5319111974aeb6a6b381f7} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!getCharForKey@{getCharForKey}}
+\index{getCharForKey@{getCharForKey}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{getCharForKey()}{getCharForKey()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} touchgfx\+::\+Keyboard\+::get\+Char\+For\+Key (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{key\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Maps a key\+Id to the Unicode\+Char being displayed by that key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Id} & The id of the key to perform lookup with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Unicode\+Char used for the specified key. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_keyboard_ad89ec87e93e76a550d3a57fa90af9d77}\label{classtouchgfx_1_1_keyboard_ad89ec87e93e76a550d3a57fa90af9d77} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!getKeyForCoordinates@{getKeyForCoordinates}}
+\index{getKeyForCoordinates@{getKeyForCoordinates}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{getKeyForCoordinates()}{getKeyForCoordinates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key}{Keyboard\+::\+Key}} touchgfx\+::\+Keyboard\+::get\+Key\+For\+Coordinates (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gets key for coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate to perform key look up with. \\
+\hline
+{\em y} & The y coordinate to perform key look up with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The key for the given coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_keyboard_a00e5e896b59aae24017677715926f8cb}\label{classtouchgfx_1_1_keyboard_a00e5e896b59aae24017677715926f8cb} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!getKeyMappingList@{getKeyMappingList}}
+\index{getKeyMappingList@{getKeyMappingList}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{getKeyMappingList()}{getKeyMappingList()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Keyboard\+::get\+Key\+Mapping\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets key mapping list.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List} used by the \doxylink{classtouchgfx_1_1_keyboard}{Keyboard}. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_keyboard_ad6c7d1196c980348a0a9bf791b8b5f93}\label{classtouchgfx_1_1_keyboard_ad6c7d1196c980348a0a9bf791b8b5f93} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!getLayout@{getLayout}}
+\index{getLayout@{getLayout}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{getLayout()}{getLayout()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Keyboard\+::get\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the layout.
+
+\begin{DoxyReturn}{Returns}
+The layout used by the \doxylink{classtouchgfx_1_1_keyboard}{Keyboard}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_keyboard_a5c4058aa6728f75cfc7a00ccd999f0fa}{set\+Layout} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_keyboard_a0409498861fff2bb26f0d514141c8b74}\label{classtouchgfx_1_1_keyboard_a0409498861fff2bb26f0d514141c8b74} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!handleClickEvent@{handleClickEvent}}
+\index{handleClickEvent@{handleClickEvent}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{handleClickEvent()}{handleClickEvent()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::handle\+Click\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Overrides the handle\+Click\+Event on the container. The keyboard handles all click events internally and click events are {\itshape not} propagated to drawables added to the keyboard.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{classtouchgfx_1_1_click_event}{Click\+Event}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9981eb2f8411aff05eaf19994f3ee293}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_keyboard_affae1a3ea32d1abcfacb39a20a7e6c7f}\label{classtouchgfx_1_1_keyboard_affae1a3ea32d1abcfacb39a20a7e6c7f} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!handleDragEvent@{handleDragEvent}}
+\index{handleDragEvent@{handleDragEvent}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{handleDragEvent()}{handleDragEvent()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::handle\+Drag\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Overrides the handle\+Drag\+Event on the container. The keyboard handles drag events to enable the container to, emit a CANCEL, if the user drags outside the currently pressed key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxylink{classtouchgfx_1_1_drag_event}{Drag\+Event}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a341b62a9ebbe43ce97b47e1effd32a8b}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_keyboard_a3ad304d5b2ee38c201029b3fd5e28165}\label{classtouchgfx_1_1_keyboard_a3ad304d5b2ee38c201029b3fd5e28165} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setBuffer()}{setBuffer()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::set\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{new\+Buffer,  }\item[{uint16\+\_\+t}]{new\+Buffer\+Size }\end{DoxyParamCaption})}
+
+Sets the buffer to be used by the keyboard. Keys entered are added to the buffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+Buffer} & Pointer to a buffer holding the text edited by the keyboard. If the buffer is not empty, the edit position for the keyboard will be set to the end of the provided text. \\
+\hline
+ & {\em new\+Buffer\+Size} & Length of the buffer, i.\+e. number of Unicode\+Char\textquotesingle{}s.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_keyboard_ab1aaf8487953a62b26b07bba52cad127}{get\+Buffer} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_keyboard_a8b40391d05d8065b92767edc18dcc01f}\label{classtouchgfx_1_1_keyboard_a8b40391d05d8065b92767edc18dcc01f} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!setBufferPosition@{setBufferPosition}}
+\index{setBufferPosition@{setBufferPosition}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setBufferPosition()}{setBufferPosition()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::set\+Buffer\+Position (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{new\+Pos }\end{DoxyParamCaption})}
+
+Change the buffer position i.\+e. the next index to place a character when a key is pressed. This can be used to implement backspace functionality if the class using the \doxylink{classtouchgfx_1_1_keyboard}{Keyboard} implements a callback and maps it to a backspace implementation. Setting the position will cause the \doxylink{classtouchgfx_1_1_text_area}{Text\+Area} displaying the text to be invalidated to request a redraw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pos} & The buffer position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_keyboard_a15443cf09f2fcde592a7131b737ba077}{set\+Text\+Indentation} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_keyboard_a7868bf1f4beadb57db94e911e62a775c}\label{classtouchgfx_1_1_keyboard_a7868bf1f4beadb57db94e911e62a775c} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!setKeyListener@{setKeyListener}}
+\index{setKeyListener@{setKeyListener}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setKeyListener()}{setKeyListener()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::set\+Key\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the callback for the keyboard. The callback will be executed every time a key is clicked. The callback argument contains the key that was just pressed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & The \doxylink{structtouchgfx_1_1_callback}{Callback} to invoke.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Backspace, shift and mode keys report a 0 as value. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_keyboard_a4d95fdb7fa895cafe4451c553dd9cdbb}\label{classtouchgfx_1_1_keyboard_a4d95fdb7fa895cafe4451c553dd9cdbb} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!setKeymappingList@{setKeymappingList}}
+\index{setKeymappingList@{setKeymappingList}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setKeymappingList()}{setKeymappingList()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::set\+Keymapping\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}} \texorpdfstring{$\ast$}{*}}]{new\+Key\+Mapping\+List }\end{DoxyParamCaption})}
+
+Set/change the \doxylink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List} to use. The \doxylink{classtouchgfx_1_1_keyboard}{Keyboard} will invalidate the space it occupies to request a redraw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Key\+Mapping\+List} & The new \doxylink{structtouchgfx_1_1_keyboard_1_1_key_mapping_list}{Key\+Mapping\+List}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_keyboard_a5c4058aa6728f75cfc7a00ccd999f0fa}\label{classtouchgfx_1_1_keyboard_a5c4058aa6728f75cfc7a00ccd999f0fa} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!setLayout@{setLayout}}
+\index{setLayout@{setLayout}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setLayout()}{setLayout()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::set\+Layout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_keyboard_1_1_layout}{Layout}} \texorpdfstring{$\ast$}{*}}]{new\+Layout }\end{DoxyParamCaption})}
+
+Set/change the \doxylink{structtouchgfx_1_1_keyboard_1_1_layout}{Keyboard\+::\+Layout} to use.\+The \doxylink{classtouchgfx_1_1_keyboard}{Keyboard} will invalidate the space it occupies to request a redraw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Layout} & The new layout.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_keyboard_ad6c7d1196c980348a0a9bf791b8b5f93}{get\+Layout} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_keyboard_a15443cf09f2fcde592a7131b737ba077}\label{classtouchgfx_1_1_keyboard_a15443cf09f2fcde592a7131b737ba077} 
+\index{touchgfx::Keyboard@{touchgfx::Keyboard}!setTextIndentation@{setTextIndentation}}
+\index{setTextIndentation@{setTextIndentation}!touchgfx::Keyboard@{touchgfx::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setTextIndentation()}{setTextIndentation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Keyboard\+::set\+Text\+Indentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets text indentation by making the area for entered text slightly larger. The result is that some characters (often \textquotesingle{}j\textquotesingle{} and \textquotesingle{}\+\_\+\textquotesingle{}) will not be cut off. Indentation is added to both sides of the text area in case the text is right-\/to-\/left. Indentation is automatically set so all characters will display properly.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_area_a32276ef66422ba210c3c748d75783b6f}{Text\+Area\+::set\+Indentation} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/\mbox{\hyperlink{_keyboard_8hpp}{Keyboard.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/touchgfx/widgets/Keyboard.\+cpp\end{DoxyCompactItemize}

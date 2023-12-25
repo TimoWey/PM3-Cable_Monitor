@@ -1,0 +1,107 @@
+\doxysection{VGData.\+hpp}
+\hypertarget{_v_g_data_8hpp_source}{}\label{_v_g_data_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VGData.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VGData.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_VGDATA\_HPP}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_VGDATA\_HPP}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacetouchgfx_aa0df758732b98e5108e048c29f432e0b}{VGFillMode}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_aa0df758732b98e5108e048c29f432e0baedd372a27462ca516ea4eea6d3b4ce23}{VG\_FILL\_EVEN\_ODD}},\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_aa0df758732b98e5108e048c29f432e0ba8a765c1fefe7b3d5fe81feee0172c0f0}{VG\_FILL\_NON\_ZERO}}\ \ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacetouchgfx_a83a818c88c2e1e8be35dc25c3a7b0357}{VGColorMode}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a83a818c88c2e1e8be35dc25c3a7b0357af4f2ab06e63d58559112e28adc805c0a}{VG\_NONE}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a83a818c88c2e1e8be35dc25c3a7b0357a3a27bd1f9686dbcf57bcb4aba69c8a29}{VG\_FIXED\_COLOR}},\ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a83a818c88c2e1e8be35dc25c3a7b0357a4bb3a8f9c1addaf5bbc9a6f62fab21ea}{VG\_LINEAR\_GRADIENT}}\ }
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacetouchgfx_ae2fa1ca285a49f53afa667e9149ef9bf}{VGStrokeLineJoin}}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ VG\_STROKE\_LINEJOIN\_BEVEL,}
+\DoxyCodeLine{00055\ \ \ \ \ VG\_STROKE\_LINEJOIN\_MITER,}
+\DoxyCodeLine{00056\ \ \ \ \ VG\_STROKE\_LINEJOIN\_ROUND}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacetouchgfx_a7b5172e950be22ef46f8cc70e6dcd109}{VGStrokeLineCap}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ VG\_STROKE\_LINECAP\_BUTT,}
+\DoxyCodeLine{00066\ \ \ \ \ VG\_STROKE\_LINECAP\_ROUND,}
+\DoxyCodeLine{00067\ \ \ \ \ VG\_STROKE\_LINECAP\_SQUARE}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_v_g_fixed_color}{VGFixedColor}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_fixed_color_ab6174eb6535e4dd9a4bfe8b360f727c1}{argb}};\ }
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient}{VGLinearGradient}}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_ae7f4e30d78bdee7ed6b4b63971d0c1cc}{palette}};\ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_a8d2bd34ce7838416d7244c9de9999e92}{stops}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_a90df4dab9fa4c000cb60e38fe3eebe7b}{stopPositions}};\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_ac6c3d8e9e61ffd2613b5fe13a033d672}{colors}};\ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_ace88a8e614e95321529eb9a6b15580ad}{x0}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_a7dacd5afe4b43e52d453a0d21042d4e6}{y0}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_a5bf58027de7383119e448b227e18f960}{x1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_ae44340917c5df7ebe150d26965941f13}{y1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_linear_gradient_a531670f5eb88156d154d48591edbcbb4}{isSolid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_v_g_shape}{VGShape}}}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a72f2c5780b88cb2b9d52d0e9bd47d8df}{numCommands}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_ac8217189c8fdbd1778131c132bb98589}{numPoints}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_adc8be07d921ae6d60150b9a87e556771}{commands}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a4a539a41a4df0980ce258443b62d23cf}{points}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_aa0df758732b98e5108e048c29f432e0b}{VGFillMode}}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a4420795790cc1ccc194aa988a6894885}{drawingMode}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a83a818c88c2e1e8be35dc25c3a7b0357}{VGColorMode}}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_ae6f31d3d390e30b9054ebbc9b9bbf7ba}{fillMode}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a83a818c88c2e1e8be35dc25c3a7b0357}{VGColorMode}}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a3a20e93557eb202d60b6e78b2da8a90a}{strokeMode}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_aa769d119e3ae6efc1487e466446d859d}{fillPaint}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a2be4872511d0a37e58d6444cb0a119ce}{strokePaint}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a3d1d56a56bfbd92fa6b50c20b26a7b74}{strokeWidth}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae2fa1ca285a49f53afa667e9149ef9bf}{VGStrokeLineJoin}}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a1b6f0ad85e638bc29d021e1d9c8315b6}{strokeLineJoin}};\ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a7b5172e950be22ef46f8cc70e6dcd109}{VGStrokeLineCap}}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a93786ce879ef40b19fe84753e6349351}{strokeLineCap}};\ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_adc4b6a4033e4c8cd7eface1746a1d3c8}{strokeMiterLimit}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a85f63f160b9e62cbd26fce6b05782b71}{fillAlpha}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a6bdb2d05523250e9c17debf3f140cf83}{strokeAlpha}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a8f7674b6dbb2ad4d3e35f0dbcab8a4d2}{boundingbox}}[4];\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a38cb16693b5d9099d88876c37785b710}{transformation}}[6];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape}{VGShape}}*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape_a8b31397992fd7374eaa1a6e195f6b22f}{next}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_v_g_object}{VGObject}}}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_object_a9b240a9a08a5ed39576438fec3ef5c30}{x}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_object_a9908e0b3bfe50cf8a086143b42cbcc45}{y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_object_ae82265eb6e6f29905c5f53706f046130}{width}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_object_a8890b7193730faa8793ddcf6e193fc86}{height}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_object_ac0915f7f736f4528662894771bd930c2}{imageWidth}};\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_object_a26cf95837e0b268bfbdf5db47d153c6a}{imageHeight}};\ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_shape}{VGShape}}*\ \mbox{\hyperlink{structtouchgfx_1_1_v_g_object_a67a50174a77793fbd190fa249862fed4}{shape}};\ }
+\DoxyCodeLine{00140\ \};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_VGDATA\_HPP}}
+
+\end{DoxyCode}

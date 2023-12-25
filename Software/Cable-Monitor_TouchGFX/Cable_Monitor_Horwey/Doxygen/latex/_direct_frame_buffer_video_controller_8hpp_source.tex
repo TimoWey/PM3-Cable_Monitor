@@ -1,0 +1,352 @@
+\doxysection{Direct\+Frame\+Buffer\+Video\+Controller.\+hpp}
+\hypertarget{_direct_frame_buffer_video_controller_8hpp_source}{}\label{_direct_frame_buffer_video_controller_8hpp_source}\index{TouchGFX/generated/simulator/include/simulator/video/DirectFrameBufferVideoController.hpp@{TouchGFX/generated/simulator/include/simulator/video/DirectFrameBufferVideoController.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/**********\ THIS\ FILE\ IS\ GENERATED\ BY\ TOUCHGFX\ DESIGNER,\ DO\ NOT\ MODIFY\ ***********/}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_DIRECTFRAMEBUFFERVIDEOCONTROLLER\_HPP}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DIRECTFRAMEBUFFERVIDEOCONTROLLER\_HPP}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_video_widget_8hpp}{touchgfx/widgets/VideoWidget.hpp}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <simulator/video/MJPEGDecoder.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <u\textcolor{keywordtype}{int}32\_t\ no\_streams,\ touchgfx::Bitmap::BitmapFormat\ output\_format>}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_direct_frame_buffer_video_controller}{DirectFrameBufferVideoController}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller}{touchgfx::VideoController}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_direct_frame_buffer_video_controller}{DirectFrameBufferVideoController}}()}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ :\ VideoController(),\ allowSkipFrames(\textcolor{keyword}{true})}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ assert((no\_streams\ >\ 0)\ \&\&\ \textcolor{stringliteral}{"{}Video:\ Number\ of\ streams\ zero!"{}});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ arrays}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ memset(mjpegDecoders,\ 0,\ \textcolor{keyword}{sizeof}(mjpegDecoders));}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a3cd2785659d9b9e0aa443c752128314c}{registerVideoWidget}}(\mbox{\hyperlink{classtouchgfx_1_1_video_widget}{touchgfx::VideoWidget}}\&\ widget)}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ stream\ handle\ for\ Widget}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle\ =\ getFreeHandle();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ streams[handle].isActive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Set\ Widget\ buffer\ format\ and\ address}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ widget.\mbox{\hyperlink{classtouchgfx_1_1_video_widget_a3d26a11ebd646e85138ff414ea6fc0b6}{setVideoBufferFormat}}(output\_format,\ 0,\ 0);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ widget.\mbox{\hyperlink{classtouchgfx_1_1_video_widget_a4668f44a78d12979b62f09fa553bc2f3}{setVideoBuffer}}((uint8\_t*)0);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ handle;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a269333bd931998c375859ccc0e11c6a0}{unregisterVideoWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle)}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ streams[handle].isActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_af3fd8ac9e1958c79f584b64e11063dd4}{setFrameRate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle,\ uint32\_t\ ui\_frames,\ uint32\_t\ video\_frames)}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Stream\&\ stream\ =\ streams[handle];}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ counters}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ stream.frameCount\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ stream.tickCount\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ requested\ frame\ rate\ ratio}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ stream.frame\_rate\_ticks\ =\ ui\_frames;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ stream.frame\_rate\_video\ =\ video\_frames;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ae337cb942859ca7859dcc516f3183ea4}{setVideoData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle,\ \textcolor{keyword}{const}\ uint8\_t*\ movie,\ \textcolor{keyword}{const}\ uint32\_t\ length)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ decoder\ to\ first\ frame}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ mjpegDecoders[handle]-\/>setVideoData(movie,\ length);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lower\ flag\ to\ show\ the\ first\ frame}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Stream\&\ stream\ =\ streams[handle];}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ stream.frameNumber\ =\ mjpegDecoders[handle]-\/>getCurrentFrameNumber();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ stream.doDecodeNextFrame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stop\ playing}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ab9f5c12c87ef76a3e2cf48fd2d454ef0}{setCommand}}(handle,\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a2111015c1348ec654c6cdad8a8c2904a}{PAUSE}},\ 0);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_adc176a17113cd0c00d4dddf7286a66d1}{setVideoData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle,\ \mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{touchgfx::VideoDataReader}}\&\ reader)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ decoder\ to\ first\ frame}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ mjpegDecoders[handle]-\/>setVideoData(reader);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lower\ flag\ to\ show\ the\ first\ frame}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ Stream\&\ stream\ =\ streams[handle];}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ stream.frameNumber\ =\ mjpegDecoders[handle]-\/>getCurrentFrameNumber();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ stream.doDecodeNextFrame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stop\ playing}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ab9f5c12c87ef76a3e2cf48fd2d454ef0}{setCommand}}(handle,\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a2111015c1348ec654c6cdad8a8c2904a}{PAUSE}},\ 0);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ab9f5c12c87ef76a3e2cf48fd2d454ef0}{setCommand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle,\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27}{Command}}\ cmd,\ uint32\_t\ param)}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ Stream\&\ stream\ =\ streams[handle];}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (cmd)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aea498b6320d266fc1571e8c98886e01e}{PLAY}}:}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cannot\ Play\ without\ movie}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mjpegDecoders[handle]-\/>hasVideo())}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.isPlaying\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.isShowingOneFrame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ counters}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.frameCount\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.tickCount\ =\ 0;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ non-\/repeating\ video\ stopped\ at\ the\ end,\ kick\ to\ next\ frame}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!stream.repeat)}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}*\ \textcolor{keyword}{const}\ decoder\ =\ mjpegDecoders[handle];}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (decoder-\/>getCurrentFrameNumber()\ ==\ decoder-\/>getNumberOfFrames())}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ decoder-\/>gotoNextFrame();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a2111015c1348ec654c6cdad8a8c2904a}{PAUSE}}:}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ stream.isPlaying\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ stream.isShowingOneFrame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27aa56b64e55e77b811513dea0c6d2bcc5c}{SEEK}}:}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ stream.seek\_to\_frame\ =\ param;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ counters}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ stream.frameCount\ =\ 0;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ stream.tickCount\ =\ 0;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a74039d230674dcec48315643c7abc1da}{SHOW}}:}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ stream.seek\_to\_frame\ =\ param;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ stream.isShowingOneFrame\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ stream.doDecodeNextFrame\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ counters}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ stream.frameCount\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ stream.tickCount\ =\ 0;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a252e61b23cd5a4a849a2b4998a53ba08}{STOP}}:}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ stream.isPlaying\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ stream.isShowingOneFrame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ stream.seek\_to\_frame\ =\ 1;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ counters}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ stream.frameCount\ =\ 0;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ stream.tickCount\ =\ 0;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_ac96abe35c1395a4825f1d0527dc64c27a52442e746069c3bc94689d89f54eae28}{SET\_REPEAT}}:}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ stream.repeat\ =\ (param\ >\ 0);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a739992d5667833b56b33175b2aed9a36}{updateFrame}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle,\ \mbox{\hyperlink{classtouchgfx_1_1_video_widget}{touchgfx::VideoWidget}}\&\ widget)}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ Stream\&\ stream\ =\ streams[handle];}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasMoreFrames\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stream.isPlaying\ ||\ stream.isShowingOneFrame)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Increase\ tickCount}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ stream.tickCount+=HAL::getInstance()-\/>getLCDRefreshCount();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lower\ flag}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ stream.isShowingOneFrame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stream.doDecodeNextFrame)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}*\ \textcolor{keyword}{const}\ decoder\ =\ mjpegDecoders[handle];}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalidate\ to\ get\ widget\ redrawn}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ widget.\mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}}();}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Seek\ or\ increment\ video\ frame}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stream.seek\_to\_frame\ >\ 0)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ decoder-\/>gotoFrame(stream.seek\_to\_frame);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasMoreFrames\ =\ (stream.seek\_to\_frame\ <\ decoder-\/>getNumberOfFrames());}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.seek\_to\_frame\ =\ 0;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stream.skip\_frames\ >\ 0)}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ decoder-\/>gotoFrame(decoder-\/>getCurrentFrameNumber()\ +\ stream.skip\_frames);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.frameCount\ +=\ stream.skip\_frames;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.skip\_frames\ =\ 0;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stream.repeat)}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasMoreFrames\ =\ decoder-\/>gotoNextFrame();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (decoder-\/>getCurrentFrameNumber()\ <\ decoder-\/>getNumberOfFrames())}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasMoreFrames\ =\ decoder-\/>gotoNextFrame();}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.isPlaying\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasMoreFrames\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.frameNumber\ =\ decoder-\/>getCurrentFrameNumber();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.frameCount++;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ decode\ status\ for\ next\ frame}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ stream.doDecodeNextFrame\ =\ decodeForNextTick(stream);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hasMoreFrames;}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_ac15a01e92f53444af546f1271e74475b}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx::Rect}}\&\ invalidatedArea,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_widget}{touchgfx::VideoWidget}}\&\ widget)}
+\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output\_format\ !=\ Bitmap::RGB565\ \&\&\ output\_format\ !=\ Bitmap::RGB888\ \&\&\ output\_format\ !=\ Bitmap::ARGB8888)}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mjpegDecoders[handle]-\/>hasVideo())}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ wbuf\ =\ (uint8\_t*)\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9621f6b299c2c32eab7ff043e07a34ef}{touchgfx::HAL::getInstance}}()-\/>\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad634b95de7377e0bcfc42927912d9b04}{lockFrameBuffer}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx::Rect}}\&\ absolute\ =\ widget.\mbox{\hyperlink{classtouchgfx_1_1_drawable_adee868bcfb5c413bd3e37bdf6c649ea8}{getAbsoluteRect}}();}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ frame\ buffer\ pointer\ to\ upper\ left\ of\ widget\ in\ framebuffer\ coordinates}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(output\_format)}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Bitmap::RGB565:}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wbuf\ +=\ (absolute.x\ +\ absolute.y\ *\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{touchgfx::HAL::FRAME\_BUFFER\_WIDTH}})\ *\ 2;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Bitmap::RGB888:}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wbuf\ +=\ (absolute.x\ +\ absolute.y\ *\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{touchgfx::HAL::FRAME\_BUFFER\_WIDTH}})\ *\ 3;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Bitmap::ARGB8888:}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wbuf\ +=\ (absolute.x\ +\ absolute.y\ *\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{touchgfx::HAL::FRAME\_BUFFER\_WIDTH}})\ *\ 4;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decode\ relevant\ part\ of\ the\ frame\ to\ the\ framebuffer}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ mjpegDecoders[handle]-\/>decodeFrame(invalidatedArea,\ wbuf,\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a87f2f004b39def631d4b60b83ce11c0b}{touchgfx::HAL::FRAME\_BUFFER\_WIDTH}});}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Release\ frame\ buffer}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9621f6b299c2c32eab7ff043e07a34ef}{touchgfx::HAL::getInstance}}()-\/>\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad2d7cbcc73dc2b94ddfdd87a3fbc5590}{unlockFrameBuffer}}();}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ addDecoder(\mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}\&\ decoder,\ uint32\_t\ index)}
+\DoxyCodeLine{00255\ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ assert(index\ <\ no\_streams);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ mjpegDecoders[index]\ =\ \&decoder;}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_a919c6dbd3b14a614cb282da98846c4de}{getCurrentFrameNumber}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle)}
+\DoxyCodeLine{00261\ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ Stream\&\ stream\ =\ streams[handle];}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stream.frameNumber;}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_aa82a3c0bcfa4a96f2f190da5fdad66a4}{getVideoInformation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle,\ \mbox{\hyperlink{structtouchgfx_1_1_video_information}{touchgfx::VideoInformation}}*\ data)}
+\DoxyCodeLine{00269\ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ mjpegDecoders[handle]-\/>getVideoInfo(data);}
+\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_direct_frame_buffer_video_controller_aefb257beb94b72e3b4aa7b2371ef1f04}{getIsPlaying}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ handle)}
+\DoxyCodeLine{00275\ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ assert(handle\ <\ no\_streams);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ Stream\&\ stream\ =\ streams[handle];}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stream.isPlaying;}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{void}\ setFrameRateCompensation(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ allow)}
+\DoxyCodeLine{00282\ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ allowSkipFrames\ =\ allow;}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keyword}{class\ }Stream}
+\DoxyCodeLine{00288\ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ Stream()}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ :\ frameCount(0),\ frameNumber(0),\ tickCount(0),}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frame\_rate\_video(0),\ frame\_rate\_ticks(0),}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ seek\_to\_frame(0),}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isActive(false),\ isPlaying(false),\ isShowingOneFrame(false),\ repeat(true),}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doDecodeNextFrame(false)}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ uint32\_t\ frameCount;\ \ \ \ \ \ \ \textcolor{comment}{//\ Video\ frames\ decoded\ since\ play}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ uint32\_t\ frameNumber;\ \ \ \ \ \ \textcolor{comment}{//\ Video\ frame\ showed\ number}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ uint32\_t\ tickCount;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ UI\ frames\ since\ play}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ uint32\_t\ frame\_rate\_video;\ \textcolor{comment}{//\ Ratio\ of\ frames\ wanted\ counter}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ uint32\_t\ frame\_rate\_ticks;\ \textcolor{comment}{//\ Ratio\ of\ frames\ wanted\ divider}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ uint32\_t\ seek\_to\_frame;\ \ \ \ \textcolor{comment}{//\ Requested\ next\ frame\ number}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ uint32\_t\ skip\_frames;\ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ frames\ to\ skip\ to\ keep\ frame\ rate}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isActive;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isPlaying;}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isShowingOneFrame;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ repeat;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ doDecodeNextFrame;\ \textcolor{comment}{//\ High\ if\ we\ should\ go\ to\ next\ frame\ in\ next\ tick}}
+\DoxyCodeLine{00310\ \ \ \ \ \};}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}*\ mjpegDecoders[no\_streams];}
+\DoxyCodeLine{00313\ \ \ \ \ Stream\ streams[no\_streams];}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{bool}\ allowSkipFrames;}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{bool}\ decodeForNextTick(Stream\&\ stream)}
+\DoxyCodeLine{00320\ \ \ \ \ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Running\ in\ UI\ thread}}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compare\ tickCount/frameNumber\ to\ frame\_rate\_ticks/frame\_rate\_video}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((stream.tickCount\ *\ stream.frame\_rate\_video)\ >\ (stream.frame\_rate\_ticks\ *\ stream.frameCount))}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (allowSkipFrames)}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.skip\_frames\ =\ (stream.tickCount\ *\ stream.frame\_rate\_video\ -\/\ stream.frame\_rate\_ticks\ *\ stream.frameCount)\ /\ stream.frame\_rate\_ticks;}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stream.skip\_frames\ >\ 0)}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream.skip\_frames-\/-\/;}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00337\ \ \ \ \ \}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_video_controller_a28860f4bc6ca23577f2f0bca6e895b82}{Handle}}\ getFreeHandle()}
+\DoxyCodeLine{00340\ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ no\_streams;\ i++)}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (streams[i].isActive\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}VideoController::Handle\textcolor{keyword}{>}(i);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Unable\ to\ find\ free\ video\ stream\ handle!"{}});}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}VideoController::Handle\textcolor{keyword}{>}(0);}
+\DoxyCodeLine{00351\ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \};}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_DIRECTFRAMEBUFFERVIDEOCONTROLLER\_HPP}}
+
+\end{DoxyCode}

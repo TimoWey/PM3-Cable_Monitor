@@ -1,0 +1,61 @@
+\doxysection{Text\+Progress.\+hpp}
+\hypertarget{_text_progress_8hpp_source}{}\label{_text_progress_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress\_indicators/TextProgress.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress\_indicators/TextProgress.hpp}}
+\mbox{\hyperlink{_text_progress_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_TEXTPROGRESS\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_TEXTPROGRESS\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_typed_text_8hpp}{touchgfx/TypedText.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_unicode_8hpp}{touchgfx/Unicode.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_progress_indicator_8hpp}{touchgfx/containers/progress\_indicators/AbstractProgressIndicator.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_with_wildcard_8hpp}{touchgfx/widgets/TextAreaWithWildcard.hpp}}>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_text_progress}{TextProgress}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_progress_indicator}{AbstractProgressIndicator}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_progress}{TextProgress}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_ad38b9f5bd7cd0ad31f74bd9558caeddd}{setProgressIndicatorPosition}}(int16\_t\ x,\ int16\_t\ y,\ int16\_t\ width,\ int16\_t\ height);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a9aad61f0af6397c89d52177ded258660}{setTypedText}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text}{TypedText}}\&\ t);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_typed_text}{TypedText}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a4b908bb952ccdeade387aa46f6a1129a}{getTypedText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a5c8bd3955185158c2eecc9d5547bf100}{setColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_aa727710293d0b89c4157baca85dd198b}{getColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a69e1a929b3ae1f511f80405f3936a714}{setAlpha}}(uint8\_t\ newAlpha);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a1e4d88f03ddf10945e026af7a72d855c}{setValue}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a2ab4c3aa79ff4efe96ef634ee2072c70}{setNumberOfDecimals}}(uint16\_t\ numberOfDecimals);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a492f8f568b5d75faeb7b4a840c26338c}{getNumberOfDecimals}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{TextAreaWithOneWildcard}}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_a55865c68b109a12e739fb7b67bbe7448}{textArea}};\ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode::UnicodeChar}}\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_aae484c5d27fbc9a3b52920f829740c07}{textBuffer}}[9];\ }
+\DoxyCodeLine{00118\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_text_progress_ac720c0ba1bb14724c3774f6bf0988b39}{decimals}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_TEXTPROGRESS\_HPP}}
+
+\end{DoxyCode}

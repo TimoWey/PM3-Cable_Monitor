@@ -1,0 +1,75 @@
+\doxysection{MCUInstrumentation.\+hpp}
+\hypertarget{_m_c_u_instrumentation_8hpp_source}{}\label{_m_c_u_instrumentation_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp@{Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp}}
+\mbox{\hyperlink{_m_c_u_instrumentation_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_MCUINSTRUMENTATION\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_MCUINSTRUMENTATION\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation}{MCUInstrumentation}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_aaebb4e66d0c48176e346d7f0625a73b6}{MCUInstrumentation}}()}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a96096614f152021f715361f77070fe4d}{cc\_consumed}}(0),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_af2b46e42147b17a3d030e841fb209f61}{cc\_in}}(0)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a7eaa6e8a0b8b3507ceca363acd7a825b}{init}}()\ =\ 0;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_aacd2e2931662af91d3ec477d604cc673}{\string~MCUInstrumentation}}()}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a460e6ca98b992f08a85abcdf15ae6ec1}{getElapsedUS}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ now,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ clockfrequency)\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a7cb0ea97f1a31c2f3c15636832d9d922}{getCPUCycles}}(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a6365951e5bfa2277f5e422d170a68f32}{setMCUActive}}(\textcolor{keywordtype}{bool}\ active)}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (active)\ \textcolor{comment}{//\ Idle\ task\ sched\ out}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ cc\_temp\ =\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a7cb0ea97f1a31c2f3c15636832d9d922}{getCPUCycles}}()\ -\/\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_af2b46e42147b17a3d030e841fb209f61}{cc\_in}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a96096614f152021f715361f77070fe4d}{cc\_consumed}}\ +=\ cc\_temp;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ Idle\ task\ sched\ in}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_af2b46e42147b17a3d030e841fb209f61}{cc\_in}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a7cb0ea97f1a31c2f3c15636832d9d922}{getCPUCycles}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ uint32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a63612437fa651303a0c5b0fe81a84f35}{getCCConsumed}}()}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a96096614f152021f715361f77070fe4d}{cc\_consumed}};}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_ad3eb327de3f6fca516d664777bae478b}{setCCConsumed}}(uint32\_t\ val)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a96096614f152021f715361f77070fe4d}{cc\_consumed}}\ =\ val;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a96096614f152021f715361f77070fe4d}{cc\_consumed}};\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_af2b46e42147b17a3d030e841fb209f61}{cc\_in}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_MCUINSTRUMENTATION\_HPP}}
+
+\end{DoxyCode}

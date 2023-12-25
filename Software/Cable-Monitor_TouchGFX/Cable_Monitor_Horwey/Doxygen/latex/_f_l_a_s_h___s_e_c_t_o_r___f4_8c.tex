@@ -1,0 +1,84 @@
+\doxysection{Core/\+Src/\+FLASH\+\_\+\+SECTOR\+\_\+\+F4.c File Reference}
+\hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c}{}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c}\index{Core/Src/FLASH\_SECTOR\_F4.c@{Core/Src/FLASH\_SECTOR\_F4.c}}
+{\ttfamily \#include "{}FLASH\+\_\+\+SECTOR\+\_\+\+F4.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}string.\+h"{}}\newline
+{\ttfamily \#include "{}stdio.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a240b49ca05e36979ab5da0d081887a29}{float2\+Bytes}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}ftoa\+\_\+bytes\+\_\+temp, float float\+\_\+variable)
+\item 
+float \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a9c2a233df00e9fe48c07c4cb975612dd}{Bytes2float}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}ftoa\+\_\+bytes\+\_\+temp)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a9e4f3fa03d699e7af96e02d69b25315f}{Flash\+\_\+\+Write\+\_\+\+Data}} (uint32\+\_\+t Start\+Sector\+Address, uint32\+\_\+t \texorpdfstring{$\ast$}{*}Data, uint16\+\_\+t numberofwords)
+\item 
+void \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ac07ad72b408bd18c692153025d113a5f}{Flash\+\_\+\+Read\+\_\+\+Data}} (uint32\+\_\+t Start\+Sector\+Address, uint32\+\_\+t \texorpdfstring{$\ast$}{*}Rx\+Buf, uint16\+\_\+t numberofwords)
+\item 
+void \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a43090d77ad060b952f6d6e5ec4d4be40}{Convert\+\_\+\+To\+\_\+\+Str}} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}Data, char \texorpdfstring{$\ast$}{*}Buf)
+\item 
+void \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a76d38674e9069d69b07b8959a38aa081}{Flash\+\_\+\+Write\+\_\+\+NUM}} (uint32\+\_\+t Start\+Sector\+Address, float Num)
+\item 
+float \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ac3fb369d69d056756039dd092612472c}{Flash\+\_\+\+Read\+\_\+\+NUM}} (uint32\+\_\+t Start\+Sector\+Address)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ae7fc8a7d12e0c0c2be596ccb2dd48fdd}{bytes\+\_\+temp}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a9c2a233df00e9fe48c07c4cb975612dd}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a9c2a233df00e9fe48c07c4cb975612dd} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!Bytes2float@{Bytes2float}}
+\index{Bytes2float@{Bytes2float}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{Bytes2float()}{Bytes2float()}}
+{\footnotesize\ttfamily float Bytes2float (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{ftoa\+\_\+bytes\+\_\+temp }\end{DoxyParamCaption})}
+
+\Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a43090d77ad060b952f6d6e5ec4d4be40}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a43090d77ad060b952f6d6e5ec4d4be40} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!Convert\_To\_Str@{Convert\_To\_Str}}
+\index{Convert\_To\_Str@{Convert\_To\_Str}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{Convert\_To\_Str()}{Convert\_To\_Str()}}
+{\footnotesize\ttfamily void Convert\+\_\+\+To\+\_\+\+Str (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{Data,  }\item[{char \texorpdfstring{$\ast$}{*}}]{Buf }\end{DoxyParamCaption})}
+
+\Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ac07ad72b408bd18c692153025d113a5f}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ac07ad72b408bd18c692153025d113a5f} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!Flash\_Read\_Data@{Flash\_Read\_Data}}
+\index{Flash\_Read\_Data@{Flash\_Read\_Data}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{Flash\_Read\_Data()}{Flash\_Read\_Data()}}
+{\footnotesize\ttfamily void Flash\+\_\+\+Read\+\_\+\+Data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Start\+Sector\+Address,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{Rx\+Buf,  }\item[{uint16\+\_\+t}]{numberofwords }\end{DoxyParamCaption})}
+
+\Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ac3fb369d69d056756039dd092612472c}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ac3fb369d69d056756039dd092612472c} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!Flash\_Read\_NUM@{Flash\_Read\_NUM}}
+\index{Flash\_Read\_NUM@{Flash\_Read\_NUM}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{Flash\_Read\_NUM()}{Flash\_Read\_NUM()}}
+{\footnotesize\ttfamily float Flash\+\_\+\+Read\+\_\+\+NUM (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Start\+Sector\+Address }\end{DoxyParamCaption})}
+
+\Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a9e4f3fa03d699e7af96e02d69b25315f}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a9e4f3fa03d699e7af96e02d69b25315f} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!Flash\_Write\_Data@{Flash\_Write\_Data}}
+\index{Flash\_Write\_Data@{Flash\_Write\_Data}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{Flash\_Write\_Data()}{Flash\_Write\_Data()}}
+{\footnotesize\ttfamily uint32\+\_\+t Flash\+\_\+\+Write\+\_\+\+Data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Start\+Sector\+Address,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{Data,  }\item[{uint16\+\_\+t}]{numberofwords }\end{DoxyParamCaption})}
+
+File\+: FLASH\+\_\+\+SECTOR\+\_\+\+H7.\+c Modifier\+: Controllers\+Tech.\+com Updated\+: 27th MAY 2021
+
+Copyright (C) 2017 Controllers\+Tech.\+com This is a free software under the GNU license, you can redistribute it and/or modify it under the terms of the GNU General Public License version 3 as published by the Free Software Foundation. This software library is shared with public for educational purposes, without WARRANTY and Author is not liable for any damages caused directly or indirectly by this software, read more about this on the GNU General Public License. \Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a76d38674e9069d69b07b8959a38aa081}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a76d38674e9069d69b07b8959a38aa081} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!Flash\_Write\_NUM@{Flash\_Write\_NUM}}
+\index{Flash\_Write\_NUM@{Flash\_Write\_NUM}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{Flash\_Write\_NUM()}{Flash\_Write\_NUM()}}
+{\footnotesize\ttfamily void Flash\+\_\+\+Write\+\_\+\+NUM (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Start\+Sector\+Address,  }\item[{float}]{Num }\end{DoxyParamCaption})}
+
+\Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a240b49ca05e36979ab5da0d081887a29}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_a240b49ca05e36979ab5da0d081887a29} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!float2Bytes@{float2Bytes}}
+\index{float2Bytes@{float2Bytes}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{float2Bytes()}{float2Bytes()}}
+{\footnotesize\ttfamily void float2\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{ftoa\+\_\+bytes\+\_\+temp,  }\item[{float}]{float\+\_\+variable }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ae7fc8a7d12e0c0c2be596ccb2dd48fdd}\label{_f_l_a_s_h___s_e_c_t_o_r___f4_8c_ae7fc8a7d12e0c0c2be596ccb2dd48fdd} 
+\index{FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}!bytes\_temp@{bytes\_temp}}
+\index{bytes\_temp@{bytes\_temp}!FLASH\_SECTOR\_F4.c@{FLASH\_SECTOR\_F4.c}}
+\doxysubsubsection{\texorpdfstring{bytes\_temp}{bytes\_temp}}
+{\footnotesize\ttfamily uint8\+\_\+t bytes\+\_\+temp\mbox{[}4\mbox{]}}
+

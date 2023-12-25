@@ -1,0 +1,118 @@
+\doxysection{SDL\+\_\+system.\+h}
+\hypertarget{_s_d_l__system_8h_source}{}\label{_s_d_l__system_8h_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_system.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_system.h}}
+\mbox{\hyperlink{_s_d_l__system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Simple\ DirectMedia\ Layer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ Copyright\ (C)\ 1997-\/2016\ Sam\ Lantinga\ <slouken@libsdl.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ warranty.\ \ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ \_SDL\_system\_h}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \_SDL\_system\_h}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__keyboard_8h}{SDL\_keyboard.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__render_8h}{SDL\_render.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{comment}{/*\ Set\ up\ for\ C\ function\ definitions,\ even\ when\ using\ C++\ */}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ Platform\ specific\ functions\ for\ Windows\ */}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifdef\ \_\_WIN32\_\_}}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ void\ (SDLCALL\ *\ SDL\_WindowsMessageHook)(\textcolor{keywordtype}{void}\ *userdata,\ \textcolor{keywordtype}{void}\ *hWnd,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ message,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ wParam,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}}\ lParam);}
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ SDLCALL\ SDL\_SetWindowsMessageHook(SDL\_WindowsMessageHook\ callback,\ \textcolor{keywordtype}{void}\ *userdata);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ SDL\_Direct3D9GetAdapterIndex(\ \textcolor{keywordtype}{int}\ displayIndex\ );}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }IDirect3DDevice9\ IDirect3DDevice9;}
+\DoxyCodeLine{00066\ \textcolor{keyword}{extern}\ DECLSPEC\ IDirect3DDevice9*\ SDLCALL\ SDL\_RenderGetD3D9Device(SDL\_Renderer\ *\ renderer);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{extern}\ DECLSPEC\ SDL\_bool\ SDLCALL\ SDL\_DXGIGetOutputInfo(\ \textcolor{keywordtype}{int}\ displayIndex,\ \textcolor{keywordtype}{int}\ *adapterIndex,\ \textcolor{keywordtype}{int}\ *outputIndex\ );}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_WIN32\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/*\ Platform\ specific\ functions\ for\ iOS\ */}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#if\ defined(\_\_IPHONEOS\_\_)\ \&\&\ \_\_IPHONEOS\_\_}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ SDL\_iOSSetAnimationCallback(window,\ interval,\ callback,\ callbackParam)\ SDL\_iPhoneSetAnimationCallback(window,\ interval,\ callback,\ callbackParam)}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ SDL\_iPhoneSetAnimationCallback(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}}\ *\ window,\ \textcolor{keywordtype}{int}\ interval,\ \textcolor{keywordtype}{void}\ (*callback)(\textcolor{keywordtype}{void}*),\ \textcolor{keywordtype}{void}\ *callbackParam);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ SDL\_iOSSetEventPump(enabled)\ SDL\_iPhoneSetEventPump(enabled)}}
+\DoxyCodeLine{00086\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ SDLCALL\ SDL\_iPhoneSetEventPump(SDL\_bool\ enabled);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_IPHONEOS\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{/*\ Platform\ specific\ functions\ for\ Android\ */}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#if\ defined(\_\_ANDROID\_\_)\ \&\&\ \_\_ANDROID\_\_}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ *\ SDLCALL\ SDL\_AndroidGetJNIEnv();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ *\ SDLCALL\ SDL\_AndroidGetActivity();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ SDL\_ANDROID\_EXTERNAL\_STORAGE\_READ\ \ \ 0x01}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ SDL\_ANDROID\_EXTERNAL\_STORAGE\_WRITE\ \ 0x02}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ SDLCALL\ SDL\_AndroidGetInternalStoragePath();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ SDL\_AndroidGetExternalStorageState();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ SDLCALL\ SDL\_AndroidGetExternalStoragePath();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_ANDROID\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{comment}{/*\ Platform\ specific\ functions\ for\ WinRT\ */}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#if\ defined(\_\_WINRT\_\_)\ \&\&\ \_\_WINRT\_\_}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ SDL\_WINRT\_PATH\_INSTALLED\_LOCATION,}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00158\ \ \ \ \ SDL\_WINRT\_PATH\_LOCAL\_FOLDER,}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \ \ SDL\_WINRT\_PATH\_ROAMING\_FOLDER,}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00168\ \ \ \ \ SDL\_WINRT\_PATH\_TEMP\_FOLDER}
+\DoxyCodeLine{00169\ \}\ SDL\_WinRT\_Path;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00187\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *\ SDLCALL\ SDL\_WinRTGetFSPathUNICODE(SDL\_WinRT\_Path\ pathType);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00204\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ SDLCALL\ SDL\_WinRTGetFSPathUTF8(SDL\_WinRT\_Path\ pathType);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_WINRT\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{comment}{/*\ Ends\ C\ function\ definitions\ when\ using\ C++\ */}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00210\ \}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SDL\_system\_h\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{comment}{/*\ vi:\ set\ ts=4\ sw=4\ expandtab:\ */}}
+
+\end{DoxyCode}

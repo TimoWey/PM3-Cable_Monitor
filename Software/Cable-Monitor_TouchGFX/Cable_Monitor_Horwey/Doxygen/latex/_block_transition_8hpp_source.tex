@@ -1,0 +1,112 @@
+\doxysection{Block\+Transition.\+hpp}
+\hypertarget{_block_transition_8hpp_source}{}\label{_block_transition_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/BlockTransition.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/BlockTransition.hpp}}
+\mbox{\hyperlink{_block_transition_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_BLOCKTRANSITION\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_BLOCKTRANSITION\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_h_a_l_8hpp}{touchgfx/hal/HAL.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_transition_8hpp}{touchgfx/transitions/Transition.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_block_transition}{BlockTransition}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_block_transition_afb7ae01a68fab7995020693b70995a26}{BlockTransition}}()}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}}(),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ animationCounter(0)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 8x6\ blocks,\ with\ 8\ blocks\ on\ the\ longest\ edge}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}}\ >\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}})}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ blockWidth\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}}\ +\ 7)\ /\ 8;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ blockHeight\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}}\ +\ 5)\ /\ 6;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ blocksHorizontal\ =\ 8;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ blockWidth\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}}\ +\ 5)\ /\ 6;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ blockHeight\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}}\ +\ 7)\ /\ 8;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ blocksHorizontal\ =\ 6;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_block_transition_ac2698b547b3f61fbcfbb499984e858ae}{handleTickEvent}}()}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ animationSteps\ =\ 48;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}Random"{}\ sequence\ of\ blocks\ to\ invalidate}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ indeces[animationSteps]\ =\ \{\ 20,\ 11,\ 47,\ 14,\ 10,\ 0,\ 18,\ 28,\ 13,\ 6,\ 2,\ 41,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 44,\ 5,\ 3,\ 17,\ 36,\ 46,\ 26,\ 15,\ 29,\ 39,\ 25,\ 12,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 19,\ 24,\ 7,\ 38,\ 37,\ 30,\ 9,\ 43,\ 4,\ 31,\ 22,\ 23,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 35,\ 16,\ 32,\ 42,\ 8,\ 1,\ 40,\ 33,\ 21,\ 27,\ 34,\ 45\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f}{Transition::handleTickEvent}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationCounter\ >=\ animationSteps)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Final\ step:\ stop\ the\ animation}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_ae917c001b5249bd7cf85306f305dd34b}{done}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationCounter\ ==\ 0\ \&\&\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aee04298dde3670e15c19d04a275c8eb5}{HAL::USE\_DOUBLE\_BUFFERING}})}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Synchronize\ framebuffers}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{Application::getInstance}}()-\/>\mbox{\hyperlink{classtouchgfx_1_1_application_a98c934c57d886b342e8ba3a301ceedf7}{copyInvalidatedAreasFromTFTToClientBuffer}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ blocks\_per\_tick\ =\ 2;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (blocks\_per\_tick-\/-\/\ >\ 0\ \&\&\ animationCounter\ <=\ animationSteps)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalidate\ next\ block\ in\ sequence}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index\ =\ indeces[animationCounter];}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int16\_t\ x\ =\ (index\ \%\ blocksHorizontal)\ *\ blockWidth;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int16\_t\ y\ =\ (index\ /\ blocksHorizontal)\ *\ blockHeight;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ invRect(x,\ y,\ blockWidth,\ blockHeight);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_abeb3536988ce3cb07472c6744609af06}{screenContainer}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidateRect}}(invRect);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ animationCounter++;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_block_transition_acab45a19318e89c1a0aadb6ac95d3f99}{tearDown}}()}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_block_transition_a349e9185016a743d04bba9dbf497b8cd}{init}}()}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993}{Transition::init}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_block_transition_a18e1899c44337130d368fcc49823e8ad}{invalidate}}()}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00119\ \ \ \ \ uint16\_t\ blockWidth;}
+\DoxyCodeLine{00120\ \ \ \ \ uint16\_t\ blockHeight;}
+\DoxyCodeLine{00121\ \ \ \ \ uint16\_t\ blocksHorizontal;}
+\DoxyCodeLine{00122\ \ \ \ \ uint8\_t\ animationCounter;\ }
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_BLOCKTRANSITION\_HPP}}
+
+\end{DoxyCode}

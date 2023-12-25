@@ -1,0 +1,229 @@
+\doxysection{SDL\+\_\+endian.\+h}
+\hypertarget{_s_d_l__endian_8h_source}{}\label{_s_d_l__endian_8h_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_endian.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_endian.h}}
+\mbox{\hyperlink{_s_d_l__endian_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Simple\ DirectMedia\ Layer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ Copyright\ (C)\ 1997-\/2016\ Sam\ Lantinga\ <slouken@libsdl.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ warranty.\ \ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ \_SDL\_endian\_h}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \_SDL\_endian\_h}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/*\ @\{\ */}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SDL\_LIL\_ENDIAN\ \ 1234}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SDL\_BIG\_ENDIAN\ \ 4321}}
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ @\}\ */}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ SDL\_BYTEORDER\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Not\ defined\ in\ SDL\_config.h?\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_linux\_\_}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <endian.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ SDL\_BYTEORDER\ \ \_\_BYTE\_ORDER}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ \_\_linux\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ defined(\_\_hppa\_\_)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_m68k\_\_)\ ||\ defined(mc68000)\ ||\ defined(\_M\_M68K)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ (defined(\_\_MIPS\_\_)\ \&\&\ defined(\_\_MISPEB\_\_))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_ppc\_\_)\ ||\ defined(\_\_POWERPC\_\_)\ ||\ defined(\_M\_PPC)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_sparc\_\_)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ SDL\_BYTEORDER\ \ \ SDL\_BIG\_ENDIAN}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SDL\_BYTEORDER\ \ \ SDL\_LIL\_ENDIAN}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_linux\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !SDL\_BYTEORDER\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{00060\ \textcolor{comment}{/*\ Set\ up\ for\ C\ function\ definitions,\ even\ when\ using\ C++\ */}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)\ \&\&\ defined(\_\_i386\_\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ !(\_\_GNUC\_\_\ ==\ 2\ \&\&\ \_\_GNUC\_MINOR\_\_\ ==\ 95\ }\textcolor{comment}{/*\ broken\ gcc\ version\ */}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{00070\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}}
+\DoxyCodeLine{00071\ SDL\_Swap16(\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ x)}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}xchgb\ \%b0,\%h0"{}}:\ \textcolor{stringliteral}{"{}=q"{}}(x):\textcolor{stringliteral}{"{}0"{}}(x));}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ defined(\_\_x86\_64\_\_)}}
+\DoxyCodeLine{00077\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}}
+\DoxyCodeLine{00078\ SDL\_Swap16(\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ x)}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}xchgb\ \%b0,\%h0"{}}:\ \textcolor{stringliteral}{"{}=Q"{}}(x):\textcolor{stringliteral}{"{}0"{}}(x));}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_powerpc\_\_)\ ||\ defined(\_\_ppc\_\_))}}
+\DoxyCodeLine{00084\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}}
+\DoxyCodeLine{00085\ SDL\_Swap16(\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ x)}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ result;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}rlwimi\ \%0,\%2,8,16,23"{}}:\ \textcolor{stringliteral}{"{}=\&r"{}}(result):\textcolor{stringliteral}{"{}0"{}}(x\ >>\ 8),\ \textcolor{stringliteral}{"{}r"{}}(x));}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}})result;}
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_M68000\_\_)\ ||\ defined(\_\_M68020\_\_))\ \&\&\ !defined(\_\_mcoldfire\_\_)}}
+\DoxyCodeLine{00093\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}}
+\DoxyCodeLine{00094\ SDL\_Swap16(\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ x)}
+\DoxyCodeLine{00095\ \{}
+\DoxyCodeLine{00096\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}rorw\ \#8,\%0"{}}:\ \textcolor{stringliteral}{"{}=d"{}}(x):\ \textcolor{stringliteral}{"{}0"{}}(x):\textcolor{stringliteral}{"{}cc"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00100\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}}
+\DoxyCodeLine{00101\ SDL\_Swap16(\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ x)}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}},\ ((x\ <<\ 8)\ |\ (x\ >>\ 8)));}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)\ \&\&\ defined(\_\_i386\_\_)}}
+\DoxyCodeLine{00108\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}
+\DoxyCodeLine{00109\ SDL\_Swap32(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ x)}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}bswap\ \%0"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(x):\textcolor{stringliteral}{"{}0"{}}(x));}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ defined(\_\_x86\_64\_\_)}}
+\DoxyCodeLine{00115\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}
+\DoxyCodeLine{00116\ SDL\_Swap32(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ x)}
+\DoxyCodeLine{00117\ \{}
+\DoxyCodeLine{00118\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}bswapl\ \%0"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(x):\textcolor{stringliteral}{"{}0"{}}(x));}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_powerpc\_\_)\ ||\ defined(\_\_ppc\_\_))}}
+\DoxyCodeLine{00122\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}
+\DoxyCodeLine{00123\ SDL\_Swap32(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ x)}
+\DoxyCodeLine{00124\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ result;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}rlwimi\ \%0,\%2,24,16,23"{}}:\ \textcolor{stringliteral}{"{}=\&r"{}}(result):\textcolor{stringliteral}{"{}0"{}}(x\ >>\ 24),\ \textcolor{stringliteral}{"{}r"{}}(x));}
+\DoxyCodeLine{00128\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}rlwimi\ \%0,\%2,8,8,15"{}}:\ \textcolor{stringliteral}{"{}=\&r"{}}(result):\textcolor{stringliteral}{"{}0"{}}(result),\ \textcolor{stringliteral}{"{}r"{}}(x));}
+\DoxyCodeLine{00129\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}rlwimi\ \%0,\%2,24,0,7"{}}:\ \textcolor{stringliteral}{"{}=\&r"{}}(result):\textcolor{stringliteral}{"{}0"{}}(result),\ \textcolor{stringliteral}{"{}r"{}}(x));}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_M68000\_\_)\ ||\ defined(\_\_M68020\_\_))\ \&\&\ !defined(\_\_mcoldfire\_\_)}}
+\DoxyCodeLine{00133\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}
+\DoxyCodeLine{00134\ SDL\_Swap32(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ x)}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}rorw\ \#8,\%0\(\backslash\)n\(\backslash\)tswap\ \%0\(\backslash\)n\(\backslash\)trorw\ \#8,\%0"{}}:\ \textcolor{stringliteral}{"{}=d"{}}(x):\ \textcolor{stringliteral}{"{}0"{}}(x):\textcolor{stringliteral}{"{}cc"{}});}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00138\ \}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00140\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}
+\DoxyCodeLine{00141\ SDL\_Swap32(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ x)}
+\DoxyCodeLine{00142\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}},\ ((x\ <<\ 24)\ |\ ((x\ <<\ 8)\ \&\ 0x00FF0000)\ |}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((x\ >>\ 8)\ \&\ 0x0000FF00)\ |\ (x\ >>\ 24)));}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)\ \&\&\ defined(\_\_i386\_\_)}}
+\DoxyCodeLine{00149\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}}
+\DoxyCodeLine{00150\ SDL\_Swap64(\mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ x)}
+\DoxyCodeLine{00151\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ a,\ b;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}\ s;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ u;}
+\DoxyCodeLine{00159\ \ \ \ \ \}\ v;}
+\DoxyCodeLine{00160\ \ \ \ \ v.u\ =\ x;}
+\DoxyCodeLine{00161\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}bswapl\ \%0\ ;\ bswapl\ \%1\ ;\ xchgl\ \%0,\%1"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(v.s.a),\ \textcolor{stringliteral}{"{}=r"{}}(v.s.b):\textcolor{stringliteral}{"{}0"{}}(v.s.a),}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1"{}}(v.s.}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b));}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ v.u;}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ defined(\_\_x86\_64\_\_)}}
+\DoxyCodeLine{00167\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}}
+\DoxyCodeLine{00168\ SDL\_Swap64(\mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ x)}
+\DoxyCodeLine{00169\ \{}
+\DoxyCodeLine{00170\ \ \ \_\_asm\_\_(\textcolor{stringliteral}{"{}bswapq\ \%0"{}}:\ \textcolor{stringliteral}{"{}=r"{}}(x):\textcolor{stringliteral}{"{}0"{}}(x));}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00172\ \}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00174\ SDL\_FORCE\_INLINE\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}}
+\DoxyCodeLine{00175\ SDL\_Swap64(\mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ x)}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ hi,\ lo;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{/*\ Separate\ into\ high\ and\ low\ 32-\/bit\ values\ and\ swap\ them\ */}}
+\DoxyCodeLine{00180\ \ \ \ \ lo\ =\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}},\ x\ \&\ 0xFFFFFFFF);}
+\DoxyCodeLine{00181\ \ \ \ \ x\ >>=\ 32;}
+\DoxyCodeLine{00182\ \ \ \ \ hi\ =\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}},\ x\ \&\ 0xFFFFFFFF);}
+\DoxyCodeLine{00183\ \ \ \ \ x\ =\ SDL\_Swap32(lo);}
+\DoxyCodeLine{00184\ \ \ \ \ x\ <<=\ 32;}
+\DoxyCodeLine{00185\ \ \ \ \ x\ |=\ SDL\_Swap32(hi);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{return}\ (x);}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ SDL\_FORCE\_INLINE\ \textcolor{keywordtype}{float}}
+\DoxyCodeLine{00192\ SDL\_SwapFloat(\textcolor{keywordtype}{float}\ x)}
+\DoxyCodeLine{00193\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00195\ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ f;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ ui32;}
+\DoxyCodeLine{00198\ \ \ \ \ \}\ swapper;}
+\DoxyCodeLine{00199\ \ \ \ \ swapper.f\ =\ x;}
+\DoxyCodeLine{00200\ \ \ \ \ swapper.ui32\ =\ SDL\_Swap32(swapper.ui32);}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{return}\ swapper.f;}
+\DoxyCodeLine{00202\ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00209\ \textcolor{comment}{/*\ @\{\ */}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#if\ SDL\_BYTEORDER\ ==\ SDL\_LIL\_ENDIAN}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ SDL\_SwapLE16(X)\ (X)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ SDL\_SwapLE32(X)\ (X)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ SDL\_SwapLE64(X)\ (X)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ SDL\_SwapFloatLE(X)\ \ (X)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ SDL\_SwapBE16(X)\ SDL\_Swap16(X)}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ SDL\_SwapBE32(X)\ SDL\_Swap32(X)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ SDL\_SwapBE64(X)\ SDL\_Swap64(X)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ SDL\_SwapFloatBE(X)\ \ SDL\_SwapFloat(X)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ SDL\_SwapLE16(X)\ SDL\_Swap16(X)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ SDL\_SwapLE32(X)\ SDL\_Swap32(X)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ SDL\_SwapLE64(X)\ SDL\_Swap64(X)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ SDL\_SwapFloatLE(X)\ \ SDL\_SwapFloat(X)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ SDL\_SwapBE16(X)\ (X)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ SDL\_SwapBE32(X)\ (X)}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ SDL\_SwapBE64(X)\ (X)}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ SDL\_SwapFloatBE(X)\ \ (X)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00229\ \textcolor{comment}{/*\ @\}\ */}\textcolor{comment}{/*\ Swap\ to\ native\ */}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{comment}{/*\ Ends\ C\ function\ definitions\ when\ using\ C++\ */}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00233\ \}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SDL\_endian\_h\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{comment}{/*\ vi:\ set\ ts=4\ sw=4\ expandtab:\ */}}
+
+\end{DoxyCode}

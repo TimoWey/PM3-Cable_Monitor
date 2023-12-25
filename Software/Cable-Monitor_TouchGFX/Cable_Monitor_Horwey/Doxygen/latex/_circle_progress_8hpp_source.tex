@@ -1,0 +1,74 @@
+\doxysection{Circle\+Progress.\+hpp}
+\hypertarget{_circle_progress_8hpp_source}{}\label{_circle_progress_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress\_indicators/CircleProgress.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress\_indicators/CircleProgress.hpp}}
+\mbox{\hyperlink{_circle_progress_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_CIRCLEPROGRESS\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_CIRCLEPROGRESS\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_progress_indicator_8hpp}{touchgfx/containers/progress\_indicators/AbstractProgressIndicator.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_painter_8hpp}{touchgfx/widgets/canvas/AbstractPainter.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_circle_8hpp}{touchgfx/widgets/canvas/Circle.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_circle_progress}{CircleProgress}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_progress_indicator}{AbstractProgressIndicator}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress}{CircleProgress}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a8279d1cde100dd456003f4bbc6681e27}{setProgressIndicatorPosition}}(int16\_t\ x,\ int16\_t\ y,\ int16\_t\ width,\ int16\_t\ height);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a57c2e4bf1f79123fef9c52fb94d96fa2}{setPainter}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}\&\ painter);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a44d35dc2ece3924040d00d9005c95e42}{setCenter}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a5ec43841663b45e1b14aed4d2e362252}{getCenter}}(\textcolor{keywordtype}{int}\&\ x,\ \textcolor{keywordtype}{int}\&\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_aca261dff945d3f47aaf132dc603bf7a5}{setRadius}}(\textcolor{keywordtype}{int}\ r);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a2abfa4ab6d7379bdd994b467b1276fcd}{getRadius}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_ac60d5b071f14dcfa862e3bf3dd3aac45}{setLineWidth}}(\textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a98459ddbea30bf038d5c26ec29cd393f}{getLineWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a1b1978b0c44e2aa29150f4d50a6cc5d4}{setCapPrecision}}(\textcolor{keywordtype}{int}\ precision);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a6edb557ce855de05efcc8c939ba1adc9}{getCapPrecision}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00121\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a0524841456fe352f1988a6b255971235}{circle}}.\mbox{\hyperlink{classtouchgfx_1_1_circle_a095d45f9f14596159e41041fe359a215}{getCapPrecision}}();}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_ac83ddd34836b2c33164c8751fb1bda69}{setStartEndAngle}}(\textcolor{keywordtype}{int}\ startAngle,\ \textcolor{keywordtype}{int}\ endAngle);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_ad63f0e3490e707c7221659b64281f8f6}{getStartAngle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_ac3676f448b74d5893bafd2e7bca655b5}{getEndAngle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a06d27256e82fb41874f823582dc478e3}{setAlpha}}(uint8\_t\ newAlpha);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_ad17dc844b4e8819d23bf3130d319f160}{setValue}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_circle}{Circle}}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a0524841456fe352f1988a6b255971235}{circle}};\ \ \ \ \ \ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_circle_progress_a950c9bc7d1d02cbbb4d9fae2331ed157}{circleEndAngle}};\ }
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_CIRCLEPROGRESS\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+touch.h File Reference}
+\hypertarget{_s_d_l__touch_8h}{}\label{_s_d_l__touch_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_touch.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_touch.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+error.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+video.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__touch_8h_ac24e2ec23c2ac1675fec8f327ef45efe}\label{_s_d_l__touch_8h_ac24e2ec23c2ac1675fec8f327ef45efe} 
+\#define {\bfseries SDL\+\_\+\+TOUCH\+\_\+\+MOUSEID}~((\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}})-\/1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}\label{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a} 
+typedef \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}} {\bfseries SDL\+\_\+\+Touch\+ID}
+\item 
+\Hypertarget{_s_d_l__touch_8h_a5fa58141f78415ca09645af359ad2250}\label{_s_d_l__touch_8h_a5fa58141f78415ca09645af359ad2250} 
+typedef \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}} {\bfseries SDL\+\_\+\+Finger\+ID}
+\item 
+\Hypertarget{_s_d_l__touch_8h_ab870bc362a74d92227b8bc9c9654d25e}\label{_s_d_l__touch_8h_ab870bc362a74d92227b8bc9c9654d25e} 
+typedef struct SDL\+\_\+\+Finger {\bfseries SDL\+\_\+\+Finger}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__touch_8h_a14a41a2964ddf868a180e42ccfd441d1}\label{_s_d_l__touch_8h_a14a41a2964ddf868a180e42ccfd441d1} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Get\+Num\+Touch\+Devices} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of registered touch devices. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__touch_8h_af23f09dc79eace93cdc8dd770eed0d0a}\label{_s_d_l__touch_8h_af23f09dc79eace93cdc8dd770eed0d0a} 
+DECLSPEC SDL\+\_\+\+Touch\+ID SDLCALL {\bfseries SDL\+\_\+\+Get\+Touch\+Device} (int index)
+\begin{DoxyCompactList}\small\item\em Get the touch ID with the given index, or 0 if the index is invalid. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__touch_8h_a7dcd1494c8dd433b7ef7b24c2926e721}\label{_s_d_l__touch_8h_a7dcd1494c8dd433b7ef7b24c2926e721} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Get\+Num\+Touch\+Fingers} (SDL\+\_\+\+Touch\+ID touch\+ID)
+\begin{DoxyCompactList}\small\item\em Get the number of active fingers for a given touch device. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__touch_8h_a51f8b790d3c82f53215796d9a043ef90}\label{_s_d_l__touch_8h_a51f8b790d3c82f53215796d9a043ef90} 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+Get\+Touch\+Finger} (SDL\+\_\+\+Touch\+ID touch\+ID, int index)
+\begin{DoxyCompactList}\small\item\em Get the finger object of the given touch, with the given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL touch event handling. 

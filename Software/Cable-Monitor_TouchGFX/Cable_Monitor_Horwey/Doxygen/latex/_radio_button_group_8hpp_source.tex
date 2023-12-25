@@ -1,0 +1,147 @@
+\doxysection{Radio\+Button\+Group.\+hpp}
+\hypertarget{_radio_button_group_8hpp_source}{}\label{_radio_button_group_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp}}
+\mbox{\hyperlink{_radio_button_group_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_RADIOBUTTONGROUP\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_RADIOBUTTONGROUP\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_button_8hpp}{touchgfx/widgets/AbstractButton.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_radio_button_8hpp}{touchgfx/widgets/RadioButton.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{template}\ <u\textcolor{keywordtype}{int}16\_t\ CAPACITY>}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group}{RadioButtonGroup}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a36c848f08e7e3d0e3568257f0686a660}{RadioButtonGroup}}()}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ :\ size(0),}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ae7a51d5089d94da55e8636acd3a0f453}{radioButtonClicked}}(this,\ \&\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group}{RadioButtonGroup}}::\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a51a665e9e45b92d0f26a58061f40f76f}{radioButtonClickedHandler}}),}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a4f34ddf7bcde84ade4940aeb09a8cfb9}{radioButtonUnselected}}(this,\ \&\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group}{RadioButtonGroup}}::\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a5d80b9c0eb3b95d289fba29e591f9fe7}{radioButtonDeselectedHandler}}),}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ace91f4273e02ddccdd262e96bea4134c}{radioButtonSelectedCallback}}(0),}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a076e557f3e566df983ac557467c4a8ef}{radioButtonDeselectedCallback}}(0)}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a82b350b1b20db79dc6176a28c3b477c3}{\string~RadioButtonGroup}}()}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ae3cd89096001ab3112accabc368f4557}{add}}(\mbox{\hyperlink{classtouchgfx_1_1_radio_button}{RadioButton}}\&\ radioButton)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ assert(size\ <\ CAPACITY\ \&\&\ \textcolor{stringliteral}{"{}RadioButtonGroup\ capacity\ exceeded!"{}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ radioButton.setAction(\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ae7a51d5089d94da55e8636acd3a0f453}{radioButtonClicked}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ radioButton.setDeselectedAction(\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a4f34ddf7bcde84ade4940aeb09a8cfb9}{radioButtonUnselected}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[size++]\ =\ \&radioButton;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button}{RadioButton}}*\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a138c1f6080775a5ccbd5f517ab305998}{getRadioButton}}(uint16\_t\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00079\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (size\ >\ index)\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[index]\ :\ 0;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a14ba182a9862a2df1ed7f18cb931e10c}{getSelectedRadioButtonIndex}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint16\_t\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a63174e52ffda6d4511fa15e6b5408d4d}{size}};\ i++)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[i]-\/>getSelected())}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button}{RadioButton}}*\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a1a4021ea834f0d7ba87466dce9de55be}{getSelectedRadioButton}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00108\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ int32\_t\ index\ =\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a14ba182a9862a2df1ed7f18cb931e10c}{getSelectedRadioButtonIndex}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (index\ <\ 0)\ ?\ 0\ :\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a138c1f6080775a5ccbd5f517ab305998}{getRadioButton}}(index);}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a7a9af7ad3ef95b365c675f39e78434e0}{setSelected}}(\mbox{\hyperlink{classtouchgfx_1_1_radio_button}{RadioButton}}\&\ radioButton)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ radioButton.setSelected(\textcolor{keyword}{true});}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a51a665e9e45b92d0f26a58061f40f76f}{radioButtonClickedHandler}}(radioButton);}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_adb332212aa1e57d28bc147f6af194a14}{setDeselectionEnabled}}(\textcolor{keywordtype}{bool}\ deselectionEnabled)}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint16\_t\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a63174e52ffda6d4511fa15e6b5408d4d}{size}};\ i++)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[i]-\/>\mbox{\hyperlink{classtouchgfx_1_1_radio_button_a9c8cd469727bc0932dee758dd433e674}{setDeselectionEnabled}}(deselectionEnabled);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a240f2d148e1fa53bce4ee886723a0b1c}{getDeselectionEnabled}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00154\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (size\ >\ 0)\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[0]-\/>\mbox{\hyperlink{classtouchgfx_1_1_radio_button_a45f37a26ae4626d0d44c16947f458011}{getDeselectionEnabled}}()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_aed7949ed871ae67fb50ba3781bfa4e4b}{setRadioButtonSelectedHandler}}(GenericCallback<const\ AbstractButton\&>\&\ callback)}
+\DoxyCodeLine{00168\ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ace91f4273e02ddccdd262e96bea4134c}{radioButtonSelectedCallback}}\ =\ \&callback;}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ac655bc9de54d0ef16c7d022129a6a103}{setRadioButtonDeselectedHandler}}(GenericCallback<const\ AbstractButton\&>\&\ callback)}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a076e557f3e566df983ac557467c4a8ef}{radioButtonDeselectedCallback}}\ =\ \&callback;}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button}{RadioButton}}*\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[CAPACITY];\ }
+\DoxyCodeLine{00188\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a63174e52ffda6d4511fa15e6b5408d4d}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ Callback<RadioButtonGroup,\ const\ AbstractButton\&>\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ae7a51d5089d94da55e8636acd3a0f453}{radioButtonClicked}};\ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ Callback<RadioButtonGroup,\ const\ AbstractButton\&>\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a4f34ddf7bcde84ade4940aeb09a8cfb9}{radioButtonUnselected}};\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ GenericCallback<const\ AbstractButton\&>*\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ace91f4273e02ddccdd262e96bea4134c}{radioButtonSelectedCallback}};\ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ GenericCallback<const\ AbstractButton\&>*\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a076e557f3e566df983ac557467c4a8ef}{radioButtonDeselectedCallback}};\ }
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a51a665e9e45b92d0f26a58061f40f76f}{radioButtonClickedHandler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button}{AbstractButton}}\&\ radioButton)}
+\DoxyCodeLine{00203\ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Deselect\ other\ radio\ buttons}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint16\_t\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a63174e52ffda6d4511fa15e6b5408d4d}{size}};\ i++)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[i]\ !=\ \&radioButton)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[i]-\/>getSelected())}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a6d8abd6735e998ab2f5e0769b98f284a}{radioButtons}}[i]-\/>\mbox{\hyperlink{classtouchgfx_1_1_radio_button_a10e1ef5876270c9ee9db4a0926686b1b}{setSelected}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ace91f4273e02ddccdd262e96bea4134c}{radioButtonSelectedCallback}}\ \&\&\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ace91f4273e02ddccdd262e96bea4134c}{radioButtonSelectedCallback}}-\/>isValid())}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_ace91f4273e02ddccdd262e96bea4134c}{radioButtonSelectedCallback}}-\/>execute(radioButton);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a5d80b9c0eb3b95d289fba29e591f9fe7}{radioButtonDeselectedHandler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button}{AbstractButton}}\&\ radioButton)}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a076e557f3e566df983ac557467c4a8ef}{radioButtonDeselectedCallback}}\ \&\&\ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a076e557f3e566df983ac557467c4a8ef}{radioButtonDeselectedCallback}}-\/>isValid())}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_radio_button_group_a076e557f3e566df983ac557467c4a8ef}{radioButtonDeselectedCallback}}-\/>execute(radioButton);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_RADIOBUTTONGROUP\_HPP}}
+
+\end{DoxyCode}

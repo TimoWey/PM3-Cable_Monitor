@@ -1,0 +1,84 @@
+\doxysection{touchgfx\+::colortype Struct Reference}
+\hypertarget{structtouchgfx_1_1colortype}{}\label{structtouchgfx_1_1colortype}\index{touchgfx::colortype@{touchgfx::colortype}}
+
+
+{\ttfamily \#include $<$Types.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1colortype_ad7768ca635fdc108a81d72beee3265bc}{colortype}} ()
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1colortype_a3d3517fc1124e152c72a570fc5839839}{colortype}} (uint32\+\_\+t col)
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint32\+\_\+t \mbox{\hyperlink{structtouchgfx_1_1colortype_a7d5ebd542307ea3b6eb4db92b0d0cd2f}{get\+Color32}} () const
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1colortype_ac1d9f2841e773d9fd9bcc516fa40cb42}{operator uint32\+\_\+t}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structtouchgfx_1_1colortype_a6c2ad280468d98b414f5065e38afc530}\label{structtouchgfx_1_1colortype_a6c2ad280468d98b414f5065e38afc530} 
+uint32\+\_\+t {\bfseries color}
+\begin{DoxyCompactList}\small\item\em The color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This type can contain a color value. Note that in order to maintain backwards compatibility, casting this type to an integral value will yield a 16-\/bit value. To extract a 24/32-\/bit color from this type, use the get\+Color32 function. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structtouchgfx_1_1colortype_ad7768ca635fdc108a81d72beee3265bc}\label{structtouchgfx_1_1colortype_ad7768ca635fdc108a81d72beee3265bc} 
+\index{touchgfx::colortype@{touchgfx::colortype}!colortype@{colortype}}
+\index{colortype@{colortype}!touchgfx::colortype@{touchgfx::colortype}}
+\doxysubsubsection{\texorpdfstring{colortype()}{colortype()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily touchgfx\+::colortype\+::colortype (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Creates a black (0) color. \Hypertarget{structtouchgfx_1_1colortype_a3d3517fc1124e152c72a570fc5839839}\label{structtouchgfx_1_1colortype_a3d3517fc1124e152c72a570fc5839839} 
+\index{touchgfx::colortype@{touchgfx::colortype}!colortype@{colortype}}
+\index{colortype@{colortype}!touchgfx::colortype@{touchgfx::colortype}}
+\doxysubsubsection{\texorpdfstring{colortype()}{colortype()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily touchgfx\+::colortype\+::colortype (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor which creates a colortype with the given color. Use \doxylink{classtouchgfx_1_1_color_ac103ed74c2b74e3f70e0a27b8ad62520}{Color\+::get\+Color\+From\+RGB()} to create a color that will work on your selected \doxylink{classtouchgfx_1_1_l_c_d}{LCD} type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & The color.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_color_ac103ed74c2b74e3f70e0a27b8ad62520}{Color\+::get\+Color\+From\+RGB} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structtouchgfx_1_1colortype_a7d5ebd542307ea3b6eb4db92b0d0cd2f}\label{structtouchgfx_1_1colortype_a7d5ebd542307ea3b6eb4db92b0d0cd2f} 
+\index{touchgfx::colortype@{touchgfx::colortype}!getColor32@{getColor32}}
+\index{getColor32@{getColor32}!touchgfx::colortype@{touchgfx::colortype}}
+\doxysubsubsection{\texorpdfstring{getColor32()}{getColor32()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint32\+\_\+t touchgfx\+::colortype\+::get\+Color32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets color as a 32bit value suitable for passing to \doxylink{classtouchgfx_1_1_color_a2676f6a78eb94b9579bcea06597e28c8}{Color\+::get\+Red()}, \doxylink{classtouchgfx_1_1_color_a2d3331abbfeb025284a72f48662ae5a3}{Color\+::get\+Green()} and \doxylink{classtouchgfx_1_1_color_adea3016812f2d9428c194a8f3297cd59}{Color\+::get\+Blue()} which will handle all bitdeptchs.
+
+\begin{DoxyReturn}{Returns}
+The color 32.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_color_a2676f6a78eb94b9579bcea06597e28c8}{Color\+::get\+Red}, \doxylink{classtouchgfx_1_1_color_a2d3331abbfeb025284a72f48662ae5a3}{Color\+::get\+Green}, \doxylink{classtouchgfx_1_1_color_adea3016812f2d9428c194a8f3297cd59}{Color\+::get\+Blue} 
+\end{DoxySeeAlso}
+\Hypertarget{structtouchgfx_1_1colortype_ac1d9f2841e773d9fd9bcc516fa40cb42}\label{structtouchgfx_1_1colortype_ac1d9f2841e773d9fd9bcc516fa40cb42} 
+\index{touchgfx::colortype@{touchgfx::colortype}!operator uint32\_t@{operator uint32\_t}}
+\index{operator uint32\_t@{operator uint32\_t}!touchgfx::colortype@{touchgfx::colortype}}
+\doxysubsubsection{\texorpdfstring{operator uint32\_t()}{operator uint32\_t()}}
+{\footnotesize\ttfamily touchgfx\+::colortype\+::operator uint32\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cast that converts the given colortype to an uint32\+\_\+t.
+
+\begin{DoxyReturn}{Returns}
+The result of the operation. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_types_8hpp}{Types.\+hpp}}\end{DoxyCompactItemize}

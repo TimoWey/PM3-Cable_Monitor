@@ -1,0 +1,44 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+loadso.h File Reference}
+\hypertarget{_s_d_l__loadso_8h}{}\label{_s_d_l__loadso_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_loadso.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_loadso.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+error.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__loadso_8h_ab4adfde098ce42506123b9ddabac5884}{SDL\+\_\+\+Load\+Object}} (const char \texorpdfstring{$\ast$}{*}sofile)
+\item 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__loadso_8h_a9013bf9ba13dc4f9b7b56ab35c4ef9ba}{SDL\+\_\+\+Load\+Function}} (void \texorpdfstring{$\ast$}{*}handle, const char \texorpdfstring{$\ast$}{*}name)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__loadso_8h_a041e43c276cb826c2034eff220be7fe4}{SDL\+\_\+\+Unload\+Object}} (void \texorpdfstring{$\ast$}{*}handle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System dependent library loading routines
+
+Some things to keep in mind\+: \begin{DoxyItemize}
+\item These functions only work on C function names. Other languages may have name mangling and intrinsic language support that varies from compiler to compiler. \item Make sure you declare your function pointers with the same calling convention as the actual library function. Your code will crash mysteriously if you do not do this. \item Avoid namespace collisions. If you load a symbol from the library, it is not defined whether or not it goes into the global symbol namespace for the application. If it does and it conflicts with symbols in your code or other shared libraries, you will not get the results you expect. \+:) \end{DoxyItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__loadso_8h_a9013bf9ba13dc4f9b7b56ab35c4ef9ba}\label{_s_d_l__loadso_8h_a9013bf9ba13dc4f9b7b56ab35c4ef9ba} 
+\index{SDL\_loadso.h@{SDL\_loadso.h}!SDL\_LoadFunction@{SDL\_LoadFunction}}
+\index{SDL\_LoadFunction@{SDL\_LoadFunction}!SDL\_loadso.h@{SDL\_loadso.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_LoadFunction()}{SDL\_LoadFunction()}}
+{\footnotesize\ttfamily DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Load\+Function (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{handle,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Given an object handle, this function looks up the address of the named function in the shared object and returns it. This address is no longer valid after calling \doxylink{_s_d_l__loadso_8h_a041e43c276cb826c2034eff220be7fe4}{SDL\+\_\+\+Unload\+Object()}. \Hypertarget{_s_d_l__loadso_8h_ab4adfde098ce42506123b9ddabac5884}\label{_s_d_l__loadso_8h_ab4adfde098ce42506123b9ddabac5884} 
+\index{SDL\_loadso.h@{SDL\_loadso.h}!SDL\_LoadObject@{SDL\_LoadObject}}
+\index{SDL\_LoadObject@{SDL\_LoadObject}!SDL\_loadso.h@{SDL\_loadso.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_LoadObject()}{SDL\_LoadObject()}}
+{\footnotesize\ttfamily DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Load\+Object (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{sofile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function dynamically loads a shared object and returns a pointer to the object handle (or NULL if there was an error). The \textquotesingle{}sofile\textquotesingle{} parameter is a system dependent name of the object file. \Hypertarget{_s_d_l__loadso_8h_a041e43c276cb826c2034eff220be7fe4}\label{_s_d_l__loadso_8h_a041e43c276cb826c2034eff220be7fe4} 
+\index{SDL\_loadso.h@{SDL\_loadso.h}!SDL\_UnloadObject@{SDL\_UnloadObject}}
+\index{SDL\_UnloadObject@{SDL\_UnloadObject}!SDL\_loadso.h@{SDL\_loadso.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_UnloadObject()}{SDL\_UnloadObject()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Unload\+Object (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Unload a shared object from memory. 

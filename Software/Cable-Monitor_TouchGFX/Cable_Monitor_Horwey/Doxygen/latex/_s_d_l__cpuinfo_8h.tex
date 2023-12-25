@@ -1,0 +1,135 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+cpuinfo.h File Reference}
+\hypertarget{_s_d_l__cpuinfo_8h}{}\label{_s_d_l__cpuinfo_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_cpuinfo.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_cpuinfo.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__cpuinfo_8h_a05d74b2aab28d821ea7f3f78372fd00e}\label{_s_d_l__cpuinfo_8h_a05d74b2aab28d821ea7f3f78372fd00e} 
+\#define {\bfseries SDL\+\_\+\+CACHELINE\+\_\+\+SIZE}~128
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_a888cf77e53a67803402e1740a9639bd7}{SDL\+\_\+\+Get\+CPUCount}} (void)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_aa699924d6c33d2cac8f1983c4ae4091c}{SDL\+\_\+\+Get\+CPUCache\+Line\+Size}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_afea666a39b6be7821303adcf16e83c47}{SDL\+\_\+\+Has\+RDTSC}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_a9bc2024dc37b1d318eb197c161f8e50b}{SDL\+\_\+\+Has\+Alti\+Vec}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_aecec2f1434aa2eb5c82f974880f5181f}{SDL\+\_\+\+Has\+MMX}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_a57efd279a93553cf43a54e3a49db6305}{SDL\+\_\+\+Has3\+DNow}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_aed4b71a601e3a12786a5280f59c0e26d}{SDL\+\_\+\+Has\+SSE}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_aadc66ce3d29c669f6c78ee17c592336e}{SDL\+\_\+\+Has\+SSE2}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_ab0dfbc5d529ba0b65d1fff744da69f5e}{SDL\+\_\+\+Has\+SSE3}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_a6719853bee3dd03b8823540705a55932}{SDL\+\_\+\+Has\+SSE41}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_a9fea35e1593bb7981cdc1da4d0b2dccb}{SDL\+\_\+\+Has\+SSE42}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_aec739a6c622987314d9a22899c4ba673}{SDL\+\_\+\+Has\+AVX}} (void)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_a1fa7d982a27fb5a29fc1b291fc1054f4}{SDL\+\_\+\+Has\+AVX2}} (void)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__cpuinfo_8h_af672834675f296bed0e226113695bebd}{SDL\+\_\+\+Get\+System\+RAM}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CPU feature detection for SDL. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__cpuinfo_8h_aa699924d6c33d2cac8f1983c4ae4091c}\label{_s_d_l__cpuinfo_8h_aa699924d6c33d2cac8f1983c4ae4091c} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_GetCPUCacheLineSize@{SDL\_GetCPUCacheLineSize}}
+\index{SDL\_GetCPUCacheLineSize@{SDL\_GetCPUCacheLineSize}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetCPUCacheLineSize()}{SDL\_GetCPUCacheLineSize()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+CPUCache\+Line\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns the L1 cache line size of the CPU
+
+This is useful for determining multi-\/threaded structure padding or SIMD prefetch sizes. \Hypertarget{_s_d_l__cpuinfo_8h_a888cf77e53a67803402e1740a9639bd7}\label{_s_d_l__cpuinfo_8h_a888cf77e53a67803402e1740a9639bd7} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_GetCPUCount@{SDL\_GetCPUCount}}
+\index{SDL\_GetCPUCount@{SDL\_GetCPUCount}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetCPUCount()}{SDL\_GetCPUCount()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+CPUCount (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns the number of CPU cores available. \Hypertarget{_s_d_l__cpuinfo_8h_af672834675f296bed0e226113695bebd}\label{_s_d_l__cpuinfo_8h_af672834675f296bed0e226113695bebd} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_GetSystemRAM@{SDL\_GetSystemRAM}}
+\index{SDL\_GetSystemRAM@{SDL\_GetSystemRAM}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetSystemRAM()}{SDL\_GetSystemRAM()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+System\+RAM (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns the amount of RAM configured in the system, in MB. \Hypertarget{_s_d_l__cpuinfo_8h_a57efd279a93553cf43a54e3a49db6305}\label{_s_d_l__cpuinfo_8h_a57efd279a93553cf43a54e3a49db6305} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_Has3DNow@{SDL\_Has3DNow}}
+\index{SDL\_Has3DNow@{SDL\_Has3DNow}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Has3DNow()}{SDL\_Has3DNow()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has3\+DNow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has 3DNow! features. \Hypertarget{_s_d_l__cpuinfo_8h_a9bc2024dc37b1d318eb197c161f8e50b}\label{_s_d_l__cpuinfo_8h_a9bc2024dc37b1d318eb197c161f8e50b} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasAltiVec@{SDL\_HasAltiVec}}
+\index{SDL\_HasAltiVec@{SDL\_HasAltiVec}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasAltiVec()}{SDL\_HasAltiVec()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+Alti\+Vec (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has Alti\+Vec features. \Hypertarget{_s_d_l__cpuinfo_8h_aec739a6c622987314d9a22899c4ba673}\label{_s_d_l__cpuinfo_8h_aec739a6c622987314d9a22899c4ba673} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasAVX@{SDL\_HasAVX}}
+\index{SDL\_HasAVX@{SDL\_HasAVX}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasAVX()}{SDL\_HasAVX()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+AVX (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has AVX features. \Hypertarget{_s_d_l__cpuinfo_8h_a1fa7d982a27fb5a29fc1b291fc1054f4}\label{_s_d_l__cpuinfo_8h_a1fa7d982a27fb5a29fc1b291fc1054f4} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasAVX2@{SDL\_HasAVX2}}
+\index{SDL\_HasAVX2@{SDL\_HasAVX2}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasAVX2()}{SDL\_HasAVX2()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+AVX2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has AVX2 features. \Hypertarget{_s_d_l__cpuinfo_8h_aecec2f1434aa2eb5c82f974880f5181f}\label{_s_d_l__cpuinfo_8h_aecec2f1434aa2eb5c82f974880f5181f} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasMMX@{SDL\_HasMMX}}
+\index{SDL\_HasMMX@{SDL\_HasMMX}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasMMX()}{SDL\_HasMMX()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+MMX (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has MMX features. \Hypertarget{_s_d_l__cpuinfo_8h_afea666a39b6be7821303adcf16e83c47}\label{_s_d_l__cpuinfo_8h_afea666a39b6be7821303adcf16e83c47} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasRDTSC@{SDL\_HasRDTSC}}
+\index{SDL\_HasRDTSC@{SDL\_HasRDTSC}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasRDTSC()}{SDL\_HasRDTSC()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+RDTSC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has the RDTSC instruction. \Hypertarget{_s_d_l__cpuinfo_8h_aed4b71a601e3a12786a5280f59c0e26d}\label{_s_d_l__cpuinfo_8h_aed4b71a601e3a12786a5280f59c0e26d} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasSSE@{SDL\_HasSSE}}
+\index{SDL\_HasSSE@{SDL\_HasSSE}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasSSE()}{SDL\_HasSSE()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+SSE (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has SSE features. \Hypertarget{_s_d_l__cpuinfo_8h_aadc66ce3d29c669f6c78ee17c592336e}\label{_s_d_l__cpuinfo_8h_aadc66ce3d29c669f6c78ee17c592336e} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasSSE2@{SDL\_HasSSE2}}
+\index{SDL\_HasSSE2@{SDL\_HasSSE2}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasSSE2()}{SDL\_HasSSE2()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+SSE2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has SSE2 features. \Hypertarget{_s_d_l__cpuinfo_8h_ab0dfbc5d529ba0b65d1fff744da69f5e}\label{_s_d_l__cpuinfo_8h_ab0dfbc5d529ba0b65d1fff744da69f5e} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasSSE3@{SDL\_HasSSE3}}
+\index{SDL\_HasSSE3@{SDL\_HasSSE3}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasSSE3()}{SDL\_HasSSE3()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+SSE3 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has SSE3 features. \Hypertarget{_s_d_l__cpuinfo_8h_a6719853bee3dd03b8823540705a55932}\label{_s_d_l__cpuinfo_8h_a6719853bee3dd03b8823540705a55932} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasSSE41@{SDL\_HasSSE41}}
+\index{SDL\_HasSSE41@{SDL\_HasSSE41}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasSSE41()}{SDL\_HasSSE41()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+SSE41 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has SSE4.\+1 features. \Hypertarget{_s_d_l__cpuinfo_8h_a9fea35e1593bb7981cdc1da4d0b2dccb}\label{_s_d_l__cpuinfo_8h_a9fea35e1593bb7981cdc1da4d0b2dccb} 
+\index{SDL\_cpuinfo.h@{SDL\_cpuinfo.h}!SDL\_HasSSE42@{SDL\_HasSSE42}}
+\index{SDL\_HasSSE42@{SDL\_HasSSE42}!SDL\_cpuinfo.h@{SDL\_cpuinfo.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasSSE42()}{SDL\_HasSSE42()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+SSE42 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns true if the CPU has SSE4.\+2 features. 

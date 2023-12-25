@@ -1,0 +1,99 @@
+\doxysection{Gauge.\+hpp}
+\hypertarget{_gauge_8hpp_source}{}\label{_gauge_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Gauge.hpp}}
+\mbox{\hyperlink{_gauge_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_GAUGE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_GAUGE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_progress_indicator_8hpp}{touchgfx/containers/progress\_indicators/AbstractProgressIndicator.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_texture_mapper_8hpp}{touchgfx/widgets/TextureMapper.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_circle_8hpp}{touchgfx/widgets/canvas/Circle.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_gauge}{Gauge}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_progress_indicator}{AbstractProgressIndicator}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a1df2f026bf350e90f2f1ef51f279802b}{Gauge}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a14c07ca638d1cbaef7f6500d816faa77}{setWidth}}(int16\_t\ width);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a3ce99e65fcabc1ebddbf52a30beb040d}{setHeight}}(int16\_t\ height);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a5b0006ddbe6a2a41b1a31ac43e6dbc3a}{setBackgroundOffset}}(int16\_t\ offsetX,\ int16\_t\ offsetY);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_aa4b8da83ea20820d9932f6cebda9c119}{setCenter}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a9228494781dde75afa6aceb73f1bbbaf}{getCenter}}(\textcolor{keywordtype}{int}\&\ x,\ \textcolor{keywordtype}{int}\&\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ x\ =\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a4e2b636237c3e62ef16d36e98f1eccd5}{gaugeCenterX}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ y\ =\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a998a9f1fee1722e95fcea728a2fd8607}{gaugeCenterY}};}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a871653269a9a7613941f3ff27c121d4d}{setArcPosition}}(int16\_t\ x,\ int16\_t\ y,\ int16\_t\ width,\ int16\_t\ height);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_ad0c44afadfbfd383c55199a5fe0bc84f}{setNeedle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ bitmapId,\ int16\_t\ rotationCenterX,\ int16\_t\ rotationCenterY);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_ab94955eaba4db597c255d577ab0a6fbd}{setMovingNeedleRenderingAlgorithm}}(\mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{TextureMapper::RenderingAlgorithm}}\ algorithm);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_ad24ea9287fdb8d120cf1cf57d3f52639}{setSteadyNeedleRenderingAlgorithm}}(\mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{TextureMapper::RenderingAlgorithm}}\ algorithm);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_ad8099e107d7996464ac11c5e6457ed21}{setStartEndAngle}}(\textcolor{keywordtype}{int}\ startAngle,\ \textcolor{keywordtype}{int}\ endAngle);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a3f7dd06b11e05455c6e1eed22cd4aaa5}{getStartAngle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a94dfc7382ada91f0116113c5415a512e}{getEndAngle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_af29f8cf2837f90996e74f5c6e1b37a7c}{setArcVisible}}(\textcolor{keywordtype}{bool}\ show\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a24d144ea968da724b92acfcf66ab258e}{putArcOnTop}}(\textcolor{keywordtype}{bool}\ arcOnTop\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_circle}{Circle}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a088e71a00c69e92d059e59b2948f42d8}{getArc}}();}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_ac1907428606cea398b6220309a800d50}{setValue}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a46c2124c43a5193c72b189b7ce961ca1}{setAlpha}}(uint8\_t\ newAlpha);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_afb9fcbdb1f4b40371e60754be28fdfce}{invalidateContent}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00190\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_progress_indicator_aaa0db4f37550d0cf1e54e7d3b5160e01}{getAlpha}}()\ >\ 0)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_progress_indicator_a14872ebdcbbd48a57f5ea668f3181f33}{AbstractProgressIndicator::invalidateContent}}();}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{TextureMapper}}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_aa2d2f242faf14c4fea203fad1f3104e2}{needle}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{TextureMapper::RenderingAlgorithm}}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a0f124810f6d23d09c9907d8eae3ebad5}{algorithmMoving}};\ }
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{TextureMapper::RenderingAlgorithm}}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a5d3467e922349bea8e04fd423455caed}{algorithmSteady}};\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a1f811b98bdb7d24a8d9decec44daa8e8}{needleStartAngle}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a94b7beb71785b81e5559dfc2f6e08a21}{needleEndAngle}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00203\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a4e2b636237c3e62ef16d36e98f1eccd5}{gaugeCenterX}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a998a9f1fee1722e95fcea728a2fd8607}{gaugeCenterY}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00205\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a0fc171bcdac170ade030dc9e567f4640}{needleCenterX}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_aeb90fe4d6fa1e1899a6b57777a1396a3}{needleCenterY}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_circle}{Circle}}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a29b35f42b5f883c3c6e49be80f319cff}{arc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_af38f44cbedc606c669db9a1432059d6c}{setupNeedleTextureMapper}}();}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gauge_a48470ed5634157968c77956af01958b8}{setProgressIndicatorPosition}}(int16\_t\ x,\ int16\_t\ y,\ int16\_t\ width,\ int16\_t\ height);}
+\DoxyCodeLine{00221\ \};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_GAUGE\_HPP}}
+
+\end{DoxyCode}

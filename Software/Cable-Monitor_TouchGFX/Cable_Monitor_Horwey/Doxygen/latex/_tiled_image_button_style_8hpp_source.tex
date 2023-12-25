@@ -1,0 +1,90 @@
+\doxysection{Tiled\+Image\+Button\+Style.\+hpp}
+\hypertarget{_tiled_image_button_style_8hpp_source}{}\label{_tiled_image_button_style_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp}}
+\mbox{\hyperlink{_tiled_image_button_style_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_TILEDIMAGEBUTTONSTYLE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_TILEDIMAGEBUTTONSTYLE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_button_container_8hpp}{touchgfx/containers/buttons/AbstractButtonContainer.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_tiled_image_8hpp}{touchgfx/widgets/TiledImage.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{TiledImageButtonStyle}}\ :\ \textcolor{keyword}{public}\ T}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{TiledImageButtonStyle}}()}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ :\ T()}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{setXY}}(0,\ 0);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ T::add(\mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}});}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_af608564c1b9988eaa5bf5dc1ffc73a26}{setWidth}}(int16\_t\ width)}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{setWidth}}(width);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ T::setWidth(width);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a9421aaa303900132bc587bab9cca91a1}{setHeight}}(int16\_t\ height)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{setHeight}}(height);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ T::setHeight(height);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a034f465219847056137eef968b066581}{setTileBitmaps}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bmpReleased,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bmpPressed)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a3e6c09c29d7ac61388bf12df74d3df84}{upTile}}\ =\ bmpReleased;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_ae9f1560ec0f8971016648c0c907c2ed0}{downTile}}\ =\ bmpPressed;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{AbstractButtonContainer::setWidthHeight}}(\mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_ae9f1560ec0f8971016648c0c907c2ed0}{downTile}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a3df45a17f0c64230aa7d9ac1e15c89f5}{handlePressedUpdated}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a05138b32d408bd55dbafc70a4b553ebd}{setTileOffset}}(int16\_t\ x,\ int16\_t\ y)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}}.\mbox{\hyperlink{classtouchgfx_1_1_tiled_image_ae38e1ef10a6218bb13a3413c4a476152}{setOffset}}(x,\ y);}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image}{TiledImage}}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}};\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a3e6c09c29d7ac61388bf12df74d3df84}{upTile}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_ae9f1560ec0f8971016648c0c907c2ed0}{downTile}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a3df45a17f0c64230aa7d9ac1e15c89f5}{handlePressedUpdated}}()}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ int16\_t\ buttonWidth\ =\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{AbstractButtonContainer::getWidth}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ int16\_t\ buttonHeight\ =\ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{AbstractButtonContainer::getHeight}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}}.\mbox{\hyperlink{classtouchgfx_1_1_tiled_image_a3ae9d14be2d92ee6c8f46f54dab835a0}{setBitmap}}(T::getPressed()\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_ae9f1560ec0f8971016648c0c907c2ed0}{downTile}}\ :\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a3e6c09c29d7ac61388bf12df74d3df84}{upTile}});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{setWidthHeight}}(buttonWidth,\ buttonHeight);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ T::handlePressedUpdated();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_aaf7d8f70825aa91945c1d18ebf991574}{handleAlphaUpdated}}()}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}{tiledImage}}.\mbox{\hyperlink{classtouchgfx_1_1_image_acd148c888a859c4bc5c9cb500f2568ef}{setAlpha}}(T::getAlpha());}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ T::handleAlphaUpdated();}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_TILEDIMAGEBUTTONSTYLE\_HPP}}
+
+\end{DoxyCode}

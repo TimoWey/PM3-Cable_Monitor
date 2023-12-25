@@ -1,0 +1,152 @@
+\doxysection{touchgfx\+::Abstract\+Painter\+Linear\+Gradient Class Reference}
+\hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient}{}\label{classtouchgfx_1_1_abstract_painter_linear_gradient}\index{touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}}
+
+
+{\ttfamily \#include $<$Abstract\+Painter\+Linear\+Gradient.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Abstract\+Painter\+Linear\+Gradient\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtouchgfx_1_1_abstract_painter_linear_gradient}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_aab6995b4c8a74e460a3a769977490818}{Abstract\+Painter\+Linear\+Gradient}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_af9e58de307303eabbc467ed6eedf4e82}{\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter\+Linear\+Gradient}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_aa745f925ed2a81e42d6c7f57c95da820}{set\+Gradient\+End\+Points}} (float startX, float startY, float endX, float endY, float width, float height, const \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}} \&m)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0274e254612cdbea5e42d6f55fd4f9be}{set\+Gradient\+Texture}} (const uint32\+\_\+t \texorpdfstring{$\ast$}{*}tex, bool solid)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{touchgfx\+::\+Abstract\+Painter}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a7f500d1a76e9f37e5b1b26de084c0960}{Abstract\+Painter}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a40573f0f6b29c74cf8fb1671630f6740}{\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2}{HAL\+::\+Rendering\+Method}} \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a7bdf21d724d7b5c065d8ec13ed9fea2f}{get\+Rendering\+Method}} () const
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a75ed1fcb8fb4cc3b763e18dc0d41b891}{setup}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&widget\+Rect) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a9a3ed818c28e1ac27e5a2f775261fced}{tear\+Down}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a342e6a1866ecc21da71b23cc94c3d55b}{framebuffer\+To\+Display}} (int16\+\_\+t \&widgetX, int16\+\_\+t \&widgetY) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_ad4cbec54a9cf1f2af43689ddfea46653}{paint}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}destination, int16\+\_\+t offset, int16\+\_\+t widgetX, int16\+\_\+t widgetY, int16\+\_\+t count, uint8\+\_\+t alpha) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8} 
+int16\+\_\+t {\bfseries coord0}
+\begin{DoxyCompactList}\small\item\em The gradient line start. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091} 
+int16\+\_\+t {\bfseries coord1}
+\begin{DoxyCompactList}\small\item\em The gradient line end. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_ad8606484f7737dd2363439e23b3a7109}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_ad8606484f7737dd2363439e23b3a7109} 
+const uint32\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries texture}
+\begin{DoxyCompactList}\small\item\em The gradient color texture 1 x 1024. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a9b11974d10f56c1b46a56a440fb1a3eb}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a9b11974d10f56c1b46a56a440fb1a3eb} 
+bool {\bfseries is\+Solid}
+\begin{DoxyCompactList}\small\item\em True if all the gradient colors are solid. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93} 
+bool {\bfseries is\+Vertical}
+\begin{DoxyCompactList}\small\item\em True if the gradient is vertical (x0 == x1). \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9} 
+bool {\bfseries is\+Horizontal}
+\begin{DoxyCompactList}\small\item\em True if the gradient is horizontal (y0 == y1). \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c} 
+float {\bfseries cl\+Slope}
+\begin{DoxyCompactList}\small\item\em Slope of lines with same color. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_ae839aa2a871e75313e1f018145b8f7bf}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_ae839aa2a871e75313e1f018145b8f7bf} 
+float {\bfseries cl\+Offset}
+\begin{DoxyCompactList}\small\item\em Vertical offset for line with first color. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd} 
+float {\bfseries horizontal\+Distance}
+\begin{DoxyCompactList}\small\item\em Horizontal distance between pixels with the first color and the last color. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a7f5bd11ac1c7d2602d8288a29c9a29a7}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a7f5bd11ac1c7d2602d8288a29c9a29a7} 
+float {\bfseries delta\+Color}
+\begin{DoxyCompactList}\small\item\em \doxylink{classtouchgfx_1_1_color}{Color} increment when moving 1 pixel horizontally. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{touchgfx\+::\+Abstract\+Painter}}}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t {\bfseries widget\+Width}
+\begin{DoxyCompactList}\small\item\em The width of the widget on screen, used by \doxylink{classtouchgfx_1_1_abstract_painter_a342e6a1866ecc21da71b23cc94c3d55b}{framebuffer\+To\+Display()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{touchgfx\+::\+Abstract\+Painter}}}
+\begin{DoxyCompactItemize}
+\item 
+static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a3d1c29e0a27ead715b4928e02700f27c}{compatible\+Framebuffer}} (\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} format)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class for creating painter classes for drawing canvas widgets. All canvas widgets need a painter to fill the shape drawn with a \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer}. The painter must provide the color of a pixel on a given coordinate, which will the be blended into the framebuffer depending on the position of the canvas widget and the transparency of the given pixel. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_aab6995b4c8a74e460a3a769977490818}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_aab6995b4c8a74e460a3a769977490818} 
+\index{touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}!AbstractPainterLinearGradient@{AbstractPainterLinearGradient}}
+\index{AbstractPainterLinearGradient@{AbstractPainterLinearGradient}!touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}}
+\doxysubsubsection{\texorpdfstring{AbstractPainterLinearGradient()}{AbstractPainterLinearGradient()}}
+{\footnotesize\ttfamily touchgfx\+::\+Abstract\+Painter\+Linear\+Gradient\+::\+Abstract\+Painter\+Linear\+Gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. \Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_af9e58de307303eabbc467ed6eedf4e82}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_af9e58de307303eabbc467ed6eedf4e82} 
+\index{touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}!````~AbstractPainterLinearGradient@{\texorpdfstring{$\sim$}{\string~}AbstractPainterLinearGradient}}
+\index{````~AbstractPainterLinearGradient@{\texorpdfstring{$\sim$}{\string~}AbstractPainterLinearGradient}!touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AbstractPainterLinearGradient()}{\string~AbstractPainterLinearGradient()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Abstract\+Painter\+Linear\+Gradient\+::\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter\+Linear\+Gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_aa745f925ed2a81e42d6c7f57c95da820}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_aa745f925ed2a81e42d6c7f57c95da820} 
+\index{touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}!setGradientEndPoints@{setGradientEndPoints}}
+\index{setGradientEndPoints@{setGradientEndPoints}!touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}}
+\doxysubsubsection{\texorpdfstring{setGradientEndPoints()}{setGradientEndPoints()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Abstract\+Painter\+Linear\+Gradient\+::set\+Gradient\+End\+Points (\begin{DoxyParamCaption}\item[{float}]{startX,  }\item[{float}]{startY,  }\item[{float}]{endX,  }\item[{float}]{endY,  }\item[{float}]{width,  }\item[{float}]{height,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the gradient line. First coordinate (startX, startY) specifies the position of the first color. Last coordinate (endX, endY) specifies the position of the last color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em startX} & X coordinate of the gradient line start point. \\
+\hline
+{\em startY} & Y coordinate of the gradient line start point. \\
+\hline
+{\em endX} & X coordinate of the gradient line end point. \\
+\hline
+{\em endY} & Y coordinate of the gradient line end point. \\
+\hline
+{\em width} & Width of gradient. \\
+\hline
+{\em height} & Height of gradient. \\
+\hline
+{\em m} & Transformation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_linear_gradient_a0274e254612cdbea5e42d6f55fd4f9be}\label{classtouchgfx_1_1_abstract_painter_linear_gradient_a0274e254612cdbea5e42d6f55fd4f9be} 
+\index{touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}!setGradientTexture@{setGradientTexture}}
+\index{setGradientTexture@{setGradientTexture}!touchgfx::AbstractPainterLinearGradient@{touchgfx::AbstractPainterLinearGradient}}
+\doxysubsubsection{\texorpdfstring{setGradientTexture()}{setGradientTexture()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Abstract\+Painter\+Linear\+Gradient\+::set\+Gradient\+Texture (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{tex,  }\item[{bool}]{solid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the 1024x1 texture used to color this texture. The texture is mapped to the gradient line (startX, startY) to (endX, endY).
+
+The texture must be in ARGB8888 format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex} & The gradient texture. \\
+\hline
+{\em solid} & True if all colors in the gradient are solid. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/canvas/\mbox{\hyperlink{_abstract_painter_linear_gradient_8hpp}{Abstract\+Painter\+Linear\+Gradient.\+hpp}}\end{DoxyCompactItemize}

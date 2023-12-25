@@ -1,0 +1,148 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL.h File Reference}
+\hypertarget{_s_d_l_8h}{}\label{_s_d_l_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL.h}}
+{\ttfamily \#include "{}SDL\+\_\+main.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+assert.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+atomic.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+audio.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+clipboard.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+cpuinfo.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+endian.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+error.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+events.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+filesystem.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+joystick.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+gamecontroller.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+haptic.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+hints.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+loadso.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+messagebox.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+mutex.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+power.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+render.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+rwops.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+system.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+thread.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+timer.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+version.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+video.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{SDL\+\_\+\+INIT\+\_\+\texorpdfstring{$\ast$}{*}}
+These are the flags which may be passed to \doxylink{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}{SDL\+\_\+\+Init()}. You should specify the subsystems which you will be using in your application. \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l_8h_aadfaf3382d6e136b5944d1d5e7e50290}\label{_s_d_l_8h_aadfaf3382d6e136b5944d1d5e7e50290} 
+\#define {\bfseries SDL\+\_\+\+INIT\+\_\+\+TIMER}~0x00000001
+\item 
+\Hypertarget{_s_d_l_8h_abeceb02c19508655cb05cc8e64206333}\label{_s_d_l_8h_abeceb02c19508655cb05cc8e64206333} 
+\#define {\bfseries SDL\+\_\+\+INIT\+\_\+\+AUDIO}~0x00000010
+\item 
+\#define \mbox{\hyperlink{_s_d_l_8h_afc988e510ed522628ffeb7c76f80c233}{SDL\+\_\+\+INIT\+\_\+\+VIDEO}}~0x00000020
+\item 
+\#define \mbox{\hyperlink{_s_d_l_8h_ad6b47d785eaa00d9c48e6c1cff4aef4b}{SDL\+\_\+\+INIT\+\_\+\+JOYSTICK}}~0x00000200
+\item 
+\Hypertarget{_s_d_l_8h_adfd88189fec07574cae461b9dea75a85}\label{_s_d_l_8h_adfd88189fec07574cae461b9dea75a85} 
+\#define {\bfseries SDL\+\_\+\+INIT\+\_\+\+HAPTIC}~0x00001000
+\item 
+\#define \mbox{\hyperlink{_s_d_l_8h_ac224a9aa4208de0e9b03948ff9b5fe0a}{SDL\+\_\+\+INIT\+\_\+\+GAMECONTROLLER}}~0x00002000
+\item 
+\Hypertarget{_s_d_l_8h_addad89db9e13b46ebcd46a0db8ba0382}\label{_s_d_l_8h_addad89db9e13b46ebcd46a0db8ba0382} 
+\#define {\bfseries SDL\+\_\+\+INIT\+\_\+\+EVENTS}~0x00004000
+\item 
+\#define \mbox{\hyperlink{_s_d_l_8h_ab848174dfbc69cb2cc7bbf06a6e5c584}{SDL\+\_\+\+INIT\+\_\+\+NOPARACHUTE}}~0x00100000
+\item 
+\#define \mbox{\hyperlink{_s_d_l_8h_a574afd93f30161d6e87449f675081fb5}{SDL\+\_\+\+INIT\+\_\+\+EVERYTHING}}
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}{SDL\+\_\+\+Init}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} flags)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l_8h_adfbfddc0ec609b5e5e5cb1c89298e4db}{SDL\+\_\+\+Init\+Sub\+System}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} flags)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l_8h_a14e9091982e09097985e10e3ca65debb}{SDL\+\_\+\+Quit\+Sub\+System}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} flags)
+\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL \mbox{\hyperlink{_s_d_l_8h_a04dc570990c697eed95681216801710d}{SDL\+\_\+\+Was\+Init}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} flags)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l_8h_afdabaf714781099083592051f2d9ac11}{SDL\+\_\+\+Quit}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main include header for the SDL library 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_s_d_l_8h_a574afd93f30161d6e87449f675081fb5}\label{_s_d_l_8h_a574afd93f30161d6e87449f675081fb5} 
+\index{SDL.h@{SDL.h}!SDL\_INIT\_EVERYTHING@{SDL\_INIT\_EVERYTHING}}
+\index{SDL\_INIT\_EVERYTHING@{SDL\_INIT\_EVERYTHING}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_INIT\_EVERYTHING}{SDL\_INIT\_EVERYTHING}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+INIT\+\_\+\+EVERYTHING}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SDL\_INIT\_TIMER\ |\ SDL\_INIT\_AUDIO\ |\ \mbox{\hyperlink{_s_d_l_8h_afc988e510ed522628ffeb7c76f80c233}{SDL\_INIT\_VIDEO}}\ |\ SDL\_INIT\_EVENTS\ |\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_d_l_8h_ad6b47d785eaa00d9c48e6c1cff4aef4b}{SDL\_INIT\_JOYSTICK}}\ |\ SDL\_INIT\_HAPTIC\ |\ \mbox{\hyperlink{_s_d_l_8h_ac224a9aa4208de0e9b03948ff9b5fe0a}{SDL\_INIT\_GAMECONTROLLER}}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_s_d_l_8h_ac224a9aa4208de0e9b03948ff9b5fe0a}\label{_s_d_l_8h_ac224a9aa4208de0e9b03948ff9b5fe0a} 
+\index{SDL.h@{SDL.h}!SDL\_INIT\_GAMECONTROLLER@{SDL\_INIT\_GAMECONTROLLER}}
+\index{SDL\_INIT\_GAMECONTROLLER@{SDL\_INIT\_GAMECONTROLLER}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_INIT\_GAMECONTROLLER}{SDL\_INIT\_GAMECONTROLLER}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+INIT\+\_\+\+GAMECONTROLLER~0x00002000}
+
+SDL\+\_\+\+INIT\+\_\+\+GAMECONTROLLER implies SDL\+\_\+\+INIT\+\_\+\+JOYSTICK \Hypertarget{_s_d_l_8h_ad6b47d785eaa00d9c48e6c1cff4aef4b}\label{_s_d_l_8h_ad6b47d785eaa00d9c48e6c1cff4aef4b} 
+\index{SDL.h@{SDL.h}!SDL\_INIT\_JOYSTICK@{SDL\_INIT\_JOYSTICK}}
+\index{SDL\_INIT\_JOYSTICK@{SDL\_INIT\_JOYSTICK}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_INIT\_JOYSTICK}{SDL\_INIT\_JOYSTICK}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+INIT\+\_\+\+JOYSTICK~0x00000200}
+
+SDL\+\_\+\+INIT\+\_\+\+JOYSTICK implies SDL\+\_\+\+INIT\+\_\+\+EVENTS \Hypertarget{_s_d_l_8h_ab848174dfbc69cb2cc7bbf06a6e5c584}\label{_s_d_l_8h_ab848174dfbc69cb2cc7bbf06a6e5c584} 
+\index{SDL.h@{SDL.h}!SDL\_INIT\_NOPARACHUTE@{SDL\_INIT\_NOPARACHUTE}}
+\index{SDL\_INIT\_NOPARACHUTE@{SDL\_INIT\_NOPARACHUTE}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_INIT\_NOPARACHUTE}{SDL\_INIT\_NOPARACHUTE}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+INIT\+\_\+\+NOPARACHUTE~0x00100000}
+
+compatibility; this flag is ignored. \Hypertarget{_s_d_l_8h_afc988e510ed522628ffeb7c76f80c233}\label{_s_d_l_8h_afc988e510ed522628ffeb7c76f80c233} 
+\index{SDL.h@{SDL.h}!SDL\_INIT\_VIDEO@{SDL\_INIT\_VIDEO}}
+\index{SDL\_INIT\_VIDEO@{SDL\_INIT\_VIDEO}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_INIT\_VIDEO}{SDL\_INIT\_VIDEO}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+INIT\+\_\+\+VIDEO~0x00000020}
+
+SDL\+\_\+\+INIT\+\_\+\+VIDEO implies SDL\+\_\+\+INIT\+\_\+\+EVENTS 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}\label{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8} 
+\index{SDL.h@{SDL.h}!SDL\_Init@{SDL\_Init}}
+\index{SDL\_Init@{SDL\_Init}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Init()}{SDL\_Init()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function initializes the subsystems specified by {\ttfamily flags} \Hypertarget{_s_d_l_8h_adfbfddc0ec609b5e5e5cb1c89298e4db}\label{_s_d_l_8h_adfbfddc0ec609b5e5e5cb1c89298e4db} 
+\index{SDL.h@{SDL.h}!SDL\_InitSubSystem@{SDL\_InitSubSystem}}
+\index{SDL\_InitSubSystem@{SDL\_InitSubSystem}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_InitSubSystem()}{SDL\_InitSubSystem()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Init\+Sub\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function initializes specific SDL subsystems
+
+Subsystem initialization is ref-\/counted, you must call SDL\+\_\+\+Quit\+Sub\+System for each SDL\+\_\+\+Init\+Sub\+System to correctly shutdown a subsystem manually (or call SDL\+\_\+\+Quit to force shutdown). If a subsystem is already loaded then this call will increase the ref-\/count and return. \Hypertarget{_s_d_l_8h_afdabaf714781099083592051f2d9ac11}\label{_s_d_l_8h_afdabaf714781099083592051f2d9ac11} 
+\index{SDL.h@{SDL.h}!SDL\_Quit@{SDL\_Quit}}
+\index{SDL\_Quit@{SDL\_Quit}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Quit()}{SDL\_Quit()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Quit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function cleans up all initialized subsystems. You should call it upon all exit conditions. \Hypertarget{_s_d_l_8h_a14e9091982e09097985e10e3ca65debb}\label{_s_d_l_8h_a14e9091982e09097985e10e3ca65debb} 
+\index{SDL.h@{SDL.h}!SDL\_QuitSubSystem@{SDL\_QuitSubSystem}}
+\index{SDL\_QuitSubSystem@{SDL\_QuitSubSystem}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_QuitSubSystem()}{SDL\_QuitSubSystem()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Quit\+Sub\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function cleans up specific SDL subsystems \Hypertarget{_s_d_l_8h_a04dc570990c697eed95681216801710d}\label{_s_d_l_8h_a04dc570990c697eed95681216801710d} 
+\index{SDL.h@{SDL.h}!SDL\_WasInit@{SDL\_WasInit}}
+\index{SDL\_WasInit@{SDL\_WasInit}!SDL.h@{SDL.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_WasInit()}{SDL\_WasInit()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL SDL\+\_\+\+Was\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function returns a mask of the specified subsystems which have previously been initialized.
+
+If {\ttfamily flags} is 0, it returns a mask of all initialized subsystems. 

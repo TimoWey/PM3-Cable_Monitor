@@ -1,0 +1,82 @@
+\doxysection{Animation\+Texture\+Mapper.\+hpp}
+\hypertarget{_animation_texture_mapper_8hpp_source}{}\label{_animation_texture_mapper_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AnimationTextureMapper.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AnimationTextureMapper.hpp}}
+\mbox{\hyperlink{_animation_texture_mapper_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_ANIMATIONTEXTUREMAPPER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_ANIMATIONTEXTUREMAPPER\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_easing_equations_8hpp}{touchgfx/EasingEquations.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_texture_mapper_8hpp}{touchgfx/widgets/TextureMapper.hpp}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{AnimationTextureMapper}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{TextureMapper}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82}{AnimationParameter}}}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82ae86e070571c499d7d6b3bd56d0852b2b}{X\_ROTATION}},\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82aef281e35003f01b49b7add35f9eed158}{Y\_ROTATION}},\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a05b9e1e52c08d810186b641feb216a93}{Z\_ROTATION}},\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a7a88233c9c23714cb339c4e0de3c86b7}{SCALE}}\ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a68af9365bcc77a35b4bb8f9c2cb4c36b}{NUMBER\_OF\_ANIMATION\_PARAMETERS}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a7a88233c9c23714cb339c4e0de3c86b7}{SCALE}}\ +\ 1;\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{AnimationTextureMapper}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a71e431c5e697d036a60668cbd8ee325d}{setTextureMapperAnimationStepAction}}(GenericCallback<const\ AnimationTextureMapper\&>\&\ callback);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_aeaea6c3f7a1f8eb290ad3445ce869942}{setTextureMapperAnimationEndedAction}}(GenericCallback<const\ AnimationTextureMapper\&>\&\ callback);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_ab80a3e3063cf8d1d2f587c5fecf7aeeb}{isTextureMapperAnimationRunning}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a91e22a0c8e8582b55dbc8c280a0ded76}{setupAnimation}}(\mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82}{AnimationParameter}}\ parameter,\ \textcolor{keywordtype}{float}\ endValue,\ uint16\_t\ duration,\ uint16\_t\ delay,\ \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{EasingEquation}}\ progressionEquation\ =\ \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{EasingEquations::linearEaseNone}});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a15437a8b2d9e82544c8aa3efe3769282}{startAnimation}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a777495a53ed5e10486d569b54a3c0d1d}{cancelAnimationTextureMapperAnimation}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a9672a32a08991c9e49a7c0d56b50380c}{getAnimationStep}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_aee4766372bc3ce07a92497873ce6ab1b}{handleTickEvent}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting}{AnimationSetting}}}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting_a6d76972aac9fc14dc4989ea51297456d}{animationActive}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting_a82d30cf12ed41b7558ab9f428987a9de}{animationStart}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting_abd0742497c4e5e50db58de3c0ff6f722}{animationEnd}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting_afd02ca385ff7698079d424bd5f90d0af}{animationDelay}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting_a915737985bed67ce9e97e63d04416050}{animationDuration}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{EasingEquation}}\ \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting_a703e06be69826a92eb4f83d6ff2df521}{animationProgressionEquation}};\ }
+\DoxyCodeLine{00127\ \ \ \ \ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting}{AnimationSetting}}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a4cad7a4636b319a65aa30154d4829265}{animations}}[\mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a68af9365bcc77a35b4bb8f9c2cb4c36b}{NUMBER\_OF\_ANIMATION\_PARAMETERS}}];\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ GenericCallback<const\ AnimationTextureMapper\&>*\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a22b26db35a901ab1502a627fac273bd6}{textureMapperAnimationStepCallback}};\ \ }
+\DoxyCodeLine{00132\ \ \ \ \ GenericCallback<const\ AnimationTextureMapper\&>*\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a4305e6797e78739023ddf55c2685f694}{textureMapperAnimationEndedCallback}};\ }
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a15e3a2835c74af13ff896b5152d02c7d}{animationCounter}};\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a23eadbc258e7092ff6118930494734c9}{animationRunning}};\ \ \ \ \ }
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_ANIMATIONTEXTUREMAPPER\_HPP}}
+
+\end{DoxyCode}

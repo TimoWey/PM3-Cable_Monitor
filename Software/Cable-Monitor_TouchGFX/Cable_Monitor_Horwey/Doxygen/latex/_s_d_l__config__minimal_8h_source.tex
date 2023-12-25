@@ -1,0 +1,81 @@
+\doxysection{SDL\+\_\+config\+\_\+minimal.\+h}
+\hypertarget{_s_d_l__config__minimal_8h_source}{}\label{_s_d_l__config__minimal_8h_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_config\_minimal.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_config\_minimal.h}}
+\mbox{\hyperlink{_s_d_l__config__minimal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Simple\ DirectMedia\ Layer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ Copyright\ (C)\ 1997-\/2016\ Sam\ Lantinga\ <slouken@libsdl.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ warranty.\ \ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ \_SDL\_config\_minimal\_h}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \_SDL\_config\_minimal\_h}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__platform_8h}{SDL\_platform.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ HAVE\_STDARG\_H\ \ \ 1}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ HAVE\_STDDEF\_H\ \ \ 1}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/*\ Most\ everything\ except\ Visual\ Studio\ 2008\ and\ earlier\ has\ stdint.h\ now\ */}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)\ \&\&\ (\_MSC\_VER\ <\ 1600)}}
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Here\ are\ some\ reasonable\ defaults\ */}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size\_t;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{char}\ int8\_t;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ uint8\_t;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{short}\ int16\_t;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ uint16\_t;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{int}\ int32\_t;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uint32\_t;}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ int64\_t;}
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ uint64\_t;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ uintptr\_t;}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ HAVE\_STDINT\_H\ 1}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Visual\ Studio\ 2008\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ HAVE\_GCC\_SYNC\_LOCK\_TEST\_AND\_SET\ 1}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Enable\ the\ dummy\ audio\ driver\ (src/audio/dummy/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SDL\_AUDIO\_DRIVER\_DUMMY\ \ 1}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{/*\ Enable\ the\ stub\ joystick\ driver\ (src/joystick/dummy/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ SDL\_JOYSTICK\_DISABLED\ \ \ 1}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{/*\ Enable\ the\ stub\ haptic\ driver\ (src/haptic/dummy/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ SDL\_HAPTIC\_DISABLED\ 1}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ Enable\ the\ stub\ shared\ object\ loader\ (src/loadso/dummy/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ SDL\_LOADSO\_DISABLED\ 1}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/*\ Enable\ the\ stub\ thread\ support\ (src/thread/generic/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ SDL\_THREADS\_DISABLED\ \ \ \ 1}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{/*\ Enable\ the\ stub\ timer\ support\ (src/timer/dummy/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ SDL\_TIMERS\_DISABLED\ 1}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ Enable\ the\ dummy\ video\ driver\ (src/video/dummy/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ SDL\_VIDEO\_DRIVER\_DUMMY\ \ 1}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{/*\ Enable\ the\ dummy\ filesystem\ driver\ (src/filesystem/dummy/\(\backslash\)*.c)\ */}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ SDL\_FILESYSTEM\_DUMMY\ \ 1}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SDL\_config\_minimal\_h\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

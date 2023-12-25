@@ -1,0 +1,84 @@
+\doxysection{Gestures.\+hpp}
+\hypertarget{_gestures_8hpp_source}{}\label{_gestures_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp}}
+\mbox{\hyperlink{_gestures_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_GESTURES\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_GESTURES\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_u_i_event_listener_8hpp}{touchgfx/UIEventListener.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_click_event_8hpp}{touchgfx/events/ClickEvent.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_gestures}{Gestures}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ MAX\_TICKS\_BETWEEN\_MOVES\_FOR\_SWIPE\ =\ 7;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ MIN\_VELOCITY\_AT\_RELEASE\_BEFORE\_SWIPE\ =\ 3;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }DragState}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ DragState()}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ :\ startX(0),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startY(0),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ downX(0),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ downY(0),}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tickCount(0),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocityX(0),}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ velocityY(0),}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inProgress(\textcolor{keyword}{false})}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ uint16\_t\ startX;\ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ uint16\_t\ startY;\ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ uint16\_t\ downX;\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ uint16\_t\ downY;\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ uint16\_t\ tickCount;\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ int16\_t\ velocityX;\ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ int16\_t\ velocityY;\ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inProgress;\ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gestures_a0f0a91652490762e5490807e2a08f631}{Gestures}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ :\ drag(),\ listener(0),\ dragThresholdValue(0)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gestures_abb846e3b9abfe51ed8fb7a6fe651d483}{registerEventListener}}(\mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener}{UIEventListener}}\&\ l);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gestures_aba7afcc68fe6d03b3ab35e8f8f40cf79}{tick}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_gestures_a97a4f906975ecd9ee2b8a9f9ca39707b}{registerDragEvent}}(uint16\_t\ oldX,\ uint16\_t\ oldY,\ uint16\_t\ newX,\ uint16\_t\ newY);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gestures_a19b71c3fccd11e04d4402cdcbfc74cce}{registerClickEvent}}(\mbox{\hyperlink{classtouchgfx_1_1_click_event_a3238b664f8bd50c5d90686ec0ce7f0fc}{ClickEvent::ClickEventType}}\ event,\ uint16\_t\ x,\ uint16\_t\ y);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_gestures_aab4eb026b3584e77e54e14e0107aea88}{setDragThreshold}}(uint16\_t\ val)}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ dragThresholdValue\ =\ val;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ DragState\ drag;}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener}{UIEventListener}}*\ listener;}
+\DoxyCodeLine{00112\ \ \ \ \ uint16\_t\ dragThresholdValue;}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_GESTURES\_HPP}}
+
+\end{DoxyCode}

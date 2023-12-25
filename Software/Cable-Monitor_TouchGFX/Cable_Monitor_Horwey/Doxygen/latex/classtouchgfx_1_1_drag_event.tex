@@ -1,0 +1,234 @@
+\doxysection{touchgfx\+::Drag\+Event Class Reference}
+\hypertarget{classtouchgfx_1_1_drag_event}{}\label{classtouchgfx_1_1_drag_event}\index{touchgfx::DragEvent@{touchgfx::DragEvent}}
+
+
+{\ttfamily \#include $<$Drag\+Event.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Drag\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_drag_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{Drag\+Event\+Type}} \{ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6ea8e1aa801e17f568d9bad86259bb39c3e}{DRAGGED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtouchgfx_1_1_event}{touchgfx\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event\+Type}} \{ \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a37c53941adc4710fce11c6d694ec362b}{EVENT\+\_\+\+CLICK}}
+, \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a36c8095692a9b7537f99bfc827908b12}{EVENT\+\_\+\+DRAG}}
+, \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a6377ac41957e2dea4314fb564c0eac98}{EVENT\+\_\+\+GESTURE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drag_event_a32f28cf73beca964bae147c984bd5961}{Drag\+Event}} (\mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{Drag\+Event\+Type}} type, int16\+\_\+t oldX, int16\+\_\+t oldY, int16\+\_\+t newX, int16\+\_\+t newY)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drag_event_a19a490aaa3cdf3e105290143bbb40550}{Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&drag\+Event)
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drag_event_ae3e1da950886183073e64985a014aa44}{get\+OldX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a0fae3fa6849c7f14934a9021424bc9a0}{get\+OldY}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a11f3bc0cfc6ab613fe7a6c6df3c9825f}{get\+NewX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a925b4f1fd982a4e858e545806a1110f9}{get\+NewY}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{Drag\+Event\+Type}} \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a67df41cebdcbeeb545abd33797f78cf7}{get\+Type}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a35c2dfb4029059151267e0655f220ba8}{get\+DeltaX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a50e17213d96b458c3c7445cf5581faf8}{get\+DeltaY}} () const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event\+::\+Event\+Type}} \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6b1f37b423f4ef293d3e0fa355d82af6}{get\+Event\+Type}} () const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \& \mbox{\hyperlink{classtouchgfx_1_1_drag_event_abd167bd155901c5051c8b2718d479dfb}{operator=}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&drag\+Event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_event}{touchgfx\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_event_a5e7f8bff58b087455e9fd49a397e07bc}{Event}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_event_adbf7073f462dfd8340354132a2ba5bf6}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A drag event. The only drag event currently supported is DRAGGED, which will be issued every time the input system detects a drag.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_event}{Event} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}\label{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!DragEventType@{DragEventType}}
+\index{DragEventType@{DragEventType}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{DragEventType}{DragEventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{touchgfx\+::\+Drag\+Event\+::\+Drag\+Event\+Type}}}
+
+Values that represent drag event types. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRAGGED@{DRAGGED}!touchgfx::DragEvent@{touchgfx::DragEvent}}\index{touchgfx::DragEvent@{touchgfx::DragEvent}!DRAGGED@{DRAGGED}}}\Hypertarget{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6ea8e1aa801e17f568d9bad86259bb39c3e}\label{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6ea8e1aa801e17f568d9bad86259bb39c3e} 
+DRAGGED&An enum constant representing the dragged option. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_drag_event_a32f28cf73beca964bae147c984bd5961}\label{classtouchgfx_1_1_drag_event_a32f28cf73beca964bae147c984bd5961} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!DragEvent@{DragEvent}}
+\index{DragEvent@{DragEvent}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{DragEvent()}{DragEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily touchgfx\+::\+Drag\+Event\+::\+Drag\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{Drag\+Event\+Type}}}]{type,  }\item[{int16\+\_\+t}]{oldX,  }\item[{int16\+\_\+t}]{oldY,  }\item[{int16\+\_\+t}]{newX,  }\item[{int16\+\_\+t}]{newY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_drag_event}{Drag\+Event} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the drag event. \\
+\hline
+{\em oldX} & The x coordinate of the drag start position (dragged from) \\
+\hline
+{\em oldY} & The y coordinate of the drag start position (dragged from) \\
+\hline
+{\em newX} & The x coordinate of the new position (dragged to) \\
+\hline
+{\em newY} & The y coordinate of the new position (dragged to) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_drag_event_a19a490aaa3cdf3e105290143bbb40550}\label{classtouchgfx_1_1_drag_event_a19a490aaa3cdf3e105290143bbb40550} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!DragEvent@{DragEvent}}
+\index{DragEvent@{DragEvent}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{DragEvent()}{DragEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily touchgfx\+::\+Drag\+Event\+::\+Drag\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&}]{drag\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em drag\+Event} & The drag event. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_drag_event_a35c2dfb4029059151267e0655f220ba8}\label{classtouchgfx_1_1_drag_event_a35c2dfb4029059151267e0655f220ba8} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getDeltaX@{getDeltaX}}
+\index{getDeltaX@{getDeltaX}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getDeltaX()}{getDeltaX()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Drag\+Event\+::get\+DeltaX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the distance in x coordinates (how long was the drag).
+
+\begin{DoxyReturn}{Returns}
+The distance of this drag event. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_drag_event_a50e17213d96b458c3c7445cf5581faf8}\label{classtouchgfx_1_1_drag_event_a50e17213d96b458c3c7445cf5581faf8} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getDeltaY@{getDeltaY}}
+\index{getDeltaY@{getDeltaY}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getDeltaY()}{getDeltaY()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Drag\+Event\+::get\+DeltaY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the distance in y coordinates (how long was the drag).
+
+\begin{DoxyReturn}{Returns}
+The distance of this drag event. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_drag_event_a6b1f37b423f4ef293d3e0fa355d82af6}\label{classtouchgfx_1_1_drag_event_a6b1f37b423f4ef293d3e0fa355d82af6} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getEventType@{getEventType}}
+\index{getEventType@{getEventType}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getEventType()}{getEventType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event\+::\+Event\+Type}} touchgfx\+::\+Drag\+Event\+::get\+Event\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets event type.
+
+\begin{DoxyReturn}{Returns}
+The type of this event. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_event_aa4db37fe6ff139307d5847b0e2a792c2}{touchgfx\+::\+Event}}.
+
+\Hypertarget{classtouchgfx_1_1_drag_event_a11f3bc0cfc6ab613fe7a6c6df3c9825f}\label{classtouchgfx_1_1_drag_event_a11f3bc0cfc6ab613fe7a6c6df3c9825f} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getNewX@{getNewX}}
+\index{getNewX@{getNewX}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getNewX()}{getNewX()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Drag\+Event\+::get\+NewX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the new x coordinate (dragged to).
+
+\begin{DoxyReturn}{Returns}
+The new x coordinate (dragged to). 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_drag_event_a925b4f1fd982a4e858e545806a1110f9}\label{classtouchgfx_1_1_drag_event_a925b4f1fd982a4e858e545806a1110f9} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getNewY@{getNewY}}
+\index{getNewY@{getNewY}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getNewY()}{getNewY()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Drag\+Event\+::get\+NewY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the new x coordinate (dragged to).
+
+\begin{DoxyReturn}{Returns}
+The new y coordinate (dragged to). 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_drag_event_ae3e1da950886183073e64985a014aa44}\label{classtouchgfx_1_1_drag_event_ae3e1da950886183073e64985a014aa44} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getOldX@{getOldX}}
+\index{getOldX@{getOldX}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getOldX()}{getOldX()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Drag\+Event\+::get\+OldX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the old x coordinate, i.\+e. where the drag operation was started (dragged from).
+
+\begin{DoxyReturn}{Returns}
+The old x coordinate, i.\+e. where the drag operation was started (dragged from). 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_drag_event_a0fae3fa6849c7f14934a9021424bc9a0}\label{classtouchgfx_1_1_drag_event_a0fae3fa6849c7f14934a9021424bc9a0} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getOldY@{getOldY}}
+\index{getOldY@{getOldY}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getOldY()}{getOldY()}}
+{\footnotesize\ttfamily int16\+\_\+t touchgfx\+::\+Drag\+Event\+::get\+OldY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the old y coordinate, i.\+e. where the drag operation was started (dragged from).
+
+\begin{DoxyReturn}{Returns}
+The old y coordinate, i.\+e. where the drag operation was started (dragged from). 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_drag_event_a67df41cebdcbeeb545abd33797f78cf7}\label{classtouchgfx_1_1_drag_event_a67df41cebdcbeeb545abd33797f78cf7} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!getType@{getType}}
+\index{getType@{getType}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{Drag\+Event\+Type}} touchgfx\+::\+Drag\+Event\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the type of this drag event.
+
+\begin{DoxyReturn}{Returns}
+The type of this drag event. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_drag_event_abd167bd155901c5051c8b2718d479dfb}\label{classtouchgfx_1_1_drag_event_abd167bd155901c5051c8b2718d479dfb} 
+\index{touchgfx::DragEvent@{touchgfx::DragEvent}!operator=@{operator=}}
+\index{operator=@{operator=}!touchgfx::DragEvent@{touchgfx::DragEvent}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \& touchgfx\+::\+Drag\+Event\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&}]{drag\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assignment operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em drag\+Event} & The drag event.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shallow copy of this object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/events/\mbox{\hyperlink{_drag_event_8hpp}{Drag\+Event.\+hpp}}\end{DoxyCompactItemize}

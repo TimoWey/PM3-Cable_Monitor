@@ -1,0 +1,151 @@
+\doxysection{SDL\+\_\+image.\+h}
+\hypertarget{_s_d_l__image_8h_source}{}\label{_s_d_l__image_8h_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_image.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_image.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ SDL\_image:\ \ An\ example\ image\ loading\ library\ for\ use\ with\ SDL}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ Copyright\ (C)\ 1997-\/2016\ Sam\ Lantinga\ <slouken@libsdl.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ warranty.\ \ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ A\ simple\ library\ to\ load\ images\ of\ various\ formats\ as\ SDL\ surfaces\ */}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_SDL\_IMAGE\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_SDL\_IMAGE\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l_8h}{SDL.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__version_8h}{SDL\_version.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Set\ up\ for\ C\ function\ definitions,\ even\ when\ using\ C++\ */}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/*\ Printable\ format:\ "{}\%d.\%d.\%d"{},\ MAJOR,\ MINOR,\ PATCHLEVEL}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SDL\_IMAGE\_MAJOR\_VERSION\ 2}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SDL\_IMAGE\_MINOR\_VERSION\ 0}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SDL\_IMAGE\_PATCHLEVEL\ \ \ \ 1}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/*\ This\ macro\ can\ be\ used\ to\ fill\ a\ version\ structure\ with\ the\ compile-\/time}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ version\ of\ the\ SDL\_image\ library.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ SDL\_IMAGE\_VERSION(X)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ (X)-\/>major\ =\ SDL\_IMAGE\_MAJOR\_VERSION;\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ (X)-\/>minor\ =\ SDL\_IMAGE\_MINOR\_VERSION;\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ (X)-\/>patch\ =\ SDL\_IMAGE\_PATCHLEVEL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*\ This\ function\ gets\ the\ version\ of\ the\ dynamically\ linked\ SDL\_image\ library.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ it\ should\ NOT\ be\ used\ to\ fill\ a\ version\ structure,\ instead\ you\ should}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ use\ the\ SDL\_IMAGE\_VERSION()\ macro.}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_s_d_l__version}{SDL\_version}}\ *\ SDLCALL\ IMG\_Linked\_Version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ IMG\_INIT\_JPG\ =\ 0x00000001,}
+\DoxyCodeLine{00061\ \ \ \ \ IMG\_INIT\_PNG\ =\ 0x00000002,}
+\DoxyCodeLine{00062\ \ \ \ \ IMG\_INIT\_TIF\ =\ 0x00000004,}
+\DoxyCodeLine{00063\ \ \ \ \ IMG\_INIT\_WEBP\ =\ 0x00000008}
+\DoxyCodeLine{00064\ \}\ IMG\_InitFlags;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ Loads\ dynamic\ libraries\ and\ prepares\ them\ for\ use.\ \ Flags\ should\ be}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ one\ or\ more\ flags\ from\ IMG\_InitFlags\ OR'd\ together.}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ It\ returns\ the\ flags\ successfully\ initialized,\ or\ 0\ on\ failure.}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_Init(\textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{/*\ Unloads\ libraries\ loaded\ with\ IMG\_Init\ */}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ SDLCALL\ IMG\_Quit(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ Load\ an\ image\ from\ an\ SDL\ data\ source.}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ The\ 'type'\ may\ be\ one\ of:\ "{}BMP"{},\ "{}GIF"{},\ "{}PNG"{},\ etc.}}
+\DoxyCodeLine{00077\ \textcolor{comment}{}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ If\ the\ image\ format\ supports\ a\ transparent\ pixel,\ SDL\ will\ set\ the}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ colorkey\ for\ the\ surface.\ \ You\ can\ enable\ RLE\ acceleration\ on\ the}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ surface\ afterwards\ by\ calling:}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ \ \ \ SDL\_SetColorKey(image,\ SDL\_RLEACCEL,\ image-\/>format-\/>colorkey);}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadTyped\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src,\ \textcolor{keywordtype}{int}\ freesrc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *type);}
+\DoxyCodeLine{00084\ \textcolor{comment}{/*\ Convenience\ functions\ */}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_Load(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file);}
+\DoxyCodeLine{00086\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_Load\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src,\ \textcolor{keywordtype}{int}\ freesrc);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#if\ SDL\_VERSION\_ATLEAST(2,0,0)}}
+\DoxyCodeLine{00089\ \textcolor{comment}{/*\ Load\ an\ image\ directly\ into\ a\ render\ texture.}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00091\ \textcolor{keyword}{extern}\ DECLSPEC\ SDL\_Texture\ *\ SDLCALL\ IMG\_LoadTexture(SDL\_Renderer\ *renderer,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file);}
+\DoxyCodeLine{00092\ \textcolor{keyword}{extern}\ DECLSPEC\ SDL\_Texture\ *\ SDLCALL\ IMG\_LoadTexture\_RW(SDL\_Renderer\ *renderer,\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src,\ \textcolor{keywordtype}{int}\ freesrc);}
+\DoxyCodeLine{00093\ \textcolor{keyword}{extern}\ DECLSPEC\ SDL\_Texture\ *\ SDLCALL\ IMG\_LoadTextureTyped\_RW(SDL\_Renderer\ *renderer,\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src,\ \textcolor{keywordtype}{int}\ freesrc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *type);}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SDL\ 2.0\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{/*\ Functions\ to\ detect\ a\ file\ type,\ given\ a\ seekable\ source\ */}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isICO(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00098\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isCUR(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00099\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isBMP(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00100\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isGIF(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00101\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isJPG(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00102\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isLBM(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00103\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isPCX(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00104\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isPNG(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00105\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isPNM(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00106\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isTIF(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00107\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isXCF(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00108\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isXPM(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00109\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isXV(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00110\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_isWEBP(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ Individual\ loading\ functions\ */}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadICO\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00114\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadCUR\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00115\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadBMP\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00116\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadGIF\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00117\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadJPG\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00118\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadLBM\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00119\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadPCX\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00120\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadPNG\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00121\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadPNM\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00122\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadTGA\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00123\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadTIF\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00124\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadXCF\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00125\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadXPM\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00126\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadXV\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00127\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_LoadWEBP\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *src);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *\ SDLCALL\ IMG\_ReadXPMFromArray(\textcolor{keywordtype}{char}\ **xpm);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{/*\ Individual\ saving\ functions\ */}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_SavePNG(\mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *surface,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file);}
+\DoxyCodeLine{00133\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ IMG\_SavePNG\_RW(\mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}}\ *surface,\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *dst,\ \textcolor{keywordtype}{int}\ freedst);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{/*\ We'll\ use\ SDL\ for\ reporting\ errors\ */}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ IMG\_SetError\ \ \ \ SDL\_SetError}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ IMG\_GetError\ \ \ \ SDL\_GetError}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{comment}{/*\ Ends\ C\ function\ definitions\ when\ using\ C++\ */}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00141\ \}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SDL\_IMAGE\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

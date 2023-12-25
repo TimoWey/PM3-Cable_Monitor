@@ -1,0 +1,200 @@
+\doxysection{Software\+MJPEGDecoder Class Reference}
+\hypertarget{class_software_m_j_p_e_g_decoder}{}\label{class_software_m_j_p_e_g_decoder}\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+Inheritance diagram for Software\+MJPEGDecoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_software_m_j_p_e_g_decoder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_software_m_j_p_e_g_decoder_a062165a8ab74c107893a68d5d74346be}\label{class_software_m_j_p_e_g_decoder_a062165a8ab74c107893a68d5d74346be} 
+{\bfseries Software\+MJPEGDecoder} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}linebuffer)
+\item 
+virtual void \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_adb193d27a7c258adccf546c1d829bb4d}{set\+Video\+Data}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}movie, const uint32\+\_\+t length)
+\item 
+virtual void \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_a1f038495f9c3d666c446e5eec21d9f26}{set\+Video\+Data}} (\mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{touchgfx\+::\+Video\+Data\+Reader}} \&reader)
+\item 
+virtual bool \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_a0a35615904f18e90dbe1a01bff3bb5f3}{has\+Video}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_aaee62703dbb2b9a8a918845551e9aecf}{decode\+Next\+Frame}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+Buffer, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t framebuffer\+\_\+width)
+\item 
+virtual bool \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_afdf1e4b2f89f0f3bf58297d809099a32}{goto\+Next\+Frame}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_a255d8e05f56f3b1b87004a651c17fc5b}{decode\+Frame}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx\+::\+Rect}} \&area, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+Buffer, uint32\+\_\+t framebuffer\+\_\+width)
+\item 
+virtual bool \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_acb98cf6c5a2eef83825cc2acef197316}{decode\+Thumbnail}} (uint32\+\_\+t frameno, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, uint16\+\_\+t width, uint16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_aec984ad4214e1b2bf270c0f6fbf41ea5}{goto\+Frame}} (uint32\+\_\+t frameno)
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_a07c9fff84dbb5bd5dba86642f7a7fc02}{get\+Current\+Frame\+Number}} () const
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_ac09b0dd3e1c8cd2d31c274a91c88d8b5}{get\+Number\+Of\+Frames}} ()
+\item 
+virtual void \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_a0d5a8fd49d5eade8da5654f82641f8e2}{get\+Video\+Info}} (\mbox{\hyperlink{structtouchgfx_1_1_video_information}{touchgfx\+::\+Video\+Information}} \texorpdfstring{$\ast$}{*}data)
+\item 
+\Hypertarget{class_software_m_j_p_e_g_decoder_af18974121a035751fe0f6e54f3b6fb86}\label{class_software_m_j_p_e_g_decoder_af18974121a035751fe0f6e54f3b6fb86} 
+void {\bfseries set\+AVIFile\+Buffer} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, uint32\+\_\+t size)
+\item 
+AVIErrors \mbox{\hyperlink{class_software_m_j_p_e_g_decoder_a2c28f8bbcbf74c58621489ff104ec668}{get\+Last\+Error}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_j_p_e_g_decoder_a2feab99f846e2f1d721b66d067fa44eb}\label{class_m_j_p_e_g_decoder_a2feab99f846e2f1d721b66d067fa44eb} 
+enum {\bfseries AVIErrors} \{ \newline
+{\bfseries AVI\+\_\+\+NO\+\_\+\+ERROR}
+, {\bfseries AVI\+\_\+\+NO\+\_\+\+BUFFERS}
+, {\bfseries AVI\+\_\+\+NO\+\_\+\+FILE}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+NOT\+\_\+\+RIFF}
+, \newline
+{\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+HEADER\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+LIST\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+HDRL\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+AVIH\+\_\+\+NOT\+\_\+\+FOUND}
+, \newline
+{\bfseries AVI\+\_\+\+ERROR\+\_\+\+AVI\+\_\+\+HEADER\+\_\+\+TO\+\_\+\+SHORT}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+FILE\+\_\+\+BUFFER\+\_\+\+TO\+\_\+\+SMALL}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+MOVI\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+IDX1\+\_\+\+NOT\+\_\+\+FOUND}
+, \newline
+{\bfseries AVI\+\_\+\+ERROR\+\_\+\+FRAMENO\+\_\+\+TO\+\_\+\+HIGH}
+, {\bfseries AVI\+\_\+\+ERROR\+\_\+\+EOF\+\_\+\+REACHED}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_software_m_j_p_e_g_decoder_a255d8e05f56f3b1b87004a651c17fc5b}\label{class_software_m_j_p_e_g_decoder_a255d8e05f56f3b1b87004a651c17fc5b} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!decodeFrame@{decodeFrame}}
+\index{decodeFrame@{decodeFrame}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{decodeFrame()}{decodeFrame()}}
+{\footnotesize\ttfamily bool Software\+MJPEGDecoder\+::decode\+Frame (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{touchgfx\+::\+Rect}} \&}]{area,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+Buffer,  }\item[{uint32\+\_\+t}]{framebuffer\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_aaee62703dbb2b9a8a918845551e9aecf}\label{class_software_m_j_p_e_g_decoder_aaee62703dbb2b9a8a918845551e9aecf} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!decodeNextFrame@{decodeNextFrame}}
+\index{decodeNextFrame@{decodeNextFrame}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{decodeNextFrame()}{decodeNextFrame()}}
+{\footnotesize\ttfamily bool Software\+MJPEGDecoder\+::decode\+Next\+Frame (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+Buffer,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint32\+\_\+t}]{framebuffer\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_acb98cf6c5a2eef83825cc2acef197316}\label{class_software_m_j_p_e_g_decoder_acb98cf6c5a2eef83825cc2acef197316} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!decodeThumbnail@{decodeThumbnail}}
+\index{decodeThumbnail@{decodeThumbnail}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{decodeThumbnail()}{decodeThumbnail()}}
+{\footnotesize\ttfamily bool Software\+MJPEGDecoder\+::decode\+Thumbnail (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frameno,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_a07c9fff84dbb5bd5dba86642f7a7fc02}\label{class_software_m_j_p_e_g_decoder_a07c9fff84dbb5bd5dba86642f7a7fc02} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!getCurrentFrameNumber@{getCurrentFrameNumber}}
+\index{getCurrentFrameNumber@{getCurrentFrameNumber}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{getCurrentFrameNumber()}{getCurrentFrameNumber()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t Software\+MJPEGDecoder\+::get\+Current\+Frame\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_a2c28f8bbcbf74c58621489ff104ec668}\label{class_software_m_j_p_e_g_decoder_a2c28f8bbcbf74c58621489ff104ec668} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!getLastError@{getLastError}}
+\index{getLastError@{getLastError}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{getLastError()}{getLastError()}}
+{\footnotesize\ttfamily AVIErrors Software\+MJPEGDecoder\+::get\+Last\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_ac09b0dd3e1c8cd2d31c274a91c88d8b5}\label{class_software_m_j_p_e_g_decoder_ac09b0dd3e1c8cd2d31c274a91c88d8b5} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!getNumberOfFrames@{getNumberOfFrames}}
+\index{getNumberOfFrames@{getNumberOfFrames}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{getNumberOfFrames()}{getNumberOfFrames()}}
+{\footnotesize\ttfamily uint32\+\_\+t Software\+MJPEGDecoder\+::get\+Number\+Of\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_a0d5a8fd49d5eade8da5654f82641f8e2}\label{class_software_m_j_p_e_g_decoder_a0d5a8fd49d5eade8da5654f82641f8e2} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!getVideoInfo@{getVideoInfo}}
+\index{getVideoInfo@{getVideoInfo}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{getVideoInfo()}{getVideoInfo()}}
+{\footnotesize\ttfamily void Software\+MJPEGDecoder\+::get\+Video\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1_video_information}{touchgfx\+::\+Video\+Information}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_aec984ad4214e1b2bf270c0f6fbf41ea5}\label{class_software_m_j_p_e_g_decoder_aec984ad4214e1b2bf270c0f6fbf41ea5} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!gotoFrame@{gotoFrame}}
+\index{gotoFrame@{gotoFrame}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{gotoFrame()}{gotoFrame()}}
+{\footnotesize\ttfamily void Software\+MJPEGDecoder\+::goto\+Frame (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frameno }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_afdf1e4b2f89f0f3bf58297d809099a32}\label{class_software_m_j_p_e_g_decoder_afdf1e4b2f89f0f3bf58297d809099a32} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!gotoNextFrame@{gotoNextFrame}}
+\index{gotoNextFrame@{gotoNextFrame}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{gotoNextFrame()}{gotoNextFrame()}}
+{\footnotesize\ttfamily bool Software\+MJPEGDecoder\+::goto\+Next\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_a0a35615904f18e90dbe1a01bff3bb5f3}\label{class_software_m_j_p_e_g_decoder_a0a35615904f18e90dbe1a01bff3bb5f3} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!hasVideo@{hasVideo}}
+\index{hasVideo@{hasVideo}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{hasVideo()}{hasVideo()}}
+{\footnotesize\ttfamily bool Software\+MJPEGDecoder\+::has\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Check if \doxylink{class_m_j_p_e_g_decoder}{MJPEGDecoder} has a video.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the \doxylink{class_m_j_p_e_g_decoder}{MJPEGDecoder} has a video. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder_a2c1e087e1bcd41b75cc08275a3f665d8}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_adb193d27a7c258adccf546c1d829bb4d}\label{class_software_m_j_p_e_g_decoder_adb193d27a7c258adccf546c1d829bb4d} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!setVideoData@{setVideoData}}
+\index{setVideoData@{setVideoData}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{setVideoData()}{setVideoData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Software\+MJPEGDecoder\+::set\+Video\+Data (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{movie,  }\item[{const uint32\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+\Hypertarget{class_software_m_j_p_e_g_decoder_a1f038495f9c3d666c446e5eec21d9f26}\label{class_software_m_j_p_e_g_decoder_a1f038495f9c3d666c446e5eec21d9f26} 
+\index{SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}!setVideoData@{setVideoData}}
+\index{setVideoData@{setVideoData}!SoftwareMJPEGDecoder@{SoftwareMJPEGDecoder}}
+\doxysubsubsection{\texorpdfstring{setVideoData()}{setVideoData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Software\+MJPEGDecoder\+::set\+Video\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{touchgfx\+::\+Video\+Data\+Reader}} \&}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_m_j_p_e_g_decoder}{MJPEGDecoder}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Touch\+GFX/generated/simulator/include/simulator/video/Software\+MJPEGDecoder.\+hpp\item 
+Touch\+GFX/generated/simulator/src/video/Software\+MJPEGDecoder.\+cpp\end{DoxyCompactItemize}

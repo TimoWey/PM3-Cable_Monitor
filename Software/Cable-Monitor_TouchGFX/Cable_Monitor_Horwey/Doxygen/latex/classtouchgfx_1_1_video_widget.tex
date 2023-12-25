@@ -1,0 +1,450 @@
+\doxysection{touchgfx\+::Video\+Widget Class Reference}
+\hypertarget{classtouchgfx_1_1_video_widget}{}\label{classtouchgfx_1_1_video_widget}\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+
+
+{\ttfamily \#include $<$Video\+Widget.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Video\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtouchgfx_1_1_video_widget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_video_widget_a550492dadb71903596c1a00c91d27f7e}{Video\+Widget}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a5b1fd9bee1d782781123695c8eb42662}{\texorpdfstring{$\sim$}{\string~}\+Video\+Widget}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a80b6e2147b816664ee48fe1c3946888f}{play}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a9bc38cfac9a68def469a43477a9d283a}{pause}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_acb812d77eb45d86d771ed6b550adcc1f}{stop}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_video_widget_ac822e9eeb5448c29a637384ceaadc944}{is\+Playing}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_aaf8d99bfa32b83c21d4a8cf3a825fb30}{set\+Repeat}} (bool repeat) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a175e8e88a9c03a6ad06225fef4a1a6fc}{seek}} (uint32\+\_\+t frame\+Number) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a952bd70dda46fcaf6066c5209cfd6c58}{show\+Frame}} (uint32\+\_\+t frame\+Number) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_video_widget_aef98f872fa8e6a05c06d1cfc4ae9819d}{get\+Current\+Frame\+Number}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a648cd3733977e5b7f56c3e12fdbaaf77}{set\+Movie\+Ended\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \& $>$ \&callback)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a6d495f4b2171822fbee4aa4d8c09fd10}{clear\+Movie\+Ended\+Action}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a5972eb84aa0afd5952e236cdc7317b48}{set\+Frame\+Rate}} (uint32\+\_\+t ui\+\_\+frames, uint32\+\_\+t video\+\_\+frames) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_af5e20ffddf3c6f236899fa327d063e77}{set\+Video\+Data}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}movie, const uint32\+\_\+t length)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_abeb2f67bd2b29ed5369e7be51a92f914}{set\+Video\+Data}} (\mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{Video\+Data\+Reader}} \&reader)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a9f1134e833be9c353d50b04707c1fead}{get\+Video\+Information}} (\mbox{\hyperlink{structtouchgfx_1_1_video_information}{Video\+Information}} \texorpdfstring{$\ast$}{*}data) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a4668f44a78d12979b62f09fa553bc2f3}{set\+Video\+Buffer}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}const video\+Buffer)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a3d26a11ebd646e85138ff414ea6fc0b6}{set\+Video\+Buffer\+Format}} (\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} buffer\+Format, int16\+\_\+t width, int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_a1b634d478e1c0ae9d9ddeac011a8de43}{handle\+Tick\+Event}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_video_widget_aaf25cb080990f52032ca2ddb028b6dc4}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_video_widget_aaad06c30038ae33a1655ab587a32eed5}{get\+Solid\+Rect}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_widget}{touchgfx\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_widget_ad09a1834b6b28cb051ba7adb7dee997d}{get\+Last\+Child}} (int16\+\_\+t, int16\+\_\+t, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable_a7e96d82c7fcf819f57486ecc5f350c4c}{Drawable}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_a449ee29257a3cfac31bb01ad2a9a7f03}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0b8b93fb5b2af43364f8d6818485e09d}{invalidate\+Content}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad2f199fc52c4acce810f48ab5a1a88aa}{get\+Next\+Sibling}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aceb31b441310e00e8be53492143732e9}{get\+First\+Child}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aaece284803180a1581d10ecfaf08c981}{get\+Solid\+Rect\+Absolute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a67ffb816a2dd9252a3159dd8610b4a25}{get\+Visible\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}) const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_a50b898d044f548a4eaec275141dec0ca}{get\+Rect}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_adee868bcfb5c413bd3e37bdf6c649ea8}{get\+Absolute\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a58fdcf048cbd3ec550115caedaf54b2a}{translate\+Rect\+To\+Absolute}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{set\+Position}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4448236a68ced5ebd67cde7f56d872c3}{expand}} (int margin=0)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59d59e11909259d9452588f3a0180398}{center}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab7b0e3f307228823cf6f2d859cc07198}{centerX}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0392a74d988a06e28c6b3ea79076b4bd}{centerY}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a1870ba0e9ef62c1eb6a19a9013cf6895}{getX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a6451fb9a4bc22e6e4a0950844e5104de}{getY}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{get\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{get\+Height}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}} (int16\+\_\+t x)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3aae6f7f6cb9a43a53d26772d7eeb1fa}{setY}} (int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{set\+XY}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{set\+Width}} (int16\+\_\+t width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{set\+Height}} (int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a181c4ecac0494440425e5b5afa4ce109}{child\+Geometry\+Changed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9981eb2f8411aff05eaf19994f3ee293}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_acf2ed17311bb7ca228dabc3195d3225d}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{set\+Width\+Height}} (int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2f2d18d6edf70b6ec51d843c52c826c8}{set\+Position}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9b84be70989de6d15abb2c4bfe445707}{set\+XY}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7973faddf5b669b1ba7570b90053aeed}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a24b027fa86aebb44768b63b0d534e6b4}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9aeaa5baa9e47055a17f11968dbc1b37}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&other)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a341b62a9ebbe43ce97b47e1effd32a8b}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab27c897bb2d508cdf67ea7ffcfb40b14}{set\+Visible}} (bool vis)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a68b74845725451fda32fa94da7b7be18}{set\+Touchable}} (bool touch)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d9fac715c5114951a23492c6cc78b25}{is\+Visible}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a30a509142ffe76e5a2ed46aab5adf19b}{is\+Touchable}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_afefe9761c1f3a27944f317a47c2f0636}{get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a37d7afe3e065453bc3d23481fa446a55}{move\+Relative}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a602c55c069e516153167c3ebc7da4c0d}{move\+To}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_adab6837b035a409dde74c51f622a6e63}{draw\+To\+Dynamic\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em Pointer to this drawable\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2c34a36e7eb05c8a0e1e5b0c4d664a9f}{next\+Sibling}}
+\item 
+bool {\bfseries touchable}
+\begin{DoxyCompactList}\small\item\em True if this drawable should receive touch events. \end{DoxyCompactList}\item 
+bool {\bfseries visible}
+\begin{DoxyCompactList}\small\item\em True if this drawable should be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classtouchgfx_1_1_widget}{Widget} for displaying video.
+
+The \doxylink{classtouchgfx_1_1_widget}{Widget} interacts with a \doxylink{classtouchgfx_1_1_video_controller}{Video\+Controller} instance.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_video_controller}{Video\+Controller} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_video_widget_a550492dadb71903596c1a00c91d27f7e}\label{classtouchgfx_1_1_video_widget_a550492dadb71903596c1a00c91d27f7e} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!VideoWidget@{VideoWidget}}
+\index{VideoWidget@{VideoWidget}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{VideoWidget()}{VideoWidget()}}
+{\footnotesize\ttfamily touchgfx\+::\+Video\+Widget\+::\+Video\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor. \Hypertarget{classtouchgfx_1_1_video_widget_a5b1fd9bee1d782781123695c8eb42662}\label{classtouchgfx_1_1_video_widget_a5b1fd9bee1d782781123695c8eb42662} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!````~VideoWidget@{\texorpdfstring{$\sim$}{\string~}VideoWidget}}
+\index{````~VideoWidget@{\texorpdfstring{$\sim$}{\string~}VideoWidget}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VideoWidget()}{\string~VideoWidget()}}
+{\footnotesize\ttfamily touchgfx\+::\+Video\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Video\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor. Unregisters the \doxylink{classtouchgfx_1_1_widget}{Widget} from the Controller. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_video_widget_a6d495f4b2171822fbee4aa4d8c09fd10}\label{classtouchgfx_1_1_video_widget_a6d495f4b2171822fbee4aa4d8c09fd10} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!clearMovieEndedAction@{clearMovieEndedAction}}
+\index{clearMovieEndedAction@{clearMovieEndedAction}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{clearMovieEndedAction()}{clearMovieEndedAction()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::clear\+Movie\+Ended\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears the movie ended action previously set by set\+Movie\+Ended\+Action.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_video_widget_a648cd3733977e5b7f56c3e12fdbaaf77}{set\+Movie\+Ended\+Action} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_video_widget_aaf25cb080990f52032ca2ddb028b6dc4}\label{classtouchgfx_1_1_video_widget_aaf25cb080990f52032ca2ddb028b6dc4} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!draw@{draw}}
+\index{draw@{draw}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Draw this drawable. It is a requirement that the draw implementation does not draw outside the region specified by invalidated\+Area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em invalidated\+Area} & The sub-\/region of this drawable that needs to be redrawn, expressed in coordinates relative to its parent (e.\+g. for a complete redraw, invalidated\+Area will be (0, 0, width, height). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9ad1411de4b9e2c6c6abb107d349c021}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_video_widget_aef98f872fa8e6a05c06d1cfc4ae9819d}\label{classtouchgfx_1_1_video_widget_aef98f872fa8e6a05c06d1cfc4ae9819d} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!getCurrentFrameNumber@{getCurrentFrameNumber}}
+\index{getCurrentFrameNumber@{getCurrentFrameNumber}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{getCurrentFrameNumber()}{getCurrentFrameNumber()}}
+{\footnotesize\ttfamily uint32\+\_\+t touchgfx\+::\+Video\+Widget\+::get\+Current\+Frame\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the current frame number.
+
+\begin{DoxyReturn}{Returns}
+Returns the current frame number. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_video_widget_aaad06c30038ae33a1655ab587a32eed5}\label{classtouchgfx_1_1_video_widget_aaad06c30038ae33a1655ab587a32eed5} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!getSolidRect@{getSolidRect}}
+\index{getSolidRect@{getSolidRect}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{getSolidRect()}{getSolidRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} touchgfx\+::\+Video\+Widget\+::get\+Solid\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get (the largest possible) rectangle that is guaranteed to be solid (opaque). This information is important, as any \doxylink{classtouchgfx_1_1_drawable}{Drawable} underneath the solid area does not need to be drawn.
+
+\begin{DoxyReturn}{Returns}
+The solid rectangle part of the \doxylink{classtouchgfx_1_1_drawable}{Drawable}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The rectangle returned must be relative to upper left corner of the \doxylink{classtouchgfx_1_1_drawable}{Drawable}, meaning that a completely solid widget should return the full size \doxylink{classtouchgfx_1_1_rect}{Rect}(0, 0, \doxylink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{get\+Width()}, \doxylink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{get\+Height()}). If no area can be guaranteed to be solid, an empty \doxylink{classtouchgfx_1_1_rect}{Rect} must be returned. Failing to return the correct rectangle may result in errors on the display. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab699c8781fc81aed49c46ff19b30b0dd}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_video_widget_a9f1134e833be9c353d50b04707c1fead}\label{classtouchgfx_1_1_video_widget_a9f1134e833be9c353d50b04707c1fead} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!getVideoInformation@{getVideoInformation}}
+\index{getVideoInformation@{getVideoInformation}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{getVideoInformation()}{getVideoInformation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::get\+Video\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1_video_information}{Video\+Information}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption}) const}
+
+Get Video information.
+
+Get information from the video data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em data} & Pointer to \doxylink{structtouchgfx_1_1_video_information}{Video\+Information} where information should be stored. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_a1b634d478e1c0ae9d9ddeac011a8de43}\label{classtouchgfx_1_1_video_widget_a1b634d478e1c0ae9d9ddeac011a8de43} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called periodically by the framework if the \doxylink{classtouchgfx_1_1_drawable}{Drawable} instance has subscribed to timer ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb}{Application\+::register\+Timer\+Widget} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d0b43ec46e2644959854fdd697d2bc8}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_video_widget_ac822e9eeb5448c29a637384ceaadc944}\label{classtouchgfx_1_1_video_widget_ac822e9eeb5448c29a637384ceaadc944} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!isPlaying@{isPlaying}}
+\index{isPlaying@{isPlaying}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{isPlaying()}{isPlaying()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Video\+Widget\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Check if the video is playing (not paused or stopped).
+
+\begin{DoxyReturn}{Returns}
+Returns true if the video is playing. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_video_widget_a9bc38cfac9a68def469a43477a9d283a}\label{classtouchgfx_1_1_video_widget_a9bc38cfac9a68def469a43477a9d283a} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!pause@{pause}}
+\index{pause@{pause}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Pause the video. \Hypertarget{classtouchgfx_1_1_video_widget_a80b6e2147b816664ee48fe1c3946888f}\label{classtouchgfx_1_1_video_widget_a80b6e2147b816664ee48fe1c3946888f} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!play@{play}}
+\index{play@{play}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Play the video. \Hypertarget{classtouchgfx_1_1_video_widget_a175e8e88a9c03a6ad06225fef4a1a6fc}\label{classtouchgfx_1_1_video_widget_a175e8e88a9c03a6ad06225fef4a1a6fc} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!seek@{seek}}
+\index{seek@{seek}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::seek (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Number }\end{DoxyParamCaption}) const}
+
+Seek to specific frame. Frame number 1 is the first frame. The display is not updated updated unless the video is playing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Number} & The frame number to seek to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_video_widget_a952bd70dda46fcaf6066c5209cfd6c58}{show\+Frame} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_video_widget_a5972eb84aa0afd5952e236cdc7317b48}\label{classtouchgfx_1_1_video_widget_a5972eb84aa0afd5952e236cdc7317b48} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!setFrameRate@{setFrameRate}}
+\index{setFrameRate@{setFrameRate}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{setFrameRate()}{setFrameRate()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ui\+\_\+frames,  }\item[{uint32\+\_\+t}]{video\+\_\+frames }\end{DoxyParamCaption}) const}
+
+Sets the frame rate of the video.
+
+To get 20 video frames pr second on a 60 fps display use video\+\_\+frames = 20 and ui\+\_\+frames = 60.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\+\_\+frames} & Number of UI frames (divider) \\
+\hline
+{\em video\+\_\+frames} & Number of video\+\_\+frames (dividend) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_a648cd3733977e5b7f56c3e12fdbaaf77}\label{classtouchgfx_1_1_video_widget_a648cd3733977e5b7f56c3e12fdbaaf77} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!setMovieEndedAction@{setMovieEndedAction}}
+\index{setMovieEndedAction@{setMovieEndedAction}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{setMovieEndedAction()}{setMovieEndedAction()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::set\+Movie\+Ended\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_video_widget}{Video\+Widget}} \& $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the movie has ended. If the video is set to repeat, the action is also triggered when the animation starts over.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback is executed when done. The callback is given the \doxylink{classtouchgfx_1_1_video_widget}{Video\+Widget}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_aaf8d99bfa32b83c21d4a8cf3a825fb30}\label{classtouchgfx_1_1_video_widget_aaf8d99bfa32b83c21d4a8cf3a825fb30} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!setRepeat@{setRepeat}}
+\index{setRepeat@{setRepeat}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{setRepeat()}{setRepeat()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::set\+Repeat (\begin{DoxyParamCaption}\item[{bool}]{repeat }\end{DoxyParamCaption}) const}
+
+Set repeat mode. When set the video is restarted when the end is reached.
+
+
+\begin{DoxyParams}{Parameters}
+{\em repeat} & When true, the video is repeated. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_a4668f44a78d12979b62f09fa553bc2f3}\label{classtouchgfx_1_1_video_widget_a4668f44a78d12979b62f09fa553bc2f3} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!setVideoBuffer@{setVideoBuffer}}
+\index{setVideoBuffer@{setVideoBuffer}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{setVideoBuffer()}{setVideoBuffer()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::set\+Video\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{video\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set video buffer data. Only used when video frames are decoded to a buffer and not directly to the framebuffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em video\+Buffer} & Video buffer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_a3d26a11ebd646e85138ff414ea6fc0b6}\label{classtouchgfx_1_1_video_widget_a3d26a11ebd646e85138ff414ea6fc0b6} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!setVideoBufferFormat@{setVideoBufferFormat}}
+\index{setVideoBufferFormat@{setVideoBufferFormat}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{setVideoBufferFormat()}{setVideoBufferFormat()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::set\+Video\+Buffer\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}}}]{buffer\+Format,  }\item[{int16\+\_\+t}]{width,  }\item[{int16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set video buffer format. Only used when video frames are decoded to a buffer and not directly to the framebuffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Format} & Format of the video\+Buffer (RGB565 or RGB888) \\
+\hline
+{\em width} & Width of the video\+Buffer in pixels \\
+\hline
+{\em height} & Height of the video\+Buffer in pixels \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_af5e20ffddf3c6f236899fa327d063e77}\label{classtouchgfx_1_1_video_widget_af5e20ffddf3c6f236899fa327d063e77} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!setVideoData@{setVideoData}}
+\index{setVideoData@{setVideoData}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{setVideoData()}{setVideoData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::set\+Video\+Data (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{movie,  }\item[{const uint32\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Set the video data for the stream. The video is paused and set to start on the first frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie} & Pointer to the video data. \\
+\hline
+{\em length} & Length of the vide data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_abeb2f67bd2b29ed5369e7be51a92f914}\label{classtouchgfx_1_1_video_widget_abeb2f67bd2b29ed5369e7be51a92f914} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!setVideoData@{setVideoData}}
+\index{setVideoData@{setVideoData}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{setVideoData()}{setVideoData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::set\+Video\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_video_data_reader}{Video\+Data\+Reader}} \&}]{reader }\end{DoxyParamCaption})}
+
+Set the video data for the stream. The video is paused and set to start on the first frame.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em reader} & Reference to a \doxylink{classtouchgfx_1_1_video_data_reader}{Video\+Data\+Reader} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_video_widget_a952bd70dda46fcaf6066c5209cfd6c58}\label{classtouchgfx_1_1_video_widget_a952bd70dda46fcaf6066c5209cfd6c58} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!showFrame@{showFrame}}
+\index{showFrame@{showFrame}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{showFrame()}{showFrame()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::show\+Frame (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Number }\end{DoxyParamCaption}) const}
+
+Seek to a specific frame and update the display. Equal to seek if the video is playing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Number} & The frame number to seek to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_video_widget_a175e8e88a9c03a6ad06225fef4a1a6fc}{seek} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_video_widget_acb812d77eb45d86d771ed6b550adcc1f}\label{classtouchgfx_1_1_video_widget_acb812d77eb45d86d771ed6b550adcc1f} 
+\index{touchgfx::VideoWidget@{touchgfx::VideoWidget}!stop@{stop}}
+\index{stop@{stop}!touchgfx::VideoWidget@{touchgfx::VideoWidget}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Video\+Widget\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Stop the video. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/\mbox{\hyperlink{_video_widget_8hpp}{Video\+Widget.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/touchgfx/widgets/Video\+Widget.\+cpp\end{DoxyCompactItemize}

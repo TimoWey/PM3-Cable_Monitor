@@ -1,0 +1,107 @@
+\doxysection{touchgfx\+::Abstract\+Painter\+ARGB2222 Class Reference}
+\hypertarget{classtouchgfx_1_1_abstract_painter_a_r_g_b2222}{}\label{classtouchgfx_1_1_abstract_painter_a_r_g_b2222}\index{touchgfx::AbstractPainterARGB2222@{touchgfx::AbstractPainterARGB2222}}
+
+
+{\ttfamily \#include $<$Abstract\+Painter\+ARGB2222.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Abstract\+Painter\+ARGB2222\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtouchgfx_1_1_abstract_painter_a_r_g_b2222}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a_r_g_b2222_aeb438632b805e809de3e6e5a0f7a1506}{alpha\+Blend}} (uint8\+\_\+t newpix, uint8\+\_\+t bufpix, uint8\+\_\+t alpha) const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a_r_g_b2222_a47de9087348c41bf916d2f6f3830f408}{alpha\+Blend}} (uint8\+\_\+t R, uint8\+\_\+t G, uint8\+\_\+t B, uint8\+\_\+t bufpix, uint8\+\_\+t alpha) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{touchgfx\+::\+Abstract\+Painter}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a7f500d1a76e9f37e5b1b26de084c0960}{Abstract\+Painter}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a40573f0f6b29c74cf8fb1671630f6740}{\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2}{HAL\+::\+Rendering\+Method}} \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a7bdf21d724d7b5c065d8ec13ed9fea2f}{get\+Rendering\+Method}} () const
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a75ed1fcb8fb4cc3b763e18dc0d41b891}{setup}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&widget\+Rect) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a9a3ed818c28e1ac27e5a2f775261fced}{tear\+Down}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a342e6a1866ecc21da71b23cc94c3d55b}{framebuffer\+To\+Display}} (int16\+\_\+t \&widgetX, int16\+\_\+t \&widgetY) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_ad4cbec54a9cf1f2af43689ddfea46653}{paint}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}destination, int16\+\_\+t offset, int16\+\_\+t widgetX, int16\+\_\+t widgetY, int16\+\_\+t count, uint8\+\_\+t alpha) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{touchgfx\+::\+Abstract\+Painter}}}
+\begin{DoxyCompactItemize}
+\item 
+static FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a3d1c29e0a27ead715b4928e02700f27c}{compatible\+Framebuffer}} (\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} format)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{touchgfx\+::\+Abstract\+Painter}}}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t {\bfseries widget\+Width}
+\begin{DoxyCompactList}\small\item\em The width of the widget on screen, used by \doxylink{classtouchgfx_1_1_abstract_painter_a342e6a1866ecc21da71b23cc94c3d55b}{framebuffer\+To\+Display()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classtouchgfx_1_1_abstract_painter_a_r_g_b2222}{Abstract\+Painter\+ARGB2222} class is an abstract class for creating a painter to draw on a ARGB2222 display using \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_painter}{Abstract\+Painter} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_a_r_g_b2222_aeb438632b805e809de3e6e5a0f7a1506}\label{classtouchgfx_1_1_abstract_painter_a_r_g_b2222_aeb438632b805e809de3e6e5a0f7a1506} 
+\index{touchgfx::AbstractPainterARGB2222@{touchgfx::AbstractPainterARGB2222}!alphaBlend@{alphaBlend}}
+\index{alphaBlend@{alphaBlend}!touchgfx::AbstractPainterARGB2222@{touchgfx::AbstractPainterARGB2222}}
+\doxysubsubsection{\texorpdfstring{alphaBlend()}{alphaBlend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+Abstract\+Painter\+ARGB2222\+::alpha\+Blend (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{newpix,  }\item[{uint8\+\_\+t}]{bufpix,  }\item[{uint8\+\_\+t}]{alpha }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Mix colors from a new pixel and a buffer pixel with the given alpha applied to the new pixel, and the inverse alpha applied to the buffer pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em newpix} & The new pixel value. \\
+\hline
+{\em bufpix} & The buffer pixel value. \\
+\hline
+{\em alpha} & The alpha to apply to the new pixel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of blending the two colors into a new color. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_a_r_g_b2222_a47de9087348c41bf916d2f6f3830f408}\label{classtouchgfx_1_1_abstract_painter_a_r_g_b2222_a47de9087348c41bf916d2f6f3830f408} 
+\index{touchgfx::AbstractPainterARGB2222@{touchgfx::AbstractPainterARGB2222}!alphaBlend@{alphaBlend}}
+\index{alphaBlend@{alphaBlend}!touchgfx::AbstractPainterARGB2222@{touchgfx::AbstractPainterARGB2222}}
+\doxysubsubsection{\texorpdfstring{alphaBlend()}{alphaBlend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint8\+\_\+t touchgfx\+::\+Abstract\+Painter\+ARGB2222\+::alpha\+Blend (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{R,  }\item[{uint8\+\_\+t}]{G,  }\item[{uint8\+\_\+t}]{B,  }\item[{uint8\+\_\+t}]{bufpix,  }\item[{uint8\+\_\+t}]{alpha }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Mix colors from a new pixel and a buffer pixel with the given alpha applied to the new pixel, and the inverse alpha applied to the buffer pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & The red color. \\
+\hline
+{\em G} & The green color. \\
+\hline
+{\em B} & The blue color. \\
+\hline
+{\em bufpix} & The buffer pixel value. \\
+\hline
+{\em alpha} & The alpha of the R,G,B.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of blending the two colors into a new color. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/canvas/\mbox{\hyperlink{_abstract_painter_a_r_g_b2222_8hpp}{Abstract\+Painter\+ARGB2222.\+hpp}}\end{DoxyCompactItemize}

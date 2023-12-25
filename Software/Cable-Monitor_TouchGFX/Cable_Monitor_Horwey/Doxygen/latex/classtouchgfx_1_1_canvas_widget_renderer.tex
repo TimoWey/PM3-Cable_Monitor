@@ -1,0 +1,94 @@
+\doxysection{touchgfx\+::Canvas\+Widget\+Renderer Class Reference}
+\hypertarget{classtouchgfx_1_1_canvas_widget_renderer}{}\label{classtouchgfx_1_1_canvas_widget_renderer}\index{touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}}
+
+
+{\ttfamily \#include $<$Canvas\+Widget\+Renderer.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget_renderer_ac82b85fbe34b0ca13b30f7472c7feb90}{setup\+Buffer}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, unsigned buffer\+Size)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget_renderer_ad79813405fd32d55b2a877ab4ce7bc5a}{reset\+Buffer}} ()
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget_renderer_a29f20b33c9334a61cecd23d6b3e29f3c}{has\+Buffer}} ()
+\item 
+static Cell \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget_renderer_a05008a396b94df97896f1d85a13ca989}{get\+Outline\+Buffer}} ()
+\item 
+static unsigned int \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget_renderer_a2dca4d88257520254f9ea7ef1fb94ccd}{get\+Outline\+Buffer\+Size}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for supporting drawing of figures. This class holds the memory which is used by the underlying algorithms. \doxylink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget} will not allocate memory dynamically, but will use memory from the buffer passed to \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer}. When using the Touch\+GFX simulator, it is also possible to get a report on the actual amount of memory used for drawing with \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer} to help adjusting the buffer size.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_widget}{Widget}, set\+Write\+Memory\+Usage\+Report, get\+Write\+Memory\+Usage\+Report 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_canvas_widget_renderer_a05008a396b94df97896f1d85a13ca989}\label{classtouchgfx_1_1_canvas_widget_renderer_a05008a396b94df97896f1d85a13ca989} 
+\index{touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}!getOutlineBuffer@{getOutlineBuffer}}
+\index{getOutlineBuffer@{getOutlineBuffer}!touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}}
+\doxysubsubsection{\texorpdfstring{getOutlineBuffer()}{getOutlineBuffer()}}
+{\footnotesize\ttfamily static Cell \texorpdfstring{$\ast$}{*} touchgfx\+::\+Canvas\+Widget\+Renderer\+::get\+Outline\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets pointer to memory used for Cell objects in Outline.
+
+\begin{DoxyReturn}{Returns}
+Pointer to memory used internally by Outline. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_canvas_widget_renderer_a2dca4d88257520254f9ea7ef1fb94ccd}\label{classtouchgfx_1_1_canvas_widget_renderer_a2dca4d88257520254f9ea7ef1fb94ccd} 
+\index{touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}!getOutlineBufferSize@{getOutlineBufferSize}}
+\index{getOutlineBufferSize@{getOutlineBufferSize}!touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}}
+\doxysubsubsection{\texorpdfstring{getOutlineBufferSize()}{getOutlineBufferSize()}}
+{\footnotesize\ttfamily static unsigned int touchgfx\+::\+Canvas\+Widget\+Renderer\+::get\+Outline\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets size of memory area used for Cell objects in Outline.
+
+\begin{DoxyReturn}{Returns}
+Size of memory area used internally by Outline. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_canvas_widget_renderer_a29f20b33c9334a61cecd23d6b3e29f3c}\label{classtouchgfx_1_1_canvas_widget_renderer_a29f20b33c9334a61cecd23d6b3e29f3c} 
+\index{touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}!hasBuffer@{hasBuffer}}
+\index{hasBuffer@{hasBuffer}!touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}}
+\doxysubsubsection{\texorpdfstring{hasBuffer()}{hasBuffer()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+Canvas\+Widget\+Renderer\+::has\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Query if \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer} has been initialized with a buffer.
+
+\begin{DoxyReturn}{Returns}
+True if a buffer has been setup. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_canvas_widget_renderer_ad79813405fd32d55b2a877ab4ce7bc5a}\label{classtouchgfx_1_1_canvas_widget_renderer_ad79813405fd32d55b2a877ab4ce7bc5a} 
+\index{touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}!resetBuffer@{resetBuffer}}
+\index{resetBuffer@{resetBuffer}!touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}}
+\doxysubsubsection{\texorpdfstring{resetBuffer()}{resetBuffer()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Canvas\+Widget\+Renderer\+::reset\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Removes references to a buffer previously setup using \doxylink{classtouchgfx_1_1_canvas_widget_renderer_ac82b85fbe34b0ca13b30f7472c7feb90}{setup\+Buffer()}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_canvas_widget_renderer_ac82b85fbe34b0ca13b30f7472c7feb90}{setup\+Buffer} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_canvas_widget_renderer_ac82b85fbe34b0ca13b30f7472c7feb90}\label{classtouchgfx_1_1_canvas_widget_renderer_ac82b85fbe34b0ca13b30f7472c7feb90} 
+\index{touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}!setupBuffer@{setupBuffer}}
+\index{setupBuffer@{setupBuffer}!touchgfx::CanvasWidgetRenderer@{touchgfx::CanvasWidgetRenderer}}
+\doxysubsubsection{\texorpdfstring{setupBuffer()}{setupBuffer()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Canvas\+Widget\+Renderer\+::setup\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{unsigned}]{buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Setup the buffers used by \doxylink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & Buffer reserved for \doxylink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget}. \\
+\hline
+ & {\em buffer\+Size} & The size of the buffer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/canvas\+\_\+widget\+\_\+renderer/\mbox{\hyperlink{_canvas_widget_renderer_8hpp}{Canvas\+Widget\+Renderer.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,278 @@
+\doxysection{touchgfx\+::LCD\+::Draw\+Texture\+Map\+Scan\+Line\+Base Class Reference}
+\hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+
+
+{\ttfamily \#include $<$LCD.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a151960e10586a6cd7abacb0eb1552667}{\texorpdfstring{$\sim$}{\string~}\+Draw\+Texture\+Map\+Scan\+Line\+Base}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a99908966a1d4731ad25b6fb41172983a}{draw\+Texture\+Map\+Scan\+Line\+Subdivisions}} (int subdivisions, const int width\+Mod\+Length, int pixels\+To\+Draw, const int affine\+Length, float one\+Over\+ZRight, float UOver\+ZRight, float VOver\+ZRight, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} U, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} V, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} deltaU, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} deltaV, float ULeft, float VLeft, float URight, float VRight, float ZRight, const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&dest, const int destX, const int destY, const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&texture, uint8\+\_\+t alpha, const float d\+One\+Over\+Zd\+XAff, const float d\+UOver\+Zd\+XAff, const float d\+VOver\+Zd\+XAff)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION void \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a10c46d36aa1e357d8f442f1eea19e1af}{draw\+Texture\+Map\+Next\+Subdivision}} (float \&ULeft, float \&VLeft, float \&ZRight, float \&URight, float \&VRight, float \&one\+Over\+ZRight, const float d\+One\+Over\+Zd\+XAff, float \&UOver\+ZRight, const float d\+UOver\+Zd\+XAff, float \&VOver\+ZRight, const float d\+VOver\+Zd\+XAff, const int affine\+Length, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&U, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&V, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&deltaU, \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&deltaV)
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a961c81ceb720e815d29ad2910371c589}{is1\+Inside}} (int value, int limit) const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a3f5fe01b739d47b409a95c0a4aaa7031}{is1x1\+Inside}} (int x, int y, int width, int height) const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a90e9218a2b917698ee7463ffeb785661}{is2\+Inside}} (int value, int limit) const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_aac062d2e79f393e13c9b53b754301260}{is2x2\+Inside}} (int x, int y, int width, int height) const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a6903c4bfc61f6bd055447a6af12c3888}{is2\+Partially\+Inside}} (int value, int limit) const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_aa96d25af908f777a51e7e2834c32d412}{is2x2\+Partially\+Inside}} (int x, int y, int width, int height) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a227b4466abb99e7fd023809e4f30ad7a}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a227b4466abb99e7fd023809e4f30ad7a} 
+static const \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} {\bfseries half} = 0x8000
+\begin{DoxyCompactList}\small\item\em 1/2 in fixed16\+\_\+16 format \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for drawing scanline by the texture mapper. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a151960e10586a6cd7abacb0eb1552667}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a151960e10586a6cd7abacb0eb1552667} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!````~DrawTextureMapScanLineBase@{\texorpdfstring{$\sim$}{\string~}DrawTextureMapScanLineBase}}
+\index{````~DrawTextureMapScanLineBase@{\texorpdfstring{$\sim$}{\string~}DrawTextureMapScanLineBase}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DrawTextureMapScanLineBase()}{\string~DrawTextureMapScanLineBase()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::\texorpdfstring{$\sim$}{\string~}\+Draw\+Texture\+Map\+Scan\+Line\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base}{Draw\+Texture\+Map\+Scan\+Line\+Base} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a10c46d36aa1e357d8f442f1eea19e1af}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a10c46d36aa1e357d8f442f1eea19e1af} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!drawTextureMapNextSubdivision@{drawTextureMapNextSubdivision}}
+\index{drawTextureMapNextSubdivision@{drawTextureMapNextSubdivision}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{drawTextureMapNextSubdivision()}{drawTextureMapNextSubdivision()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION void touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::draw\+Texture\+Map\+Next\+Subdivision (\begin{DoxyParamCaption}\item[{float \&}]{ULeft,  }\item[{float \&}]{VLeft,  }\item[{float \&}]{ZRight,  }\item[{float \&}]{URight,  }\item[{float \&}]{VRight,  }\item[{float \&}]{one\+Over\+ZRight,  }\item[{const float}]{d\+One\+Over\+Zd\+XAff,  }\item[{float \&}]{UOver\+ZRight,  }\item[{const float}]{d\+UOver\+Zd\+XAff,  }\item[{float \&}]{VOver\+ZRight,  }\item[{const float}]{d\+VOver\+Zd\+XAff,  }\item[{const int}]{affine\+Length,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&}]{U,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&}]{V,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&}]{deltaU,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}} \&}]{deltaV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Draw texture map next subdivision.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em ULeft} & U left. \\
+\hline
+\mbox{\texttt{ out}}  & {\em VLeft} & V left. \\
+\hline
+\mbox{\texttt{ out}}  & {\em ZRight} & Z right. \\
+\hline
+\mbox{\texttt{ out}}  & {\em URight} & U right. \\
+\hline
+\mbox{\texttt{ out}}  & {\em VRight} & V right. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em one\+Over\+ZRight} & 1/Z right. \\
+\hline
+ & {\em d\+One\+Over\+Zd\+XAff} & d1/\+ZdX affine. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em UOver\+ZRight} & U/Z right. \\
+\hline
+ & {\em d\+UOver\+Zd\+XAff} & d\+U/\+ZdX affine. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em VOver\+ZRight} & V/Z right. \\
+\hline
+ & {\em d\+VOver\+Zd\+XAff} & d\+V/\+ZdX affine. \\
+\hline
+ & {\em affine\+Length} & Length of the affine. \\
+\hline
+\mbox{\texttt{ out}}  & {\em U} & \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} X in fixed16\+\_\+16. \\
+\hline
+\mbox{\texttt{ out}}  & {\em V} & \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} Y in fixed16\+\_\+16. \\
+\hline
+\mbox{\texttt{ out}}  & {\em deltaU} & U delta. \\
+\hline
+\mbox{\texttt{ out}}  & {\em deltaV} & V delta. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a99908966a1d4731ad25b6fb41172983a}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a99908966a1d4731ad25b6fb41172983a} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!drawTextureMapScanLineSubdivisions@{drawTextureMapScanLineSubdivisions}}
+\index{drawTextureMapScanLineSubdivisions@{drawTextureMapScanLineSubdivisions}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{drawTextureMapScanLineSubdivisions()}{drawTextureMapScanLineSubdivisions()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::draw\+Texture\+Map\+Scan\+Line\+Subdivisions (\begin{DoxyParamCaption}\item[{int}]{subdivisions,  }\item[{const int}]{width\+Mod\+Length,  }\item[{int}]{pixels\+To\+Draw,  }\item[{const int}]{affine\+Length,  }\item[{float}]{one\+Over\+ZRight,  }\item[{float}]{UOver\+ZRight,  }\item[{float}]{VOver\+ZRight,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}}}]{U,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}}}]{V,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}}}]{deltaU,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\+\_\+16}}}]{deltaV,  }\item[{float}]{ULeft,  }\item[{float}]{VLeft,  }\item[{float}]{URight,  }\item[{float}]{VRight,  }\item[{float}]{ZRight,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_drawing_surface}{Drawing\+Surface}} \&}]{dest,  }\item[{const int}]{destX,  }\item[{const int}]{destY,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_texture_surface}{Texture\+Surface}} \&}]{texture,  }\item[{uint8\+\_\+t}]{alpha,  }\item[{const float}]{d\+One\+Over\+Zd\+XAff,  }\item[{const float}]{d\+UOver\+Zd\+XAff,  }\item[{const float}]{d\+VOver\+Zd\+XAff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draw texture map scan line subdivisions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em subdivisions} & The number of subdivisions. \\
+\hline
+{\em width\+Mod\+Length} & Remainder of length (after subdivisions). \\
+\hline
+{\em pixels\+To\+Draw} & The pixels to draw. \\
+\hline
+{\em affine\+Length} & Length of one subdivision. \\
+\hline
+{\em one\+Over\+ZRight} & 1/Z right. \\
+\hline
+{\em UOver\+ZRight} & U/Z right. \\
+\hline
+{\em VOver\+ZRight} & V/Z right. \\
+\hline
+{\em U} & U Coordinate in fixed16\+\_\+16 notation. \\
+\hline
+{\em V} & V Coordinate in fixed16\+\_\+16 notation. \\
+\hline
+{\em deltaU} & U delta to get to next pixel coordinate. \\
+\hline
+{\em deltaV} & V delta to get to next pixel coordinate. \\
+\hline
+{\em ULeft} & The left U. \\
+\hline
+{\em VLeft} & The left V. \\
+\hline
+{\em URight} & The right U. \\
+\hline
+{\em VRight} & The right V. \\
+\hline
+{\em ZRight} & The right Z. \\
+\hline
+{\em dest} & Destination drawing surface. \\
+\hline
+{\em destX} & Destination x coordinate. \\
+\hline
+{\em destY} & Destination y coordinate. \\
+\hline
+{\em texture} & The texture. \\
+\hline
+{\em alpha} & The global alpha. \\
+\hline
+{\em d\+One\+Over\+Zd\+XAff} & 1/\+ZdX affine. \\
+\hline
+{\em d\+UOver\+Zd\+XAff} & U/\+ZdX affine. \\
+\hline
+{\em d\+VOver\+Zd\+XAff} & V/\+ZdX affine. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a961c81ceb720e815d29ad2910371c589}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a961c81ceb720e815d29ad2910371c589} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!is1Inside@{is1Inside}}
+\index{is1Inside@{is1Inside}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{is1Inside()}{is1Inside()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::is1\+Inside (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{limit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Check if value is inside \mbox{[}0..limit\mbox{[}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to check. \\
+\hline
+\mbox{\texttt{ in}}  & {\em limit} & Upper limit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if value is inside given limit. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a3f5fe01b739d47b409a95c0a4aaa7031}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a3f5fe01b739d47b409a95c0a4aaa7031} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!is1x1Inside@{is1x1Inside}}
+\index{is1x1Inside@{is1x1Inside}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{is1x1Inside()}{is1x1Inside()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::is1x1\+Inside (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Check if (x,y) is inside (\mbox{[}0..width\mbox{[}, \mbox{[}0..height\mbox{[})
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & X coordinate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Y coordinate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & X limit. \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & Y limit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if (x,y) is inside given limits. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a90e9218a2b917698ee7463ffeb785661}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a90e9218a2b917698ee7463ffeb785661} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!is2Inside@{is2Inside}}
+\index{is2Inside@{is2Inside}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{is2Inside()}{is2Inside()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::is2\+Inside (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{limit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Check if both value and value+1 are inside \mbox{[}0..limit\mbox{[}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to check. \\
+\hline
+\mbox{\texttt{ in}}  & {\em limit} & Upper limit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if value and value+1 are inside given limit. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a6903c4bfc61f6bd055447a6af12c3888}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_a6903c4bfc61f6bd055447a6af12c3888} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!is2PartiallyInside@{is2PartiallyInside}}
+\index{is2PartiallyInside@{is2PartiallyInside}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{is2PartiallyInside()}{is2PartiallyInside()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::is2\+Partially\+Inside (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{limit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Check if either value or value+1 is inside \mbox{[}0..limit\mbox{[}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to check. \\
+\hline
+\mbox{\texttt{ in}}  & {\em limit} & Upper limit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if either value or value+1 is inside given limit. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_aac062d2e79f393e13c9b53b754301260}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_aac062d2e79f393e13c9b53b754301260} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!is2x2Inside@{is2x2Inside}}
+\index{is2x2Inside@{is2x2Inside}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{is2x2Inside()}{is2x2Inside()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::is2x2\+Inside (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Check if both (x,y) and (x+1,y+1) are inside (\mbox{[}0..width\mbox{[},\mbox{[}0..height\mbox{[})
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & X coordinate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Y coordinate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & X limit. \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & Y limit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if (x,y) and (x+1,y+1) are inside given limits. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_aa96d25af908f777a51e7e2834c32d412}\label{classtouchgfx_1_1_l_c_d_1_1_draw_texture_map_scan_line_base_aa96d25af908f777a51e7e2834c32d412} 
+\index{touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}!is2x2PartiallyInside@{is2x2PartiallyInside}}
+\index{is2x2PartiallyInside@{is2x2PartiallyInside}!touchgfx::LCD::DrawTextureMapScanLineBase@{touchgfx::LCD::DrawTextureMapScanLineBase}}
+\doxysubsubsection{\texorpdfstring{is2x2PartiallyInside()}{is2x2PartiallyInside()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+LCD\+::\+Draw\+Texture\+Map\+Scan\+Line\+Base\+::is2x2\+Partially\+Inside (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Check if either (x,y) or (x+1,y+1) is inside (\mbox{[}0..width\mbox{[},\mbox{[}0..height\mbox{[})
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & X coordinate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Y coordinate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & X limit. \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & Y limit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if either (x,y) or (x+1,y+1) is inside given limits. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/lcd/\mbox{\hyperlink{_l_c_d_8hpp}{LCD.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,250 @@
+\doxysection{Core/\+Inc/main.h File Reference}
+\hypertarget{main_8h}{}\label{main_8h}\index{Core/Inc/main.h@{Core/Inc/main.h}}
+
+
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_a8e8f946128e669a29a159fc9408586b4}{VSYNC\+\_\+\+FREQ\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+2
+\item 
+\#define \mbox{\hyperlink{main_8h_aae5dc4d72b5eddd162978f5b685086d6}{VSYNC\+\_\+\+FREQ\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_afb59ca4737e4cbed89be2729409cef34}{DEVICE\+\_\+\+ON\+\_\+\+OFF\+\_\+\+TRIGGER\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+3
+\item 
+\#define \mbox{\hyperlink{main_8h_a8134c1b24789e3c22da96f186a6ee2ea}{DEVICE\+\_\+\+ON\+\_\+\+OFF\+\_\+\+TRIGGER\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_aed21c2148f150f92a34b32a053ab8447}{DEVICE\+\_\+\+ON\+\_\+\+OFF\+\_\+\+TRIGGER\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI3\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_acc40def5fa46d2d279ffdb2b7653233a}{FRAME\+\_\+\+RATE\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_a702f6fed32689bc55786d30afe45be2f}{FRAME\+\_\+\+RATE\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a18ac9a1c6479f247359ce6b405e41dc8}{POWER\+\_\+\+ON\+\_\+\+DEVICE\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+5
+\item 
+\#define \mbox{\hyperlink{main_8h_a9d3d2564473648cee988cf250e76379b}{POWER\+\_\+\+ON\+\_\+\+DEVICE\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a280a09b94f1c415aa8553cf781c43a74}{LED\+\_\+\+PWM\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_ae301cd5a2018c8e53110c9671e56ebee}{LED\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a2a77b48aed5d2a5bfc4880861b0fa300}{BUZZER\+\_\+\+PWM\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_a8f0ca1700fa5435216bce80ec9680f24}{BUZZER\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a743958ae00b723191a905656366a7be4}{DEBUG\+\_\+\+GPIO\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_ac0f794a2c614b57fc6b35dbe2bd452f1}{DEBUG\+\_\+\+GPIO\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a1ce3843dfd349d06d1dfb3417ef72df0}{DEVICE\+\_\+\+ON\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+13
+\item 
+\#define \mbox{\hyperlink{main_8h_ae2797da1a8de8f8044f4faa9fe598eac}{DEVICE\+\_\+\+ON\+\_\+\+GPIO\+\_\+\+Port}}~GPIOG
+\item 
+\#define \mbox{\hyperlink{main_8h_ad17a18d85401edaf367742d21171755b}{SECTOR\+\_\+23\+\_\+\+ADDR}}~0x081\+E0000
+\item 
+\#define \mbox{\hyperlink{main_8h_a28b01617eea2a7776c35e353a5b735c2}{SCREEN\+\_\+\+TIMEOUT}}~180
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8h_ae70bce6c39d0b570a7523b86738cec4b}{HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init}} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\item 
+void \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8h_a39b62a20056ab550ec89683a32247e35}{update\+GUI\+\_\+test}} (void)
+\item 
+void \mbox{\hyperlink{main_8h_aea7e5561eb9e6610bac506772ded41e3}{set\+Calibration\+Flash\+Values}} (uint32\+\_\+t Start\+Sector\+Address, uint32\+\_\+t value, uint32\+\_\+t index, uint16\+\_\+t numberofwords)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8h_afd60c544c217169ceebd6daf55f54e14}{sleep\+\_\+timeout\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2020 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the "{}\+License"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8h_a8f0ca1700fa5435216bce80ec9680f24}\label{main_8h_a8f0ca1700fa5435216bce80ec9680f24} 
+\index{main.h@{main.h}!BUZZER\_PWM\_GPIO\_Port@{BUZZER\_PWM\_GPIO\_Port}}
+\index{BUZZER\_PWM\_GPIO\_Port@{BUZZER\_PWM\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{BUZZER\_PWM\_GPIO\_Port}{BUZZER\_PWM\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define BUZZER\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+\Hypertarget{main_8h_a2a77b48aed5d2a5bfc4880861b0fa300}\label{main_8h_a2a77b48aed5d2a5bfc4880861b0fa300} 
+\index{main.h@{main.h}!BUZZER\_PWM\_Pin@{BUZZER\_PWM\_Pin}}
+\index{BUZZER\_PWM\_Pin@{BUZZER\_PWM\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{BUZZER\_PWM\_Pin}{BUZZER\_PWM\_Pin}}
+{\footnotesize\ttfamily \#define BUZZER\+\_\+\+PWM\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+7}
+
+\Hypertarget{main_8h_ac0f794a2c614b57fc6b35dbe2bd452f1}\label{main_8h_ac0f794a2c614b57fc6b35dbe2bd452f1} 
+\index{main.h@{main.h}!DEBUG\_GPIO\_GPIO\_Port@{DEBUG\_GPIO\_GPIO\_Port}}
+\index{DEBUG\_GPIO\_GPIO\_Port@{DEBUG\_GPIO\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_GPIO\_GPIO\_Port}{DEBUG\_GPIO\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+GPIO\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+\Hypertarget{main_8h_a743958ae00b723191a905656366a7be4}\label{main_8h_a743958ae00b723191a905656366a7be4} 
+\index{main.h@{main.h}!DEBUG\_GPIO\_Pin@{DEBUG\_GPIO\_Pin}}
+\index{DEBUG\_GPIO\_Pin@{DEBUG\_GPIO\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_GPIO\_Pin}{DEBUG\_GPIO\_Pin}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+GPIO\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+4}
+
+\Hypertarget{main_8h_ae2797da1a8de8f8044f4faa9fe598eac}\label{main_8h_ae2797da1a8de8f8044f4faa9fe598eac} 
+\index{main.h@{main.h}!DEVICE\_ON\_GPIO\_Port@{DEVICE\_ON\_GPIO\_Port}}
+\index{DEVICE\_ON\_GPIO\_Port@{DEVICE\_ON\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ON\_GPIO\_Port}{DEVICE\_ON\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+ON\+\_\+\+GPIO\+\_\+\+Port~GPIOG}
+
+\Hypertarget{main_8h_aed21c2148f150f92a34b32a053ab8447}\label{main_8h_aed21c2148f150f92a34b32a053ab8447} 
+\index{main.h@{main.h}!DEVICE\_ON\_OFF\_TRIGGER\_EXTI\_IRQn@{DEVICE\_ON\_OFF\_TRIGGER\_EXTI\_IRQn}}
+\index{DEVICE\_ON\_OFF\_TRIGGER\_EXTI\_IRQn@{DEVICE\_ON\_OFF\_TRIGGER\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ON\_OFF\_TRIGGER\_EXTI\_IRQn}{DEVICE\_ON\_OFF\_TRIGGER\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+ON\+\_\+\+OFF\+\_\+\+TRIGGER\+\_\+\+EXTI\+\_\+\+IRQn~EXTI3\+\_\+\+IRQn}
+
+\Hypertarget{main_8h_a8134c1b24789e3c22da96f186a6ee2ea}\label{main_8h_a8134c1b24789e3c22da96f186a6ee2ea} 
+\index{main.h@{main.h}!DEVICE\_ON\_OFF\_TRIGGER\_GPIO\_Port@{DEVICE\_ON\_OFF\_TRIGGER\_GPIO\_Port}}
+\index{DEVICE\_ON\_OFF\_TRIGGER\_GPIO\_Port@{DEVICE\_ON\_OFF\_TRIGGER\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ON\_OFF\_TRIGGER\_GPIO\_Port}{DEVICE\_ON\_OFF\_TRIGGER\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+ON\+\_\+\+OFF\+\_\+\+TRIGGER\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+\Hypertarget{main_8h_afb59ca4737e4cbed89be2729409cef34}\label{main_8h_afb59ca4737e4cbed89be2729409cef34} 
+\index{main.h@{main.h}!DEVICE\_ON\_OFF\_TRIGGER\_Pin@{DEVICE\_ON\_OFF\_TRIGGER\_Pin}}
+\index{DEVICE\_ON\_OFF\_TRIGGER\_Pin@{DEVICE\_ON\_OFF\_TRIGGER\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ON\_OFF\_TRIGGER\_Pin}{DEVICE\_ON\_OFF\_TRIGGER\_Pin}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+ON\+\_\+\+OFF\+\_\+\+TRIGGER\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+3}
+
+\Hypertarget{main_8h_a1ce3843dfd349d06d1dfb3417ef72df0}\label{main_8h_a1ce3843dfd349d06d1dfb3417ef72df0} 
+\index{main.h@{main.h}!DEVICE\_ON\_Pin@{DEVICE\_ON\_Pin}}
+\index{DEVICE\_ON\_Pin@{DEVICE\_ON\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ON\_Pin}{DEVICE\_ON\_Pin}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+ON\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+13}
+
+\Hypertarget{main_8h_a702f6fed32689bc55786d30afe45be2f}\label{main_8h_a702f6fed32689bc55786d30afe45be2f} 
+\index{main.h@{main.h}!FRAME\_RATE\_GPIO\_Port@{FRAME\_RATE\_GPIO\_Port}}
+\index{FRAME\_RATE\_GPIO\_Port@{FRAME\_RATE\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{FRAME\_RATE\_GPIO\_Port}{FRAME\_RATE\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define FRAME\+\_\+\+RATE\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+\Hypertarget{main_8h_acc40def5fa46d2d279ffdb2b7653233a}\label{main_8h_acc40def5fa46d2d279ffdb2b7653233a} 
+\index{main.h@{main.h}!FRAME\_RATE\_Pin@{FRAME\_RATE\_Pin}}
+\index{FRAME\_RATE\_Pin@{FRAME\_RATE\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{FRAME\_RATE\_Pin}{FRAME\_RATE\_Pin}}
+{\footnotesize\ttfamily \#define FRAME\+\_\+\+RATE\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+4}
+
+\Hypertarget{main_8h_ae301cd5a2018c8e53110c9671e56ebee}\label{main_8h_ae301cd5a2018c8e53110c9671e56ebee} 
+\index{main.h@{main.h}!LED\_PWM\_GPIO\_Port@{LED\_PWM\_GPIO\_Port}}
+\index{LED\_PWM\_GPIO\_Port@{LED\_PWM\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LED\_PWM\_GPIO\_Port}{LED\_PWM\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+\Hypertarget{main_8h_a280a09b94f1c415aa8553cf781c43a74}\label{main_8h_a280a09b94f1c415aa8553cf781c43a74} 
+\index{main.h@{main.h}!LED\_PWM\_Pin@{LED\_PWM\_Pin}}
+\index{LED\_PWM\_Pin@{LED\_PWM\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LED\_PWM\_Pin}{LED\_PWM\_Pin}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+PWM\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+0}
+
+\Hypertarget{main_8h_a9d3d2564473648cee988cf250e76379b}\label{main_8h_a9d3d2564473648cee988cf250e76379b} 
+\index{main.h@{main.h}!POWER\_ON\_DEVICE\_GPIO\_Port@{POWER\_ON\_DEVICE\_GPIO\_Port}}
+\index{POWER\_ON\_DEVICE\_GPIO\_Port@{POWER\_ON\_DEVICE\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{POWER\_ON\_DEVICE\_GPIO\_Port}{POWER\_ON\_DEVICE\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define POWER\+\_\+\+ON\+\_\+\+DEVICE\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+\Hypertarget{main_8h_a18ac9a1c6479f247359ce6b405e41dc8}\label{main_8h_a18ac9a1c6479f247359ce6b405e41dc8} 
+\index{main.h@{main.h}!POWER\_ON\_DEVICE\_Pin@{POWER\_ON\_DEVICE\_Pin}}
+\index{POWER\_ON\_DEVICE\_Pin@{POWER\_ON\_DEVICE\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{POWER\_ON\_DEVICE\_Pin}{POWER\_ON\_DEVICE\_Pin}}
+{\footnotesize\ttfamily \#define POWER\+\_\+\+ON\+\_\+\+DEVICE\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+5}
+
+\Hypertarget{main_8h_a28b01617eea2a7776c35e353a5b735c2}\label{main_8h_a28b01617eea2a7776c35e353a5b735c2} 
+\index{main.h@{main.h}!SCREEN\_TIMEOUT@{SCREEN\_TIMEOUT}}
+\index{SCREEN\_TIMEOUT@{SCREEN\_TIMEOUT}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_TIMEOUT}{SCREEN\_TIMEOUT}}
+{\footnotesize\ttfamily \#define SCREEN\+\_\+\+TIMEOUT~180}
+
+\Hypertarget{main_8h_ad17a18d85401edaf367742d21171755b}\label{main_8h_ad17a18d85401edaf367742d21171755b} 
+\index{main.h@{main.h}!SECTOR\_23\_ADDR@{SECTOR\_23\_ADDR}}
+\index{SECTOR\_23\_ADDR@{SECTOR\_23\_ADDR}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SECTOR\_23\_ADDR}{SECTOR\_23\_ADDR}}
+{\footnotesize\ttfamily \#define SECTOR\+\_\+23\+\_\+\+ADDR~0x081\+E0000}
+
+\Hypertarget{main_8h_aae5dc4d72b5eddd162978f5b685086d6}\label{main_8h_aae5dc4d72b5eddd162978f5b685086d6} 
+\index{main.h@{main.h}!VSYNC\_FREQ\_GPIO\_Port@{VSYNC\_FREQ\_GPIO\_Port}}
+\index{VSYNC\_FREQ\_GPIO\_Port@{VSYNC\_FREQ\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{VSYNC\_FREQ\_GPIO\_Port}{VSYNC\_FREQ\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define VSYNC\+\_\+\+FREQ\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+\Hypertarget{main_8h_a8e8f946128e669a29a159fc9408586b4}\label{main_8h_a8e8f946128e669a29a159fc9408586b4} 
+\index{main.h@{main.h}!VSYNC\_FREQ\_Pin@{VSYNC\_FREQ\_Pin}}
+\index{VSYNC\_FREQ\_Pin@{VSYNC\_FREQ\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{VSYNC\_FREQ\_Pin}{VSYNC\_FREQ\_Pin}}
+{\footnotesize\ttfamily \#define VSYNC\+\_\+\+FREQ\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+2}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8h_a1730ffe1e560465665eb47d9264826f9}\label{main_8h_a1730ffe1e560465665eb47d9264826f9} 
+\index{main.h@{main.h}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8h_ae70bce6c39d0b570a7523b86738cec4b}\label{main_8h_ae70bce6c39d0b570a7523b86738cec4b} 
+\index{main.h@{main.h}!HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}}
+\index{HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_MspPostInit()}{HAL\_TIM\_MspPostInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim }\end{DoxyParamCaption})}
+
+File Name \+: \doxylink{stm32f4xx__hal__msp_8c}{stm32f4xx\+\_\+hal\+\_\+msp.\+c} Description \+: This file provides code for the MSP Initialization and de-\/\+Initialization codes.
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2020 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the "{}\+License"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 TIM5 GPIO Configuration PA0/\+WKUP -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} TIM5\+\_\+\+CH1
+
+TIM14 GPIO Configuration PA7 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} TIM14\+\_\+\+CH1
+
+TIM5 GPIO Configuration PA0/\+WKUP -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} TIM5\+\_\+\+CH1
+
+TIM14 GPIO Configuration PA7 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} TIM14\+\_\+\+CH1\Hypertarget{main_8h_aea7e5561eb9e6610bac506772ded41e3}\label{main_8h_aea7e5561eb9e6610bac506772ded41e3} 
+\index{main.h@{main.h}!setCalibrationFlashValues@{setCalibrationFlashValues}}
+\index{setCalibrationFlashValues@{setCalibrationFlashValues}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{setCalibrationFlashValues()}{setCalibrationFlashValues()}}
+{\footnotesize\ttfamily void set\+Calibration\+Flash\+Values (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Start\+Sector\+Address,  }\item[{uint32\+\_\+t}]{value,  }\item[{uint32\+\_\+t}]{index,  }\item[{uint16\+\_\+t}]{numberofwords }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8h_a39b62a20056ab550ec89683a32247e35}\label{main_8h_a39b62a20056ab550ec89683a32247e35} 
+\index{main.h@{main.h}!updateGUI\_test@{updateGUI\_test}}
+\index{updateGUI\_test@{updateGUI\_test}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{updateGUI\_test()}{updateGUI\_test()}}
+{\footnotesize\ttfamily int update\+GUI\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8h_afd60c544c217169ceebd6daf55f54e14}\label{main_8h_afd60c544c217169ceebd6daf55f54e14} 
+\index{main.h@{main.h}!sleep\_timeout\_value@{sleep\_timeout\_value}}
+\index{sleep\_timeout\_value@{sleep\_timeout\_value}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{sleep\_timeout\_value}{sleep\_timeout\_value}}
+{\footnotesize\ttfamily int sleep\+\_\+timeout\+\_\+value\hspace{0.3cm}{\ttfamily [extern]}}
+

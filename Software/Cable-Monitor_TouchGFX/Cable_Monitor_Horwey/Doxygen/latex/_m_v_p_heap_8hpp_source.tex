@@ -1,0 +1,55 @@
+\doxysection{MVPHeap.\+hpp}
+\hypertarget{_m_v_p_heap_8hpp_source}{}\label{_m_v_p_heap_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/mvp/MVPHeap.hpp@{Middlewares/ST/touchgfx/framework/include/mvp/MVPHeap.hpp}}
+\mbox{\hyperlink{_m_v_p_heap_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_MVPHEAP\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_MVPHEAP\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_abstract_partition_8hpp}{common/AbstractPartition.hpp}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }AbstractPartition;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }MVPApplication;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap}{MVPHeap}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a709b8534c26026e2201ff21d8c762576}{MVPHeap}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{AbstractPartition}}\&\ pres,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{AbstractPartition}}\&\ scr,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{AbstractPartition}}\&\ tra,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application}{MVPApplication}}\&\ app)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a09d7975c1784db136c21680d42b8ce89}{presenterStorage}}(pres),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a35fba46f1a8e1b346a2ee0208cbbb0ce}{screenStorage}}(scr),}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a6fbf9ba8650c67f1b06a2b78bb76fa28}{transitionStorage}}(tra),}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a591b4b2d1590ef162d8c85f7b4c81397}{frontendApplication}}(app)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a128b5eb514c8357bc3665972d5793e93}{\string~MVPHeap}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{AbstractPartition}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a09d7975c1784db136c21680d42b8ce89}{presenterStorage}};\ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{AbstractPartition}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a35fba46f1a8e1b346a2ee0208cbbb0ce}{screenStorage}};\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{AbstractPartition}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a6fbf9ba8650c67f1b06a2b78bb76fa28}{transitionStorage}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application}{MVPApplication}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a591b4b2d1590ef162d8c85f7b4c81397}{frontendApplication}};\ \ }
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_MVPHEAP\_HPP}}
+
+\end{DoxyCode}
