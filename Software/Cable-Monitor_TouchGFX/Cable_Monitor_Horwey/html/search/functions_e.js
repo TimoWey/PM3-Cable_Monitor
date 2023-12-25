@@ -4,7 +4,7 @@ var searchData=
   ['tick_1',['tick',['../class_model.html#a873dd91783f9efb4a590aded1f70d6b0',1,'Model']]],
   ['tim6_5fdac_5firqhandler_2',['TIM6_DAC_IRQHandler',['../stm32f4xx__it_8h.html#a0839a45f331c4c067939b9c4533bbf4d',1,'TIM6_DAC_IRQHandler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a0839a45f331c4c067939b9c4533bbf4d',1,'TIM6_DAC_IRQHandler(void):&#160;stm32f4xx_it.c']]],
   ['toggle_5fbuzzer_3',['toggle_BUZZER',['../class_settings_view.html#a3abebcf37c0d55a3708fe7e94ad58e73',1,'SettingsView']]],
-  ['toggle_5fbuzzer_5fsettings_4',['toggle_Buzzer_settings',['../calculation_8h.html#a6b6736969ddf8f3f9f229c3ac4a24c23',1,'toggle_Buzzer_settings(bool btn):&#160;calculation.c'],['../calculation_8c.html#a6b6736969ddf8f3f9f229c3ac4a24c23',1,'toggle_Buzzer_settings(bool btn):&#160;calculation.c']]],
+  ['toggle_5fbuzzer_5fsettings_4',['toggle_Buzzer_settings',['../calculation_8h.html#a6b6736969ddf8f3f9f229c3ac4a24c23',1,'toggle_Buzzer_settings(bool btn):&#160;calculation.c'],['../calculation_8c.html#af39481a12eabc5280b74f00516966941',1,'toggle_Buzzer_settings(bool btn_nr):&#160;calculation.c']]],
   ['toggle_5fled_5',['toggle_LED',['../class_settings_view.html#a5451f1927eaf00d8c129c0613fc5204d',1,'SettingsView']]],
   ['touchgfx_5ftask_6',['TouchGFX_Task',['../main_8c.html#a94f37d950f9dce09a0ba811910276645',1,'main.c']]]
 ];

@@ -16,12 +16,10 @@
   ***************************************************************************************************************
 */
 
-
 #include "FLASH_SECTOR_F4.h"
 #include "stm32f4xx_hal.h"
 #include "string.h"
 #include "stdio.h"
-
 
 /* DEFINE the SECTORS according to your reference manual
  * STM32F446RE have:-
@@ -133,16 +131,19 @@ static uint32_t GetSector(uint32_t Address)
   return sector;
 }
 
-
-
-
-
-
-
 uint8_t bytes_temp[4];
 
-
-void float2Bytes(uint8_t * ftoa_bytes_temp,float float_variable)
+/**
+ * @brief Converts a float variable to an array of bytes.
+ * 
+ * This function takes a float variable and converts it into an array of bytes.
+ * It uses a union to access the individual bytes of the float variable.
+ * The resulting byte array is stored in the provided ftoa_bytes_temp array.
+ * 
+ * @param ftoa_bytes_temp Pointer to the array where the byte array will be stored.
+ * @param float_variable The float variable to be converted.
+ */
+void float2Bytes(uint8_t * ftoa_bytes_temp, float float_variable)
 {
     union {
       float a;
@@ -154,9 +155,17 @@ void float2Bytes(uint8_t * ftoa_bytes_temp,float float_variable)
     for (uint8_t i = 0; i < 4; i++) {
       ftoa_bytes_temp[i] = thing.bytes[i];
     }
-
 }
 
+/**
+ * @brief Converts an array of bytes to a float value.
+ * 
+ * This function takes an array of bytes and converts it to a float value using a union.
+ * The input array must have a length of 4 bytes.
+ * 
+ * @param ftoa_bytes_temp The array of bytes to convert.
+ * @return The float value obtained from the byte array.
+ */
 float Bytes2float(uint8_t * ftoa_bytes_temp)
 {
     union {
@@ -172,7 +181,13 @@ float Bytes2float(uint8_t * ftoa_bytes_temp)
    return float_variable;
 }
 
-
+/**
+  * @brief Writes data to the specified flash sector.
+  * @param StartSectorAddress: The starting address of the flash sector.
+  * @param Data: Pointer to the data to be written.
+  * @param numberofwords: Number of words to be written.
+  * @return HAL_FLASH_GetError() if an error occurred during erasing or writing the flash sector, otherwise 0.
+  */
 uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *Data, uint16_t numberofwords)
 {
 
@@ -231,39 +246,73 @@ uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *Data, uint16_t
 	   return 0;
 }
 
-
+/**
+ * @brief Reads data from flash memory.
+ * 
+ * This function reads data from the specified flash memory sector starting at the given address.
+ * The data is stored in the provided buffer.
+ * 
+ * @param StartSectorAddress The starting address of the flash memory sector.
+ * @param RxBuf Pointer to the buffer where the read data will be stored.
+ * @param numberofwords The number of words (32-bit) to read from the flash memory sector.
+ */
 void Flash_Read_Data (uint32_t StartSectorAddress, uint32_t *RxBuf, uint16_t numberofwords)
 {
-	while (1)
-	{
-
-		*RxBuf = *(__IO uint32_t *)StartSectorAddress;
-		StartSectorAddress += 4;
-		RxBuf++;
-		if (!(numberofwords--)) break;
-	}
+  while (1)
+  {
+    *RxBuf = *(__IO uint32_t *)StartSectorAddress;
+    StartSectorAddress += 4;
+    RxBuf++;
+    if (!(numberofwords--)) break;
+  }
 }
 
+/**
+ * @brief Converts an array of 32-bit data into a string representation.
+ *
+ * This function takes an array of 32-bit data and converts it into a string representation.
+ * The resulting string is stored in the provided buffer.
+ *
+ * @param Data Pointer to the array of 32-bit data.
+ * @param Buf Pointer to the buffer where the resulting string will be stored.
+ */
 void Convert_To_Str (uint32_t *Data, char *Buf)
 {
-	int numberofbytes = ((strlen((char *)Data)/4) + ((strlen((char *)Data) % 4) != 0)) *4;
+  int numberofbytes = ((strlen((char *)Data)/4) + ((strlen((char *)Data) % 4) != 0)) *4;
 
-	for (int i=0; i<numberofbytes; i++)
-	{
-		Buf[i] = Data[i/4]>>(8*(i%4));
-	}
+  for (int i=0; i<numberofbytes; i++)
+  {
+    Buf[i] = Data[i/4]>>(8*(i%4));
+  }
 }
 
-
+/**
+ * @brief Writes a floating-point number to a specified flash sector address.
+ * 
+ * This function converts the floating-point number `Num` into a byte array using the `float2Bytes` function,
+ * and then writes the byte array to the flash memory starting from the `StartSectorAddress`.
+ * 
+ * @param StartSectorAddress The starting address of the flash sector.
+ * @param Num The floating-point number to be written to the flash memory.
+ */
 void Flash_Write_NUM (uint32_t StartSectorAddress, float Num)
 {
 
-	float2Bytes(bytes_temp, Num);
+  float2Bytes(bytes_temp, Num);
 
-	Flash_Write_Data (StartSectorAddress, (uint32_t *)bytes_temp, 1);
+  Flash_Write_Data (StartSectorAddress, (uint32_t *)bytes_temp, 1);
 }
 
-
+/**
+ * @brief Reads a floating-point number from flash memory.
+ * 
+ * This function reads a floating-point number from the specified flash memory sector address.
+ * It uses the Flash_Read_Data function to read the data into a buffer, and then converts the
+ * buffer to a float using the Bytes2float function. The resulting float value is returned.
+ * 
+ * @param StartSectorAddress The starting address of the flash memory sector.
+ * @return The floating-point value read from flash memory.
+ */
 float Flash_Read_NUM (uint32_t StartSectorAddress)
 {
 	uint8_t buffer[4];

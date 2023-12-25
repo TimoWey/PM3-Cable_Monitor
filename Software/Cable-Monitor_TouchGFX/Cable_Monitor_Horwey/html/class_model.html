@@ -93,6 +93,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03fee25b8371b19540e41958977b9664" id="r_a03fee25b8371b19540e41958977b9664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03fee25b8371b19540e41958977b9664">bind</a> (<a class="el" href="class_model_listener.html">ModelListener</a> *listener)</td></tr>
 <tr class="separator:a03fee25b8371b19540e41958977b9664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a873dd91783f9efb4a590aded1f70d6b0" id="r_a873dd91783f9efb4a590aded1f70d6b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a873dd91783f9efb4a590aded1f70d6b0">tick</a> ()</td></tr>
+<tr class="memdesc:a873dd91783f9efb4a590aded1f70d6b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the tick operation of the <a class="el" href="class_model.html">Model</a>.  <br /></td></tr>
 <tr class="separator:a873dd91783f9efb4a590aded1f70d6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -168,7 +169,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00021">21</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Executes the tick operation of the <a class="el" href="class_model.html">Model</a>. </p>
+<p>This function is responsible for processing the timeout events in the <a class="el" href="class_model.html">Model</a>. It checks if there are any pending timeout events in the TimeoutQueueHandle, and if so, it retrieves the timeout value and updates the modelListener with the new timeout value.</p>
+<dl class="section note"><dt>Note</dt><dd>This function is only executed when not running in the simulator. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00031">31</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

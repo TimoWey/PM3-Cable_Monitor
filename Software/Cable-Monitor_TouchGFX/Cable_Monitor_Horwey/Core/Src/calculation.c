@@ -65,10 +65,7 @@
 #include "measuring.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
-
-#define ARM_MATH_CM4
 #include "arm_math.h"
-
 
 /*******************************************************************************
  * Defines
@@ -79,6 +76,7 @@
 #define ACCURATE_MEASUREMENT_LOOPS 10  ///< How many loops for accu. meas.
 #define CALIBRATION_MEASUREMENT_LOOPS 50  ///< How many loops for calibration meas
 #define POW2(x) ((x) * (x))            ///< Power of two
+#define ARM_MATH_CM4
 
 /******************************************************************************
  * Variables
@@ -103,19 +101,17 @@ static float32_t a_magn1_r_3P = 0;
 static float32_t a_magn2_l_3P = 0;
 static float32_t a_magn2_r_3P = 0;
 
-
 bool State_BUZZER = true;
 bool State_LED = true;
 
 /******************************************************************************
  * Functions
  * ****************************************************************************/
-
 void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
-FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
-DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
 void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
 void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn);
+FFT calculate_freq_and_signalstrength(float32_t input_samples[]);
+DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l);
 
 /**
  * @brief Calculates the frequency and signal strength using Fast Fourier Transform (FFT).
@@ -161,23 +157,31 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
         (float)maxIndex * ((float)MEAS_get_samp_freq()) / SAMPLE_LEN;
     uint8_t given_frequency = 0;
     // Check if the main frequency is in the range of 45-55 Hz
-    if (main_frequency <= 55 && main_frequency >= 45) {
+    if (main_frequency <= 55 && main_frequency >= 45)
+    {
         // If yes, round the given frequency to 50 Hz
         given_frequency = 50;
-    } else if (main_frequency <= 65 && main_frequency >= 55) {
+    }
+    else if (main_frequency <= 65 && main_frequency >= 55)
+    {
         // If yes, round the given frequency to 60 Hz
         given_frequency = 60;
-    } else given_frequency = 0;
+    }
+    else
+    	given_frequency = 0;
     // calculate the index of the given frequency
     uint32_t index = (uint32_t)given_frequency * SAMPLE_LEN / MEAS_get_samp_freq();
     // set the signal strength to 0
     float signal_strength = 0;
     // check if the given frequency is 50 or 60 Hz
-    if (given_frequency != 0) {
+    if (given_frequency != 0)
+    {
         // calculate the signal strength
         signal_strength = 2 * fft_complex_output[index] / SAMPLE_LEN;
         fft.error = CALC_ERROR_NONE;
-    } else fft.error = CALC_ERROR_FREQUENCY;  // if the given frequency is not 50 or 60 Hz
+    }
+    else
+    	fft.error = CALC_ERROR_FREQUENCY;  // if the given frequency is not 50 or 60 Hz
     // return the calculated values
     fft.main_freq = main_frequency;
     fft.signal_strength = signal_strength;
@@ -211,7 +215,8 @@ ACCU_FFT accurate_FFT(void){
     static float32_t samples_HSR[SAMPLE_LEN];
     static float32_t samples_HSL[SAMPLE_LEN];
 
-    for (uint8_t i = 0; i < CALIBRATION_MEASUREMENT_LOOPS; i++){
+    for (uint8_t i = 0; i < CALIBRATION_MEASUREMENT_LOOPS; i++)
+    {
         // Start the measurement
         samples = MEAS_start_measure();
 
@@ -244,9 +249,11 @@ ACCU_FFT accurate_FFT(void){
     arm_mean_f32(accu_strength_HSL, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl);
     arm_std_f32(accu_strength_HSL, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl_std_dev);
     // Check if the standard deviation is larger than 100
-    if (accu_fft.signal_strength_pr_std_dev > 100 || accu_fft.signal_strength_pl_std_dev > 100 || accu_fft.signal_strength_hsr_std_dev > 100 || accu_fft.signal_strength_hsl_std_dev > 100){
+    if (accu_fft.signal_strength_pr_std_dev > 100 || accu_fft.signal_strength_pl_std_dev > 100 \
+    		|| accu_fft.signal_strength_hsr_std_dev > 100 || accu_fft.signal_strength_hsl_std_dev > 100)
         accu_fft.error = CALC_ERROR_DEVIATION_TOO_HIGH;
-    } else accu_fft.error = CALC_ERROR_NONE;
+    else
+    	accu_fft.error = CALC_ERROR_NONE;
     // Return the calculated values
     return accu_fft;
 }
@@ -262,7 +269,8 @@ ACCU_FFT accurate_FFT(void){
  * @param Phase The phase for which the measurement is performed (SINGLE_PHASE or THREE_PHASE).
  * @return The calculated values including frequency, distance, angle, current, and error status.
  */
-SINGLE_MEAS single_measurement(uint8_t Phase) {
+SINGLE_MEAS single_measurement(uint8_t Phase)
+{
     // Start the measurement
     uint32_t* samples = MEAS_start_measure();
     // Create an instance of the SINGLE_MEAS structure
@@ -282,7 +290,8 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     float32_t current_r = 0;
 
     // Convert the samples to the specific channel
-    for (uint32_t i = 0; i < 64; i++) {
+    for (uint32_t i = 0; i < 64; i++)
+    {
         samples_PR[i] = (float32_t)samples[(i * CHANNEL_NUM)];
         samples_PL[i] = (float32_t)samples[(i * CHANNEL_NUM) + 1];
         samples_HSR[i] = (float32_t)samples[(i * CHANNEL_NUM) + 2];
@@ -307,74 +316,75 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     single_meas.angle = dist_angle.angle;
 
     // Calculate the current using the magnetic coefficients for 5A
-    if(Phase == SINGLE_PHASE){
+    if(Phase == SINGLE_PHASE)
+    {
         current_l = a_magn2_l_1P * single_meas.distance * signal_strength_HSL;
         current_r = a_magn2_r_1P * single_meas.distance * signal_strength_HSR;
         single_meas.current = (current_l + current_r) / 2;
-    } else if(Phase == THREE_PHASE){
-        if (signal_strength_HSL > signal_strength_HSR){
+    }
+    else if(Phase == THREE_PHASE)
+    {
+        if (signal_strength_HSL > signal_strength_HSR)
             single_meas.current = a_magn2_l_3P * single_meas.distance * signal_strength_HSL;
-        } else {
+        else
             single_meas.current = a_magn2_r_3P * single_meas.distance * signal_strength_HSR;
-        }
     }
 
     // Check if the current is smaller than 4 A -> use the magnetic coefficients for 1.2 A
-    if (single_meas.current < 4){
-        if(Phase == SINGLE_PHASE){
+    if (single_meas.current < 4)
+    {
+        if(Phase == SINGLE_PHASE)
+        {
             current_l = a_magn1_l_1P * single_meas.distance * signal_strength_HSL;
             current_r = a_magn1_r_1P * single_meas.distance * signal_strength_HSR;
             single_meas.current = (current_l + current_r) / 2;
-        } else if(Phase == THREE_PHASE){
-            if (signal_strength_HSL > signal_strength_HSR){
+        }
+        else if(Phase == THREE_PHASE)
+        {
+            if (signal_strength_HSL > signal_strength_HSR)
                 single_meas.current = a_magn1_l_3P * single_meas.distance * signal_strength_HSL;
-            } else {
+            else
                 single_meas.current = a_magn1_r_3P * single_meas.distance * signal_strength_HSR;
-            }
         }
     }
 
     // ERROR TESTING:
 
     // Check if distance is close enough for current calculation and if the current is out of the range of 0-10 A
-    if (single_meas.distance > 30 || (single_meas.current <= 0 && single_meas.current >= 10)){
+    if (single_meas.distance > 30 || (single_meas.current <= 0 && single_meas.current >= 10))
        single_meas.error = CALC_ERROR_TOO_FAR_AWAY;
-    }
 
     // Check if the current is larger than 10 A -> CALL ERROR OVERCURRENT
-    if (single_meas.current > 10){
+    if (single_meas.current > 10)
        single_meas.error = CALC_ERROR_OVERCURRENT;
-    }
 
     // Check if the distance is larger than 300 mm or smaller than 0 -> CALL ERROR DISCONNECT
-    if (single_meas.distance > 250){
+    if (single_meas.distance > 250)
+    {
         single_meas.error = CALC_ERROR_DISCONNECT;
         single_meas.angle = 0;
     }
 
     // Check if the frequency is 0 -> CALL ERROR FREQUENCY
-    if (single_meas.frequency == 0){
+    if (single_meas.frequency == 0)
         single_meas.error = CALC_ERROR_FREQUENCY;
-    }
 
     // OPTIMIZE:
-
     // Limit the angle to +/- 90 degrees
-    if (single_meas.angle > 90){
+    if (single_meas.angle > 90)
         single_meas.angle = 90;
-    }else if (single_meas.angle < -90){
+    else if (single_meas.angle < -90)
         single_meas.angle = -90;
-    }
 
     // BUZZER LED
     if(single_meas.distance > 0 && single_meas.distance < 200 && (State_BUZZER == false))
        	TIM14->CCR1 = 50 + (single_meas.distance/4);
-       else
-       	TIM14->CCR1 = 0;
+    else
+    	TIM14->CCR1 = 0;
 
-       if(single_meas.distance > 0 && single_meas.distance < 200 && (State_LED == false))
-       	TIM5->CCR1 = abs(100 - (int)(single_meas.distance/2));
-       else
+    if(single_meas.distance > 0 && single_meas.distance < 200 && (State_LED == false))
+    	TIM5->CCR1 = abs(100 - (int)(single_meas.distance/2));
+    else
        	TIM5->CCR1 = 0;
     // Return the calculated values
     return single_meas;
@@ -391,7 +401,8 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
  * @param Phase The phase for which the accurate measurement is performed.
  * @return ACCU_MEAS The structure containing the calculated values and error flags.
  */
-ACCU_MEAS accurate_measurement(uint8_t Phase){
+ACCU_MEAS accurate_measurement(uint8_t Phase)
+{
     // Create an instance of the ACCU_MEAS structure
     ACCU_MEAS accu_meas;
 
@@ -433,9 +444,11 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
     arm_std_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current_std_dev);
 
     // Check if the standard deviation is larger than 100
-    if (accu_meas.distance_std_dev > 100 || accu_meas.angle_std_dev > 100 || accu_meas.frequency_std_dev > 100 || accu_meas.current_std_dev > 100){
+    if (accu_meas.distance_std_dev > 100 || accu_meas.angle_std_dev > 100 || \
+    		accu_meas.frequency_std_dev > 100 || accu_meas.current_std_dev > 100)
         accu_meas.error_accu = CALC_ERROR_DEVIATION_TOO_HIGH;
-    } else accu_meas.error_accu = CALC_ERROR_NONE;
+    else
+    	accu_meas.error_accu = CALC_ERROR_NONE;
 
     // Return the calculated values
     return accu_meas;
@@ -452,7 +465,8 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
  * @param signal_strength_l The signal strength of the left signal.
  * @return The calculated distance and angle.
  */
-DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l){
+DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l)
+{
 
     // Create an instance of the DISTANCE_ANGLE structure
     DISTANCE_ANGLE dist_angle;
@@ -528,7 +542,8 @@ void start_calibration(void)
  * @param b Pointer to a float32_t variable to store the calculated coefficient 'b'.
  * @param c Pointer to a float32_t variable to store the calculated coefficient 'c'.
  */
-void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c) {
+void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c)
+{
     // s = x_0, x_1, x_2 d= y_0, y_1, y_2
     // Calculate the coefficients for the distance approximation from an approximation based on a second degree polynomial
     // a=((x_0^(2)*(x_1-x_2)*y_0-x_0*(x_1^(2)*y_1-x_2^(2)*y_2)+x_1*(x_1*y_1-x_2*y_2)*x_2)/((x_0^(2)-x_0*(x_1+x_2)+x_1*x_2)*(x_1-x_2)))
@@ -558,14 +573,25 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
  * @param cal_current The calibration current.
  * @param a_magn Pointer to store the calculated magnetic coefficients.
  */
-void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn){
+void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn)
+{
     *a_magn = cal_current / (s * d);
 }
 
 
-void toggle_Buzzer_settings(bool btn)
+/**
+ * @brief Toggles the settings of the buzzer or LED based on the button number.
+ *
+ * This function toggles the settings of the buzzer or LED based on the button number.
+ * If the button number is true, it toggles the buzzer settings. If the button number is false,
+ * it toggles the LED settings. Also it enables or disables the buzzer or LED based on the
+ * current settings.
+ *
+ * @param btn_nr The button number indicating whether to toggle the buzzer or LED settings.
+ */
+void toggle_Buzzer_settings(bool btn_nr)
 {
-	if(btn == true)
+	if(btn_nr == true)
 	{
 		if(State_BUZZER == true)
 		{
@@ -592,5 +618,3 @@ void toggle_Buzzer_settings(bool btn)
 		}
 	}
 }
-
-

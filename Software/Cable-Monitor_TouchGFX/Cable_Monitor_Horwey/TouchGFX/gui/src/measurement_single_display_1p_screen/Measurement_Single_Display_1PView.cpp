@@ -28,6 +28,15 @@ void Measurement_Single_Display_1PView::tearDownScreen()
     Measurement_Single_Display_1PViewBase::tearDownScreen();
 }
 
+/**
+ * @brief Performs a single measurement and updates the GUI values accordingly.
+ * 
+ * This function calculates the single measurement values and updates the GUI elements
+ * such as gauge angle, current value, frequency value, and distance value.
+ * It also handles error conditions and displays appropriate error messages on the GUI.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
 void Measurement_Single_Display_1PView::single_measure()
 {
 #ifndef SIMULATOR

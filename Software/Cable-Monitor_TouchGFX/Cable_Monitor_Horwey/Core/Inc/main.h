@@ -17,30 +17,27 @@
   *
   ******************************************************************************
   */
+
+// insert small sample mainpage here for doxygen
+/**
+   \mainpage Main Page
+    \section intro_sec Introduction
+    This is the introduction.
+    \section install_sec Installation
+    \subsection main.c handels...
+    \subsection calculation.c handels...
+    \subsection measureing.c handels...
+    \subsection FLASH_SECTOR_F4.c handels...
+    \subsection TouchGFX Folder includes...
+    \subsection How to use
+    \section Testing
+    \section Bugs
+    \section conclusion Conclusion
+    This is the conclusion.
+*/
+
+
 /* USER CODE END Header */
-/*! \mainpage
- *
- * \section intro_sec Introduction
- *
- * This is the documentation for the firmware of the Smart Mirror.
- *
- * \section install_sec Installation
- *
- * \subsection step1 Step 1: Download the firmware
- *
- * \subsection step2 Step 2: Compile the firmware
- *
- * \subsection step3 Step 3: Flash the firmware
- *
- * \section use_sec Usage
- *
- * \subsection step1 Step 1: Connect the Smart Mirror to a power source
- *
- * \subsection step2 Step 2: Connect the Smart Mirror to the internet
- *
- * \subsection step3 Step 3: Enjoy the Smart Mirror
- *
- */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
@@ -79,7 +76,6 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-int updateGUI_test(void);
 void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint32_t index, uint16_t numberofwords);
 /* USER CODE END EFP */
 
@@ -103,7 +99,15 @@ void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint
 #define DEVICE_ON_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
+/**
+ * @brief Address of sector 23 in flash memory.
+ */
 #define SECTOR_23_ADDR 0x081E0000
+
+
+/**
+ * @brief The timeout value (in seconds) for the screen to automatically turn off.
+ */
 #define SCREEN_TIMEOUT 180
 
 extern int sleep_timeout_value;

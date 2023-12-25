@@ -101,6 +101,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85289561483ed5279a1a6d834708237d" id="r_a85289561483ed5279a1a6d834708237d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85289561483ed5279a1a6d834708237d">tearDownScreen</a> ()</td></tr>
 <tr class="separator:a85289561483ed5279a1a6d834708237d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad45fecbe6332b9946872216c3944aee7" id="r_ad45fecbe6332b9946872216c3944aee7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad45fecbe6332b9946872216c3944aee7">single_meas_3PH</a> ()</td></tr>
+<tr class="memdesc:ad45fecbe6332b9946872216c3944aee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a single three-phase measurement and updates the GUI values accordingly.  <br /></td></tr>
 <tr class="separator:ad45fecbe6332b9946872216c3944aee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -204,7 +205,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_measurement___single___display__3_p_view_8cpp_source.html#l00030">30</a> of file <a class="el" href="_measurement___single___display__3_p_view_8cpp_source.html">Measurement_Single_Display_3PView.cpp</a>.</p>
+<p>Performs a single three-phase measurement and updates the GUI values accordingly. </p>
+<p>This function calculates the single measurement values using the <a class="el" href="calculation_8h.html#a6aee6a07a86ee73c7ba20e059b79c794" title="Perform a single measurement for a specific phase.">single_measurement()</a> function. It updates the gauge angle, current value, frequency value, and distance value on the GUI. If there is an error with the current, frequency, or distance, it displays the corresponding error message.</p>
+<dl class="section note"><dt>Note</dt><dd>This function is only executed when not running in the simulator. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_measurement___single___display__3_p_view_8cpp_source.html#l00040">40</a> of file <a class="el" href="_measurement___single___display__3_p_view_8cpp_source.html">Measurement_Single_Display_3PView.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

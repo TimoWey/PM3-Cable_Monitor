@@ -138,12 +138,16 @@ Macros</h2></td></tr>
 <tr class="memitem:af8effa27f0158badaff3cc62a6016095" id="r_af8effa27f0158badaff3cc62a6016095"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8effa27f0158badaff3cc62a6016095">DISABLE_TOUCHGFX_INTERRUPTS</a>()</td></tr>
 <tr class="separator:af8effa27f0158badaff3cc62a6016095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1da8470096f447fa45ad8251ad6953c" id="r_aa1da8470096f447fa45ad8251ad6953c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1da8470096f447fa45ad8251ad6953c">DISABLE_BUZZER</a>()&#160;&#160;&#160;HAL_TIM_PWM_Stop(&amp;<a class="el" href="#ae4b8faf50eeb07577983d36e4c3894b8">htim14</a>, TIM_CHANNEL_1)</td></tr>
+<tr class="memdesc:aa1da8470096f447fa45ad8251ad6953c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the buzzer.  <br /></td></tr>
 <tr class="separator:aa1da8470096f447fa45ad8251ad6953c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c2f4d08dfe4e521e60674781b86f333" id="r_a8c2f4d08dfe4e521e60674781b86f333"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c2f4d08dfe4e521e60674781b86f333">ENABLE_BUZZER</a>()&#160;&#160;&#160;HAL_TIM_PWM_Start(&amp;<a class="el" href="#ae4b8faf50eeb07577983d36e4c3894b8">htim14</a>, TIM_CHANNEL_1)</td></tr>
+<tr class="memdesc:a8c2f4d08dfe4e521e60674781b86f333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the buzzer.  <br /></td></tr>
 <tr class="separator:a8c2f4d08dfe4e521e60674781b86f333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f63964ce584a43cbad406260d4e132b" id="r_a8f63964ce584a43cbad406260d4e132b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f63964ce584a43cbad406260d4e132b">DISABLE_LED</a>()&#160;&#160;&#160;HAL_TIM_PWM_Stop(&amp;<a class="el" href="#acefaeaaa3856ddddae7083b2d220fe4b">htim5</a>, TIM_CHANNEL_1)</td></tr>
+<tr class="memdesc:a8f63964ce584a43cbad406260d4e132b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the LED.  <br /></td></tr>
 <tr class="separator:a8f63964ce584a43cbad406260d4e132b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d8b3f36bda3f694d92a6d0949220a9e" id="r_a3d8b3f36bda3f694d92a6d0949220a9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d8b3f36bda3f694d92a6d0949220a9e">ENABLE_LED</a>()&#160;&#160;&#160;HAL_TIM_PWM_Start(&amp;<a class="el" href="#acefaeaaa3856ddddae7083b2d220fe4b">htim5</a>, TIM_CHANNEL_1)</td></tr>
+<tr class="memdesc:a3d8b3f36bda3f694d92a6d0949220a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the LED.  <br /></td></tr>
 <tr class="separator:a3d8b3f36bda3f694d92a6d0949220a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -175,11 +179,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:abac8ce1f5096ff3f393117cbfa98f888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the calibration process.  <br /></td></tr>
 <tr class="separator:abac8ce1f5096ff3f393117cbfa98f888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b6736969ddf8f3f9f229c3ac4a24c23" id="r_a6b6736969ddf8f3f9f229c3ac4a24c23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b6736969ddf8f3f9f229c3ac4a24c23">toggle_Buzzer_settings</a> (bool btn)</td></tr>
+<tr class="memdesc:a6b6736969ddf8f3f9f229c3ac4a24c23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the settings of the buzzer or LED based on the button number.  <br /></td></tr>
 <tr class="separator:a6b6736969ddf8f3f9f229c3ac4a24c23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a43c98c20a1c370f9fd65564895637f19" id="r_a43c98c20a1c370f9fd65564895637f19"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43c98c20a1c370f9fd65564895637f19">Calibration_Data</a> [14]</td></tr>
+<tr class="memdesc:a43c98c20a1c370f9fd65564895637f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global Calibration values.  <br /></td></tr>
 <tr class="separator:a43c98c20a1c370f9fd65564895637f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4b8faf50eeb07577983d36e4c3894b8" id="r_ae4b8faf50eeb07577983d36e4c3894b8"><td class="memItemLeft" align="right" valign="top">TIM_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4b8faf50eeb07577983d36e4c3894b8">htim14</a></td></tr>
 <tr class="separator:ae4b8faf50eeb07577983d36e4c3894b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,7 +246,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00133">133</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
+<p>Disables the buzzer. </p>
+
+<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00136">136</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
 
 </div>
 </div>
@@ -259,7 +267,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00135">135</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
+<p>Disables the LED. </p>
+
+<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00146">146</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
 
 </div>
 </div>
@@ -301,7 +311,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00134">134</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
+<p>Enables the buzzer. </p>
+
+<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00141">141</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
 
 </div>
 </div>
@@ -320,7 +332,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00136">136</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
+<p>Enables the LED. </p>
+
+<p class="definition">Definition at line <a class="el" href="calculation_8h_source.html#l00151">151</a> of file <a class="el" href="calculation_8h_source.html">calculation.h</a>.</p>
 
 </div>
 </div>
@@ -440,7 +454,7 @@ Variables</h2></td></tr>
 <p>This function calculates the signal strength and main frequency for each channel using <a class="el" href="struct_f_f_t.html">FFT</a>. It performs accurate measurement loops and calculates the mean and standard deviation of the signal strength. If the standard deviation is larger than 100, it sets the error flag accordingly.</p>
 <dl class="section return"><dt>Returns</dt><dd>The calculated <a class="el" href="struct_a_c_c_u___f_f_t.html">ACCU_FFT</a> structure containing the signal strength, standard deviation, and error flag. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00196">196</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00200">200</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -474,7 +488,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_a_c_c_u___m_e_a_s.html">ACCU_MEAS</a> The structure containing the calculated values and error flags. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00394">394</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00404">404</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -513,7 +527,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The calculated values including frequency, distance, angle, current, and error status. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00265">265</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00272">272</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -545,7 +559,7 @@ Here is the caller graph for this function:</div>
 <p>Starts the calibration process. </p>
 <p>This function initializes the necessary variables and arrays for calibration. It calculates the coefficients for distance approximation and current approximation based on the calibration data stored in flash memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00487">487</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00501">501</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -568,13 +582,22 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void toggle_Buzzer_settings </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>btn</em></span></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>btn_nr</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00566">566</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p>Toggles the settings of the buzzer or LED based on the button number. </p>
+<p>This function toggles the settings of the buzzer or LED based on the button number. If the button number is true, it toggles the buzzer settings. If the button number is false, it toggles the LED settings. Also it enables or disables the buzzer or LED based on the current settings.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn_nr</td><td>The button number indicating whether to toggle the buzzer or LED settings. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00592">592</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -604,7 +627,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00204">204</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p>Global Calibration values. </p>
+<p>This array stores the calibration values for various components of the cable monitor system. The calibration values are measured at distances of 10mm, 50mm, and 100mm.</p>
+<p>Array Index Mapping: 0-2: Left Pad 3-5: Right Pad 6-7: Hall Left 1P 1.2A and 5A 8-9: Hall Right 1P 1.2A and 5A 10-11: Hall Left 3P 1.2A and 5A 12-13: Hall Right 3P 1.2A and 5A</p>
+<p>The calibration values are read after initialization. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00224">224</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -628,7 +656,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00089">89</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00086">86</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -652,7 +680,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00088">88</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00085">85</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>

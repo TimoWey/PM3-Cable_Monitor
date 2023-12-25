@@ -15,6 +15,14 @@ void Main_MenuView::tearDownScreen()
     Main_MenuViewBase::tearDownScreen();
 }
 
+/**
+ * @brief Sets the timeout value for the main menu screen.
+ * 
+ * This function updates the timeout value displayed on the GUI and invalidates the text area.
+ * If the value is 0, it navigates to the shutting off screen without any transition.
+ * 
+ * @param value The timeout value to be set.
+ */
 void Main_MenuView::setTimeoutValue(int value)
 {
 	//display the timeout value on the GUI
