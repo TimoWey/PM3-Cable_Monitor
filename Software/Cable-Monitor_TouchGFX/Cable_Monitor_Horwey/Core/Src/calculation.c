@@ -236,7 +236,11 @@ ACCU_FFT accurate_FFT(void){
     arm_std_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr_std_dev);
     arm_mean_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl);
     arm_std_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl_std_dev);
-
+    // Check if the standard deviation is larger than 200
+    if (accu_fft.signal_strength_pr_std_dev > 200 || accu_fft.signal_strength_pl_std_dev > 200 || accu_fft.signal_strength_hsr_std_dev > 200 || accu_fft.signal_strength_hsl_std_dev > 200){
+        accu_fft.error = CALC_ERROR_DEVIATION_TOO_HIGH;
+    } else accu_fft.error = CALC_ERROR_NONE;
+    // Return the calculated values
     return accu_fft;
 }
 
@@ -259,6 +263,9 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     SINGLE_MEAS single_meas;
     // Create an instance of the FFT structure
     FFT fft;
+
+    // Set the error to none
+    single_meas.error = CALC_ERROR_NONE;
 
     static float32_t samples_PR[SAMPLE_LEN];
     static float32_t samples_PL[SAMPLE_LEN];
@@ -321,6 +328,38 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
         }
     }
 
+    // ERROR TESTING:
+
+    // Check if distance is close enough for current calculation and if the current is out of the range of 0-10 A
+    if (single_meas.distance > 20 || (single_meas.current <= 0 && single_meas.current >= 10)){
+       single_meas.error = CALC_ERROR_TOO_FAR_AWAY;
+    }
+
+    // Check if the current is larger than 10 A -> CALL ERROR OVERCURRENT
+    if (single_meas.current > 10){
+       single_meas.error = CALC_ERROR_OVERCURRENT;
+    }
+
+    // Check if the distance is larger than 300 mm or smaller than 0 -> CALL ERROR DISCONNECT
+    if (single_meas.distance > 250){
+        single_meas.error = CALC_ERROR_DISCONNECT;
+    }
+
+    // Check if the frequency is 0 -> CALL ERROR FREQUENCY
+    if (single_meas.frequency == 0){
+        single_meas.error = CALC_ERROR_FREQUENCY;
+    }
+
+    // OPTIMIZE:
+
+    // Limit the angle to +/- 90 degrees
+    if (single_meas.angle > 90){
+        single_meas.angle = 90;
+    }else if (single_meas.angle < -90){
+        single_meas.angle = -90;
+    }
+
+    // Return the calculated values
     return single_meas;
 }
 
@@ -337,7 +376,9 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
 ACCU_MEAS accurate_measurement(uint8_t Phase){
     // Create an instance of the ACCU_MEAS structure
     ACCU_MEAS accu_meas;
-    // Create an instance of the FFT structure
+
+    // set the error to none
+    accu_meas.error_accu = CALC_ERROR_NONE;
 
     static float32_t distance[ACCURATE_MEASUREMENT_LOOPS];
     static float32_t angle[ACCURATE_MEASUREMENT_LOOPS];
@@ -350,6 +391,10 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
         angle[i] = single_meas.angle;
         frequency[i] = single_meas.frequency;
         current[i] = single_meas.current;
+
+        if (single_meas.error != CALC_ERROR_NONE){
+            accu_meas.error_single = single_meas.error;
+        }
     }
     // Calculate the mean value of the distance
     arm_mean_f32(distance, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.distance);
@@ -367,6 +412,13 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
     arm_mean_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current);
     // Calculate standard deviation of the current
     arm_std_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current_std_dev);
+
+    // Check if the standard deviation is larger than 100
+    if (accu_meas.distance_std_dev > 100 || accu_meas.angle_std_dev > 100 || accu_meas.frequency_std_dev > 100 || accu_meas.current_std_dev > 100){
+        accu_meas.error_accu = CALC_ERROR_DEVIATION_TOO_HIGH;
+    } else accu_meas.error_accu = CALC_ERROR_NONE;
+
+    // Return the calculated values
     return accu_meas;
 }
 
