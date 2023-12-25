@@ -130,9 +130,24 @@ extern TIM_HandleTypeDef htim5;
     } while (0)
 
 // Macro for Buzzer and LED control
+/**
+ * @brief Disables the buzzer.
+ */
 #define DISABLE_BUZZER() HAL_TIM_PWM_Stop(&htim14, TIM_CHANNEL_1)
+
+/**
+ * @brief Enables the buzzer.
+ */
 #define ENABLE_BUZZER() HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1)
+
+/**
+ * @brief Disables the LED.
+ */
 #define DISABLE_LED() HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1)
+
+/**
+ * @brief Enables the LED.
+ */
 #define ENABLE_LED() HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1)
 
 #endif /* CALC_H_ */

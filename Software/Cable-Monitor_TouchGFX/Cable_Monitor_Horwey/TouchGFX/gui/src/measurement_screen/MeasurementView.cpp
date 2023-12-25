@@ -15,6 +15,14 @@ void MeasurementView::tearDownScreen()
     MeasurementViewBase::tearDownScreen();
 }
 
+/**
+ * @brief Sets the timeout value for the MeasurementView.
+ *
+ * This function sets the timeout value for the MeasurementView and updates the GUI accordingly.
+ * If the timeout value is set to 0, it will navigate to the Shutting_OffScreenNoTransition.
+ *
+ * @param value The timeout value to be set.
+ */
 void MeasurementView::setTimeoutValue(int value)
 {
 	//display the timeout value on the GUI

@@ -27,7 +27,16 @@ void Measurement_Accurate_Display_3PView::tearDownScreen()
     Measurement_Accurate_Display_3PViewBase::tearDownScreen();
 }
 
-void Measurement_Accurate_Display_3PView::accu_meas_3PH(){
+/**
+ * @brief Performs accurate 3-phase measurement and updates the display accordingly.
+ * 
+ * This function calculates the accurate measurement values for a 3-phase system and updates the display
+ * with the calculated values. It also handles error conditions and displays appropriate error messages.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
+void Measurement_Accurate_Display_3PView::accu_meas_3PH()
+{
 #ifndef SIMULATOR
 
 	// set the screen timeout value
@@ -117,4 +126,3 @@ void Measurement_Accurate_Display_3PView::accu_meas_3PH(){
 
 #endif
 }
-

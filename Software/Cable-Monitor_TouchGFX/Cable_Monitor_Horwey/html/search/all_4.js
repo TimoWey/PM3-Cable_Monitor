@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['bind_0',['bind',['../class_model.html#a03fee25b8371b19540e41958977b9664',1,'Model::bind()'],['../class_model_listener.html#a4c7cee467e493a129936bcada9cd91d3',1,'ModelListener::bind()']]],
-  ['busfault_5fhandler_1',['BusFault_Handler',['../stm32f4xx__it_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f4xx_it.c']]],
-  ['buzzer_5fpwm_5fgpio_5fport_2',['BUZZER_PWM_GPIO_Port',['../main_8h.html#a8f0ca1700fa5435216bce80ec9680f24',1,'main.h']]],
-  ['buzzer_5fpwm_5fpin_3',['BUZZER_PWM_Pin',['../main_8h.html#a2a77b48aed5d2a5bfc4880861b0fa300',1,'main.h']]],
-  ['by_20horvat_20wey_4',['cable-Monitor by Horvat &amp; Wey',['../index.html',1,'']]],
-  ['bytes2float_5',['Bytes2float',['../_f_l_a_s_h___s_e_c_t_o_r___f4_8c.html#a9c2a233df00e9fe48c07c4cb975612dd',1,'FLASH_SECTOR_F4.c']]],
-  ['bytes_5ftemp_6',['bytes_temp',['../_f_l_a_s_h___s_e_c_t_o_r___f4_8c.html#ae7fc8a7d12e0c0c2be596ccb2dd48fdd',1,'FLASH_SECTOR_F4.c']]]
+  ['enable_5fbuzzer_0',['ENABLE_BUZZER',['../calculation_8h.html#a8c2f4d08dfe4e521e60674781b86f333',1,'calculation.h']]],
+  ['enable_5fled_1',['ENABLE_LED',['../calculation_8h.html#a3d8b3f36bda3f694d92a6d0949220a9e',1,'calculation.h']]],
+  ['enable_5ftouchgfx_5finterrupts_2',['ENABLE_TOUCHGFX_INTERRUPTS',['../calculation_8h.html#ac031bf5e13adcb4d23de36fe7ebe9aec',1,'calculation.h']]],
+  ['error_3',['error',['../struct_f_f_t.html#ac9776ddab7117b55829f24692c5394b5',1,'FFT::error'],['../struct_a_c_c_u___f_f_t.html#ac9776ddab7117b55829f24692c5394b5',1,'ACCU_FFT::error'],['../struct_s_i_n_g_l_e___m_e_a_s.html#ac9776ddab7117b55829f24692c5394b5',1,'SINGLE_MEAS::error'],['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html#ac9776ddab7117b55829f24692c5394b5',1,'DISTANCE_ANGLE::error']]],
+  ['error_5faccu_4',['error_accu',['../struct_a_c_c_u___m_e_a_s.html#a040e54187efe6bcefb2731f86c1e3d12',1,'ACCU_MEAS']]],
+  ['error_5fhandler_5',['Error_Handler',['../main_8h.html#a1730ffe1e560465665eb47d9264826f9',1,'Error_Handler(void):&#160;main.c'],['../main_8c.html#a1730ffe1e560465665eb47d9264826f9',1,'Error_Handler(void):&#160;main.c']]],
+  ['error_5fsingle_6',['error_single',['../struct_a_c_c_u___m_e_a_s.html#aa719a491e00516c70bbb6bb3ca2dcc68',1,'ACCU_MEAS']]],
+  ['eth_5frx_5fbuf_5fsize_7',['ETH_RX_BUF_SIZE',['../stm32f4xx__hal__conf_8h.html#a0cdaf687f7a7f2dba570d5a722990786',1,'stm32f4xx_hal_conf.h']]],
+  ['eth_5frxbufnb_8',['ETH_RXBUFNB',['../stm32f4xx__hal__conf_8h.html#a62b0f224fa9c4f2e5574c9e52526f751',1,'stm32f4xx_hal_conf.h']]],
+  ['eth_5ftx_5fbuf_5fsize_9',['ETH_TX_BUF_SIZE',['../stm32f4xx__hal__conf_8h.html#af83956dfc1b135c3c92ac409758b6cf4',1,'stm32f4xx_hal_conf.h']]],
+  ['eth_5ftxbufnb_10',['ETH_TXBUFNB',['../stm32f4xx__hal__conf_8h.html#a4ad07ad8fa6f8639ab8ef362390d86c7',1,'stm32f4xx_hal_conf.h']]],
+  ['external_5fclock_5fvalue_11',['EXTERNAL_CLOCK_VALUE',['../stm32f4xx__hal__conf_8h.html#a8c47c935e91e70569098b41718558648',1,'stm32f4xx_hal_conf.h']]],
+  ['exti3_5firqhandler_12',['EXTI3_IRQHandler',['../stm32f4xx__it_8h.html#a30c045de96d18ec9c67a7b9e4350920f',1,'EXTI3_IRQHandler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a30c045de96d18ec9c67a7b9e4350920f',1,'EXTI3_IRQHandler(void):&#160;stm32f4xx_it.c']]]
 ];

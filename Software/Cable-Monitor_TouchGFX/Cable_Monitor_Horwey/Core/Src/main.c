@@ -24,15 +24,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#define ARM_MATH_CM4
 #include "Components/ili9341/ili9341.h"
-
 #include <stdint.h>
 #include <stdio.h>
 #include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
-
-#define ARM_MATH_CM4
-
 #include "arm_math.h"
 #include "FLASH_SECTOR_F4.h"
 #include "measuring.h"
@@ -174,8 +171,23 @@ void gyro_disable(void);
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
+/**
+ * @brief Timeout value for sleep mode.
+ */
 int sleep_timeout_value = SCREEN_TIMEOUT;
 
+/**
+ * @brief Disable the gyro by configuring GPIO pins.
+ * 
+ * This function disables the gyro by configuring the GPIO pins PC1 and PF8.
+ * It first enables the clock for GPIO port C and sets PC1 as an output pin.
+ * Then it sets the GYRO (CS) pin to 0 for a short time and waits for 10 milliseconds.
+ * After that, it configures PC1 as an analog pin (ADC123_IN11).
+ * 
+ * Next, it enables the clock for GPIO port F and resets the speed, alternate function,
+ * and pull-up/down configuration of pin PF8. It waits for 10 milliseconds again.
+ * Finally, it configures PF8 as an analog pin (ADC3_IN4).
+ */
 void gyro_disable(void)
 {
 	__HAL_RCC_GPIOC_CLK_ENABLE();  // Enable Clock for GPIO port C
@@ -193,18 +205,36 @@ void gyro_disable(void)
 	GPIOF->MODER |= 3UL << GPIO_MODER_MODER8_Pos;  // Analog mode PF8 = ADC3_IN4
 }
 
-// Global Calibration values
-// At distance: 10mm, 50mm and 100mm
-// 0-2:    Left Pad
-// 3-5:    Right Pad
-// 6-7:    Hall Left  1P 1.2A and 5A
-// 8-9:    Hall Right 1P 1.2A and 5A
-// 10-11:  Hall Left  3P 1.2A and 5A
-// 12-13:  Hall Right 3P 1.2A and 5A
-uint32_t Calibration_Data[14]; // The Calibration values are read after init
+/**
+ * @brief Global Calibration values
+ * 
+ * This array stores the calibration values for various components of the cable monitor system.
+ * The calibration values are measured at distances of 10mm, 50mm, and 100mm.
+ * 
+ * Array Index Mapping:
+ * 0-2:    Left Pad
+ * 3-5:    Right Pad
+ * 6-7:    Hall Left  1P 1.2A and 5A
+ * 8-9:    Hall Right 1P 1.2A and 5A
+ * 10-11:  Hall Left  3P 1.2A and 5A
+ * 12-13:  Hall Right 3P 1.2A and 5A
+ * 
+ * The calibration values are read after initialization.
+ */
+uint32_t Calibration_Data[14];
 
-// read all 12 flash values since they get erased hen writing a new value
-// proceed to write the 23 values including the new one
+/**
+ * @brief Sets the calibration flash values.
+ * 
+ * This function reads all 14 flash values starting from the specified sector address,
+ * then proceeds to write the 23 values including the new one. It also updates the global
+ * variable with the new data.
+ * 
+ * @param StartSectorAddress The starting address of the flash sector.
+ * @param value The new value to be written.
+ * @param index The index at which the new value should be written.
+ * @param numberofwords The number of words to be read and written.
+ */
 void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint32_t index, uint16_t numberofwords)
 {
 	uint32_t Rx_Data[numberofwords];
@@ -681,7 +711,7 @@ static void MX_TIM5_Init(void)
   htim5.Instance = TIM5;
   htim5.Init.Prescaler = 840-1;
   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 100;
+  htim5.Init.Period = 100-1;
   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
@@ -1288,20 +1318,26 @@ void StartTimeoutTask(void *argument)
   //static int sleep_timeout_value = 60;
   for(;;)
   {
-	  sleep_timeout_value--;
-	  osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
-
+	// decrement the sleep timeout value
+    sleep_timeout_value--;
+	  
+    // put the sleep timeout value in the queue to be read by the screen task
+    osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
+    
 	  if(sleep_timeout_value == 0)
 	  {
 		  sleep_timeout_value = SCREEN_TIMEOUT;
-		  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);	//shut down device
+      // pull Pin5 at PortE low to shut down the device
+		  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
 	  }
+	  // if the sleep timeout value is out of range, set it to the default value
 	  if(sleep_timeout_value > SCREEN_TIMEOUT && sleep_timeout_value < 0)
 		  sleep_timeout_value = SCREEN_TIMEOUT;
 
 	  // Toggle onboard LED as heartbeat visual feedback
 	  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
 
+	  // wait 1 second
 	  osDelay(1000);
   }
   /* USER CODE END StartTimeoutTask */

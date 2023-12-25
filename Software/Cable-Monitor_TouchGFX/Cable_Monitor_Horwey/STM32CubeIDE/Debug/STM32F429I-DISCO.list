@@ -39,29 +39,29 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  17 .comment      00000132  00000000  00000000  001001a8  2**0
                   CONTENTS, READONLY
- 18 .debug_line   000a014b  00000000  00000000  001002da  2**0
+ 18 .debug_line   000a0149  00000000  00000000  001002da  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_line_str 00000093  00000000  00000000  001a0425  2**0
+ 19 .debug_line_str 00000093  00000000  00000000  001a0423  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_info   00295d48  00000000  00000000  001a04b8  2**0
+ 20 .debug_info   00295d4f  00000000  00000000  001a04b6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_abbrev 0002e304  00000000  00000000  00436200  2**0
+ 21 .debug_abbrev 0002e2e9  00000000  00000000  00436205  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_aranges 00004fc0  00000000  00000000  00464508  2**3
+ 22 .debug_aranges 00004fc0  00000000  00000000  004644f0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_str    001225a8  00000000  00000000  004694c8  2**0
+ 23 .debug_str    001225af  00000000  00000000  004694b0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 24 .debug_rnglists 000042e4  00000000  00000000  0058ba70  2**0
+ 24 .debug_rnglists 000042e4  00000000  00000000  0058ba5f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 25 .debug_loclists 000372e3  00000000  00000000  0058fd54  2**0
+ 25 .debug_loclists 000372e3  00000000  00000000  0058fd43  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 26 .debug_macro  0003dda8  00000000  00000000  005c7037  2**0
+ 26 .debug_macro  0003dda8  00000000  00000000  005c7026  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 27 .debug_frame  0000d82c  00000000  00000000  00604de0  2**2
+ 27 .debug_frame  0000d82c  00000000  00000000  00604dd0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 28 .debug_loc    00003866  00000000  00000000  0061260c  2**0
+ 28 .debug_loc    00003866  00000000  00000000  006125fc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 29 .debug_ranges 00000180  00000000  00000000  00615e72  2**0
+ 29 .debug_ranges 00000180  00000000  00000000  00615e62  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1551,10 +1551,10 @@ static uint32_t GetSector(uint32_t Address)
  8001076:	4770      	bx	lr
 
 08001078 <Flash_Write_Data>:
-   return float_variable;
-}
-
-
+  * @param Data: Pointer to the data to be written.
+  * @param numberofwords: Number of words to be written.
+  * @return HAL_FLASH_GetError() if an error occurred during erasing or writing the flash sector, otherwise 0.
+  */
 uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *Data, uint16_t numberofwords)
 {
  8001078:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -1657,23 +1657,23 @@ uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *Data, uint16_t
  80010e4:	20000194 	.word	0x20000194
 
 080010e8 <Flash_Read_Data>:
+ */
 void Flash_Read_Data (uint32_t StartSectorAddress, uint32_t *RxBuf, uint16_t numberofwords)
 {
-	while (1)
-	{
-
-		*RxBuf = *(__IO uint32_t *)StartSectorAddress;
+  while (1)
+  {
+    *RxBuf = *(__IO uint32_t *)StartSectorAddress;
  80010e8:	f850 3b04 	ldr.w	r3, [r0], #4
  80010ec:	f841 3b04 	str.w	r3, [r1], #4
-		StartSectorAddress += 4;
-		RxBuf++;
-		if (!(numberofwords--)) break;
+    StartSectorAddress += 4;
+    RxBuf++;
+    if (!(numberofwords--)) break;
  80010f0:	4613      	mov	r3, r2
  80010f2:	3a01      	subs	r2, #1
  80010f4:	b292      	uxth	r2, r2
  80010f6:	2b00      	cmp	r3, #0
  80010f8:	d1f6      	bne.n	80010e8 <Flash_Read_Data>
-	}
+  }
 }
  80010fa:	4770      	bx	lr
 
@@ -1750,7 +1750,7 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
  8001172:	ee28 8a27 	vmul.f32	s16, s16, s15
     uint8_t given_frequency = 0;
     // Check if the main frequency is in the range of 45-55 Hz
-    if (main_frequency <= 55 && main_frequency >= 45) {
+    if (main_frequency <= 55 && main_frequency >= 45)
  8001176:	eddf 7a24 	vldr	s15, [pc, #144]	; 8001208 <calculate_freq_and_signalstrength+0x10c>
  800117a:	eeb4 8ae7 	vcmpe.f32	s16, s15
  800117e:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
@@ -1759,9 +1759,11 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
  8001188:	eeb4 8ae7 	vcmpe.f32	s16, s15
  800118c:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  8001190:	da0f      	bge.n	80011b2 <calculate_freq_and_signalstrength+0xb6>
+    {
         // If yes, round the given frequency to 50 Hz
         given_frequency = 50;
-    } else if (main_frequency <= 65 && main_frequency >= 55) {
+    }
+    else if (main_frequency <= 65 && main_frequency >= 55)
  8001192:	eddf 7a1f 	vldr	s15, [pc, #124]	; 8001210 <calculate_freq_and_signalstrength+0x114>
  8001196:	eeb4 8ae7 	vcmpe.f32	s16, s15
  800119a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
@@ -1770,15 +1772,18 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
  80011a4:	eeb4 8ae7 	vcmpe.f32	s16, s15
  80011a8:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  80011ac:	da21      	bge.n	80011f2 <calculate_freq_and_signalstrength+0xf6>
+    {
         // If yes, round the given frequency to 60 Hz
         given_frequency = 60;
-    } else given_frequency = 0;
+    }
+    else
+    	given_frequency = 0;
  80011ae:	2600      	movs	r6, #0
  80011b0:	e002      	b.n	80011b8 <calculate_freq_and_signalstrength+0xbc>
         given_frequency = 50;
  80011b2:	2632      	movs	r6, #50	; 0x32
  80011b4:	e000      	b.n	80011b8 <calculate_freq_and_signalstrength+0xbc>
-    } else given_frequency = 0;
+    	given_frequency = 0;
  80011b6:	2600      	movs	r6, #0
     // calculate the index of the given frequency
     uint32_t index = (uint32_t)given_frequency * SAMPLE_LEN / MEAS_get_samp_freq();
@@ -1788,8 +1793,9 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
     // set the signal strength to 0
     float signal_strength = 0;
     // check if the given frequency is 50 or 60 Hz
-    if (given_frequency != 0) {
+    if (given_frequency != 0)
  80011c2:	b1c6      	cbz	r6, 80011f6 <calculate_freq_and_signalstrength+0xfa>
+    {
         // calculate the signal strength
         signal_strength = 2 * fft_complex_output[index] / SAMPLE_LEN;
  80011c4:	ab08      	add	r3, sp, #32
@@ -1801,7 +1807,9 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
         fft.error = CALC_ERROR_NONE;
  80011da:	2305      	movs	r3, #5
  80011dc:	722b      	strb	r3, [r5, #8]
-    } else fft.error = CALC_ERROR_FREQUENCY;  // if the given frequency is not 50 or 60 Hz
+    }
+    else
+    	fft.error = CALC_ERROR_FREQUENCY;  // if the given frequency is not 50 or 60 Hz
     // return the calculated values
     fft.main_freq = main_frequency;
  80011de:	ed85 8a00 	vstr	s16, [r5]
@@ -1816,7 +1824,7 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
         given_frequency = 60;
  80011f2:	263c      	movs	r6, #60	; 0x3c
  80011f4:	e7e0      	b.n	80011b8 <calculate_freq_and_signalstrength+0xbc>
-    } else fft.error = CALC_ERROR_FREQUENCY;  // if the given frequency is not 50 or 60 Hz
+    	fft.error = CALC_ERROR_FREQUENCY;  // if the given frequency is not 50 or 60 Hz
  80011f6:	2300      	movs	r3, #0
  80011f8:	722b      	strb	r3, [r5, #8]
     float signal_strength = 0;
@@ -1844,7 +1852,7 @@ ACCU_FFT accurate_FFT(void){
     static float32_t samples_HSR[SAMPLE_LEN];
     static float32_t samples_HSL[SAMPLE_LEN];
 
-    for (uint8_t i = 0; i < CALIBRATION_MEASUREMENT_LOOPS; i++){
+    for (uint8_t i = 0; i < CALIBRATION_MEASUREMENT_LOOPS; i++)
  8001220:	2400      	movs	r4, #0
  8001222:	e05b      	b.n	80012dc <accurate_FFT+0xc4>
         samples = MEAS_start_measure();
@@ -1931,7 +1939,7 @@ ACCU_FFT accurate_FFT(void){
  80012d2:	443b      	add	r3, r7
  80012d4:	9a05      	ldr	r2, [sp, #20]
  80012d6:	601a      	str	r2, [r3, #0]
-    for (uint8_t i = 0; i < CALIBRATION_MEASUREMENT_LOOPS; i++){
+    for (uint8_t i = 0; i < CALIBRATION_MEASUREMENT_LOOPS; i++)
  80012d8:	3401      	adds	r4, #1
  80012da:	b2e4      	uxtb	r4, r4
  80012dc:	2c31      	cmp	r4, #49	; 0x31
@@ -1988,7 +1996,7 @@ ACCU_FFT accurate_FFT(void){
  800133a:	4620      	mov	r0, r4
  800133c:	f036 f9de 	bl	80376fc <arm_std_f32>
     // Check if the standard deviation is larger than 100
-    if (accu_fft.signal_strength_pr_std_dev > 100 || accu_fft.signal_strength_pl_std_dev > 100 || accu_fft.signal_strength_hsr_std_dev > 100 || accu_fft.signal_strength_hsl_std_dev > 100){
+    if (accu_fft.signal_strength_pr_std_dev > 100 || accu_fft.signal_strength_pl_std_dev > 100 \
  8001340:	ed9d 7a08 	vldr	s14, [sp, #32]
  8001344:	eddf 7a1f 	vldr	s15, [pc, #124]	; 80013c4 <accurate_FFT+0x1ac>
  8001348:	eeb4 7ae7 	vcmpe.f32	s14, s15
@@ -1998,6 +2006,7 @@ ACCU_FFT accurate_FFT(void){
  8001356:	eeb4 7ae7 	vcmpe.f32	s14, s15
  800135a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  800135e:	dc0d      	bgt.n	800137c <accurate_FFT+0x164>
+    		|| accu_fft.signal_strength_hsr_std_dev > 100 || accu_fft.signal_strength_hsl_std_dev > 100)
  8001360:	ed9d 7a0c 	vldr	s14, [sp, #48]	; 0x30
  8001364:	eeb4 7ae7 	vcmpe.f32	s14, s15
  8001368:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
@@ -2009,7 +2018,8 @@ ACCU_FFT accurate_FFT(void){
         accu_fft.error = CALC_ERROR_DEVIATION_TOO_HIGH;
  800137c:	2304      	movs	r3, #4
  800137e:	f88d 303c 	strb.w	r3, [sp, #60]	; 0x3c
-    } else accu_fft.error = CALC_ERROR_NONE;
+    else
+    	accu_fft.error = CALC_ERROR_NONE;
     // Return the calculated values
     return accu_fft;
  8001382:	4644      	mov	r4, r8
@@ -2024,7 +2034,7 @@ ACCU_FFT accurate_FFT(void){
  8001392:	4640      	mov	r0, r8
  8001394:	b010      	add	sp, #64	; 0x40
  8001396:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
-    } else accu_fft.error = CALC_ERROR_NONE;
+    	accu_fft.error = CALC_ERROR_NONE;
  800139a:	2305      	movs	r3, #5
  800139c:	f88d 303c 	strb.w	r3, [sp, #60]	; 0x3c
  80013a0:	e7ef      	b.n	8001382 <accurate_FFT+0x16a>
@@ -2040,12 +2050,12 @@ ACCU_FFT accurate_FFT(void){
  80013c4:	42c80000 	.word	0x42c80000
 
 080013c8 <calculate_distance_and_angle>:
- *
  * @param signal_strength_r The signal strength of the right signal.
  * @param signal_strength_l The signal strength of the left signal.
  * @return The calculated distance and angle.
  */
-DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l){
+DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l)
+{
  80013c8:	b510      	push	{r4, lr}
  80013ca:	4604      	mov	r4, r0
 
@@ -2126,7 +2136,7 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
  8001488:	42652ee0 	.word	0x42652ee0
 
 0800148c <single_measurement>:
-SINGLE_MEAS single_measurement(uint8_t Phase) {
+{
  800148c:	b5f0      	push	{r4, r5, r6, r7, lr}
  800148e:	ed2d 8b06 	vpush	{d8-d10}
  8001492:	b08d      	sub	sp, #52	; 0x34
@@ -2137,7 +2147,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     single_meas.error = CALC_ERROR_NONE;
  800149c:	2305      	movs	r3, #5
  800149e:	7423      	strb	r3, [r4, #16]
-    for (uint32_t i = 0; i < 64; i++) {
+    for (uint32_t i = 0; i < 64; i++)
  80014a0:	2300      	movs	r3, #0
  80014a2:	e027      	b.n	80014f4 <single_measurement+0x68>
         samples_PR[i] = (float32_t)samples[(i * CHANNEL_NUM)];
@@ -2167,7 +2177,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
  80014e8:	4aaa      	ldr	r2, [pc, #680]	; (8001794 <single_measurement+0x308>)
  80014ea:	eb02 0283 	add.w	r2, r2, r3, lsl #2
  80014ee:	edc2 7a00 	vstr	s15, [r2]
-    for (uint32_t i = 0; i < 64; i++) {
+    for (uint32_t i = 0; i < 64; i++)
  80014f2:	3301      	adds	r3, #1
  80014f4:	2b3f      	cmp	r3, #63	; 0x3f
  80014f6:	d9d5      	bls.n	80014a4 <single_measurement+0x18>
@@ -2223,25 +2233,25 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     single_meas.angle = dist_angle.angle;
  8001572:	9b07      	ldr	r3, [sp, #28]
  8001574:	6063      	str	r3, [r4, #4]
-    if(Phase == SINGLE_PHASE){
+    if(Phase == SINGLE_PHASE)
  8001576:	2d01      	cmp	r5, #1
  8001578:	d070      	beq.n	800165c <single_measurement+0x1d0>
-    } else if(Phase == THREE_PHASE){
+    else if(Phase == THREE_PHASE)
  800157a:	2d03      	cmp	r5, #3
  800157c:	f000 8085 	beq.w	800168a <single_measurement+0x1fe>
-    if (single_meas.current < 4){
+    if (single_meas.current < 4)
  8001580:	edd4 6a03 	vldr	s13, [r4, #12]
  8001584:	eeb1 7a00 	vmov.f32	s14, #16	; 0x40800000  4.0
  8001588:	eef4 6ac7 	vcmpe.f32	s13, s14
  800158c:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  8001590:	d505      	bpl.n	800159e <single_measurement+0x112>
-        if(Phase == SINGLE_PHASE){
+        if(Phase == SINGLE_PHASE)
  8001592:	2d01      	cmp	r5, #1
  8001594:	f000 8092 	beq.w	80016bc <single_measurement+0x230>
-        } else if(Phase == THREE_PHASE){
+        else if(Phase == THREE_PHASE)
  8001598:	2d03      	cmp	r5, #3
  800159a:	f000 80a6 	beq.w	80016ea <single_measurement+0x25e>
-    if (single_meas.distance > 30 || (single_meas.current <= 0 && single_meas.current >= 10)){
+    if (single_meas.distance > 30 || (single_meas.current <= 0 && single_meas.current >= 10))
  800159e:	eeb3 7a0e 	vmov.f32	s14, #62	; 0x41f00000  30.0
  80015a2:	eef4 7ac7 	vcmpe.f32	s15, s14
  80015a6:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
@@ -2257,7 +2267,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
        single_meas.error = CALC_ERROR_TOO_FAR_AWAY;
  80015c8:	2303      	movs	r3, #3
  80015ca:	7423      	strb	r3, [r4, #16]
-    if (single_meas.current > 10){
+    if (single_meas.current > 10)
  80015cc:	edd4 6a03 	vldr	s13, [r4, #12]
  80015d0:	eeb2 7a04 	vmov.f32	s14, #36	; 0x41200000  10.0
  80015d4:	eef4 6ac7 	vcmpe.f32	s13, s14
@@ -2266,7 +2276,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
        single_meas.error = CALC_ERROR_OVERCURRENT;
  80015de:	2302      	movs	r3, #2
  80015e0:	7423      	strb	r3, [r4, #16]
-    if (single_meas.distance > 250){
+    if (single_meas.distance > 250)
  80015e2:	ed9f 7a6d 	vldr	s14, [pc, #436]	; 8001798 <single_measurement+0x30c>
  80015e6:	eef4 7ac7 	vcmpe.f32	s15, s14
  80015ea:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
@@ -2277,14 +2287,14 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
         single_meas.angle = 0;
  80015f4:	2300      	movs	r3, #0
  80015f6:	6063      	str	r3, [r4, #4]
-    if (single_meas.frequency == 0){
+    if (single_meas.frequency == 0)
  80015f8:	eeb5 8a40 	vcmp.f32	s16, #0.0
  80015fc:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  8001600:	d101      	bne.n	8001606 <single_measurement+0x17a>
         single_meas.error = CALC_ERROR_FREQUENCY;
  8001602:	2300      	movs	r3, #0
  8001604:	7423      	strb	r3, [r4, #16]
-    if (single_meas.angle > 90){
+    if (single_meas.angle > 90)
  8001606:	ed94 7a01 	vldr	s14, [r4, #4]
  800160a:	eddf 6a64 	vldr	s13, [pc, #400]	; 800179c <single_measurement+0x310>
  800160e:	eeb4 7ae6 	vcmpe.f32	s14, s13
@@ -2329,7 +2339,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
  8001680:	ee27 7a26 	vmul.f32	s14, s14, s13
  8001684:	ed84 7a03 	vstr	s14, [r4, #12]
  8001688:	e77a      	b.n	8001580 <single_measurement+0xf4>
-        if (signal_strength_HSL > signal_strength_HSR){
+        if (signal_strength_HSL > signal_strength_HSR)
  800168a:	eef4 8ac9 	vcmpe.f32	s17, s18
  800168e:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  8001692:	d509      	bpl.n	80016a8 <single_measurement+0x21c>
@@ -2363,7 +2373,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
  80016e0:	ee27 7a26 	vmul.f32	s14, s14, s13
  80016e4:	ed84 7a03 	vstr	s14, [r4, #12]
  80016e8:	e759      	b.n	800159e <single_measurement+0x112>
-            if (signal_strength_HSL > signal_strength_HSR){
+            if (signal_strength_HSL > signal_strength_HSR)
  80016ea:	eef4 8ac9 	vcmpe.f32	s17, s18
  80016ee:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  80016f2:	d509      	bpl.n	8001708 <single_measurement+0x27c>
@@ -2381,7 +2391,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
  8001712:	ee27 7a28 	vmul.f32	s14, s14, s17
  8001716:	ed84 7a03 	vstr	s14, [r4, #12]
  800171a:	e740      	b.n	800159e <single_measurement+0x112>
-    }else if (single_meas.angle < -90){
+    else if (single_meas.angle < -90)
  800171c:	eddf 6a2c 	vldr	s13, [pc, #176]	; 80017d0 <single_measurement+0x344>
  8001720:	eeb4 7ae6 	vcmpe.f32	s14, s13
  8001724:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
@@ -2389,11 +2399,11 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
         single_meas.angle = -90;
  800172c:	edc4 6a01 	vstr	s13, [r4, #4]
  8001730:	e775      	b.n	800161e <single_measurement+0x192>
-       	TIM14->CCR1 = 0;
+    	TIM14->CCR1 = 0;
  8001732:	4b1e      	ldr	r3, [pc, #120]	; (80017ac <single_measurement+0x320>)
  8001734:	2200      	movs	r2, #0
  8001736:	635a      	str	r2, [r3, #52]	; 0x34
-       if(single_meas.distance > 0 && single_meas.distance < 200 && (State_LED == false))
+    if(single_meas.distance > 0 && single_meas.distance < 200 && (State_LED == false))
  8001738:	eef5 7ac0 	vcmpe.f32	s15, #0.0
  800173c:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  8001740:	dd19      	ble.n	8001776 <single_measurement+0x2ea>
@@ -2404,7 +2414,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
  8001750:	4b20      	ldr	r3, [pc, #128]	; (80017d4 <single_measurement+0x348>)
  8001752:	781b      	ldrb	r3, [r3, #0]
  8001754:	b97b      	cbnz	r3, 8001776 <single_measurement+0x2ea>
-       	TIM5->CCR1 = abs(100 - (int)(single_meas.distance/2));
+    	TIM5->CCR1 = abs(100 - (int)(single_meas.distance/2));
  8001756:	eeb6 7a00 	vmov.f32	s14, #96	; 0x3f000000  0.5
  800175a:	ee67 7a87 	vmul.f32	s15, s15, s14
  800175e:	eefd 7ae7 	vcvt.s32.f32	s15, s15
@@ -2449,7 +2459,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
  80017d8:	40000c00 	.word	0x40000c00
 
 080017dc <accurate_measurement>:
-ACCU_MEAS accurate_measurement(uint8_t Phase){
+{
  80017dc:	b570      	push	{r4, r5, r6, lr}
  80017de:	b08e      	sub	sp, #56	; 0x38
  80017e0:	4606      	mov	r6, r0
@@ -2539,7 +2549,7 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
  8001884:	210a      	movs	r1, #10
  8001886:	4620      	mov	r0, r4
  8001888:	f035 ff38 	bl	80376fc <arm_std_f32>
-    if (accu_meas.distance_std_dev > 100 || accu_meas.angle_std_dev > 100 || accu_meas.frequency_std_dev > 100 || accu_meas.current_std_dev > 100){
+    if (accu_meas.distance_std_dev > 100 || accu_meas.angle_std_dev > 100 || \
  800188c:	ed9d 7a09 	vldr	s14, [sp, #36]	; 0x24
  8001890:	eddf 7a1a 	vldr	s15, [pc, #104]	; 80018fc <accurate_measurement+0x120>
  8001894:	eeb4 7ae7 	vcmpe.f32	s14, s15
@@ -2553,6 +2563,7 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
  80018b0:	eeb4 7ae7 	vcmpe.f32	s14, s15
  80018b4:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  80018b8:	dc06      	bgt.n	80018c8 <accurate_measurement+0xec>
+    		accu_meas.frequency_std_dev > 100 || accu_meas.current_std_dev > 100)
  80018ba:	ed9d 7a0c 	vldr	s14, [sp, #48]	; 0x30
  80018be:	eeb4 7ae7 	vcmpe.f32	s14, s15
  80018c2:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
@@ -2573,7 +2584,7 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
  80018de:	4630      	mov	r0, r6
  80018e0:	b00e      	add	sp, #56	; 0x38
  80018e2:	bd70      	pop	{r4, r5, r6, pc}
-    } else accu_meas.error_accu = CALC_ERROR_NONE;
+    	accu_meas.error_accu = CALC_ERROR_NONE;
  80018e4:	2305      	movs	r3, #5
  80018e6:	f88d 3035 	strb.w	r3, [sp, #53]	; 0x35
  80018ea:	e7f0      	b.n	80018ce <accurate_measurement+0xf2>
@@ -2697,11 +2708,11 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
  8001a62:	4770      	bx	lr
 
 08001a64 <calculate_magnetic_coefficients>:
- * @param d The value of d.
  * @param cal_current The calibration current.
  * @param a_magn Pointer to store the calculated magnetic coefficients.
  */
-void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn){
+void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn)
+{
     *a_magn = cal_current / (s * d);
  8001a64:	ee20 0a20 	vmul.f32	s0, s0, s1
  8001a68:	eec1 7a00 	vdiv.f32	s15, s2, s0
@@ -2849,12 +2860,14 @@ void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_cur
  8001c04:	200001c8 	.word	0x200001c8
 
 08001c08 <toggle_Buzzer_settings>:
-
-
-void toggle_Buzzer_settings(bool btn)
+ * current settings.
+ *
+ * @param btn_nr The button number indicating whether to toggle the buzzer or LED settings.
+ */
+void toggle_Buzzer_settings(bool btn_nr)
 {
  8001c08:	b508      	push	{r3, lr}
-	if(btn == true)
+	if(btn_nr == true)
  8001c0a:	b188      	cbz	r0, 8001c30 <toggle_Buzzer_settings+0x28>
 	{
 		if(State_BUZZER == true)
@@ -3836,8 +3849,8 @@ static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_S
  80021fa:	606b      	str	r3, [r5, #4]
   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
  80021fc:	60ac      	str	r4, [r5, #8]
-  htim5.Init.Period = 100;
- 80021fe:	2364      	movs	r3, #100	; 0x64
+  htim5.Init.Period = 100-1;
+ 80021fe:	2363      	movs	r3, #99	; 0x63
  8002200:	60eb      	str	r3, [r5, #12]
   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
  8002202:	612c      	str	r4, [r5, #16]
@@ -4081,20 +4094,21 @@ void StartTimeoutTask(void *argument)
 {
  8002340:	b508      	push	{r3, lr}
  8002342:	e00f      	b.n	8002364 <StartTimeoutTask+0x24>
-	  sleep_timeout_value--;
-	  osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
-
+    // put the sleep timeout value in the queue to be read by the screen task
+    osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
+    
 	  if(sleep_timeout_value == 0)
 	  {
 		  sleep_timeout_value = SCREEN_TIMEOUT;
  8002344:	22b4      	movs	r2, #180	; 0xb4
  8002346:	6022      	str	r2, [r4, #0]
-		  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);	//shut down device
+      // pull Pin5 at PortE low to shut down the device
+		  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
  8002348:	2200      	movs	r2, #0
  800234a:	2120      	movs	r1, #32
  800234c:	480d      	ldr	r0, [pc, #52]	; (8002384 <StartTimeoutTask+0x44>)
  800234e:	f015 fdf8 	bl	8017f42 <HAL_GPIO_WritePin>
-	  }
+	  // if the sleep timeout value is out of range, set it to the default value
 	  if(sleep_timeout_value > SCREEN_TIMEOUT && sleep_timeout_value < 0)
 		  sleep_timeout_value = SCREEN_TIMEOUT;
 
@@ -4104,15 +4118,16 @@ void StartTimeoutTask(void *argument)
  8002356:	480c      	ldr	r0, [pc, #48]	; (8002388 <StartTimeoutTask+0x48>)
  8002358:	f015 fdf9 	bl	8017f4e <HAL_GPIO_TogglePin>
 
+	  // wait 1 second
 	  osDelay(1000);
  800235c:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8002360:	f019 fca0 	bl	801bca4 <osDelay>
-	  sleep_timeout_value--;
+    sleep_timeout_value--;
  8002364:	4c09      	ldr	r4, [pc, #36]	; (800238c <StartTimeoutTask+0x4c>)
  8002366:	6823      	ldr	r3, [r4, #0]
  8002368:	3b01      	subs	r3, #1
  800236a:	6023      	str	r3, [r4, #0]
-	  osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
+    osMessageQueuePut(TimeoutQueueHandle, &sleep_timeout_value, 0, 0);
  800236c:	2300      	movs	r3, #0
  800236e:	461a      	mov	r2, r3
  8002370:	4621      	mov	r1, r4
@@ -43124,7 +43139,10 @@ Main_MenuView::Main_MenuView()
  8015a86:	bd08      	pop	{r3, pc}
 
 08015a88 <_ZN13Main_MenuView15setTimeoutValueEi>:
-
+ * If the value is 0, it navigates to the shutting off screen without any transition.
+ * 
+ * @param value The timeout value to be set.
+ */
 void Main_MenuView::setTimeoutValue(int value)
 {
  8015a88:	b538      	push	{r3, r4, r5, lr}
@@ -43365,7 +43383,10 @@ MeasurementView::MeasurementView()
  8015c0a:	bd08      	pop	{r3, pc}
 
 08015c0c <_ZN15MeasurementView15setTimeoutValueEi>:
-
+ * If the timeout value is set to 0, it will navigate to the Shutting_OffScreenNoTransition.
+ *
+ * @param value The timeout value to be set.
+ */
 void MeasurementView::setTimeoutValue(int value)
 {
  8015c0c:	b538      	push	{r3, r4, r5, lr}
@@ -43850,8 +43871,12 @@ Measurement_Accurate_Display_1PView::Measurement_Accurate_Display_1PView()
  8015f0a:	bd08      	pop	{r3, pc}
 
 08015f0c <_ZN35Measurement_Accurate_Display_1PView9accu_measEv>:
-
-void Measurement_Accurate_Display_1PView::accu_meas(){
+ * with the calculated values. It also handles error conditions and displays appropriate error messages.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
+void Measurement_Accurate_Display_1PView::accu_meas()
+{
  8015f0c:	b530      	push	{r4, r5, lr}
  8015f0e:	b08b      	sub	sp, #44	; 0x2c
  8015f10:	4604      	mov	r4, r0
@@ -44360,8 +44385,12 @@ Measurement_Accurate_Display_3PView::Measurement_Accurate_Display_3PView()
  80162ca:	bd08      	pop	{r3, pc}
 
 080162cc <_ZN35Measurement_Accurate_Display_3PView13accu_meas_3PHEv>:
-
-void Measurement_Accurate_Display_3PView::accu_meas_3PH(){
+ * with the calculated values. It also handles error conditions and displays appropriate error messages.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
+void Measurement_Accurate_Display_3PView::accu_meas_3PH()
+{
  80162cc:	b530      	push	{r4, r5, lr}
  80162ce:	b08b      	sub	sp, #44	; 0x2c
  80162d0:	4604      	mov	r4, r0
@@ -44868,7 +44897,10 @@ Measurement_SingleView::Measurement_SingleView()
  8016692:	bd08      	pop	{r3, pc}
 
 08016694 <_ZN22Measurement_SingleView15setTimeoutValueEi>:
-
+ * If the timeout value is set to 0, it navigates to the Shutting Off Screen.
+ * 
+ * @param value The timeout value to be set.
+ */
 void Measurement_SingleView::setTimeoutValue(int value)
 {
  8016694:	b538      	push	{r3, r4, r5, lr}
@@ -45105,7 +45137,10 @@ Measurement_Single_Display_1PView::Measurement_Single_Display_1PView()
  801680e:	bd08      	pop	{r3, pc}
 
 08016810 <_ZN33Measurement_Single_Display_1PView14single_measureEv>:
-
+ * It also handles error conditions and displays appropriate error messages on the GUI.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
 void Measurement_Single_Display_1PView::single_measure()
 {
  8016810:	b530      	push	{r4, r5, lr}
@@ -45565,6 +45600,10 @@ Measurement_Single_Display_3PView::Measurement_Single_Display_3PView()
  8016b5a:	bd08      	pop	{r3, pc}
 
 08016b5c <_ZN33Measurement_Single_Display_3PView15single_meas_3PHEv>:
+ * If there is an error with the current, frequency, or distance, it displays the corresponding error message.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
 void Measurement_Single_Display_3PView::single_meas_3PH()
 {
  8016b5c:	b530      	push	{r4, r5, lr}
@@ -45838,7 +45877,10 @@ Model::Model() : modelListener(0), Timeout_Value(60)
 	...
 
 08016d68 <_ZN5Model4tickEv>:
-
+ * the new timeout value.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
 void Model::tick()
 {
  8016d68:	b510      	push	{r4, lr}
@@ -46085,7 +46127,10 @@ Project_InfoView::Project_InfoView()
  8016eee:	bd08      	pop	{r3, pc}
 
 08016ef0 <_ZN16Project_InfoView15setTimeoutValueEi>:
-
+ * If the value is 0, it transitions to the shutting off screen.
+ * 
+ * @param value The timeout value to be set.
+ */
 void Project_InfoView::setTimeoutValue(int value)
 {
  8016ef0:	b538      	push	{r3, r4, r5, lr}
@@ -46274,10 +46319,10 @@ void SettingsView::tearDownScreen()
  8017020:	4770      	bx	lr
 
 08017022 <_ZN12SettingsView13toggle_BUZZEREv>:
-		application().gotoShutting_OffScreenNoTransition();
-	}
-}
-
+ * This function is used to toggle the buzzer on or off. It calls a callback function
+ * in calculation.c to perform the actual toggling of the buzzer. This function is only
+ * executed if the code is not running in a simulator.
+ */
 void SettingsView::toggle_BUZZER()
 {
  8017022:	b508      	push	{r3, lr}
@@ -46291,7 +46336,10 @@ void SettingsView::toggle_BUZZER()
  801702a:	bd08      	pop	{r3, pc}
 
 0801702c <_ZN12SettingsView10toggle_LEDEv>:
-
+ * 
+ * This function is used to toggle the LED on the device. It checks if the code is running on a simulator or not.
+ * If it is not running on a simulator, it calls the toggle_Buzzer_settings function in calculation.c to toggle the buzzer.
+ */
 void SettingsView::toggle_LED()
 {
  801702c:	b508      	push	{r3, lr}

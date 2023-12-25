@@ -27,6 +27,16 @@ void Measurement_Single_Display_3PView::tearDownScreen()
 {
     Measurement_Single_Display_3PViewBase::tearDownScreen();
 }
+
+/**
+ * @brief Performs a single three-phase measurement and updates the GUI values accordingly.
+ * 
+ * This function calculates the single measurement values using the single_measurement() function.
+ * It updates the gauge angle, current value, frequency value, and distance value on the GUI.
+ * If there is an error with the current, frequency, or distance, it displays the corresponding error message.
+ * 
+ * @note This function is only executed when not running in the simulator.
+ */
 void Measurement_Single_Display_3PView::single_meas_3PH()
 {
 #ifndef SIMULATOR
