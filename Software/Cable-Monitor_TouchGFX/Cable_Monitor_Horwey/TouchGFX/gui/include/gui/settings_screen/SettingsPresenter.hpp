@@ -27,6 +27,8 @@ public:
 
     virtual ~SettingsPresenter() {}
 
+    virtual void setTimeoutValue(int value);
+
 private:
     SettingsPresenter();
 

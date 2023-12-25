@@ -96,7 +96,7 @@ Main_MenuViewBase::Main_MenuViewBase() :
     add(buttonWithIcon_turn_off);
 
     buttonWithIcon_settings.setXY(6, 5);
-    buttonWithIcon_settings.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID), touchgfx::Bitmap(BITMAP_POWER_OFF_36X36_ID));
+    buttonWithIcon_settings.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_ID), touchgfx::Bitmap(BITMAP_SETTINGS_ID), touchgfx::Bitmap(BITMAP_SETTINGS_ID), touchgfx::Bitmap(BITMAP_SETTINGS_ID));
     buttonWithIcon_settings.setIconXY(0, 0);
     buttonWithIcon_settings.setAction(buttonCallback);
     add(buttonWithIcon_settings);

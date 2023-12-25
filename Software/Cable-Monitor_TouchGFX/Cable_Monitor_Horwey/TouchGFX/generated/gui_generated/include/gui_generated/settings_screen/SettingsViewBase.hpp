@@ -15,6 +15,14 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#ifndef SIMULATOR
+
+#include "main.h"
+extern "C"
+{
+	#include "calculation.h"
+}
+#endif
 
 class SettingsViewBase : public touchgfx::View<SettingsPresenter>
 {
@@ -22,6 +30,19 @@ public:
     SettingsViewBase();
     virtual ~SettingsViewBase();
     virtual void setupScreen();
+    virtual void transitionBegins();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void toggle_BUZZER()
+    {
+        // Override and implement this function in Settings
+    }
+    virtual void toggle_LED()
+    {
+        // Override and implement this function in Settings
+    }
 
 protected:
     FrontendApplication& application() {
