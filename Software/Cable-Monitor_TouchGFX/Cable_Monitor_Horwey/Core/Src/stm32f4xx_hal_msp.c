@@ -494,16 +494,16 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
 
   /* USER CODE END TIM3_MspInit 1 */
   }
-  else if(htim_base->Instance==TIM9)
+  else if(htim_base->Instance==TIM5)
   {
-  /* USER CODE BEGIN TIM9_MspInit 0 */
+  /* USER CODE BEGIN TIM5_MspInit 0 */
 
-  /* USER CODE END TIM9_MspInit 0 */
+  /* USER CODE END TIM5_MspInit 0 */
     /* Peripheral clock enable */
-    __HAL_RCC_TIM9_CLK_ENABLE();
-  /* USER CODE BEGIN TIM9_MspInit 1 */
+    __HAL_RCC_TIM5_CLK_ENABLE();
+  /* USER CODE BEGIN TIM5_MspInit 1 */
 
-  /* USER CODE END TIM9_MspInit 1 */
+  /* USER CODE END TIM5_MspInit 1 */
   }
   else if(htim_base->Instance==TIM14)
   {
@@ -522,25 +522,25 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if(htim->Instance==TIM9)
+  if(htim->Instance==TIM5)
   {
-  /* USER CODE BEGIN TIM9_MspPostInit 0 */
+  /* USER CODE BEGIN TIM5_MspPostInit 0 */
 
-  /* USER CODE END TIM9_MspPostInit 0 */
+  /* USER CODE END TIM5_MspPostInit 0 */
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**TIM9 GPIO Configuration
-    PA2     ------> TIM9_CH1
+    /**TIM5 GPIO Configuration
+    PA0/WKUP     ------> TIM5_CH1
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_2;
+    GPIO_InitStruct.Pin = LED_PWM_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF3_TIM9;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    GPIO_InitStruct.Alternate = GPIO_AF2_TIM5;
+    HAL_GPIO_Init(LED_PWM_GPIO_Port, &GPIO_InitStruct);
 
-  /* USER CODE BEGIN TIM9_MspPostInit 1 */
+  /* USER CODE BEGIN TIM5_MspPostInit 1 */
 
-  /* USER CODE END TIM9_MspPostInit 1 */
+  /* USER CODE END TIM5_MspPostInit 1 */
   }
   else if(htim->Instance==TIM14)
   {
@@ -595,16 +595,16 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
 
   /* USER CODE END TIM3_MspDeInit 1 */
   }
-  else if(htim_base->Instance==TIM9)
+  else if(htim_base->Instance==TIM5)
   {
-  /* USER CODE BEGIN TIM9_MspDeInit 0 */
+  /* USER CODE BEGIN TIM5_MspDeInit 0 */
 
-  /* USER CODE END TIM9_MspDeInit 0 */
+  /* USER CODE END TIM5_MspDeInit 0 */
     /* Peripheral clock disable */
-    __HAL_RCC_TIM9_CLK_DISABLE();
-  /* USER CODE BEGIN TIM9_MspDeInit 1 */
+    __HAL_RCC_TIM5_CLK_DISABLE();
+  /* USER CODE BEGIN TIM5_MspDeInit 1 */
 
-  /* USER CODE END TIM9_MspDeInit 1 */
+  /* USER CODE END TIM5_MspDeInit 1 */
   }
   else if(htim_base->Instance==TIM14)
   {

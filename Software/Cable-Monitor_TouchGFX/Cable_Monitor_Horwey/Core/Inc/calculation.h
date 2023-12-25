@@ -15,6 +15,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_tim.h"
@@ -101,6 +102,7 @@ void toggle_Buzzer_settings(bool btn);
 //bool State_LED = false;
 extern uint32_t Calibration_Data[14];
 extern TIM_HandleTypeDef htim14;
+extern TIM_HandleTypeDef htim5;
 
 /******************************************************************************
  * Macros (For TouchGFX)
@@ -119,9 +121,10 @@ extern TIM_HandleTypeDef htim14;
         NVIC_DisableIRQ(LTDC_IRQn);   \
     } while (0)
 
-// Macro for Buzzer control
+// Macro for Buzzer and LED control
 #define DISABLE_BUZZER() HAL_TIM_PWM_Stop(&htim14, TIM_CHANNEL_1)
-
 #define ENABLE_BUZZER() HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1)
+#define DISABLE_LED() HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1)
+#define ENABLE_LED() HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1)
 
 #endif /* CALC_H_ */
