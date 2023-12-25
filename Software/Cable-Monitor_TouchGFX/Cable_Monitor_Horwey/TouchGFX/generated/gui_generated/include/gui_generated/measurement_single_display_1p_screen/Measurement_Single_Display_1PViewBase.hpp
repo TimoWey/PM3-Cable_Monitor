@@ -61,11 +61,11 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t SMD1_CURRENT_SIZE = 10;
+    static const uint16_t SMD1_CURRENT_SIZE = 14;
     touchgfx::Unicode::UnicodeChar SMD1_CurrentBuffer[SMD1_CURRENT_SIZE];
     static const uint16_t SMD1_FREQUENCY_SIZE = 10;
     touchgfx::Unicode::UnicodeChar SMD1_FrequencyBuffer[SMD1_FREQUENCY_SIZE];
-    static const uint16_t SMD1_DISTANCE_SIZE = 10;
+    static const uint16_t SMD1_DISTANCE_SIZE = 14;
     touchgfx::Unicode::UnicodeChar SMD1_DistanceBuffer[SMD1_DISTANCE_SIZE];
 
 private:

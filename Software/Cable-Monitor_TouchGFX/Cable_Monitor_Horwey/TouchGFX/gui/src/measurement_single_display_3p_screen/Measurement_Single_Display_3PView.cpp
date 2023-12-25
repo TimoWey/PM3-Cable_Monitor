@@ -57,7 +57,7 @@ void Measurement_Single_Display_3PView::single_meas_3PH()
 		SMD3_Current.invalidate();
 	} else{
 		//set current value
-		Unicode::snprintfFloat(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "%.2f", single_meas.current);
+		Unicode::snprintfFloat(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "%.2f A", single_meas.current);
 		SMD3_Current.invalidate();
 	}
 
@@ -68,7 +68,7 @@ void Measurement_Single_Display_3PView::single_meas_3PH()
 		SMD3_Frequency.invalidate();
 	} else{
 		//set frequency value
-		Unicode::snprintfFloat(SMD3_FrequencyBuffer, SMD3_FREQUENCY_SIZE, "%.2f", single_meas.frequency);
+		Unicode::snprintfFloat(SMD3_FrequencyBuffer, SMD3_FREQUENCY_SIZE, "%.2f Hz", single_meas.frequency);
 		SMD3_Frequency.invalidate();
 	}
 
@@ -77,16 +77,18 @@ void Measurement_Single_Display_3PView::single_meas_3PH()
 		// Output error message
 		Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "DISCONNECTED");
 		Unicode::snprintf(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "DISCONNECTED");
+		Unicode::snprintf(SMD3_FrequencyBuffer, SMD3_FREQUENCY_SIZE, "NO SIGNAL");
+		SMD3_Frequency.invalidate();
 		SMD3_Distance.invalidate();
 		SMD3_Current.invalidate();
 	} else{
 		//set distance value
 		if(single_meas.distance >= 0 && single_meas.distance <= 200)
-			Unicode::snprintfFloat(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "%.2f", single_meas.distance);
+			Unicode::snprintfFloat(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "%.2f mm", single_meas.distance);
 		else if(single_meas.distance < 0)
-			Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "0");
+			Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "0 mm");
 		else{
-			Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "+200");
+			Unicode::snprintf(SMD3_DistanceBuffer, SMD3_DISTANCE_SIZE, "+200 mm");
 			Unicode::snprintf(SMD3_CurrentBuffer, SMD3_CURRENT_SIZE, "DISCONNECTED");
 		}
 		SMD3_Distance.invalidate();
@@ -95,6 +97,6 @@ void Measurement_Single_Display_3PView::single_meas_3PH()
 
 	// Enable TouchGFX Interrupts after the accurate measurement values are calculated
 	ENABLE_TOUCHGFX_INTERRUPTS();
-	
+
 #endif
 }
