@@ -331,7 +331,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     // ERROR TESTING:
 
     // Check if distance is close enough for current calculation and if the current is out of the range of 0-10 A
-    if (single_meas.distance > 20 || (single_meas.current <= 0 && single_meas.current >= 10)){
+    if (single_meas.distance > 30 || (single_meas.current <= 0 && single_meas.current >= 10)){
        single_meas.error = CALC_ERROR_TOO_FAR_AWAY;
     }
 
@@ -343,6 +343,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     // Check if the distance is larger than 300 mm or smaller than 0 -> CALL ERROR DISCONNECT
     if (single_meas.distance > 250){
         single_meas.error = CALC_ERROR_DISCONNECT;
+        single_meas.angle = 0;
     }
 
     // Check if the frequency is 0 -> CALL ERROR FREQUENCY
