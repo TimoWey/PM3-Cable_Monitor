@@ -18,5 +18,10 @@ var searchData=
   ['freertos_2ec_15',['freertos.c',['../freertos_8c.html',1,'']]],
   ['freertosconfig_2eh_16',['FreeRTOSConfig.h',['../_free_r_t_o_s_config_8h.html',1,'']]],
   ['frequency_17',['frequency',['../struct_s_i_n_g_l_e___m_e_a_s.html#a94e2b46dcf9e62c53d6babc26087deeb',1,'SINGLE_MEAS::frequency'],['../struct_a_c_c_u___m_e_a_s.html#a94e2b46dcf9e62c53d6babc26087deeb',1,'ACCU_MEAS::frequency']]],
-  ['frequency_5fstd_5fdev_18',['frequency_std_dev',['../struct_a_c_c_u___m_e_a_s.html#a6623774f09a99cfdfbdbb81e628b1ad6',1,'ACCU_MEAS']]]
+  ['frequency_5fstd_5fdev_18',['frequency_std_dev',['../struct_a_c_c_u___m_e_a_s.html#a6623774f09a99cfdfbdbb81e628b1ad6',1,'ACCU_MEAS']]],
+  ['frontendapplication_19',['FrontendApplication',['../class_frontend_application.html',1,'FrontendApplication'],['../class_frontend_application.html#a1caa4434f15e31a5e3b6c6750001e6d0',1,'FrontendApplication::FrontendApplication()']]],
+  ['frontendapplication_2ecpp_20',['FrontendApplication.cpp',['../_frontend_application_8cpp.html',1,'']]],
+  ['frontendapplication_2ehpp_21',['FrontendApplication.hpp',['../_frontend_application_8hpp.html',1,'']]],
+  ['frontendheap_22',['FrontendHeap',['../class_frontend_heap.html',1,'']]],
+  ['frontendheap_2ehpp_23',['FrontendHeap.hpp',['../_frontend_heap_8hpp.html',1,'']]]
 ];

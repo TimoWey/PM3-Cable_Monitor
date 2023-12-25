@@ -18,5 +18,6 @@ var searchData=
   ['hal_5ftim_5fbase_5fmspinit_15',['HAL_TIM_Base_MspInit',['../stm32f4xx__hal__msp_8c.html#abb25ade2f7e3f7aae167bd52270c2b86',1,'stm32f4xx_hal_msp.c']]],
   ['hal_5ftim_5fmsppostinit_16',['HAL_TIM_MspPostInit',['../main_8h.html#ae70bce6c39d0b570a7523b86738cec4b',1,'HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim):&#160;stm32f4xx_hal_msp.c'],['../stm32f4xx__hal__msp_8c.html#ae70bce6c39d0b570a7523b86738cec4b',1,'HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim):&#160;stm32f4xx_hal_msp.c']]],
   ['hal_5ftim_5fperiodelapsedcallback_17',['HAL_TIM_PeriodElapsedCallback',['../main_8c.html#a8a3b0ad512a6e6c6157440b68d395eac',1,'main.c']]],
-  ['hardfault_5fhandler_18',['HardFault_Handler',['../stm32f4xx__it_8h.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c']]]
+  ['handletickevent_18',['handleTickEvent',['../class_frontend_application.html#a1af635cee0f186c3d0fcea60bac14355',1,'FrontendApplication']]],
+  ['hardfault_5fhandler_19',['HardFault_Handler',['../stm32f4xx__it_8h.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a2bffc10d5bd4106753b7c30e86903bea',1,'HardFault_Handler(void):&#160;stm32f4xx_it.c']]]
 ];
