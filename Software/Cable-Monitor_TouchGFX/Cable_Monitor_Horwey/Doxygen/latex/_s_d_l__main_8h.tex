@@ -1,0 +1,45 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+main.h File Reference}
+\hypertarget{_s_d_l__main_8h}{}\label{_s_d_l__main_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_main.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_main.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+C\+\_\+\+LINKAGE int \mbox{\hyperlink{_s_d_l__main_8h_abebe82923d88787c3718e201b3e62295}{SDL\+\_\+main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__main_8h_a6a4bb5ffb489bf0956bc1b813397306d}{SDL\+\_\+\+Set\+Main\+Ready}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Redefine \doxylink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()} on some platforms so that it is called by SDL.
+
+The application\textquotesingle{}s \doxylink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()} function must be called with C linkage, and should be declared like this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__main_8h_abebe82923d88787c3718e201b3e62295}\label{_s_d_l__main_8h_abebe82923d88787c3718e201b3e62295} 
+\index{SDL\_main.h@{SDL\_main.h}!SDL\_main@{SDL\_main}}
+\index{SDL\_main@{SDL\_main}!SDL\_main.h@{SDL\_main.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_main()}{SDL\_main()}}
+{\footnotesize\ttfamily C\+\_\+\+LINKAGE int SDL\+\_\+main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+The prototype for the application\textquotesingle{}s \doxylink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()} function \Hypertarget{_s_d_l__main_8h_a6a4bb5ffb489bf0956bc1b813397306d}\label{_s_d_l__main_8h_a6a4bb5ffb489bf0956bc1b813397306d} 
+\index{SDL\_main.h@{SDL\_main.h}!SDL\_SetMainReady@{SDL\_SetMainReady}}
+\index{SDL\_SetMainReady@{SDL\_SetMainReady}!SDL\_main.h@{SDL\_main.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetMainReady()}{SDL\_SetMainReady()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Main\+Ready (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This is called by the real SDL main function to let the rest of the library know that initialization was done properly.
+
+Calling this yourself without knowing what you\textquotesingle{}re doing can cause crashes and hard to diagnose problems with your application. 

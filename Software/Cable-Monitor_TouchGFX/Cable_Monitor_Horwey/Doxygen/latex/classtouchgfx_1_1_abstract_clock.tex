@@ -1,0 +1,332 @@
+\doxysection{touchgfx\+::Abstract\+Clock Class Reference}
+\hypertarget{classtouchgfx_1_1_abstract_clock}{}\label{classtouchgfx_1_1_abstract_clock}\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+
+
+{\ttfamily \#include $<$Abstract\+Clock.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Abstract\+Clock\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classtouchgfx_1_1_abstract_clock}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_ae1160734d3db981d71746fa78f062f2e}{set\+Time24\+Hour}} (uint8\+\_\+t hour, uint8\+\_\+t minute, uint8\+\_\+t second)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_a3cbb13343fcb32a3c0f883c99dd310ee}{set\+Time12\+Hour}} (uint8\+\_\+t hour, uint8\+\_\+t minute, uint8\+\_\+t second, bool am)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_a28c39f7356e1a93ae642f82609b78c78}{get\+Current\+Hour}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_af922b505504a12f036b18dc187ba0eda}{get\+Current\+Hour24}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_ab882b8baa88cae9791dea517704da72f}{get\+Current\+Hour12}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_aa909509f057c4d5a9fc56337bafa6b02}{get\+Current\+AM}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_aae92e6f619a35a3ea48c5de4dc4451d9}{get\+Current\+Minute}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_ad643451ba346135a9c1a7dfb41809aa4}{get\+Current\+Second}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a2db56c03a79254f635c13dab2fd6a964}{add}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a42892e8dc8c2b0d72ba7f585de0ab39c}{remove}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_adec2a66c9696b2341d7c80e2c9b2bf4f}{remove\+All}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a0e52c074bde6985ec4f14573545d29a3}{unlink}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_container_a735fecb585a1187d4e497e60bc5dbe30}{contains}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_ae7f9e387582f56c079ef4b05d0905526}{insert}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}previous, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a35a4ef068b0404679b6a7f3234cc1499}{get\+Last\+Child}} (int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a3f86e82c2a502453d2c8b09d3c2a39db}{get\+Last\+Child\+Near}} (int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last, int16\+\_\+t \texorpdfstring{$\ast$}{*}finger\+AdjustmentX, int16\+\_\+t \texorpdfstring{$\ast$}{*}finger\+AdjustmentY)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a02275ab5673c5eb38c8f70da74242f58}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_container_a34dfa7ec5557ab8ad54fcd7d57cef49d}{get\+Solid\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_af812955f5f1b185a13421ec36ff7c356}{for\+Each\+Child}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \& $>$ \texorpdfstring{$\ast$}{*}function)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_container_a189adb3887f73b2aee9234c0642c2b35}{get\+First\+Child}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable_a7e96d82c7fcf819f57486ecc5f350c4c}{Drawable}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_a449ee29257a3cfac31bb01ad2a9a7f03}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0b8b93fb5b2af43364f8d6818485e09d}{invalidate\+Content}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad2f199fc52c4acce810f48ab5a1a88aa}{get\+Next\+Sibling}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aaece284803180a1581d10ecfaf08c981}{get\+Solid\+Rect\+Absolute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a67ffb816a2dd9252a3159dd8610b4a25}{get\+Visible\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}) const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_a50b898d044f548a4eaec275141dec0ca}{get\+Rect}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_adee868bcfb5c413bd3e37bdf6c649ea8}{get\+Absolute\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a58fdcf048cbd3ec550115caedaf54b2a}{translate\+Rect\+To\+Absolute}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{set\+Position}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4448236a68ced5ebd67cde7f56d872c3}{expand}} (int margin=0)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59d59e11909259d9452588f3a0180398}{center}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab7b0e3f307228823cf6f2d859cc07198}{centerX}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0392a74d988a06e28c6b3ea79076b4bd}{centerY}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a1870ba0e9ef62c1eb6a19a9013cf6895}{getX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a6451fb9a4bc22e6e4a0950844e5104de}{getY}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{get\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{get\+Height}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}} (int16\+\_\+t x)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3aae6f7f6cb9a43a53d26772d7eeb1fa}{setY}} (int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{set\+XY}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{set\+Width}} (int16\+\_\+t width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{set\+Height}} (int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a181c4ecac0494440425e5b5afa4ce109}{child\+Geometry\+Changed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9981eb2f8411aff05eaf19994f3ee293}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_acf2ed17311bb7ca228dabc3195d3225d}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{set\+Width\+Height}} (int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2f2d18d6edf70b6ec51d843c52c826c8}{set\+Position}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9b84be70989de6d15abb2c4bfe445707}{set\+XY}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7973faddf5b669b1ba7570b90053aeed}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a24b027fa86aebb44768b63b0d534e6b4}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9aeaa5baa9e47055a17f11968dbc1b37}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&other)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a341b62a9ebbe43ce97b47e1effd32a8b}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d0b43ec46e2644959854fdd697d2bc8}{handle\+Tick\+Event}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab27c897bb2d508cdf67ea7ffcfb40b14}{set\+Visible}} (bool vis)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a68b74845725451fda32fa94da7b7be18}{set\+Touchable}} (bool touch)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d9fac715c5114951a23492c6cc78b25}{is\+Visible}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a30a509142ffe76e5a2ed46aab5adf19b}{is\+Touchable}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_afefe9761c1f3a27944f317a47c2f0636}{get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a37d7afe3e065453bc3d23481fa446a55}{move\+Relative}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a602c55c069e516153167c3ebc7da4c0d}{move\+To}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_adab6837b035a409dde74c51f622a6e63}{draw\+To\+Dynamic\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_a2774454dab8699f59c3d468c4df5e6bb}{update\+Clock}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_container_a2c6156e664e01e9113ff400a7c09bc64}{get\+Contained\+Area}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a2d5920db13b22f9f3567c58f2373f912}{move\+Children\+Relative}} (int16\+\_\+t deltaX, int16\+\_\+t deltaY)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_abstract_clock_aee34c84a6d49a8165027f5f75179ca83}\label{classtouchgfx_1_1_abstract_clock_aee34c84a6d49a8165027f5f75179ca83} 
+uint8\+\_\+t {\bfseries current\+Hour}
+\begin{DoxyCompactList}\small\item\em Local copy of the current hour. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_clock_aba4972ca7e23031f07c671f1b27b3207}\label{classtouchgfx_1_1_abstract_clock_aba4972ca7e23031f07c671f1b27b3207} 
+uint8\+\_\+t {\bfseries current\+Minute}
+\begin{DoxyCompactList}\small\item\em Local copy of the current minute. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_clock_aac94c8048ec558e9f90fd78c3cfcdfab}\label{classtouchgfx_1_1_abstract_clock_aac94c8048ec558e9f90fd78c3cfcdfab} 
+uint8\+\_\+t {\bfseries current\+Second}
+\begin{DoxyCompactList}\small\item\em Local copy of the current second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries first\+Child}
+\begin{DoxyCompactList}\small\item\em Pointer to the first child of this container. Subsequent children can be found through first\+Child\textquotesingle{}s next\+Sibling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em Pointer to this drawable\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2c34a36e7eb05c8a0e1e5b0c4d664a9f}{next\+Sibling}}
+\item 
+bool {\bfseries touchable}
+\begin{DoxyCompactList}\small\item\em True if this drawable should receive touch events. \end{DoxyCompactList}\item 
+bool {\bfseries visible}
+\begin{DoxyCompactList}\small\item\em True if this drawable should be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Superclass of clock widgets. Allows the hour, minute and second of the clock to be set and read.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_analog_clock}{Analog\+Clock}, \doxylink{classtouchgfx_1_1_digital_clock}{Digital\+Clock} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_aa909509f057c4d5a9fc56337bafa6b02}\label{classtouchgfx_1_1_abstract_clock_aa909509f057c4d5a9fc56337bafa6b02} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!getCurrentAM@{getCurrentAM}}
+\index{getCurrentAM@{getCurrentAM}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{getCurrentAM()}{getCurrentAM()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Abstract\+Clock\+::get\+Current\+AM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Is the current time a.\+m. or p.\+m.? True for a.\+m. and false for p.\+m.
+
+\begin{DoxyReturn}{Returns}
+True if a.\+m., false if p.\+m. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_a28c39f7356e1a93ae642f82609b78c78}\label{classtouchgfx_1_1_abstract_clock_a28c39f7356e1a93ae642f82609b78c78} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!getCurrentHour@{getCurrentHour}}
+\index{getCurrentHour@{getCurrentHour}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{getCurrentHour()}{getCurrentHour()}}
+{\footnotesize\ttfamily uint8\+\_\+t touchgfx\+::\+Abstract\+Clock\+::get\+Current\+Hour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the current hour.
+
+\begin{DoxyReturn}{Returns}
+The current hour in range 0-\/23.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_clock_af922b505504a12f036b18dc187ba0eda}{get\+Current\+Hour24}, \doxylink{classtouchgfx_1_1_abstract_clock_ab882b8baa88cae9791dea517704da72f}{get\+Current\+Hour12} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_ab882b8baa88cae9791dea517704da72f}\label{classtouchgfx_1_1_abstract_clock_ab882b8baa88cae9791dea517704da72f} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!getCurrentHour12@{getCurrentHour12}}
+\index{getCurrentHour12@{getCurrentHour12}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{getCurrentHour12()}{getCurrentHour12()}}
+{\footnotesize\ttfamily uint8\+\_\+t touchgfx\+::\+Abstract\+Clock\+::get\+Current\+Hour12 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets current hour 12, i.\+e. between 1 and 12.
+
+\begin{DoxyReturn}{Returns}
+The current hour in range 1-\/12.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_clock_af922b505504a12f036b18dc187ba0eda}{get\+Current\+Hour24}, \doxylink{classtouchgfx_1_1_abstract_clock_aa909509f057c4d5a9fc56337bafa6b02}{get\+Current\+AM} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_af922b505504a12f036b18dc187ba0eda}\label{classtouchgfx_1_1_abstract_clock_af922b505504a12f036b18dc187ba0eda} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!getCurrentHour24@{getCurrentHour24}}
+\index{getCurrentHour24@{getCurrentHour24}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{getCurrentHour24()}{getCurrentHour24()}}
+{\footnotesize\ttfamily uint8\+\_\+t touchgfx\+::\+Abstract\+Clock\+::get\+Current\+Hour24 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets current hour 24, i.\+e. between 0 and 23.
+
+\begin{DoxyReturn}{Returns}
+The current hour in range 0-\/23. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_aae92e6f619a35a3ea48c5de4dc4451d9}\label{classtouchgfx_1_1_abstract_clock_aae92e6f619a35a3ea48c5de4dc4451d9} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!getCurrentMinute@{getCurrentMinute}}
+\index{getCurrentMinute@{getCurrentMinute}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{getCurrentMinute()}{getCurrentMinute()}}
+{\footnotesize\ttfamily uint8\+\_\+t touchgfx\+::\+Abstract\+Clock\+::get\+Current\+Minute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the current minute.
+
+\begin{DoxyReturn}{Returns}
+The current minute in range 0-\/59. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_ad643451ba346135a9c1a7dfb41809aa4}\label{classtouchgfx_1_1_abstract_clock_ad643451ba346135a9c1a7dfb41809aa4} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!getCurrentSecond@{getCurrentSecond}}
+\index{getCurrentSecond@{getCurrentSecond}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{getCurrentSecond()}{getCurrentSecond()}}
+{\footnotesize\ttfamily uint8\+\_\+t touchgfx\+::\+Abstract\+Clock\+::get\+Current\+Second (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the current second.
+
+\begin{DoxyReturn}{Returns}
+The current second in range 0-\/59. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_a3cbb13343fcb32a3c0f883c99dd310ee}\label{classtouchgfx_1_1_abstract_clock_a3cbb13343fcb32a3c0f883c99dd310ee} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!setTime12Hour@{setTime12Hour}}
+\index{setTime12Hour@{setTime12Hour}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{setTime12Hour()}{setTime12Hour()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Abstract\+Clock\+::set\+Time12\+Hour (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{hour,  }\item[{uint8\+\_\+t}]{minute,  }\item[{uint8\+\_\+t}]{second,  }\item[{bool}]{am }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the time with input format as 12H. Note that this does not affect any selected presentation formats.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hours, value should be between 1 and 12. \\
+\hline
+{\em minute} & The minutes, value should be between 0 and 59. \\
+\hline
+{\em second} & The seconds, value should be between 0 and 59. \\
+\hline
+{\em am} & AM/\+PM setting. True = AM, false = PM.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+all values passed are saved modulo the values limit. For example minutes=62 is treated as minutes=2. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_ae1160734d3db981d71746fa78f062f2e}\label{classtouchgfx_1_1_abstract_clock_ae1160734d3db981d71746fa78f062f2e} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!setTime24Hour@{setTime24Hour}}
+\index{setTime24Hour@{setTime24Hour}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{setTime24Hour()}{setTime24Hour()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Abstract\+Clock\+::set\+Time24\+Hour (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{hour,  }\item[{uint8\+\_\+t}]{minute,  }\item[{uint8\+\_\+t}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the time with input format as 24H. Note that this does not affect any selected presentation formats.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & The hours, value should be between 0 and 23. \\
+\hline
+{\em minute} & The minutes, value should be between 0 and 59. \\
+\hline
+{\em second} & The seconds, value should be between 0 and 59.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+all values passed are saved modulo the values limit. For example minutes=62 is treated as minutes=2. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_abstract_clock_a2774454dab8699f59c3d468c4df5e6bb}\label{classtouchgfx_1_1_abstract_clock_a2774454dab8699f59c3d468c4df5e6bb} 
+\index{touchgfx::AbstractClock@{touchgfx::AbstractClock}!updateClock@{updateClock}}
+\index{updateClock@{updateClock}!touchgfx::AbstractClock@{touchgfx::AbstractClock}}
+\doxysubsubsection{\texorpdfstring{updateClock()}{updateClock()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Abstract\+Clock\+::update\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Update the visual representation of the clock on the display. 
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_adc29a1461ad4637c7967d967aaa74759}{touchgfx\+::\+Analog\+Clock}}, and \mbox{\hyperlink{classtouchgfx_1_1_digital_clock_ac75b8a6427723d188f891ec29a01089d}{touchgfx\+::\+Digital\+Clock}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/clock/\mbox{\hyperlink{_abstract_clock_8hpp}{Abstract\+Clock.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/touchgfx/containers/clock/Abstract\+Clock.\+cpp\end{DoxyCompactItemize}

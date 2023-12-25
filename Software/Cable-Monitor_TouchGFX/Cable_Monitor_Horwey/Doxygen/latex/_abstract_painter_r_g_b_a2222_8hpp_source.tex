@@ -1,0 +1,61 @@
+\doxysection{Abstract\+Painter\+RGBA2222.\+hpp}
+\hypertarget{_abstract_painter_r_g_b_a2222_8hpp_source}{}\label{_abstract_painter_r_g_b_a2222_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGBA2222.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGBA2222.hpp}}
+\mbox{\hyperlink{_abstract_painter_r_g_b_a2222_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_ABSTRACTPAINTERRGBA2222\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_ABSTRACTPAINTERRGBA2222\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d8bpp___r_g_b_a2222_8hpp}{platform/driver/lcd/LCD8bpp\_RGBA2222.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8hpp}{touchgfx/lcd/LCD.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_painter_8hpp}{touchgfx/widgets/canvas/AbstractPainter.hpp}}>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_r_g_b_a2222}{AbstractPainterRGBA2222}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_r_g_b_a2222}{AbstractPainterRGBA2222}}()}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a7f500d1a76e9f37e5b1b26de084c0960}{AbstractPainter}}()}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_a3d1c29e0a27ead715b4928e02700f27c}{compatibleFramebuffer}}(\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fca75b09d500e0668df256194f2bc921891}{Bitmap::RGBA2222}})\ \&\&\ \textcolor{stringliteral}{"{}The\ chosen\ painter\ only\ works\ with\ RGBA2222\ displays"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00054\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_r_g_b_a2222_a198095d9191aedf9ec00a98fb285003d}{alphaBlend}}(uint8\_t\ newpix,\ uint8\_t\ bufpix,\ uint8\_t\ alpha)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_r_g_b_a2222_a198095d9191aedf9ec00a98fb285003d}{alphaBlend}}(\mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_ad2759e8a53a283136acd3212e0e95e79}{LCD8bpp\_RGBA2222::getRedFromNativeColor}}(newpix),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_aae4da36402734fd57541adf37c39d359}{LCD8bpp\_RGBA2222::getGreenFromNativeColor}}(newpix),}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_ab61c8a3759cf79af5f15660e9571ea4f}{LCD8bpp\_RGBA2222::getBlueFromNativeColor}}(newpix),\ bufpix,\ alpha);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00073\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_r_g_b_a2222_abb2a83b53f121ef6c5326d4f315804df}{alphaBlend}}(uint8\_t\ R,\ uint8\_t\ G,\ uint8\_t\ B,\ uint8\_t\ bufpix,\ uint8\_t\ alpha)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ ialpha\ =\ 0xFF\ -\/\ alpha;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ p\_red\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_ad2759e8a53a283136acd3212e0e95e79}{LCD8bpp\_RGBA2222::getRedFromNativeColor}}(bufpix);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ p\_green\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_aae4da36402734fd57541adf37c39d359}{LCD8bpp\_RGBA2222::getGreenFromNativeColor}}(bufpix);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ p\_blue\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_ab61c8a3759cf79af5f15660e9571ea4f}{LCD8bpp\_RGBA2222::getBlueFromNativeColor}}(bufpix);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ red\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(R\ *\ alpha\ +\ p\_red\ *\ ialpha);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ green\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(G\ *\ alpha\ +\ p\_green\ *\ ialpha);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ blue\ =\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d_a52af7448620699f131bb1c5bb91ac5f8}{LCD::div255}}(B\ *\ alpha\ +\ p\_blue\ *\ ialpha);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8bpp___r_g_b_a2222_aa3fccdb431a809c4959f131847249be4}{LCD8bpp\_RGBA2222::getNativeColorFromRGB}}(red,\ green,\ blue);}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_ABSTRACTPAINTERRGBA2222\_HPP}}
+
+\end{DoxyCode}

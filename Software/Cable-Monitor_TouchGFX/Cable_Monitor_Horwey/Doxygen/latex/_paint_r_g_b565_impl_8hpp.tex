@@ -1,0 +1,192 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\+Paint\+RGB565\+Impl.hpp File Reference}
+\hypertarget{_paint_r_g_b565_impl_8hpp}{}\label{_paint_r_g_b565_impl_8hpp}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintRGB565Impl.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintRGB565Impl.hpp}}
+{\ttfamily \#include $<$touchgfx/\+Color.\+hpp$>$}\newline
+{\ttfamily \#include $<$touchgfx/hal/\+Paint.\+hpp$>$}\newline
+{\ttfamily \#include $<$touchgfx/hal/\+Paint\+Impl.\+hpp$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetouchgfx}{touchgfx}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}{touchgfx\+::paint\+::rgb565\+::alpha\+Blend}} (uint16\+\_\+t R, uint16\+\_\+t G, uint16\+\_\+t B, uint16\+\_\+t bufpix, uint8\+\_\+t alpha)
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a064c74ee35751c5e8de1a2175e5cd8b6}{touchgfx\+::paint\+::rgb565\+::alpha\+Blend}} (uint16\+\_\+t newpix, uint16\+\_\+t bufpix, uint8\+\_\+t alpha)
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t \mbox{\hyperlink{_paint_r_g_b565_impl_8hpp_a17f6ce6d8be93d8bfdab041e91cdf9d1}{touchgfx\+::paint\+::rgb565\+::get\+Native\+Color}} (\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_ae31b9beca5c98b230c2aa975b86a9d98}{touchgfx\+::paint\+::rgb565\+::line\+From\+Color}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const unsigned count, const uint32\+\_\+t color, const uint8\+\_\+t alpha, const uint32\+\_\+t color565)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_a017937212430095a4844e75b24301ac6}{touchgfx\+::paint\+::rgb565\+::line\+From\+RGB565}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint16\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_a7bf1380bed40b89a1a9668095cd368ff}{touchgfx\+::paint\+::rgb565\+::line\+From\+ARGB8888}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint32\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_ae868991b9ec4441c0cce8442c4be065f}{touchgfx\+::paint\+::rgb565\+::line\+From\+L8\+RGB888}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_a5cf198880107f8d45111ed8d5c2085cd}{touchgfx\+::paint\+::rgb565\+::line\+From\+L8\+ARGB8888}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements RGB565 software painter functions for widgets 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_paint_r_g_b565_impl_8hpp_a064c74ee35751c5e8de1a2175e5cd8b6}\label{_paint_r_g_b565_impl_8hpp_a064c74ee35751c5e8de1a2175e5cd8b6} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!alphaBlend@{alphaBlend}}
+\index{alphaBlend@{alphaBlend}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{alphaBlend()}{alphaBlend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t touchgfx\+::paint\+::rgb565\+::alpha\+Blend (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{newpix,  }\item[{uint16\+\_\+t}]{bufpix,  }\item[{uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Mix colors from a new pixel and a buffer pixel with the given alpha applied to the new pixel, and the inverse alpha applied to the buffer pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em newpix} & The new pixel value. \\
+\hline
+{\em bufpix} & The buffer pixel value. \\
+\hline
+{\em alpha} & The alpha to apply to the new pixel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of blending the two colors into a new color. 
+\end{DoxyReturn}
+\Hypertarget{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc}\label{_paint_r_g_b565_impl_8hpp_a1e1689109ec86a1a38e54a471148ecdc} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!alphaBlend@{alphaBlend}}
+\index{alphaBlend@{alphaBlend}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{alphaBlend()}{alphaBlend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t touchgfx\+::paint\+::rgb565\+::alpha\+Blend (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{R,  }\item[{uint16\+\_\+t}]{G,  }\item[{uint16\+\_\+t}]{B,  }\item[{uint16\+\_\+t}]{bufpix,  }\item[{uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Mix colors from a new pixel and a buffer pixel with the given alpha applied to the new pixel, and the inverse alpha applied to the buffer pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & The red color (0-\/31 shifted into RMASK). \\
+\hline
+{\em G} & The green color (0-\/63 shifted into GMASK). \\
+\hline
+{\em B} & The blue color (0-\/31 shifted into BMASK). \\
+\hline
+{\em bufpix} & The buffer pixel value. \\
+\hline
+{\em alpha} & The alpha of the R,G,B.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of blending the two colors into a new color. 
+\end{DoxyReturn}
+\Hypertarget{_paint_r_g_b565_impl_8hpp_a17f6ce6d8be93d8bfdab041e91cdf9d1}\label{_paint_r_g_b565_impl_8hpp_a17f6ce6d8be93d8bfdab041e91cdf9d1} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!getNativeColor@{getNativeColor}}
+\index{getNativeColor@{getNativeColor}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{getNativeColor()}{getNativeColor()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION uint16\+\_\+t touchgfx\+::paint\+::rgb565\+::get\+Native\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{color }\end{DoxyParamCaption})}
+
+Generates a color representation to be used on the LCD, based on 24 bit RGB values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color representation depending on LCD color format. 
+\end{DoxyReturn}
+\Hypertarget{_paint_8hpp_a7bf1380bed40b89a1a9668095cd368ff}\label{_paint_8hpp_a7bf1380bed40b89a1a9668095cd368ff} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!lineFromARGB8888@{lineFromARGB8888}}
+\index{lineFromARGB8888@{lineFromARGB8888}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromARGB8888()}{lineFromARGB8888()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb565\+::line\+From\+ARGB8888 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint32\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (ARGB8888 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The ARGB8888 data. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_ae31b9beca5c98b230c2aa975b86a9d98}\label{_paint_8hpp_ae31b9beca5c98b230c2aa975b86a9d98} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!lineFromColor@{lineFromColor}}
+\index{lineFromColor@{lineFromColor}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromColor()}{lineFromColor()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb565\+::line\+From\+Color (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const unsigned}]{count,  }\item[{const uint32\+\_\+t}]{color,  }\item[{const uint8\+\_\+t}]{alpha,  }\item[{const uint32\+\_\+t}]{color565 }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using the given color.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em color} & The color. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+ & {\em color565} & The color565 (same as \textquotesingle{}color\textquotesingle{} but in native format for speed reasons). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_a5cf198880107f8d45111ed8d5c2085cd}\label{_paint_8hpp_a5cf198880107f8d45111ed8d5c2085cd} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!lineFromL8ARGB8888@{lineFromL8ARGB8888}}
+\index{lineFromL8ARGB8888@{lineFromL8ARGB8888}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromL8ARGB8888()}{lineFromL8ARGB8888()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb565\+::line\+From\+L8\+ARGB8888 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (L8\+ARGB8888 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The palette indices. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_ae868991b9ec4441c0cce8442c4be065f}\label{_paint_8hpp_ae868991b9ec4441c0cce8442c4be065f} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!lineFromL8RGB888@{lineFromL8RGB888}}
+\index{lineFromL8RGB888@{lineFromL8RGB888}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromL8RGB888()}{lineFromL8RGB888()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb565\+::line\+From\+L8\+RGB888 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (L8\+RGB888 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The palette indices. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_a017937212430095a4844e75b24301ac6}\label{_paint_8hpp_a017937212430095a4844e75b24301ac6} 
+\index{PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}!lineFromRGB565@{lineFromRGB565}}
+\index{lineFromRGB565@{lineFromRGB565}!PaintRGB565Impl.hpp@{PaintRGB565Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromRGB565()}{lineFromRGB565()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb565\+::line\+From\+RGB565 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint16\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (RGB565 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The RGB5656 data. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}

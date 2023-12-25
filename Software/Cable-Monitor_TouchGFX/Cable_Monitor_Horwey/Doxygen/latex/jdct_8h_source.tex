@@ -1,0 +1,399 @@
+\doxysection{jdct.\+h}
+\hypertarget{jdct_8h_source}{}\label{jdct_8h_source}\index{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jdct.h@{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jdct.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ jdct.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1994-\/1996,\ Thomas\ G.\ Lane.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Independent\ JPEG\ Group's\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ For\ conditions\ of\ distribution\ and\ use,\ see\ the\ accompanying\ README\ file.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ This\ include\ file\ contains\ common\ declarations\ for\ the\ forward\ and}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ inverse\ DCT\ modules.\ \ These\ declarations\ are\ private\ to\ the\ DCT\ managers}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ (jcdctmgr.c,\ jddctmgr.c)\ and\ the\ individual\ DCT\ algorithms.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ The\ individual\ DCT\ algorithms\ are\ kept\ in\ separate\ files\ to\ ease\ }}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ machine-\/dependent\ tuning\ (e.g.,\ assembly\ coding).}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ A\ forward\ DCT\ routine\ is\ given\ a\ pointer\ to\ an\ input\ sample\ array\ and}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ a\ pointer\ to\ a\ work\ area\ of\ type\ DCTELEM[];\ the\ DCT\ is\ to\ be\ performed}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ in-\/place\ in\ that\ buffer.\ \ Type\ DCTELEM\ is\ int\ for\ 8-\/bit\ samples,\ INT32}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ for\ 12-\/bit\ samples.\ \ (NOTE:\ Floating-\/point\ DCT\ implementations\ use\ an}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ array\ of\ type\ FAST\_FLOAT,\ instead.)}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ The\ input\ data\ is\ to\ be\ fetched\ from\ the\ sample\ array\ starting\ at\ a}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ specified\ column.\ \ (Any\ row\ offset\ needed\ will\ be\ applied\ to\ the\ array}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ pointer\ before\ it\ is\ passed\ to\ the\ FDCT\ code.)}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ Note\ that\ the\ number\ of\ samples\ fetched\ by\ the\ FDCT\ routine\ is}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ DCT\_h\_scaled\_size\ *\ DCT\_v\_scaled\_size.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ The\ DCT\ outputs\ are\ returned\ scaled\ up\ by\ a\ factor\ of\ 8;\ they\ therefore}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ have\ a\ range\ of\ +-\/8K\ for\ 8-\/bit\ data,\ +-\/128K\ for\ 12-\/bit\ data.\ \ This}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ convention\ improves\ accuracy\ in\ integer\ implementations\ and\ saves\ some}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ work\ in\ floating-\/point\ ones.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ Quantization\ of\ the\ output\ coefficients\ is\ done\ by\ jcdctmgr.c.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ BITS\_IN\_JSAMPLE\ ==\ 8}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ DCTELEM;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 16\ or\ 32\ bits\ is\ fine\ */}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ INT32\ DCTELEM;\ \ \ \ \ \ \textcolor{comment}{/*\ must\ have\ 32\ bits\ */}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ JMETHOD(\textcolor{keywordtype}{void},\ forward\_DCT\_method\_ptr,\ (DCTELEM\ *\ data,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JSAMPARRAY\ sample\_data,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ JMETHOD(\textcolor{keywordtype}{void},\ float\_DCT\_method\_ptr,\ (FAST\_FLOAT\ *\ data,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JSAMPARRAY\ sample\_data,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ An\ inverse\ DCT\ routine\ is\ given\ a\ pointer\ to\ the\ input\ JBLOCK\ and\ a\ pointer}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ to\ an\ output\ sample\ array.\ \ The\ routine\ must\ dequantize\ the\ input\ data\ as}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ well\ as\ perform\ the\ IDCT;\ for\ dequantization,\ it\ uses\ the\ multiplier\ table}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ pointed\ to\ by\ compptr-\/>dct\_table.\ \ The\ output\ data\ is\ to\ be\ placed\ into\ the}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ sample\ array\ starting\ at\ a\ specified\ column.\ \ (Any\ row\ offset\ needed\ will}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ be\ applied\ to\ the\ array\ pointer\ before\ it\ is\ passed\ to\ the\ IDCT\ code.)}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ Note\ that\ the\ number\ of\ samples\ emitted\ by\ the\ IDCT\ routine\ is}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ DCT\_h\_scaled\_size\ *\ DCT\_v\_scaled\_size.}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ typedef\ inverse\_DCT\_method\_ptr\ is\ declared\ in\ jpegint.h\ */}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ *\ Each\ IDCT\ routine\ has\ its\ own\ ideas\ about\ the\ best\ dct\_table\ element\ type.}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ MULTIPLIER\ ISLOW\_MULT\_TYPE;\ \textcolor{comment}{/*\ short\ or\ int,\ whichever\ is\ faster\ */}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#if\ BITS\_IN\_JSAMPLE\ ==\ 8}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ MULTIPLIER\ IFAST\_MULT\_TYPE;\ \textcolor{comment}{/*\ 16\ bits\ is\ OK,\ use\ short\ if\ faster\ */}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ IFAST\_SCALE\_BITS\ \ 2\ }\textcolor{comment}{/*\ fractional\ bits\ in\ scale\ factors\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ INT32\ IFAST\_MULT\_TYPE;\ \ \textcolor{comment}{/*\ need\ 32\ bits\ for\ scaled\ quantizers\ */}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ IFAST\_SCALE\_BITS\ \ 13\ \ \ \ }\textcolor{comment}{/*\ fractional\ bits\ in\ scale\ factors\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ FAST\_FLOAT\ FLOAT\_MULT\_TYPE;\ \textcolor{comment}{/*\ preferred\ floating\ type\ */}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ Each\ IDCT\ routine\ is\ responsible\ for\ range-\/limiting\ its\ results\ and}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ converting\ them\ to\ unsigned\ form\ (0..MAXJSAMPLE).\ \ The\ raw\ outputs\ could}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ *\ be\ quite\ far\ out\ of\ range\ if\ the\ input\ data\ is\ corrupt,\ so\ a\ bulletproof}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ *\ range-\/limiting\ step\ is\ required.\ \ We\ use\ a\ mask-\/and-\/table-\/lookup\ method}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ *\ to\ do\ the\ combined\ operations\ quickly.\ \ See\ the\ comments\ with}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *\ prepare\_range\_limit\_table\ (in\ jdmaster.c)\ for\ more\ info.}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ IDCT\_range\_limit(cinfo)\ \ ((cinfo)-\/>sample\_range\_limit\ +\ CENTERJSAMPLE)}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ RANGE\_MASK\ \ (MAXJSAMPLE\ *\ 4\ +\ 3)\ }\textcolor{comment}{/*\ 2\ bits\ wider\ than\ legal\ samples\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{/*\ Short\ forms\ of\ external\ names\ for\ systems\ with\ brain-\/damaged\ linkers.\ */}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#ifdef\ NEED\_SHORT\_EXTERNAL\_NAMES}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_islow\ \ \ \ \ jFDislow}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_ifast\ \ \ \ \ jFDifast}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_float\ \ \ \ \ jFDfloat}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_7x7\ \ \ \ \ \ \ jFD7x7}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_6x6\ \ \ \ \ \ \ jFD6x6}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_5x5\ \ \ \ \ \ \ jFD5x5}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_4x4\ \ \ \ \ \ \ jFD4x4}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_3x3\ \ \ \ \ \ \ jFD3x3}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_2x2\ \ \ \ \ \ \ jFD2x2}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_1x1\ \ \ \ \ \ \ jFD1x1}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_9x9\ \ \ \ \ \ \ jFD9x9}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_10x10\ \ \ \ \ jFD10x10}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_11x11\ \ \ \ \ jFD11x11}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_12x12\ \ \ \ \ jFD12x12}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_13x13\ \ \ \ \ jFD13x13}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_14x14\ \ \ \ \ jFD14x14}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_15x15\ \ \ \ \ jFD15x15}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_16x16\ \ \ \ \ jFD16x16}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_16x8\ \ \ \ \ \ jFD16x8}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_14x7\ \ \ \ \ \ jFD14x7}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_12x6\ \ \ \ \ \ jFD12x6}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_10x5\ \ \ \ \ \ jFD10x5}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_8x4\ \ \ \ \ \ \ jFD8x4}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_6x3\ \ \ \ \ \ \ jFD6x3}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_4x2\ \ \ \ \ \ \ jFD4x2}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_2x1\ \ \ \ \ \ \ jFD2x1}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_8x16\ \ \ \ \ \ jFD8x16}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_7x14\ \ \ \ \ \ jFD7x14}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_6x12\ \ \ \ \ \ jFD6x12}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_5x10\ \ \ \ \ \ jFD5x10}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_4x8\ \ \ \ \ \ \ jFD4x8}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_3x6\ \ \ \ \ \ \ jFD3x6}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_2x4\ \ \ \ \ \ \ jFD2x4}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ jpeg\_fdct\_1x2\ \ \ \ \ \ \ jFD1x2}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_islow\ \ \ \ \ jRDislow}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_ifast\ \ \ \ \ jRDifast}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_float\ \ \ \ \ jRDfloat}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_7x7\ \ \ \ \ \ \ jRD7x7}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_6x6\ \ \ \ \ \ \ jRD6x6}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_5x5\ \ \ \ \ \ \ jRD5x5}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_4x4\ \ \ \ \ \ \ jRD4x4}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_3x3\ \ \ \ \ \ \ jRD3x3}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_2x2\ \ \ \ \ \ \ jRD2x2}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_1x1\ \ \ \ \ \ \ jRD1x1}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_9x9\ \ \ \ \ \ \ jRD9x9}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_10x10\ \ \ \ \ jRD10x10}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_11x11\ \ \ \ \ jRD11x11}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_12x12\ \ \ \ \ jRD12x12}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_13x13\ \ \ \ \ jRD13x13}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_14x14\ \ \ \ \ jRD14x14}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_15x15\ \ \ \ \ jRD15x15}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_16x16\ \ \ \ \ jRD16x16}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_16x8\ \ \ \ \ \ jRD16x8}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_14x7\ \ \ \ \ \ jRD14x7}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_12x6\ \ \ \ \ \ jRD12x6}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_10x5\ \ \ \ \ \ jRD10x5}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_8x4\ \ \ \ \ \ \ jRD8x4}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_6x3\ \ \ \ \ \ \ jRD6x3}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_4x2\ \ \ \ \ \ \ jRD4x2}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_2x1\ \ \ \ \ \ \ jRD2x1}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_8x16\ \ \ \ \ \ jRD8x16}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_7x14\ \ \ \ \ \ jRD7x14}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_6x12\ \ \ \ \ \ jRD6x12}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_5x10\ \ \ \ \ \ jRD5x10}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_4x8\ \ \ \ \ \ \ jRD4x8}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_3x6\ \ \ \ \ \ \ jRD3x8}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_2x4\ \ \ \ \ \ \ jRD2x4}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ jpeg\_idct\_1x2\ \ \ \ \ \ \ jRD1x2}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NEED\_SHORT\_EXTERNAL\_NAMES\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{/*\ Extern\ declarations\ for\ the\ forward\ and\ inverse\ DCT\ routines.\ */}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_islow}
+\DoxyCodeLine{00166\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00167\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_ifast}
+\DoxyCodeLine{00168\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00169\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_float}
+\DoxyCodeLine{00170\ \ \ \ \ JPP((FAST\_FLOAT\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00171\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_7x7}
+\DoxyCodeLine{00172\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00173\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_6x6}
+\DoxyCodeLine{00174\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00175\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_5x5}
+\DoxyCodeLine{00176\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00177\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_4x4}
+\DoxyCodeLine{00178\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00179\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_3x3}
+\DoxyCodeLine{00180\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00181\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_2x2}
+\DoxyCodeLine{00182\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00183\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_1x1}
+\DoxyCodeLine{00184\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00185\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_9x9}
+\DoxyCodeLine{00186\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00187\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_10x10}
+\DoxyCodeLine{00188\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00189\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_11x11}
+\DoxyCodeLine{00190\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00191\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_12x12}
+\DoxyCodeLine{00192\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00193\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_13x13}
+\DoxyCodeLine{00194\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00195\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_14x14}
+\DoxyCodeLine{00196\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00197\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_15x15}
+\DoxyCodeLine{00198\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00199\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_16x16}
+\DoxyCodeLine{00200\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00201\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_16x8}
+\DoxyCodeLine{00202\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00203\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_14x7}
+\DoxyCodeLine{00204\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00205\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_12x6}
+\DoxyCodeLine{00206\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00207\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_10x5}
+\DoxyCodeLine{00208\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00209\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_8x4}
+\DoxyCodeLine{00210\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00211\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_6x3}
+\DoxyCodeLine{00212\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00213\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_4x2}
+\DoxyCodeLine{00214\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00215\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_2x1}
+\DoxyCodeLine{00216\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00217\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_8x16}
+\DoxyCodeLine{00218\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00219\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_7x14}
+\DoxyCodeLine{00220\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00221\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_6x12}
+\DoxyCodeLine{00222\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00223\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_5x10}
+\DoxyCodeLine{00224\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00225\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_4x8}
+\DoxyCodeLine{00226\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00227\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_3x6}
+\DoxyCodeLine{00228\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00229\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_2x4}
+\DoxyCodeLine{00230\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00231\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_fdct\_1x2}
+\DoxyCodeLine{00232\ \ \ \ \ JPP((DCTELEM\ *\ data,\ JSAMPARRAY\ sample\_data,\ JDIMENSION\ start\_col));}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_islow}
+\DoxyCodeLine{00235\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00236\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00237\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_ifast}
+\DoxyCodeLine{00238\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00239\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00240\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_float}
+\DoxyCodeLine{00241\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00242\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00243\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_7x7}
+\DoxyCodeLine{00244\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00245\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00246\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_6x6}
+\DoxyCodeLine{00247\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00248\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00249\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_5x5}
+\DoxyCodeLine{00250\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00251\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00252\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_4x4}
+\DoxyCodeLine{00253\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00254\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00255\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_3x3}
+\DoxyCodeLine{00256\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00257\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00258\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_2x2}
+\DoxyCodeLine{00259\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00260\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00261\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_1x1}
+\DoxyCodeLine{00262\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00263\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00264\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_9x9}
+\DoxyCodeLine{00265\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00266\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00267\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_10x10}
+\DoxyCodeLine{00268\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00269\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00270\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_11x11}
+\DoxyCodeLine{00271\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00272\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00273\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_12x12}
+\DoxyCodeLine{00274\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00275\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00276\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_13x13}
+\DoxyCodeLine{00277\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00278\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00279\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_14x14}
+\DoxyCodeLine{00280\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00281\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00282\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_15x15}
+\DoxyCodeLine{00283\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00284\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00285\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_16x16}
+\DoxyCodeLine{00286\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00287\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00288\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_16x8}
+\DoxyCodeLine{00289\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00290\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00291\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_14x7}
+\DoxyCodeLine{00292\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00293\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00294\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_12x6}
+\DoxyCodeLine{00295\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00296\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00297\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_10x5}
+\DoxyCodeLine{00298\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00299\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00300\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_8x4}
+\DoxyCodeLine{00301\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00302\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00303\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_6x3}
+\DoxyCodeLine{00304\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00305\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00306\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_4x2}
+\DoxyCodeLine{00307\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00308\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00309\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_2x1}
+\DoxyCodeLine{00310\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00311\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00312\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_8x16}
+\DoxyCodeLine{00313\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00314\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00315\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_7x14}
+\DoxyCodeLine{00316\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00317\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00318\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_6x12}
+\DoxyCodeLine{00319\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00320\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00321\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_5x10}
+\DoxyCodeLine{00322\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00323\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00324\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_4x8}
+\DoxyCodeLine{00325\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00326\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00327\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_3x6}
+\DoxyCodeLine{00328\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00329\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00330\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_2x4}
+\DoxyCodeLine{00331\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00332\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00333\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_idct\_1x2}
+\DoxyCodeLine{00334\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ cinfo,\ \mbox{\hyperlink{structjpeg__component__info}{jpeg\_component\_info}}\ *\ compptr,}
+\DoxyCodeLine{00335\ \ \ \ \ \ JCOEFPTR\ coef\_block,\ JSAMPARRAY\ output\_buf,\ JDIMENSION\ output\_col));}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00339\ \textcolor{comment}{\ *\ Macros\ for\ handling\ fixed-\/point\ arithmetic;\ these\ are\ used\ by\ many}}
+\DoxyCodeLine{00340\ \textcolor{comment}{\ *\ but\ not\ all\ of\ the\ DCT/IDCT\ modules.}}
+\DoxyCodeLine{00341\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00342\ \textcolor{comment}{\ *\ All\ values\ are\ expected\ to\ be\ of\ type\ INT32.}}
+\DoxyCodeLine{00343\ \textcolor{comment}{\ *\ Fractional\ constants\ are\ scaled\ left\ by\ CONST\_BITS\ bits.}}
+\DoxyCodeLine{00344\ \textcolor{comment}{\ *\ CONST\_BITS\ is\ defined\ within\ each\ module\ using\ these\ macros,}}
+\DoxyCodeLine{00345\ \textcolor{comment}{\ *\ and\ may\ differ\ from\ one\ module\ to\ the\ next.}}
+\DoxyCodeLine{00346\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ ONE\ ((INT32)\ 1)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ CONST\_SCALE\ (ONE\ <<\ CONST\_BITS)}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \textcolor{comment}{/*\ Convert\ a\ positive\ real\ constant\ to\ an\ integer\ scaled\ by\ CONST\_SCALE.}}
+\DoxyCodeLine{00352\ \textcolor{comment}{\ *\ Caution:\ some\ C\ compilers\ fail\ to\ reduce\ "{}FIX(constant)"{}\ at\ compile\ time,}}
+\DoxyCodeLine{00353\ \textcolor{comment}{\ *\ thus\ causing\ a\ lot\ of\ useless\ floating-\/point\ operations\ at\ run\ time.}}
+\DoxyCodeLine{00354\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ FIX(x)\ \ ((INT32)\ ((x)\ *\ CONST\_SCALE\ +\ 0.5))}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \textcolor{comment}{/*\ Descale\ and\ correctly\ round\ an\ INT32\ value\ that's\ scaled\ by\ N\ bits.}}
+\DoxyCodeLine{00359\ \textcolor{comment}{\ *\ We\ assume\ RIGHT\_SHIFT\ rounds\ towards\ minus\ infinity,\ so\ adding}}
+\DoxyCodeLine{00360\ \textcolor{comment}{\ *\ the\ fudge\ factor\ is\ correct\ for\ either\ sign\ of\ X.}}
+\DoxyCodeLine{00361\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ DESCALE(x,n)\ \ RIGHT\_SHIFT((x)\ +\ (ONE\ <<\ ((n)-\/1)),\ n)}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \textcolor{comment}{/*\ Multiply\ an\ INT32\ variable\ by\ an\ INT32\ constant\ to\ yield\ an\ INT32\ result.}}
+\DoxyCodeLine{00366\ \textcolor{comment}{\ *\ This\ macro\ is\ used\ only\ when\ the\ two\ inputs\ will\ actually\ be\ no\ more\ than}}
+\DoxyCodeLine{00367\ \textcolor{comment}{\ *\ 16\ bits\ wide,\ so\ that\ a\ 16x16-\/>32\ bit\ multiply\ can\ be\ used\ instead\ of\ a}}
+\DoxyCodeLine{00368\ \textcolor{comment}{\ *\ full\ 32x32\ multiply.\ \ This\ provides\ a\ useful\ speedup\ on\ many\ machines.}}
+\DoxyCodeLine{00369\ \textcolor{comment}{\ *\ Unfortunately\ there\ is\ no\ way\ to\ specify\ a\ 16x16-\/>32\ multiply\ portably}}
+\DoxyCodeLine{00370\ \textcolor{comment}{\ *\ in\ C,\ but\ some\ C\ compilers\ will\ do\ the\ right\ thing\ if\ you\ provide\ the}}
+\DoxyCodeLine{00371\ \textcolor{comment}{\ *\ correct\ combination\ of\ casts.}}
+\DoxyCodeLine{00372\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#ifdef\ SHORTxSHORT\_32\ \ \ \ \ \ \ }\textcolor{comment}{/*\ may\ work\ if\ 'int'\ is\ 32\ bits\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ MULTIPLY16C16(var,const)\ \ (((INT16)\ (var))\ *\ ((INT16)\ (const)))}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#ifdef\ SHORTxLCONST\_32\ \ \ \ \ \ }\textcolor{comment}{/*\ known\ to\ work\ with\ Microsoft\ C\ 6.0\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ MULTIPLY16C16(var,const)\ \ (((INT16)\ (var))\ *\ ((INT32)\ (const)))}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#ifndef\ MULTIPLY16C16\ \ \ \ \ \ \ }\textcolor{comment}{/*\ default\ definition\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ MULTIPLY16C16(var,const)\ \ ((var)\ *\ (const))}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \textcolor{comment}{/*\ Same\ except\ both\ inputs\ are\ variables.\ */}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#ifdef\ SHORTxSHORT\_32\ \ \ \ \ \ \ }\textcolor{comment}{/*\ may\ work\ if\ 'int'\ is\ 32\ bits\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ MULTIPLY16V16(var1,var2)\ \ (((INT16)\ (var1))\ *\ ((INT16)\ (var2)))}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#ifndef\ MULTIPLY16V16\ \ \ \ \ \ \ }\textcolor{comment}{/*\ default\ definition\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ MULTIPLY16V16(var1,var2)\ \ ((var1)\ *\ (var2))}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

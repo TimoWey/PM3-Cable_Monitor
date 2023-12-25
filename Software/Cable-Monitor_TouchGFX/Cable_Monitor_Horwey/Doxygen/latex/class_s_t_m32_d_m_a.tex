@@ -1,0 +1,223 @@
+\doxysection{STM32\+DMA Class Reference}
+\hypertarget{class_s_t_m32_d_m_a}{}\label{class_s_t_m32_d_m_a}\index{STM32DMA@{STM32DMA}}
+
+
+This class specializes DMA\+\_\+\+Interface for the STM32 processors.  
+
+
+
+
+{\ttfamily \#include $<$STM32\+DMA.\+hpp$>$}
+
+Inheritance diagram for STM32\+DMA\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_s_t_m32_d_m_a}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_t_m32_d_m_a_acd2a354edecf304c98edf7eb27b60753}{STM32\+DMA}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{touchgfx\+::\+Blit\+Operations}} \mbox{\hyperlink{class_s_t_m32_d_m_a_a1e7dec26073f6eacf3717b0a5522bc84}{get\+Blit\+Caps}} ()
+\begin{DoxyCompactList}\small\item\em No blit operations supported by this DMA implementation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_s_t_m32_d_m_a_afebf4e7dccb3c401e5018f24297fe808}{setup\+Data\+Copy}} (const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{touchgfx\+::\+Blit\+Op}} \&blit\+Op)
+\begin{DoxyCompactList}\small\item\em Asserts if used. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_s_t_m32_d_m_a_a348711832780148327a03acc85ee5699}{setup\+Data\+Fill}} (const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{touchgfx\+::\+Blit\+Op}} \&blit\+Op)
+\begin{DoxyCompactList}\small\item\em Asserts if used. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_s_t_m32_d_m_a_a8c3f2a4adb69ad2f2e260bda720bc91d}{signal\+DMAInterrupt}} ()
+\begin{DoxyCompactList}\small\item\em Does nothing. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_s_t_m32_d_m_a_af7828fceba886ab02766d5d12426464a}{flush}} ()
+\begin{DoxyCompactList}\small\item\em Block until all DMA transfers are complete. Since this particular DMA does not do anything, return immediately. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx\+::\+DMA\+\_\+\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a26a52486264a5dc201ec3756c59fb84c}{add\+To\+Queue}} (const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&op)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ace767d5a54b614b76ac7ccfba5970f65}{initialize}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a4cc162f33b980ff25cb528276d1f1db3}{is\+DMARunning}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a614ad4829f3beabab4c5017375d5f35b}{set\+Allowed}} (bool allowed)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a29592480ae38bb1bfef1d22bc9aabd3c}{get\+Allowed}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a182a0506ce9595c47f8e8fec33486250}{set\+Reserved}} (bool reserved)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ae87179b63decdbb4b49ad34c0195e482}{get\+Reserved}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a95ab5d9fc65e64acb44fa5e7beb8aea3}{start}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0811374ec33b7d47cfb41f8f8d77df67}{is\+Dma\+Queue\+Empty}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac525786acff2893aa0f264357e135afc}{is\+Dma\+Queue\+Full}} ()
+\item 
+virtual \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9}{DMAType}} \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac548c1fc4a6cab9770593f8186ae6f4a}{get\+DMAType}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a92759b375e45bd0b648bdf3c048d2fb9}{\texorpdfstring{$\sim$}{\string~}\+DMA\+\_\+\+Interface}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx\+::\+DMA\+\_\+\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_aa408de6b515bf9712ee5234a4e96e5d5}{DMA\+\_\+\+Interface}} (\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\+\_\+\+Queue}} \&dma\+Queue)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_adc5a1bcd9ae415051f3a4a39f9e01b09}{execute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ae75aca8f689a9bc1ac83ca54ff6ab626}{execute\+Completed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a28f8f95558177f97c52bdf3f03e914a2}{seed\+Execution}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0e30cf2b0706356a43d5b74186e7023e}{enable\+Alpha}} (uint8\+\_\+t alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a366c332352363500da97e91b5a62f78e}{disable\+Alpha}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a808b76c5232934600c8910fd1fcba18c}{enable\+Copy\+With\+Transparent\+Pixels}} (uint8\+\_\+t alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a4288ec23ffd7a044ac831ed808b1b943}{wait\+For\+Frame\+Buffer\+Semaphore}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx\+::\+DMA\+\_\+\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\+\_\+\+Queue}} \& {\bfseries queue}
+\begin{DoxyCompactList}\small\item\em Reference to the DMA queue. \end{DoxyCompactList}\item 
+bool {\bfseries is\+Running}
+\begin{DoxyCompactList}\small\item\em true if a DMA transfer is currently ongoing. \end{DoxyCompactList}\item 
+volatile bool {\bfseries is\+Allowed}
+\begin{DoxyCompactList}\small\item\em true if DMA transfers are currently allowed. \end{DoxyCompactList}\item 
+volatile bool {\bfseries is\+Reserved}
+\begin{DoxyCompactList}\small\item\em true if DMA is reserved for for HW rendering \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class specializes DMA\+\_\+\+Interface for the STM32 processors. 
+
+File Name \+: \doxylink{_s_t_m32_d_m_a_8hpp_source}{STM32\+DMA.\+hpp}
+
+This file is generated by Touch\+GFX Generator 4.\+22.\+1. Please, do not edit!
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2023 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_d_m_a___interface}{touchgfx\+::\+DMA\+\_\+\+Interface} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_s_t_m32_d_m_a_acd2a354edecf304c98edf7eb27b60753}\label{class_s_t_m32_d_m_a_acd2a354edecf304c98edf7eb27b60753} 
+\index{STM32DMA@{STM32DMA}!STM32DMA@{STM32DMA}}
+\index{STM32DMA@{STM32DMA}!STM32DMA@{STM32DMA}}
+\doxysubsubsection{\texorpdfstring{STM32DMA()}{STM32DMA()}}
+{\footnotesize\ttfamily STM32\+DMA\+::\+STM32\+DMA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+File Name \+: STM32\+DMA.\+cpp
+
+This file is generated by Touch\+GFX Generator 4.\+22.\+1. Please, do not edit!
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2023 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_t_m32_d_m_a_af7828fceba886ab02766d5d12426464a}\label{class_s_t_m32_d_m_a_af7828fceba886ab02766d5d12426464a} 
+\index{STM32DMA@{STM32DMA}!flush@{flush}}
+\index{flush@{flush}!STM32DMA@{STM32DMA}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void STM32\+DMA\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Block until all DMA transfers are complete. Since this particular DMA does not do anything, return immediately. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a690b61b18a8d4573941f6251fe951a51}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{class_s_t_m32_d_m_a_a1e7dec26073f6eacf3717b0a5522bc84}\label{class_s_t_m32_d_m_a_a1e7dec26073f6eacf3717b0a5522bc84} 
+\index{STM32DMA@{STM32DMA}!getBlitCaps@{getBlitCaps}}
+\index{getBlitCaps@{getBlitCaps}!STM32DMA@{STM32DMA}}
+\doxysubsubsection{\texorpdfstring{getBlitCaps()}{getBlitCaps()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{touchgfx\+::\+Blit\+Operations}} STM32\+DMA\+::get\+Blit\+Caps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+No blit operations supported by this DMA implementation. 
+
+\begin{DoxyReturn}{Returns}
+Zero (no blit ops supported). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a91da807f94bc3ebedb469712a68b6638}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{class_s_t_m32_d_m_a_afebf4e7dccb3c401e5018f24297fe808}\label{class_s_t_m32_d_m_a_afebf4e7dccb3c401e5018f24297fe808} 
+\index{STM32DMA@{STM32DMA}!setupDataCopy@{setupDataCopy}}
+\index{setupDataCopy@{setupDataCopy}!STM32DMA@{STM32DMA}}
+\doxysubsubsection{\texorpdfstring{setupDataCopy()}{setupDataCopy()}}
+{\footnotesize\ttfamily void STM32\+DMA\+::setup\+Data\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{touchgfx\+::\+Blit\+Op}} \&}]{blit\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Asserts if used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blit\+Op} & The blit operation to be performed by this DMA instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a8118b5ea7bd6e990fe0117fd745dd76d}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{class_s_t_m32_d_m_a_a348711832780148327a03acc85ee5699}\label{class_s_t_m32_d_m_a_a348711832780148327a03acc85ee5699} 
+\index{STM32DMA@{STM32DMA}!setupDataFill@{setupDataFill}}
+\index{setupDataFill@{setupDataFill}!STM32DMA@{STM32DMA}}
+\doxysubsubsection{\texorpdfstring{setupDataFill()}{setupDataFill()}}
+{\footnotesize\ttfamily void STM32\+DMA\+::setup\+Data\+Fill (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{touchgfx\+::\+Blit\+Op}} \&}]{blit\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Asserts if used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blit\+Op} & The blit operation to be performed by this DMA instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_af3180b67d2b2dccdedaa54c12e54058a}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{class_s_t_m32_d_m_a_a8c3f2a4adb69ad2f2e260bda720bc91d}\label{class_s_t_m32_d_m_a_a8c3f2a4adb69ad2f2e260bda720bc91d} 
+\index{STM32DMA@{STM32DMA}!signalDMAInterrupt@{signalDMAInterrupt}}
+\index{signalDMAInterrupt@{signalDMAInterrupt}!STM32DMA@{STM32DMA}}
+\doxysubsubsection{\texorpdfstring{signalDMAInterrupt()}{signalDMAInterrupt()}}
+{\footnotesize\ttfamily void STM32\+DMA\+::signal\+DMAInterrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Does nothing. 
+
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac6f2516c8b5e47fda0e3854d1c4eed31}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Touch\+GFX/target/generated/STM32\+DMA.\+hpp\item 
+Touch\+GFX/target/generated/STM32\+DMA.\+cpp\end{DoxyCompactItemize}

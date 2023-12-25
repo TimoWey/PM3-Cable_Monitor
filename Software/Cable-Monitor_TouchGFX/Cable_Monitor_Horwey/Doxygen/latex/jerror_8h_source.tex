@@ -1,0 +1,310 @@
+\doxysection{jerror.\+h}
+\hypertarget{jerror_8h_source}{}\label{jerror_8h_source}\index{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jerror.h@{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jerror.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ jerror.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1994-\/1997,\ Thomas\ G.\ Lane.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Modified\ 1997-\/2009\ by\ Guido\ Vollbeding.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Independent\ JPEG\ Group's\ software.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ For\ conditions\ of\ distribution\ and\ use,\ see\ the\ accompanying\ README\ file.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ defines\ the\ error\ and\ message\ codes\ for\ the\ JPEG\ library.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Edit\ this\ file\ to\ add\ new\ codes,\ or\ to\ translate\ the\ message\ strings\ to}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ some\ other\ language.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ A\ set\ of\ error-\/reporting\ macros\ are\ defined\ too.\ \ Some\ applications\ using}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ the\ JPEG\ library\ may\ wish\ to\ include\ this\ file\ to\ get\ the\ error\ codes}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ and/or\ the\ macros.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ To\ define\ the\ enum\ list\ of\ message\ codes,\ include\ this\ file\ without}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ defining\ macro\ JMESSAGE.\ \ To\ create\ a\ message\ string\ table,\ include\ it}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ again\ with\ a\ suitable\ JMESSAGE\ definition\ (see\ jerror.c\ for\ an\ example).}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ JMESSAGE}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifndef\ JERROR\_H}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ First\ time\ through,\ define\ the\ enum\ list\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Repeated\ inclusions\ of\ this\ file\ are\ no-\/ops\ unless\ JMESSAGE\ is\ defined\ */}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ JMESSAGE(code,string)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JERROR\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JMESSAGE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ JMESSAGE(code,string)\ \ \ code\ ,}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JMAKE\_ENUM\_LIST\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ JMESSAGE(JMSG\_NOMESSAGE,\ \textcolor{stringliteral}{"{}Bogus\ message\ code\ \%d"{}})\ \textcolor{comment}{/*\ Must\ be\ first\ entry!\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/*\ For\ maintenance\ convenience,\ list\ is\ alphabetical\ by\ message\ code\ name\ */}}
+\DoxyCodeLine{00043\ JMESSAGE(JERR\_BAD\_ALIGN\_TYPE,\ "{}ALIGN\_TYPE\ is\ wrong,\ please\ fix"{})}
+\DoxyCodeLine{00044\ JMESSAGE(JERR\_BAD\_ALLOC\_CHUNK,\ "{}MAX\_ALLOC\_CHUNK\ is\ wrong,\ please\ fix"{})}
+\DoxyCodeLine{00045\ JMESSAGE(JERR\_BAD\_BUFFER\_MODE,\ "{}Bogus\ buffer\ control\ mode"{})}
+\DoxyCodeLine{00046\ JMESSAGE(JERR\_BAD\_COMPONENT\_ID,\ "{}Invalid\ component\ ID\ \%d\ in\ SOS"{})}
+\DoxyCodeLine{00047\ JMESSAGE(JERR\_BAD\_CROP\_SPEC,\ "{}Invalid\ crop\ request"{})}
+\DoxyCodeLine{00048\ JMESSAGE(JERR\_BAD\_DCT\_COEF,\ "{}DCT\ coefficient\ out\ of\ range"{})}
+\DoxyCodeLine{00049\ JMESSAGE(JERR\_BAD\_DCTSIZE,\ "{}DCT\ scaled\ block\ size\ \%dx\%d\ not\ supported"{})}
+\DoxyCodeLine{00050\ JMESSAGE(JERR\_BAD\_DROP\_SAMPLING,}
+\DoxyCodeLine{00051\ \ \ \ \ \ "{}Component\ index\ \%d:\ mismatching\ sampling\ ratio\ \%d:\%d,\ \%d:\%d,\ \%c"{})}
+\DoxyCodeLine{00052\ JMESSAGE(JERR\_BAD\_HUFF\_TABLE,\ "{}Bogus\ Huffman\ table\ definition"{})}
+\DoxyCodeLine{00053\ JMESSAGE(JERR\_BAD\_IN\_COLORSPACE,\ "{}Bogus\ input\ colorspace"{})}
+\DoxyCodeLine{00054\ JMESSAGE(JERR\_BAD\_J\_COLORSPACE,\ "{}Bogus\ JPEG\ colorspace"{})}
+\DoxyCodeLine{00055\ JMESSAGE(JERR\_BAD\_LENGTH,\ "{}Bogus\ marker\ length"{})}
+\DoxyCodeLine{00056\ JMESSAGE(JERR\_BAD\_LIB\_VERSION,}
+\DoxyCodeLine{00057\ \ \ \ \ \ "{}Wrong\ JPEG\ library\ version:\ library\ is\ \%d,\ caller\ expects\ \%d"{})}
+\DoxyCodeLine{00058\ JMESSAGE(JERR\_BAD\_MCU\_SIZE,\ "{}Sampling\ factors\ too\ large\ for\ interleaved\ scan"{})}
+\DoxyCodeLine{00059\ JMESSAGE(JERR\_BAD\_POOL\_ID,\ "{}Invalid\ memory\ pool\ code\ \%d"{})}
+\DoxyCodeLine{00060\ JMESSAGE(JERR\_BAD\_PRECISION,\ "{}Unsupported\ JPEG\ data\ precision\ \%d"{})}
+\DoxyCodeLine{00061\ JMESSAGE(JERR\_BAD\_PROGRESSION,}
+\DoxyCodeLine{00062\ \ \ \ \ \ "{}Invalid\ progressive\ parameters\ Ss=\%d\ Se=\%d\ Ah=\%d\ Al=\%d"{})}
+\DoxyCodeLine{00063\ JMESSAGE(JERR\_BAD\_PROG\_SCRIPT,}
+\DoxyCodeLine{00064\ \ \ \ \ \ "{}Invalid\ progressive\ parameters\ at\ scan\ script\ entry\ \%d"{})}
+\DoxyCodeLine{00065\ JMESSAGE(JERR\_BAD\_SAMPLING,\ "{}Bogus\ sampling\ factors"{})}
+\DoxyCodeLine{00066\ JMESSAGE(JERR\_BAD\_SCAN\_SCRIPT,\ "{}Invalid\ scan\ script\ at\ entry\ \%d"{})}
+\DoxyCodeLine{00067\ JMESSAGE(JERR\_BAD\_STATE,\ "{}Improper\ call\ to\ JPEG\ library\ in\ state\ \%d"{})}
+\DoxyCodeLine{00068\ JMESSAGE(JERR\_BAD\_STRUCT\_SIZE,}
+\DoxyCodeLine{00069\ \ \ \ \ \ "{}JPEG\ parameter\ struct\ mismatch:\ library\ thinks\ size\ is\ \%u,\ caller\ expects\ \%u"{})}
+\DoxyCodeLine{00070\ JMESSAGE(JERR\_BAD\_VIRTUAL\_ACCESS,\ "{}Bogus\ virtual\ array\ access"{})}
+\DoxyCodeLine{00071\ JMESSAGE(JERR\_BUFFER\_SIZE,\ "{}Buffer\ passed\ to\ JPEG\ library\ is\ too\ small"{})}
+\DoxyCodeLine{00072\ JMESSAGE(JERR\_CANT\_SUSPEND,\ "{}Suspension\ not\ allowed\ here"{})}
+\DoxyCodeLine{00073\ JMESSAGE(JERR\_CCIR601\_NOTIMPL,\ "{}CCIR601\ sampling\ not\ implemented\ yet"{})}
+\DoxyCodeLine{00074\ JMESSAGE(JERR\_COMPONENT\_COUNT,\ "{}Too\ many\ color\ components:\ \%d,\ max\ \%d"{})}
+\DoxyCodeLine{00075\ JMESSAGE(JERR\_CONVERSION\_NOTIMPL,\ "{}Unsupported\ color\ conversion\ request"{})}
+\DoxyCodeLine{00076\ JMESSAGE(JERR\_DAC\_INDEX,\ "{}Bogus\ DAC\ index\ \%d"{})}
+\DoxyCodeLine{00077\ JMESSAGE(JERR\_DAC\_VALUE,\ "{}Bogus\ DAC\ value\ 0x\%x"{})}
+\DoxyCodeLine{00078\ JMESSAGE(JERR\_DHT\_INDEX,\ "{}Bogus\ DHT\ index\ \%d"{})}
+\DoxyCodeLine{00079\ JMESSAGE(JERR\_DQT\_INDEX,\ "{}Bogus\ DQT\ index\ \%d"{})}
+\DoxyCodeLine{00080\ JMESSAGE(JERR\_EMPTY\_IMAGE,\ "{}Empty\ JPEG\ image\ (DNL\ not\ supported)"{})}
+\DoxyCodeLine{00081\ JMESSAGE(JERR\_EMS\_READ,\ "{}Read\ from\ EMS\ failed"{})}
+\DoxyCodeLine{00082\ JMESSAGE(JERR\_EMS\_WRITE,\ "{}Write\ to\ EMS\ failed"{})}
+\DoxyCodeLine{00083\ JMESSAGE(JERR\_EOI\_EXPECTED,\ "{}Didn't\ expect\ more\ than\ one\ scan"{})}
+\DoxyCodeLine{00084\ JMESSAGE(JERR\_FILE\_READ,\ "{}Input\ file\ read\ error"{})}
+\DoxyCodeLine{00085\ JMESSAGE(JERR\_FILE\_WRITE,\ "{}Output\ file\ write\ error\ -\/-\/-\/\ out\ of\ disk\ space?"{})}
+\DoxyCodeLine{00086\ JMESSAGE(JERR\_FRACT\_SAMPLE\_NOTIMPL,\ "{}Fractional\ sampling\ not\ implemented\ yet"{})}
+\DoxyCodeLine{00087\ JMESSAGE(JERR\_HUFF\_CLEN\_OVERFLOW,\ "{}Huffman\ code\ size\ table\ overflow"{})}
+\DoxyCodeLine{00088\ JMESSAGE(JERR\_HUFF\_MISSING\_CODE,\ "{}Missing\ Huffman\ code\ table\ entry"{})}
+\DoxyCodeLine{00089\ JMESSAGE(JERR\_IMAGE\_TOO\_BIG,\ "{}Maximum\ supported\ image\ dimension\ is\ \%u\ pixels"{})}
+\DoxyCodeLine{00090\ JMESSAGE(JERR\_INPUT\_EMPTY,\ "{}Empty\ input\ file"{})}
+\DoxyCodeLine{00091\ JMESSAGE(JERR\_INPUT\_EOF,\ "{}Premature\ end\ of\ input\ file"{})}
+\DoxyCodeLine{00092\ JMESSAGE(JERR\_MISMATCHED\_QUANT\_TABLE,}
+\DoxyCodeLine{00093\ \ \ \ \ \ "{}Cannot\ transcode\ due\ to\ multiple\ use\ of\ quantization\ table\ \%d"{})}
+\DoxyCodeLine{00094\ JMESSAGE(JERR\_MISSING\_DATA,\ "{}Scan\ script\ does\ not\ transmit\ all\ data"{})}
+\DoxyCodeLine{00095\ JMESSAGE(JERR\_MODE\_CHANGE,\ "{}Invalid\ color\ quantization\ mode\ change"{})}
+\DoxyCodeLine{00096\ JMESSAGE(JERR\_NOTIMPL,\ "{}Not\ implemented\ yet"{})}
+\DoxyCodeLine{00097\ JMESSAGE(JERR\_NOT\_COMPILED,\ "{}Requested\ feature\ was\ omitted\ at\ compile\ time"{})}
+\DoxyCodeLine{00098\ JMESSAGE(JERR\_NO\_ARITH\_TABLE,\ "{}Arithmetic\ table\ 0x\%02x\ was\ not\ defined"{})}
+\DoxyCodeLine{00099\ JMESSAGE(JERR\_NO\_BACKING\_STORE,\ "{}Backing\ store\ not\ supported"{})}
+\DoxyCodeLine{00100\ JMESSAGE(JERR\_NO\_HUFF\_TABLE,\ "{}Huffman\ table\ 0x\%02x\ was\ not\ defined"{})}
+\DoxyCodeLine{00101\ JMESSAGE(JERR\_NO\_IMAGE,\ "{}JPEG\ datastream\ contains\ no\ image"{})}
+\DoxyCodeLine{00102\ JMESSAGE(JERR\_NO\_QUANT\_TABLE,\ "{}Quantization\ table\ 0x\%02x\ was\ not\ defined"{})}
+\DoxyCodeLine{00103\ JMESSAGE(JERR\_NO\_SOI,\ "{}Not\ a\ JPEG\ file:\ starts\ with\ 0x\%02x\ 0x\%02x"{})}
+\DoxyCodeLine{00104\ JMESSAGE(JERR\_OUT\_OF\_MEMORY,\ "{}Insufficient\ memory\ (case\ \%d)"{})}
+\DoxyCodeLine{00105\ JMESSAGE(JERR\_QUANT\_COMPONENTS,}
+\DoxyCodeLine{00106\ \ \ \ \ \ "{}Cannot\ quantize\ more\ than\ \%d\ color\ components"{})}
+\DoxyCodeLine{00107\ JMESSAGE(JERR\_QUANT\_FEW\_COLORS,\ "{}Cannot\ quantize\ to\ fewer\ than\ \%d\ colors"{})}
+\DoxyCodeLine{00108\ JMESSAGE(JERR\_QUANT\_MANY\_COLORS,\ "{}Cannot\ quantize\ to\ more\ than\ \%d\ colors"{})}
+\DoxyCodeLine{00109\ JMESSAGE(JERR\_SOF\_DUPLICATE,\ "{}Invalid\ JPEG\ file\ structure:\ two\ SOF\ markers"{})}
+\DoxyCodeLine{00110\ JMESSAGE(JERR\_SOF\_NO\_SOS,\ "{}Invalid\ JPEG\ file\ structure:\ missing\ SOS\ marker"{})}
+\DoxyCodeLine{00111\ JMESSAGE(JERR\_SOF\_UNSUPPORTED,\ "{}Unsupported\ JPEG\ process:\ SOF\ type\ 0x\%02x"{})}
+\DoxyCodeLine{00112\ JMESSAGE(JERR\_SOI\_DUPLICATE,\ "{}Invalid\ JPEG\ file\ structure:\ two\ SOI\ markers"{})}
+\DoxyCodeLine{00113\ JMESSAGE(JERR\_SOS\_NO\_SOF,\ "{}Invalid\ JPEG\ file\ structure:\ SOS\ before\ SOF"{})}
+\DoxyCodeLine{00114\ JMESSAGE(JERR\_TFILE\_CREATE,\ "{}Failed\ to\ create\ temporary\ file\ \%s"{})}
+\DoxyCodeLine{00115\ JMESSAGE(JERR\_TFILE\_READ,\ "{}Read\ failed\ on\ temporary\ file"{})}
+\DoxyCodeLine{00116\ JMESSAGE(JERR\_TFILE\_SEEK,\ "{}Seek\ failed\ on\ temporary\ file"{})}
+\DoxyCodeLine{00117\ JMESSAGE(JERR\_TFILE\_WRITE,}
+\DoxyCodeLine{00118\ \ \ \ \ \ "{}Write\ failed\ on\ temporary\ file\ -\/-\/-\/\ out\ of\ disk\ space?"{})}
+\DoxyCodeLine{00119\ JMESSAGE(JERR\_TOO\_LITTLE\_DATA,\ "{}Application\ transferred\ too\ few\ scanlines"{})}
+\DoxyCodeLine{00120\ JMESSAGE(JERR\_UNKNOWN\_MARKER,\ "{}Unsupported\ marker\ type\ 0x\%02x"{})}
+\DoxyCodeLine{00121\ JMESSAGE(JERR\_VIRTUAL\_BUG,\ "{}Virtual\ array\ controller\ messed\ up"{})}
+\DoxyCodeLine{00122\ JMESSAGE(JERR\_WIDTH\_OVERFLOW,\ "{}Image\ too\ wide\ for\ this\ implementation"{})}
+\DoxyCodeLine{00123\ JMESSAGE(JERR\_XMS\_READ,\ "{}Read\ from\ XMS\ failed"{})}
+\DoxyCodeLine{00124\ JMESSAGE(JERR\_XMS\_WRITE,\ "{}Write\ to\ XMS\ failed"{})}
+\DoxyCodeLine{00125\ JMESSAGE(JMSG\_COPYRIGHT,\ JCOPYRIGHT)}
+\DoxyCodeLine{00126\ JMESSAGE(JMSG\_VERSION,\ JVERSION)}
+\DoxyCodeLine{00127\ JMESSAGE(JTRC\_16BIT\_TABLES,}
+\DoxyCodeLine{00128\ \ \ \ \ \ "{}Caution:\ quantization\ tables\ are\ too\ coarse\ for\ baseline\ JPEG"{})}
+\DoxyCodeLine{00129\ JMESSAGE(JTRC\_ADOBE,}
+\DoxyCodeLine{00130\ \ \ \ \ \ "{}Adobe\ APP14\ marker:\ version\ \%d,\ flags\ 0x\%04x\ 0x\%04x,\ transform\ \%d"{})}
+\DoxyCodeLine{00131\ JMESSAGE(JTRC\_APP0,\ "{}Unknown\ APP0\ marker\ (not\ JFIF),\ length\ \%u"{})}
+\DoxyCodeLine{00132\ JMESSAGE(JTRC\_APP14,\ "{}Unknown\ APP14\ marker\ (not\ Adobe),\ length\ \%u"{})}
+\DoxyCodeLine{00133\ JMESSAGE(JTRC\_DAC,\ "{}Define\ Arithmetic\ Table\ 0x\%02x:\ 0x\%02x"{})}
+\DoxyCodeLine{00134\ JMESSAGE(JTRC\_DHT,\ "{}Define\ Huffman\ Table\ 0x\%02x"{})}
+\DoxyCodeLine{00135\ JMESSAGE(JTRC\_DQT,\ "{}Define\ Quantization\ Table\ \%d\ \ precision\ \%d"{})}
+\DoxyCodeLine{00136\ JMESSAGE(JTRC\_DRI,\ "{}Define\ Restart\ Interval\ \%u"{})}
+\DoxyCodeLine{00137\ JMESSAGE(JTRC\_EMS\_CLOSE,\ "{}Freed\ EMS\ handle\ \%u"{})}
+\DoxyCodeLine{00138\ JMESSAGE(JTRC\_EMS\_OPEN,\ "{}Obtained\ EMS\ handle\ \%u"{})}
+\DoxyCodeLine{00139\ JMESSAGE(JTRC\_EOI,\ "{}End\ Of\ Image"{})}
+\DoxyCodeLine{00140\ JMESSAGE(JTRC\_HUFFBITS,\ "{}\ \ \ \ \ \ \ \ \%3d\ \%3d\ \%3d\ \%3d\ \%3d\ \%3d\ \%3d\ \%3d"{})}
+\DoxyCodeLine{00141\ JMESSAGE(JTRC\_JFIF,\ "{}JFIF\ APP0\ marker:\ version\ \%d.\%02d,\ density\ \%dx\%d\ \ \%d"{})}
+\DoxyCodeLine{00142\ JMESSAGE(JTRC\_JFIF\_BADTHUMBNAILSIZE,}
+\DoxyCodeLine{00143\ \ \ \ \ \ "{}Warning:\ thumbnail\ image\ size\ does\ not\ match\ data\ length\ \%u"{})}
+\DoxyCodeLine{00144\ JMESSAGE(JTRC\_JFIF\_EXTENSION,}
+\DoxyCodeLine{00145\ \ \ \ \ \ "{}JFIF\ extension\ marker:\ type\ 0x\%02x,\ length\ \%u"{})}
+\DoxyCodeLine{00146\ JMESSAGE(JTRC\_JFIF\_THUMBNAIL,\ "{}\ \ \ \ with\ \%d\ x\ \%d\ thumbnail\ image"{})}
+\DoxyCodeLine{00147\ JMESSAGE(JTRC\_MISC\_MARKER,\ "{}Miscellaneous\ marker\ 0x\%02x,\ length\ \%u"{})}
+\DoxyCodeLine{00148\ JMESSAGE(JTRC\_PARMLESS\_MARKER,\ "{}Unexpected\ marker\ 0x\%02x"{})}
+\DoxyCodeLine{00149\ JMESSAGE(JTRC\_QUANTVALS,\ "{}\ \ \ \ \ \ \ \ \%4u\ \%4u\ \%4u\ \%4u\ \%4u\ \%4u\ \%4u\ \%4u"{})}
+\DoxyCodeLine{00150\ JMESSAGE(JTRC\_QUANT\_3\_NCOLORS,\ "{}Quantizing\ to\ \%d\ =\ \%d*\%d*\%d\ colors"{})}
+\DoxyCodeLine{00151\ JMESSAGE(JTRC\_QUANT\_NCOLORS,\ "{}Quantizing\ to\ \%d\ colors"{})}
+\DoxyCodeLine{00152\ JMESSAGE(JTRC\_QUANT\_SELECTED,\ "{}Selected\ \%d\ colors\ for\ quantization"{})}
+\DoxyCodeLine{00153\ JMESSAGE(JTRC\_RECOVERY\_ACTION,\ "{}At\ marker\ 0x\%02x,\ recovery\ action\ \%d"{})}
+\DoxyCodeLine{00154\ JMESSAGE(JTRC\_RST,\ "{}RST\%d"{})}
+\DoxyCodeLine{00155\ JMESSAGE(JTRC\_SMOOTH\_NOTIMPL,}
+\DoxyCodeLine{00156\ \ \ \ \ \ "{}Smoothing\ not\ supported\ with\ nonstandard\ sampling\ ratios"{})}
+\DoxyCodeLine{00157\ JMESSAGE(JTRC\_SOF,\ "{}Start\ Of\ Frame\ 0x\%02x:\ width=\%u,\ height=\%u,\ components=\%d"{})}
+\DoxyCodeLine{00158\ JMESSAGE(JTRC\_SOF\_COMPONENT,\ "{}\ \ \ \ Component\ \%d:\ \%dhx\%dv\ q=\%d"{})}
+\DoxyCodeLine{00159\ JMESSAGE(JTRC\_SOI,\ "{}Start\ of\ Image"{})}
+\DoxyCodeLine{00160\ JMESSAGE(JTRC\_SOS,\ "{}Start\ Of\ Scan:\ \%d\ components"{})}
+\DoxyCodeLine{00161\ JMESSAGE(JTRC\_SOS\_COMPONENT,\ "{}\ \ \ \ Component\ \%d:\ dc=\%d\ ac=\%d"{})}
+\DoxyCodeLine{00162\ JMESSAGE(JTRC\_SOS\_PARAMS,\ "{}\ \ Ss=\%d,\ Se=\%d,\ Ah=\%d,\ Al=\%d"{})}
+\DoxyCodeLine{00163\ JMESSAGE(JTRC\_TFILE\_CLOSE,\ "{}Closed\ temporary\ file\ \%s"{})}
+\DoxyCodeLine{00164\ JMESSAGE(JTRC\_TFILE\_OPEN,\ "{}Opened\ temporary\ file\ \%s"{})}
+\DoxyCodeLine{00165\ JMESSAGE(JTRC\_THUMB\_JPEG,}
+\DoxyCodeLine{00166\ \ \ \ \ \ "{}JFIF\ extension\ marker:\ JPEG-\/compressed\ thumbnail\ image,\ length\ \%u"{})}
+\DoxyCodeLine{00167\ JMESSAGE(JTRC\_THUMB\_PALETTE,}
+\DoxyCodeLine{00168\ \ \ \ \ \ "{}JFIF\ extension\ marker:\ palette\ thumbnail\ image,\ length\ \%u"{})}
+\DoxyCodeLine{00169\ JMESSAGE(JTRC\_THUMB\_RGB,}
+\DoxyCodeLine{00170\ \ \ \ \ \ "{}JFIF\ extension\ marker:\ RGB\ thumbnail\ image,\ length\ \%u"{})}
+\DoxyCodeLine{00171\ JMESSAGE(JTRC\_UNKNOWN\_IDS,}
+\DoxyCodeLine{00172\ \ \ \ \ \ "{}Unrecognized\ component\ IDs\ \%d\ \%d\ \%d,\ assuming\ YCbCr"{})}
+\DoxyCodeLine{00173\ JMESSAGE(JTRC\_XMS\_CLOSE,\ "{}Freed\ XMS\ handle\ \%u"{})}
+\DoxyCodeLine{00174\ JMESSAGE(JTRC\_XMS\_OPEN,\ "{}Obtained\ XMS\ handle\ \%u"{})}
+\DoxyCodeLine{00175\ JMESSAGE(JWRN\_ADOBE\_XFORM,\ "{}Unknown\ Adobe\ color\ transform\ code\ \%d"{})}
+\DoxyCodeLine{00176\ JMESSAGE(JWRN\_ARITH\_BAD\_CODE,\ "{}Corrupt\ JPEG\ data:\ bad\ arithmetic\ code"{})}
+\DoxyCodeLine{00177\ JMESSAGE(JWRN\_BOGUS\_PROGRESSION,}
+\DoxyCodeLine{00178\ \ \ \ \ \ "{}Inconsistent\ progression\ sequence\ for\ component\ \%d\ coefficient\ \%d"{})}
+\DoxyCodeLine{00179\ JMESSAGE(JWRN\_EXTRANEOUS\_DATA,}
+\DoxyCodeLine{00180\ \ \ \ \ \ "{}Corrupt\ JPEG\ data:\ \%u\ extraneous\ bytes\ before\ marker\ 0x\%02x"{})}
+\DoxyCodeLine{00181\ JMESSAGE(JWRN\_HIT\_MARKER,\ "{}Corrupt\ JPEG\ data:\ premature\ end\ of\ data\ segment"{})}
+\DoxyCodeLine{00182\ JMESSAGE(JWRN\_HUFF\_BAD\_CODE,\ "{}Corrupt\ JPEG\ data:\ bad\ Huffman\ code"{})}
+\DoxyCodeLine{00183\ JMESSAGE(JWRN\_JFIF\_MAJOR,\ "{}Warning:\ unknown\ JFIF\ revision\ number\ \%d.\%02d"{})}
+\DoxyCodeLine{00184\ JMESSAGE(JWRN\_JPEG\_EOF,\ "{}Premature\ end\ of\ JPEG\ file"{})}
+\DoxyCodeLine{00185\ JMESSAGE(JWRN\_MUST\_RESYNC,}
+\DoxyCodeLine{00186\ \ \ \ \ \ "{}Corrupt\ JPEG\ data:\ found\ marker\ 0x\%02x\ instead\ of\ RST\%d"{})}
+\DoxyCodeLine{00187\ JMESSAGE(JWRN\_NOT\_SEQUENTIAL,\ "{}Invalid\ SOS\ parameters\ for\ sequential\ JPEG"{})}
+\DoxyCodeLine{00188\ JMESSAGE(JWRN\_TOO\_MUCH\_DATA,\ "{}Application\ transferred\ too\ many\ scanlines"{})}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#ifdef\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ JMSG\_LASTMSGCODE}
+\DoxyCodeLine{00193\ \}\ J\_MESSAGE\_CODE;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#undef\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JMAKE\_ENUM\_LIST\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{comment}{/*\ Zap\ JMESSAGE\ macro\ so\ that\ future\ re-\/inclusions\ do\ nothing\ by\ default\ */}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#undef\ JMESSAGE}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#ifndef\ JERROR\_H}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ JERROR\_H}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{comment}{/*\ Macros\ to\ simplify\ using\ the\ error\ and\ trace\ message\ stuff\ */}}
+\DoxyCodeLine{00206\ \textcolor{comment}{/*\ The\ first\ parameter\ is\ either\ type\ of\ cinfo\ pointer\ */}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{comment}{/*\ Fatal\ errors\ (print\ message\ and\ exit)\ */}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ ERREXIT(cinfo,code)\ \ \(\backslash\)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>error\_exit)\ ((j\_common\_ptr)\ (cinfo)))}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ ERREXIT1(cinfo,code,p1)\ \ \(\backslash\)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>error\_exit)\ ((j\_common\_ptr)\ (cinfo)))}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ ERREXIT2(cinfo,code,p1,p2)\ \ \(\backslash\)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[1]\ =\ (p2),\ \(\backslash\)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>error\_exit)\ ((j\_common\_ptr)\ (cinfo)))}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ ERREXIT3(cinfo,code,p1,p2,p3)\ \ \(\backslash\)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[1]\ =\ (p2),\ \(\backslash\)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[2]\ =\ (p3),\ \(\backslash\)}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>error\_exit)\ ((j\_common\_ptr)\ (cinfo)))}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ ERREXIT4(cinfo,code,p1,p2,p3,p4)\ \ \(\backslash\)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[1]\ =\ (p2),\ \(\backslash\)}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[2]\ =\ (p3),\ \(\backslash\)}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[3]\ =\ (p4),\ \(\backslash\)}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>error\_exit)\ ((j\_common\_ptr)\ (cinfo)))}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ ERREXIT6(cinfo,code,p1,p2,p3,p4,p5,p6)\ \ \(\backslash\)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[1]\ =\ (p2),\ \(\backslash\)}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[2]\ =\ (p3),\ \(\backslash\)}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[3]\ =\ (p4),\ \(\backslash\)}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[4]\ =\ (p5),\ \(\backslash\)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[5]\ =\ (p6),\ \(\backslash\)}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>error\_exit)\ ((j\_common\_ptr)\ (cinfo)))}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ ERREXITS(cinfo,code,str)\ \ \(\backslash\)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\ \ \ strncpy((cinfo)-\/>err-\/>msg\_parm.s,\ (str),\ JMSG\_STR\_PARM\_MAX),\ \(\backslash\)}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>error\_exit)\ ((j\_common\_ptr)\ (cinfo)))}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ MAKESTMT(stuff)\ \ \ \ \ do\ \{\ stuff\ \}\ while\ (0)}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{comment}{/*\ Nonfatal\ errors\ (we\ can\ keep\ going,\ but\ the\ data\ is\ probably\ corrupt)\ */}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ WARNMS(cinfo,code)\ \ \(\backslash\)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ -\/1))}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ WARNMS1(cinfo,code,p1)\ \ \(\backslash\)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ -\/1))}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ WARNMS2(cinfo,code,p1,p2)\ \ \(\backslash\)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[1]\ =\ (p2),\ \(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ -\/1))}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{comment}{/*\ Informational/debugging\ messages\ */}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ TRACEMS(cinfo,lvl,code)\ \ \(\backslash\)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl)))}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ TRACEMS1(cinfo,lvl,code,p1)\ \ \(\backslash\)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl)))}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ TRACEMS2(cinfo,lvl,code,p1,p2)\ \ \(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[0]\ =\ (p1),\ \(\backslash\)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\ \ \ (cinfo)-\/>err-\/>msg\_parm.i[1]\ =\ (p2),\ \(\backslash\)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl)))}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ TRACEMS3(cinfo,lvl,code,p1,p2,p3)\ \ \(\backslash\)}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\ \ MAKESTMT(int\ *\ \_mp\ =\ (cinfo)-\/>err-\/>msg\_parm.i;\ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \_mp[0]\ =\ (p1);\ \_mp[1]\ =\ (p2);\ \_mp[2]\ =\ (p3);\ \(\backslash\)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (cinfo)-\/>err-\/>msg\_code\ =\ (code);\ \(\backslash\)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl));\ )}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ TRACEMS4(cinfo,lvl,code,p1,p2,p3,p4)\ \ \(\backslash\)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\ \ MAKESTMT(int\ *\ \_mp\ =\ (cinfo)-\/>err-\/>msg\_parm.i;\ \(\backslash\)}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \_mp[0]\ =\ (p1);\ \_mp[1]\ =\ (p2);\ \_mp[2]\ =\ (p3);\ \_mp[3]\ =\ (p4);\ \(\backslash\)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (cinfo)-\/>err-\/>msg\_code\ =\ (code);\ \(\backslash\)}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl));\ )}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ TRACEMS5(cinfo,lvl,code,p1,p2,p3,p4,p5)\ \ \(\backslash\)}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\ \ MAKESTMT(int\ *\ \_mp\ =\ (cinfo)-\/>err-\/>msg\_parm.i;\ \(\backslash\)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \_mp[0]\ =\ (p1);\ \_mp[1]\ =\ (p2);\ \_mp[2]\ =\ (p3);\ \_mp[3]\ =\ (p4);\ \(\backslash\)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \_mp[4]\ =\ (p5);\ \(\backslash\)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (cinfo)-\/>err-\/>msg\_code\ =\ (code);\ \(\backslash\)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl));\ )}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ TRACEMS8(cinfo,lvl,code,p1,p2,p3,p4,p5,p6,p7,p8)\ \ \(\backslash\)}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\ \ MAKESTMT(int\ *\ \_mp\ =\ (cinfo)-\/>err-\/>msg\_parm.i;\ \(\backslash\)}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \_mp[0]\ =\ (p1);\ \_mp[1]\ =\ (p2);\ \_mp[2]\ =\ (p3);\ \_mp[3]\ =\ (p4);\ \(\backslash\)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \_mp[4]\ =\ (p5);\ \_mp[5]\ =\ (p6);\ \_mp[6]\ =\ (p7);\ \_mp[7]\ =\ (p8);\ \(\backslash\)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (cinfo)-\/>err-\/>msg\_code\ =\ (code);\ \(\backslash\)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl));\ )}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ TRACEMSS(cinfo,lvl,code,str)\ \ \(\backslash\)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\ \ ((cinfo)-\/>err-\/>msg\_code\ =\ (code),\ \(\backslash\)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\ \ \ strncpy((cinfo)-\/>err-\/>msg\_parm.s,\ (str),\ JMSG\_STR\_PARM\_MAX),\ \(\backslash\)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\ \ \ (*(cinfo)-\/>err-\/>emit\_message)\ ((j\_common\_ptr)\ (cinfo),\ (lvl)))}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JERROR\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

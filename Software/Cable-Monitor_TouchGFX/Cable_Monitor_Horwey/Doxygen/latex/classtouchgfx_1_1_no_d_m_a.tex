@@ -1,0 +1,168 @@
+\doxysection{touchgfx\+::No\+DMA Class Reference}
+\hypertarget{classtouchgfx_1_1_no_d_m_a}{}\label{classtouchgfx_1_1_no_d_m_a}\index{touchgfx::NoDMA@{touchgfx::NoDMA}}
+
+
+{\ttfamily \#include $<$No\+DMA.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::No\+DMA\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_no_d_m_a}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{Blit\+Operations}} \mbox{\hyperlink{classtouchgfx_1_1_no_d_m_a_ab0e095b190b3f3224ea21901e1911f29}{get\+Blit\+Caps}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_no_d_m_a_a659d2150cc16a71c8043d3d2d77f642d}{setup\+Data\+Copy}} (const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&blit\+Op)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_no_d_m_a_aa926bd67f15e78cbba6618c1134374b3}{setup\+Data\+Fill}} (const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&blit\+Op)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_no_d_m_a_a99a2906aa8c8df29df3bb6040cc04902}{signal\+DMAInterrupt}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_no_d_m_a_ae860f3c08e469fc3ec4f6391924a7bbf}{flush}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx\+::\+DMA\+\_\+\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a26a52486264a5dc201ec3756c59fb84c}{add\+To\+Queue}} (const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&op)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ace767d5a54b614b76ac7ccfba5970f65}{initialize}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a4cc162f33b980ff25cb528276d1f1db3}{is\+DMARunning}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a614ad4829f3beabab4c5017375d5f35b}{set\+Allowed}} (bool allowed)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a29592480ae38bb1bfef1d22bc9aabd3c}{get\+Allowed}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a182a0506ce9595c47f8e8fec33486250}{set\+Reserved}} (bool reserved)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ae87179b63decdbb4b49ad34c0195e482}{get\+Reserved}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a95ab5d9fc65e64acb44fa5e7beb8aea3}{start}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0811374ec33b7d47cfb41f8f8d77df67}{is\+Dma\+Queue\+Empty}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac525786acff2893aa0f264357e135afc}{is\+Dma\+Queue\+Full}} ()
+\item 
+virtual \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9}{DMAType}} \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac548c1fc4a6cab9770593f8186ae6f4a}{get\+DMAType}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a92759b375e45bd0b648bdf3c048d2fb9}{\texorpdfstring{$\sim$}{\string~}\+DMA\+\_\+\+Interface}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx\+::\+DMA\+\_\+\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_aa408de6b515bf9712ee5234a4e96e5d5}{DMA\+\_\+\+Interface}} (\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\+\_\+\+Queue}} \&dma\+Queue)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_adc5a1bcd9ae415051f3a4a39f9e01b09}{execute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ae75aca8f689a9bc1ac83ca54ff6ab626}{execute\+Completed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a28f8f95558177f97c52bdf3f03e914a2}{seed\+Execution}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a0e30cf2b0706356a43d5b74186e7023e}{enable\+Alpha}} (uint8\+\_\+t alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a366c332352363500da97e91b5a62f78e}{disable\+Alpha}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a808b76c5232934600c8910fd1fcba18c}{enable\+Copy\+With\+Transparent\+Pixels}} (uint8\+\_\+t alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a4288ec23ffd7a044ac831ed808b1b943}{wait\+For\+Frame\+Buffer\+Semaphore}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx\+::\+DMA\+\_\+\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___queue}{DMA\+\_\+\+Queue}} \& {\bfseries queue}
+\begin{DoxyCompactList}\small\item\em Reference to the DMA queue. \end{DoxyCompactList}\item 
+bool {\bfseries is\+Running}
+\begin{DoxyCompactList}\small\item\em true if a DMA transfer is currently ongoing. \end{DoxyCompactList}\item 
+volatile bool {\bfseries is\+Allowed}
+\begin{DoxyCompactList}\small\item\em true if DMA transfers are currently allowed. \end{DoxyCompactList}\item 
+volatile bool {\bfseries is\+Reserved}
+\begin{DoxyCompactList}\small\item\em true if DMA is reserved for for HW rendering \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is an "{}empty"{} DMA subclass that does nothing except assert if accidentally used. An instance of this object can be used if DMA support is not desired.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_d_m_a___interface}{DMA\+\_\+\+Interface} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_no_d_m_a_ae860f3c08e469fc3ec4f6391924a7bbf}\label{classtouchgfx_1_1_no_d_m_a_ae860f3c08e469fc3ec4f6391924a7bbf} 
+\index{touchgfx::NoDMA@{touchgfx::NoDMA}!flush@{flush}}
+\index{flush@{flush}!touchgfx::NoDMA@{touchgfx::NoDMA}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+No\+DMA\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Block until all DMA transfers are complete. Since this particular DMA does not do anything, return immediately. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a690b61b18a8d4573941f6251fe951a51}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{classtouchgfx_1_1_no_d_m_a_ab0e095b190b3f3224ea21901e1911f29}\label{classtouchgfx_1_1_no_d_m_a_ab0e095b190b3f3224ea21901e1911f29} 
+\index{touchgfx::NoDMA@{touchgfx::NoDMA}!getBlitCaps@{getBlitCaps}}
+\index{getBlitCaps@{getBlitCaps}!touchgfx::NoDMA@{touchgfx::NoDMA}}
+\doxysubsubsection{\texorpdfstring{getBlitCaps()}{getBlitCaps()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{Blit\+Operations}} touchgfx\+::\+No\+DMA\+::get\+Blit\+Caps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+No blit operations supported by this DMA implementation.
+
+\begin{DoxyReturn}{Returns}
+Zero (no blit ops supported). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a91da807f94bc3ebedb469712a68b6638}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{classtouchgfx_1_1_no_d_m_a_a659d2150cc16a71c8043d3d2d77f642d}\label{classtouchgfx_1_1_no_d_m_a_a659d2150cc16a71c8043d3d2d77f642d} 
+\index{touchgfx::NoDMA@{touchgfx::NoDMA}!setupDataCopy@{setupDataCopy}}
+\index{setupDataCopy@{setupDataCopy}!touchgfx::NoDMA@{touchgfx::NoDMA}}
+\doxysubsubsection{\texorpdfstring{setupDataCopy()}{setupDataCopy()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+No\+DMA\+::setup\+Data\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&}]{blit\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Asserts if used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blit\+Op} & The blit operation to be performed by this DMA instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_a8118b5ea7bd6e990fe0117fd745dd76d}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{classtouchgfx_1_1_no_d_m_a_aa926bd67f15e78cbba6618c1134374b3}\label{classtouchgfx_1_1_no_d_m_a_aa926bd67f15e78cbba6618c1134374b3} 
+\index{touchgfx::NoDMA@{touchgfx::NoDMA}!setupDataFill@{setupDataFill}}
+\index{setupDataFill@{setupDataFill}!touchgfx::NoDMA@{touchgfx::NoDMA}}
+\doxysubsubsection{\texorpdfstring{setupDataFill()}{setupDataFill()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+No\+DMA\+::setup\+Data\+Fill (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{Blit\+Op}} \&}]{blit\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Asserts if used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blit\+Op} & The blit operation to be performed by this DMA instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_af3180b67d2b2dccdedaa54c12e54058a}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+\Hypertarget{classtouchgfx_1_1_no_d_m_a_a99a2906aa8c8df29df3bb6040cc04902}\label{classtouchgfx_1_1_no_d_m_a_a99a2906aa8c8df29df3bb6040cc04902} 
+\index{touchgfx::NoDMA@{touchgfx::NoDMA}!signalDMAInterrupt@{signalDMAInterrupt}}
+\index{signalDMAInterrupt@{signalDMAInterrupt}!touchgfx::NoDMA@{touchgfx::NoDMA}}
+\doxysubsubsection{\texorpdfstring{signalDMAInterrupt()}{signalDMAInterrupt()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+No\+DMA\+::signal\+DMAInterrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Does nothing. 
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface_ac6f2516c8b5e47fda0e3854d1c4eed31}{touchgfx\+::\+DMA\+\_\+\+Interface}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_no_d_m_a_8hpp}{No\+DMA.\+hpp}}\end{DoxyCompactItemize}

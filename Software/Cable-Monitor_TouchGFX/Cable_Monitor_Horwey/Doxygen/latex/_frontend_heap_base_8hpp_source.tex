@@ -1,0 +1,107 @@
+\doxysection{Frontend\+Heap\+Base.\+hpp}
+\hypertarget{_frontend_heap_base_8hpp_source}{}\label{_frontend_heap_base_8hpp_source}\index{TouchGFX/generated/gui\_generated/include/gui\_generated/common/FrontendHeapBase.hpp@{TouchGFX/generated/gui\_generated/include/gui\_generated/common/FrontendHeapBase.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/**********\ THIS\ FILE\ IS\ GENERATED\ BY\ TOUCHGFX\ DESIGNER,\ DO\ NOT\ MODIFY\ ***********/}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ FRONTENDHEAPBASE\_HPP}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ FRONTENDHEAPBASE\_HPP}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_meta_8hpp}{common/Meta.hpp}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_partition_8hpp}{common/Partition.hpp}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_m_v_p_heap_8hpp}{mvp/MVPHeap.hpp}}>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_no_transition_8hpp}{touchgfx/transitions/NoTransition.hpp}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_wipe_transition_8hpp}{touchgfx/transitions/WipeTransition.hpp}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <gui/common/FrontendApplication.hpp>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <gui/model/Model.hpp>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <gui/main\_menu\_screen/Main\_MenuView.hpp>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <gui/main\_menu\_screen/Main\_MenuPresenter.hpp>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <gui/measurement\_screen/MeasurementView.hpp>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <gui/measurement\_screen/MeasurementPresenter.hpp>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <gui/measurement\_single\_screen/Measurement\_SingleView.hpp>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <gui/measurement\_single\_screen/Measurement\_SinglePresenter.hpp>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <gui/measurement\_single\_display\_1p\_screen/Measurement\_Single\_Display\_1PView.hpp>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <gui/measurement\_single\_display\_1p\_screen/Measurement\_Single\_Display\_1PPresenter.hpp>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <gui/measurement\_single\_display\_3p\_screen/Measurement\_Single\_Display\_3PView.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <gui/measurement\_single\_display\_3p\_screen/Measurement\_Single\_Display\_3PPresenter.hpp>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <gui/measurement\_accurate\_screen/Measurement\_AccurateView.hpp>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <gui/measurement\_accurate\_screen/Measurement\_AccuratePresenter.hpp>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <gui/measurement\_accurate\_display\_1p\_screen/Measurement\_Accurate\_Display\_1PView.hpp>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <gui/measurement\_accurate\_display\_1p\_screen/Measurement\_Accurate\_Display\_1PPresenter.hpp>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <gui/measurement\_accurate\_display\_3p\_screen/Measurement\_Accurate\_Display\_3PView.hpp>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <gui/measurement\_accurate\_display\_3p\_screen/Measurement\_Accurate\_Display\_3PPresenter.hpp>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <gui/calibration\_screen/CalibrationView.hpp>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <gui/calibration\_screen/CalibrationPresenter.hpp>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <gui/project\_info\_screen/Project\_InfoView.hpp>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <gui/project\_info\_screen/Project\_InfoPresenter.hpp>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <gui/settings\_screen/SettingsView.hpp>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <gui/settings\_screen/SettingsPresenter.hpp>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <gui/shutting\_off\_screen/Shutting\_OffView.hpp>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <gui/shutting\_off\_screen/Shutting\_OffPresenter.hpp>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_frontend_heap_base}{FrontendHeapBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap}{touchgfx::MVPHeap}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_main___menu_view}{Main\_MenuView}},}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement_view}{MeasurementView}},}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___single_view}{Measurement\_SingleView}},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___single___display__1_p_view}{Measurement\_Single\_Display\_1PView}},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___single___display__3_p_view}{Measurement\_Single\_Display\_3PView}},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___accurate_view}{Measurement\_AccurateView}},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___accurate___display__1_p_view}{Measurement\_Accurate\_Display\_1PView}},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___accurate___display__3_p_view}{Measurement\_Accurate\_Display\_3PView}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_calibration_view}{CalibrationView}},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_project___info_view}{Project\_InfoView}},}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_settings_view}{SettingsView}},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_shutting___off_view}{Shutting\_OffView}},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{touchgfx::meta::Nil}}\ >\ >\ >\ >\ >\ >\ >\ >\ >\ >\ >}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ >\ \mbox{\hyperlink{class_frontend_heap_base_ac19fac9f69d17ac955863faf65dc9a5f}{GeneratedViewTypes}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1select__type__maxsize}{touchgfx::meta::select\_type\_maxsize<\ GeneratedViewTypes\ >::type}}\ \mbox{\hyperlink{class_frontend_heap_base_a79c3b037fd23ada37d7365183425f980}{MaxGeneratedViewType}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_main___menu_presenter}{Main\_MenuPresenter}},}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement_presenter}{MeasurementPresenter}},}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___single_presenter}{Measurement\_SinglePresenter}},}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___single___display__1_p_presenter}{Measurement\_Single\_Display\_1PPresenter}},}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___single___display__3_p_presenter}{Measurement\_Single\_Display\_3PPresenter}},}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___accurate_presenter}{Measurement\_AccuratePresenter}},}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___accurate___display__1_p_presenter}{Measurement\_Accurate\_Display\_1PPresenter}},}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_measurement___accurate___display__3_p_presenter}{Measurement\_Accurate\_Display\_3PPresenter}},}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_calibration_presenter}{CalibrationPresenter}},}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_project___info_presenter}{Project\_InfoPresenter}},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_settings_presenter}{SettingsPresenter}},}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{class_shutting___off_presenter}{Shutting\_OffPresenter}},}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{touchgfx::meta::Nil}}\ >\ >\ >\ >\ >\ >\ >\ >\ >\ >\ >}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ >\ \mbox{\hyperlink{class_frontend_heap_base_aea6b0be3392f392e2f9a565412e0155e}{GeneratedPresenterTypes}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1select__type__maxsize}{touchgfx::meta::select\_type\_maxsize<\ GeneratedPresenterTypes\ >::type}}\ \mbox{\hyperlink{class_frontend_heap_base_a2e617ddb0a76b68c13b9453061b94c75}{MaxGeneratedPresenterType}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList}}<\ \mbox{\hyperlink{classtouchgfx_1_1_no_transition}{touchgfx::NoTransition}},}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList<\ WipeTransition<EAST>}},}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{touchgfx::meta::TypeList<\ WipeTransition<WEST>}},}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{touchgfx::meta::Nil}}\ >\ >}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ >\ \mbox{\hyperlink{class_frontend_heap_base_a4aa2557aea4addca768bf6710343a346}{GeneratedTransitionTypes}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1select__type__maxsize}{touchgfx::meta::select\_type\_maxsize<\ GeneratedTransitionTypes\ >::type}}\ \mbox{\hyperlink{class_frontend_heap_base_ad0eb6a368b6014bbb7b2a439bdcdfdff}{MaxGeneratedTransitionType}};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ gotoStartScreen(\mbox{\hyperlink{class_frontend_application}{FrontendApplication}}\&\ app)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ app.gotoMain\_MenuScreenNoTransition();}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{class_frontend_heap_base}{FrontendHeapBase}}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{touchgfx::AbstractPartition}}\&\ presenters,\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{touchgfx::AbstractPartition}}\&\ views,\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{touchgfx::AbstractPartition}}\&\ transitions,\ \mbox{\hyperlink{class_frontend_application}{FrontendApplication}}\&\ app)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap}{MVPHeap}}(presenters,\ views,\ transitions,\ app)}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FRONTENDHEAPBASE\_HPP}}
+
+\end{DoxyCode}

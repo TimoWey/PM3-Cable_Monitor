@@ -1,0 +1,111 @@
+\doxysection{Analog\+Clock.\+hpp}
+\hypertarget{_analog_clock_8hpp_source}{}\label{_analog_clock_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AnalogClock.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AnalogClock.hpp}}
+\mbox{\hyperlink{_analog_clock_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_ANALOGCLOCK\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_ANALOGCLOCK\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_easing_equations_8hpp}{touchgfx/EasingEquations.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_clock_8hpp}{touchgfx/containers/clock/AbstractClock.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_animation_texture_mapper_8hpp}{touchgfx/widgets/AnimationTextureMapper.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8hpp}{touchgfx/widgets/Image.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_texture_mapper_8hpp}{touchgfx/widgets/TextureMapper.hpp}}>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_analog_clock}{AnalogClock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock}{AbstractClock}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock}{AnalogClock}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_aaa76691be5b24c2d3590014002d5bd42}{setBackground}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ backgroundBitmapId);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_aaa76691be5b24c2d3590014002d5bd42}{setBackground}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ backgroundBitmapId,\ int16\_t\ rotationCenterX,\ int16\_t\ rotationCenterY);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a821d7c259de5ff1d0e3461d4670c88d2}{setRotationCenter}}(int16\_t\ rotationCenterX,\ int16\_t\ rotationCenterY);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_af1daf92633d18227a487512080542616}{setupHourHand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ hourHandBitmapId,\ int16\_t\ rotationCenterX,\ int16\_t\ rotationCenterY);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_aa5afa4386da1f1c8007af8be3ee1e47b}{setupMinuteHand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ minuteHandBitmapId,\ int16\_t\ rotationCenterX,\ int16\_t\ rotationCenterY);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a559a16b216652fae27ccf1c920fa51b8}{setupSecondHand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ secondHandBitmapId,\ int16\_t\ rotationCenterX,\ int16\_t\ rotationCenterY);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a656d9c9fd7e0e5d880d5c3098c039389}{setHourHandMinuteCorrection}}(\textcolor{keywordtype}{bool}\ active);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a926fe891cb23ec06e7258303b5331929}{getHourHandMinuteCorrection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a14facf91170c76dc4822be24ff3a565a}{setMinuteHandSecondCorrection}}(\textcolor{keywordtype}{bool}\ active);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_af8665076968641c32ffa441067170a61}{getMinuteHandSecondCorrection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a5836590faf6c39ebdd07925ac74e7453}{setAnimation}}(uint16\_t\ duration\ =\ 10,\ \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{EasingEquation}}\ animationProgressionEquation\ =\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a4a6529690d4690c494eead419a3ada9a}{EasingEquations::backEaseInOut}});}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a73af8a4ab38594d2043abd454bcb7457}{getAnimationDuration}}()}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_ae654b588c3d9fa947723d3c60b3657b9}{animationDuration}};}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a192d610ac3682d392c60b85378de42c3}{initializeTime24Hour}}(uint8\_t\ hour,\ uint8\_t\ minute,\ uint8\_t\ second);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a6b9dac81c388ebf289f3783bf3c6e21b}{initializeTime12Hour}}(uint8\_t\ hour,\ uint8\_t\ minute,\ uint8\_t\ second,\ \textcolor{keywordtype}{bool}\ am);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a536555a75928ddfefe000d08dae41817}{setAlpha}}(uint8\_t\ newAlpha);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a3a8d857f2b4d4cfbebfa39cb9e26d559}{getAlpha}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a3261f5b2aba357562d8f123d98960e33}{invalidateContent}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00220\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a3a8d857f2b4d4cfbebfa39cb9e26d559}{getAlpha}}()\ >\ 0)}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0b8b93fb5b2af43364f8d6818485e09d}{AbstractClock::invalidateContent}}();}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_image}{Image}}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_afc91dd4fb5441007d6a3b11ed8d48453}{background}};\ }
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{AnimationTextureMapper}}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a83749e56cfc87f272291cc4a13799419}{hourHand}};\ \ \ }
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{AnimationTextureMapper}}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a6ffcefb0b13797147297ddb2e99b784d}{minuteHand}};\ }
+\DoxyCodeLine{00232\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{AnimationTextureMapper}}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a701bf0fc172cd17e7be2650eac6967df}{secondHand}};\ }
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{EasingEquation}}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a7e22e2224179b2ca9fbf69b222674d1d}{animationEquation}};\ }
+\DoxyCodeLine{00235\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_ae654b588c3d9fa947723d3c60b3657b9}{animationDuration}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a71b9c5e5de4b71401c3fc3a61d0204d0}{clockRotationCenterX}};\ }
+\DoxyCodeLine{00238\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a95571a960523d1a905a87287c9b71cd6}{clockRotationCenterY}};\ }
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a1370e4a966d706f72e6d6fe83fb964af}{lastHour}};\ \ \ }
+\DoxyCodeLine{00241\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_ab1d37c09e13d1803a7c1711290e99026}{lastMinute}};\ }
+\DoxyCodeLine{00242\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a35b97c637b1d03cfb293f2c7931681d2}{lastSecond}};\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a48e4d0f9d022ea88a0345df23e30f8d0}{hourHandMinuteCorrectionActive}};\ \ \ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a4fe5c59bd249434d6055e154bd27608a}{minuteHandSecondCorrectionActive}};\ }
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_adc29a1461ad4637c7967d967aaa74759}{updateClock}}();}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a5e4eeea8f11dc952e2c48b1615b6dc4f}{setupHand}}(\mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{TextureMapper}}\&\ hand,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{BitmapId}}\ bitmapId,\ int16\_t\ rotationCenterX,\ int16\_t\ rotationCenterY);}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a60b6380fc8ac1010b13633703edb9805}{convertHandValueToAngle}}(uint8\_t\ steps,\ uint8\_t\ handValue,\ uint8\_t\ secondHandValue\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_analog_clock_a381a4cc9afa8dd3580aeebac7ebc4b84}{animationEnabled}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00281\ \};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_ANALOGCLOCK\_HPP}}
+
+\end{DoxyCode}

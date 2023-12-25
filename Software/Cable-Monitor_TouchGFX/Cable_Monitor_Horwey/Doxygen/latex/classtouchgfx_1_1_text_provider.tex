@@ -1,0 +1,209 @@
+\doxysection{touchgfx\+::Text\+Provider Class Reference}
+\hypertarget{classtouchgfx_1_1_text_provider}{}\label{classtouchgfx_1_1_text_provider}\index{touchgfx::TextProvider@{touchgfx::TextProvider}}
+
+
+{\ttfamily \#include $<$Text\+Provider.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_text_provider_a76cdfcc1c7dfaea3db0e5834c4a8de3b}{Text\+Provider}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_text_provider_aee1e41887dc2e685277c2addae3e3dde}{initialize}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}string\+Format, va\+\_\+list p\+Arg, const uint16\+\_\+t \texorpdfstring{$\ast$}{*}gsub\+Table=0, const \mbox{\hyperlink{structtouchgfx_1_1_font_contextual_forms_table}{Font\+Contextual\+Forms\+Table}} \texorpdfstring{$\ast$}{*}forms\+Table=0)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_text_provider_a4bd47f0ed7e37d6f2c3f361c95f3abd5}{initialize}} (const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}string\+Format, const uint16\+\_\+t \texorpdfstring{$\ast$}{*}gsub\+Table=0, const \mbox{\hyperlink{structtouchgfx_1_1_font_contextual_forms_table}{Font\+Contextual\+Forms\+Table}} \texorpdfstring{$\ast$}{*}forms\+Table=0,...)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \mbox{\hyperlink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{get\+Next\+Char}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_text_provider_a1226abdbc05e69723e1b93619d4b8b59}{end\+Of\+String}} ()
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \mbox{\hyperlink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{get\+Next\+Ligature}} (\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} direction)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \mbox{\hyperlink{classtouchgfx_1_1_text_provider_a4d73768bff66f43c88fad52cd097c436}{get\+Next\+Ligature}} (\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} direction, const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}font, const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}\&glyph)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \mbox{\hyperlink{classtouchgfx_1_1_text_provider_ab838f7daf93676e56543a85391e8f593}{get\+Next\+Ligature}} (\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}} direction, const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}font, const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}\&glyph, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\&pixel\+Data, uint8\+\_\+t \&bits\+Per\+Pixel)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_text_provider_a440c2619fd776f55f0212ff5be0fb0b5}\label{classtouchgfx_1_1_text_provider_a440c2619fd776f55f0212ff5be0fb0b5} 
+static const uint32\+\_\+t {\bfseries MAX\+\_\+32\+BIT\+\_\+\+INTEGER\+\_\+\+DIGITS} = 33U
+\begin{DoxyCompactList}\small\item\em Max number of digits used for the text representation of a 32 bit integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classtouchgfx_1_1_text_provider}{Text\+Provider} is used in drawing basic strings and strings with one or two wildcards. The \doxylink{classtouchgfx_1_1_text_provider}{Text\+Provider} enables wildcard expansion of the string at the time it is written to the \doxylink{classtouchgfx_1_1_l_c_d}{LCD}.
+
+Wildcards specified as \texorpdfstring{$<$}{<}placeholder\texorpdfstring{$>$}{>} are converted to \doxylink{classtouchgfx_1_1_unicode}{Unicode} value 2 by the text converter tool, and the placeholders are automatically expanded with the specified wildcard buffers at runtime. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_text_provider_a76cdfcc1c7dfaea3db0e5834c4a8de3b}\label{classtouchgfx_1_1_text_provider_a76cdfcc1c7dfaea3db0e5834c4a8de3b} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!TextProvider@{TextProvider}}
+\index{TextProvider@{TextProvider}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{TextProvider()}{TextProvider()}}
+{\footnotesize\ttfamily touchgfx\+::\+Text\+Provider\+::\+Text\+Provider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_text_provider}{Text\+Provider} class.
+
+\begin{DoxyNote}{Note}
+The user must call \doxylink{classtouchgfx_1_1_text_provider_aee1e41887dc2e685277c2addae3e3dde}{initialize()} before characters can be provided. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_text_provider_a1226abdbc05e69723e1b93619d4b8b59}\label{classtouchgfx_1_1_text_provider_a1226abdbc05e69723e1b93619d4b8b59} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!endOfString@{endOfString}}
+\index{endOfString@{endOfString}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{endOfString()}{endOfString()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Text\+Provider\+::end\+Of\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tells if the end of the string has been reached.
+
+\begin{DoxyReturn}{Returns}
+True if the end of the string has been reached, false if not.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{Text\+Provider\+::get\+Next\+Ligature()} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}\label{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!getNextChar@{getNextChar}}
+\index{getNextChar@{getNextChar}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{getNextChar()}{getNextChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} touchgfx\+::\+Text\+Provider\+::get\+Next\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the next character. For Arabic and Thai, it is important to use the get\+Next\+Ligature instead.
+
+\begin{DoxyReturn}{Returns}
+The next character of the expanded string or 0 if end of string is reached.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{Text\+Provider\+::get\+Next\+Ligature} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}\label{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!getNextLigature@{getNextLigature}}
+\index{getNextLigature@{getNextLigature}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{getNextLigature()}{getNextLigature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx\+::\+Unicode\+::\+Unicode\+Char}} touchgfx\+::\+Text\+Provider\+::get\+Next\+Ligature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}}}]{direction }\end{DoxyParamCaption})}
+
+Gets the next ligature. For most languages this is simply the next \doxylink{classtouchgfx_1_1_unicode}{Unicode} character from the buffer, but e.\+g. Arabic has different ligatures for each character. Thai character placement might also depend on previous characters. It is recommended to use get\+Next\+Ligature with font and glyph parameters to ensure coming glyphs in a text are placed correctly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The direction.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next character of the expanded string or 0 if end of string is reached.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{Text\+Provider\+::get\+Next\+Char}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Functions \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{get\+Next\+Ligature()} and \doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{get\+Next\+Char()} will advance through the same buffer and mixing the use of those functions is not recommended and may cause undesired results. Instead create two Text\+Providers and user \doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{get\+Next\+Char()} on one and \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{get\+Next\+Ligature()} on the other. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_text_provider_a4d73768bff66f43c88fad52cd097c436}\label{classtouchgfx_1_1_text_provider_a4d73768bff66f43c88fad52cd097c436} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!getNextLigature@{getNextLigature}}
+\index{getNextLigature@{getNextLigature}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{getNextLigature()}{getNextLigature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} touchgfx\+::\+Text\+Provider\+::get\+Next\+Ligature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}}}]{direction,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}}]{font,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}\&}]{glyph }\end{DoxyParamCaption})}
+
+Gets the next ligature. For most languages this is simply the next \doxylink{classtouchgfx_1_1_unicode}{Unicode} character from the buffer, but e.\+g. Arabic has different ligatures for each character.
+
+Also gets a glyph for the ligature in a font. For non-\/\+Thai Unicodes, this is identical to using \doxylink{classtouchgfx_1_1_font_a795878e5b49ad6f2d903a811117207a2}{Font\+::get\+Glyph()}, but for Thai characters where diacritics glyphs are not always placed at the same relative position, an adjusted \doxylink{structtouchgfx_1_1_glyph_node}{Glyph\+Node} will be generated with correct relative X/Y coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em direction} & The direction. \\
+\hline
+ & {\em font} & The font. \\
+\hline
+\mbox{\texttt{ out}}  & {\em glyph} & The glyph.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next character of the expanded string or 0 if end of string i reached.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{Text\+Provider\+::get\+Next\+Char}, \doxylink{classtouchgfx_1_1_font_a795878e5b49ad6f2d903a811117207a2}{Font\+::get\+Glyph}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Functions \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{get\+Next\+Ligature()} and \doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{get\+Next\+Char()} will advance through the same buffer and mixing the use of those functions is not recommended and may cause undesired results. Instead create two Text\+Providers and user \doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{get\+Next\+Char()} on one and \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{get\+Next\+Ligature()} on the other. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_text_provider_ab838f7daf93676e56543a85391e8f593}\label{classtouchgfx_1_1_text_provider_ab838f7daf93676e56543a85391e8f593} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!getNextLigature@{getNextLigature}}
+\index{getNextLigature@{getNextLigature}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{getNextLigature()}{getNextLigature()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} touchgfx\+::\+Text\+Provider\+::get\+Next\+Ligature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_a5ef095ef88e4f14c843da514a30212be}{Text\+Direction}}}]{direction,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_font}{Font}} \texorpdfstring{$\ast$}{*}}]{font,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}\&}]{glyph,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\&}]{pixel\+Data,  }\item[{uint8\+\_\+t \&}]{bits\+Per\+Pixel }\end{DoxyParamCaption})}
+
+Gets the next ligature. For most languages this is simply the next \doxylink{classtouchgfx_1_1_unicode}{Unicode} character from the buffer, but e.\+g. Arabic has different ligatures for each character.
+
+Also gets a glyph for the ligature in a font. For non-\/\+Thai Unicodes, this is identical to using \doxylink{classtouchgfx_1_1_font_a795878e5b49ad6f2d903a811117207a2}{Font\+::get\+Glyph()}, but for Thai characters where diacritics glyphs are not always placed at the same relative position, an adjusted \doxylink{structtouchgfx_1_1_glyph_node}{Glyph\+Node} will be generated with correct relative X/Y coordinates.
+
+Furthermore a pointer to the glyph data and the bit depth of the font are returned in parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em direction} & The direction. \\
+\hline
+ & {\em font} & The font. \\
+\hline
+\mbox{\texttt{ out}}  & {\em glyph} & The glyph. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pixel\+Data} & Information describing the pixel. \\
+\hline
+\mbox{\texttt{ out}}  & {\em bits\+Per\+Pixel} & The bits per pixel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next character of the expanded string or 0 if end of string is reached.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{Text\+Provider\+::get\+Next\+Char}, \doxylink{classtouchgfx_1_1_font_a795878e5b49ad6f2d903a811117207a2}{Font\+::get\+Glyph}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Functions \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{get\+Next\+Ligature()} and \doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{get\+Next\+Char()} will advance through the same buffer and mixing the use of those functions is not recommended and may cause undesired results. Instead create two Text\+Providers and user \doxylink{classtouchgfx_1_1_text_provider_a2488b74113ea8b3f7ae9ea0b0be438e6}{get\+Next\+Char()} on one and \doxylink{classtouchgfx_1_1_text_provider_a55e237d604803a1a5d95a5d84db7b8e3}{get\+Next\+Ligature()} on the other. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_text_provider_a4bd47f0ed7e37d6f2c3f361c95f3abd5}\label{classtouchgfx_1_1_text_provider_a4bd47f0ed7e37d6f2c3f361c95f3abd5} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!initialize@{initialize}}
+\index{initialize@{initialize}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Text\+Provider\+::initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{string\+Format,  }\item[{const uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{gsub\+Table = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_font_contextual_forms_table}{Font\+Contextual\+Forms\+Table}} \texorpdfstring{$\ast$}{*}}]{forms\+Table = {\ttfamily 0},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Initializes the \doxylink{classtouchgfx_1_1_text_provider}{Text\+Provider}. Each \textquotesingle{}\textbackslash{}2\textquotesingle{} character in the format is replaced by one Unicode\+Char\texorpdfstring{$\ast$}{*} argument from p\+Arg.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+Format} & The string to format. \\
+\hline
+{\em gsub\+Table} & (Optional) Pointer to GSUB table with \doxylink{classtouchgfx_1_1_unicode}{Unicode} substitution rules. \\
+\hline
+{\em forms\+Table} & (Optional) Pointer to contextual forms table with \doxylink{classtouchgfx_1_1_unicode}{Unicode} substitution rules (for arabic). \\
+\hline
+{\em ...} & Variable arguments providing additional information. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_text_provider_aee1e41887dc2e685277c2addae3e3dde}\label{classtouchgfx_1_1_text_provider_aee1e41887dc2e685277c2addae3e3dde} 
+\index{touchgfx::TextProvider@{touchgfx::TextProvider}!initialize@{initialize}}
+\index{initialize@{initialize}!touchgfx::TextProvider@{touchgfx::TextProvider}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Text\+Provider\+::initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}}]{string\+Format,  }\item[{va\+\_\+list}]{p\+Arg,  }\item[{const uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{gsub\+Table = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_font_contextual_forms_table}{Font\+Contextual\+Forms\+Table}} \texorpdfstring{$\ast$}{*}}]{forms\+Table = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Initializes the \doxylink{classtouchgfx_1_1_text_provider}{Text\+Provider}. Each \textquotesingle{}\textbackslash{}2\textquotesingle{} character in the format is replaced by one Unicode\+Char\texorpdfstring{$\ast$}{*} argument from p\+Arg.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+Format} & The string to format. \\
+\hline
+{\em p\+Arg} & Format arguments in the form of a va\+\_\+list. \\
+\hline
+{\em gsub\+Table} & (Optional) Pointer to GSUB table with \doxylink{classtouchgfx_1_1_unicode}{Unicode} substitution rules. \\
+\hline
+{\em forms\+Table} & (Optional) Pointer to contextual forms table with \doxylink{classtouchgfx_1_1_unicode}{Unicode} substitution rules (for arabic). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_text_provider_8hpp}{Text\+Provider.\+hpp}}\item 
+Touch\+GFX/generated/texts/src/Texts.\+cpp\end{DoxyCompactItemize}

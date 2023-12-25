@@ -1,0 +1,55 @@
+\doxysection{Touch\+Calibration.\+hpp}
+\hypertarget{_touch_calibration_8hpp_source}{}\label{_touch_calibration_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/transforms/TouchCalibration.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/transforms/TouchCalibration.hpp}}
+\mbox{\hyperlink{_touch_calibration_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_TOUCHCALIBRATION\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_TOUCHCALIBRATION\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_touch_calibration}{TouchCalibration}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_touch_calibration}{TouchCalibration}}()}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ matrix.Divider\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_touch_calibration_ab9a2ccfe1bdb0dc14a2ccdfad99e2829}{setCalibrationMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_point}{Point}}*\ ref,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_point}{Point}}*\ scr);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_touch_calibration_af6b27559d998ec6546101619f48e6743}{translatePoint}}(\mbox{\hyperlink{structtouchgfx_1_1_point}{Point}}\&\ p);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ int32\_t\ muldiv(int32\_t\ factor1,\ int32\_t\ clzu1,\ int32\_t\ factor2,\ int32\_t\ divisor,\ int32\_t\&\ remainder);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ uint32\_t\ muldivu(\textcolor{keyword}{const}\ uint32\_t\ factor1,\ \textcolor{keyword}{const}\ uint32\_t\ clzu1,\ \textcolor{keyword}{const}\ uint32\_t\ factor2,\ \textcolor{keyword}{const}\ uint32\_t\ clzu2,\ \textcolor{keyword}{const}\ uint32\_t\ divisor,\ uint32\_t\&\ remainder);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ int32\_t\ clzu(uint32\_t\ x);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{struct\ }Matrix}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ int32\_t\ An,\ Bn,\ Cn,\ Dn,\ En,\ Fn,\ Divider;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ int32\_t\ clzuAn,\ clzuBn,\ clzuDn,\ clzuEn;}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ Matrix\ matrix;}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_TOUCHCALIBRATION\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,92 @@
+\doxysection{Box\+With\+Border\+Button\+Style.\+hpp}
+\hypertarget{_box_with_border_button_style_8hpp_source}{}\label{_box_with_border_button_style_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp}}
+\mbox{\hyperlink{_box_with_border_button_style_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_BOXWITHBORDERBUTTONSTYLE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_BOXWITHBORDERBUTTONSTYLE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_box_with_border_8hpp}{touchgfx/widgets/BoxWithBorder.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style}{BoxWithBorderButtonStyle}}\ :\ \textcolor{keyword}{public}\ T}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style}{BoxWithBorderButtonStyle}}()}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ :\ T(),\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a9bbc03679edc33d9122c10291c810366}{up}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_aec93c2311826a1590c463db2fe6b2e12}{down}}()}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{setXY}}(0,\ 0);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ T::add(\mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}});}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a37611266bd81495341fe3c51036b63f8}{setBoxWithBorderPosition}}(int16\_t\ x,\ int16\_t\ y,\ int16\_t\ width,\ int16\_t\ height)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{setPosition}}(x,\ y,\ width,\ height);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a00ff0bbd290daafd582eb7ddd02f6774}{setBoxWithBorderWidth}}(int16\_t\ width)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{setWidth}}(width);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_ab8a357a9e3fca8e9691c994241419788}{setBoxWithBorderHeight}}(int16\_t\ height)}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{setHeight}}(height);}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_ae103df22a0dfa6fd3bd616547ec2e040}{setBoxWithBorderColors}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ colorReleased,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ colorPressed,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ borderColorReleased,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ borderColorPressed)}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a9bbc03679edc33d9122c10291c810366}{up}}\ =\ colorReleased;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_aec93c2311826a1590c463db2fe6b2e12}{down}}\ =\ colorPressed;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a45bca07ac17059d9e903c79f45bcf9a0}{borderUp}}\ =\ borderColorReleased;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0f8f786ca8d346078d20a2a6c3fe08ca}{borderDown}}\ =\ borderColorPressed;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a987bcec4387b253713c7328aae333d2a}{handlePressedUpdated}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_abe0265f261ea7667498c1ab593dfdef8}{setBorderSize}}(uint8\_t\ size)}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_box_with_border_a8a02e0b0eaed708eacfd276114986ff5}{setBorderSize}}(size);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border}{BoxWithBorder}}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}};\ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a9bbc03679edc33d9122c10291c810366}{up}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_aec93c2311826a1590c463db2fe6b2e12}{down}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a45bca07ac17059d9e903c79f45bcf9a0}{borderUp}};\ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0f8f786ca8d346078d20a2a6c3fe08ca}{borderDown}};\ \ \ \ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a987bcec4387b253713c7328aae333d2a}{handlePressedUpdated}}()}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_box_a2a864854644c46e60eea7026c92adbb5}{setColor}}(T::getPressed()\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_aec93c2311826a1590c463db2fe6b2e12}{down}}\ :\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a9bbc03679edc33d9122c10291c810366}{up}});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_box_with_border_a4d9a7945082022f9529a5cace4f4f933}{setBorderColor}}(T::getPressed()\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0f8f786ca8d346078d20a2a6c3fe08ca}{borderDown}}\ :\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a45bca07ac17059d9e903c79f45bcf9a0}{borderUp}});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ T::handlePressedUpdated();}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_ad2ad93f4f17a3399c8b3f5f15c5c454d}{handleAlphaUpdated}}()}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box_with_border_button_style_a0bed00d626b7786af1a8adffa1a3d66a}{borderBox}}.\mbox{\hyperlink{classtouchgfx_1_1_box_a2571ddb79e950df3e99874d289f53d0e}{setAlpha}}(T::getAlpha());}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ T::handleAlphaUpdated();}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_BOXWITHBORDERBUTTONSTYLE\_HPP}}
+
+\end{DoxyCode}

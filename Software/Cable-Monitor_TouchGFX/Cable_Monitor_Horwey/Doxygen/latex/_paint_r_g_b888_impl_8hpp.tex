@@ -1,0 +1,124 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\+Paint\+RGB888\+Impl.hpp File Reference}
+\hypertarget{_paint_r_g_b888_impl_8hpp}{}\label{_paint_r_g_b888_impl_8hpp}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintRGB888Impl.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintRGB888Impl.hpp}}
+{\ttfamily \#include $<$touchgfx/\+Color.\+hpp$>$}\newline
+{\ttfamily \#include $<$touchgfx/hal/\+Paint.\+hpp$>$}\newline
+{\ttfamily \#include $<$touchgfx/hal/\+Paint\+Impl.\+hpp$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetouchgfx}{touchgfx}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_paint_8hpp_ac83ee50c15ca2eb830e072bd35b9d357}{touchgfx\+::paint\+::rgb888\+::line\+From\+Color}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const unsigned count, const uint32\+\_\+t color, const uint8\+\_\+t alpha)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_ac008d4ecd0351bba2571da7b11f551a8}{touchgfx\+::paint\+::rgb888\+::line\+From\+RGB888}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_ae905a4fda010117655637cd4267064e8}{touchgfx\+::paint\+::rgb888\+::line\+From\+ARGB8888}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint32\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_a8447ad61957d59b1187cf233d44cef7d}{touchgfx\+::paint\+::rgb888\+::line\+From\+L8\+RGB888}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_a6395ea6b01a5480b57f3ca7b690a0f7e}{touchgfx\+::paint\+::rgb888\+::line\+From\+L8\+ARGB8888}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}const ptr, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const data, const unsigned count, const uint8\+\_\+t alpha)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements RGB888 software painter functions for widgets 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_paint_8hpp_ae905a4fda010117655637cd4267064e8}\label{_paint_8hpp_ae905a4fda010117655637cd4267064e8} 
+\index{PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}!lineFromARGB8888@{lineFromARGB8888}}
+\index{lineFromARGB8888@{lineFromARGB8888}!PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromARGB8888()}{lineFromARGB8888()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb888\+::line\+From\+ARGB8888 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint32\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (ARGB8888 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The ARGB8888 data. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_ac83ee50c15ca2eb830e072bd35b9d357}\label{_paint_8hpp_ac83ee50c15ca2eb830e072bd35b9d357} 
+\index{PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}!lineFromColor@{lineFromColor}}
+\index{lineFromColor@{lineFromColor}!PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromColor()}{lineFromColor()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb888\+::line\+From\+Color (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const unsigned}]{count,  }\item[{const uint32\+\_\+t}]{color,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using the given color.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em color} & The color. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_a6395ea6b01a5480b57f3ca7b690a0f7e}\label{_paint_8hpp_a6395ea6b01a5480b57f3ca7b690a0f7e} 
+\index{PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}!lineFromL8ARGB8888@{lineFromL8ARGB8888}}
+\index{lineFromL8ARGB8888@{lineFromL8ARGB8888}!PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromL8ARGB8888()}{lineFromL8ARGB8888()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb888\+::line\+From\+L8\+ARGB8888 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (L8\+ARGB8888 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The palette indices. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_a8447ad61957d59b1187cf233d44cef7d}\label{_paint_8hpp_a8447ad61957d59b1187cf233d44cef7d} 
+\index{PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}!lineFromL8RGB888@{lineFromL8RGB888}}
+\index{lineFromL8RGB888@{lineFromL8RGB888}!PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromL8RGB888()}{lineFromL8RGB888()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb888\+::line\+From\+L8\+RGB888 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (L8\+RGB888 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The palette indices. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_ac008d4ecd0351bba2571da7b11f551a8}\label{_paint_8hpp_ac008d4ecd0351bba2571da7b11f551a8} 
+\index{PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}!lineFromRGB888@{lineFromRGB888}}
+\index{lineFromRGB888@{lineFromRGB888}!PaintRGB888Impl.hpp@{PaintRGB888Impl.hpp}}
+\doxysubsubsection{\texorpdfstring{lineFromRGB888()}{lineFromRGB888()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::rgb888\+::line\+From\+RGB888 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{ptr,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data,  }\item[{const unsigned}]{count,  }\item[{const uint8\+\_\+t}]{alpha }\end{DoxyParamCaption})}
+
+Draw a horizontal line (one pixel high) using pixels from the given data pointer (RGB565 data).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & The pointer to the position in the framebuffer. \\
+\hline
+ & {\em data} & The RGB888 data. \\
+\hline
+ & {\em count} & Number of pixels to draw. \\
+\hline
+ & {\em alpha} & The alpha. \\
+\hline
+\end{DoxyParams}

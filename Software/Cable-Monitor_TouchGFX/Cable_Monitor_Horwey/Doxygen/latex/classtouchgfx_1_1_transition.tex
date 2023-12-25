@@ -1,0 +1,140 @@
+\doxysection{touchgfx\+::Transition Class Reference}
+\hypertarget{classtouchgfx_1_1_transition}{}\label{classtouchgfx_1_1_transition}\index{touchgfx::Transition@{touchgfx::Transition}}
+
+
+{\ttfamily \#include $<$Transition.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Transition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.785965cm]{classtouchgfx_1_1_transition}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtouchgfx_1_1_transition_1_1_full_solid_rect}{Full\+Solid\+Rect}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_transition_a24cce3d30a67e8d245b1b346682c4f3a}{Transition}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_transition_a6ed9dde24db455453661e98e31368fd5}{\texorpdfstring{$\sim$}{\string~}\+Transition}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f}{handle\+Tick\+Event}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_transition_a0805cafb3a0001173a36766e13976379}{is\+Done}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_a12f4562bbd1f1c2226d4a33a6869b012}{tear\+Down}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993}{init}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_a3f4024a58615e5b9cdd874ab47df8f4e}{invalidate}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_afdfcaf170c7c61490f06893ace96a900}{set\+Screen\+Container}} (\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \&cont)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_transition_abeb3536988ce3cb07472c6744609af06}\label{classtouchgfx_1_1_transition_abeb3536988ce3cb07472c6744609af06} 
+\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \texorpdfstring{$\ast$}{*} {\bfseries screen\+Container}
+\begin{DoxyCompactList}\small\item\em The screen \doxylink{classtouchgfx_1_1_container}{Container} of the \doxylink{classtouchgfx_1_1_screen}{Screen} transitioning to. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_transition_ae917c001b5249bd7cf85306f305dd34b}\label{classtouchgfx_1_1_transition_ae917c001b5249bd7cf85306f305dd34b} 
+bool {\bfseries done}
+\begin{DoxyCompactList}\small\item\em Flag that indicates when the transition is done. This should be set by implementing classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classtouchgfx_1_1_transition}{Transition} class is the base class for Transitions. Implementations of \doxylink{classtouchgfx_1_1_transition}{Transition} defines what happens when transitioning between Screens, which typically involves visual effects. An example of a transition implementation can be seen in example custom\+\_\+transition\+\_\+example. The most basic transition is the \doxylink{classtouchgfx_1_1_no_transition}{No\+Transition} class that does a transition without any visual effects.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_no_transition}{No\+Transition}, \doxylink{classtouchgfx_1_1_slide_transition}{Slide\+Transition} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_transition_a24cce3d30a67e8d245b1b346682c4f3a}\label{classtouchgfx_1_1_transition_a24cce3d30a67e8d245b1b346682c4f3a} 
+\index{touchgfx::Transition@{touchgfx::Transition}!Transition@{Transition}}
+\index{Transition@{Transition}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{Transition()}{Transition()}}
+{\footnotesize\ttfamily touchgfx\+::\+Transition\+::\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_transition}{Transition} class. \Hypertarget{classtouchgfx_1_1_transition_a6ed9dde24db455453661e98e31368fd5}\label{classtouchgfx_1_1_transition_a6ed9dde24db455453661e98e31368fd5} 
+\index{touchgfx::Transition@{touchgfx::Transition}!````~Transition@{\texorpdfstring{$\sim$}{\string~}Transition}}
+\index{````~Transition@{\texorpdfstring{$\sim$}{\string~}Transition}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Transition()}{\string~Transition()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Transition\+::\texorpdfstring{$\sim$}{\string~}\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_transition}{Transition} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f}\label{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f} 
+\index{touchgfx::Transition@{touchgfx::Transition}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Transition\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called for every tick when transitioning. 
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_block_transition_ac2698b547b3f61fbcfbb499984e858ae}{touchgfx\+::\+Block\+Transition}}, \mbox{\hyperlink{classtouchgfx_1_1_cover_transition_a9e8fd32a5b240a0d2965db2defdbcb77}{touchgfx\+::\+Cover\+Transition$<$ template\+Direction $>$}}, \mbox{\hyperlink{classtouchgfx_1_1_no_transition_a3a74f424142349ecad1adc6317fca0b0}{touchgfx\+::\+No\+Transition}}, \mbox{\hyperlink{classtouchgfx_1_1_slide_transition_af0d552c4787b3b2164c1ce1520900471}{touchgfx\+::\+Slide\+Transition$<$ template\+Direction $>$}}, and \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_aa1a95746acab87f3dd6c039ea07859a7}{touchgfx\+::\+Wipe\+Transition$<$ template\+Direction $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993}\label{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993} 
+\index{touchgfx::Transition@{touchgfx::Transition}!init@{init}}
+\index{init@{init}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Transition\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Initializes the transition. Called after the constructor is called, when the application changes the transition. 
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_block_transition_a349e9185016a743d04bba9dbf497b8cd}{touchgfx\+::\+Block\+Transition}}, \mbox{\hyperlink{classtouchgfx_1_1_cover_transition_aa061cd3ca140c52613eae1202b10ad32}{touchgfx\+::\+Cover\+Transition$<$ template\+Direction $>$}}, \mbox{\hyperlink{classtouchgfx_1_1_slide_transition_ab1061df7a70ed9c06bc75bf90e56456c}{touchgfx\+::\+Slide\+Transition$<$ template\+Direction $>$}}, and \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_adcc23d928cee5f1927096187cc25dc57}{touchgfx\+::\+Wipe\+Transition$<$ template\+Direction $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_transition_a3f4024a58615e5b9cdd874ab47df8f4e}\label{classtouchgfx_1_1_transition_a3f4024a58615e5b9cdd874ab47df8f4e} 
+\index{touchgfx::Transition@{touchgfx::Transition}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{invalidate()}{invalidate()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Transition\+::invalidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Invalidates the screen when starting the \doxylink{classtouchgfx_1_1_transition}{Transition}. Default is to invalidate the whole screen. Subclasses can do partial invalidation. 
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_block_transition_a18e1899c44337130d368fcc49823e8ad}{touchgfx\+::\+Block\+Transition}}, and \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_a04814a8c962abbda1947ad60be419fa8}{touchgfx\+::\+Wipe\+Transition$<$ template\+Direction $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_transition_a0805cafb3a0001173a36766e13976379}\label{classtouchgfx_1_1_transition_a0805cafb3a0001173a36766e13976379} 
+\index{touchgfx::Transition@{touchgfx::Transition}!isDone@{isDone}}
+\index{isDone@{isDone}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Transition\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query if the transition is done transitioning. It is the responsibility of the inheriting class to set the underlying done flag once the transition has been completed.
+
+\begin{DoxyReturn}{Returns}
+True if the transition is done, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_transition_afdfcaf170c7c61490f06893ace96a900}\label{classtouchgfx_1_1_transition_afdfcaf170c7c61490f06893ace96a900} 
+\index{touchgfx::Transition@{touchgfx::Transition}!setScreenContainer@{setScreenContainer}}
+\index{setScreenContainer@{setScreenContainer}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{setScreenContainer()}{setScreenContainer()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Transition\+::set\+Screen\+Container (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \&}]{cont }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the \doxylink{classtouchgfx_1_1_screen}{Screen} \doxylink{classtouchgfx_1_1_container}{Container}. Is used by \doxylink{classtouchgfx_1_1_screen}{Screen} to enable the transition to access the \doxylink{classtouchgfx_1_1_container}{Container}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cont} & The \doxylink{classtouchgfx_1_1_container}{Container} the transition should have access to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_transition_a12f4562bbd1f1c2226d4a33a6869b012}\label{classtouchgfx_1_1_transition_a12f4562bbd1f1c2226d4a33a6869b012} 
+\index{touchgfx::Transition@{touchgfx::Transition}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!touchgfx::Transition@{touchgfx::Transition}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Transition\+::tear\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Tears down the Animation. Called before the destructor is called, when the application changes the transition. 
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_block_transition_acab45a19318e89c1a0aadb6ac95d3f99}{touchgfx\+::\+Block\+Transition}}, \mbox{\hyperlink{classtouchgfx_1_1_cover_transition_a9376dbbeb4889df144d4b9cbc2b5d820}{touchgfx\+::\+Cover\+Transition$<$ template\+Direction $>$}}, \mbox{\hyperlink{classtouchgfx_1_1_slide_transition_ae73d42861d6165fdca9c0fccbbaeaf39}{touchgfx\+::\+Slide\+Transition$<$ template\+Direction $>$}}, and \mbox{\hyperlink{classtouchgfx_1_1_wipe_transition_a24d8182f3745fb69a18c1185f3e26d21}{touchgfx\+::\+Wipe\+Transition$<$ template\+Direction $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/transitions/\mbox{\hyperlink{_transition_8hpp}{Transition.\+hpp}}\end{DoxyCompactItemize}

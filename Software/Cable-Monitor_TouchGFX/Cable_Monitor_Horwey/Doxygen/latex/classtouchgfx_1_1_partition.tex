@@ -1,0 +1,188 @@
+\doxysection{touchgfx\+::Partition\texorpdfstring{$<$}{<} List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_partition}{}\label{classtouchgfx_1_1_partition}\index{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}}
+
+
+{\ttfamily \#include $<$Partition.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Partition\texorpdfstring{$<$}{<} List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_partition}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries INTS\+\_\+\+PR\+\_\+\+ELEMENT} = (sizeof(typename meta\+::select\+\_\+type\+\_\+maxsize\texorpdfstring{$<$}{<}Supported\+Types\+List\texorpdfstring{$>$}{>}\+::type) + sizeof(int) -\/ 1) / sizeof(int)
+, {\bfseries SIZE\+\_\+\+OF\+\_\+\+ELEMENT} = INTS\+\_\+\+PR\+\_\+\+ELEMENT \texorpdfstring{$\ast$}{*} sizeof(int)
+ \}
+\item 
+typedef List\+Of\+Types \mbox{\hyperlink{classtouchgfx_1_1_partition_af7c83c814a06bca5a37ca491d3b2e083}{Supported\+Types\+List}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_partition_a0ac767d68b9249e47a70a1dd6d3eec5f}{capacity}} () const
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_partition_a2dd24ab9a4730340ccf186778453931a}{element\+\_\+size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{touchgfx\+::\+Abstract\+Partition}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a724822a814a675635b6b1c757b70deab}{\texorpdfstring{$\sim$}{\string~}\+Abstract\+Partition}} ()
+\item 
+virtual void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a296fb6df063baec57dcc262deea67b68}{allocate}} (uint16\+\_\+t size)
+\item 
+virtual void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a5dfa91ceb521ecd83a0c152213404ec2}{allocate\+At}} (uint16\+\_\+t index, uint16\+\_\+t size)
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_afd8744fea6edd6c4d3b65ebaea5bbf2f}{get\+Allocation\+Count}} () const
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a991922fe29a8b29eb83299c7923c2a0c}{index\+Of}} (const void \texorpdfstring{$\ast$}{*}address)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a2d494482f112b4fd326cf7aecc643626}{clear}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_ab351342425f8edd706ce6f1451c0d9c6}{allocate}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af228138327148ab18b3305720110b06b}{allocate\+At}} (uint16\+\_\+t index)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \& \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_aec4e316d6eefcf975cd45135311f1552}{at}} (const uint16\+\_\+t index)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const T \& \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a64ce0cdd63ff322255170b07b31aed6d}{at}} (const uint16\+\_\+t index) const
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{structtouchgfx_1_1_pair}{Pair}}$<$ T \texorpdfstring{$\ast$}{*}, uint16\+\_\+t $>$ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a7bef7f9e15d2ff4fb93107f5f010570d}{find}} (const void \texorpdfstring{$\ast$}{*}pT)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a27e694054bea9c8b3187a795e3e0166c}{dec}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_partition_acb8470cb82c5dddfad83cfd213b09644}{element}} (uint16\+\_\+t index)
+\item 
+virtual const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_partition_aa2e5a7da23aa2e70058ab5d6b9812ad9}{element}} (uint16\+\_\+t index) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{touchgfx\+::\+Abstract\+Partition}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af34d8f6d241ace8091e3d0ca1583b4a0}{Abstract\+Partition}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename List\+Of\+Types, uint16\+\_\+t NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS$>$\newline
+class touchgfx\+::\+Partition$<$ List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS $>$}
+This type provides a concrete \doxylink{classtouchgfx_1_1_partition}{Partition} of memory-\/slots capable of holding any of the specified list of types.
+
+The \doxylink{classtouchgfx_1_1_partition}{Partition} is not aware of the types stored in the \doxylink{classtouchgfx_1_1_partition}{Partition} memory, hence it provides no mechanism for deleting C++ objects when the \doxylink{classtouchgfx_1_1_partition}{Partition} is \doxylink{classtouchgfx_1_1_abstract_partition_a2d494482f112b4fd326cf7aecc643626}{clear()}\textquotesingle{}ed.
+
+This class implements \doxylink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em List\+Of\+Types} & Type of the list of types. \\
+\hline
+{\em NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS} & Type of the number of elements.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classtouchgfx_1_1_partition_af7c83c814a06bca5a37ca491d3b2e083}\label{classtouchgfx_1_1_partition_af7c83c814a06bca5a37ca491d3b2e083} 
+\index{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}!SupportedTypesList@{SupportedTypesList}}
+\index{SupportedTypesList@{SupportedTypesList}!touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}}
+\doxysubsubsection{\texorpdfstring{SupportedTypesList}{SupportedTypesList}}
+{\footnotesize\ttfamily template$<$typename List\+Of\+Types , uint16\+\_\+t NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS$>$ \\
+typedef List\+Of\+Types \mbox{\hyperlink{classtouchgfx_1_1_partition}{touchgfx\+::\+Partition}}$<$ List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS $>$\+::\+Supported\+Types\+List}
+
+Provides a generic public type containing the list of supported types. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_partition_abdd19df3980e98cd2161266b294cf2d9}\label{classtouchgfx_1_1_partition_abdd19df3980e98cd2161266b294cf2d9} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$typename List\+Of\+Types , uint16\+\_\+t NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS$>$ \\
+anonymous enum}
+
+Compile-\/time generated constants specifying the "{}element"{} or "{}slot"{} size used by this partition. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_partition_a0ac767d68b9249e47a70a1dd6d3eec5f}\label{classtouchgfx_1_1_partition_a0ac767d68b9249e47a70a1dd6d3eec5f} 
+\index{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename List\+Of\+Types , uint16\+\_\+t NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS$>$ \\
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_partition}{touchgfx\+::\+Partition}}$<$ List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS $>$\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the capacity, i.\+e. the maximum allocation count.
+
+\begin{DoxyReturn}{Returns}
+The maximum allocation count. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a91a7f82da356113f7f21c826956237e7}{touchgfx\+::\+Abstract\+Partition}}.
+
+\Hypertarget{classtouchgfx_1_1_partition_acb8470cb82c5dddfad83cfd213b09644}\label{classtouchgfx_1_1_partition_acb8470cb82c5dddfad83cfd213b09644} 
+\index{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}!element@{element}}
+\index{element@{element}!touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}}
+\doxysubsubsection{\texorpdfstring{element()}{element()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename List\+Of\+Types , uint16\+\_\+t NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS$>$ \\
+virtual void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_partition}{touchgfx\+::\+Partition}}$<$ List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS $>$\+::element (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Access to stored element. Used internally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero-\/based index of the.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null if it fails, else a void\texorpdfstring{$\ast$}{*}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af9f74221b23d5dc62083923a7284e702}{touchgfx\+::\+Abstract\+Partition}}.
+
+\Hypertarget{classtouchgfx_1_1_partition_aa2e5a7da23aa2e70058ab5d6b9812ad9}\label{classtouchgfx_1_1_partition_aa2e5a7da23aa2e70058ab5d6b9812ad9} 
+\index{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}!element@{element}}
+\index{element@{element}!touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}}
+\doxysubsubsection{\texorpdfstring{element()}{element()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename List\+Of\+Types , uint16\+\_\+t NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS$>$ \\
+virtual const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_partition}{touchgfx\+::\+Partition}}$<$ List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS $>$\+::element (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Access to stored element, const version.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero-\/based index of the.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null if it fails, else a void\texorpdfstring{$\ast$}{*}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a8a362459dcc5c993a8e195b1527e30d1}{touchgfx\+::\+Abstract\+Partition}}.
+
+\Hypertarget{classtouchgfx_1_1_partition_a2dd24ab9a4730340ccf186778453931a}\label{classtouchgfx_1_1_partition_a2dd24ab9a4730340ccf186778453931a} 
+\index{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}!element\_size@{element\_size}}
+\index{element\_size@{element\_size}!touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$@{touchgfx::Partition$<$ ListOfTypes, NUMBER\_OF\_ELEMENTS $>$}}
+\doxysubsubsection{\texorpdfstring{element\_size()}{element\_size()}}
+{\footnotesize\ttfamily template$<$typename List\+Of\+Types , uint16\+\_\+t NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS$>$ \\
+virtual uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_partition}{touchgfx\+::\+Partition}}$<$ List\+Of\+Types, NUMBER\+\_\+\+OF\+\_\+\+ELEMENTS $>$\+::element\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Access to concrete element-\/size. Used internally.
+
+\begin{DoxyReturn}{Returns}
+An uint32\+\_\+t. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a93187e48cf03ed8c658a1387fc74c95f}{touchgfx\+::\+Abstract\+Partition}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/common/\mbox{\hyperlink{_partition_8hpp}{Partition.\+hpp}}\end{DoxyCompactItemize}

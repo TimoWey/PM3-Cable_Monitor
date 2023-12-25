@@ -1,0 +1,86 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+filesystem.h File Reference}
+\hypertarget{_s_d_l__filesystem_8h}{}\label{_s_d_l__filesystem_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_filesystem.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_filesystem.h}}
+
+
+Include file for filesystem SDL API functions.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__filesystem_8h_af4bb772b30931388d2efcbfe30bf99e9}{SDL\+\_\+\+Get\+Base\+Path}} (void)
+\begin{DoxyCompactList}\small\item\em Get the path where the application resides. \end{DoxyCompactList}\item 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__filesystem_8h_afc753a599c8dac949ec3a07a6a3db74e}{SDL\+\_\+\+Get\+Pref\+Path}} (const char \texorpdfstring{$\ast$}{*}org, const char \texorpdfstring{$\ast$}{*}app)
+\begin{DoxyCompactList}\small\item\em Get the user-\/and-\/app-\/specific path where files can be written. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for filesystem SDL API functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__filesystem_8h_af4bb772b30931388d2efcbfe30bf99e9}\label{_s_d_l__filesystem_8h_af4bb772b30931388d2efcbfe30bf99e9} 
+\index{SDL\_filesystem.h@{SDL\_filesystem.h}!SDL\_GetBasePath@{SDL\_GetBasePath}}
+\index{SDL\_GetBasePath@{SDL\_GetBasePath}!SDL\_filesystem.h@{SDL\_filesystem.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetBasePath()}{SDL\_GetBasePath()}}
+{\footnotesize\ttfamily DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Base\+Path (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the path where the application resides. 
+
+Get the "{}base path"{}. This is the directory where the application was run from, which is probably the installation directory, and may or may not be the process\textquotesingle{}s current working directory.
+
+This returns an absolute path in UTF-\/8 encoding, and is guaranteed to end with a path separator (\textquotesingle{}\textbackslash{}\textquotesingle{} on Windows, \textquotesingle{}/\textquotesingle{} most other places).
+
+The pointer returned by this function is owned by you. Please call SDL\+\_\+free() on the pointer when you are done with it, or it will be a memory leak. This is not necessarily a fast call, though, so you should call this once near startup and save the string if you need it.
+
+Some platforms can\textquotesingle{}t determine the application\textquotesingle{}s path, and on other platforms, this might be meaningless. In such cases, this function will return NULL.
+
+\begin{DoxyReturn}{Returns}
+String of base dir in UTF-\/8 encoding, or NULL on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__filesystem_8h_afc753a599c8dac949ec3a07a6a3db74e}{SDL\+\_\+\+Get\+Pref\+Path} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__filesystem_8h_afc753a599c8dac949ec3a07a6a3db74e}\label{_s_d_l__filesystem_8h_afc753a599c8dac949ec3a07a6a3db74e} 
+\index{SDL\_filesystem.h@{SDL\_filesystem.h}!SDL\_GetPrefPath@{SDL\_GetPrefPath}}
+\index{SDL\_GetPrefPath@{SDL\_GetPrefPath}!SDL\_filesystem.h@{SDL\_filesystem.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetPrefPath()}{SDL\_GetPrefPath()}}
+{\footnotesize\ttfamily DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Pref\+Path (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{org,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the user-\/and-\/app-\/specific path where files can be written. 
+
+Get the "{}pref dir"{}. This is meant to be where users can write personal files (preferences and save games, etc) that are specific to your application. This directory is unique per user, per application.
+
+This function will decide the appropriate location in the native filesystem, create the directory if necessary, and return a string of the absolute path to the directory in UTF-\/8 encoding.
+
+On Windows, the string might look like\+: "{}\+C\+:\textbackslash{}\textbackslash{}\+Users\textbackslash{}\textbackslash{}bob\textbackslash{}\textbackslash{}\+App\+Data\textbackslash{}\textbackslash{}\+Roaming\textbackslash{}\textbackslash{}\+My Company\textbackslash{}\textbackslash{}\+My Program Name\textbackslash{}\textbackslash{}"{}  \+On Linux, the string might look like\+:  "{}/home/bob/.local/share/\+My Program Name/"{}  \+On Mac OS X, the string might look like\+:  "{}/\+Users/bob/\+Library/\+Application Support/\+My Program Name/"{}  (etc.)  \+You specify the name of your organization (if it\textquotesingle{}s not a real organization,  your name or an Internet domain you own might do) and the name of your  application. These should be untranslated proper names.  \+Both the org and app strings may become part of a directory name, so  please follow these rules\+:     -\/ Try to use the same org string (including case-\/sensitivity) for      all your applications that use this function.    -\/ Always use a unique app string for each one, and make sure it never      changes for an app once you\textquotesingle{}ve decided on it.    -\/ Unicode characters are legal, as long as it\textquotesingle{}s UTF-\/8 encoded, but...    -\/ ...\+only use letters, numbers, and spaces. Avoid punctuation like      "{}Game Name 2\+: Bad Guy\textquotesingle{}s Revenge!"{} ... "{}Game Name 2"{} is sufficient.
+
+This returns an absolute path in UTF-\/8 encoding, and is guaranteed to end with a path separator (\textquotesingle{}\textbackslash{}\textquotesingle{} on Windows, \textquotesingle{}/\textquotesingle{} most other places).
+
+The pointer returned by this function is owned by you. Please call SDL\+\_\+free() on the pointer when you are done with it, or it will be a memory leak. This is not necessarily a fast call, though, so you should call this once near startup and save the string if you need it.
+
+You should assume the path returned by this function is the only safe place to write files (and that \doxylink{_s_d_l__filesystem_8h_af4bb772b30931388d2efcbfe30bf99e9}{SDL\+\_\+\+Get\+Base\+Path()}, while it might be writable, or even the parent of the returned path, aren\textquotesingle{}t where you should be writing things).
+
+Some platforms can\textquotesingle{}t determine the pref path, and on other platforms, this might be meaningless. In such cases, this function will return NULL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em org} & The name of your organization. \\
+\hline
+{\em app} & The name of your application. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UTF-\/8 string of user dir in platform-\/dependent notation. NULL if there\textquotesingle{}s a problem (creating directory failed, etc).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__filesystem_8h_af4bb772b30931388d2efcbfe30bf99e9}{SDL\+\_\+\+Get\+Base\+Path} 
+\end{DoxySeeAlso}

@@ -1,0 +1,104 @@
+\doxysection{touchgfx\+::Block\+Transition Class Reference}
+\hypertarget{classtouchgfx_1_1_block_transition}{}\label{classtouchgfx_1_1_block_transition}\index{touchgfx::BlockTransition@{touchgfx::BlockTransition}}
+
+
+{\ttfamily \#include $<$Block\+Transition.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Block\+Transition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_block_transition}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_block_transition_afb7ae01a68fab7995020693b70995a26}{Block\+Transition}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_block_transition_ac2698b547b3f61fbcfbb499984e858ae}{handle\+Tick\+Event}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_block_transition_acab45a19318e89c1a0aadb6ac95d3f99}{tear\+Down}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_block_transition_a349e9185016a743d04bba9dbf497b8cd}{init}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_block_transition_a18e1899c44337130d368fcc49823e8ad}{invalidate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_transition}{touchgfx\+::\+Transition}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_transition_a24cce3d30a67e8d245b1b346682c4f3a}{Transition}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_transition_a6ed9dde24db455453661e98e31368fd5}{\texorpdfstring{$\sim$}{\string~}\+Transition}} ()
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_transition_a0805cafb3a0001173a36766e13976379}{is\+Done}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_transition_afdfcaf170c7c61490f06893ace96a900}{set\+Screen\+Container}} (\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \&cont)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_transition}{touchgfx\+::\+Transition}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_container}{Container}} \texorpdfstring{$\ast$}{*} {\bfseries screen\+Container}
+\begin{DoxyCompactList}\small\item\em The screen \doxylink{classtouchgfx_1_1_container}{Container} of the \doxylink{classtouchgfx_1_1_screen}{Screen} transitioning to. \end{DoxyCompactList}\item 
+bool {\bfseries done}
+\begin{DoxyCompactList}\small\item\em Flag that indicates when the transition is done. This should be set by implementing classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classtouchgfx_1_1_transition}{Transition} that draws two small blocks in every frame. It is therefore very useful on MCUs with limited performance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_block_transition_afb7ae01a68fab7995020693b70995a26}\label{classtouchgfx_1_1_block_transition_afb7ae01a68fab7995020693b70995a26} 
+\index{touchgfx::BlockTransition@{touchgfx::BlockTransition}!BlockTransition@{BlockTransition}}
+\index{BlockTransition@{BlockTransition}!touchgfx::BlockTransition@{touchgfx::BlockTransition}}
+\doxysubsubsection{\texorpdfstring{BlockTransition()}{BlockTransition()}}
+{\footnotesize\ttfamily touchgfx\+::\+Block\+Transition\+::\+Block\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_block_transition}{Block\+Transition} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_block_transition_ac2698b547b3f61fbcfbb499984e858ae}\label{classtouchgfx_1_1_block_transition_ac2698b547b3f61fbcfbb499984e858ae} 
+\index{touchgfx::BlockTransition@{touchgfx::BlockTransition}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::BlockTransition@{touchgfx::BlockTransition}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Block\+Transition\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Handles the tick event when transitioning. It uncovers and invalidates two blocks in every frame, for a total of 24 frames. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_block_transition_a349e9185016a743d04bba9dbf497b8cd}\label{classtouchgfx_1_1_block_transition_a349e9185016a743d04bba9dbf497b8cd} 
+\index{touchgfx::BlockTransition@{touchgfx::BlockTransition}!init@{init}}
+\index{init@{init}!touchgfx::BlockTransition@{touchgfx::BlockTransition}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Block\+Transition\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Initializes the transition. Called after the constructor is called, when the application changes the transition. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_block_transition_a18e1899c44337130d368fcc49823e8ad}\label{classtouchgfx_1_1_block_transition_a18e1899c44337130d368fcc49823e8ad} 
+\index{touchgfx::BlockTransition@{touchgfx::BlockTransition}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!touchgfx::BlockTransition@{touchgfx::BlockTransition}}
+\doxysubsubsection{\texorpdfstring{invalidate()}{invalidate()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Block\+Transition\+::invalidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Block transition does not require an invalidation. Invalidation is handled by the class. Do no invalidation initially. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a3f4024a58615e5b9cdd874ab47df8f4e}{touchgfx\+::\+Transition}}.
+
+\Hypertarget{classtouchgfx_1_1_block_transition_acab45a19318e89c1a0aadb6ac95d3f99}\label{classtouchgfx_1_1_block_transition_acab45a19318e89c1a0aadb6ac95d3f99} 
+\index{touchgfx::BlockTransition@{touchgfx::BlockTransition}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!touchgfx::BlockTransition@{touchgfx::BlockTransition}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Block\+Transition\+::tear\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Tears down the Animation. Called before the destructor is called, when the application changes the transition. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_transition_a12f4562bbd1f1c2226d4a33a6869b012}{touchgfx\+::\+Transition}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/transitions/\mbox{\hyperlink{_block_transition_8hpp}{Block\+Transition.\+hpp}}\end{DoxyCompactItemize}

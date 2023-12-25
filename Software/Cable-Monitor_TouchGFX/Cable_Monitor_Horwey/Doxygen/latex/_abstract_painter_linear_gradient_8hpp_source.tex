@@ -1,0 +1,169 @@
+\doxysection{Abstract\+Painter\+Linear\+Gradient.\+hpp}
+\hypertarget{_abstract_painter_linear_gradient_8hpp_source}{}\label{_abstract_painter_linear_gradient_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterLinearGradient.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterLinearGradient.hpp}}
+\mbox{\hyperlink{_abstract_painter_linear_gradient_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_ABSTRACTPAINTERLINEARGRADIENT\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_ABSTRACTPAINTERLINEARGRADIENT\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_matrix3x3_8hpp}{touchgfx/Matrix3x3.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_painter_8hpp}{touchgfx/widgets/canvas/AbstractPainter.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient}{AbstractPainterLinearGradient}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_aab6995b4c8a74e460a3a769977490818}{AbstractPainterLinearGradient}}()}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter}{AbstractPainter}}(),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}{coord0}}(0),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}{coord1}}(100),\ texture(0),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a9b11974d10f56c1b46a56a440fb1a3eb}{isSolid}}(false),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93}{isVertical}}(false),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9}{isHorizontal}}(false),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c}{clSlope}}(0.0f),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_ae839aa2a871e75313e1f018145b8f7bf}{clOffset}}(0.0f),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}}(0.0f),\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7f5bd11ac1c7d2602d8288a29c9a29a7}{deltaColor}}(0.0f)}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_af9e58de307303eabbc467ed6eedf4e82}{\string~AbstractPainterLinearGradient}}()}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_aa745f925ed2a81e42d6c7f57c95da820}{setGradientEndPoints}}(\textcolor{keywordtype}{float}\ startX,\ \textcolor{keywordtype}{float}\ startY,\ \textcolor{keywordtype}{float}\ endX,\ \textcolor{keywordtype}{float}\ endY,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}}\&\ m)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\ start\ =\ m.affineTransform(startX,\ startY);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\ end\ =\ m.affineTransform(endX,\ endY);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93}{isVertical}}\ =\ (start.x\ ==\ end.x);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9}{isHorizontal}}\ =\ (start.y\ ==\ end.y);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93}{isVertical}}\ \&\&\ !\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9}{isHorizontal}})}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ slope\ and\ position\ of\ first\ color\ line\ and\ horizontal\ distance\ to\ last}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ startX,\ startY,\ endX,\ endY\ are\ given\ in\ bounding\ box\ coordinate\ system\ [0;width]x[0;height]}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Color\ lines\ are\ perpendicular\ to\ gradient\ vector\ (cvy,\ cvx),\ in\ the\ square\ bounding-\/box\ coordinate\ system\ [0;1]x[0;1].}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cvx\ =\ endX\ -\/\ startX;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cvy\ =\ endY\ -\/\ startY;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ So\ we\ scale\ gradient\ back\ from\ width\ x\ height}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cvxbb\ =\ cvx\ /\ width;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cvybb\ =\ cvy\ /\ height;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Equal\ Colors\ vector\ is\ orthogonal\ to\ gradient\ vector,\ but\ scale\ to\ real\ size\ of\ shape}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ colorlinedx\ =\ -\/cvybb\ *\ width;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ colorlinedy\ =\ cvxbb\ *\ height;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rotate\ color\ vector\ according\ to\ transformation}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\ transformed\ =\ m.affineTransform(startX\ +\ colorlinedx,\ startY\ +\ colorlinedy);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Translate\ back\ to\ startX,Y}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ transformedlinedx\ =\ transformed.\mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point_a9a8e62114fefa929d4ea66b79f1004e4}{x}}\ -\/\ start.x;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ color\ line\ has\ dx==0,\ the\ gradient\ (not\ the\ color\ line)\ is\ horizontal}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (transformedlinedx\ ==\ 0.0f)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9}{isHorizontal}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ transformedlinedy\ =\ transformed.y\ -\/\ start.y;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c}{clSlope}}\ =\ transformedlinedy\ /\ transformedlinedx;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ slope\ of\ the\ colorline\ is\ zero,\ the\ gradient\ is\ vertical}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c}{clSlope}}\ ==\ 0.0f)}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93}{isVertical}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ color\ line\ intersects\ (x0,\ coord0)}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_ae839aa2a871e75313e1f018145b8f7bf}{clOffset}}\ =\ start.y\ -\/\ start.x\ *\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c}{clSlope}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pixel\ distance\ between\ first\ and\ last\ color\ line\ horizontally}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ transformed\_cvx\ =\ end.x\ -\/\ start.x;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ transformed\_cvy\ =\ end.y\ -\/\ start.y;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}}\ =\ transformed\_cvx\ -\/\ transformed\_cvy\ /\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c}{clSlope}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Color\ increment\ when\ moving\ 1\ pixel\ horizontally}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7f5bd11ac1c7d2602d8288a29c9a29a7}{deltaColor}}\ =\ 1024.0f\ /\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}}\ <\ 0)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}}\ =\ -\/\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93}{isVertical}})}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Color\ change\ over\ one\ line}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7f5bd11ac1c7d2602d8288a29c9a29a7}{deltaColor}}\ =\ 1023.9999f\ /\ (end.y\ -\/\ start.y);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ y-\/coordinates\ for\ the\ vertical\ gradient.}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ With\ coord0\ lowest\ y\ coordinate,\ coord1\ highest}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start.y\ <\ end.y)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}{coord0}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(start.y);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}{coord1}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(end.y);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}{coord0}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(end.y);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}{coord1}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(start.y);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9}{isHorizontal}})}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Color\ change\ over\ one\ line}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7f5bd11ac1c7d2602d8288a29c9a29a7}{deltaColor}}\ =\ 1023.9999f\ /\ (end.x\ -\/\ start.x);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ x-\/coordinates\ for\ the\ horizontal\ gradient.}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ With\ x0\ lowest\ x\ coordinate,\ x1\ highest}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start.x\ <\ end.x)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}{coord0}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(start.x);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}{coord1}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(end.x);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}{coord0}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(end.x);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}{coord1}}\ =\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}(start.x);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}{coord1}}\ -\/\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}{coord0}});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0274e254612cdbea5e42d6f55fd4f9be}{setGradientTexture}}(\textcolor{keyword}{const}\ uint32\_t*\ tex,\ \textcolor{keywordtype}{bool}\ solid)}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ texture\ =\ tex;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a9b11974d10f56c1b46a56a440fb1a3eb}{isSolid}}\ =\ solid;}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00184\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a79aec1980c170c2014f18cd5ae1fdfc8}{coord0}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7e0cafd1169adac36e4f90a71ebca091}{coord1}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_ad8606484f7737dd2363439e23b3a7109}{texture}};\ \ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a9b11974d10f56c1b46a56a440fb1a3eb}{isSolid}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0d01084b12229f2d059dedbbb3fd3b93}{isVertical}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a6435f5dfd3f3f5e6da369fa81dd1ece9}{isHorizontal}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a0df831921e4ea9f88f3adb9dfa09d21c}{clSlope}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_ae839aa2a871e75313e1f018145b8f7bf}{clOffset}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_abc8bcf7f875bd3d3e409d01c7ff6b2cd}{horizontalDistance}};\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_linear_gradient_a7f5bd11ac1c7d2602d8288a29c9a29a7}{deltaColor}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_ABSTRACTPAINTERLINEARGRADIENT\_HPP}}
+
+\end{DoxyCode}

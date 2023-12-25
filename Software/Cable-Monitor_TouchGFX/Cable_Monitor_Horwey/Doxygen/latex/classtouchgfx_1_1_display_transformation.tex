@@ -1,0 +1,162 @@
+\doxysection{touchgfx\+::Display\+Transformation Class Reference}
+\hypertarget{classtouchgfx_1_1_display_transformation}{}\label{classtouchgfx_1_1_display_transformation}\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+
+
+{\ttfamily \#include $<$Display\+Transformation.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_a2604f15e0cac605ba096f77c044d2a0b}{transform\+Display\+To\+Frame\+Buffer}} (int16\+\_\+t \&x, int16\+\_\+t \&y)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_aadab0eb2bddf462fc97b522b8922318c}{transform\+Display\+To\+Frame\+Buffer}} (float \&x, float \&y)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_aa72ae5cd40737d20ef5d5f002a1ebe12}{transform\+Frame\+Buffer\+To\+Display}} (int16\+\_\+t \&x, int16\+\_\+t \&y)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_aab96e504bf2015963a90be2f5390bdb2}{transform\+Display\+To\+Frame\+Buffer}} (int16\+\_\+t \&x, int16\+\_\+t \&y, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&in)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_a5f55ea0a82e236750dc22e12214835f6}{transform\+Display\+To\+Frame\+Buffer}} (float \&x, float \&y, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&in)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_ad4099354f8354139df7fe120687927e2}{transform\+Display\+To\+Frame\+Buffer}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_ad742a1e37d7f50bd0ef351590c744063}{transform\+Frame\+Buffer\+To\+Display}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_display_transformation_aad745c0aa92ecbdd5b0089e28b9789ce}{transform\+Display\+To\+Frame\+Buffer}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&in)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines transformations from display space to framebuffer space. The display might be (considered) in portrait mode from 0,0 to 272,480, while the actual framebuffer is from 0,0 to 480,272. This class handles the transformations. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_display_transformation_aadab0eb2bddf462fc97b522b8922318c}\label{classtouchgfx_1_1_display_transformation_aadab0eb2bddf462fc97b522b8922318c} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}}
+\index{transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformDisplayToFrameBuffer()}{transformDisplayToFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Display\+To\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{float \&}]{x,  }\item[{float \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform x,y from display to framebuffer coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em x} & the x part to translate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em y} & the y part to translate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_display_transformation_a5f55ea0a82e236750dc22e12214835f6}\label{classtouchgfx_1_1_display_transformation_a5f55ea0a82e236750dc22e12214835f6} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}}
+\index{transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformDisplayToFrameBuffer()}{transformDisplayToFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Display\+To\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{float \&}]{x,  }\item[{float \&}]{y,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform x,y from coordinates relative to the in rect to framebuffer coordinates.
+
+Transform x,y from coordinates relative to the in rect to framebuffer coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em x} & the x part to translate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em y} & the y part to translate. \\
+\hline
+ & {\em in} & the rectangle defining the coordinate space. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_display_transformation_a2604f15e0cac605ba096f77c044d2a0b}\label{classtouchgfx_1_1_display_transformation_a2604f15e0cac605ba096f77c044d2a0b} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}}
+\index{transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformDisplayToFrameBuffer()}{transformDisplayToFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Display\+To\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{int16\+\_\+t \&}]{x,  }\item[{int16\+\_\+t \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform x,y from display to framebuffer coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em x} & the x part to translate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em y} & the y part to translate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_display_transformation_aab96e504bf2015963a90be2f5390bdb2}\label{classtouchgfx_1_1_display_transformation_aab96e504bf2015963a90be2f5390bdb2} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}}
+\index{transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformDisplayToFrameBuffer()}{transformDisplayToFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Display\+To\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{int16\+\_\+t \&}]{x,  }\item[{int16\+\_\+t \&}]{y,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform x,y from coordinates relative to the in rect to framebuffer coordinates.
+
+Transform x,y from coordinates relative to the in rect to framebuffer coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em x} & the x part to translate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em y} & the y part to translate. \\
+\hline
+ & {\em in} & the rectangle defining the coordinate space. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_display_transformation_ad4099354f8354139df7fe120687927e2}\label{classtouchgfx_1_1_display_transformation_ad4099354f8354139df7fe120687927e2} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}}
+\index{transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformDisplayToFrameBuffer()}{transformDisplayToFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Display\+To\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform rectangle from display to framebuffer coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em r} & the rectangle to translate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_display_transformation_aad745c0aa92ecbdd5b0089e28b9789ce}\label{classtouchgfx_1_1_display_transformation_aad745c0aa92ecbdd5b0089e28b9789ce} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}}
+\index{transformDisplayToFrameBuffer@{transformDisplayToFrameBuffer}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformDisplayToFrameBuffer()}{transformDisplayToFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Display\+To\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{r,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform rectangle r from coordinates relative to the in rect to framebuffer coordinates.
+
+Transform rectangle r from coordinates relative to the in rect to framebuffer coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em r} & the rectangle to translate. \\
+\hline
+ & {\em in} & the rectangle defining the coordinate space. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_display_transformation_aa72ae5cd40737d20ef5d5f002a1ebe12}\label{classtouchgfx_1_1_display_transformation_aa72ae5cd40737d20ef5d5f002a1ebe12} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformFrameBufferToDisplay@{transformFrameBufferToDisplay}}
+\index{transformFrameBufferToDisplay@{transformFrameBufferToDisplay}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformFrameBufferToDisplay()}{transformFrameBufferToDisplay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Frame\+Buffer\+To\+Display (\begin{DoxyParamCaption}\item[{int16\+\_\+t \&}]{x,  }\item[{int16\+\_\+t \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform x,y from framebuffer to display coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em x} & the x part to translate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em y} & the y part to translate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_display_transformation_ad742a1e37d7f50bd0ef351590c744063}\label{classtouchgfx_1_1_display_transformation_ad742a1e37d7f50bd0ef351590c744063} 
+\index{touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}!transformFrameBufferToDisplay@{transformFrameBufferToDisplay}}
+\index{transformFrameBufferToDisplay@{transformFrameBufferToDisplay}!touchgfx::DisplayTransformation@{touchgfx::DisplayTransformation}}
+\doxysubsubsection{\texorpdfstring{transformFrameBufferToDisplay()}{transformFrameBufferToDisplay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Display\+Transformation\+::transform\+Frame\+Buffer\+To\+Display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transform rectangle from framebuffer to display coordinates.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em r} & the rectangle to translate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/transforms/\mbox{\hyperlink{_display_transformation_8hpp}{Display\+Transformation.\+hpp}}\end{DoxyCompactItemize}

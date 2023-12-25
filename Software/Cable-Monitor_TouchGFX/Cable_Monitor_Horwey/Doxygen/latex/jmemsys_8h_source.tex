@@ -1,0 +1,204 @@
+\doxysection{jmemsys.\+h}
+\hypertarget{jmemsys_8h_source}{}\label{jmemsys_8h_source}\index{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jmemsys.h@{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/jmemsys.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ jmemsys.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1992-\/1997,\ Thomas\ G.\ Lane.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Independent\ JPEG\ Group's\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ For\ conditions\ of\ distribution\ and\ use,\ see\ the\ accompanying\ README\ file.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ This\ include\ file\ defines\ the\ interface\ between\ the\ system-\/independent}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ and\ system-\/dependent\ portions\ of\ the\ JPEG\ memory\ manager.\ \ No\ other}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ modules\ need\ include\ it.\ \ (The\ system-\/independent\ portion\ is\ jmemmgr.c;}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ there\ are\ several\ different\ versions\ of\ the\ system-\/dependent\ portion.)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ This\ file\ works\ as-\/is\ for\ the\ system-\/dependent\ memory\ managers\ supplied}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ in\ the\ IJG\ distribution.\ \ You\ may\ need\ to\ modify\ it\ if\ you\ write\ a}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ custom\ memory\ manager.\ \ If\ system-\/dependent\ changes\ are\ needed\ in}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ this\ file,\ the\ best\ method\ is\ to\ \#ifdef\ them\ based\ on\ a\ configuration}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ symbol\ supplied\ in\ jconfig.h,\ as\ we\ have\ done\ with\ USE\_MSDOS\_MEMMGR}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ and\ USE\_MAC\_MEMMGR.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ Short\ forms\ of\ external\ names\ for\ systems\ with\ brain-\/damaged\ linkers.\ */}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ NEED\_SHORT\_EXTERNAL\_NAMES}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ jpeg\_get\_small\ \ \ \ \ \ jGetSmall}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ jpeg\_free\_small\ \ \ \ \ jFreeSmall}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ jpeg\_get\_large\ \ \ \ \ \ jGetLarge}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ jpeg\_free\_large\ \ \ \ \ jFreeLarge}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ jpeg\_mem\_available\ \ jMemAvail}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ jpeg\_open\_backing\_store\ jOpenBackStore}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ jpeg\_mem\_init\ \ \ \ \ \ \ jMemInit}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ jpeg\_mem\_term\ \ \ \ \ \ \ jMemTerm}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NEED\_SHORT\_EXTERNAL\_NAMES\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ These\ two\ functions\ are\ used\ to\ allocate\ and\ release\ small\ chunks\ of}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ memory.\ \ (Typically\ the\ total\ amount\ requested\ through\ jpeg\_get\_small\ is}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ no\ more\ than\ 20K\ or\ so;\ this\ will\ be\ requested\ in\ chunks\ of\ a\ few\ K\ each.)}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ Behavior\ should\ be\ the\ same\ as\ for\ the\ standard\ library\ functions\ malloc}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ and\ free;\ in\ particular,\ jpeg\_get\_small\ must\ return\ NULL\ on\ failure.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ On\ most\ systems,\ these\ ARE\ malloc\ and\ free.\ \ jpeg\_free\_small\ is\ passed\ the}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ size\ of\ the\ object\ being\ freed,\ just\ in\ case\ it's\ needed.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *\ On\ an\ 80x86\ machine\ using\ small-\/data\ memory\ model,\ these\ manage\ near\ heap.}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ EXTERN(\textcolor{keywordtype}{void}\ *)\ jpeg\_get\_small\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,\ \textcolor{keywordtype}{size\_t}\ sizeofobject));}
+\DoxyCodeLine{00048\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_free\_small\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,\ \textcolor{keywordtype}{void}\ *\ \textcolor{keywordtype}{object},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeofobject));}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ These\ two\ functions\ are\ used\ to\ allocate\ and\ release\ large\ chunks\ of}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ memory\ (up\ to\ the\ total\ free\ space\ designated\ by\ jpeg\_mem\_available).}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ The\ interface\ is\ the\ same\ as\ above,\ except\ that\ on\ an\ 80x86\ machine,}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ far\ pointers\ are\ used.\ \ On\ most\ other\ machines\ these\ are\ identical\ to}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ the\ jpeg\_get/free\_small\ routines;\ but\ we\ keep\ them\ separate\ anyway,}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ in\ case\ a\ different\ allocation\ strategy\ is\ desirable\ for\ large\ chunks.}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ EXTERN(\textcolor{keywordtype}{void}\ FAR\ *)\ jpeg\_get\_large\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeofobject));}
+\DoxyCodeLine{00062\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_free\_large\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,\ \textcolor{keywordtype}{void}\ FAR\ *\ \textcolor{keywordtype}{object},}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeofobject));}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *\ The\ macro\ MAX\_ALLOC\_CHUNK\ designates\ the\ maximum\ number\ of\ bytes\ that\ may}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ be\ requested\ in\ a\ single\ call\ to\ jpeg\_get\_large\ (and\ jpeg\_get\_small\ for\ that}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ *\ matter,\ but\ that\ case\ should\ never\ come\ into\ play).\ \ This\ macro\ is\ needed}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ *\ to\ model\ the\ 64Kb-\/segment-\/size\ limit\ of\ far\ addressing\ on\ 80x86\ machines.}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ *\ On\ those\ machines,\ we\ expect\ that\ jconfig.h\ will\ provide\ a\ proper\ value.}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ On\ machines\ with\ 32-\/bit\ flat\ address\ spaces,\ any\ large\ constant\ may\ be\ used.}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ NB:\ jmemmgr.c\ expects\ that\ MAX\_ALLOC\_CHUNK\ will\ be\ representable\ as\ type}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ size\_t\ and\ will\ be\ a\ multiple\ of\ sizeof(align\_type).}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifndef\ MAX\_ALLOC\_CHUNK\ \ \ \ \ }\textcolor{comment}{/*\ may\ be\ overridden\ in\ jconfig.h\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ MAX\_ALLOC\_CHUNK\ \ 1000000000L}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *\ This\ routine\ computes\ the\ total\ space\ still\ available\ for\ allocation\ by}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *\ jpeg\_get\_large.\ \ If\ more\ space\ than\ this\ is\ needed,\ backing\ store\ will\ be}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ used.\ \ NOTE:\ any\ memory\ already\ allocated\ must\ not\ be\ counted.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ *\ There\ is\ a\ minimum\ space\ requirement,\ corresponding\ to\ the\ minimum}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ *\ feasible\ buffer\ sizes;\ jmemmgr.c\ will\ request\ that\ much\ space\ even\ if}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ *\ jpeg\_mem\_available\ returns\ zero.\ \ The\ maximum\ space\ needed,\ enough\ to\ hold}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ *\ all\ working\ storage\ in\ memory,\ is\ also\ passed\ in\ case\ it\ is\ useful.}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ *\ Finally,\ the\ total\ space\ already\ allocated\ is\ passed.\ \ If\ no\ better}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *\ method\ is\ available,\ cinfo-\/>mem-\/>max\_memory\_to\_use\ -\/\ already\_allocated}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *\ is\ often\ a\ suitable\ calculation.}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ *\ It\ is\ OK\ for\ jpeg\_mem\_available\ to\ underestimate\ the\ space\ available}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ *\ (that'll\ just\ lead\ to\ more\ backing-\/store\ access\ than\ is\ really\ necessary).}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ *\ However,\ an\ overestimate\ will\ lead\ to\ failure.\ \ Hence\ it's\ wise\ to\ subtract}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ *\ a\ slop\ factor\ from\ the\ true\ available\ space.\ \ 5\%\ should\ be\ enough.}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ *\ On\ machines\ with\ lots\ of\ virtual\ memory,\ any\ large\ constant\ may\ be\ returned.}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ *\ Conversely,\ zero\ may\ be\ returned\ to\ always\ use\ the\ minimum\ amount\ of\ memory.}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ EXTERN(\textcolor{keywordtype}{long})\ jpeg\_mem\_available\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ min\_bytes\_needed,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ max\_bytes\_needed,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ already\_allocated));}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ This\ structure\ holds\ whatever\ state\ is\ needed\ to\ access\ a\ single}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ *\ backing-\/store\ object.\ \ The\ read/write/close\ method\ pointers\ are\ called}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ *\ by\ jmemmgr.c\ to\ manipulate\ the\ backing-\/store\ object;\ all\ other\ fields}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ *\ are\ private\ to\ the\ system-\/dependent\ backing\ store\ routines.}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ TEMP\_NAME\_LENGTH\ \ \ 64\ \ \ }\textcolor{comment}{/*\ max\ length\ of\ a\ temporary\ file's\ name\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#ifdef\ USE\_MSDOS\_MEMMGR\ \ \ \ \ }\textcolor{comment}{/*\ DOS-\/specific\ junk\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ XMSH;\ \ \ \ \textcolor{comment}{/*\ type\ of\ extended-\/memory\ handles\ */}}
+\DoxyCodeLine{00122\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ EMSH;\ \ \ \ \textcolor{comment}{/*\ type\ of\ expanded-\/memory\ handles\ */}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00125\ \ \ \textcolor{keywordtype}{short}\ file\_handle;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ DOS\ file\ handle\ if\ it's\ a\ temp\ file\ */}}
+\DoxyCodeLine{00126\ \ \ XMSH\ xms\_handle;\ \ \ \ \ \ \textcolor{comment}{/*\ handle\ if\ it's\ a\ chunk\ of\ XMS\ */}}
+\DoxyCodeLine{00127\ \ \ EMSH\ ems\_handle;\ \ \ \ \ \ \textcolor{comment}{/*\ handle\ if\ it's\ a\ chunk\ of\ EMS\ */}}
+\DoxyCodeLine{00128\ \}\ handle\_union;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_MSDOS\_MEMMGR\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#ifdef\ USE\_MAC\_MEMMGR\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Mac-\/specific\ junk\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#include\ <Files.h>}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_MAC\_MEMMGR\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbacking__store__struct}{backing\_store\_struct}}\ *\ \mbox{\hyperlink{structbacking__store__struct}{backing\_store\_ptr}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbacking__store__struct}{backing\_store\_struct}}\ \{}
+\DoxyCodeLine{00140\ \ \ \textcolor{comment}{/*\ Methods\ for\ reading/writing/closing\ this\ backing-\/store\ object\ */}}
+\DoxyCodeLine{00141\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ read\_backing\_store,\ (\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structbacking__store__struct}{backing\_store\_ptr}}\ info,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FAR\ *\ buffer\_address,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ file\_offset,\ \textcolor{keywordtype}{long}\ byte\_count));}
+\DoxyCodeLine{00145\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ write\_backing\_store,\ (\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structbacking__store__struct}{backing\_store\_ptr}}\ info,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FAR\ *\ buffer\_address,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ file\_offset,\ \textcolor{keywordtype}{long}\ byte\_count));}
+\DoxyCodeLine{00149\ \ \ JMETHOD(\textcolor{keywordtype}{void},\ close\_backing\_store,\ (\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structbacking__store__struct}{backing\_store\_ptr}}\ info));}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \textcolor{comment}{/*\ Private\ fields\ for\ system-\/dependent\ backing-\/store\ management\ */}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#ifdef\ USE\_MSDOS\_MEMMGR}}
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{/*\ For\ the\ MS-\/DOS\ manager\ (jmemdos.c),\ we\ need:\ */}}
+\DoxyCodeLine{00155\ \ \ handle\_union\ handle;\ \ \ \ \ \ \textcolor{comment}{/*\ reference\ to\ backing-\/store\ storage\ object\ */}}
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{char}\ temp\_name[TEMP\_NAME\_LENGTH];\ \textcolor{comment}{/*\ name\ if\ it's\ a\ file\ */}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#ifdef\ USE\_MAC\_MEMMGR}}
+\DoxyCodeLine{00159\ \ \ \textcolor{comment}{/*\ For\ the\ Mac\ manager\ (jmemmac.c),\ we\ need:\ */}}
+\DoxyCodeLine{00160\ \ \ \textcolor{keywordtype}{short}\ temp\_file;\ \ \ \ \ \ \textcolor{comment}{/*\ file\ reference\ number\ to\ temp\ file\ */}}
+\DoxyCodeLine{00161\ \ \ FSSpec\ tempSpec;\ \ \ \ \ \ \textcolor{comment}{/*\ the\ FSSpec\ for\ the\ temp\ file\ */}}
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordtype}{char}\ temp\_name[TEMP\_NAME\_LENGTH];\ \textcolor{comment}{/*\ name\ if\ it's\ a\ file\ */}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00164\ \ \ \textcolor{comment}{/*\ For\ a\ typical\ implementation\ with\ temp\ files,\ we\ need:\ */}}
+\DoxyCodeLine{00165\ \ \ FILE\ *\ temp\_file;\ \ \ \ \ \textcolor{comment}{/*\ stdio\ reference\ to\ temp\ file\ */}}
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordtype}{char}\ temp\_name[TEMP\_NAME\_LENGTH];\ \textcolor{comment}{/*\ name\ of\ temp\ file\ */}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ \}\ \mbox{\hyperlink{structbacking__store__struct}{backing\_store\_info}};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ *\ Initial\ opening\ of\ a\ backing-\/store\ object.\ \ This\ must\ fill\ in\ the}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ *\ read/write/close\ pointers\ in\ the\ object.\ \ The\ read/write\ routines}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ *\ may\ take\ an\ error\ exit\ if\ the\ specified\ maximum\ file\ size\ is\ exceeded.}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ *\ (If\ jpeg\_mem\_available\ always\ returns\ a\ large\ value,\ this\ routine\ can}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ *\ just\ take\ an\ error\ exit.)}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_open\_backing\_store\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structbacking__store__struct}{backing\_store\_ptr}}\ info,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ total\_bytes\_needed));}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ *\ These\ routines\ take\ care\ of\ any\ system-\/dependent\ initialization\ and}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ *\ cleanup\ required.\ \ jpeg\_mem\_init\ will\ be\ called\ before\ anything\ is}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ *\ allocated\ (and,\ therefore,\ nothing\ in\ cinfo\ is\ of\ use\ except\ the\ error}}
+\DoxyCodeLine{00189\ \textcolor{comment}{\ *\ manager\ pointer).\ \ It\ should\ return\ a\ suitable\ default\ value\ for}}
+\DoxyCodeLine{00190\ \textcolor{comment}{\ *\ max\_memory\_to\_use;\ this\ may\ subsequently\ be\ overridden\ by\ the\ surrounding}}
+\DoxyCodeLine{00191\ \textcolor{comment}{\ *\ application.\ \ (Note\ that\ max\_memory\_to\_use\ is\ only\ important\ if}}
+\DoxyCodeLine{00192\ \textcolor{comment}{\ *\ jpeg\_mem\_available\ chooses\ to\ consult\ it\ ...\ no\ one\ else\ will.)}}
+\DoxyCodeLine{00193\ \textcolor{comment}{\ *\ jpeg\_mem\_term\ may\ assume\ that\ all\ requested\ memory\ has\ been\ freed\ and\ that}}
+\DoxyCodeLine{00194\ \textcolor{comment}{\ *\ all\ opened\ backing-\/store\ objects\ have\ been\ closed.}}
+\DoxyCodeLine{00195\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ EXTERN(\textcolor{keywordtype}{long})\ jpeg\_mem\_init\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo));}
+\DoxyCodeLine{00198\ EXTERN(\textcolor{keywordtype}{void})\ jpeg\_mem\_term\ JPP((\mbox{\hyperlink{structjpeg__common__struct}{j\_common\_ptr}}\ cinfo));}
+
+\end{DoxyCode}

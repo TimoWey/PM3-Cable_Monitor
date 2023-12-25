@@ -1,0 +1,133 @@
+\doxysection{touchgfx\+::Image\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_image_button_style}{}\label{classtouchgfx_1_1_image_button_style}\index{touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Image\+Button\+Style.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Image\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_image_button_style}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style_ae59f5733ef8a22eeca5d9e83a4c93464}{set\+Bitmaps}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp\+Released, const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp\+Pressed)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style_a4b568996494f4ec3bd0c2d6dd71a3fa4}{set\+Bitmap\+XY}} (uint16\+\_\+t x, uint16\+\_\+t y)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_image_button_style_a33710285a4d2e7578bcd10949617942b}{get\+Currently\+Displayed\+Bitmap}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style_a4af649586bb39c199d313e334a50a311}{handle\+Pressed\+Updated}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style_a4d2d5c9e5a3900f09ca24b6c44e3d975}{handle\+Alpha\+Updated}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_image_button_style_a2617ddbbbda2f8604e88de104a6f3477}\label{classtouchgfx_1_1_image_button_style_a2617ddbbbda2f8604e88de104a6f3477} 
+\mbox{\hyperlink{classtouchgfx_1_1_image}{Image}} {\bfseries button\+Image}
+\begin{DoxyCompactList}\small\item\em The button image. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_image_button_style_a38e467c4dfb9747760817208b1991103}\label{classtouchgfx_1_1_image_button_style_a38e467c4dfb9747760817208b1991103} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries up}
+\begin{DoxyCompactList}\small\item\em The image to display when button is released. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_image_button_style_a8d3af7386047aeff673764f1c953bd84}\label{classtouchgfx_1_1_image_button_style_a8d3af7386047aeff673764f1c953bd84} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries down}
+\begin{DoxyCompactList}\small\item\em The image to display when button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Image\+Button\+Style$<$ T $>$}
+An image button style. This class is supposed to be used with one of the Button\+Trigger classes to create a functional button. This class will show one of two images depending on the state of the button (pressed or released).
+
+The \doxylink{classtouchgfx_1_1_image_button_style}{Image\+Button\+Style} will set the size of the enclosing container (normally \doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container}) to the size of the pressed \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. This can be overridden by calling set\+Width/set\+Height after setting the bitmaps.
+
+The position of the bitmap can be adjusted with set\+Bitmap\+XY (default is upper left corner).
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Generic type parameter. Typically a \doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container} subclass.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_image_button_style_a33710285a4d2e7578bcd10949617942b}\label{classtouchgfx_1_1_image_button_style_a33710285a4d2e7578bcd10949617942b} 
+\index{touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}!getCurrentlyDisplayedBitmap@{getCurrentlyDisplayedBitmap}}
+\index{getCurrentlyDisplayedBitmap@{getCurrentlyDisplayedBitmap}!touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCurrentlyDisplayedBitmap()}{getCurrentlyDisplayedBitmap()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_image_button_style}{touchgfx\+::\+Image\+Button\+Style}}$<$ T $>$\+::get\+Currently\+Displayed\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets currently displayed bitmap.
+
+\begin{DoxyReturn}{Returns}
+The currently displayed bitmap. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_image_button_style_a4d2d5c9e5a3900f09ca24b6c44e3d975}\label{classtouchgfx_1_1_image_button_style_a4d2d5c9e5a3900f09ca24b6c44e3d975} 
+\index{touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}!handleAlphaUpdated@{handleAlphaUpdated}}
+\index{handleAlphaUpdated@{handleAlphaUpdated}!touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleAlphaUpdated()}{handleAlphaUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style}{touchgfx\+::\+Image\+Button\+Style}}$<$ T $>$\+::handle\+Alpha\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the alpha is updated.   \Hypertarget{classtouchgfx_1_1_image_button_style_a4af649586bb39c199d313e334a50a311}\label{classtouchgfx_1_1_image_button_style_a4af649586bb39c199d313e334a50a311} 
+\index{touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}!handlePressedUpdated@{handlePressedUpdated}}
+\index{handlePressedUpdated@{handlePressedUpdated}!touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handlePressedUpdated()}{handlePressedUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style}{touchgfx\+::\+Image\+Button\+Style}}$<$ T $>$\+::handle\+Pressed\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the pressed state is updated.   \Hypertarget{classtouchgfx_1_1_image_button_style_ae59f5733ef8a22eeca5d9e83a4c93464}\label{classtouchgfx_1_1_image_button_style_ae59f5733ef8a22eeca5d9e83a4c93464} 
+\index{touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}!setBitmaps@{setBitmaps}}
+\index{setBitmaps@{setBitmaps}!touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setBitmaps()}{setBitmaps()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style}{touchgfx\+::\+Image\+Button\+Style}}$<$ T $>$\+::set\+Bitmaps (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp\+Released,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp\+Pressed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the bitmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp\+Released} & The bitmap released. \\
+\hline
+{\em bmp\+Pressed} & The bitmap pressed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_image_button_style_a4b568996494f4ec3bd0c2d6dd71a3fa4}\label{classtouchgfx_1_1_image_button_style_a4b568996494f4ec3bd0c2d6dd71a3fa4} 
+\index{touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}!setBitmapXY@{setBitmapXY}}
+\index{setBitmapXY@{setBitmapXY}!touchgfx::ImageButtonStyle$<$ T $>$@{touchgfx::ImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setBitmapXY()}{setBitmapXY()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_image_button_style}{touchgfx\+::\+Image\+Button\+Style}}$<$ T $>$\+::set\+Bitmap\+XY (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets bitmap x and y.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & An uint16\+\_\+t to process. \\
+\hline
+{\em y} & An uint16\+\_\+t to process. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/buttons/\mbox{\hyperlink{_image_button_style_8hpp}{Image\+Button\+Style.\+hpp}}\end{DoxyCompactItemize}

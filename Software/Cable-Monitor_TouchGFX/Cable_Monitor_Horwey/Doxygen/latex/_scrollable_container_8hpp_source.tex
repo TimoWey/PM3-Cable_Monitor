@@ -1,0 +1,187 @@
+\doxysection{Scrollable\+Container.\+hpp}
+\hypertarget{_scrollable_container_8hpp_source}{}\label{_scrollable_container_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ScrollableContainer.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ScrollableContainer.hpp}}
+\mbox{\hyperlink{_scrollable_container_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_SCROLLABLECONTAINER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_SCROLLABLECONTAINER\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_click_event_8hpp}{touchgfx/events/ClickEvent.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drag_event_8hpp}{touchgfx/events/DragEvent.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_gesture_event_8hpp}{touchgfx/events/GestureEvent.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_box_8hpp}{touchgfx/widgets/Box.hpp}}>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_scrollable_container}{ScrollableContainer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container}{ScrollableContainer}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a6cacd17149a0773c1d135680f21f65ce}{enableHorizontalScroll}}(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a331882f918909220471f6800905c5d8d}{scrollableX}}\ =\ enable;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ab8eb1fa6969ee2e0268625a6b03fb082}{enableVerticalScroll}}(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_aabcaef6d76c725d267d7102b1199cc72}{scrollableY}}\ =\ enable;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a648204f400cc4cd35c746bd93c4e5221}{isScrollableXY}}(\textcolor{keywordtype}{bool}\&\ scrollX,\ \textcolor{keywordtype}{bool}\&\ scrollY)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ contained\ =\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ac0cfbbf802d73d250b7655cd65fdb514}{getContainedArea}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ scrollX\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a331882f918909220471f6800905c5d8d}{scrollableX}}\ \&\&\ (\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}}\ <\ contained.width));}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ scrollY\ =\ (\mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_aabcaef6d76c725d267d7102b1199cc72}{scrollableY}}\ \&\&\ (\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}}\ <\ contained.height));}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_afa1a9c33243f15ff6ab6bc4d0992152d}{setScrollbarsVisible}}(\textcolor{keywordtype}{bool}\ newVisible);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a14c64645be63862ba477937089aaa7bd}{setScrollbarsPermanentlyVisible}}(\textcolor{keywordtype}{bool}\ permanentlyVisible\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a071c642b327f2378dfa25444d270e2c5}{add}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ d);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a1c78d742cf5823b571a17c002dac13eb}{getLastChild}}(int16\_t\ x,\ int16\_t\ y,\ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}**\ last)}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d9fac715c5114951a23492c6cc78b25}{isVisible}}())}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_drawable_a30a509142ffe76e5a2ed46aab5adf19b}{isTouchable}}())}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *last\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_container_a35a4ef068b0404679b6a7f3234cc1499}{Container::getLastChild}}(x,\ y,\ last);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a224e34711860b879eae2d0e11e9d4861}{handleClickEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_click_event}{ClickEvent}}\&\ event);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ae11b72dd226d7668dafbf9bae2cce6d5}{handleDragEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{DragEvent}}\&\ event);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a5f13dd784ecacac7d20691da57f78aad}{handleGestureEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{GestureEvent}}\&\ event);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a64eef9ae17fd9b58caf56c4810271922}{handleTickEvent}}();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ac0cfbbf802d73d250b7655cd65fdb514}{getContainedArea}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a4c8a19cec31a9fd4245f342bfe5bc96c}{getChildrenContainedArea}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a07a5244ae11426d417305b990697abf8}{childGeometryChanged}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a79a9d13de410bd2b74c6179a69a1c1df}{reset}}();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a73e47a230fa03450bfc422b1bc87fe01}{moveChildrenRelative}}(int16\_t\ deltaX,\ int16\_t\ deltaY);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_adc304eb4471fc2c2f2fff37040b9285c}{setMaxVelocity}}(uint16\_t\ max)}
+\DoxyCodeLine{00202\ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a1d3cfb58c0441a35e5e8dfdb0725a916}{maxVelocity}}\ =\ max;}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a476b684b44ebcf1d06bad5959a8d03a1}{setScrollThreshold}}(int16\_t\ t)}
+\DoxyCodeLine{00217\ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a8e5753a1a1964b36f505916df71de064}{scrollThreshold}}\ =\ t;}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a0f13a51858998a09b0ebae0bd275afe6}{setScrollbarsColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ color);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_af1afd3bdfe43fb061230795651ed0f3a}{setScrollbarsAlpha}}(uint8\_t\ alpha);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a765a0e9906ae2908b15e2063445c4fd4}{setScrollbarPadding}}(uint8\_t\ padding);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a13738bd65090f4b7e8ccba2be174b651}{setScrollbarWidth}}(uint8\_t\ width);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00254\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ac6e04c8387b67fd7e3da7158bb986408}{getScrolledX}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00261\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a40a7d6419c02fa33dd39638a304f242a}{getScrolledY}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a46a899663763c844d379d9b3e8e48c1f}{setScrollDurationSpeedup}}(uint16\_t\ speedup);}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00279\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_aed3115608080429c55d91d1f60eb96d2}{getScrollDurationSpeedup}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_abeebe0792a56da3c133907bc7312bacc}{setScrollDurationSlowdown}}(uint16\_t\ slowdown);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00297\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a31e0d1974021ff8dbf3d3f8b82c7edf5}{getScrollDurationSlowdown}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a7405335514055a963c40f8402b58f366}{doScroll}}(int16\_t\ deltaX,\ int16\_t\ deltaY);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00316\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a9bf8030ae75acb8f8e6400b67f99c050}{scrollbarPadding}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00317\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a798b7b18fab360411699dc7367e0aecc}{scrollbarWidth}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00318\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a45341a8b5b036bdb79b42dcdeb6e5a67}{scrollbarAlpha}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_af11dbca17ef03cc70a8931cde9f8791c}{SCROLLBAR\_LINE}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00320\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a55195e8aad2a37553d708e6c886d64e3}{scrollbarColor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a0e0d20f42cc26296a5af9fd02486a11c}{SCROLLBAR\_MIN\_VELOCITY}}\ =\ 5;\ \ }
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_abf95f07340e9241f732a27a4fd6c2ca5}{SCROLLBAR\_MAX\_VELOCITY}}\ =\ 17;\ }
+\DoxyCodeLine{00323\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a1d3cfb58c0441a35e5e8dfdb0725a916}{maxVelocity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00330\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a14b2125bd41dc179d99008f106ffdebe}{getXScrollbar}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00337\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_acc7474b1f76f3e75c7e43ea94e554e47}{getYScrollbar}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00347\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ab67dce663e3cecf770d3f93a49eeec72}{getXBorder}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ xBar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ yBar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00357\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a14d8d85462462e7c5a574eb5b366acfa}{getYBorder}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ xBar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ yBar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a9ef823c9a1a2d8b0530b69984a751ba3}{invalidateScrollbars}}();}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_gesture_event_ab4cee530a7e4125390abcfa5c74d548f}{GestureEvent::GestureEventType}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a55971ad0d26b618e5f033e0600690aa4}{accelDirection}};\ }
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box}{Box}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a0f9be7c6b57da5e35854f4176ed4bdc3}{xSlider}};\ }
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box}{Box}}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ad3964f4b0d30d0e917640f69b93d3ee3}{ySlider}};\ }
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}*\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ac56809a4d5835c52bdc4929f6ee90778}{pressedDrawable}};\ \ \ \ }
+\DoxyCodeLine{00368\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}*\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_aa462d25461ddfb68d4a76e5e9a4cccdd}{lastDraggableChild}};\ }
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a734c55b970301b58cb628483b884579b}{scrolledXDistance}};\ }
+\DoxyCodeLine{00371\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a246897c2044b9368a4b5e165be90fecc}{scrolledYDistance}};\ }
+\DoxyCodeLine{00372\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a8e5753a1a1964b36f505916df71de064}{scrollThreshold}};\ \ \ }
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a108a5baf9ef64254b31424fed3d66a5c}{pressedX}};\ }
+\DoxyCodeLine{00375\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a8de4a59970be9028395dc6aa0e265709}{pressedY}};\ }
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a3572b5701a863bebfd2c8ad684927de3}{isPressed}};\ \ \ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_aaf5009a5a3e43444ace984e502137f98}{isScrolling}};\ }
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a331882f918909220471f6800905c5d8d}{scrollableX}};\ }
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_aabcaef6d76c725d267d7102b1199cc72}{scrollableY}};\ }
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_af09e5af1826712d24f26daf36b8b8f47}{scrollbarsVisible}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a8bedbee4eb78e18caac10398d81519a2}{scrollbarsPermanentlyVisible}};\ }
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a20919e4f72346db96e1ce2eafdabedef}{scrollDuration}};\ }
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ad3d1ed781eb62cdbd9d8ad793b28ca80}{beginningValue}};\ }
+\DoxyCodeLine{00389\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a9debc2901ebee34853a04ab5159a2ec5}{targetValue}};\ \ \ \ }
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_af1aa49d4b46947387797989ff2c4caf8}{animationCounter}};\ }
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ab5f6e3f29a34aa7ca8281164916ff74f}{animate}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ab2aa5fe58a613dd842edfc3535faf1d5}{fingerAdjustmentX}};\ }
+\DoxyCodeLine{00395\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_ac7d205e5ca20bb4c4f3f9cc5ad7a54e2}{fingerAdjustmentY}};\ }
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a03c704479916860180cd6588566ae915}{hasIssuedCancelEvent}};\ }
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a3b7a6371632e13553677d8e8e7c29690}{scrollDurationSpeedup}};\ \ }
+\DoxyCodeLine{00400\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_scrollable_container_a1783a04ae6d9e39436dcabbf44a3f15c}{scrollDurationSlowdown}};\ }
+\DoxyCodeLine{00401\ \};}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_SCROLLABLECONTAINER\_HPP}}
+
+\end{DoxyCode}

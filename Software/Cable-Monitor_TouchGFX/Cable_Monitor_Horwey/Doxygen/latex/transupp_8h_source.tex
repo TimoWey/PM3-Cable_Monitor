@@ -1,0 +1,219 @@
+\doxysection{transupp.\+h}
+\hypertarget{transupp_8h_source}{}\label{transupp_8h_source}\index{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/transupp.h@{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/transupp.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ transupp.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1997-\/2011,\ Thomas\ G.\ Lane,\ Guido\ Vollbeding.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Independent\ JPEG\ Group's\ software.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ For\ conditions\ of\ distribution\ and\ use,\ see\ the\ accompanying\ README\ file.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ This\ file\ contains\ declarations\ for\ image\ transformation\ routines\ and}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ other\ utility\ code\ used\ by\ the\ jpegtran\ sample\ application.\ \ These\ are}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ NOT\ part\ of\ the\ core\ JPEG\ library.\ \ But\ we\ keep\ these\ routines\ separate}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ from\ jpegtran.c\ to\ ease\ the\ task\ of\ maintaining\ jpegtran-\/like\ programs}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ that\ have\ other\ user\ interfaces.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ NOTE:\ all\ the\ routines\ declared\ here\ have\ very\ specific\ requirements}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ about\ when\ they\ are\ to\ be\ executed\ during\ the\ reading\ and\ writing\ of\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ source\ and\ destination\ files.\ \ See\ the\ comments\ in\ transupp.c,\ or\ see}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ jpegtran.c\ for\ an\ example\ of\ correct\ usage.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ If\ you\ happen\ not\ to\ want\ the\ image\ transform\ support,\ disable\ it\ here\ */}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ TRANSFORMS\_SUPPORTED}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ TRANSFORMS\_SUPPORTED\ 1\ \ \ \ \ \ }\textcolor{comment}{/*\ 0\ disables\ transform\ code\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ Although\ rotating\ and\ flipping\ data\ expressed\ as\ DCT\ coefficients\ is\ not}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ hard,\ there\ is\ an\ asymmetry\ in\ the\ JPEG\ format\ specification\ for\ images}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ whose\ dimensions\ aren't\ multiples\ of\ the\ iMCU\ size.\ \ The\ right\ and\ bottom}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ image\ edges\ are\ padded\ out\ to\ the\ next\ iMCU\ boundary\ with\ junk\ data;\ but}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ no\ padding\ is\ possible\ at\ the\ top\ and\ left\ edges.\ \ If\ we\ were\ to\ flip}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ the\ whole\ image\ including\ the\ pad\ data,\ then\ pad\ garbage\ would\ become}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ visible\ at\ the\ top\ and/or\ left,\ and\ real\ pixels\ would\ disappear\ into\ the}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ pad\ margins\ -\/-\/-\/\ perhaps\ permanently,\ since\ encoders\ \&\ decoders\ may\ not}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ bother\ to\ preserve\ DCT\ blocks\ that\ appear\ to\ be\ completely\ outside\ the}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ nominal\ image\ area.\ \ So,\ we\ have\ to\ exclude\ any\ partial\ iMCUs\ from\ the}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ basic\ transformation.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ Transpose\ is\ the\ only\ transformation\ that\ can\ handle\ partial\ iMCUs\ at\ the}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ right\ and\ bottom\ edges\ completely\ cleanly.\ \ flip\_h\ can\ flip\ partial\ iMCUs}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ at\ the\ bottom,\ but\ leaves\ any\ partial\ iMCUs\ at\ the\ right\ edge\ untouched.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ Similarly\ flip\_v\ leaves\ any\ partial\ iMCUs\ at\ the\ bottom\ edge\ untouched.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ The\ other\ transforms\ are\ defined\ as\ combinations\ of\ these\ basic\ transforms}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ and\ process\ edge\ blocks\ in\ a\ way\ that\ preserves\ the\ equivalence.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ The\ "{}trim"{}\ option\ causes\ untransformable\ partial\ iMCUs\ to\ be\ dropped;}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *\ this\ is\ not\ strictly\ lossless,\ but\ it\ usually\ gives\ the\ best-\/looking}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ *\ result\ for\ odd-\/size\ images.\ \ Note\ that\ when\ this\ option\ is\ active,}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ *\ the\ expected\ mathematical\ equivalences\ between\ the\ transforms\ may\ not\ hold.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ (For\ example,\ -\/rot\ 270\ -\/trim\ trims\ only\ the\ bottom\ edge,\ but\ -\/rot\ 90\ -\/trim}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ followed\ by\ -\/rot\ 180\ -\/trim\ trims\ both\ edges.)}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ We\ also\ offer\ a\ lossless-\/crop\ option,\ which\ discards\ data\ outside\ a\ given}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ image\ region\ but\ losslessly\ preserves\ what\ is\ inside.\ \ Like\ the\ rotate\ and}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ flip\ transforms,\ lossless\ crop\ is\ restricted\ by\ the\ JPEG\ format:\ the\ upper}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ left\ corner\ of\ the\ selected\ region\ must\ fall\ on\ an\ iMCU\ boundary.\ \ If\ this}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ does\ not\ hold\ for\ the\ given\ crop\ parameters,\ we\ silently\ move\ the\ upper\ left}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ corner\ up\ and/or\ left\ to\ make\ it\ so,\ simultaneously\ increasing\ the\ region}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *\ dimensions\ to\ keep\ the\ lower\ right\ crop\ corner\ unchanged.\ \ (Thus,\ the}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *\ output\ image\ covers\ at\ least\ the\ requested\ region,\ but\ may\ cover\ more.)}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ *\ The\ adjustment\ of\ the\ region\ dimensions\ may\ be\ optionally\ disabled.}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ *\ We\ also\ provide\ a\ lossless-\/resize\ option,\ which\ is\ kind\ of\ a\ lossless-\/crop}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ *\ operation\ in\ the\ DCT\ coefficient\ block\ domain\ -\/\ it\ discards\ higher-\/order}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ *\ coefficients\ and\ losslessly\ preserves\ lower-\/order\ coefficients\ of\ a}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ *\ sub-\/block.}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ Rotate/flip\ transform,\ resize,\ and\ crop\ can\ be\ requested\ together\ in\ a}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ *\ single\ invocation.\ \ The\ crop\ is\ applied\ last\ -\/-\/-\/\ that\ is,\ the\ crop\ region}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ *\ is\ specified\ in\ terms\ of\ the\ destination\ image\ after\ transform/resize.}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ We\ also\ offer\ a\ "{}force\ to\ grayscale"{}\ option,\ which\ simply\ discards\ the}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *\ chrominance\ channels\ of\ a\ YCbCr\ image.\ \ This\ is\ lossless\ in\ the\ sense\ that}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ the\ luminance\ channel\ is\ preserved\ exactly.\ \ It's\ not\ the\ same\ kind\ of}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ thing\ as\ the\ rotate/flip\ transformations,\ but\ it's\ convenient\ to\ handle\ it}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ as\ part\ of\ this\ package,\ mainly\ because\ the\ transformation\ routines\ have\ to}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ be\ aware\ of\ the\ option\ to\ know\ how\ many\ components\ to\ work\ on.}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{/*\ Short\ forms\ of\ external\ names\ for\ systems\ with\ brain-\/damaged\ linkers.\ */}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#ifdef\ NEED\_SHORT\_EXTERNAL\_NAMES}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ jtransform\_parse\_crop\_spec\ \ jTrParCrop}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ jtransform\_request\_workspace\ \ \ \ jTrRequest}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ jtransform\_adjust\_parameters\ \ \ \ jTrAdjust}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ jtransform\_execute\_transform\ \ \ \ jTrExec}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ jtransform\_perfect\_transform\ \ \ \ jTrPerfect}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ jcopy\_markers\_setup\ \ \ \ \ jCMrkSetup}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ jcopy\_markers\_execute\ \ \ \ \ \ \ jCMrkExec}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NEED\_SHORT\_EXTERNAL\_NAMES\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ *\ Codes\ for\ supported\ types\ of\ image\ transformations.}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ JXFORM\_NONE,\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ no\ transformation\ */}}
+\DoxyCodeLine{00099\ \ \ \ \ JXFORM\_FLIP\_H,\ \ \ \ \ \ \textcolor{comment}{/*\ horizontal\ flip\ */}}
+\DoxyCodeLine{00100\ \ \ \ \ JXFORM\_FLIP\_V,\ \ \ \ \ \ \textcolor{comment}{/*\ vertical\ flip\ */}}
+\DoxyCodeLine{00101\ \ \ \ \ JXFORM\_TRANSPOSE,\ \ \ \textcolor{comment}{/*\ transpose\ across\ UL-\/to-\/LR\ axis\ */}}
+\DoxyCodeLine{00102\ \ \ \ \ JXFORM\_TRANSVERSE,\ \ \textcolor{comment}{/*\ transpose\ across\ UR-\/to-\/LL\ axis\ */}}
+\DoxyCodeLine{00103\ \ \ \ \ JXFORM\_ROT\_90,\ \ \ \ \ \ \textcolor{comment}{/*\ 90-\/degree\ clockwise\ rotation\ */}}
+\DoxyCodeLine{00104\ \ \ \ \ JXFORM\_ROT\_180,\ \ \ \ \ \textcolor{comment}{/*\ 180-\/degree\ rotation\ */}}
+\DoxyCodeLine{00105\ \ \ \ \ JXFORM\_ROT\_270\ \ \ \ \ \ \textcolor{comment}{/*\ 270-\/degree\ clockwise\ (or\ 90\ ccw)\ */}}
+\DoxyCodeLine{00106\ \}\ JXFORM\_CODE;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ *\ Codes\ for\ crop\ parameters,\ which\ can\ individually\ be\ unspecified,}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ positive\ or\ negative\ for\ xoffset\ or\ yoffset,}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ *\ positive\ or\ forced\ for\ width\ or\ height.}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ JCROP\_UNSET,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ JCROP\_POS,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ JCROP\_NEG,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ JCROP\_FORCE}
+\DoxyCodeLine{00119\ \}\ JCROP\_CODE;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ *\ Transform\ parameters\ struct.}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ *\ NB:\ application\ must\ not\ change\ any\ elements\ of\ this\ struct\ after}}
+\DoxyCodeLine{00124\ \textcolor{comment}{\ *\ calling\ jtransform\_request\_workspace.}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00128\ \ \ \textcolor{comment}{/*\ Options:\ set\ by\ caller\ */}}
+\DoxyCodeLine{00129\ \ \ JXFORM\_CODE\ transform;\ \ \ \ \textcolor{comment}{/*\ image\ transform\ operator\ */}}
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordtype}{boolean}\ perfect;\ \ \ \ \ \ \textcolor{comment}{/*\ if\ TRUE,\ fail\ if\ partial\ MCUs\ are\ requested\ */}}
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordtype}{boolean}\ trim;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ if\ TRUE,\ trim\ partial\ MCUs\ as\ needed\ */}}
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordtype}{boolean}\ force\_grayscale;\ \ \textcolor{comment}{/*\ if\ TRUE,\ convert\ color\ image\ to\ grayscale\ */}}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{boolean}\ crop;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ if\ TRUE,\ crop\ source\ image\ */}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{/*\ Crop\ parameters:\ application\ need\ not\ set\ these\ unless\ crop\ is\ TRUE.}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ \ \ *\ These\ can\ be\ filled\ in\ by\ jtransform\_parse\_crop\_spec().}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{00138\ \ \ JDIMENSION\ crop\_width;\ \ \ \ \textcolor{comment}{/*\ Width\ of\ selected\ region\ */}}
+\DoxyCodeLine{00139\ \ \ JCROP\_CODE\ crop\_width\_set;\ \ \ \ \textcolor{comment}{/*\ (forced\ disables\ adjustment)\ */}}
+\DoxyCodeLine{00140\ \ \ JDIMENSION\ crop\_height;\ \ \ \textcolor{comment}{/*\ Height\ of\ selected\ region\ */}}
+\DoxyCodeLine{00141\ \ \ JCROP\_CODE\ crop\_height\_set;\ \ \ \textcolor{comment}{/*\ (forced\ disables\ adjustment)\ */}}
+\DoxyCodeLine{00142\ \ \ JDIMENSION\ crop\_xoffset;\ \ \textcolor{comment}{/*\ X\ offset\ of\ selected\ region\ */}}
+\DoxyCodeLine{00143\ \ \ JCROP\_CODE\ crop\_xoffset\_set;\ \ \textcolor{comment}{/*\ (negative\ measures\ from\ right\ edge)\ */}}
+\DoxyCodeLine{00144\ \ \ JDIMENSION\ crop\_yoffset;\ \ \textcolor{comment}{/*\ Y\ offset\ of\ selected\ region\ */}}
+\DoxyCodeLine{00145\ \ \ JCROP\_CODE\ crop\_yoffset\_set;\ \ \textcolor{comment}{/*\ (negative\ measures\ from\ bottom\ edge)\ */}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{/*\ Internal\ workspace:\ caller\ should\ not\ touch\ these\ */}}
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordtype}{int}\ num\_components;\ \ \ \ \ \ \ \textcolor{comment}{/*\ \#\ of\ components\ in\ workspace\ */}}
+\DoxyCodeLine{00149\ \ \ jvirt\_barray\_ptr\ *\ workspace\_coef\_arrays;\ \textcolor{comment}{/*\ workspace\ for\ transformations\ */}}
+\DoxyCodeLine{00150\ \ \ JDIMENSION\ output\_width;\ \ \textcolor{comment}{/*\ cropped\ destination\ dimensions\ */}}
+\DoxyCodeLine{00151\ \ \ JDIMENSION\ output\_height;}
+\DoxyCodeLine{00152\ \ \ JDIMENSION\ x\_crop\_offset;\ \textcolor{comment}{/*\ destination\ crop\ offsets\ measured\ in\ iMCUs\ */}}
+\DoxyCodeLine{00153\ \ \ JDIMENSION\ y\_crop\_offset;}
+\DoxyCodeLine{00154\ \ \ \textcolor{keywordtype}{int}\ iMCU\_sample\_width;\ \ \ \ \textcolor{comment}{/*\ destination\ iMCU\ size\ */}}
+\DoxyCodeLine{00155\ \ \ \textcolor{keywordtype}{int}\ iMCU\_sample\_height;}
+\DoxyCodeLine{00156\ \}\ \mbox{\hyperlink{structjpeg__transform__info}{jpeg\_transform\_info}};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#if\ TRANSFORMS\_SUPPORTED}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{/*\ Parse\ a\ crop\ specification\ (written\ in\ X11\ geometry\ style)\ */}}
+\DoxyCodeLine{00162\ EXTERN(\textcolor{keywordtype}{boolean})\ jtransform\_parse\_crop\_spec}
+\DoxyCodeLine{00163\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__transform__info}{jpeg\_transform\_info}}\ *info,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *spec));}
+\DoxyCodeLine{00164\ \textcolor{comment}{/*\ Request\ any\ required\ workspace\ */}}
+\DoxyCodeLine{00165\ EXTERN(\textcolor{keywordtype}{boolean})\ jtransform\_request\_workspace}
+\DoxyCodeLine{00166\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ srcinfo,\ \mbox{\hyperlink{structjpeg__transform__info}{jpeg\_transform\_info}}\ *info));}
+\DoxyCodeLine{00167\ \textcolor{comment}{/*\ Adjust\ output\ image\ parameters\ */}}
+\DoxyCodeLine{00168\ EXTERN(jvirt\_barray\_ptr\ *)\ jtransform\_adjust\_parameters}
+\DoxyCodeLine{00169\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ srcinfo,\ \mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ dstinfo,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ jvirt\_barray\_ptr\ *src\_coef\_arrays,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structjpeg__transform__info}{jpeg\_transform\_info}}\ *info));}
+\DoxyCodeLine{00172\ \textcolor{comment}{/*\ Execute\ the\ actual\ transformation,\ if\ any\ */}}
+\DoxyCodeLine{00173\ EXTERN(\textcolor{keywordtype}{void})\ jtransform\_execute\_transform}
+\DoxyCodeLine{00174\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ srcinfo,\ \mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ dstinfo,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ jvirt\_barray\_ptr\ *src\_coef\_arrays,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structjpeg__transform__info}{jpeg\_transform\_info}}\ *info));}
+\DoxyCodeLine{00177\ \textcolor{comment}{/*\ Determine\ whether\ lossless\ transformation\ is\ perfectly}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ *\ possible\ for\ a\ specified\ image\ and\ transformation.}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00180\ EXTERN(\textcolor{keywordtype}{boolean})\ jtransform\_perfect\_transform}
+\DoxyCodeLine{00181\ \ \ \ \ JPP((JDIMENSION\ image\_width,\ JDIMENSION\ image\_height,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ MCU\_width,\ \textcolor{keywordtype}{int}\ MCU\_height,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ JXFORM\_CODE\ transform));}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{comment}{/*\ jtransform\_execute\_transform\ used\ to\ be\ called}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ *\ jtransform\_execute\_transformation,\ but\ some\ compilers\ complain\ about}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ *\ routine\ names\ that\ long.\ \ This\ macro\ is\ here\ to\ avoid\ breaking\ any}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ *\ old\ source\ code\ that\ uses\ the\ original\ name...}}
+\DoxyCodeLine{00189\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ jtransform\_execute\_transformation\ \ \ jtransform\_execute\_transform}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ TRANSFORMS\_SUPPORTED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00196\ \textcolor{comment}{\ *\ Support\ for\ copying\ optional\ markers\ from\ source\ to\ destination\ file.}}
+\DoxyCodeLine{00197\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ JCOPYOPT\_NONE,\ \ \ \ \ \ \textcolor{comment}{/*\ copy\ no\ optional\ markers\ */}}
+\DoxyCodeLine{00201\ \ \ \ \ JCOPYOPT\_COMMENTS,\ \ \textcolor{comment}{/*\ copy\ only\ comment\ (COM)\ markers\ */}}
+\DoxyCodeLine{00202\ \ \ \ \ JCOPYOPT\_ALL\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ copy\ all\ optional\ markers\ */}}
+\DoxyCodeLine{00203\ \}\ JCOPY\_OPTION;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ JCOPYOPT\_DEFAULT\ \ JCOPYOPT\_COMMENTS\ }\textcolor{comment}{/*\ recommended\ default\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{comment}{/*\ Setup\ decompression\ object\ to\ save\ desired\ markers\ in\ memory\ */}}
+\DoxyCodeLine{00208\ EXTERN(\textcolor{keywordtype}{void})\ jcopy\_markers\_setup}
+\DoxyCodeLine{00209\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ srcinfo,\ JCOPY\_OPTION\ option));}
+\DoxyCodeLine{00210\ \textcolor{comment}{/*\ Copy\ markers\ saved\ in\ the\ given\ source\ object\ to\ the\ destination\ object\ */}}
+\DoxyCodeLine{00211\ EXTERN(\textcolor{keywordtype}{void})\ jcopy\_markers\_execute}
+\DoxyCodeLine{00212\ \ \ \ \ JPP((\mbox{\hyperlink{structjpeg__decompress__struct}{j\_decompress\_ptr}}\ srcinfo,\ \mbox{\hyperlink{structjpeg__compress__struct}{j\_compress\_ptr}}\ dstinfo,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ JCOPY\_OPTION\ option));}
+
+\end{DoxyCode}

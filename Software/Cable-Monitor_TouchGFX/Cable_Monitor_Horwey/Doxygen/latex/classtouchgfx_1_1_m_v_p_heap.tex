@@ -1,0 +1,72 @@
+\doxysection{touchgfx\+::MVPHeap Class Reference}
+\hypertarget{classtouchgfx_1_1_m_v_p_heap}{}\label{classtouchgfx_1_1_m_v_p_heap}\index{touchgfx::MVPHeap@{touchgfx::MVPHeap}}
+
+
+{\ttfamily \#include $<$MVPHeap.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::MVPHeap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtouchgfx_1_1_m_v_p_heap}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a709b8534c26026e2201ff21d8c762576}{MVPHeap}} (\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \&pres, \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \&scr, \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \&tra, \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application}{MVPApplication}} \&app)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap_a128b5eb514c8357bc3665972d5793e93}{\texorpdfstring{$\sim$}{\string~}\+MVPHeap}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_m_v_p_heap_a09d7975c1784db136c21680d42b8ce89}\label{classtouchgfx_1_1_m_v_p_heap_a09d7975c1784db136c21680d42b8ce89} 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \& {\bfseries presenter\+Storage}
+\begin{DoxyCompactList}\small\item\em A memory partition containing enough memory to hold the largest presenter. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_m_v_p_heap_a35fba46f1a8e1b346a2ee0208cbbb0ce}\label{classtouchgfx_1_1_m_v_p_heap_a35fba46f1a8e1b346a2ee0208cbbb0ce} 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \& {\bfseries screen\+Storage}
+\begin{DoxyCompactList}\small\item\em A memory partition containing enough memory to hold the largest view. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_m_v_p_heap_a6fbf9ba8650c67f1b06a2b78bb76fa28}\label{classtouchgfx_1_1_m_v_p_heap_a6fbf9ba8650c67f1b06a2b78bb76fa28} 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \& {\bfseries transition\+Storage}
+\begin{DoxyCompactList}\small\item\em A memory partition containing enough memory to hold the largest transition. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_m_v_p_heap_a591b4b2d1590ef162d8c85f7b4c81397}\label{classtouchgfx_1_1_m_v_p_heap_a591b4b2d1590ef162d8c85f7b4c81397} 
+\mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application}{MVPApplication}} \& {\bfseries frontend\+Application}
+\begin{DoxyCompactList}\small\item\em A reference to the \doxylink{classtouchgfx_1_1_m_v_p_application}{MVPApplication} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generic heap class for MVP applications. Serves as a way of obtaining the memory storage areas for presenters, screens, transitions and the concrete application.
+
+Subclassed by an application-\/specific heap which provides the actual storage areas. This generic interface is used only in make\+Transition. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_m_v_p_heap_a709b8534c26026e2201ff21d8c762576}\label{classtouchgfx_1_1_m_v_p_heap_a709b8534c26026e2201ff21d8c762576} 
+\index{touchgfx::MVPHeap@{touchgfx::MVPHeap}!MVPHeap@{MVPHeap}}
+\index{MVPHeap@{MVPHeap}!touchgfx::MVPHeap@{touchgfx::MVPHeap}}
+\doxysubsubsection{\texorpdfstring{MVPHeap()}{MVPHeap()}}
+{\footnotesize\ttfamily touchgfx\+::\+MVPHeap\+::\+MVPHeap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \&}]{pres,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \&}]{scr,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{Abstract\+Partition}} \&}]{tra,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application}{MVPApplication}} \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_m_v_p_heap}{MVPHeap} class.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pres} & A memory partition containing enough memory to hold the largest presenter. \\
+\hline
+\mbox{\texttt{ in}}  & {\em scr} & A memory partition containing enough memory to hold the largest view. \\
+\hline
+\mbox{\texttt{ in}}  & {\em tra} & A memory partition containing enough memory to hold the largest transition. \\
+\hline
+\mbox{\texttt{ in}}  & {\em app} & A reference to the \doxylink{classtouchgfx_1_1_m_v_p_application}{MVPApplication} instance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_m_v_p_heap_a128b5eb514c8357bc3665972d5793e93}\label{classtouchgfx_1_1_m_v_p_heap_a128b5eb514c8357bc3665972d5793e93} 
+\index{touchgfx::MVPHeap@{touchgfx::MVPHeap}!````~MVPHeap@{\texorpdfstring{$\sim$}{\string~}MVPHeap}}
+\index{````~MVPHeap@{\texorpdfstring{$\sim$}{\string~}MVPHeap}!touchgfx::MVPHeap@{touchgfx::MVPHeap}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MVPHeap()}{\string~MVPHeap()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+MVPHeap\+::\texorpdfstring{$\sim$}{\string~}\+MVPHeap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_m_v_p_heap}{MVPHeap} class. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/mvp/\mbox{\hyperlink{_m_v_p_heap_8hpp}{MVPHeap.\+hpp}}\end{DoxyCompactItemize}

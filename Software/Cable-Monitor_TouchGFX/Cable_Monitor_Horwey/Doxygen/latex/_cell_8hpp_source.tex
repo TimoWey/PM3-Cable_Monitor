@@ -1,0 +1,61 @@
+\doxysection{Cell.\+hpp}
+\hypertarget{_cell_8hpp_source}{}\label{_cell_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/canvas\_widget\_renderer/Cell.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/canvas\_widget\_renderer/Cell.hpp}}
+\mbox{\hyperlink{_cell_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_CELL\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_CELL\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }Cell}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ int16\_t\ x;\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ int16\_t\ y;\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ int16\_t\ cover;\ }
+\DoxyCodeLine{00035\ \ \ \ \ int16\_t\ area;\ \ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00045\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ set(\textcolor{keywordtype}{int}\ cellX,\ \textcolor{keywordtype}{int}\ cellY,\ \textcolor{keywordtype}{int}\ cellCover,\ \textcolor{keywordtype}{int}\ cellArea)}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ setCoord(cellX,\ cellY);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ setCover(cellCover,\ cellArea);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ setCoord(\textcolor{keywordtype}{int}\ cellX,\ \textcolor{keywordtype}{int}\ cellY)}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ x\ =\ (int16\_t)cellX;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ y\ =\ (int16\_t)cellY;}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ setCover(\textcolor{keywordtype}{int}\ cellCover,\ \textcolor{keywordtype}{int}\ cellArea)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ cover\ =\ cellCover;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ area\ =\ cellArea;}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ addCover(\textcolor{keywordtype}{int}\ cellCover,\ \textcolor{keywordtype}{int}\ cellArea)}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ cover\ +=\ cellCover;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ area\ +=\ cellArea;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \};\ \textcolor{comment}{//\ struct\ Cell}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_CELL\_HPP}}
+
+\end{DoxyCode}

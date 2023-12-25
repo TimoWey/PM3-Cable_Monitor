@@ -1,0 +1,203 @@
+\doxysection{touchgfx\+::Move\+Animator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_move_animator}{}\label{classtouchgfx_1_1_move_animator}\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Move\+Animator.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Move\+Animator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_move_animator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a29c4d6c1ede3b974324a2dcf9e0c9712}{set\+Move\+Animation\+Ended\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{Move\+Animator}}$<$ T $>$ \& $>$ \&callback)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a5305d25250190d96767451ce0b1cedaf}{clear\+Move\+Animation\+Ended\+Action}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a68b8ec49e4b5e524464c01114476fff3}{set\+Move\+Animation\+Delay}} (uint16\+\_\+t delay)
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a6e1e37fd23fb2807106cf279ede49cc9}{get\+Move\+Animation\+Delay}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a03f3823bc2aa4edd8961cc774cca97de}{is\+Move\+Animation\+Running}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator_aa52925778db154c5cdbf07317e094a2c}{start\+Move\+Animation}} (int16\+\_\+t endX, int16\+\_\+t endY, uint16\+\_\+t duration, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} x\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} y\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}})
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a09ae97fb92e4e3c2aa6a5f6bd7b7fb68}{cancel\+Move\+Animation}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a6afd0ed6fd781c552637bc995ed0f355}{handle\+Tick\+Event}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator_a3a7090eb78c4833946ca3394a63defc1}{next\+Move\+Animation\+Step}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_ae6b457fc3d8c54b081be0d6c730f488a}\label{classtouchgfx_1_1_move_animator_ae6b457fc3d8c54b081be0d6c730f488a} 
+bool {\bfseries move\+Animation\+Running}
+\begin{DoxyCompactList}\small\item\em True if the animation is running. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_ae10cb4dbec8c512f30510a91f18b4b1f}\label{classtouchgfx_1_1_move_animator_ae10cb4dbec8c512f30510a91f18b4b1f} 
+uint16\+\_\+t {\bfseries move\+Animation\+Counter}
+\begin{DoxyCompactList}\small\item\em Counter that is equal to the current step in the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_a43ce612fab6445892cd85944820b374c}\label{classtouchgfx_1_1_move_animator_a43ce612fab6445892cd85944820b374c} 
+uint16\+\_\+t {\bfseries move\+Animation\+Delay}
+\begin{DoxyCompactList}\small\item\em The delay applied before animation start. Expressed in ticks. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_aa76b3ebb5c743469bb53148f90b8f145}\label{classtouchgfx_1_1_move_animator_aa76b3ebb5c743469bb53148f90b8f145} 
+uint16\+\_\+t {\bfseries move\+Animation\+Duration}
+\begin{DoxyCompactList}\small\item\em The complete duration of the actual animation. Expressed in ticks. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_aee44adbcd70cc2493dd26acd1ae2b679}\label{classtouchgfx_1_1_move_animator_aee44adbcd70cc2493dd26acd1ae2b679} 
+int16\+\_\+t {\bfseries move\+Animation\+StartX}
+\begin{DoxyCompactList}\small\item\em The X value at the beginning of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_a577e865da303836f3b9ac67a073a7890}\label{classtouchgfx_1_1_move_animator_a577e865da303836f3b9ac67a073a7890} 
+int16\+\_\+t {\bfseries move\+Animation\+StartY}
+\begin{DoxyCompactList}\small\item\em The Y value at the beginning of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_a4237ebaf686a6e31b9a56aad12deefc4}\label{classtouchgfx_1_1_move_animator_a4237ebaf686a6e31b9a56aad12deefc4} 
+int16\+\_\+t {\bfseries move\+Animation\+EndX}
+\begin{DoxyCompactList}\small\item\em The X value at the end of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_acdc968bc232a2c70b1fa41bc6b8131a1}\label{classtouchgfx_1_1_move_animator_acdc968bc232a2c70b1fa41bc6b8131a1} 
+int16\+\_\+t {\bfseries move\+Animation\+EndY}
+\begin{DoxyCompactList}\small\item\em The Y value at the end of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_a96a2414a21259dae92a56004df312671}\label{classtouchgfx_1_1_move_animator_a96a2414a21259dae92a56004df312671} 
+\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} {\bfseries move\+Animation\+XEquation}
+\begin{DoxyCompactList}\small\item\em Easing\+Equation expressing the development of the X value during the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_aeb152d129d57e22bbab3349dedc04e4b}\label{classtouchgfx_1_1_move_animator_aeb152d129d57e22bbab3349dedc04e4b} 
+\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} {\bfseries move\+Animation\+YEquation}
+\begin{DoxyCompactList}\small\item\em Easing\+Equation expressing the development of the Y value during the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_move_animator_ad8d44b57d31624c762a1b6df3807b88d}\label{classtouchgfx_1_1_move_animator_ad8d44b57d31624c762a1b6df3807b88d} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{Move\+Animator}}$<$ T $>$ \& $>$ \texorpdfstring{$\ast$}{*} {\bfseries move\+Animation\+Ended\+Callback}
+\begin{DoxyCompactList}\small\item\em Animation ended \doxylink{structtouchgfx_1_1_callback}{Callback}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Move\+Animator$<$ T $>$}
+A \doxylink{classtouchgfx_1_1_move_animator}{Move\+Animator} makes the template class T able to animate a movement from its current position to a specified end position. The speed of the movement in both the X and Y direction can be controlled by supplying \doxylink{classtouchgfx_1_1_easing_equations}{Easing\+Equations}. The \doxylink{classtouchgfx_1_1_move_animator}{Move\+Animator} performs a callback when the animation has finished.
+
+This mixin can be used on any \doxylink{classtouchgfx_1_1_drawable}{Drawable}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_move_animator_a09ae97fb92e4e3c2aa6a5f6bd7b7fb68}\label{classtouchgfx_1_1_move_animator_a09ae97fb92e4e3c2aa6a5f6bd7b7fb68} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!cancelMoveAnimation@{cancelMoveAnimation}}
+\index{cancelMoveAnimation@{cancelMoveAnimation}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cancelMoveAnimation()}{cancelMoveAnimation()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::cancel\+Move\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cancel move animation and leave the \doxylink{classtouchgfx_1_1_drawable}{Drawable} in its current position. If the animation is not running, nothing is done. \Hypertarget{classtouchgfx_1_1_move_animator_a5305d25250190d96767451ce0b1cedaf}\label{classtouchgfx_1_1_move_animator_a5305d25250190d96767451ce0b1cedaf} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!clearMoveAnimationEndedAction@{clearMoveAnimationEndedAction}}
+\index{clearMoveAnimationEndedAction@{clearMoveAnimationEndedAction}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clearMoveAnimationEndedAction()}{clearMoveAnimationEndedAction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::clear\+Move\+Animation\+Ended\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears the move animation ended action previously set by set\+Move\+Animation\+Ended\+Action. The effect is that any action set using \doxylink{classtouchgfx_1_1_move_animator_a29c4d6c1ede3b974324a2dcf9e0c9712}{set\+Move\+Animation\+Ended\+Action()} will not be executed.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_move_animator_a29c4d6c1ede3b974324a2dcf9e0c9712}{set\+Move\+Animation\+Ended\+Action} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_move_animator_a6e1e37fd23fb2807106cf279ede49cc9}\label{classtouchgfx_1_1_move_animator_a6e1e37fd23fb2807106cf279ede49cc9} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!getMoveAnimationDelay@{getMoveAnimationDelay}}
+\index{getMoveAnimationDelay@{getMoveAnimationDelay}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getMoveAnimationDelay()}{getMoveAnimationDelay()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::get\+Move\+Animation\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the current animation delay.
+
+\begin{DoxyReturn}{Returns}
+The current animation delay.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_move_animator_a68b8ec49e4b5e524464c01114476fff3}{set\+Move\+Animation\+Delay} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_move_animator_a6afd0ed6fd781c552637bc995ed0f355}\label{classtouchgfx_1_1_move_animator_a6afd0ed6fd781c552637bc995ed0f355} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+The tick handler that handles the actual animation steps. \Hypertarget{classtouchgfx_1_1_move_animator_a03f3823bc2aa4edd8961cc774cca97de}\label{classtouchgfx_1_1_move_animator_a03f3823bc2aa4edd8961cc774cca97de} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!isMoveAnimationRunning@{isMoveAnimationRunning}}
+\index{isMoveAnimationRunning@{isMoveAnimationRunning}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isMoveAnimationRunning()}{isMoveAnimationRunning()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::is\+Move\+Animation\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets whether or not the move animation is running.
+
+\begin{DoxyReturn}{Returns}
+true if the move animation is running. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_move_animator_a3a7090eb78c4833946ca3394a63defc1}\label{classtouchgfx_1_1_move_animator_a3a7090eb78c4833946ca3394a63defc1} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!nextMoveAnimationStep@{nextMoveAnimationStep}}
+\index{nextMoveAnimationStep@{nextMoveAnimationStep}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{nextMoveAnimationStep()}{nextMoveAnimationStep()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::next\+Move\+Animation\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Execute next step in move animation and stop the timer if the animation has finished. \Hypertarget{classtouchgfx_1_1_move_animator_a68b8ec49e4b5e524464c01114476fff3}\label{classtouchgfx_1_1_move_animator_a68b8ec49e4b5e524464c01114476fff3} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!setMoveAnimationDelay@{setMoveAnimationDelay}}
+\index{setMoveAnimationDelay@{setMoveAnimationDelay}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setMoveAnimationDelay()}{setMoveAnimationDelay()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::set\+Move\+Animation\+Delay (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets a delay on animations done by the \doxylink{classtouchgfx_1_1_move_animator}{Move\+Animator}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & The delay in ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_move_animator_a6e1e37fd23fb2807106cf279ede49cc9}{get\+Move\+Animation\+Delay} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_move_animator_a29c4d6c1ede3b974324a2dcf9e0c9712}\label{classtouchgfx_1_1_move_animator_a29c4d6c1ede3b974324a2dcf9e0c9712} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!setMoveAnimationEndedAction@{setMoveAnimationEndedAction}}
+\index{setMoveAnimationEndedAction@{setMoveAnimationEndedAction}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setMoveAnimationEndedAction()}{setMoveAnimationEndedAction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::set\+Move\+Animation\+Ended\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{Move\+Animator}}$<$ T $>$ \& $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the animation ends.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback to be executed. The callback will be given a reference to the \doxylink{classtouchgfx_1_1_move_animator}{Move\+Animator}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_move_animator_a5305d25250190d96767451ce0b1cedaf}{clear\+Move\+Animation\+Ended\+Action} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_move_animator_aa52925778db154c5cdbf07317e094a2c}\label{classtouchgfx_1_1_move_animator_aa52925778db154c5cdbf07317e094a2c} 
+\index{touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}!startMoveAnimation@{startMoveAnimation}}
+\index{startMoveAnimation@{startMoveAnimation}!touchgfx::MoveAnimator$<$ T $>$@{touchgfx::MoveAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{startMoveAnimation()}{startMoveAnimation()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_move_animator}{touchgfx\+::\+Move\+Animator}}$<$ T $>$\+::start\+Move\+Animation (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{endX,  }\item[{int16\+\_\+t}]{endY,  }\item[{uint16\+\_\+t}]{duration,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{x\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}},  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{y\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the move animation from the current position to the specified end position. The development of the position (X, Y) during the animation is described by the supplied \doxylink{classtouchgfx_1_1_easing_equations}{Easing\+Equations}. If no easing equation is given, the movement is performed linear.
+
+
+\begin{DoxyParams}{Parameters}
+{\em endX} & The X position at animation end. \\
+\hline
+{\em endY} & The Y position at animation end. \\
+\hline
+{\em duration} & The duration of the animation measured in ticks. \\
+\hline
+{\em x\+Progression\+Equation} & (Optional) The equation that describes the development of the X position during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+{\em y\+Progression\+Equation} & (Optional) The equation that describes the development of the Y position during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/mixins/\mbox{\hyperlink{_move_animator_8hpp}{Move\+Animator.\+hpp}}\end{DoxyCompactItemize}

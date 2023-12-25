@@ -1,0 +1,211 @@
+\doxysection{touchgfx\+::Frame\+Buffer\+Allocator Class Reference}
+\hypertarget{classtouchgfx_1_1_frame_buffer_allocator}{}\label{classtouchgfx_1_1_frame_buffer_allocator}\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+
+
+{\ttfamily \#include $<$Frame\+Buffer\+Allocator.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Frame\+Buffer\+Allocator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_frame_buffer_allocator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_ad1eb3fbd2582bd6cfb678b2cf12c4f92}{allocate\+Block}} (const uint16\+\_\+t x, const uint16\+\_\+t y, const uint16\+\_\+t width, const uint16\+\_\+t height, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}block)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a9fae62fe9606e7982141ebdefca3cc37}{mark\+Block\+Ready\+For\+Transfer}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_af4645e372cdc0860f1ea1b9f586532c8}{has\+Block\+Ready\+For\+Transfer}} ()=0
+\item 
+virtual const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_ac84a0aee9f02cba6af160d13f6d2c8e9}{get\+Block\+For\+Transfer}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect)=0
+\item 
+virtual const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a19dfae47ef70eee001e6d85cdbd1853e}{peek\+Block\+For\+Transfer}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a7a2a14290cc2a28c62d2fe50316ffe93}{has\+Empty\+Block}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a8fe7ba0a5b62e87746b62ba89518efa5}{free\+Block\+After\+Transfer}} ()=0
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_abb1686d608f9ce111c64b3e4b069b84c}{\texorpdfstring{$\sim$}{\string~}\+Frame\+Buffer\+Allocator}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35}{Block\+State}} \{ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}{EMPTY}}
+, \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a5bbba919e0312b4496d52a4069852f62}{ALLOCATED}}
+, \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963}{DRAWN}}
+, \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a4f1daf9f148fd4ee4bc6ea9e76680044}{SENDING}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is an abstract interface for a class allocating partial framebuffer blocks. The interface must be implemented by a subclass.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_many_block_allocator}{Many\+Block\+Allocator} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35}\label{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!BlockState@{BlockState}}
+\index{BlockState@{BlockState}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{BlockState}{BlockState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35}{touchgfx\+::\+Frame\+Buffer\+Allocator\+::\+Block\+State}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+Block\+State is used for internal state of each block. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMPTY@{EMPTY}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!EMPTY@{EMPTY}}}\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}\label{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81} 
+EMPTY&Block is empty, can be allocated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALLOCATED@{ALLOCATED}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!ALLOCATED@{ALLOCATED}}}\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a5bbba919e0312b4496d52a4069852f62}\label{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a5bbba919e0312b4496d52a4069852f62} 
+ALLOCATED&Block is allocated for drawing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRAWN@{DRAWN}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!DRAWN@{DRAWN}}}\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963}\label{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963} 
+DRAWN&Block has been drawn to, can be send. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SENDING@{SENDING}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!SENDING@{SENDING}}}\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a4f1daf9f148fd4ee4bc6ea9e76680044}\label{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a4f1daf9f148fd4ee4bc6ea9e76680044} 
+SENDING&Block is being transmitted to the display. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_abb1686d608f9ce111c64b3e4b069b84c}\label{classtouchgfx_1_1_frame_buffer_allocator_abb1686d608f9ce111c64b3e4b069b84c} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!````~FrameBufferAllocator@{\texorpdfstring{$\sim$}{\string~}FrameBufferAllocator}}
+\index{````~FrameBufferAllocator@{\texorpdfstring{$\sim$}{\string~}FrameBufferAllocator}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FrameBufferAllocator()}{\string~FrameBufferAllocator()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Frame\+Buffer\+Allocator\+::\texorpdfstring{$\sim$}{\string~}\+Frame\+Buffer\+Allocator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_frame_buffer_allocator}{Frame\+Buffer\+Allocator} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_ad1eb3fbd2582bd6cfb678b2cf12c4f92}\label{classtouchgfx_1_1_frame_buffer_allocator_ad1eb3fbd2582bd6cfb678b2cf12c4f92} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!allocateBlock@{allocateBlock}}
+\index{allocateBlock@{allocateBlock}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{allocateBlock()}{allocateBlock()}}
+{\footnotesize\ttfamily virtual uint16\+\_\+t touchgfx\+::\+Frame\+Buffer\+Allocator\+::allocate\+Block (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{x,  }\item[{const uint16\+\_\+t}]{y,  }\item[{const uint16\+\_\+t}]{width,  }\item[{const uint16\+\_\+t}]{height,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Allocates a framebuffer block. The block will have at least the width requested. The height of the allocated block can be lower than requested if not enough memory is available.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em x} & The absolute x coordinate of the block on the screen. \\
+\hline
+ & {\em y} & The absolute y coordinate of the block on the screen. \\
+\hline
+ & {\em width} & The width of the block. \\
+\hline
+ & {\em height} & The height of the block. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em block} & Pointer to pointer to return the block address in.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The height of the allocated block. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a4b24e0b0e48dde5bfa6be7a63a3ebca2}{touchgfx\+::\+Many\+Block\+Allocator$<$ block\+\_\+size, blocks, bytes\+\_\+pr\+\_\+pixel $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a8fe7ba0a5b62e87746b62ba89518efa5}\label{classtouchgfx_1_1_frame_buffer_allocator_a8fe7ba0a5b62e87746b62ba89518efa5} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!freeBlockAfterTransfer@{freeBlockAfterTransfer}}
+\index{freeBlockAfterTransfer@{freeBlockAfterTransfer}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{freeBlockAfterTransfer()}{freeBlockAfterTransfer()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Frame\+Buffer\+Allocator\+::free\+Block\+After\+Transfer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Free a block after transfer to the \doxylink{classtouchgfx_1_1_l_c_d}{LCD}. Marks a previously allocated block as transferred and ready to reuse. 
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_abe2fff59f8a0615eb439b9f68d25337d}{touchgfx\+::\+Many\+Block\+Allocator$<$ block\+\_\+size, blocks, bytes\+\_\+pr\+\_\+pixel $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_ac84a0aee9f02cba6af160d13f6d2c8e9}\label{classtouchgfx_1_1_frame_buffer_allocator_ac84a0aee9f02cba6af160d13f6d2c8e9} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!getBlockForTransfer@{getBlockForTransfer}}
+\index{getBlockForTransfer@{getBlockForTransfer}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{getBlockForTransfer()}{getBlockForTransfer()}}
+{\footnotesize\ttfamily virtual const uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Frame\+Buffer\+Allocator\+::get\+Block\+For\+Transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the block ready for transfer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em rect} & Reference to rect to write block x, y, width, and height.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the address of the block ready for transfer. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_af62b6e441dbd66db4248ad9e05ec95ad}{touchgfx\+::\+Many\+Block\+Allocator$<$ block\+\_\+size, blocks, bytes\+\_\+pr\+\_\+pixel $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_af4645e372cdc0860f1ea1b9f586532c8}\label{classtouchgfx_1_1_frame_buffer_allocator_af4645e372cdc0860f1ea1b9f586532c8} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!hasBlockReadyForTransfer@{hasBlockReadyForTransfer}}
+\index{hasBlockReadyForTransfer@{hasBlockReadyForTransfer}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{hasBlockReadyForTransfer()}{hasBlockReadyForTransfer()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Frame\+Buffer\+Allocator\+::has\+Block\+Ready\+For\+Transfer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Check if a block is ready for transfer to the \doxylink{classtouchgfx_1_1_l_c_d}{LCD}.
+
+\begin{DoxyReturn}{Returns}
+True if a block is ready for transfer. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a3a4189e8c682eea29b9d46f4c52db944}{touchgfx\+::\+Many\+Block\+Allocator$<$ block\+\_\+size, blocks, bytes\+\_\+pr\+\_\+pixel $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a7a2a14290cc2a28c62d2fe50316ffe93}\label{classtouchgfx_1_1_frame_buffer_allocator_a7a2a14290cc2a28c62d2fe50316ffe93} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!hasEmptyBlock@{hasEmptyBlock}}
+\index{hasEmptyBlock@{hasEmptyBlock}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{hasEmptyBlock()}{hasEmptyBlock()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Frame\+Buffer\+Allocator\+::has\+Empty\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Check if a block is ready for drawing (the block is empty).
+
+\begin{DoxyReturn}{Returns}
+True if a block is empty. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a6d9f074fc4d2ddc0b46b644faafa7c28}{touchgfx\+::\+Many\+Block\+Allocator$<$ block\+\_\+size, blocks, bytes\+\_\+pr\+\_\+pixel $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a9fae62fe9606e7982141ebdefca3cc37}\label{classtouchgfx_1_1_frame_buffer_allocator_a9fae62fe9606e7982141ebdefca3cc37} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!markBlockReadyForTransfer@{markBlockReadyForTransfer}}
+\index{markBlockReadyForTransfer@{markBlockReadyForTransfer}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{markBlockReadyForTransfer()}{markBlockReadyForTransfer()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Frame\+Buffer\+Allocator\+::mark\+Block\+Ready\+For\+Transfer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Marks a previously allocated block as ready to be transferred to the \doxylink{classtouchgfx_1_1_l_c_d}{LCD}. 
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a7b5cfef049b2d6b231b774e2604f7c93}{touchgfx\+::\+Many\+Block\+Allocator$<$ block\+\_\+size, blocks, bytes\+\_\+pr\+\_\+pixel $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_frame_buffer_allocator_a19dfae47ef70eee001e6d85cdbd1853e}\label{classtouchgfx_1_1_frame_buffer_allocator_a19dfae47ef70eee001e6d85cdbd1853e} 
+\index{touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}!peekBlockForTransfer@{peekBlockForTransfer}}
+\index{peekBlockForTransfer@{peekBlockForTransfer}!touchgfx::FrameBufferAllocator@{touchgfx::FrameBufferAllocator}}
+\doxysubsubsection{\texorpdfstring{peekBlockForTransfer()}{peekBlockForTransfer()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& touchgfx\+::\+Frame\+Buffer\+Allocator\+::peek\+Block\+For\+Transfer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the \doxylink{classtouchgfx_1_1_rect}{Rect} of the next block to transfer.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classtouchgfx_1_1_rect}{Rect} ready for transfer.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_frame_buffer_allocator_af4645e372cdc0860f1ea1b9f586532c8}{has\+Block\+Ready\+For\+Transfer}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+This function should only be called when the allocator has a block ready for transfer. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a47da61e7e26568e9a7f6548373cc681f}{touchgfx\+::\+Many\+Block\+Allocator$<$ block\+\_\+size, blocks, bytes\+\_\+pr\+\_\+pixel $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_frame_buffer_allocator_8hpp}{Frame\+Buffer\+Allocator.\+hpp}}\end{DoxyCompactItemize}

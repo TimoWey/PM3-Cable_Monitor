@@ -1,0 +1,1731 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+video.h File Reference}
+\hypertarget{_s_d_l__video_8h}{}\label{_s_d_l__video_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_video.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_video.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+pixels.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+rect.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+surface.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}}
+\begin{DoxyCompactList}\small\item\em The structure that defines a display mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__video_8h_a0eee89b50bf349f05cb28d6ca7c2dec8}\label{_s_d_l__video_8h_a0eee89b50bf349f05cb28d6ca7c2dec8} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED\+\_\+\+MASK}~0x1\+FFF0000
+\begin{DoxyCompactList}\small\item\em Used to indicate that you don\textquotesingle{}t care what the window position is. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a29aa3ade62cfe16de4c8b1e9c4272ab0}\label{_s_d_l__video_8h_a29aa3ade62cfe16de4c8b1e9c4272ab0} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED\+\_\+\+DISPLAY}(X)~(\mbox{\hyperlink{_s_d_l__video_8h_a0eee89b50bf349f05cb28d6ca7c2dec8}{SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED\+\_\+\+MASK}}\texorpdfstring{$\vert$}{|}(X))
+\item 
+\Hypertarget{_s_d_l__video_8h_a20917558a7e5fb159647980218726a52}\label{_s_d_l__video_8h_a20917558a7e5fb159647980218726a52} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED}~SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED\+\_\+\+DISPLAY(0)
+\item 
+\Hypertarget{_s_d_l__video_8h_a8ded7367fc7c4375cc195ff4a2a2132c}\label{_s_d_l__video_8h_a8ded7367fc7c4375cc195ff4a2a2132c} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+ISUNDEFINED}(X)~            (((X)\&0x\+FFFF0000) == \mbox{\hyperlink{_s_d_l__video_8h_a0eee89b50bf349f05cb28d6ca7c2dec8}{SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED\+\_\+\+MASK}})
+\item 
+\Hypertarget{_s_d_l__video_8h_a5088b87c9d01cc26915ff082aaf014fa}\label{_s_d_l__video_8h_a5088b87c9d01cc26915ff082aaf014fa} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED\+\_\+\+MASK}~0x2\+FFF0000
+\begin{DoxyCompactList}\small\item\em Used to indicate that the window position should be centered. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a3399af2e94d0de95e69e6bcc57969d58}\label{_s_d_l__video_8h_a3399af2e94d0de95e69e6bcc57969d58} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED\+\_\+\+DISPLAY}(X)~(\mbox{\hyperlink{_s_d_l__video_8h_a5088b87c9d01cc26915ff082aaf014fa}{SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED\+\_\+\+MASK}}\texorpdfstring{$\vert$}{|}(X))
+\item 
+\Hypertarget{_s_d_l__video_8h_a8d2f428ddef3b4ccf08915814e35d9c7}\label{_s_d_l__video_8h_a8d2f428ddef3b4ccf08915814e35d9c7} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED}~SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED\+\_\+\+DISPLAY(0)
+\item 
+\Hypertarget{_s_d_l__video_8h_a07ffe394c82e7c5d93443e76e5356cbb}\label{_s_d_l__video_8h_a07ffe394c82e7c5d93443e76e5356cbb} 
+\#define {\bfseries SDL\+\_\+\+WINDOWPOS\+\_\+\+ISCENTERED}(X)~            (((X)\&0x\+FFFF0000) == \mbox{\hyperlink{_s_d_l__video_8h_a5088b87c9d01cc26915ff082aaf014fa}{SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED\+\_\+\+MASK}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}}
+\begin{DoxyCompactList}\small\item\em The type used to identify a window. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}\label{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3} 
+typedef void \texorpdfstring{$\ast$}{*} {\bfseries SDL\+\_\+\+GLContext}
+\begin{DoxyCompactList}\small\item\em An opaque handle to an Open\+GL context. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5}{SDL\+\_\+\+Hit\+Test\+Result}}(SDLCALL \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957}{SDL\+\_\+\+Hit\+Test}}) (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}win, const \mbox{\hyperlink{struct_s_d_l___point}{SDL\+\_\+\+Point}} \texorpdfstring{$\ast$}{*}area, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Callback used for hit-\/testing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18}{SDL\+\_\+\+Window\+Flags}} \{ \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ac7b8279bdf5e22a0b4a95aae3d846923}{SDL\+\_\+\+WINDOW\+\_\+\+FULLSCREEN}} = 0x00000001
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a5cf8af096f1870b0c2b12267cabd1f7a}{SDL\+\_\+\+WINDOW\+\_\+\+OPENGL}} = 0x00000002
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4300d051290adcb71c1b5e82e2553c4d}{SDL\+\_\+\+WINDOW\+\_\+\+SHOWN}} = 0x00000004
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18adda25e98e54964c0c2ec9ac31f5e629c}{SDL\+\_\+\+WINDOW\+\_\+\+HIDDEN}} = 0x00000008
+, \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18af7baea7dc9c0e4f09b28793504b02e4c}{SDL\+\_\+\+WINDOW\+\_\+\+BORDERLESS}} = 0x00000010
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf59a5e2f762aa2b6d2e49b0ca220fd8}{SDL\+\_\+\+WINDOW\+\_\+\+RESIZABLE}} = 0x00000020
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a7f08ee26b5773412a212233ddc168c5a}{SDL\+\_\+\+WINDOW\+\_\+\+MINIMIZED}} = 0x00000040
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18acd8063a617f2ce05f694ecdbf56f811a}{SDL\+\_\+\+WINDOW\+\_\+\+MAXIMIZED}} = 0x00000080
+, \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf410e1082e45a55ef9176163610dba2}{SDL\+\_\+\+WINDOW\+\_\+\+INPUT\+\_\+\+GRABBED}} = 0x00000100
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18afcbb682c0942bc106af1474c1d34bb53}{SDL\+\_\+\+WINDOW\+\_\+\+INPUT\+\_\+\+FOCUS}} = 0x00000200
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aa722d0955c297fc60c09b10e1679684c}{SDL\+\_\+\+WINDOW\+\_\+\+MOUSE\+\_\+\+FOCUS}} = 0x00000400
+, {\bfseries SDL\+\_\+\+WINDOW\+\_\+\+FULLSCREEN\+\_\+\+DESKTOP} = ( SDL\+\_\+\+WINDOW\+\_\+\+FULLSCREEN \texorpdfstring{$\vert$}{|} 0x00001000 )
+, \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a1ac8e0ef2237a089cf487d7e7fcc6e23}{SDL\+\_\+\+WINDOW\+\_\+\+FOREIGN}} = 0x00000800
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a03ec21b04fa4e5c8cc868aa01a0c1bf3}{SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI}} = 0x00002000
+, \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4c16b51a323741bf5c492adce34e5882}{SDL\+\_\+\+WINDOW\+\_\+\+MOUSE\+\_\+\+CAPTURE}} = 0x00004000
+ \}
+\begin{DoxyCompactList}\small\item\em The flags on a window. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3bab}{SDL\+\_\+\+Window\+Event\+ID}} \{ \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babaee1301eee7ad982c50cd310607f968b7}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+NONE}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba5e91fe11ed6a24a377a77d024c9639d5}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+SHOWN}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba04e5bd277e03b61a6e4b577f2a3fda55}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+HIDDEN}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac37af5c3ce56fe0956bc310821d59489}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+EXPOSED}}
+, \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba64da80af7b0a58689f07c7196de23da5}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+MOVED}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba26096363b1a5a1eccc56a00d5f61948d}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+RESIZED}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba98e76df5341be0a05c7461e32c7835f0}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+SIZE\+\_\+\+CHANGED}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba70577b21b05c509d0342a5649092928d}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+MINIMIZED}}
+, \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba83593cf9ef16d0eaeeaac19b32a86a05}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+MAXIMIZED}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba9ebe8fbb15f1bf06521d6b5484de3d89}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+RESTORED}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac6990e7537a4cc6cc7aaabc3376b9eb5}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+ENTER}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba7e1afdd5cfea592a59e129419b431bd5}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+LEAVE}}
+, \newline
+\mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba529d1b574e559ee46892024e1c2e6c92}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+FOCUS\+\_\+\+GAINED}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba239e734c6ba478fb2f694fc7cde30c31}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+FOCUS\+\_\+\+LOST}}
+, \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba2483911a3a2a20dbb1c88a15ffb9a360}{SDL\+\_\+\+WINDOWEVENT\+\_\+\+CLOSE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Event subtype for window events. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4}\label{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4} 
+enum \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4}{SDL\+\_\+\+GLattr}} \{ \newline
+{\bfseries SDL\+\_\+\+GL\+\_\+\+RED\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+GREEN\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+BLUE\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+ALPHA\+\_\+\+SIZE}
+, \newline
+{\bfseries SDL\+\_\+\+GL\+\_\+\+BUFFER\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+DOUBLEBUFFER}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+DEPTH\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+STENCIL\+\_\+\+SIZE}
+, \newline
+{\bfseries SDL\+\_\+\+GL\+\_\+\+ACCUM\+\_\+\+RED\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+ACCUM\+\_\+\+GREEN\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+ACCUM\+\_\+\+BLUE\+\_\+\+SIZE}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+ACCUM\+\_\+\+ALPHA\+\_\+\+SIZE}
+, \newline
+{\bfseries SDL\+\_\+\+GL\+\_\+\+STEREO}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+MULTISAMPLEBUFFERS}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+MULTISAMPLESAMPLES}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+ACCELERATED\+\_\+\+VISUAL}
+, \newline
+{\bfseries SDL\+\_\+\+GL\+\_\+\+RETAINED\+\_\+\+BACKING}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+MAJOR\+\_\+\+VERSION}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+MINOR\+\_\+\+VERSION}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+EGL}
+, \newline
+{\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+FLAGS}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+PROFILE\+\_\+\+MASK}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+SHARE\+\_\+\+WITH\+\_\+\+CURRENT\+\_\+\+CONTEXT}
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+FRAMEBUFFER\+\_\+\+SRGB\+\_\+\+CAPABLE}
+, \newline
+{\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+RELEASE\+\_\+\+BEHAVIOR}
+ \}
+\begin{DoxyCompactList}\small\item\em Open\+GL configuration attributes. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_ad5ea1835b83fe139bcc182c3326d7a5f}\label{_s_d_l__video_8h_ad5ea1835b83fe139bcc182c3326d7a5f} 
+enum {\bfseries SDL\+\_\+\+GLprofile} \{ {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+PROFILE\+\_\+\+CORE} = 0x0001
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+PROFILE\+\_\+\+COMPATIBILITY} = 0x0002
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+PROFILE\+\_\+\+ES} = 0x0004
+ \}
+\item 
+\Hypertarget{_s_d_l__video_8h_abd0baef2bdd92997a9436f5b62b18f5d}\label{_s_d_l__video_8h_abd0baef2bdd92997a9436f5b62b18f5d} 
+enum {\bfseries SDL\+\_\+\+GLcontext\+Flag} \{ {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+DEBUG\+\_\+\+FLAG} = 0x0001
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+FORWARD\+\_\+\+COMPATIBLE\+\_\+\+FLAG} = 0x0002
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+ROBUST\+\_\+\+ACCESS\+\_\+\+FLAG} = 0x0004
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+RESET\+\_\+\+ISOLATION\+\_\+\+FLAG} = 0x0008
+ \}
+\item 
+\Hypertarget{_s_d_l__video_8h_a9a34b07d44a580ac7216b6c842663aed}\label{_s_d_l__video_8h_a9a34b07d44a580ac7216b6c842663aed} 
+enum {\bfseries SDL\+\_\+\+GLcontext\+Release\+Flag} \{ {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+RELEASE\+\_\+\+BEHAVIOR\+\_\+\+NONE} = 0x0000
+, {\bfseries SDL\+\_\+\+GL\+\_\+\+CONTEXT\+\_\+\+RELEASE\+\_\+\+BEHAVIOR\+\_\+\+FLUSH} = 0x0001
+ \}
+\item 
+enum \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5}{SDL\+\_\+\+Hit\+Test\+Result}} \{ \newline
+\mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a3eb7be45c88e40366315d453f3bf721e}{SDL\+\_\+\+HITTEST\+\_\+\+NORMAL}}
+, \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a078a028af8c26848cf3576bd0c4d8fc9}{SDL\+\_\+\+HITTEST\+\_\+\+DRAGGABLE}}
+, {\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+TOPLEFT}
+, {\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+TOP}
+, \newline
+{\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+TOPRIGHT}
+, {\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+RIGHT}
+, {\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+BOTTOMRIGHT}
+, {\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+BOTTOM}
+, \newline
+{\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+BOTTOMLEFT}
+, {\bfseries SDL\+\_\+\+HITTEST\+\_\+\+RESIZE\+\_\+\+LEFT}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible return values from the SDL\+\_\+\+Hit\+Test callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ac6f3250a95bd027fd1a374d7ed15fc57}{SDL\+\_\+\+Get\+Num\+Video\+Drivers}} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of video drivers compiled into SDL. \end{DoxyCompactList}\item 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ae88ab2c7515c52b180ef0238f8965b4b}{SDL\+\_\+\+Get\+Video\+Driver}} (int index)
+\begin{DoxyCompactList}\small\item\em Get the name of a built in video driver. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a05244b30716f0339dcd140c6f92017b7}{SDL\+\_\+\+Video\+Init}} (const char \texorpdfstring{$\ast$}{*}driver\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Initialize the video subsystem, optionally specifying a video driver. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ade5fc4847320fb235f17265b683fa013}{SDL\+\_\+\+Video\+Quit}} (void)
+\begin{DoxyCompactList}\small\item\em Shuts down the video subsystem. \end{DoxyCompactList}\item 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_aec2f46152701003e12689dac7de79eb9}{SDL\+\_\+\+Get\+Current\+Video\+Driver}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the name of the currently initialized video driver. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a074d185b7ef04e0305acdeeb049dd2be}{SDL\+\_\+\+Get\+Num\+Video\+Displays}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the number of available video displays. \end{DoxyCompactList}\item 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a3c8523dad11fceab8a8029239185529b}{SDL\+\_\+\+Get\+Display\+Name}} (int display\+Index)
+\begin{DoxyCompactList}\small\item\em Get the name of a display in UTF-\/8 encoding. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ac05213009395c10ae40bede2de8e08a1}{SDL\+\_\+\+Get\+Display\+Bounds}} (int display\+Index, \mbox{\hyperlink{struct_s_d_l___rect}{SDL\+\_\+\+Rect}} \texorpdfstring{$\ast$}{*}rect)
+\begin{DoxyCompactList}\small\item\em Get the desktop area represented by a display, with the primary display located at 0,0. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a8207ec5d13bd87158cbb42ef76e33216}{SDL\+\_\+\+Get\+Display\+DPI}} (int display\+Index, float \texorpdfstring{$\ast$}{*}ddpi, float \texorpdfstring{$\ast$}{*}hdpi, float \texorpdfstring{$\ast$}{*}vdpi)
+\begin{DoxyCompactList}\small\item\em Get the dots/pixels-\/per-\/inch for a display. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a5abcf18592f00019c517e791f8ba53fc}{SDL\+\_\+\+Get\+Num\+Display\+Modes}} (int display\+Index)
+\begin{DoxyCompactList}\small\item\em Returns the number of available display modes. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a0a53e003ec6ad24dd2bbbcd0ad297311}{SDL\+\_\+\+Get\+Display\+Mode}} (int display\+Index, int mode\+Index, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}mode)
+\begin{DoxyCompactList}\small\item\em Fill in information about a specific display mode. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_ab97bca68fc068a6ecc3db473c4c0defd}\label{_s_d_l__video_8h_ab97bca68fc068a6ecc3db473c4c0defd} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Get\+Desktop\+Display\+Mode} (int display\+Index, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}mode)
+\begin{DoxyCompactList}\small\item\em Fill in information about the desktop display mode. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a14dce1cb33085b36f08d27b3d8f2335b}\label{_s_d_l__video_8h_a14dce1cb33085b36f08d27b3d8f2335b} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Get\+Current\+Display\+Mode} (int display\+Index, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}mode)
+\begin{DoxyCompactList}\small\item\em Fill in information about the current display mode. \end{DoxyCompactList}\item 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a912994189211554bdd0b264e3f6d8e9f}{SDL\+\_\+\+Get\+Closest\+Display\+Mode}} (int display\+Index, const \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}mode, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}closest)
+\begin{DoxyCompactList}\small\item\em Get the closest match to the requested display mode. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a0be1d0a4d1f9a0da23b78db2f55871b5}{SDL\+\_\+\+Get\+Window\+Display\+Index}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get the display index associated with a window. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a2ca17d1e857d1560738e002c9935088a}{SDL\+\_\+\+Set\+Window\+Display\+Mode}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, const \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}mode)
+\begin{DoxyCompactList}\small\item\em Set the display mode used when a fullscreen window is visible. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a8185547bc7cb0bbeb400f459792d081a}{SDL\+\_\+\+Get\+Window\+Display\+Mode}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}mode)
+\begin{DoxyCompactList}\small\item\em Fill in information about the display mode used when a fullscreen window is visible. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a3abb4a27f109ac055eb2a82227a9d11f}\label{_s_d_l__video_8h_a3abb4a27f109ac055eb2a82227a9d11f} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL {\bfseries SDL\+\_\+\+Get\+Window\+Pixel\+Format} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get the pixel format associated with the window. \end{DoxyCompactList}\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6}{SDL\+\_\+\+Create\+Window}} (const char \texorpdfstring{$\ast$}{*}title, int x, int y, int w, int h, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} flags)
+\begin{DoxyCompactList}\small\item\em Create a window with the specified position, dimensions, and flags. \end{DoxyCompactList}\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_aa5ba5ca928613b022e9872dc19197f6e}{SDL\+\_\+\+Create\+Window\+From}} (const void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Create an SDL window from an existing native window. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a1f6c1c22ced1564ffd0d54bbf9824134}\label{_s_d_l__video_8h_a1f6c1c22ced1564ffd0d54bbf9824134} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL {\bfseries SDL\+\_\+\+Get\+Window\+ID} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get the numeric ID of a window, for logging purposes. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a61016989f88ade9a0f331c63fd200d78}\label{_s_d_l__video_8h_a61016989f88ade9a0f331c63fd200d78} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+Get\+Window\+From\+ID} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} id)
+\begin{DoxyCompactList}\small\item\em Get a window from a stored ID, or NULL if it doesn\textquotesingle{}t exist. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a4445733f04a1a9dd0e063cd4738f285f}\label{_s_d_l__video_8h_a4445733f04a1a9dd0e063cd4738f285f} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL {\bfseries SDL\+\_\+\+Get\+Window\+Flags} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get the window flags. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a41aabc4b68f75f41d97995e02eb9deb6}{SDL\+\_\+\+Set\+Window\+Title}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, const char \texorpdfstring{$\ast$}{*}title)
+\begin{DoxyCompactList}\small\item\em Set the title of a window, in UTF-\/8 format. \end{DoxyCompactList}\item 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a631b117f2c3712a55706d7fd60013536}{SDL\+\_\+\+Get\+Window\+Title}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get the title of a window, in UTF-\/8 format. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a0b6910b5d5aa2df0aeda257e445a472e}{SDL\+\_\+\+Set\+Window\+Icon}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{struct_s_d_l___surface}{SDL\+\_\+\+Surface}} \texorpdfstring{$\ast$}{*}icon)
+\begin{DoxyCompactList}\small\item\em Set the icon for a window. \end{DoxyCompactList}\item 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a4d2831ad431f59e3a5a5e472599f6c0a}{SDL\+\_\+\+Set\+Window\+Data}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, const char \texorpdfstring{$\ast$}{*}name, void \texorpdfstring{$\ast$}{*}userdata)
+\begin{DoxyCompactList}\small\item\em Associate an arbitrary named pointer with a window. \end{DoxyCompactList}\item 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ae2b358354dfad5523efadb95adc59ce4}{SDL\+\_\+\+Get\+Window\+Data}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Retrieve the data pointer associated with a window. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ab200a53e01ddc697fd6b8e017cc4e6dd}{SDL\+\_\+\+Set\+Window\+Position}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int x, int y)
+\begin{DoxyCompactList}\small\item\em Set the position of a window. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a03adfc1ed4aaf57da4af00bd247ac99c}{SDL\+\_\+\+Get\+Window\+Position}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int \texorpdfstring{$\ast$}{*}x, int \texorpdfstring{$\ast$}{*}y)
+\begin{DoxyCompactList}\small\item\em Get the position of a window. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a29b118c6932ccb94d85b5435ae1e0a19}{SDL\+\_\+\+Set\+Window\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int w, int h)
+\begin{DoxyCompactList}\small\item\em Set the size of a window\textquotesingle{}s client area. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int \texorpdfstring{$\ast$}{*}w, int \texorpdfstring{$\ast$}{*}h)
+\begin{DoxyCompactList}\small\item\em Get the size of a window\textquotesingle{}s client area. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a1b6dd546d8dec383be411f98926335ae}{SDL\+\_\+\+Set\+Window\+Minimum\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int min\+\_\+w, int min\+\_\+h)
+\begin{DoxyCompactList}\small\item\em Set the minimum size of a window\textquotesingle{}s client area. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_afe1c6ca08d5b8c336b1276236559287a}{SDL\+\_\+\+Get\+Window\+Minimum\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int \texorpdfstring{$\ast$}{*}w, int \texorpdfstring{$\ast$}{*}h)
+\begin{DoxyCompactList}\small\item\em Get the minimum size of a window\textquotesingle{}s client area. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_aaf95e53a3b70d55d71d7b2cf822ea77e}{SDL\+\_\+\+Set\+Window\+Maximum\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int max\+\_\+w, int max\+\_\+h)
+\begin{DoxyCompactList}\small\item\em Set the maximum size of a window\textquotesingle{}s client area. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a38d65795da3feacfec1c392c101e92fd}{SDL\+\_\+\+Get\+Window\+Maximum\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int \texorpdfstring{$\ast$}{*}w, int \texorpdfstring{$\ast$}{*}h)
+\begin{DoxyCompactList}\small\item\em Get the maximum size of a window\textquotesingle{}s client area. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_afb4b868e2cc0107ed6bcf5ba7aa376e0}{SDL\+\_\+\+Set\+Window\+Bordered}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, SDL\+\_\+bool bordered)
+\begin{DoxyCompactList}\small\item\em Set the border state of a window. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a6051ce26885b32b80bc7285b4facd0a1}{SDL\+\_\+\+Show\+Window}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Show a window. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_aa3cbe663e0bd62aa7a747a6c11781766}{SDL\+\_\+\+Hide\+Window}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Hide a window. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a4b66b90f95780276addc14bc573c9f3c}\label{_s_d_l__video_8h_a4b66b90f95780276addc14bc573c9f3c} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Raise\+Window} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Raise a window above other windows and set the input focus. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a8d969b660fee270f84cb403c8b75ded6}{SDL\+\_\+\+Maximize\+Window}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Make a window as large as possible. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a9f802f6c7952552b1cb26958fad3f2a6}{SDL\+\_\+\+Minimize\+Window}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Minimize a window to an iconic representation. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_afea37fca3b12f454e7f91d919fc99fbd}{SDL\+\_\+\+Restore\+Window}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Restore the size and position of a minimized or maximized window. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ab4aa48f0a29f0868ce4e0422c02ed2fa}{SDL\+\_\+\+Set\+Window\+Fullscreen}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} flags)
+\begin{DoxyCompactList}\small\item\em Set a window\textquotesingle{}s fullscreen state. \end{DoxyCompactList}\item 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___surface}{SDL\+\_\+\+Surface}} \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a53fd405291238e8677632165afad3ea0}{SDL\+\_\+\+Get\+Window\+Surface}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get the SDL surface associated with the window. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a7bbfee05788dc85a1d67218cf3006653}{SDL\+\_\+\+Update\+Window\+Surface}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Copy the window surface to the screen. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ae6b0c6cf354beb87291887bfa02385b1}{SDL\+\_\+\+Update\+Window\+Surface\+Rects}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, const \mbox{\hyperlink{struct_s_d_l___rect}{SDL\+\_\+\+Rect}} \texorpdfstring{$\ast$}{*}rects, int numrects)
+\begin{DoxyCompactList}\small\item\em Copy a number of rectangles on the window surface to the screen. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_abe7fd559e9d6da046c5984dea679a89b}{SDL\+\_\+\+Set\+Window\+Grab}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, SDL\+\_\+bool grabbed)
+\begin{DoxyCompactList}\small\item\em Set a window\textquotesingle{}s input grab mode. \end{DoxyCompactList}\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ad4e451db3880b6e0dd6647cbc351c6c0}{SDL\+\_\+\+Get\+Window\+Grab}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get a window\textquotesingle{}s input grab mode. \end{DoxyCompactList}\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a6d0a45787b2a383bed8ed56133b04eab}{SDL\+\_\+\+Get\+Grabbed\+Window}} (void)
+\begin{DoxyCompactList}\small\item\em Get the window that currently has an input grab enabled. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a896972250b4d2e0f75888fa44fa792ec}{SDL\+\_\+\+Set\+Window\+Brightness}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, float brightness)
+\begin{DoxyCompactList}\small\item\em Set the brightness (gamma correction) for a window. \end{DoxyCompactList}\item 
+DECLSPEC float SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a21c10969331c89e8d0e6a8f998a3c319}{SDL\+\_\+\+Get\+Window\+Brightness}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Get the brightness (gamma correction) for a window. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a6799acf235454f519ac209ccf14caa67}{SDL\+\_\+\+Set\+Window\+Gamma\+Ramp}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, const \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}red, const \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}green, const \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}blue)
+\begin{DoxyCompactList}\small\item\em Set the gamma ramp for a window. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_af4d647be3bb21a33586d69d5cad87ead}{SDL\+\_\+\+Get\+Window\+Gamma\+Ramp}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}red, \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}green, \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}blue)
+\begin{DoxyCompactList}\small\item\em Get the gamma ramp for a window. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a23e14e1f21f7fb3727f38fd9b0711186}{SDL\+\_\+\+Set\+Window\+Hit\+Test}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957}{SDL\+\_\+\+Hit\+Test}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Provide a callback that decides if a window region has special properties. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a72609295a4faee0587268339ccff80c2}\label{_s_d_l__video_8h_a72609295a4faee0587268339ccff80c2} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Destroy\+Window} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Destroy a window. \end{DoxyCompactList}\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a4b5c116d57947bf508c13b21aac49cbf}{SDL\+\_\+\+Is\+Screen\+Saver\+Enabled}} (void)
+\begin{DoxyCompactList}\small\item\em Returns whether the screensaver is currently enabled (default on). \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a17846c713066aa29a86e1be205a7fc3e}{SDL\+\_\+\+Enable\+Screen\+Saver}} (void)
+\begin{DoxyCompactList}\small\item\em Allow the screen to be blanked by a screensaver. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a68eb0d850934fa1c7ac12c30f2d56a84}{SDL\+\_\+\+Disable\+Screen\+Saver}} (void)
+\begin{DoxyCompactList}\small\item\em Prevent the screen from being blanked by a screensaver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Open\+GL support functions}\par
+\begin{DoxyCompactItemize}
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a398df9aaf43a69dc2cfaab5b306b8f91}{SDL\+\_\+\+GL\+\_\+\+Load\+Library}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Dynamically load an Open\+GL library. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a6500d698e7dbe6799250a626a8b42359}\label{_s_d_l__video_8h_a6500d698e7dbe6799250a626a8b42359} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Get\+Proc\+Address} (const char \texorpdfstring{$\ast$}{*}proc)
+\begin{DoxyCompactList}\small\item\em Get the address of an Open\+GL function. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a92103adf9637ec2dc471714076872bdc}{SDL\+\_\+\+GL\+\_\+\+Unload\+Library}} (void)
+\begin{DoxyCompactList}\small\item\em Unload the Open\+GL library previously loaded by \doxylink{_s_d_l__video_8h_a398df9aaf43a69dc2cfaab5b306b8f91}{SDL\+\_\+\+GL\+\_\+\+Load\+Library()}. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a1fa0cc176fbc16db139b40a121e9cfa7}\label{_s_d_l__video_8h_a1fa0cc176fbc16db139b40a121e9cfa7} 
+DECLSPEC SDL\+\_\+bool SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Extension\+Supported} (const char \texorpdfstring{$\ast$}{*}extension)
+\begin{DoxyCompactList}\small\item\em Return true if an Open\+GL extension is supported for the current context. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_ac96f25a7a6b28387d2813d8db71921ff}\label{_s_d_l__video_8h_ac96f25a7a6b28387d2813d8db71921ff} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Reset\+Attributes} (void)
+\begin{DoxyCompactList}\small\item\em Reset all previously set Open\+GL context attributes to their default values. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_aed4d4347f2d5def1532bc22893e0e0d9}\label{_s_d_l__video_8h_aed4d4347f2d5def1532bc22893e0e0d9} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Set\+Attribute} (\mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4}{SDL\+\_\+\+GLattr}} attr, int value)
+\begin{DoxyCompactList}\small\item\em Set an Open\+GL window attribute before window creation. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a611bbed6c7374329e1d1b9c31b06976d}\label{_s_d_l__video_8h_a611bbed6c7374329e1d1b9c31b06976d} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Get\+Attribute} (\mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4}{SDL\+\_\+\+GLattr}} attr, int \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Get the actual value for an attribute from the current context. \end{DoxyCompactList}\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\+\_\+\+GLContext}} SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a0e14c935cf304133278893bf6c1d2691}{SDL\+\_\+\+GL\+\_\+\+Create\+Context}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Create an Open\+GL context for use with an Open\+GL window, and make it current. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a5a2ad98e8920f8069bf89eb3f9bbc377}{SDL\+\_\+\+GL\+\_\+\+Make\+Current}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\+\_\+\+GLContext}} context)
+\begin{DoxyCompactList}\small\item\em Set up an Open\+GL context for rendering into an Open\+GL window. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a98181cae6b6d56f3bdbe9f83e46482de}\label{_s_d_l__video_8h_a98181cae6b6d56f3bdbe9f83e46482de} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Get\+Current\+Window} (void)
+\begin{DoxyCompactList}\small\item\em Get the currently active Open\+GL window. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a742f600404b9090bd64f8e863ece98c8}\label{_s_d_l__video_8h_a742f600404b9090bd64f8e863ece98c8} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\+\_\+\+GLContext}} SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Get\+Current\+Context} (void)
+\begin{DoxyCompactList}\small\item\em Get the currently active Open\+GL context. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3}{SDL\+\_\+\+GL\+\_\+\+Get\+Drawable\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window, int \texorpdfstring{$\ast$}{*}w, int \texorpdfstring{$\ast$}{*}h)
+\begin{DoxyCompactList}\small\item\em Get the size of a window\textquotesingle{}s underlying drawable in pixels (for use with gl\+Viewport). \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_a68b0d06595d086d9244fd49afe3e8360}{SDL\+\_\+\+GL\+\_\+\+Set\+Swap\+Interval}} (int interval)
+\begin{DoxyCompactList}\small\item\em Set the swap interval for the current Open\+GL context. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_ae96490db6285ed0df44a9b1c0f498605}{SDL\+\_\+\+GL\+\_\+\+Get\+Swap\+Interval}} (void)
+\begin{DoxyCompactList}\small\item\em Get the swap interval for the current Open\+GL context. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__video_8h_a11d1245662f49f6af257627119f22835}\label{_s_d_l__video_8h_a11d1245662f49f6af257627119f22835} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+GL\+\_\+\+Swap\+Window} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Swap the Open\+GL buffers for a window, if double-\/buffering is supported. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__video_8h_aa64ab050e0bd3a61057c3dffe953aa9f}{SDL\+\_\+\+GL\+\_\+\+Delete\+Context}} (\mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\+\_\+\+GLContext}} context)
+\begin{DoxyCompactList}\small\item\em Delete an Open\+GL context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Header file for SDL video functions. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957}\label{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_HitTest@{SDL\_HitTest}}
+\index{SDL\_HitTest@{SDL\_HitTest}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HitTest}{SDL\_HitTest}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5}{SDL\+\_\+\+Hit\+Test\+Result}}(SDLCALL \texorpdfstring{$\ast$}{*} SDL\+\_\+\+Hit\+Test) (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}win, const \mbox{\hyperlink{struct_s_d_l___point}{SDL\+\_\+\+Point}} \texorpdfstring{$\ast$}{*}area, void \texorpdfstring{$\ast$}{*}data)}
+
+
+
+Callback used for hit-\/testing. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a23e14e1f21f7fb3727f38fd9b0711186}{SDL\+\_\+\+Set\+Window\+Hit\+Test} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}\label{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_Window@{SDL\_Window}}
+\index{SDL\_Window@{SDL\_Window}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Window}{SDL\_Window}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}}}
+
+
+
+The type used to identify a window. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6}{SDL\+\_\+\+Create\+Window()} 
+
+\doxylink{_s_d_l__video_8h_aa5ba5ca928613b022e9872dc19197f6e}{SDL\+\_\+\+Create\+Window\+From()} 
+
+\doxylink{_s_d_l__video_8h_a72609295a4faee0587268339ccff80c2}{SDL\+\_\+\+Destroy\+Window()} 
+
+\doxylink{_s_d_l__video_8h_ae2b358354dfad5523efadb95adc59ce4}{SDL\+\_\+\+Get\+Window\+Data()} 
+
+\doxylink{_s_d_l__video_8h_a4445733f04a1a9dd0e063cd4738f285f}{SDL\+\_\+\+Get\+Window\+Flags()} 
+
+\doxylink{_s_d_l__video_8h_ad4e451db3880b6e0dd6647cbc351c6c0}{SDL\+\_\+\+Get\+Window\+Grab()} 
+
+\doxylink{_s_d_l__video_8h_a03adfc1ed4aaf57da4af00bd247ac99c}{SDL\+\_\+\+Get\+Window\+Position()} 
+
+\doxylink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size()} 
+
+\doxylink{_s_d_l__video_8h_a631b117f2c3712a55706d7fd60013536}{SDL\+\_\+\+Get\+Window\+Title()} 
+
+\doxylink{_s_d_l__video_8h_aa3cbe663e0bd62aa7a747a6c11781766}{SDL\+\_\+\+Hide\+Window()} 
+
+\doxylink{_s_d_l__video_8h_a8d969b660fee270f84cb403c8b75ded6}{SDL\+\_\+\+Maximize\+Window()} 
+
+\doxylink{_s_d_l__video_8h_a9f802f6c7952552b1cb26958fad3f2a6}{SDL\+\_\+\+Minimize\+Window()} 
+
+\doxylink{_s_d_l__video_8h_a4b66b90f95780276addc14bc573c9f3c}{SDL\+\_\+\+Raise\+Window()} 
+
+\doxylink{_s_d_l__video_8h_afea37fca3b12f454e7f91d919fc99fbd}{SDL\+\_\+\+Restore\+Window()} 
+
+\doxylink{_s_d_l__video_8h_a4d2831ad431f59e3a5a5e472599f6c0a}{SDL\+\_\+\+Set\+Window\+Data()} 
+
+\doxylink{_s_d_l__video_8h_ab4aa48f0a29f0868ce4e0422c02ed2fa}{SDL\+\_\+\+Set\+Window\+Fullscreen()} 
+
+\doxylink{_s_d_l__video_8h_abe7fd559e9d6da046c5984dea679a89b}{SDL\+\_\+\+Set\+Window\+Grab()} 
+
+\doxylink{_s_d_l__video_8h_a0b6910b5d5aa2df0aeda257e445a472e}{SDL\+\_\+\+Set\+Window\+Icon()} 
+
+\doxylink{_s_d_l__video_8h_ab200a53e01ddc697fd6b8e017cc4e6dd}{SDL\+\_\+\+Set\+Window\+Position()} 
+
+\doxylink{_s_d_l__video_8h_a29b118c6932ccb94d85b5435ae1e0a19}{SDL\+\_\+\+Set\+Window\+Size()} 
+
+\doxylink{_s_d_l__video_8h_afb4b868e2cc0107ed6bcf5ba7aa376e0}{SDL\+\_\+\+Set\+Window\+Bordered()} 
+
+\doxylink{_s_d_l__video_8h_a41aabc4b68f75f41d97995e02eb9deb6}{SDL\+\_\+\+Set\+Window\+Title()} 
+
+\doxylink{_s_d_l__video_8h_a6051ce26885b32b80bc7285b4facd0a1}{SDL\+\_\+\+Show\+Window()} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5}\label{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_HitTestResult@{SDL\_HitTestResult}}
+\index{SDL\_HitTestResult@{SDL\_HitTestResult}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HitTestResult}{SDL\_HitTestResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5}{SDL\+\_\+\+Hit\+Test\+Result}}}
+
+
+
+Possible return values from the SDL\+\_\+\+Hit\+Test callback. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957}{SDL\+\_\+\+Hit\+Test} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_HITTEST\_NORMAL@{SDL\_HITTEST\_NORMAL}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_HITTEST\_NORMAL@{SDL\_HITTEST\_NORMAL}}}\Hypertarget{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a3eb7be45c88e40366315d453f3bf721e}\label{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a3eb7be45c88e40366315d453f3bf721e} 
+SDL\+\_\+\+HITTEST\+\_\+\+NORMAL&Region is normal. No special properties. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_HITTEST\_DRAGGABLE@{SDL\_HITTEST\_DRAGGABLE}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_HITTEST\_DRAGGABLE@{SDL\_HITTEST\_DRAGGABLE}}}\Hypertarget{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a078a028af8c26848cf3576bd0c4d8fc9}\label{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a078a028af8c26848cf3576bd0c4d8fc9} 
+SDL\+\_\+\+HITTEST\+\_\+\+DRAGGABLE&Region can drag entire window. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3bab}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3bab} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_WindowEventID@{SDL\_WindowEventID}}
+\index{SDL\_WindowEventID@{SDL\_WindowEventID}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_WindowEventID}{SDL\_WindowEventID}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3bab}{SDL\+\_\+\+Window\+Event\+ID}}}
+
+
+
+Event subtype for window events. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_NONE@{SDL\_WINDOWEVENT\_NONE}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_NONE@{SDL\_WINDOWEVENT\_NONE}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babaee1301eee7ad982c50cd310607f968b7}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babaee1301eee7ad982c50cd310607f968b7} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+NONE&Never used \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_SHOWN@{SDL\_WINDOWEVENT\_SHOWN}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_SHOWN@{SDL\_WINDOWEVENT\_SHOWN}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba5e91fe11ed6a24a377a77d024c9639d5}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba5e91fe11ed6a24a377a77d024c9639d5} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+SHOWN&Window has been shown \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_HIDDEN@{SDL\_WINDOWEVENT\_HIDDEN}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_HIDDEN@{SDL\_WINDOWEVENT\_HIDDEN}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba04e5bd277e03b61a6e4b577f2a3fda55}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba04e5bd277e03b61a6e4b577f2a3fda55} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+HIDDEN&Window has been hidden \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_EXPOSED@{SDL\_WINDOWEVENT\_EXPOSED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_EXPOSED@{SDL\_WINDOWEVENT\_EXPOSED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac37af5c3ce56fe0956bc310821d59489}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac37af5c3ce56fe0956bc310821d59489} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+EXPOSED&Window has been exposed and should be redrawn \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_MOVED@{SDL\_WINDOWEVENT\_MOVED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_MOVED@{SDL\_WINDOWEVENT\_MOVED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba64da80af7b0a58689f07c7196de23da5}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba64da80af7b0a58689f07c7196de23da5} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+MOVED&Window has been moved to data1, data2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_RESIZED@{SDL\_WINDOWEVENT\_RESIZED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_RESIZED@{SDL\_WINDOWEVENT\_RESIZED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba26096363b1a5a1eccc56a00d5f61948d}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba26096363b1a5a1eccc56a00d5f61948d} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+RESIZED&Window has been resized to data1xdata2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_SIZE\_CHANGED@{SDL\_WINDOWEVENT\_SIZE\_CHANGED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_SIZE\_CHANGED@{SDL\_WINDOWEVENT\_SIZE\_CHANGED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba98e76df5341be0a05c7461e32c7835f0}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba98e76df5341be0a05c7461e32c7835f0} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+SIZE\+\_\+\+CHANGED&The window size has changed, either as a result of an API call or through the system or user changing the window size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_MINIMIZED@{SDL\_WINDOWEVENT\_MINIMIZED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_MINIMIZED@{SDL\_WINDOWEVENT\_MINIMIZED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba70577b21b05c509d0342a5649092928d}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba70577b21b05c509d0342a5649092928d} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+MINIMIZED&Window has been minimized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_MAXIMIZED@{SDL\_WINDOWEVENT\_MAXIMIZED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_MAXIMIZED@{SDL\_WINDOWEVENT\_MAXIMIZED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba83593cf9ef16d0eaeeaac19b32a86a05}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba83593cf9ef16d0eaeeaac19b32a86a05} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+MAXIMIZED&Window has been maximized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_RESTORED@{SDL\_WINDOWEVENT\_RESTORED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_RESTORED@{SDL\_WINDOWEVENT\_RESTORED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba9ebe8fbb15f1bf06521d6b5484de3d89}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba9ebe8fbb15f1bf06521d6b5484de3d89} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+RESTORED&Window has been restored to normal size and position \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_ENTER@{SDL\_WINDOWEVENT\_ENTER}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_ENTER@{SDL\_WINDOWEVENT\_ENTER}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac6990e7537a4cc6cc7aaabc3376b9eb5}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac6990e7537a4cc6cc7aaabc3376b9eb5} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+ENTER&Window has gained mouse focus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_LEAVE@{SDL\_WINDOWEVENT\_LEAVE}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_LEAVE@{SDL\_WINDOWEVENT\_LEAVE}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba7e1afdd5cfea592a59e129419b431bd5}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba7e1afdd5cfea592a59e129419b431bd5} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+LEAVE&Window has lost mouse focus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_FOCUS\_GAINED@{SDL\_WINDOWEVENT\_FOCUS\_GAINED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_FOCUS\_GAINED@{SDL\_WINDOWEVENT\_FOCUS\_GAINED}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba529d1b574e559ee46892024e1c2e6c92}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba529d1b574e559ee46892024e1c2e6c92} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+FOCUS\+\_\+\+GAINED&Window has gained keyboard focus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_FOCUS\_LOST@{SDL\_WINDOWEVENT\_FOCUS\_LOST}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_FOCUS\_LOST@{SDL\_WINDOWEVENT\_FOCUS\_LOST}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba239e734c6ba478fb2f694fc7cde30c31}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba239e734c6ba478fb2f694fc7cde30c31} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+FOCUS\+\_\+\+LOST&Window has lost keyboard focus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT\_CLOSE@{SDL\_WINDOWEVENT\_CLOSE}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOWEVENT\_CLOSE@{SDL\_WINDOWEVENT\_CLOSE}}}\Hypertarget{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba2483911a3a2a20dbb1c88a15ffb9a360}\label{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba2483911a3a2a20dbb1c88a15ffb9a360} 
+SDL\+\_\+\+WINDOWEVENT\+\_\+\+CLOSE&The window manager requests that the window be closed \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_WindowFlags@{SDL\_WindowFlags}}
+\index{SDL\_WindowFlags@{SDL\_WindowFlags}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_WindowFlags}{SDL\_WindowFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18}{SDL\+\_\+\+Window\+Flags}}}
+
+
+
+The flags on a window. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a4445733f04a1a9dd0e063cd4738f285f}{SDL\+\_\+\+Get\+Window\+Flags()} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_FULLSCREEN@{SDL\_WINDOW\_FULLSCREEN}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_FULLSCREEN@{SDL\_WINDOW\_FULLSCREEN}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ac7b8279bdf5e22a0b4a95aae3d846923}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ac7b8279bdf5e22a0b4a95aae3d846923} 
+SDL\+\_\+\+WINDOW\+\_\+\+FULLSCREEN&fullscreen window \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_OPENGL@{SDL\_WINDOW\_OPENGL}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_OPENGL@{SDL\_WINDOW\_OPENGL}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a5cf8af096f1870b0c2b12267cabd1f7a}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a5cf8af096f1870b0c2b12267cabd1f7a} 
+SDL\+\_\+\+WINDOW\+\_\+\+OPENGL&window usable with Open\+GL context \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_SHOWN@{SDL\_WINDOW\_SHOWN}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_SHOWN@{SDL\_WINDOW\_SHOWN}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4300d051290adcb71c1b5e82e2553c4d}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4300d051290adcb71c1b5e82e2553c4d} 
+SDL\+\_\+\+WINDOW\+\_\+\+SHOWN&window is visible \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_HIDDEN@{SDL\_WINDOW\_HIDDEN}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_HIDDEN@{SDL\_WINDOW\_HIDDEN}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18adda25e98e54964c0c2ec9ac31f5e629c}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18adda25e98e54964c0c2ec9ac31f5e629c} 
+SDL\+\_\+\+WINDOW\+\_\+\+HIDDEN&window is not visible \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_BORDERLESS@{SDL\_WINDOW\_BORDERLESS}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_BORDERLESS@{SDL\_WINDOW\_BORDERLESS}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18af7baea7dc9c0e4f09b28793504b02e4c}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18af7baea7dc9c0e4f09b28793504b02e4c} 
+SDL\+\_\+\+WINDOW\+\_\+\+BORDERLESS&no window decoration \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_RESIZABLE@{SDL\_WINDOW\_RESIZABLE}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_RESIZABLE@{SDL\_WINDOW\_RESIZABLE}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf59a5e2f762aa2b6d2e49b0ca220fd8}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf59a5e2f762aa2b6d2e49b0ca220fd8} 
+SDL\+\_\+\+WINDOW\+\_\+\+RESIZABLE&window can be resized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_MINIMIZED@{SDL\_WINDOW\_MINIMIZED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_MINIMIZED@{SDL\_WINDOW\_MINIMIZED}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a7f08ee26b5773412a212233ddc168c5a}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a7f08ee26b5773412a212233ddc168c5a} 
+SDL\+\_\+\+WINDOW\+\_\+\+MINIMIZED&window is minimized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_MAXIMIZED@{SDL\_WINDOW\_MAXIMIZED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_MAXIMIZED@{SDL\_WINDOW\_MAXIMIZED}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18acd8063a617f2ce05f694ecdbf56f811a}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18acd8063a617f2ce05f694ecdbf56f811a} 
+SDL\+\_\+\+WINDOW\+\_\+\+MAXIMIZED&window is maximized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_INPUT\_GRABBED@{SDL\_WINDOW\_INPUT\_GRABBED}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_INPUT\_GRABBED@{SDL\_WINDOW\_INPUT\_GRABBED}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf410e1082e45a55ef9176163610dba2}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf410e1082e45a55ef9176163610dba2} 
+SDL\+\_\+\+WINDOW\+\_\+\+INPUT\+\_\+\+GRABBED&window has grabbed input focus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_INPUT\_FOCUS@{SDL\_WINDOW\_INPUT\_FOCUS}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_INPUT\_FOCUS@{SDL\_WINDOW\_INPUT\_FOCUS}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18afcbb682c0942bc106af1474c1d34bb53}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18afcbb682c0942bc106af1474c1d34bb53} 
+SDL\+\_\+\+WINDOW\+\_\+\+INPUT\+\_\+\+FOCUS&window has input focus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_MOUSE\_FOCUS@{SDL\_WINDOW\_MOUSE\_FOCUS}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_MOUSE\_FOCUS@{SDL\_WINDOW\_MOUSE\_FOCUS}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aa722d0955c297fc60c09b10e1679684c}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aa722d0955c297fc60c09b10e1679684c} 
+SDL\+\_\+\+WINDOW\+\_\+\+MOUSE\+\_\+\+FOCUS&window has mouse focus \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_FOREIGN@{SDL\_WINDOW\_FOREIGN}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_FOREIGN@{SDL\_WINDOW\_FOREIGN}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a1ac8e0ef2237a089cf487d7e7fcc6e23}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a1ac8e0ef2237a089cf487d7e7fcc6e23} 
+SDL\+\_\+\+WINDOW\+\_\+\+FOREIGN&window not created by SDL \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_ALLOW\_HIGHDPI@{SDL\_WINDOW\_ALLOW\_HIGHDPI}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_ALLOW\_HIGHDPI@{SDL\_WINDOW\_ALLOW\_HIGHDPI}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a03ec21b04fa4e5c8cc868aa01a0c1bf3}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a03ec21b04fa4e5c8cc868aa01a0c1bf3} 
+SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI&window should be created in high-\/\+DPI mode if supported \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOW\_MOUSE\_CAPTURE@{SDL\_WINDOW\_MOUSE\_CAPTURE}!SDL\_video.h@{SDL\_video.h}}\index{SDL\_video.h@{SDL\_video.h}!SDL\_WINDOW\_MOUSE\_CAPTURE@{SDL\_WINDOW\_MOUSE\_CAPTURE}}}\Hypertarget{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4c16b51a323741bf5c492adce34e5882}\label{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4c16b51a323741bf5c492adce34e5882} 
+SDL\+\_\+\+WINDOW\+\_\+\+MOUSE\+\_\+\+CAPTURE&window has mouse captured (unrelated to INPUT\+\_\+\+GRABBED) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6}\label{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_CreateWindow@{SDL\_CreateWindow}}
+\index{SDL\_CreateWindow@{SDL\_CreateWindow}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_CreateWindow()}{SDL\_CreateWindow()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Create\+Window (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Create a window with the specified position, dimensions, and flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the window, in UTF-\/8 encoding. \\
+\hline
+{\em x} & The x position of the window, SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED, or SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED. \\
+\hline
+{\em y} & The y position of the window, SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED, or SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED. \\
+\hline
+{\em w} & The width of the window, in screen coordinates. \\
+\hline
+{\em h} & The height of the window, in screen coordinates. \\
+\hline
+{\em flags} & The flags for the window, a mask of any of the following\+: \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ac7b8279bdf5e22a0b4a95aae3d846923}{SDL\+\_\+\+WINDOW\+\_\+\+FULLSCREEN}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a5cf8af096f1870b0c2b12267cabd1f7a}{SDL\+\_\+\+WINDOW\+\_\+\+OPENGL}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18adda25e98e54964c0c2ec9ac31f5e629c}{SDL\+\_\+\+WINDOW\+\_\+\+HIDDEN}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18af7baea7dc9c0e4f09b28793504b02e4c}{SDL\+\_\+\+WINDOW\+\_\+\+BORDERLESS}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf59a5e2f762aa2b6d2e49b0ca220fd8}{SDL\+\_\+\+WINDOW\+\_\+\+RESIZABLE}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18acd8063a617f2ce05f694ecdbf56f811a}{SDL\+\_\+\+WINDOW\+\_\+\+MAXIMIZED}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a7f08ee26b5773412a212233ddc168c5a}{SDL\+\_\+\+WINDOW\+\_\+\+MINIMIZED}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf410e1082e45a55ef9176163610dba2}{SDL\+\_\+\+WINDOW\+\_\+\+INPUT\+\_\+\+GRABBED}, \doxylink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a03ec21b04fa4e5c8cc868aa01a0c1bf3}{SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The id of the window created, or zero if window creation failed.
+\end{DoxyReturn}
+If the window is created with the SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI flag, its size in pixels may differ from its size in screen coordinates on platforms with high-\/\+DPI support (e.\+g. i\+OS and Mac OS X). Use \doxylink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size()} to query the client area\textquotesingle{}s size in screen coordinates, and \doxylink{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3}{SDL\+\_\+\+GL\+\_\+\+Get\+Drawable\+Size()} or \doxylink{_s_d_l__render_8h_abfc0c9a50d9d1870ab7d271b7a73d8ab}{SDL\+\_\+\+Get\+Renderer\+Output\+Size()} to query the drawable size in pixels.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a72609295a4faee0587268339ccff80c2}{SDL\+\_\+\+Destroy\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_aa5ba5ca928613b022e9872dc19197f6e}\label{_s_d_l__video_8h_aa5ba5ca928613b022e9872dc19197f6e} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_CreateWindowFrom@{SDL\_CreateWindowFrom}}
+\index{SDL\_CreateWindowFrom@{SDL\_CreateWindowFrom}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_CreateWindowFrom()}{SDL\_CreateWindowFrom()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Create\+Window\+From (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Create an SDL window from an existing native window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to driver-\/dependent window creation data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The id of the window created, or zero if window creation failed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a72609295a4faee0587268339ccff80c2}{SDL\+\_\+\+Destroy\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a68eb0d850934fa1c7ac12c30f2d56a84}\label{_s_d_l__video_8h_a68eb0d850934fa1c7ac12c30f2d56a84} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_DisableScreenSaver@{SDL\_DisableScreenSaver}}
+\index{SDL\_DisableScreenSaver@{SDL\_DisableScreenSaver}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_DisableScreenSaver()}{SDL\_DisableScreenSaver()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Disable\+Screen\+Saver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Prevent the screen from being blanked by a screensaver. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a4b5c116d57947bf508c13b21aac49cbf}{SDL\+\_\+\+Is\+Screen\+Saver\+Enabled()} 
+
+\doxylink{_s_d_l__video_8h_a17846c713066aa29a86e1be205a7fc3e}{SDL\+\_\+\+Enable\+Screen\+Saver()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a17846c713066aa29a86e1be205a7fc3e}\label{_s_d_l__video_8h_a17846c713066aa29a86e1be205a7fc3e} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_EnableScreenSaver@{SDL\_EnableScreenSaver}}
+\index{SDL\_EnableScreenSaver@{SDL\_EnableScreenSaver}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_EnableScreenSaver()}{SDL\_EnableScreenSaver()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Enable\+Screen\+Saver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Allow the screen to be blanked by a screensaver. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a4b5c116d57947bf508c13b21aac49cbf}{SDL\+\_\+\+Is\+Screen\+Saver\+Enabled()} 
+
+\doxylink{_s_d_l__video_8h_a68eb0d850934fa1c7ac12c30f2d56a84}{SDL\+\_\+\+Disable\+Screen\+Saver()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a912994189211554bdd0b264e3f6d8e9f}\label{_s_d_l__video_8h_a912994189211554bdd0b264e3f6d8e9f} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetClosestDisplayMode@{SDL\_GetClosestDisplayMode}}
+\index{SDL\_GetClosestDisplayMode@{SDL\_GetClosestDisplayMode}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetClosestDisplayMode()}{SDL\_GetClosestDisplayMode()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Closest\+Display\+Mode (\begin{DoxyParamCaption}\item[{int}]{display\+Index,  }\item[{const \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}}]{mode,  }\item[{\mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}}]{closest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the closest match to the requested display mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display\+Index} & The index of display from which mode should be queried. \\
+\hline
+{\em mode} & The desired display mode \\
+\hline
+{\em closest} & A pointer to a display mode to be filled in with the closest match of the available display modes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The passed in value {\ttfamily closest}, or NULL if no matching video mode was available.
+\end{DoxyReturn}
+The available display modes are scanned, and {\ttfamily closest} is filled in with the closest mode matching the requested mode and returned. The mode format and refresh\+\_\+rate default to the desktop mode if they are 0. The modes are scanned with size being first priority, format being second priority, and finally checking the refresh\+\_\+rate. If all the available modes are too small, then NULL is returned.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a5abcf18592f00019c517e791f8ba53fc}{SDL\+\_\+\+Get\+Num\+Display\+Modes()} 
+
+\doxylink{_s_d_l__video_8h_a0a53e003ec6ad24dd2bbbcd0ad297311}{SDL\+\_\+\+Get\+Display\+Mode()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_aec2f46152701003e12689dac7de79eb9}\label{_s_d_l__video_8h_aec2f46152701003e12689dac7de79eb9} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetCurrentVideoDriver@{SDL\_GetCurrentVideoDriver}}
+\index{SDL\_GetCurrentVideoDriver@{SDL\_GetCurrentVideoDriver}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetCurrentVideoDriver()}{SDL\_GetCurrentVideoDriver()}}
+{\footnotesize\ttfamily DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Current\+Video\+Driver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Returns the name of the currently initialized video driver. 
+
+\begin{DoxyReturn}{Returns}
+The name of the current video driver or NULL if no driver has been initialized
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ac6f3250a95bd027fd1a374d7ed15fc57}{SDL\+\_\+\+Get\+Num\+Video\+Drivers()} 
+
+\doxylink{_s_d_l__video_8h_ae88ab2c7515c52b180ef0238f8965b4b}{SDL\+\_\+\+Get\+Video\+Driver()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ac05213009395c10ae40bede2de8e08a1}\label{_s_d_l__video_8h_ac05213009395c10ae40bede2de8e08a1} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetDisplayBounds@{SDL\_GetDisplayBounds}}
+\index{SDL\_GetDisplayBounds@{SDL\_GetDisplayBounds}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetDisplayBounds()}{SDL\_GetDisplayBounds()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Display\+Bounds (\begin{DoxyParamCaption}\item[{int}]{display\+Index,  }\item[{\mbox{\hyperlink{struct_s_d_l___rect}{SDL\+\_\+\+Rect}} \texorpdfstring{$\ast$}{*}}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the desktop area represented by a display, with the primary display located at 0,0. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if the index is out of range.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a074d185b7ef04e0305acdeeb049dd2be}{SDL\+\_\+\+Get\+Num\+Video\+Displays()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a8207ec5d13bd87158cbb42ef76e33216}\label{_s_d_l__video_8h_a8207ec5d13bd87158cbb42ef76e33216} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetDisplayDPI@{SDL\_GetDisplayDPI}}
+\index{SDL\_GetDisplayDPI@{SDL\_GetDisplayDPI}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetDisplayDPI()}{SDL\_GetDisplayDPI()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Display\+DPI (\begin{DoxyParamCaption}\item[{int}]{display\+Index,  }\item[{float \texorpdfstring{$\ast$}{*}}]{ddpi,  }\item[{float \texorpdfstring{$\ast$}{*}}]{hdpi,  }\item[{float \texorpdfstring{$\ast$}{*}}]{vdpi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the dots/pixels-\/per-\/inch for a display. 
+
+\begin{DoxyNote}{Note}
+Diagonal, horizontal and vertical DPI can all be optionally returned if the parameter is non-\/\+NULL.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if no DPI information is available or the index is out of range.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a074d185b7ef04e0305acdeeb049dd2be}{SDL\+\_\+\+Get\+Num\+Video\+Displays()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a0a53e003ec6ad24dd2bbbcd0ad297311}\label{_s_d_l__video_8h_a0a53e003ec6ad24dd2bbbcd0ad297311} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetDisplayMode@{SDL\_GetDisplayMode}}
+\index{SDL\_GetDisplayMode@{SDL\_GetDisplayMode}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetDisplayMode()}{SDL\_GetDisplayMode()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Display\+Mode (\begin{DoxyParamCaption}\item[{int}]{display\+Index,  }\item[{int}]{mode\+Index,  }\item[{\mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Fill in information about a specific display mode. 
+
+\begin{DoxyNote}{Note}
+The display modes are sorted in this priority\+: \begin{DoxyItemize}
+\item bits per pixel -\/\texorpdfstring{$>$}{>} more colors to fewer colors \item width -\/\texorpdfstring{$>$}{>} largest to smallest \item height -\/\texorpdfstring{$>$}{>} largest to smallest \item refresh rate -\/\texorpdfstring{$>$}{>} highest to lowest\end{DoxyItemize}
+
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a5abcf18592f00019c517e791f8ba53fc}{SDL\+\_\+\+Get\+Num\+Display\+Modes()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a3c8523dad11fceab8a8029239185529b}\label{_s_d_l__video_8h_a3c8523dad11fceab8a8029239185529b} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetDisplayName@{SDL\_GetDisplayName}}
+\index{SDL\_GetDisplayName@{SDL\_GetDisplayName}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetDisplayName()}{SDL\_GetDisplayName()}}
+{\footnotesize\ttfamily DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Display\+Name (\begin{DoxyParamCaption}\item[{int}]{display\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the name of a display in UTF-\/8 encoding. 
+
+\begin{DoxyReturn}{Returns}
+The name of a display, or NULL for an invalid display index.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a074d185b7ef04e0305acdeeb049dd2be}{SDL\+\_\+\+Get\+Num\+Video\+Displays()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a6d0a45787b2a383bed8ed56133b04eab}\label{_s_d_l__video_8h_a6d0a45787b2a383bed8ed56133b04eab} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetGrabbedWindow@{SDL\_GetGrabbedWindow}}
+\index{SDL\_GetGrabbedWindow@{SDL\_GetGrabbedWindow}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetGrabbedWindow()}{SDL\_GetGrabbedWindow()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Grabbed\+Window (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the window that currently has an input grab enabled. 
+
+\begin{DoxyReturn}{Returns}
+This returns the window if input is grabbed, and NULL otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_abe7fd559e9d6da046c5984dea679a89b}{SDL\+\_\+\+Set\+Window\+Grab()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a5abcf18592f00019c517e791f8ba53fc}\label{_s_d_l__video_8h_a5abcf18592f00019c517e791f8ba53fc} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetNumDisplayModes@{SDL\_GetNumDisplayModes}}
+\index{SDL\_GetNumDisplayModes@{SDL\_GetNumDisplayModes}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetNumDisplayModes()}{SDL\_GetNumDisplayModes()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Num\+Display\+Modes (\begin{DoxyParamCaption}\item[{int}]{display\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Returns the number of available display modes. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a0a53e003ec6ad24dd2bbbcd0ad297311}{SDL\+\_\+\+Get\+Display\+Mode()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a074d185b7ef04e0305acdeeb049dd2be}\label{_s_d_l__video_8h_a074d185b7ef04e0305acdeeb049dd2be} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetNumVideoDisplays@{SDL\_GetNumVideoDisplays}}
+\index{SDL\_GetNumVideoDisplays@{SDL\_GetNumVideoDisplays}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetNumVideoDisplays()}{SDL\_GetNumVideoDisplays()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Num\+Video\+Displays (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Returns the number of available video displays. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ac05213009395c10ae40bede2de8e08a1}{SDL\+\_\+\+Get\+Display\+Bounds()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ac6f3250a95bd027fd1a374d7ed15fc57}\label{_s_d_l__video_8h_ac6f3250a95bd027fd1a374d7ed15fc57} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetNumVideoDrivers@{SDL\_GetNumVideoDrivers}}
+\index{SDL\_GetNumVideoDrivers@{SDL\_GetNumVideoDrivers}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetNumVideoDrivers()}{SDL\_GetNumVideoDrivers()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Num\+Video\+Drivers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the number of video drivers compiled into SDL. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ae88ab2c7515c52b180ef0238f8965b4b}{SDL\+\_\+\+Get\+Video\+Driver()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ae88ab2c7515c52b180ef0238f8965b4b}\label{_s_d_l__video_8h_ae88ab2c7515c52b180ef0238f8965b4b} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetVideoDriver@{SDL\_GetVideoDriver}}
+\index{SDL\_GetVideoDriver@{SDL\_GetVideoDriver}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetVideoDriver()}{SDL\_GetVideoDriver()}}
+{\footnotesize\ttfamily DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Video\+Driver (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the name of a built in video driver. 
+
+\begin{DoxyNote}{Note}
+The video drivers are presented in the order in which they are normally checked during initialization.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ac6f3250a95bd027fd1a374d7ed15fc57}{SDL\+\_\+\+Get\+Num\+Video\+Drivers()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a21c10969331c89e8d0e6a8f998a3c319}\label{_s_d_l__video_8h_a21c10969331c89e8d0e6a8f998a3c319} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowBrightness@{SDL\_GetWindowBrightness}}
+\index{SDL\_GetWindowBrightness@{SDL\_GetWindowBrightness}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowBrightness()}{SDL\_GetWindowBrightness()}}
+{\footnotesize\ttfamily DECLSPEC float SDLCALL SDL\+\_\+\+Get\+Window\+Brightness (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the brightness (gamma correction) for a window. 
+
+\begin{DoxyReturn}{Returns}
+The last brightness value passed to \doxylink{_s_d_l__video_8h_a896972250b4d2e0f75888fa44fa792ec}{SDL\+\_\+\+Set\+Window\+Brightness()}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a896972250b4d2e0f75888fa44fa792ec}{SDL\+\_\+\+Set\+Window\+Brightness()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ae2b358354dfad5523efadb95adc59ce4}\label{_s_d_l__video_8h_ae2b358354dfad5523efadb95adc59ce4} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowData@{SDL\_GetWindowData}}
+\index{SDL\_GetWindowData@{SDL\_GetWindowData}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowData()}{SDL\_GetWindowData()}}
+{\footnotesize\ttfamily DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Window\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Retrieve the data pointer associated with a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to query. \\
+\hline
+{\em name} & The name of the pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value associated with \textquotesingle{}name\textquotesingle{}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a4d2831ad431f59e3a5a5e472599f6c0a}{SDL\+\_\+\+Set\+Window\+Data()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a0be1d0a4d1f9a0da23b78db2f55871b5}\label{_s_d_l__video_8h_a0be1d0a4d1f9a0da23b78db2f55871b5} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowDisplayIndex@{SDL\_GetWindowDisplayIndex}}
+\index{SDL\_GetWindowDisplayIndex@{SDL\_GetWindowDisplayIndex}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowDisplayIndex()}{SDL\_GetWindowDisplayIndex()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Window\+Display\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the display index associated with a window. 
+
+\begin{DoxyReturn}{Returns}
+the display index of the display containing the center of the window, or -\/1 on error. 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__video_8h_a8185547bc7cb0bbeb400f459792d081a}\label{_s_d_l__video_8h_a8185547bc7cb0bbeb400f459792d081a} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowDisplayMode@{SDL\_GetWindowDisplayMode}}
+\index{SDL\_GetWindowDisplayMode@{SDL\_GetWindowDisplayMode}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowDisplayMode()}{SDL\_GetWindowDisplayMode()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Window\+Display\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Fill in information about the display mode used when a fullscreen window is visible. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a2ca17d1e857d1560738e002c9935088a}{SDL\+\_\+\+Set\+Window\+Display\+Mode()} 
+
+\doxylink{_s_d_l__video_8h_ab4aa48f0a29f0868ce4e0422c02ed2fa}{SDL\+\_\+\+Set\+Window\+Fullscreen()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_af4d647be3bb21a33586d69d5cad87ead}\label{_s_d_l__video_8h_af4d647be3bb21a33586d69d5cad87ead} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowGammaRamp@{SDL\_GetWindowGammaRamp}}
+\index{SDL\_GetWindowGammaRamp@{SDL\_GetWindowGammaRamp}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowGammaRamp()}{SDL\_GetWindowGammaRamp()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Get\+Window\+Gamma\+Ramp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}}]{red,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}}]{green,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}}]{blue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the gamma ramp for a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window from which the gamma ramp should be queried. \\
+\hline
+{\em red} & A pointer to a 256 element array of 16-\/bit quantities to hold the translation table for the red channel, or NULL. \\
+\hline
+{\em green} & A pointer to a 256 element array of 16-\/bit quantities to hold the translation table for the green channel, or NULL. \\
+\hline
+{\em blue} & A pointer to a 256 element array of 16-\/bit quantities to hold the translation table for the blue channel, or NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if gamma ramps are unsupported.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a6799acf235454f519ac209ccf14caa67}{SDL\+\_\+\+Set\+Window\+Gamma\+Ramp()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ad4e451db3880b6e0dd6647cbc351c6c0}\label{_s_d_l__video_8h_ad4e451db3880b6e0dd6647cbc351c6c0} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowGrab@{SDL\_GetWindowGrab}}
+\index{SDL\_GetWindowGrab@{SDL\_GetWindowGrab}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowGrab()}{SDL\_GetWindowGrab()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Get\+Window\+Grab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get a window\textquotesingle{}s input grab mode. 
+
+\begin{DoxyReturn}{Returns}
+This returns SDL\+\_\+\+TRUE if input is grabbed, and SDL\+\_\+\+FALSE otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_abe7fd559e9d6da046c5984dea679a89b}{SDL\+\_\+\+Set\+Window\+Grab()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a38d65795da3feacfec1c392c101e92fd}\label{_s_d_l__video_8h_a38d65795da3feacfec1c392c101e92fd} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowMaximumSize@{SDL\_GetWindowMaximumSize}}
+\index{SDL\_GetWindowMaximumSize@{SDL\_GetWindowMaximumSize}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowMaximumSize()}{SDL\_GetWindowMaximumSize()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Get\+Window\+Maximum\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int \texorpdfstring{$\ast$}{*}}]{w,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the maximum size of a window\textquotesingle{}s client area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to query. \\
+\hline
+{\em w} & Pointer to variable for storing the maximum width, may be NULL \\
+\hline
+{\em h} & Pointer to variable for storing the maximum height, may be NULL\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_afe1c6ca08d5b8c336b1276236559287a}{SDL\+\_\+\+Get\+Window\+Minimum\+Size()} 
+
+\doxylink{_s_d_l__video_8h_aaf95e53a3b70d55d71d7b2cf822ea77e}{SDL\+\_\+\+Set\+Window\+Maximum\+Size()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_afe1c6ca08d5b8c336b1276236559287a}\label{_s_d_l__video_8h_afe1c6ca08d5b8c336b1276236559287a} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowMinimumSize@{SDL\_GetWindowMinimumSize}}
+\index{SDL\_GetWindowMinimumSize@{SDL\_GetWindowMinimumSize}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowMinimumSize()}{SDL\_GetWindowMinimumSize()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Get\+Window\+Minimum\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int \texorpdfstring{$\ast$}{*}}]{w,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the minimum size of a window\textquotesingle{}s client area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to query. \\
+\hline
+{\em w} & Pointer to variable for storing the minimum width, may be NULL \\
+\hline
+{\em h} & Pointer to variable for storing the minimum height, may be NULL\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a38d65795da3feacfec1c392c101e92fd}{SDL\+\_\+\+Get\+Window\+Maximum\+Size()} 
+
+\doxylink{_s_d_l__video_8h_a1b6dd546d8dec383be411f98926335ae}{SDL\+\_\+\+Set\+Window\+Minimum\+Size()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a03adfc1ed4aaf57da4af00bd247ac99c}\label{_s_d_l__video_8h_a03adfc1ed4aaf57da4af00bd247ac99c} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowPosition@{SDL\_GetWindowPosition}}
+\index{SDL\_GetWindowPosition@{SDL\_GetWindowPosition}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowPosition()}{SDL\_GetWindowPosition()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Get\+Window\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int \texorpdfstring{$\ast$}{*}}]{x,  }\item[{int \texorpdfstring{$\ast$}{*}}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the position of a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to query. \\
+\hline
+{\em x} & Pointer to variable for storing the x position, in screen coordinates. May be NULL. \\
+\hline
+{\em y} & Pointer to variable for storing the y position, in screen coordinates. May be NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ab200a53e01ddc697fd6b8e017cc4e6dd}{SDL\+\_\+\+Set\+Window\+Position()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}\label{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowSize@{SDL\_GetWindowSize}}
+\index{SDL\_GetWindowSize@{SDL\_GetWindowSize}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowSize()}{SDL\_GetWindowSize()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Get\+Window\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int \texorpdfstring{$\ast$}{*}}]{w,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the size of a window\textquotesingle{}s client area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to query. \\
+\hline
+{\em w} & Pointer to variable for storing the width, in screen coordinates. May be NULL. \\
+\hline
+{\em h} & Pointer to variable for storing the height, in screen coordinates. May be NULL.\\
+\hline
+\end{DoxyParams}
+The window size in screen coordinates may differ from the size in pixels, if the window was created with SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI on a platform with high-\/dpi support (e.\+g. i\+OS or OS X). Use \doxylink{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3}{SDL\+\_\+\+GL\+\_\+\+Get\+Drawable\+Size()} or \doxylink{_s_d_l__render_8h_abfc0c9a50d9d1870ab7d271b7a73d8ab}{SDL\+\_\+\+Get\+Renderer\+Output\+Size()} to get the real client area size in pixels.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a29b118c6932ccb94d85b5435ae1e0a19}{SDL\+\_\+\+Set\+Window\+Size()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a53fd405291238e8677632165afad3ea0}\label{_s_d_l__video_8h_a53fd405291238e8677632165afad3ea0} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowSurface@{SDL\_GetWindowSurface}}
+\index{SDL\_GetWindowSurface@{SDL\_GetWindowSurface}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowSurface()}{SDL\_GetWindowSurface()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{struct_s_d_l___surface}{SDL\+\_\+\+Surface}} \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Window\+Surface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the SDL surface associated with the window. 
+
+\begin{DoxyReturn}{Returns}
+The window\textquotesingle{}s framebuffer surface, or NULL on error.
+\end{DoxyReturn}
+A new surface will be created with the optimal format for the window, if necessary. This surface will be freed when the window is destroyed.
+
+\begin{DoxyNote}{Note}
+You may not combine this with 3D or the rendering API on this window.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a7bbfee05788dc85a1d67218cf3006653}{SDL\+\_\+\+Update\+Window\+Surface()} 
+
+\doxylink{_s_d_l__video_8h_ae6b0c6cf354beb87291887bfa02385b1}{SDL\+\_\+\+Update\+Window\+Surface\+Rects()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a631b117f2c3712a55706d7fd60013536}\label{_s_d_l__video_8h_a631b117f2c3712a55706d7fd60013536} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GetWindowTitle@{SDL\_GetWindowTitle}}
+\index{SDL\_GetWindowTitle@{SDL\_GetWindowTitle}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowTitle()}{SDL\_GetWindowTitle()}}
+{\footnotesize\ttfamily DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Get\+Window\+Title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the title of a window, in UTF-\/8 format. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a41aabc4b68f75f41d97995e02eb9deb6}{SDL\+\_\+\+Set\+Window\+Title()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a0e14c935cf304133278893bf6c1d2691}\label{_s_d_l__video_8h_a0e14c935cf304133278893bf6c1d2691} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_CreateContext@{SDL\_GL\_CreateContext}}
+\index{SDL\_GL\_CreateContext@{SDL\_GL\_CreateContext}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_CreateContext()}{SDL\_GL\_CreateContext()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\+\_\+\+GLContext}} SDLCALL SDL\+\_\+\+GL\+\_\+\+Create\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Create an Open\+GL context for use with an Open\+GL window, and make it current. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_aa64ab050e0bd3a61057c3dffe953aa9f}{SDL\+\_\+\+GL\+\_\+\+Delete\+Context()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_aa64ab050e0bd3a61057c3dffe953aa9f}\label{_s_d_l__video_8h_aa64ab050e0bd3a61057c3dffe953aa9f} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_DeleteContext@{SDL\_GL\_DeleteContext}}
+\index{SDL\_GL\_DeleteContext@{SDL\_GL\_DeleteContext}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_DeleteContext()}{SDL\_GL\_DeleteContext()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+GL\+\_\+\+Delete\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\+\_\+\+GLContext}}}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Delete an Open\+GL context. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a0e14c935cf304133278893bf6c1d2691}{SDL\+\_\+\+GL\+\_\+\+Create\+Context()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3}\label{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_GetDrawableSize@{SDL\_GL\_GetDrawableSize}}
+\index{SDL\_GL\_GetDrawableSize@{SDL\_GL\_GetDrawableSize}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_GetDrawableSize()}{SDL\_GL\_GetDrawableSize()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+GL\+\_\+\+Get\+Drawable\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int \texorpdfstring{$\ast$}{*}}]{w,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the size of a window\textquotesingle{}s underlying drawable in pixels (for use with gl\+Viewport). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Window from which the drawable size should be queried \\
+\hline
+{\em w} & Pointer to variable for storing the width in pixels, may be NULL \\
+\hline
+{\em h} & Pointer to variable for storing the height in pixels, may be NULL\\
+\hline
+\end{DoxyParams}
+This may differ from \doxylink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size()} if we\textquotesingle{}re rendering to a high-\/\+DPI drawable, i.\+e. the window was created with SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI on a platform with high-\/\+DPI support (Apple calls this "{}\+Retina"{}), and not disabled by the SDL\+\_\+\+HINT\+\_\+\+VIDEO\+\_\+\+HIGHDPI\+\_\+\+DISABLED hint.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size()} 
+
+\doxylink{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6}{SDL\+\_\+\+Create\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ae96490db6285ed0df44a9b1c0f498605}\label{_s_d_l__video_8h_ae96490db6285ed0df44a9b1c0f498605} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_GetSwapInterval@{SDL\_GL\_GetSwapInterval}}
+\index{SDL\_GL\_GetSwapInterval@{SDL\_GL\_GetSwapInterval}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_GetSwapInterval()}{SDL\_GL\_GetSwapInterval()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+GL\+\_\+\+Get\+Swap\+Interval (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the swap interval for the current Open\+GL context. 
+
+\begin{DoxyReturn}{Returns}
+0 if there is no vertical retrace synchronization, 1 if the buffer swap is synchronized with the vertical retrace, and -\/1 if late swaps happen immediately instead of waiting for the next retrace. If the system can\textquotesingle{}t determine the swap interval, or there isn\textquotesingle{}t a valid current context, this will return 0 as a safe default.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a68b0d06595d086d9244fd49afe3e8360}{SDL\+\_\+\+GL\+\_\+\+Set\+Swap\+Interval()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a398df9aaf43a69dc2cfaab5b306b8f91}\label{_s_d_l__video_8h_a398df9aaf43a69dc2cfaab5b306b8f91} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_LoadLibrary@{SDL\_GL\_LoadLibrary}}
+\index{SDL\_GL\_LoadLibrary@{SDL\_GL\_LoadLibrary}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_LoadLibrary()}{SDL\_GL\_LoadLibrary()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+GL\+\_\+\+Load\+Library (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Dynamically load an Open\+GL library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The platform dependent Open\+GL library name, or NULL to open the default Open\+GL library.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if the library couldn\textquotesingle{}t be loaded.
+\end{DoxyReturn}
+This should be done after initializing the video driver, but before creating any Open\+GL windows. If no Open\+GL library is loaded, the default library will be loaded upon creation of the first Open\+GL window.
+
+\begin{DoxyNote}{Note}
+If you do this, you need to retrieve all of the GL functions used in your program from the dynamic library using \doxylink{_s_d_l__video_8h_a6500d698e7dbe6799250a626a8b42359}{SDL\+\_\+\+GL\+\_\+\+Get\+Proc\+Address()}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a6500d698e7dbe6799250a626a8b42359}{SDL\+\_\+\+GL\+\_\+\+Get\+Proc\+Address()} 
+
+\doxylink{_s_d_l__video_8h_a92103adf9637ec2dc471714076872bdc}{SDL\+\_\+\+GL\+\_\+\+Unload\+Library()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a5a2ad98e8920f8069bf89eb3f9bbc377}\label{_s_d_l__video_8h_a5a2ad98e8920f8069bf89eb3f9bbc377} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_MakeCurrent@{SDL\_GL\_MakeCurrent}}
+\index{SDL\_GL\_MakeCurrent@{SDL\_GL\_MakeCurrent}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_MakeCurrent()}{SDL\_GL\_MakeCurrent()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+GL\+\_\+\+Make\+Current (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\+\_\+\+GLContext}}}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set up an Open\+GL context for rendering into an Open\+GL window. 
+
+\begin{DoxyNote}{Note}
+The context must have been created with a compatible window. 
+\end{DoxyNote}
+\Hypertarget{_s_d_l__video_8h_a68b0d06595d086d9244fd49afe3e8360}\label{_s_d_l__video_8h_a68b0d06595d086d9244fd49afe3e8360} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_SetSwapInterval@{SDL\_GL\_SetSwapInterval}}
+\index{SDL\_GL\_SetSwapInterval@{SDL\_GL\_SetSwapInterval}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_SetSwapInterval()}{SDL\_GL\_SetSwapInterval()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+GL\+\_\+\+Set\+Swap\+Interval (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the swap interval for the current Open\+GL context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & 0 for immediate updates, 1 for updates synchronized with the vertical retrace. If the system supports it, you may specify -\/1 to allow late swaps to happen immediately instead of waiting for the next retrace.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if setting the swap interval is not supported.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ae96490db6285ed0df44a9b1c0f498605}{SDL\+\_\+\+GL\+\_\+\+Get\+Swap\+Interval()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a92103adf9637ec2dc471714076872bdc}\label{_s_d_l__video_8h_a92103adf9637ec2dc471714076872bdc} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_GL\_UnloadLibrary@{SDL\_GL\_UnloadLibrary}}
+\index{SDL\_GL\_UnloadLibrary@{SDL\_GL\_UnloadLibrary}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GL\_UnloadLibrary()}{SDL\_GL\_UnloadLibrary()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+GL\+\_\+\+Unload\+Library (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Unload the Open\+GL library previously loaded by \doxylink{_s_d_l__video_8h_a398df9aaf43a69dc2cfaab5b306b8f91}{SDL\+\_\+\+GL\+\_\+\+Load\+Library()}. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a398df9aaf43a69dc2cfaab5b306b8f91}{SDL\+\_\+\+GL\+\_\+\+Load\+Library()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_aa3cbe663e0bd62aa7a747a6c11781766}\label{_s_d_l__video_8h_aa3cbe663e0bd62aa7a747a6c11781766} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_HideWindow@{SDL\_HideWindow}}
+\index{SDL\_HideWindow@{SDL\_HideWindow}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HideWindow()}{SDL\_HideWindow()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Hide\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Hide a window. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a6051ce26885b32b80bc7285b4facd0a1}{SDL\+\_\+\+Show\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a4b5c116d57947bf508c13b21aac49cbf}\label{_s_d_l__video_8h_a4b5c116d57947bf508c13b21aac49cbf} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_IsScreenSaverEnabled@{SDL\_IsScreenSaverEnabled}}
+\index{SDL\_IsScreenSaverEnabled@{SDL\_IsScreenSaverEnabled}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_IsScreenSaverEnabled()}{SDL\_IsScreenSaverEnabled()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Is\+Screen\+Saver\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Returns whether the screensaver is currently enabled (default on). 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a17846c713066aa29a86e1be205a7fc3e}{SDL\+\_\+\+Enable\+Screen\+Saver()} 
+
+\doxylink{_s_d_l__video_8h_a68eb0d850934fa1c7ac12c30f2d56a84}{SDL\+\_\+\+Disable\+Screen\+Saver()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a8d969b660fee270f84cb403c8b75ded6}\label{_s_d_l__video_8h_a8d969b660fee270f84cb403c8b75ded6} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_MaximizeWindow@{SDL\_MaximizeWindow}}
+\index{SDL\_MaximizeWindow@{SDL\_MaximizeWindow}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MaximizeWindow()}{SDL\_MaximizeWindow()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Maximize\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Make a window as large as possible. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_afea37fca3b12f454e7f91d919fc99fbd}{SDL\+\_\+\+Restore\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a9f802f6c7952552b1cb26958fad3f2a6}\label{_s_d_l__video_8h_a9f802f6c7952552b1cb26958fad3f2a6} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_MinimizeWindow@{SDL\_MinimizeWindow}}
+\index{SDL\_MinimizeWindow@{SDL\_MinimizeWindow}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MinimizeWindow()}{SDL\_MinimizeWindow()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Minimize\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Minimize a window to an iconic representation. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_afea37fca3b12f454e7f91d919fc99fbd}{SDL\+\_\+\+Restore\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_afea37fca3b12f454e7f91d919fc99fbd}\label{_s_d_l__video_8h_afea37fca3b12f454e7f91d919fc99fbd} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_RestoreWindow@{SDL\_RestoreWindow}}
+\index{SDL\_RestoreWindow@{SDL\_RestoreWindow}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_RestoreWindow()}{SDL\_RestoreWindow()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Restore\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Restore the size and position of a minimized or maximized window. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a8d969b660fee270f84cb403c8b75ded6}{SDL\+\_\+\+Maximize\+Window()} 
+
+\doxylink{_s_d_l__video_8h_a9f802f6c7952552b1cb26958fad3f2a6}{SDL\+\_\+\+Minimize\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_afb4b868e2cc0107ed6bcf5ba7aa376e0}\label{_s_d_l__video_8h_afb4b868e2cc0107ed6bcf5ba7aa376e0} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowBordered@{SDL\_SetWindowBordered}}
+\index{SDL\_SetWindowBordered@{SDL\_SetWindowBordered}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowBordered()}{SDL\_SetWindowBordered()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Bordered (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{SDL\+\_\+bool}]{bordered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the border state of a window. 
+
+This will add or remove the window\textquotesingle{}s SDL\+\_\+\+WINDOW\+\_\+\+BORDERLESS flag and add or remove the border from the actual window. This is a no-\/op if the window\textquotesingle{}s border already matches the requested state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window of which to change the border state. \\
+\hline
+{\em bordered} & SDL\+\_\+\+FALSE to remove border, SDL\+\_\+\+TRUE to add border.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You can\textquotesingle{}t change the border state of a fullscreen window.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a4445733f04a1a9dd0e063cd4738f285f}{SDL\+\_\+\+Get\+Window\+Flags()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a896972250b4d2e0f75888fa44fa792ec}\label{_s_d_l__video_8h_a896972250b4d2e0f75888fa44fa792ec} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowBrightness@{SDL\_SetWindowBrightness}}
+\index{SDL\_SetWindowBrightness@{SDL\_SetWindowBrightness}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowBrightness()}{SDL\_SetWindowBrightness()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Set\+Window\+Brightness (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{float}]{brightness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the brightness (gamma correction) for a window. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if setting the brightness isn\textquotesingle{}t supported.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a21c10969331c89e8d0e6a8f998a3c319}{SDL\+\_\+\+Get\+Window\+Brightness()} 
+
+\doxylink{_s_d_l__video_8h_a6799acf235454f519ac209ccf14caa67}{SDL\+\_\+\+Set\+Window\+Gamma\+Ramp()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a4d2831ad431f59e3a5a5e472599f6c0a}\label{_s_d_l__video_8h_a4d2831ad431f59e3a5a5e472599f6c0a} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowData@{SDL\_SetWindowData}}
+\index{SDL\_SetWindowData@{SDL\_SetWindowData}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowData()}{SDL\_SetWindowData()}}
+{\footnotesize\ttfamily DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+\+Set\+Window\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{void \texorpdfstring{$\ast$}{*}}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Associate an arbitrary named pointer with a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to associate with the pointer. \\
+\hline
+{\em name} & The name of the pointer. \\
+\hline
+{\em userdata} & The associated pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous value associated with \textquotesingle{}name\textquotesingle{}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The name is case-\/sensitive.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ae2b358354dfad5523efadb95adc59ce4}{SDL\+\_\+\+Get\+Window\+Data()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a2ca17d1e857d1560738e002c9935088a}\label{_s_d_l__video_8h_a2ca17d1e857d1560738e002c9935088a} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowDisplayMode@{SDL\_SetWindowDisplayMode}}
+\index{SDL\_SetWindowDisplayMode@{SDL\_SetWindowDisplayMode}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowDisplayMode()}{SDL\_SetWindowDisplayMode()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Set\+Window\+Display\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\+\_\+\+Display\+Mode}} \texorpdfstring{$\ast$}{*}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the display mode used when a fullscreen window is visible. 
+
+By default the window\textquotesingle{}s dimensions and the desktop format and refresh rate are used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window for which the display mode should be set. \\
+\hline
+{\em mode} & The mode to use, or NULL for the default mode.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if setting the display mode failed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a8185547bc7cb0bbeb400f459792d081a}{SDL\+\_\+\+Get\+Window\+Display\+Mode()} 
+
+\doxylink{_s_d_l__video_8h_ab4aa48f0a29f0868ce4e0422c02ed2fa}{SDL\+\_\+\+Set\+Window\+Fullscreen()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ab4aa48f0a29f0868ce4e0422c02ed2fa}\label{_s_d_l__video_8h_ab4aa48f0a29f0868ce4e0422c02ed2fa} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowFullscreen@{SDL\_SetWindowFullscreen}}
+\index{SDL\_SetWindowFullscreen@{SDL\_SetWindowFullscreen}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowFullscreen()}{SDL\_SetWindowFullscreen()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Set\+Window\+Fullscreen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set a window\textquotesingle{}s fullscreen state. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if setting the display mode failed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a2ca17d1e857d1560738e002c9935088a}{SDL\+\_\+\+Set\+Window\+Display\+Mode()} 
+
+\doxylink{_s_d_l__video_8h_a8185547bc7cb0bbeb400f459792d081a}{SDL\+\_\+\+Get\+Window\+Display\+Mode()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a6799acf235454f519ac209ccf14caa67}\label{_s_d_l__video_8h_a6799acf235454f519ac209ccf14caa67} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowGammaRamp@{SDL\_SetWindowGammaRamp}}
+\index{SDL\_SetWindowGammaRamp@{SDL\_SetWindowGammaRamp}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowGammaRamp()}{SDL\_SetWindowGammaRamp()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Set\+Window\+Gamma\+Ramp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}}]{red,  }\item[{const \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}}]{green,  }\item[{const \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*}}]{blue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the gamma ramp for a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window for which the gamma ramp should be set. \\
+\hline
+{\em red} & The translation table for the red channel, or NULL. \\
+\hline
+{\em green} & The translation table for the green channel, or NULL. \\
+\hline
+{\em blue} & The translation table for the blue channel, or NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 if gamma ramps are unsupported.
+\end{DoxyReturn}
+Set the gamma translation table for the red, green, and blue channels of the video hardware. Each table is an array of 256 16-\/bit quantities, representing a mapping between the input and output for that channel. The input is the index into the array, and the output is the 16-\/bit gamma value at that index, scaled to the output color precision.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_af4d647be3bb21a33586d69d5cad87ead}{SDL\+\_\+\+Get\+Window\+Gamma\+Ramp()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_abe7fd559e9d6da046c5984dea679a89b}\label{_s_d_l__video_8h_abe7fd559e9d6da046c5984dea679a89b} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowGrab@{SDL\_SetWindowGrab}}
+\index{SDL\_SetWindowGrab@{SDL\_SetWindowGrab}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowGrab()}{SDL\_SetWindowGrab()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Grab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{SDL\+\_\+bool}]{grabbed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set a window\textquotesingle{}s input grab mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window for which the input grab mode should be set. \\
+\hline
+{\em grabbed} & This is SDL\+\_\+\+TRUE to grab input, and SDL\+\_\+\+FALSE to release input.\\
+\hline
+\end{DoxyParams}
+If the caller enables a grab while another window is currently grabbed, the other window loses its grab in favor of the caller\textquotesingle{}s window.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ad4e451db3880b6e0dd6647cbc351c6c0}{SDL\+\_\+\+Get\+Window\+Grab()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a23e14e1f21f7fb3727f38fd9b0711186}\label{_s_d_l__video_8h_a23e14e1f21f7fb3727f38fd9b0711186} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowHitTest@{SDL\_SetWindowHitTest}}
+\index{SDL\_SetWindowHitTest@{SDL\_SetWindowHitTest}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowHitTest()}{SDL\_SetWindowHitTest()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Set\+Window\+Hit\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957}{SDL\+\_\+\+Hit\+Test}}}]{callback,  }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Provide a callback that decides if a window region has special properties. 
+
+Normally windows are dragged and resized by decorations provided by the system window manager (a title bar, borders, etc), but for some apps, it makes sense to drag them from somewhere else inside the window itself; for example, one might have a borderless window that wants to be draggable from any part, or simulate its own title bar, etc.
+
+This function lets the app provide a callback that designates pieces of a given window as special. This callback is run during event processing if we need to tell the OS to treat a region of the window specially; the use of this callback is known as "{}hit testing."{}
+
+Mouse input may not be delivered to your application if it is within a special area; the OS will often apply that input to moving the window or resizing the window and not deliver it to the application.
+
+Specifying NULL for a callback disables hit-\/testing. Hit-\/testing is disabled by default.
+
+Platforms that don\textquotesingle{}t support this functionality will return -\/1 unconditionally, even if you\textquotesingle{}re attempting to disable hit-\/testing.
+
+Your callback may fire at any time, and its firing does not indicate any specific behavior (for example, on Windows, this certainly might fire when the OS is deciding whether to drag your window, but it fires for lots of other reasons, too, some unrelated to anything you probably care about {\itshape and when the mouse isn\textquotesingle{}t actually at the location it is testing}). Since this can fire at any time, you should try to keep your callback efficient, devoid of allocations, etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to set hit-\/testing on. \\
+\hline
+{\em callback} & The callback to call when doing a hit-\/test. \\
+\hline
+{\em callback\+\_\+data} & An app-\/defined void pointer passed to the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error (including unsupported). 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__video_8h_a0b6910b5d5aa2df0aeda257e445a472e}\label{_s_d_l__video_8h_a0b6910b5d5aa2df0aeda257e445a472e} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowIcon@{SDL\_SetWindowIcon}}
+\index{SDL\_SetWindowIcon@{SDL\_SetWindowIcon}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowIcon()}{SDL\_SetWindowIcon()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Icon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{struct_s_d_l___surface}{SDL\+\_\+\+Surface}} \texorpdfstring{$\ast$}{*}}]{icon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the icon for a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window for which the icon should be set. \\
+\hline
+{\em icon} & The icon for the window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_s_d_l__video_8h_aaf95e53a3b70d55d71d7b2cf822ea77e}\label{_s_d_l__video_8h_aaf95e53a3b70d55d71d7b2cf822ea77e} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowMaximumSize@{SDL\_SetWindowMaximumSize}}
+\index{SDL\_SetWindowMaximumSize@{SDL\_SetWindowMaximumSize}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowMaximumSize()}{SDL\_SetWindowMaximumSize()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Maximum\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{max\+\_\+w,  }\item[{int}]{max\+\_\+h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the maximum size of a window\textquotesingle{}s client area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to set a new maximum size. \\
+\hline
+{\em max\+\_\+w} & The maximum width of the window, must be \texorpdfstring{$>$}{>}0 \\
+\hline
+{\em max\+\_\+h} & The maximum height of the window, must be \texorpdfstring{$>$}{>}0\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You can\textquotesingle{}t change the maximum size of a fullscreen window, it automatically matches the size of the display mode.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a38d65795da3feacfec1c392c101e92fd}{SDL\+\_\+\+Get\+Window\+Maximum\+Size()} 
+
+\doxylink{_s_d_l__video_8h_a1b6dd546d8dec383be411f98926335ae}{SDL\+\_\+\+Set\+Window\+Minimum\+Size()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a1b6dd546d8dec383be411f98926335ae}\label{_s_d_l__video_8h_a1b6dd546d8dec383be411f98926335ae} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowMinimumSize@{SDL\_SetWindowMinimumSize}}
+\index{SDL\_SetWindowMinimumSize@{SDL\_SetWindowMinimumSize}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowMinimumSize()}{SDL\_SetWindowMinimumSize()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Minimum\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{min\+\_\+w,  }\item[{int}]{min\+\_\+h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the minimum size of a window\textquotesingle{}s client area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to set a new minimum size. \\
+\hline
+{\em min\+\_\+w} & The minimum width of the window, must be \texorpdfstring{$>$}{>}0 \\
+\hline
+{\em min\+\_\+h} & The minimum height of the window, must be \texorpdfstring{$>$}{>}0\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You can\textquotesingle{}t change the minimum size of a fullscreen window, it automatically matches the size of the display mode.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_afe1c6ca08d5b8c336b1276236559287a}{SDL\+\_\+\+Get\+Window\+Minimum\+Size()} 
+
+\doxylink{_s_d_l__video_8h_aaf95e53a3b70d55d71d7b2cf822ea77e}{SDL\+\_\+\+Set\+Window\+Maximum\+Size()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ab200a53e01ddc697fd6b8e017cc4e6dd}\label{_s_d_l__video_8h_ab200a53e01ddc697fd6b8e017cc4e6dd} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowPosition@{SDL\_SetWindowPosition}}
+\index{SDL\_SetWindowPosition@{SDL\_SetWindowPosition}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowPosition()}{SDL\_SetWindowPosition()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the position of a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to reposition. \\
+\hline
+{\em x} & The x coordinate of the window in screen coordinates, or SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED or SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED. \\
+\hline
+{\em y} & The y coordinate of the window in screen coordinates, or SDL\+\_\+\+WINDOWPOS\+\_\+\+CENTERED or SDL\+\_\+\+WINDOWPOS\+\_\+\+UNDEFINED.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The window coordinate origin is the upper left of the display.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a03adfc1ed4aaf57da4af00bd247ac99c}{SDL\+\_\+\+Get\+Window\+Position()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a29b118c6932ccb94d85b5435ae1e0a19}\label{_s_d_l__video_8h_a29b118c6932ccb94d85b5435ae1e0a19} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowSize@{SDL\_SetWindowSize}}
+\index{SDL\_SetWindowSize@{SDL\_SetWindowSize}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowSize()}{SDL\_SetWindowSize()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the size of a window\textquotesingle{}s client area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to resize. \\
+\hline
+{\em w} & The width of the window, in screen coordinates. Must be \texorpdfstring{$>$}{>}0. \\
+\hline
+{\em h} & The height of the window, in screen coordinates. Must be \texorpdfstring{$>$}{>}0.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You can\textquotesingle{}t change the size of a fullscreen window, it automatically matches the size of the display mode.
+\end{DoxyNote}
+The window size in screen coordinates may differ from the size in pixels, if the window was created with SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI on a platform with high-\/dpi support (e.\+g. i\+OS or OS X). Use \doxylink{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3}{SDL\+\_\+\+GL\+\_\+\+Get\+Drawable\+Size()} or \doxylink{_s_d_l__render_8h_abfc0c9a50d9d1870ab7d271b7a73d8ab}{SDL\+\_\+\+Get\+Renderer\+Output\+Size()} to get the real client area size in pixels.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a41aabc4b68f75f41d97995e02eb9deb6}\label{_s_d_l__video_8h_a41aabc4b68f75f41d97995e02eb9deb6} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_SetWindowTitle@{SDL\_SetWindowTitle}}
+\index{SDL\_SetWindowTitle@{SDL\_SetWindowTitle}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetWindowTitle()}{SDL\_SetWindowTitle()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Window\+Title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Set the title of a window, in UTF-\/8 format. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a631b117f2c3712a55706d7fd60013536}{SDL\+\_\+\+Get\+Window\+Title()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a6051ce26885b32b80bc7285b4facd0a1}\label{_s_d_l__video_8h_a6051ce26885b32b80bc7285b4facd0a1} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_ShowWindow@{SDL\_ShowWindow}}
+\index{SDL\_ShowWindow@{SDL\_ShowWindow}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ShowWindow()}{SDL\_ShowWindow()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Show\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Show a window. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_aa3cbe663e0bd62aa7a747a6c11781766}{SDL\+\_\+\+Hide\+Window()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a7bbfee05788dc85a1d67218cf3006653}\label{_s_d_l__video_8h_a7bbfee05788dc85a1d67218cf3006653} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_UpdateWindowSurface@{SDL\_UpdateWindowSurface}}
+\index{SDL\_UpdateWindowSurface@{SDL\_UpdateWindowSurface}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_UpdateWindowSurface()}{SDL\_UpdateWindowSurface()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Update\+Window\+Surface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Copy the window surface to the screen. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a53fd405291238e8677632165afad3ea0}{SDL\+\_\+\+Get\+Window\+Surface()} 
+
+\doxylink{_s_d_l__video_8h_ae6b0c6cf354beb87291887bfa02385b1}{SDL\+\_\+\+Update\+Window\+Surface\+Rects()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ae6b0c6cf354beb87291887bfa02385b1}\label{_s_d_l__video_8h_ae6b0c6cf354beb87291887bfa02385b1} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_UpdateWindowSurfaceRects@{SDL\_UpdateWindowSurfaceRects}}
+\index{SDL\_UpdateWindowSurfaceRects@{SDL\_UpdateWindowSurfaceRects}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_UpdateWindowSurfaceRects()}{SDL\_UpdateWindowSurfaceRects()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Update\+Window\+Surface\+Rects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const \mbox{\hyperlink{struct_s_d_l___rect}{SDL\+\_\+\+Rect}} \texorpdfstring{$\ast$}{*}}]{rects,  }\item[{int}]{numrects }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Copy a number of rectangles on the window surface to the screen. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 on error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a53fd405291238e8677632165afad3ea0}{SDL\+\_\+\+Get\+Window\+Surface()} 
+
+SDL\+\_\+\+Update\+Window\+Surface\+Rect() 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_a05244b30716f0339dcd140c6f92017b7}\label{_s_d_l__video_8h_a05244b30716f0339dcd140c6f92017b7} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_VideoInit@{SDL\_VideoInit}}
+\index{SDL\_VideoInit@{SDL\_VideoInit}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_VideoInit()}{SDL\_VideoInit()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Video\+Init (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{driver\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Initialize the video subsystem, optionally specifying a video driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em driver\+\_\+name} & Initialize a specific driver by name, or NULL for the default video driver.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error
+\end{DoxyReturn}
+This function initializes the video subsystem; setting up a connection to the window manager, etc, and determines the available display modes and pixel formats, but does not initialize a window or graphics mode.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_ade5fc4847320fb235f17265b683fa013}{SDL\+\_\+\+Video\+Quit()} 
+\end{DoxySeeAlso}
+\Hypertarget{_s_d_l__video_8h_ade5fc4847320fb235f17265b683fa013}\label{_s_d_l__video_8h_ade5fc4847320fb235f17265b683fa013} 
+\index{SDL\_video.h@{SDL\_video.h}!SDL\_VideoQuit@{SDL\_VideoQuit}}
+\index{SDL\_VideoQuit@{SDL\_VideoQuit}!SDL\_video.h@{SDL\_video.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_VideoQuit()}{SDL\_VideoQuit()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Video\+Quit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Shuts down the video subsystem. 
+
+This function closes all windows, and restores the original video mode.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{_s_d_l__video_8h_a05244b30716f0339dcd140c6f92017b7}{SDL\+\_\+\+Video\+Init()} 
+\end{DoxySeeAlso}

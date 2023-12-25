@@ -1,0 +1,54 @@
+\doxysection{touchgfx\+::Touch\+Calibration Class Reference}
+\hypertarget{classtouchgfx_1_1_touch_calibration}{}\label{classtouchgfx_1_1_touch_calibration}\index{touchgfx::TouchCalibration@{touchgfx::TouchCalibration}}
+
+
+{\ttfamily \#include $<$Touch\+Calibration.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_touch_calibration_ab9a2ccfe1bdb0dc14a2ccdfad99e2829}{set\+Calibration\+Matrix}} (const \mbox{\hyperlink{structtouchgfx_1_1_point}{Point}} \texorpdfstring{$\ast$}{*}ref, const \mbox{\hyperlink{structtouchgfx_1_1_point}{Point}} \texorpdfstring{$\ast$}{*}scr)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_touch_calibration_af6b27559d998ec6546101619f48e6743}{translate\+Point}} (\mbox{\hyperlink{structtouchgfx_1_1_point}{Point}} \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Calibrates a touch coordinate.
+
+Class Touch\+Calibraiton is responsible for translating coordinates (\doxylink{structtouchgfx_1_1_point}{Point}) based on matrix of calibration values. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_touch_calibration_ab9a2ccfe1bdb0dc14a2ccdfad99e2829}\label{classtouchgfx_1_1_touch_calibration_ab9a2ccfe1bdb0dc14a2ccdfad99e2829} 
+\index{touchgfx::TouchCalibration@{touchgfx::TouchCalibration}!setCalibrationMatrix@{setCalibrationMatrix}}
+\index{setCalibrationMatrix@{setCalibrationMatrix}!touchgfx::TouchCalibration@{touchgfx::TouchCalibration}}
+\doxysubsubsection{\texorpdfstring{setCalibrationMatrix()}{setCalibrationMatrix()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Touch\+Calibration\+::set\+Calibration\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_point}{Point}} \texorpdfstring{$\ast$}{*}}]{ref,  }\item[{const \mbox{\hyperlink{structtouchgfx_1_1_point}{Point}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes the calibration matrix based on reference and measured values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref} & Pointer to array of three reference points. \\
+\hline
+{\em scr} & Pointer to array of three measured points. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_touch_calibration_af6b27559d998ec6546101619f48e6743}\label{classtouchgfx_1_1_touch_calibration_af6b27559d998ec6546101619f48e6743} 
+\index{touchgfx::TouchCalibration@{touchgfx::TouchCalibration}!translatePoint@{translatePoint}}
+\index{translatePoint@{translatePoint}!touchgfx::TouchCalibration@{touchgfx::TouchCalibration}}
+\doxysubsubsection{\texorpdfstring{translatePoint()}{translatePoint()}}
+{\footnotesize\ttfamily static void touchgfx\+::\+Touch\+Calibration\+::translate\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1_point}{Point}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Translates the specified point using the matrix. If matrix has not been initialized, p is not modified.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em p} & The point to translate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/transforms/\mbox{\hyperlink{_touch_calibration_8hpp}{Touch\+Calibration.\+hpp}}\end{DoxyCompactItemize}

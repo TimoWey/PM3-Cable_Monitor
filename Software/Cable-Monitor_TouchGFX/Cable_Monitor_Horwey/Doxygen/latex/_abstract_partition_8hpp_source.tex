@@ -1,0 +1,102 @@
+\doxysection{Abstract\+Partition.\+hpp}
+\hypertarget{_abstract_partition_8hpp_source}{}\label{_abstract_partition_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp@{Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp}}
+\mbox{\hyperlink{_abstract_partition_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_ABSTRACTPARTITION\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_ABSTRACTPARTITION\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition}{AbstractPartition}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a724822a814a675635b6b1c757b70deab}{\string~AbstractPartition}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a296fb6df063baec57dcc262deea67b68}{allocate}}(uint16\_t\ size);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a5dfa91ceb521ecd83a0c152213404ec2}{allocateAt}}(uint16\_t\ index,\ uint16\_t\ size);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_afd8744fea6edd6c4d3b65ebaea5bbf2f}{getAllocationCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a991922fe29a8b29eb83299c7923c2a0c}{indexOf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ address);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a2d494482f112b4fd326cf7aecc643626}{clear}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a91a7f82da356113f7f21c826956237e7}{capacity}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_ab351342425f8edd706ce6f1451c0d9c6}{allocate}}()}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_ab351342425f8edd706ce6f1451c0d9c6}{allocate}}(\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(\textcolor{keyword}{sizeof}(T)));}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af228138327148ab18b3305720110b06b}{allocateAt}}(uint16\_t\ index)}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a5dfa91ceb521ecd83a0c152213404ec2}{allocateAt}}(index,\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(\textcolor{keyword}{sizeof}(T)));}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00135\ \ \ \ \ T\&\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_aec4e316d6eefcf975cd45135311f1552}{at}}(\textcolor{keyword}{const}\ uint16\_t\ index)}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af9f74221b23d5dc62083923a7284e702}{element}}(index));}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a64ce0cdd63ff322255170b07b31aed6d}{at}}(\textcolor{keyword}{const}\ uint16\_t\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00150\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }T*\textcolor{keyword}{>}(\mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af9f74221b23d5dc62083923a7284e702}{element}}(index));}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00169\ \ \ \ \ Pair<T*,\ uint16\_t>\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a7bef7f9e15d2ff4fb93107f5f010570d}{find}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ pT)}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ uint16\_t\ index\ =\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a991922fe29a8b29eb83299c7923c2a0c}{indexOf}}(pT);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ <\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_afd8744fea6edd6c4d3b65ebaea5bbf2f}{getAllocationCount}}()\ \&\&\ index\ <\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_afd8744fea6edd6c4d3b65ebaea5bbf2f}{getAllocationCount}}())}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Pair<T*,\ uint16\_t>(\&at<T>(index),\ index);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Pair<T*,\ uint16\_t>(0,\ (uint16\_t)-\/1);}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a27e694054bea9c8b3187a795e3e0166c}{dec}}()}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (allocations)}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ allocations-\/-\/;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{virtual}\ uint32\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a93187e48cf03ed8c658a1387fc74c95f}{element\_size}}()\ =\ 0;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af9f74221b23d5dc62083923a7284e702}{element}}(uint16\_t\ index)\ =\ 0;}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_a8a362459dcc5c993a8e195b1527e30d1}{element}}(uint16\_t\ index)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_partition_af34d8f6d241ace8091e3d0ca1583b4a0}{AbstractPartition}}();}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00219\ \ \ \ \ uint16\_t\ allocations;}
+\DoxyCodeLine{00220\ \};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_ABSTRACTPARTITION\_HPP}}
+
+\end{DoxyCode}

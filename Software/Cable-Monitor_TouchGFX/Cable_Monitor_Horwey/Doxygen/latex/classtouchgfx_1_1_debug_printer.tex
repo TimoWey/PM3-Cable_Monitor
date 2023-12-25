@@ -1,0 +1,179 @@
+\doxysection{touchgfx\+::Debug\+Printer Class Reference}
+\hypertarget{classtouchgfx_1_1_debug_printer}{}\label{classtouchgfx_1_1_debug_printer}\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+
+
+{\ttfamily \#include $<$Debug\+Printer.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Debug\+Printer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.768176cm]{classtouchgfx_1_1_debug_printer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_debug_printer_ae510da6a59a76773aca59e437c7c7cc9}{Debug\+Printer}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_aa5f34f5ada641794147c5c293f1712c1}{\texorpdfstring{$\sim$}{\string~}\+Debug\+Printer}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_afbb6efe8fe1d44f83346fe372d2b4f59}{set\+String}} (const char \texorpdfstring{$\ast$}{*}string)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_aedadca6de71beea01c855cc755668db0}{set\+Position}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t w, int16\+\_\+t h)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a624281e6567355762ba6e88eb648ffa0}{set\+Scale}} (uint8\+\_\+t scale)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a99642b24ebcaf477cb3ff4cf14a8ea46}{set\+Color}} (\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} fg)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a80b5bd7c31c746396ea2b932196af821}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect) const =0
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a12ae161526a6fca950077dd16169336f}{get\+Region}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a5d67da05dd4720c68308f5511c555399}{get\+Glyph}} (uint8\+\_\+t c) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_debug_printer_af9ef6d095608d155a6daf504a6ec746a}\label{classtouchgfx_1_1_debug_printer_af9ef6d095608d155a6daf504a6ec746a} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries debug\+String}
+\begin{DoxyCompactList}\small\item\em Debug string to be displayed on screen. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_debug_printer_ad0df8782da49f5cc96d0633a732814aa}\label{classtouchgfx_1_1_debug_printer_ad0df8782da49f5cc96d0633a732814aa} 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} {\bfseries debug\+Region}
+\begin{DoxyCompactList}\small\item\em Region on screen where the debug message is displayed. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_debug_printer_a409a5a67f6ae78cfb5af5886b9ff07a7}\label{classtouchgfx_1_1_debug_printer_a409a5a67f6ae78cfb5af5886b9ff07a7} 
+\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} {\bfseries debug\+Foreground\+Color}
+\begin{DoxyCompactList}\small\item\em \doxylink{classtouchgfx_1_1_font}{Font} color to use when displaying the debug string. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_debug_printer_aca2058cf9e60ea5127a3c01daed411a2}\label{classtouchgfx_1_1_debug_printer_aca2058cf9e60ea5127a3c01daed411a2} 
+uint8\+\_\+t {\bfseries debug\+Scale}
+\begin{DoxyCompactList}\small\item\em \doxylink{classtouchgfx_1_1_font}{Font} scaling factor to use when displaying the debug string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class \doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} defines the interface for printing debug messages on top of the framebuffer. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_debug_printer_ae510da6a59a76773aca59e437c7c7cc9}\label{classtouchgfx_1_1_debug_printer_ae510da6a59a76773aca59e437c7c7cc9} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!DebugPrinter@{DebugPrinter}}
+\index{DebugPrinter@{DebugPrinter}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{DebugPrinter()}{DebugPrinter()}}
+{\footnotesize\ttfamily touchgfx\+::\+Debug\+Printer\+::\+Debug\+Printer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} class. \Hypertarget{classtouchgfx_1_1_debug_printer_aa5f34f5ada641794147c5c293f1712c1}\label{classtouchgfx_1_1_debug_printer_aa5f34f5ada641794147c5c293f1712c1} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!````~DebugPrinter@{\texorpdfstring{$\sim$}{\string~}DebugPrinter}}
+\index{````~DebugPrinter@{\texorpdfstring{$\sim$}{\string~}DebugPrinter}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DebugPrinter()}{\string~DebugPrinter()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Debug\+Printer\+::\texorpdfstring{$\sim$}{\string~}\+Debug\+Printer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_debug_printer}{Debug\+Printer} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_debug_printer_a80b5bd7c31c746396ea2b932196af821}\label{classtouchgfx_1_1_debug_printer_a80b5bd7c31c746396ea2b932196af821} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!draw@{draw}}
+\index{draw@{draw}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Debug\+Printer\+::draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draws the debug string on top of the framebuffer content.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rect} & The rect to draw inside. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_l_c_d16_debug_printer_a5aa526731d4f276b0e3658397d99eeb9}{touchgfx\+::\+LCD16\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d1_debug_printer_adff874399f2c7386afa5ae9c6fb4f5f3}{touchgfx\+::\+LCD1\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d24_debug_printer_a3704972f3b2dd552e9e1e05995629be7}{touchgfx\+::\+LCD24\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d2_debug_printer_adc553ada630e3e60a6befbf2f5354e8d}{touchgfx\+::\+LCD2\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d32_debug_printer_a93a029316d71d8ab35a45a82da605b80}{touchgfx\+::\+LCD32\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d4_debug_printer_aa72c5abf833935206547cfe4ff187018}{touchgfx\+::\+LCD4\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8_a_b_g_r2222_debug_printer_aa1350da877eac0442ca9db4c46c481f7}{touchgfx\+::\+LCD8\+ABGR2222\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8_a_r_g_b2222_debug_printer_a4bc5c141b0dfa644b66dbc6fc6195d3c}{touchgfx\+::\+LCD8\+ARGB2222\+Debug\+Printer}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8_b_g_r_a2222_debug_printer_af173bef96bd9b41b8b3037aee37d3979}{touchgfx\+::\+LCD8\+BGRA2222\+Debug\+Printer}}, and \mbox{\hyperlink{classtouchgfx_1_1_l_c_d8_r_g_b_a2222_debug_printer_a9a104f1ba8cac00071008eed64f251c2}{touchgfx\+::\+LCD8\+RGBA2222\+Debug\+Printer}}.
+
+\Hypertarget{classtouchgfx_1_1_debug_printer_a5d67da05dd4720c68308f5511c555399}\label{classtouchgfx_1_1_debug_printer_a5d67da05dd4720c68308f5511c555399} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!getGlyph@{getGlyph}}
+\index{getGlyph@{getGlyph}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{getGlyph()}{getGlyph()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Debug\+Printer\+::get\+Glyph (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets a glyph (15 bits) arranged with 3 bits wide, 5 bits high in a single uint16\+\_\+t value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to get a glyph for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The glyph. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_debug_printer_a12ae161526a6fca950077dd16169336f}\label{classtouchgfx_1_1_debug_printer_a12ae161526a6fca950077dd16169336f} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!getRegion@{getRegion}}
+\index{getRegion@{getRegion}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{getRegion()}{getRegion()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& touchgfx\+::\+Debug\+Printer\+::get\+Region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the region where the debug string is displayed.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classtouchgfx_1_1_rect}{Rect} The debug string region. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_debug_printer_a99642b24ebcaf477cb3ff4cf14a8ea46}\label{classtouchgfx_1_1_debug_printer_a99642b24ebcaf477cb3ff4cf14a8ea46} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!setColor@{setColor}}
+\index{setColor@{setColor}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Debug\+Printer\+::set\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}}]{fg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the foreground color of the debug string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fg} & The foreground color of the debug string. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_debug_printer_aedadca6de71beea01c855cc755668db0}\label{classtouchgfx_1_1_debug_printer_aedadca6de71beea01c855cc755668db0} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Debug\+Printer\+::set\+Position (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{w,  }\item[{int16\+\_\+t}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the position onscreen where the debug string will be displayed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The coordinate of the region where the debug string is displayed. \\
+\hline
+{\em y} & The coordinate of the region where the debug string is displayed. \\
+\hline
+{\em w} & The width of the region where the debug string is displayed. \\
+\hline
+{\em h} & The height of the region where the debug string is displayed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_debug_printer_a624281e6567355762ba6e88eb648ffa0}\label{classtouchgfx_1_1_debug_printer_a624281e6567355762ba6e88eb648ffa0} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!setScale@{setScale}}
+\index{setScale@{setScale}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Debug\+Printer\+::set\+Scale (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the font scale of the debug string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scale} & The font scale of the debug string. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_debug_printer_afbb6efe8fe1d44f83346fe372d2b4f59}\label{classtouchgfx_1_1_debug_printer_afbb6efe8fe1d44f83346fe372d2b4f59} 
+\index{touchgfx::DebugPrinter@{touchgfx::DebugPrinter}!setString@{setString}}
+\index{setString@{setString}!touchgfx::DebugPrinter@{touchgfx::DebugPrinter}}
+\doxysubsubsection{\texorpdfstring{setString()}{setString()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Debug\+Printer\+::set\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the debug string to be displayed on top of the framebuffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em string} & The string to be displayed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/lcd/\mbox{\hyperlink{_debug_printer_8hpp}{Debug\+Printer.\+hpp}}\end{DoxyCompactItemize}

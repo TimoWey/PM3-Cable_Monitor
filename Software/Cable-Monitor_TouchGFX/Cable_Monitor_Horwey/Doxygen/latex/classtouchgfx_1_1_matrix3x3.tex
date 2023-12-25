@@ -1,0 +1,299 @@
+\doxysection{touchgfx\+::Matrix3x3 Class Reference}
+\hypertarget{classtouchgfx_1_1_matrix3x3}{}\label{classtouchgfx_1_1_matrix3x3}\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+
+
+{\ttfamily \#include $<$Matrix3x3.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a023ee854fab79ce89b59011f3a4f7924}{Matrix3x3}} ()
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION float \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a592c4b3e538edbb192bbd06ad6c88143}{get\+Element}} (int row, int column) const
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a5bfb836b554b7c4a4f5931a83ea19919}{get\+Elements}} ()
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a1011ed3904e01b724c33d6fdc20c0530}{set\+Element}} (int row, int column, float value)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_aefbfa83b7acbf1af8cdcbb6abd3f1c61}{reset}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_af71250e7a351c73a9f02b287f6f6ac96}{set\+Affine\+Transformation}} (const float transformation\mbox{[}6\mbox{]})
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a77c0a414e62c4fb8f22e034daffa89d0}{scale}} (float scaleX, float scaleY)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a2741cec3a973ea23d6f4bf40c095ea0f}{scale}} (float scale\+XY)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_aafa4b327383681d6613754486aa3021b}{rotate}} (float angle\+In\+Degrees)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a265ca8451ab46509b7e18a6a1c3ba39d}{rotate\+Pivot}} (float angle\+In\+Degrees, float x, float y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a7bf90c5cf58c311f7a899083b5ac8272}{translate}} (float deltaX, float deltaY)
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_ae94520f04bbd6cf2056dff3ddefc545c}{projective\+Transform}} (const \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} \&point) const
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a4961a5967f5d9701b304a51755124288}{affine\+Transform}} (const \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} \&point) const
+\item 
+\mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a8da5b7714f2a3db5f7869f79c1c3e65f}{affine\+Transform}} (const float x, const float y) const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}} \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_aed526859baa7958ee6ba2fbfd5c0f898}{multiply}} (const \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}} \&rhs) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a 3x3 matrix of floats.
+
+The class is used to define affine transformations for 2D graphics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a023ee854fab79ce89b59011f3a4f7924}\label{classtouchgfx_1_1_matrix3x3_a023ee854fab79ce89b59011f3a4f7924} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!Matrix3x3@{Matrix3x3}}
+\index{Matrix3x3@{Matrix3x3}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{Matrix3x3()}{Matrix3x3()}}
+{\footnotesize\ttfamily touchgfx\+::\+Matrix3x3\+::\+Matrix3x3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize a new instance of the \doxylink{classtouchgfx_1_1_matrix3x3}{Matrix3x3} class. The matrix is initialized to the identity matrix. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a8da5b7714f2a3db5f7869f79c1c3e65f}\label{classtouchgfx_1_1_matrix3x3_a8da5b7714f2a3db5f7869f79c1c3e65f} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!affineTransform@{affineTransform}}
+\index{affineTransform@{affineTransform}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{affineTransform()}{affineTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} touchgfx\+::\+Matrix3x3\+::affine\+Transform (\begin{DoxyParamCaption}\item[{const float}]{x,  }\item[{const float}]{y }\end{DoxyParamCaption}) const}
+
+Do affine transformation of 2D point
+
+Affine transformation is a special case of the projective transformation, it has the same properties. However unlike projective transformation, it preserves parallelism.
+
+The Matrix does not include the projective part (g, h, i), see below.
+
+\texorpdfstring{$\vert$}{|}x\textquotesingle{}\texorpdfstring{$\vert$}{|} = \texorpdfstring{$\vert$}{|}a b c\texorpdfstring{$\vert$}{|} \texorpdfstring{$\ast$}{*} \texorpdfstring{$\vert$}{|}x\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}y\textquotesingle{}\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}d e f\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}y\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}1\texorpdfstring{$\vert$}{|}
+
+x = x coordinate of the 2D point y = y coordinate of the 2D point x\textquotesingle{} = x coordinate of the transformed 2D point y\textquotesingle{} = y coordinate of the transformed 2D point
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the point to transform \\
+\hline
+{\em y} & Y-\/coordinate of the point to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed 2D point 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a4961a5967f5d9701b304a51755124288}\label{classtouchgfx_1_1_matrix3x3_a4961a5967f5d9701b304a51755124288} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!affineTransform@{affineTransform}}
+\index{affineTransform@{affineTransform}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{affineTransform()}{affineTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} touchgfx\+::\+Matrix3x3\+::affine\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} \&}]{point }\end{DoxyParamCaption}) const}
+
+Do affine transformation of 2D point
+
+Affine transformation is a special case of the projective transformation, it has the same properties. However unlike projective transformation, it preserves parallelism.
+
+The Matrix does not include the projective part (g, h, i), see below.
+
+\texorpdfstring{$\vert$}{|}x\textquotesingle{}\texorpdfstring{$\vert$}{|} = \texorpdfstring{$\vert$}{|}a b c\texorpdfstring{$\vert$}{|} \texorpdfstring{$\ast$}{*} \texorpdfstring{$\vert$}{|}x\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}y\textquotesingle{}\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}d e f\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}y\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}1\texorpdfstring{$\vert$}{|}
+
+x = x coordinate of the 2D point y = y coordinate of the 2D point x\textquotesingle{} = x coordinate of the transformed 2D point y\textquotesingle{} = y coordinate of the transformed 2D point
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & 2D \doxylink{structtouchgfx_1_1_matrix3x3_1_1_point}{Point} to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed 2D point 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a592c4b3e538edbb192bbd06ad6c88143}\label{classtouchgfx_1_1_matrix3x3_a592c4b3e538edbb192bbd06ad6c88143} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!getElement@{getElement}}
+\index{getElement@{getElement}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{getElement()}{getElement()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION float touchgfx\+::\+Matrix3x3\+::get\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row (0-\/2). \\
+\hline
+{\em column} & The column (0-\/2).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a5bfb836b554b7c4a4f5931a83ea19919}\label{classtouchgfx_1_1_matrix3x3_a5bfb836b554b7c4a4f5931a83ea19919} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!getElements@{getElements}}
+\index{getElements@{getElements}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{getElements()}{getElements()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION float \texorpdfstring{$\ast$}{*} touchgfx\+::\+Matrix3x3\+::get\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the internal matrix elements.
+
+Return value Internal representation elements\mbox{[}0\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}0\mbox{]}\mbox{[}0\mbox{]} elements\mbox{[}1\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}0\mbox{]}\mbox{[}1\mbox{]} elements\mbox{[}2\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}0\mbox{]}\mbox{[}2\mbox{]} elements\mbox{[}3\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}1\mbox{]}\mbox{[}0\mbox{]} elements\mbox{[}4\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}1\mbox{]}\mbox{[}1\mbox{]} elements\mbox{[}5\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}1\mbox{]}\mbox{[}2\mbox{]} elements\mbox{[}6\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}2\mbox{]}\mbox{[}0\mbox{]} elements\mbox{[}7\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}2\mbox{]}\mbox{[}1\mbox{]} elements\mbox{[}8\mbox{]} \texorpdfstring{$<$}{<}= elements\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
+
+\begin{DoxyReturn}{Returns}
+A pointer to the internal matrix elements. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_aed526859baa7958ee6ba2fbfd5c0f898}\label{classtouchgfx_1_1_matrix3x3_aed526859baa7958ee6ba2fbfd5c0f898} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!multiply@{multiply}}
+\index{multiply@{multiply}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}} touchgfx\+::\+Matrix3x3\+::multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+Multiply with another \doxylink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Right hand side \doxylink{classtouchgfx_1_1_matrix3x3}{Matrix3x3} to multiply with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting \doxylink{classtouchgfx_1_1_matrix3x3}{Matrix3x3} 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_ae94520f04bbd6cf2056dff3ddefc545c}\label{classtouchgfx_1_1_matrix3x3_ae94520f04bbd6cf2056dff3ddefc545c} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!projectiveTransform@{projectiveTransform}}
+\index{projectiveTransform@{projectiveTransform}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{projectiveTransform()}{projectiveTransform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} touchgfx\+::\+Matrix3x3\+::projective\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3\+::\+Point}} \&}]{point }\end{DoxyParamCaption}) const}
+
+Do projective transformation of 2D point
+
+Projective transformation does not preserve parallelism, length, and angle. But it still preserves collinearity and incidence.
+
+The Matrix includes the projective part (g, h, i), see below.
+
+\texorpdfstring{$\vert$}{|}x\textquotesingle{}\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}a b c\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}x/w\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}y\textquotesingle{}\texorpdfstring{$\vert$}{|} = \texorpdfstring{$\vert$}{|}d e f\texorpdfstring{$\vert$}{|} \texorpdfstring{$\ast$}{*} \texorpdfstring{$\vert$}{|}y/w\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}1 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}g h i\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}1/w\texorpdfstring{$\vert$}{|}
+
+w = g\texorpdfstring{$\ast$}{*}x + h\texorpdfstring{$\ast$}{*}y + i x = x coordinate of the 2D point y = y coordinate of the 2D point x\textquotesingle{} = x coordinate of the transformed 2D point y\textquotesingle{} = y coordinate of the transformed 2D point
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & 2D \doxylink{structtouchgfx_1_1_matrix3x3_1_1_point}{Point} to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed 2D point 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_aefbfa83b7acbf1af8cdcbb6abd3f1c61}\label{classtouchgfx_1_1_matrix3x3_aefbfa83b7acbf1af8cdcbb6abd3f1c61} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!reset@{reset}}
+\index{reset@{reset}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Matrix3x3\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reset to identity matrix \Hypertarget{classtouchgfx_1_1_matrix3x3_aafa4b327383681d6613754486aa3021b}\label{classtouchgfx_1_1_matrix3x3_aafa4b327383681d6613754486aa3021b} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!rotate@{rotate}}
+\index{rotate@{rotate}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Matrix3x3\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle\+In\+Degrees }\end{DoxyParamCaption})}
+
+Apply rotation transformation
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+In\+Degrees} & Angle to rotate in degrees (positive =\texorpdfstring{$>$}{>} clockwise, negative =\texorpdfstring{$>$}{>} counterclockwise) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a265ca8451ab46509b7e18a6a1c3ba39d}\label{classtouchgfx_1_1_matrix3x3_a265ca8451ab46509b7e18a6a1c3ba39d} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!rotatePivot@{rotatePivot}}
+\index{rotatePivot@{rotatePivot}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{rotatePivot()}{rotatePivot()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Matrix3x3\+::rotate\+Pivot (\begin{DoxyParamCaption}\item[{float}]{angle\+In\+Degrees,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+Apply rotation around a pivot point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+In\+Degrees} & Angle to rotate in degrees (positive =\texorpdfstring{$>$}{>} clockwise, negative =\texorpdfstring{$>$}{>} counterclockwise) \\
+\hline
+{\em x} & X coordinate of the pivot point. \\
+\hline
+{\em y} & Y coordinate of the pivot point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This will overwrite the matrix elements set prior to this call. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a77c0a414e62c4fb8f22e034daffa89d0}\label{classtouchgfx_1_1_matrix3x3_a77c0a414e62c4fb8f22e034daffa89d0} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!scale@{scale}}
+\index{scale@{scale}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Matrix3x3\+::scale (\begin{DoxyParamCaption}\item[{float}]{scaleX,  }\item[{float}]{scaleY }\end{DoxyParamCaption})}
+
+Apply scale transformation
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaleX} & Scale factor in the direction of X \\
+\hline
+{\em scaleY} & Scale factor in the direction of Y \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a2741cec3a973ea23d6f4bf40c095ea0f}\label{classtouchgfx_1_1_matrix3x3_a2741cec3a973ea23d6f4bf40c095ea0f} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!scale@{scale}}
+\index{scale@{scale}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Matrix3x3\+::scale (\begin{DoxyParamCaption}\item[{float}]{scale\+XY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apply scale transformation
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale\+XY} & Scale factor in the direction of both X and Y \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_af71250e7a351c73a9f02b287f6f6ac96}\label{classtouchgfx_1_1_matrix3x3_af71250e7a351c73a9f02b287f6f6ac96} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!setAffineTransformation@{setAffineTransformation}}
+\index{setAffineTransformation@{setAffineTransformation}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{setAffineTransformation()}{setAffineTransformation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Matrix3x3\+::set\+Affine\+Transformation (\begin{DoxyParamCaption}\item[{const float}]{transformation\mbox{[}6\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets affine transformation from a row-\/major matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transformation} & The transformation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a1011ed3904e01b724c33d6fdc20c0530}\label{classtouchgfx_1_1_matrix3x3_a1011ed3904e01b724c33d6fdc20c0530} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!setElement@{setElement}}
+\index{setElement@{setElement}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{setElement()}{setElement()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION void touchgfx\+::\+Matrix3x3\+::set\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set an element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row. \\
+\hline
+{\em column} & The column. \\
+\hline
+{\em value} & The value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_matrix3x3_a7bf90c5cf58c311f7a899083b5ac8272}\label{classtouchgfx_1_1_matrix3x3_a7bf90c5cf58c311f7a899083b5ac8272} 
+\index{touchgfx::Matrix3x3@{touchgfx::Matrix3x3}!translate@{translate}}
+\index{translate@{translate}!touchgfx::Matrix3x3@{touchgfx::Matrix3x3}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Matrix3x3\+::translate (\begin{DoxyParamCaption}\item[{float}]{deltaX,  }\item[{float}]{deltaY }\end{DoxyParamCaption})}
+
+Apply translate transformation
+
+
+\begin{DoxyParams}{Parameters}
+{\em deltaX} & Delta distance in the direction of X \\
+\hline
+{\em deltaY} & Delta distance in the direction of Y \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_matrix3x3_8hpp}{Matrix3x3.\+hpp}}\end{DoxyCompactItemize}

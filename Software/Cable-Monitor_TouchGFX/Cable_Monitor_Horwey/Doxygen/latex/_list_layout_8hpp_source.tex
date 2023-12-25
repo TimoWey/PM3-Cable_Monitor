@@ -1,0 +1,62 @@
+\doxysection{List\+Layout.\+hpp}
+\hypertarget{_list_layout_8hpp_source}{}\label{_list_layout_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp}}
+\mbox{\hyperlink{_list_layout_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_LISTLAYOUT\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_LISTLAYOUT\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drawable_8hpp}{touchgfx/Drawable.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_list_layout}{ListLayout}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_list_layout_aadfba91e63d1da2d153ad00a232d3a83}{ListLayout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}}\ d\ =\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ab55e06157c018e7047bb6738d58274d5}{SOUTH}})}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}}(),\ direction(d),\ offset(0)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ assert((d\ ==\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ab55e06157c018e7047bb6738d58274d5}{SOUTH}}\ ||\ d\ ==\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a18f37db8f060364702c14dddb171e1ea}{EAST}})\ \&\&\ \textcolor{stringliteral}{"{}Chosen\ direction\ not\ supported"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_list_layout_ab65aa1d6ae20e7f1276d6d5541ef1a8b}{setDirection}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}}\ d);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}}\ \mbox{\hyperlink{classtouchgfx_1_1_list_layout_adba936e2c12eec1f7677d93c1f66c66c}{getDirection}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00072\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ direction;}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_list_layout_a43e2d9f4407aa62bf13cdea12f233de1}{add}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ d);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_list_layout_a5e37ad89f3087fa606e5e6dd4ada23fa}{remove}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ d);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_list_layout_adc0285280ae1971f2fbe0327ad65b100}{insert}}(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}*\ previous,\ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ d);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_list_layout_af25bf03b24921a5ce782798c7c4383ce}{removeAll}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ internalAddElementAt(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ d,\ int16\_t\ coord);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ internalAddElement(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ d);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ internalRemoveElement(\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}\&\ d,\ int16\_t\ coord);}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102}{Direction}}\ direction;}
+\DoxyCodeLine{00103\ \ \ \ \ int16\_t\ offset;}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_LISTLAYOUT\_HPP}}
+
+\end{DoxyCode}

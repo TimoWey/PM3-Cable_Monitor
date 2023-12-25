@@ -1,0 +1,44 @@
+\doxysection{Partial\+Frame\+Buffer\+Manager.\+hpp}
+\hypertarget{_partial_frame_buffer_manager_8hpp_source}{}\label{_partial_frame_buffer_manager_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PartialFrameBufferManager.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PartialFrameBufferManager.hpp}}
+\mbox{\hyperlink{_partial_frame_buffer_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_PARTIALFRAMEBUFFERMANAGER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_PARTIALFRAMEBUFFERMANAGER\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacetouchgfx_a3b0233d4ccc2f451007eabce8ca5c76f}{transmitActive}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacetouchgfx_a3f05b872057d5349b7b4a084d3882ebc}{shouldTransferBlock}}(uint16\_t\ bottom);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetouchgfx_a813b8386aaaa4a27ea901a7e36857178}{transmitBlock}}(\textcolor{keyword}{const}\ uint8\_t*\ pixels,\ uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_partial_frame_buffer_manager}{PartialFrameBufferManager}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_partial_frame_buffer_manager_a9fb4de655e3d98e1950c6565bfa2c8bf}{transmitRemainingBlocks}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_partial_frame_buffer_manager_aef4b9c976e230ae0a600a6ea030e941a}{tryTransmitBlock}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_partial_frame_buffer_manager_ae6c13d0276bd1d25600d8dde1d814ad3}{tryTransmitBlockFromIRQ}}();}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_PARTIALFRAMEBUFFERMANAGER\_HPP}}
+
+\end{DoxyCode}

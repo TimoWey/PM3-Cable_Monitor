@@ -1,0 +1,515 @@
+\doxysection{touchgfx\+::Animation\+Texture\+Mapper Class Reference}
+\hypertarget{classtouchgfx_1_1_animation_texture_mapper}{}\label{classtouchgfx_1_1_animation_texture_mapper}\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+
+
+{\ttfamily \#include $<$Animation\+Texture\+Mapper.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Animation\+Texture\+Mapper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classtouchgfx_1_1_animation_texture_mapper}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting}{Animation\+Setting}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82}{Animation\+Parameter}} \{ \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82ae86e070571c499d7d6b3bd56d0852b2b}{X\+\_\+\+ROTATION}}
+, \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82aef281e35003f01b49b7add35f9eed158}{Y\+\_\+\+ROTATION}}
+, \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a05b9e1e52c08d810186b641feb216a93}{Z\+\_\+\+ROTATION}}
+, \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a7a88233c9c23714cb339c4e0de3c86b7}{SCALE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{touchgfx\+::\+Texture\+Mapper}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{Rendering\+Algorithm}} \{ \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379aff7bfcf4681accebe64144f0cafb1f37}{NEAREST\+\_\+\+NEIGHBOR}}
+, \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379a6def610f1ff74fcf394a2f155624b504}{BILINEAR\+\_\+\+INTERPOLATION}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a71e431c5e697d036a60668cbd8ee325d}{set\+Texture\+Mapper\+Animation\+Step\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}} \& $>$ \&callback)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_aeaea6c3f7a1f8eb290ad3445ce869942}{set\+Texture\+Mapper\+Animation\+Ended\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}} \& $>$ \&callback)
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_ab80a3e3063cf8d1d2f587c5fecf7aeeb}{is\+Texture\+Mapper\+Animation\+Running}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a91e22a0c8e8582b55dbc8c280a0ded76}{setup\+Animation}} (\mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82}{Animation\+Parameter}} parameter, float end\+Value, uint16\+\_\+t duration, uint16\+\_\+t delay, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}})
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a15437a8b2d9e82544c8aa3efe3769282}{start\+Animation}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a777495a53ed5e10486d569b54a3c0d1d}{cancel\+Animation\+Texture\+Mapper\+Animation}} ()
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a9672a32a08991c9e49a7c0d56b50380c}{get\+Animation\+Step}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_aee4766372bc3ce07a92497873ce6ab1b}{handle\+Tick\+Event}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{touchgfx\+::\+Texture\+Mapper}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_acd2a9726dfc146c5e0e64b1d2026f30b}{Texture\+Mapper}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp=\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}())
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a4ac229f01f1beacaa10c7d20ca4b9c6f}{set\+Bitmap}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_affbd662874b8342fa8a1360db154f34e}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a75269a1b54e74bbdd61f6569017e1ae9}{get\+Solid\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a780dac21bd5a542b300db64e24b16cd6}{set\+Rendering\+Algorithm}} (\mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{Rendering\+Algorithm}} algorithm)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{Rendering\+Algorithm}} \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_aef65b9f4961c30a004427be50fc566a1}{get\+Rendering\+Algorithm}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ac058b707dba9ca19458b8bde6bf47602}{set\+Angles}} (float new\+XAngle, float new\+YAngle, float new\+ZAngle)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_abdbc32a0ca569c986221366903e0b66b}{set\+XAngle}} (float new\+XAngle)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ae68f5bb4053e40046d23fdb57f0b366a}{set\+YAngle}} (float new\+YAngle)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_afd504ac56dd2dc367ae7778d4c212733}{set\+ZAngle}} (float new\+ZAngle)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a41c23c0b8e91b5b9ee419478697f828d}{update\+Angles}} (float new\+XAngle, float new\+YAngle, float new\+ZAngle)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ac1ae0790b20896cc667a799524b72447}{update\+XAngle}} (float new\+XAngle)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ab1171a3b232bb248eb32c37c3215537f}{update\+YAngle}} (float new\+YAngle)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a6128047e79adbb1a6be6aaa437c10084}{update\+ZAngle}} (float new\+ZAngle)
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_adce71124954b547d35d0cbe5c1594fe3}{get\+XAngle}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a657af13e9b23b3e16c1df27c862cbb90}{get\+YAngle}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a89c98e4d02e508c0065712ce06843cc9}{get\+ZAngle}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ae323567bcc00a4d0fafec231814ed0e9}{set\+Scale}} (float new\+Scale)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a3bd56227d9da54600a807b8793644ec7}{update\+Scale}} (float new\+Scale)
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_aecb56a3ebff982730e3f17da2a0a328b}{get\+Scale}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_aa4a50c7dae772336f82f04325913022f}{set\+Origo}} (float x, float y, float z)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_abd184fe287e099c975a905c47fb683c9}{set\+Origo}} (float x, float y)
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_aaa36011a16123a97a6bb05a8550f768e}{get\+OrigoX}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ac1ee85c86eb0b2e67ccc257f9cfae421}{get\+OrigoY}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a6317b15ab1030f84d4c63f48f311aa93}{get\+OrigoZ}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_af99a380f340e2902365dbd19fb23a611}{set\+Camera}} (float x, float y)
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a2c189b8433ce9543a503288f40f4a422}{get\+CameraX}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a8554ac8f8181e33471ee8473e63dba1c}{get\+CameraY}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_aec131f95d30154023918676776c85700}{set\+Camera\+Distance}} (float d)
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_af5dddeb96393b90435b5f58dd1aa569f}{get\+Camera\+Distance}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_aafd9bf968697add8cce2a1d1383f88e6}{set\+Bitmap\+Position}} (float x, float y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a52eb9c0f2088c0c128e577ec7d2041e1}{set\+Bitmap\+Position}} (int x, int y)
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a8391abec093fc05d5befd3e7733078e4}{get\+Bitmap\+PositionX}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a4aff6e45a4d74c52a04a1fce41bbad5b}{get\+Bitmap\+PositionY}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_af4ab52f5c39edc410e41d45351db903d}{get\+X0}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a0fdfd34de6c108d5c124fede4df644af}{get\+X1}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ae3c9d779d48bc233aec2e1571bbcc682}{get\+X2}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_add6a6dd426b5b697de23f07d5141da48}{get\+X3}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a55ae94968ba3927197397397341d9f76}{get\+Y0}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a29662b1141561a520b3b52817c363c22}{get\+Y1}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a96d7e6bfff7f9863ca292adf0b8db69f}{get\+Y2}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ae37205db9a021a2cd490171eea9d6ebb}{get\+Y3}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a7370d3bba72639d002e0755a0cb732d6}{get\+Z0}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_aad3435ea3091e7ef9103f3578a8f3939}{get\+Z1}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a4d86ba800b5711fb2512f28ff96ed7b1}{get\+Z2}} () const
+\item 
+virtual float \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a31841d1415130f94714020e415c0fc79}{get\+Z3}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a80b7fb4e8681efc545042dc5d6f93295}{TOUCHGFX\+\_\+\+DEPRECATED}} ("{}Please use \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a1408f0ac2906e0569a86fc8d077025d3}{invalidate\+Content}}() instead."{}, void invalidate\+Bounding\+Rect() const)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a1408f0ac2906e0569a86fc8d077025d3}{invalidate\+Content}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_image}{touchgfx\+::\+Image}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_image_a64b87f9b8d33d3dfd4a7d49ec997bc33}{Image}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp=\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}())
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_image_acd148c888a859c4bc5c9cb500f2568ef}{set\+Alpha}} (uint8\+\_\+t new\+Alpha)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_image_a72c52b2ef7a1450f7988666275d9ab08}{get\+Bitmap}} () const
+\item 
+\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_image_a5e36f9471e365ea4a6c900a81d6af73d}{get\+Bitmap\+Id}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_image_a92f1407a24c75e6872e1546aa27274b2}{get\+Alpha}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_widget}{touchgfx\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_widget_ad09a1834b6b28cb051ba7adb7dee997d}{get\+Last\+Child}} (int16\+\_\+t, int16\+\_\+t, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable_a7e96d82c7fcf819f57486ecc5f350c4c}{Drawable}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_a449ee29257a3cfac31bb01ad2a9a7f03}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad2f199fc52c4acce810f48ab5a1a88aa}{get\+Next\+Sibling}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aceb31b441310e00e8be53492143732e9}{get\+First\+Child}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aaece284803180a1581d10ecfaf08c981}{get\+Solid\+Rect\+Absolute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a67ffb816a2dd9252a3159dd8610b4a25}{get\+Visible\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}) const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_a50b898d044f548a4eaec275141dec0ca}{get\+Rect}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_adee868bcfb5c413bd3e37bdf6c649ea8}{get\+Absolute\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a58fdcf048cbd3ec550115caedaf54b2a}{translate\+Rect\+To\+Absolute}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{set\+Position}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4448236a68ced5ebd67cde7f56d872c3}{expand}} (int margin=0)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59d59e11909259d9452588f3a0180398}{center}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab7b0e3f307228823cf6f2d859cc07198}{centerX}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0392a74d988a06e28c6b3ea79076b4bd}{centerY}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a1870ba0e9ef62c1eb6a19a9013cf6895}{getX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a6451fb9a4bc22e6e4a0950844e5104de}{getY}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{get\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{get\+Height}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}} (int16\+\_\+t x)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3aae6f7f6cb9a43a53d26772d7eeb1fa}{setY}} (int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{set\+XY}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{set\+Width}} (int16\+\_\+t width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{set\+Height}} (int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a181c4ecac0494440425e5b5afa4ce109}{child\+Geometry\+Changed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9981eb2f8411aff05eaf19994f3ee293}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_acf2ed17311bb7ca228dabc3195d3225d}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{set\+Width\+Height}} (int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2f2d18d6edf70b6ec51d843c52c826c8}{set\+Position}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9b84be70989de6d15abb2c4bfe445707}{set\+XY}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7973faddf5b669b1ba7570b90053aeed}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a24b027fa86aebb44768b63b0d534e6b4}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9aeaa5baa9e47055a17f11968dbc1b37}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&other)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a341b62a9ebbe43ce97b47e1effd32a8b}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab27c897bb2d508cdf67ea7ffcfb40b14}{set\+Visible}} (bool vis)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a68b74845725451fda32fa94da7b7be18}{set\+Touchable}} (bool touch)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d9fac715c5114951a23492c6cc78b25}{is\+Visible}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a30a509142ffe76e5a2ed46aab5adf19b}{is\+Touchable}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_afefe9761c1f3a27944f317a47c2f0636}{get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a37d7afe3e065453bc3d23481fa446a55}{move\+Relative}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a602c55c069e516153167c3ebc7da4c0d}{move\+To}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_adab6837b035a409dde74c51f622a6e63}{draw\+To\+Dynamic\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a68af9365bcc77a35b4bb8f9c2cb4c36b}\label{classtouchgfx_1_1_animation_texture_mapper_a68af9365bcc77a35b4bb8f9c2cb4c36b} 
+static const int {\bfseries NUMBER\+\_\+\+OF\+\_\+\+ANIMATION\+\_\+\+PARAMETERS} = \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a7a88233c9c23714cb339c4e0de3c86b7}{SCALE}} + 1
+\begin{DoxyCompactList}\small\item\em Number of animation parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a4cad7a4636b319a65aa30154d4829265}\label{classtouchgfx_1_1_animation_texture_mapper_a4cad7a4636b319a65aa30154d4829265} 
+\mbox{\hyperlink{structtouchgfx_1_1_animation_texture_mapper_1_1_animation_setting}{Animation\+Setting}} {\bfseries animations} \mbox{[}\mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a68af9365bcc77a35b4bb8f9c2cb4c36b}{NUMBER\+\_\+\+OF\+\_\+\+ANIMATION\+\_\+\+PARAMETERS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Descriptions of the animation of specific animation parameters. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a22b26db35a901ab1502a627fac273bd6}\label{classtouchgfx_1_1_animation_texture_mapper_a22b26db35a901ab1502a627fac273bd6} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}} \& $>$ \texorpdfstring{$\ast$}{*} {\bfseries texture\+Mapper\+Animation\+Step\+Callback}
+\begin{DoxyCompactList}\small\item\em \doxylink{structtouchgfx_1_1_callback}{Callback} that is executed after every step of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a4305e6797e78739023ddf55c2685f694}\label{classtouchgfx_1_1_animation_texture_mapper_a4305e6797e78739023ddf55c2685f694} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}} \& $>$ \texorpdfstring{$\ast$}{*} {\bfseries texture\+Mapper\+Animation\+Ended\+Callback}
+\begin{DoxyCompactList}\small\item\em \doxylink{structtouchgfx_1_1_callback}{Callback} that is executed after the animation ends. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a15e3a2835c74af13ff896b5152d02c7d}\label{classtouchgfx_1_1_animation_texture_mapper_a15e3a2835c74af13ff896b5152d02c7d} 
+uint16\+\_\+t {\bfseries animation\+Counter}
+\begin{DoxyCompactList}\small\item\em Counter that is equal to the current step in the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a23eadbc258e7092ff6118930494734c9}\label{classtouchgfx_1_1_animation_texture_mapper_a23eadbc258e7092ff6118930494734c9} 
+bool {\bfseries animation\+Running}
+\begin{DoxyCompactList}\small\item\em Boolean that is true if the animation is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{touchgfx\+::\+Texture\+Mapper}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a64766f8ba2646fcf8a073e1721aed379}{Rendering\+Algorithm}} {\bfseries current\+Rendering\+Algorithm}
+\begin{DoxyCompactList}\small\item\em The current rendering algorithm. \end{DoxyCompactList}\item 
+float {\bfseries x\+Bitmap\+Position}
+\begin{DoxyCompactList}\small\item\em The bitmap position x. \end{DoxyCompactList}\item 
+float {\bfseries y\+Bitmap\+Position}
+\begin{DoxyCompactList}\small\item\em The bitmap position y. \end{DoxyCompactList}\item 
+float {\bfseries x\+Angle}
+\begin{DoxyCompactList}\small\item\em The angle x in radians. \end{DoxyCompactList}\item 
+float {\bfseries y\+Angle}
+\begin{DoxyCompactList}\small\item\em The angle y in radians. \end{DoxyCompactList}\item 
+float {\bfseries z\+Angle}
+\begin{DoxyCompactList}\small\item\em The angle z in radians. \end{DoxyCompactList}\item 
+float {\bfseries scale}
+\begin{DoxyCompactList}\small\item\em The scale. \end{DoxyCompactList}\item 
+float {\bfseries x\+Origo}
+\begin{DoxyCompactList}\small\item\em The origo x coordinate. \end{DoxyCompactList}\item 
+float {\bfseries y\+Origo}
+\begin{DoxyCompactList}\small\item\em The origo y coordinate. \end{DoxyCompactList}\item 
+float {\bfseries z\+Origo}
+\begin{DoxyCompactList}\small\item\em The origo z coordinate. \end{DoxyCompactList}\item 
+float {\bfseries x\+Camera}
+\begin{DoxyCompactList}\small\item\em The camera x coordinate. \end{DoxyCompactList}\item 
+float {\bfseries y\+Camera}
+\begin{DoxyCompactList}\small\item\em The camera y coordinate. \end{DoxyCompactList}\item 
+float {\bfseries camera\+Distance}
+\begin{DoxyCompactList}\small\item\em The camera distance. \end{DoxyCompactList}\item 
+float {\bfseries image\+X0}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Y0}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Z0}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+X1}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Y1}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Z1}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+X2}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Y2}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Z2}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+X3}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Y3}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+float {\bfseries image\+Z3}
+\begin{DoxyCompactList}\small\item\em The coordinate for the image points. \end{DoxyCompactList}\item 
+uint16\+\_\+t {\bfseries sub\+Division\+Size}
+\begin{DoxyCompactList}\small\item\em The size of the affine sub divisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_image}{touchgfx\+::\+Image}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries bitmap}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to display. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bfseries alpha}
+\begin{DoxyCompactList}\small\item\em The Alpha for this image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em Pointer to this drawable\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2c34a36e7eb05c8a0e1e5b0c4d664a9f}{next\+Sibling}}
+\item 
+bool {\bfseries touchable}
+\begin{DoxyCompactList}\small\item\em True if this drawable should receive touch events. \end{DoxyCompactList}\item 
+bool {\bfseries visible}
+\begin{DoxyCompactList}\small\item\em True if this drawable should be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{touchgfx\+::\+Texture\+Mapper}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_afa690b597f1b602fd20d375c38882c10}{apply\+Transformation}} ()
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a836bca8e3b50d0f271d20bd5d01c02b9}{get\+Bounding\+Rect}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_a90ccb52d898f01de6f8dc3d6924dfde3}{draw\+Quad}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area, uint16\+\_\+t \texorpdfstring{$\ast$}{*}fb, const float \texorpdfstring{$\ast$}{*}triangle\+Xs, const float \texorpdfstring{$\ast$}{*}triangle\+Ys, const float \texorpdfstring{$\ast$}{*}triangle\+Zs, const float \texorpdfstring{$\ast$}{*}triangle\+Us, const float \texorpdfstring{$\ast$}{*}triangle\+Vs) const
+\item 
+\mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{Rendering\+Variant}} \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper_ad6df0ba886a6cc3cc20b684887f42ef1}{lookup\+Render\+Variant}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_texture_mapper}{touchgfx\+::\+Texture\+Mapper}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries MINIMAL\+\_\+\+CAMERA\+\_\+\+DISTANCE} = 1
+\begin{DoxyCompactList}\small\item\em The minimal camera distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classtouchgfx_1_1_texture_mapper}{Texture\+Mapper} with animation capabilities. Note that the angles of the \doxylink{classtouchgfx_1_1_texture_mapper}{Texture\+Mapper} is normalized to lie in the range \mbox{[}0; 2PI\mbox{[} at the beginning at the animation. The end angles should be relative to this and are limited to values in the range \mbox{[}-\/32.\+7; 32.\+7\mbox{]}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82}\label{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!AnimationParameter@{AnimationParameter}}
+\index{AnimationParameter@{AnimationParameter}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{AnimationParameter}{AnimationParameter}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82}{touchgfx\+::\+Animation\+Texture\+Mapper\+::\+Animation\+Parameter}}}
+
+Values that represent different animation parameter. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X\_ROTATION@{X\_ROTATION}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!X\_ROTATION@{X\_ROTATION}}}\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82ae86e070571c499d7d6b3bd56d0852b2b}\label{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82ae86e070571c499d7d6b3bd56d0852b2b} 
+X\+\_\+\+ROTATION&Rotation around the X axis. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Y\_ROTATION@{Y\_ROTATION}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!Y\_ROTATION@{Y\_ROTATION}}}\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82aef281e35003f01b49b7add35f9eed158}\label{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82aef281e35003f01b49b7add35f9eed158} 
+Y\+\_\+\+ROTATION&Rotation around the Y axis. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z\_ROTATION@{Z\_ROTATION}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!Z\_ROTATION@{Z\_ROTATION}}}\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a05b9e1e52c08d810186b641feb216a93}\label{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a05b9e1e52c08d810186b641feb216a93} 
+Z\+\_\+\+ROTATION&Rotation around the Z axis. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCALE@{SCALE}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!SCALE@{SCALE}}}\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a7a88233c9c23714cb339c4e0de3c86b7}\label{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82a7a88233c9c23714cb339c4e0de3c86b7} 
+SCALE&Scaling of the image. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a777495a53ed5e10486d569b54a3c0d1d}\label{classtouchgfx_1_1_animation_texture_mapper_a777495a53ed5e10486d569b54a3c0d1d} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!cancelAnimationTextureMapperAnimation@{cancelAnimationTextureMapperAnimation}}
+\index{cancelAnimationTextureMapperAnimation@{cancelAnimationTextureMapperAnimation}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{cancelAnimationTextureMapperAnimation()}{cancelAnimationTextureMapperAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animation\+Texture\+Mapper\+::cancel\+Animation\+Texture\+Mapper\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Cancel the animation. Stops any running animation at the current position regardless of the progress made so far. Disables all animation parameters set using setup\+Animation and mark the animation as stopped. \Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a9672a32a08991c9e49a7c0d56b50380c}\label{classtouchgfx_1_1_animation_texture_mapper_a9672a32a08991c9e49a7c0d56b50380c} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!getAnimationStep@{getAnimationStep}}
+\index{getAnimationStep@{getAnimationStep}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{getAnimationStep()}{getAnimationStep()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Animation\+Texture\+Mapper\+::get\+Animation\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the current animation step measured in ticks since the call to \doxylink{classtouchgfx_1_1_animation_texture_mapper_a15437a8b2d9e82544c8aa3efe3769282}{start\+Animation()}. The steps during the initial delay are also counted.
+
+\begin{DoxyReturn}{Returns}
+The current animation step. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_aee4766372bc3ce07a92497873ce6ab1b}\label{classtouchgfx_1_1_animation_texture_mapper_aee4766372bc3ce07a92497873ce6ab1b} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animation\+Texture\+Mapper\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called periodically by the framework if the \doxylink{classtouchgfx_1_1_drawable}{Drawable} instance has subscribed to timer ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb}{Application\+::register\+Timer\+Widget} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d0b43ec46e2644959854fdd697d2bc8}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_ab80a3e3063cf8d1d2f587c5fecf7aeeb}\label{classtouchgfx_1_1_animation_texture_mapper_ab80a3e3063cf8d1d2f587c5fecf7aeeb} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!isTextureMapperAnimationRunning@{isTextureMapperAnimationRunning}}
+\index{isTextureMapperAnimationRunning@{isTextureMapperAnimationRunning}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{isTextureMapperAnimationRunning()}{isTextureMapperAnimationRunning()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Animation\+Texture\+Mapper\+::is\+Texture\+Mapper\+Animation\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets whether or not the animation is running.
+
+\begin{DoxyReturn}{Returns}
+true if the animation is running. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_aeaea6c3f7a1f8eb290ad3445ce869942}\label{classtouchgfx_1_1_animation_texture_mapper_aeaea6c3f7a1f8eb290ad3445ce869942} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!setTextureMapperAnimationEndedAction@{setTextureMapperAnimationEndedAction}}
+\index{setTextureMapperAnimationEndedAction@{setTextureMapperAnimationEndedAction}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{setTextureMapperAnimationEndedAction()}{setTextureMapperAnimationEndedAction()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animation\+Texture\+Mapper\+::set\+Texture\+Mapper\+Animation\+Ended\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}} \& $>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Associates an action to be performed when the animation ends.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback to be executed. The callback will be given a reference to the \doxylink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_generic_callback}{Generic\+Callback} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a71e431c5e697d036a60668cbd8ee325d}\label{classtouchgfx_1_1_animation_texture_mapper_a71e431c5e697d036a60668cbd8ee325d} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!setTextureMapperAnimationStepAction@{setTextureMapperAnimationStepAction}}
+\index{setTextureMapperAnimationStepAction@{setTextureMapperAnimationStepAction}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{setTextureMapperAnimationStepAction()}{setTextureMapperAnimationStepAction()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animation\+Texture\+Mapper\+::set\+Texture\+Mapper\+Animation\+Step\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}} \& $>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Associates an action to be performed for every step in the animation. Will not be called during the delay period.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback to be executed. The callback will be given a reference to the \doxylink{classtouchgfx_1_1_animation_texture_mapper}{Animation\+Texture\+Mapper}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_generic_callback}{Generic\+Callback} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a91e22a0c8e8582b55dbc8c280a0ded76}\label{classtouchgfx_1_1_animation_texture_mapper_a91e22a0c8e8582b55dbc8c280a0ded76} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!setupAnimation@{setupAnimation}}
+\index{setupAnimation@{setupAnimation}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{setupAnimation()}{setupAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animation\+Texture\+Mapper\+::setup\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_animation_texture_mapper_a88ebf05b480c3592149c92f11bc9bc82}{Animation\+Parameter}}}]{parameter,  }\item[{float}]{end\+Value,  }\item[{uint16\+\_\+t}]{duration,  }\item[{uint16\+\_\+t}]{delay,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets up the animation for a specific parameter (angle/scale) for the next animation. The specific parameter is chosen using the Animation\+Type enum. Animation\+Types that are not setup using this method will keep their value during the animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & The parameter of the \doxylink{classtouchgfx_1_1_texture_mapper}{Texture\+Mapper} that should be animated. \\
+\hline
+{\em end\+Value} & The end value for the parameter. \\
+\hline
+{\em duration} & The duration for the animation of the parameter. Specified in ticks. \\
+\hline
+{\em delay} & The delay before the animation of the parameter starts. Specified in ticks. \\
+\hline
+{\em progression\+Equation} & (Optional) the progression equation for the animation of this parameter. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_animation_texture_mapper_a15437a8b2d9e82544c8aa3efe3769282}\label{classtouchgfx_1_1_animation_texture_mapper_a15437a8b2d9e82544c8aa3efe3769282} 
+\index{touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}!startAnimation@{startAnimation}}
+\index{startAnimation@{startAnimation}!touchgfx::AnimationTextureMapper@{touchgfx::AnimationTextureMapper}}
+\doxysubsubsection{\texorpdfstring{startAnimation()}{startAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animation\+Texture\+Mapper\+::start\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts the animation from the current position to the specified end angles/scale, as specified by one or more calls to \doxylink{classtouchgfx_1_1_animation_texture_mapper_a91e22a0c8e8582b55dbc8c280a0ded76}{setup\+Animation()}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/\mbox{\hyperlink{_animation_texture_mapper_8hpp}{Animation\+Texture\+Mapper.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/touchgfx/widgets/Animation\+Texture\+Mapper.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,189 @@
+\doxysection{Texture\+Map\+Types.\+hpp}
+\hypertarget{_texture_map_types_8hpp_source}{}\label{_texture_map_types_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/TextureMapTypes.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/TextureMapTypes.hpp}}
+\mbox{\hyperlink{_texture_map_types_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_TEXTUREMAPTYPES\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_TEXTUREMAPTYPES\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_gradients}{Gradients}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_gradients_a7cb5eb3006964719bdce78bbd0e4a15f}{Gradients}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_point3_d}{Point3D}}*\ vertices);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_ab35be3331ba35fd5c069731daaf0c012}{oneOverZ}}[3];\ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_a3a43cbd1d382b581689547330f057ff6}{UOverZ}}[3];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_abd6f1a6b406fb529b7671a7765c8ef86}{VOverZ}}[3];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_aa6bfc8badfaeeb801f8ae27cb40b867a}{dOneOverZdX}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_af8334502312d59aa246a655b3f6f21c8}{dOneOverZdY}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_a4880bd9d77057e1c7e40d56a50580e29}{dUOverZdX}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_acbd154c9648aeb0fec2e37fd6988358f}{dUOverZdY}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_a37c7f35bda7d11a4580cb7e33cf7af19}{dVOverZdX}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_a7cbbabd10fa45be100fae7016e3e5d95}{dVOverZdY}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_addc3ac1ba4a209cebf33c38a9c02efdd}{dUdXModifier}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients_aa07ed6b71635f4747ac7a114e358efda}{dVdXModifier}};\ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_edge}{Edge}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_ac22bf5b66f91269734d4d5164961c705}{Edge}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_gradients}{Gradients}}\&\ gradients,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_point3_d}{Point3D}}*\ vertices,\ \textcolor{keywordtype}{int}\ top,\ \textcolor{keywordtype}{int}\ bottom);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a4196923d316ee01b6869ceed7b643e82}{step}}()}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a7df3a3f64e13f3f9cb8fb450ff013484}{X}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a78b4ac910f461ec958b231ef9f0417f2}{XStep}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a32657b07e47081df90c2d97c86f44011}{Y}}++;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ height-\/-\/;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a01b51ec4845a7a66bc932884115c0e78}{UOverZ}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a6a995dbfa1f5fb087852f0f2321c8026}{UOverZStep}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a07cf369acce494bf43e0ed69b835f534}{VOverZ}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a57f14a3cc5b33ad416be0e3f67e25d2c}{VOverZStep}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_adb24a7adbdfcd3fddb5cd6b1b0e6d2d0}{oneOverZ}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a6b3c4060bad982296531503f93012d57}{oneOverZStep}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a43a7881e4ff982f68af28bdd14da08eb}{errorTerm}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a52f4e96293c8192b8b1e8cc9739d2bc0}{numerator}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtouchgfx_1_1_edge_a43a7881e4ff982f68af28bdd14da08eb}{errorTerm}}\ >=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_ae511e28d723376f628153762d44291d5}{denominator}})}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a7df3a3f64e13f3f9cb8fb450ff013484}{X}}++;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a43a7881e4ff982f68af28bdd14da08eb}{errorTerm}}\ -\/=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_ae511e28d723376f628153762d44291d5}{denominator}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_adb24a7adbdfcd3fddb5cd6b1b0e6d2d0}{oneOverZ}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_adae5f405cd8390cf0495a0b768f66b25}{oneOverZStepExtra}};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a01b51ec4845a7a66bc932884115c0e78}{UOverZ}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a805afefddde88af796a791ae8c807ddd}{UOverZStepExtra}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a07cf369acce494bf43e0ed69b835f534}{VOverZ}}\ +=\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a6b9db4e641d4f5adbac642313b1e7f5b}{VOverZStepExtra}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_ab27e235575ada3b4318a3489ddc5e72f}{height}};}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00105\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_ab413565146cc672c78db1bc33d047dac}{step}}(\textcolor{keywordtype}{int}\ steps)}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (steps-\/-\/\ >\ 0)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_edge_a4196923d316ee01b6869ceed7b643e82}{step}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_ab27e235575ada3b4318a3489ddc5e72f}{height}};}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a7df3a3f64e13f3f9cb8fb450ff013484}{X}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a78b4ac910f461ec958b231ef9f0417f2}{XStep}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a52f4e96293c8192b8b1e8cc9739d2bc0}{numerator}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_edge_ae511e28d723376f628153762d44291d5}{denominator}};\ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a43a7881e4ff982f68af28bdd14da08eb}{errorTerm}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a32657b07e47081df90c2d97c86f44011}{Y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_ab27e235575ada3b4318a3489ddc5e72f}{height}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_adb24a7adbdfcd3fddb5cd6b1b0e6d2d0}{oneOverZ}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a6b3c4060bad982296531503f93012d57}{oneOverZStep}};\ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_adae5f405cd8390cf0495a0b768f66b25}{oneOverZStepExtra}};\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a01b51ec4845a7a66bc932884115c0e78}{UOverZ}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a6a995dbfa1f5fb087852f0f2321c8026}{UOverZStep}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a805afefddde88af796a791ae8c807ddd}{UOverZStepExtra}};\ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a07cf369acce494bf43e0ed69b835f534}{VOverZ}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a57f14a3cc5b33ad416be0e3f67e25d2c}{VOverZStep}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_edge_a6b9db4e641d4f5adbac642313b1e7f5b}{VOverZStepExtra}};\ \ \ }
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00139\ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespacetouchgfx_aed5542153a4938ea4962f3477316114d}{fixed28\_4ToFloat}}(\mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}}\ value)}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})value\ /\ 16.0f;}
+\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00151\ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}}\ \mbox{\hyperlink{namespacetouchgfx_a4748ee50ef5f440ab16bd2321044631d}{floatToFixed28\_4}}(\textcolor{keywordtype}{float}\ value)}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}})(value\ *\ 16);}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00163\ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}}\ \mbox{\hyperlink{namespacetouchgfx_a93c7aac22f2611aa16874d3dda710c3c}{floatToFixed16\_16}}(\textcolor{keywordtype}{float}\ value)}
+\DoxyCodeLine{00164\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{namespacetouchgfx_ad120d483f163bf550db189a21ec0575d}{fixed16\_16}})(value\ *\ 65536);}
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00176\ FORCE\_INLINE\_FUNCTION\ \mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}}\ \mbox{\hyperlink{namespacetouchgfx_aacd49bf7ed6744d5c1301593005f7ae0}{fixed28\_4Mul}}(\mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}}\ a,\ \mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}}\ b)}
+\DoxyCodeLine{00177\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ ==\ 0\ ||\ b\ ==\ 0)}
+\DoxyCodeLine{00179\ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{if}\ ((a\ *\ b)\ /\ b\ ==\ a)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (a\ *\ b)\ /\ 16;}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//\ Rewrite\ "{}b\ =\ max\_b\ *\ num\_max\_b\ +\ rem\_b"{}\ so\ that\ a\ *\ max\_b\ does\ not\ overflow.}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacetouchgfx_af9ccec0b1c2c7a516aee2276eea316cf}{sign}}\ =\ 1;}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordflow}{if}\ (b\ <\ 0)}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_af9ccec0b1c2c7a516aee2276eea316cf}{sign}}\ =\ -\/\mbox{\hyperlink{namespacetouchgfx_af9ccec0b1c2c7a516aee2276eea316cf}{sign}};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ b\ =\ -\/b;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ <\ 0)}
+\DoxyCodeLine{00195\ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_af9ccec0b1c2c7a516aee2276eea316cf}{sign}}\ =\ -\/\mbox{\hyperlink{namespacetouchgfx_af9ccec0b1c2c7a516aee2276eea316cf}{sign}};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ a\ =\ -\/a;}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ <\ b)}
+\DoxyCodeLine{00200\ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}}\ tmp\ =\ a;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ a\ =\ b;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ b\ =\ tmp;}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ int32\_t\ max\_b\ =\ 0x7FFFFFFF\ /\ a;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Max\ b\ value\ that\ can\ be\ multiplied\ with\ a\ without\ overflow}}
+\DoxyCodeLine{00206\ \ \ \ \ int32\_t\ num\_max\_b\ =\ b\ /\ max\_b;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ How\ many\ times\ do\ we\ have\ to\ multiply\ with\ "{}max\_b"{}\ to\ get\ to\ "{}b"{}}}
+\DoxyCodeLine{00207\ \ \ \ \ int32\_t\ rem\_b\ =\ b\ -\/\ max\_b\ *\ num\_max\_b;\ \textcolor{comment}{//\ plus\ some\ remainder.}}
+\DoxyCodeLine{00208\ \ \ \ \ int32\_t\ max\_prod\ =\ a\ *\ max\_b;}
+\DoxyCodeLine{00209\ \ \ \ \ int32\_t\ result\ =\ \mbox{\hyperlink{namespacetouchgfx_af9ccec0b1c2c7a516aee2276eea316cf}{sign}}\ *\ (num\_max\_b\ *\ (max\_prod\ /\ 16)\ +\ (num\_max\_b\ *\ (max\_prod\ \%\ 16)\ +\ rem\_b\ *\ a)\ /\ 16);}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00211\ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00220\ FORCE\_INLINE\_FUNCTION\ int32\_t\ \mbox{\hyperlink{namespacetouchgfx_aa9188bca682a47cf482586916923715e}{ceil28\_4}}(\mbox{\hyperlink{namespacetouchgfx_adad1c365b33cae54929c2940a1d777ae}{fixed28\_4}}\ value)}
+\DoxyCodeLine{00221\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ int32\_t\ returnValue;}
+\DoxyCodeLine{00223\ \ \ \ \ int32\_t\ numerator\ =\ value\ -\/\ 1\ +\ 16;}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{if}\ (numerator\ >=\ 0)}
+\DoxyCodeLine{00225\ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ returnValue\ =\ numerator\ /\ 16;}
+\DoxyCodeLine{00227\ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Deal\ with\ negative\ numerators\ correctly}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ returnValue\ =\ -\/((-\/numerator)\ /\ 16);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ returnValue\ -\/=\ ((-\/numerator)\ \%\ 16)\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{return}\ returnValue;}
+\DoxyCodeLine{00235\ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00245\ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetouchgfx_a7fee2f3ed5fca45eb8655ecdce6c2872}{floorDivMod}}(int32\_t\ numerator,\ int32\_t\ denominator,\ int32\_t\&\ floor,\ int32\_t\&\ mod)}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ assert(denominator\ >\ 0);\ \textcolor{comment}{//\ We\ assume\ it's\ positive}}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{if}\ (numerator\ >=\ 0)}
+\DoxyCodeLine{00249\ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Positive\ case,\ C\ is\ okay}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ floor\ =\ numerator\ /\ denominator;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ mod\ =\ numerator\ \%\ denominator;}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00255\ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Numerator\ is\ negative,\ do\ the\ right\ thing}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ floor\ =\ -\/((-\/numerator)\ /\ denominator);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ mod\ =\ (-\/numerator)\ \%\ denominator;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mod)}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ There\ is\ a\ remainder}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ floor-\/-\/;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ mod\ =\ denominator\ -\/\ mod;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \}}
+\DoxyCodeLine{00267\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_TEXTUREMAPTYPES\_HPP}}
+
+\end{DoxyCode}

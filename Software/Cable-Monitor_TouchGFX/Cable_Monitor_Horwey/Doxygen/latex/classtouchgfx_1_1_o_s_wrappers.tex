@@ -1,0 +1,155 @@
+\doxysection{touchgfx\+::OSWrappers Class Reference}
+\hypertarget{classtouchgfx_1_1_o_s_wrappers}{}\label{classtouchgfx_1_1_o_s_wrappers}\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+
+
+{\ttfamily \#include $<$OSWrappers.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a24d594a6329d5bf2546156fa4a0aa7e0}{initialize}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_aa1e7d2e105bb4b05264a31c9ba12260a}{deinitialize}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a27e900a114ecfd06cdd98814d0f6ac33}{signal\+VSync}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a2d33bb5c92199a1f955467a5515c5b4f}{signal\+Rendering\+Done}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a608bc1e5b430283c9785bbb11ea17584}{wait\+For\+VSync}} ()
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a2b8601cc26333172ddcc371df198a4ae}{is\+VSync\+Available}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a7c7bc82a40a2f6fa0c9b8342ea9b62af}{take\+Frame\+Buffer\+Semaphore}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a30d183fb7f72ac9177394c2902ea87ba}{try\+Take\+Frame\+Buffer\+Semaphore}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a6ac6027402e5965fbbe792690d88ce98}{give\+Frame\+Buffer\+Semaphore}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a887c2ef553285e83abf719182ffdd64b}{give\+Frame\+Buffer\+Semaphore\+From\+ISR}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a9962185a289eaf9bf20143e610eed544}{task\+Delay}} (uint16\+\_\+t ms)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_o_s_wrappers_a842e3996b620e53a4e19745a30331c0f}{task\+Yield}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class specifies OS wrappers for dealing with the framebuffer semaphore and the VSYNC signal. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_o_s_wrappers_aa1e7d2e105bb4b05264a31c9ba12260a}\label{classtouchgfx_1_1_o_s_wrappers_aa1e7d2e105bb4b05264a31c9ba12260a} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!deinitialize@{deinitialize}}
+\index{deinitialize@{deinitialize}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{deinitialize()}{deinitialize()}}
+{\footnotesize\ttfamily void touchgfx\+::\+OSWrappers\+::deinitialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initialize framebuffer semaphore and queue/mutex for VSYNC signal. \Hypertarget{classtouchgfx_1_1_o_s_wrappers_a6ac6027402e5965fbbe792690d88ce98}\label{classtouchgfx_1_1_o_s_wrappers_a6ac6027402e5965fbbe792690d88ce98} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!giveFrameBufferSemaphore@{giveFrameBufferSemaphore}}
+\index{giveFrameBufferSemaphore@{giveFrameBufferSemaphore}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{giveFrameBufferSemaphore()}{giveFrameBufferSemaphore()}}
+{\footnotesize\ttfamily void OSWrappers\+::give\+Frame\+Buffer\+Semaphore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Release the framebuffer semaphore. \Hypertarget{classtouchgfx_1_1_o_s_wrappers_a887c2ef553285e83abf719182ffdd64b}\label{classtouchgfx_1_1_o_s_wrappers_a887c2ef553285e83abf719182ffdd64b} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!giveFrameBufferSemaphoreFromISR@{giveFrameBufferSemaphoreFromISR}}
+\index{giveFrameBufferSemaphoreFromISR@{giveFrameBufferSemaphoreFromISR}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{giveFrameBufferSemaphoreFromISR()}{giveFrameBufferSemaphoreFromISR()}}
+{\footnotesize\ttfamily void OSWrappers\+::give\+Frame\+Buffer\+Semaphore\+From\+ISR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Release the framebuffer semaphore in a way that is safe in interrupt context. Called from ISR. \Hypertarget{classtouchgfx_1_1_o_s_wrappers_a24d594a6329d5bf2546156fa4a0aa7e0}\label{classtouchgfx_1_1_o_s_wrappers_a24d594a6329d5bf2546156fa4a0aa7e0} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!initialize@{initialize}}
+\index{initialize@{initialize}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void OSWrappers\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initialize framebuffer semaphore and queue/mutex for VSYNC signal. \Hypertarget{classtouchgfx_1_1_o_s_wrappers_a2b8601cc26333172ddcc371df198a4ae}\label{classtouchgfx_1_1_o_s_wrappers_a2b8601cc26333172ddcc371df198a4ae} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!isVSyncAvailable@{isVSyncAvailable}}
+\index{isVSyncAvailable@{isVSyncAvailable}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{isVSyncAvailable()}{isVSyncAvailable()}}
+{\footnotesize\ttfamily static bool touchgfx\+::\+OSWrappers\+::is\+VSync\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This function checks if a VSync occurred after last rendering. The function is used in systems that cannot wait in wait\+For\+VSync (because they are also checking other event sources.
+
+\begin{DoxyNote}{Note}
+signal\+Rendering\+Done is typically used together with this function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+True if VSync occurred. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_o_s_wrappers_a2d33bb5c92199a1f955467a5515c5b4f}\label{classtouchgfx_1_1_o_s_wrappers_a2d33bb5c92199a1f955467a5515c5b4f} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!signalRenderingDone@{signalRenderingDone}}
+\index{signalRenderingDone@{signalRenderingDone}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{signalRenderingDone()}{signalRenderingDone()}}
+{\footnotesize\ttfamily void OSWrappers\+::signal\+Rendering\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Signal that the rendering of the frame has completed. Used by some systems to avoid using any previous vsync. \Hypertarget{classtouchgfx_1_1_o_s_wrappers_a27e900a114ecfd06cdd98814d0f6ac33}\label{classtouchgfx_1_1_o_s_wrappers_a27e900a114ecfd06cdd98814d0f6ac33} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!signalVSync@{signalVSync}}
+\index{signalVSync@{signalVSync}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{signalVSync()}{signalVSync()}}
+{\footnotesize\ttfamily void OSWrappers\+::signal\+VSync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Signal that a VSYNC has occurred. Should make the vsync queue/mutex available.
+
+\begin{DoxyNote}{Note}
+This function is called from an ISR, and should (depending on OS) trigger a scheduling. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_o_s_wrappers_a7c7bc82a40a2f6fa0c9b8342ea9b62af}\label{classtouchgfx_1_1_o_s_wrappers_a7c7bc82a40a2f6fa0c9b8342ea9b62af} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!takeFrameBufferSemaphore@{takeFrameBufferSemaphore}}
+\index{takeFrameBufferSemaphore@{takeFrameBufferSemaphore}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{takeFrameBufferSemaphore()}{takeFrameBufferSemaphore()}}
+{\footnotesize\ttfamily void OSWrappers\+::take\+Frame\+Buffer\+Semaphore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Take the framebuffer semaphore. Blocks until semaphore is available. \Hypertarget{classtouchgfx_1_1_o_s_wrappers_a9962185a289eaf9bf20143e610eed544}\label{classtouchgfx_1_1_o_s_wrappers_a9962185a289eaf9bf20143e610eed544} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!taskDelay@{taskDelay}}
+\index{taskDelay@{taskDelay}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{taskDelay()}{taskDelay()}}
+{\footnotesize\ttfamily void OSWrappers\+::task\+Delay (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{ms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A function that causes executing task to sleep for a number of milliseconds. This function is OPTIONAL. It is only used by the Touch\+GFX in the case of a specific frame refresh strategy (REFRESH\+\_\+\+STRATEGY\+\_\+\+OPTIM\+\_\+\+SINGLE\+\_\+\+BUFFER\+\_\+\+TFT\+\_\+\+CTRL). Due to backwards compatibility, in order for this function to be usable by the \doxylink{classtouchgfx_1_1_h_a_l}{HAL} the function must be explicitly registered\+: hal.\+register\+Task\+Delay\+Function(\&\+OSWrappers\+::task\+Delay)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & The number of milliseconds to sleep.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_a69a229a10515b7b85da0997147b0b74c}{HAL\+::set\+Frame\+Refresh\+Strategy}, \doxylink{classtouchgfx_1_1_h_a_l_a15a050c5ddfd7fc3fb0c602d5bf9cc5a}{HAL\+::register\+Task\+Delay\+Function} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_o_s_wrappers_a842e3996b620e53a4e19745a30331c0f}\label{classtouchgfx_1_1_o_s_wrappers_a842e3996b620e53a4e19745a30331c0f} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!taskYield@{taskYield}}
+\index{taskYield@{taskYield}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{taskYield()}{taskYield()}}
+{\footnotesize\ttfamily void OSWrappers\+::task\+Yield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A function that causes the executing task to yield control to another thread. This function is used by the framework when it is necessary to wait a little before continuing (e.\+g. drawing).
+
+The implementation should typically request the operating system to change to another task of similar priority. When running without an operating system, the implementation can run a very short task and return. \Hypertarget{classtouchgfx_1_1_o_s_wrappers_a30d183fb7f72ac9177394c2902ea87ba}\label{classtouchgfx_1_1_o_s_wrappers_a30d183fb7f72ac9177394c2902ea87ba} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!tryTakeFrameBufferSemaphore@{tryTakeFrameBufferSemaphore}}
+\index{tryTakeFrameBufferSemaphore@{tryTakeFrameBufferSemaphore}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{tryTakeFrameBufferSemaphore()}{tryTakeFrameBufferSemaphore()}}
+{\footnotesize\ttfamily void OSWrappers\+::try\+Take\+Frame\+Buffer\+Semaphore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempt to obtain the framebuffer semaphore. If semaphore is not available, do nothing.
+
+\begin{DoxyNote}{Note}
+must return immediately! This function does not care who has the taken the semaphore, it only serves to make sure that the semaphore is taken by someone. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_o_s_wrappers_a608bc1e5b430283c9785bbb11ea17584}\label{classtouchgfx_1_1_o_s_wrappers_a608bc1e5b430283c9785bbb11ea17584} 
+\index{touchgfx::OSWrappers@{touchgfx::OSWrappers}!waitForVSync@{waitForVSync}}
+\index{waitForVSync@{waitForVSync}!touchgfx::OSWrappers@{touchgfx::OSWrappers}}
+\doxysubsubsection{\texorpdfstring{waitForVSync()}{waitForVSync()}}
+{\footnotesize\ttfamily void OSWrappers\+::wait\+For\+VSync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This function blocks until a VSYNC occurs.
+
+\begin{DoxyNote}{Note}
+This function must first clear the mutex/queue and then wait for the next one to occur. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_o_s_wrappers_8hpp}{OSWrappers.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/platform/hal/simulator/sdl2/OSWrappers.\+cpp\item 
+Middlewares/\+ST/touchgfx/os/OSWrappers.\+cpp\item 
+Middlewares/\+ST/touchgfx/os/OSWrappers\+\_\+cmsis.\+cpp\item 
+Touch\+GFX/target/generated/OSWrappers.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\doxysection{Meta.\+hpp}
+\hypertarget{_meta_8hpp_source}{}\label{_meta_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/common/Meta.hpp@{Middlewares/ST/touchgfx/framework/include/common/Meta.hpp}}
+\mbox{\hyperlink{_meta_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_META\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_META\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }meta}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{Nil}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ First,\ \textcolor{keyword}{typename}\ Next>}
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{TypeList}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typedef}\ First\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list_a9e3431af4f3031bce382693c55405e2d}{first}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typedef}\ Next\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list_a792241bdbd61a10e99e2b052d46587a5}{next}};\ \ \ }
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2,\ \textcolor{keywordtype}{bool}\ choose1\ =\ (sizeof(T1)\ >\ \textcolor{keyword}{sizeof}(T2))>}
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1type__max}{type\_max}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{typedef}\ T1\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1type__max_abebf1e28abb8f9cfcd0f3e2915b3527a}{type}};\ }
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00067\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1type__max}{type\_max}}<T1,\ T2,\ false>}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{typedef}\ T2\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1type__max_3_01_t1_00_01_t2_00_01false_01_4_a92afbdf4a76124f0edd4c31951768c67}{type}};\ }
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00078\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1select__type__maxsize}{select\_type\_maxsize}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ First,\ \textcolor{keyword}{typename}\ Next>}
+\DoxyCodeLine{00087\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1select__type__maxsize}{select\_type\_maxsize}}<\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{TypeList}}<First,\ Next>\ >\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1type__max}{type\_max}}<First,\ typename\ select\_type\_maxsize<Next>::type>}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ First>}
+\DoxyCodeLine{00097\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1select__type__maxsize}{select\_type\_maxsize}}<\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{TypeList}}<First,\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{Nil}}>\ >}
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{typedef}\ First\ type;}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TList,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00109\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1list__join}{list\_join}};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00113\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1list__join}{list\_join}}<\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{Nil}},\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{Nil}}>}
+\DoxyCodeLine{00114\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{Nil}}\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{result}};}
+\DoxyCodeLine{00116\ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00124\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1list__join}{list\_join}}<\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{Nil}},\ T>}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{typedef}\ TypeList<T,\ Nil>\ result;}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ First,\ \textcolor{keyword}{typename}\ Next>}
+\DoxyCodeLine{00136\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1list__join}{list\_join}}<\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_nil}{Nil}},\ \mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{TypeList}}<First,\ Next>\ >}
+\DoxyCodeLine{00137\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{typedef}\ TypeList<First,\ Next>\ result;}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00148\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ First,\ \textcolor{keyword}{typename}\ Next,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00149\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1meta_1_1list__join}{list\_join}}<\mbox{\hyperlink{structtouchgfx_1_1meta_1_1_type_list}{TypeList}}<First,\ Next>,\ T>}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{typedef}\ TypeList<First,\ typename\ list\_join<Next,\ T>::result>\ result;}
+\DoxyCodeLine{00152\ \};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \}\ \textcolor{comment}{//\ namespace\ meta}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_META\_HPP}}
+
+\end{DoxyCode}

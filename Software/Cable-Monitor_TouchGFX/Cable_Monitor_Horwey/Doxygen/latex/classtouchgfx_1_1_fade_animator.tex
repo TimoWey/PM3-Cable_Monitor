@@ -1,0 +1,205 @@
+\doxysection{touchgfx\+::Fade\+Animator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_fade_animator}{}\label{classtouchgfx_1_1_fade_animator}\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Fade\+Animator.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Fade\+Animator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_fade_animator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_ab8111c8152de7b9f2d99de65a22d0d84}{set\+Fade\+Animation\+Ended\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{Fade\+Animator}}$<$ T $>$ \& $>$ \&callback)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_ae6c2c262df9e52c6f2bb5e886f8a2254}{clear\+Fade\+Animation\+Ended\+Action}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_a46438dccb97a7efc68f688f7fc699d78}{set\+Fade\+Animation\+Delay}} (uint16\+\_\+t delay)
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_a1ac9aee25c64cf49ba1bd0cc7d45aba6}{get\+Fade\+Animation\+Delay}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_a4988b877d86527d1e5163734c5e23ad4}{is\+Fade\+Animation\+Running}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_ad0acfafcbbc23dd71c61ecda39886e79}{start\+Fade\+Animation}} (uint8\+\_\+t end\+Alpha, uint16\+\_\+t duration, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} alpha\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}})
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_aab3f2f5494b18f26c98dbd65fca92673}{cancel\+Fade\+Animation}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_af6bebfbeeb36f65ed5308518776c1336}{handle\+Tick\+Event}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator_a3020867b143563d84b21f8e9028396bd}{next\+Fade\+Animation\+Step}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_acbb315b6b9f95b95a41073f230551e19}\label{classtouchgfx_1_1_fade_animator_acbb315b6b9f95b95a41073f230551e19} 
+bool {\bfseries fade\+Animation\+Running}
+\begin{DoxyCompactList}\small\item\em True if the animation is running. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_a83a8de604f5ce308c7e7ad4d0113a744}\label{classtouchgfx_1_1_fade_animator_a83a8de604f5ce308c7e7ad4d0113a744} 
+uint16\+\_\+t {\bfseries fade\+Animation\+Counter}
+\begin{DoxyCompactList}\small\item\em To the current step in the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_ad9b588c03907c47515ecdf70c78961f5}\label{classtouchgfx_1_1_fade_animator_ad9b588c03907c47515ecdf70c78961f5} 
+uint16\+\_\+t {\bfseries fade\+Animation\+Delay}
+\begin{DoxyCompactList}\small\item\em A delay that is applied before animation start. Expressed in ticks. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_ab6d15fbdb45affd458cac8a001ff8fa7}\label{classtouchgfx_1_1_fade_animator_ab6d15fbdb45affd458cac8a001ff8fa7} 
+uint16\+\_\+t {\bfseries fade\+Animation\+Duration}
+\begin{DoxyCompactList}\small\item\em The complete duration of the animation. Expressed in ticks. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_adccf3c159cfba60df97dabaa1bb2d8e6}\label{classtouchgfx_1_1_fade_animator_adccf3c159cfba60df97dabaa1bb2d8e6} 
+int16\+\_\+t {\bfseries fade\+Animation\+Start\+Alpha}
+\begin{DoxyCompactList}\small\item\em The alpha value at the beginning of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_afb9e8b169ed105b4aeef706b91b5e4d3}\label{classtouchgfx_1_1_fade_animator_afb9e8b169ed105b4aeef706b91b5e4d3} 
+int16\+\_\+t {\bfseries fade\+Animation\+End\+Alpha}
+\begin{DoxyCompactList}\small\item\em The alpha value at the end of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_a2db60d6037b1b9b2fa279dad98c2a91b}\label{classtouchgfx_1_1_fade_animator_a2db60d6037b1b9b2fa279dad98c2a91b} 
+\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} {\bfseries fade\+Animation\+Alpha\+Equation}
+\begin{DoxyCompactList}\small\item\em Easing\+Equation expressing the progression of the alpha value during the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_fade_animator_ae4acf153ddf6e917a85e163f0732a70f}\label{classtouchgfx_1_1_fade_animator_ae4acf153ddf6e917a85e163f0732a70f} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{Fade\+Animator}}$<$ T $>$ \& $>$ \texorpdfstring{$\ast$}{*} {\bfseries fade\+Animation\+Ended\+Callback}
+\begin{DoxyCompactList}\small\item\em Animation ended \doxylink{structtouchgfx_1_1_callback}{Callback}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Fade\+Animator$<$ T $>$}
+A \doxylink{classtouchgfx_1_1_fade_animator}{Fade\+Animator} makes the template class T able to animate the alpha value from its current value to a specified end value. It is possible to use a fade in effect as well as fade out effect using \doxylink{classtouchgfx_1_1_fade_animator}{Fade\+Animator}. The alpha progression can be described by supplying an Easing\+Equation. The \doxylink{classtouchgfx_1_1_fade_animator}{Fade\+Animator} performs a callback when the animation has finished.
+
+This mixin can be used on any \doxylink{classtouchgfx_1_1_drawable}{Drawable} that has a \textquotesingle{}void set\+Alpha(uint8\+\_\+t)\textquotesingle{} and a \textquotesingle{}uint8\+\_\+t get\+Alpha()\textquotesingle{} method.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & specifies the type to extend with the \doxylink{classtouchgfx_1_1_fade_animator}{Fade\+Animator} behavior. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_fade_animator_aab3f2f5494b18f26c98dbd65fca92673}\label{classtouchgfx_1_1_fade_animator_aab3f2f5494b18f26c98dbd65fca92673} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!cancelFadeAnimation@{cancelFadeAnimation}}
+\index{cancelFadeAnimation@{cancelFadeAnimation}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cancelFadeAnimation()}{cancelFadeAnimation()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::cancel\+Fade\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cancel fade animation. The animation is stopped and the alpha value is left where it currently is. \Hypertarget{classtouchgfx_1_1_fade_animator_ae6c2c262df9e52c6f2bb5e886f8a2254}\label{classtouchgfx_1_1_fade_animator_ae6c2c262df9e52c6f2bb5e886f8a2254} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!clearFadeAnimationEndedAction@{clearFadeAnimationEndedAction}}
+\index{clearFadeAnimationEndedAction@{clearFadeAnimationEndedAction}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clearFadeAnimationEndedAction()}{clearFadeAnimationEndedAction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::clear\+Fade\+Animation\+Ended\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears the fade animation ended action previously set by set\+Fade\+Animation\+Ended\+Action.
+
+Clears the fade animation ended action previously set by set\+Fade\+Animation\+Ended\+Action.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_fade_animator_ab8111c8152de7b9f2d99de65a22d0d84}{set\+Fade\+Animation\+Ended\+Action} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_fade_animator_a1ac9aee25c64cf49ba1bd0cc7d45aba6}\label{classtouchgfx_1_1_fade_animator_a1ac9aee25c64cf49ba1bd0cc7d45aba6} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!getFadeAnimationDelay@{getFadeAnimationDelay}}
+\index{getFadeAnimationDelay@{getFadeAnimationDelay}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getFadeAnimationDelay()}{getFadeAnimationDelay()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::get\+Fade\+Animation\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the current animation delay.
+
+\begin{DoxyReturn}{Returns}
+The current animation delay.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_fade_animator_a46438dccb97a7efc68f688f7fc699d78}{set\+Fade\+Animation\+Delay} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_fade_animator_af6bebfbeeb36f65ed5308518776c1336}\label{classtouchgfx_1_1_fade_animator_af6bebfbeeb36f65ed5308518776c1336} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Called periodically by the framework if the \doxylink{classtouchgfx_1_1_drawable}{Drawable} instance has subscribed to timer ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb}{Application\+::register\+Timer\+Widget}   
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_fade_animator_a4988b877d86527d1e5163734c5e23ad4}\label{classtouchgfx_1_1_fade_animator_a4988b877d86527d1e5163734c5e23ad4} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!isFadeAnimationRunning@{isFadeAnimationRunning}}
+\index{isFadeAnimationRunning@{isFadeAnimationRunning}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isFadeAnimationRunning()}{isFadeAnimationRunning()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::is\+Fade\+Animation\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets whether or not the fade animation is running.
+
+\begin{DoxyReturn}{Returns}
+true if the fade animation is running. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_fade_animator_a3020867b143563d84b21f8e9028396bd}\label{classtouchgfx_1_1_fade_animator_a3020867b143563d84b21f8e9028396bd} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!nextFadeAnimationStep@{nextFadeAnimationStep}}
+\index{nextFadeAnimationStep@{nextFadeAnimationStep}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{nextFadeAnimationStep()}{nextFadeAnimationStep()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::next\+Fade\+Animation\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Execute next step in fade animation and stop the timer if necessary. \Hypertarget{classtouchgfx_1_1_fade_animator_a46438dccb97a7efc68f688f7fc699d78}\label{classtouchgfx_1_1_fade_animator_a46438dccb97a7efc68f688f7fc699d78} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!setFadeAnimationDelay@{setFadeAnimationDelay}}
+\index{setFadeAnimationDelay@{setFadeAnimationDelay}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setFadeAnimationDelay()}{setFadeAnimationDelay()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::set\+Fade\+Animation\+Delay (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets a delay before the actual animation starts for the animation done by the \doxylink{classtouchgfx_1_1_fade_animator}{Fade\+Animator}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & The delay in ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_fade_animator_a1ac9aee25c64cf49ba1bd0cc7d45aba6}{get\+Fade\+Animation\+Delay} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_fade_animator_ab8111c8152de7b9f2d99de65a22d0d84}\label{classtouchgfx_1_1_fade_animator_ab8111c8152de7b9f2d99de65a22d0d84} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!setFadeAnimationEndedAction@{setFadeAnimationEndedAction}}
+\index{setFadeAnimationEndedAction@{setFadeAnimationEndedAction}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setFadeAnimationEndedAction()}{setFadeAnimationEndedAction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::set\+Fade\+Animation\+Ended\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{Fade\+Animator}}$<$ T $>$ \& $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the animation ends.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback to be executed. The callback will be given a reference to the \doxylink{classtouchgfx_1_1_fade_animator}{Fade\+Animator}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_fade_animator_ad0acfafcbbc23dd71c61ecda39886e79}\label{classtouchgfx_1_1_fade_animator_ad0acfafcbbc23dd71c61ecda39886e79} 
+\index{touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}!startFadeAnimation@{startFadeAnimation}}
+\index{startFadeAnimation@{startFadeAnimation}!touchgfx::FadeAnimator$<$ T $>$@{touchgfx::FadeAnimator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{startFadeAnimation()}{startFadeAnimation()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_fade_animator}{touchgfx\+::\+Fade\+Animator}}$<$ T $>$\+::start\+Fade\+Animation (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{end\+Alpha,  }\item[{uint16\+\_\+t}]{duration,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{alpha\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the fade animation from the current alpha value to the specified end alpha value. The progression of the alpha value during the animation is described by the supplied Easing\+Equation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+Alpha} & The alpha value of T at animation end. \\
+\hline
+{\em duration} & The duration of the animation measured in ticks. \\
+\hline
+{\em alpha\+Progression\+Equation} & (Optional) The equation that describes the development of the alpha value during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/mixins/\mbox{\hyperlink{_fade_animator_8hpp}{Fade\+Animator.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\doxysection{Abstract\+Clock.\+hpp}
+\hypertarget{_abstract_clock_8hpp_source}{}\label{_abstract_clock_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp}}
+\mbox{\hyperlink{_abstract_clock_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_ABSTRACTCLOCK\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_ABSTRACTCLOCK\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_abstract_clock}{AbstractClock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_container}{Container}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock}{AbstractClock}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_ae1160734d3db981d71746fa78f062f2e}{setTime24Hour}}(uint8\_t\ hour,\ uint8\_t\ minute,\ uint8\_t\ second);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_a3cbb13343fcb32a3c0f883c99dd310ee}{setTime12Hour}}(uint8\_t\ hour,\ uint8\_t\ minute,\ uint8\_t\ second,\ \textcolor{keywordtype}{bool}\ am);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_a28c39f7356e1a93ae642f82609b78c78}{getCurrentHour}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_af922b505504a12f036b18dc187ba0eda}{getCurrentHour24}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_ab882b8baa88cae9791dea517704da72f}{getCurrentHour12}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_aa909509f057c4d5a9fc56337bafa6b02}{getCurrentAM}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_aae92e6f619a35a3ea48c5de4dc4451d9}{getCurrentMinute}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_ad643451ba346135a9c1a7dfb41809aa4}{getCurrentSecond}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00111\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_aee34c84a6d49a8165027f5f75179ca83}{currentHour}};\ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_aba4972ca7e23031f07c671f1b27b3207}{currentMinute}};\ }
+\DoxyCodeLine{00113\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_aac94c8048ec558e9f90fd78c3cfcdfab}{currentSecond}};\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_clock_a2774454dab8699f59c3d468c4df5e6bb}{updateClock}}()\ =\ 0;}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_ABSTRACTCLOCK\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,122 @@
+\doxysection{Core/\+Inc/measuring.h File Reference}
+\hypertarget{measuring_8h}{}\label{measuring_8h}\index{Core/Inc/measuring.h@{Core/Inc/measuring.h}}
+
+
+See \doxylink{measuring_8c}{measuring.\+c}.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{measuring_8h_a645930ff74ceaacb90aca99fae865f8f}{MEAS\+\_\+\+GPIO\+\_\+analog\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Configure GPIOs in analog mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{measuring_8h_a2ace7017c3957ead5cd587fc6fae0290}{MEAS\+\_\+timer\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Configure the timer to trigger the ADC(s) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{measuring_8h_ad33d4cf42023ab7762e61cddb0d4113a}{ADC\+\_\+reset}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{measuring_8h_a2756121f7d9be8c582e834ec0382b01b}{MEAS\+\_\+get\+\_\+samp\+\_\+freq}} (void)
+\begin{DoxyCompactList}\small\item\em Get the sampling frequency. \end{DoxyCompactList}\item 
+uint32\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{measuring_8h_a0495ebe6ce630b42c2f9479392506985}{MEAS\+\_\+start\+\_\+measure}} (void)
+\begin{DoxyCompactList}\small\item\em Start the measurement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{measuring_8h_a8efb445edd5e405be589571376a57b56}{MEAS\+\_\+input\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See \doxylink{measuring_8c}{measuring.\+c}. 
+
+\DoxyHorRuler{0}
+
+
+Prefixes MEAS, ADC, DAC 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{measuring_8h_ad33d4cf42023ab7762e61cddb0d4113a}\label{measuring_8h_ad33d4cf42023ab7762e61cddb0d4113a} 
+\index{measuring.h@{measuring.h}!ADC\_reset@{ADC\_reset}}
+\index{ADC\_reset@{ADC\_reset}!measuring.h@{measuring.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_reset()}{ADC\_reset()}}
+{\footnotesize\ttfamily void ADC\+\_\+reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{measuring_8h_a2756121f7d9be8c582e834ec0382b01b}\label{measuring_8h_a2756121f7d9be8c582e834ec0382b01b} 
+\index{measuring.h@{measuring.h}!MEAS\_get\_samp\_freq@{MEAS\_get\_samp\_freq}}
+\index{MEAS\_get\_samp\_freq@{MEAS\_get\_samp\_freq}!measuring.h@{measuring.h}}
+\doxysubsubsection{\texorpdfstring{MEAS\_get\_samp\_freq()}{MEAS\_get\_samp\_freq()}}
+{\footnotesize\ttfamily uint16\+\_\+t MEAS\+\_\+get\+\_\+samp\+\_\+freq (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the sampling frequency. 
+
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Returns}
+Sampling frequency 
+\end{DoxyReturn}
+\Hypertarget{measuring_8h_a645930ff74ceaacb90aca99fae865f8f}\label{measuring_8h_a645930ff74ceaacb90aca99fae865f8f} 
+\index{measuring.h@{measuring.h}!MEAS\_GPIO\_analog\_init@{MEAS\_GPIO\_analog\_init}}
+\index{MEAS\_GPIO\_analog\_init@{MEAS\_GPIO\_analog\_init}!measuring.h@{measuring.h}}
+\doxysubsubsection{\texorpdfstring{MEAS\_GPIO\_analog\_init()}{MEAS\_GPIO\_analog\_init()}}
+{\footnotesize\ttfamily void MEAS\+\_\+\+GPIO\+\_\+analog\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure GPIOs in analog mode. 
+
+\DoxyHorRuler{0}
+ 
+
+\begin{DoxyNote}{Note}
+The input number for the ADCs is not equal to the GPIO pin number!
+\begin{DoxyItemize}
+\item ADC3\+\_\+\+IN4 = GPIO PF6 (Pad left)
+\item ADC123\+\_\+\+IN13 = GPIO PC3 (Pad right)
+\item ADC3\+\_\+\+IN6 = GPIO PF8 (Hall sensor Left)
+\item ADC123\+\_\+\+IN11 = GPIO PC1 (Hall sensor Right) 
+\end{DoxyItemize}
+\end{DoxyNote}
+\Hypertarget{measuring_8h_a0495ebe6ce630b42c2f9479392506985}\label{measuring_8h_a0495ebe6ce630b42c2f9479392506985} 
+\index{measuring.h@{measuring.h}!MEAS\_start\_measure@{MEAS\_start\_measure}}
+\index{MEAS\_start\_measure@{MEAS\_start\_measure}!measuring.h@{measuring.h}}
+\doxysubsubsection{\texorpdfstring{MEAS\_start\_measure()}{MEAS\_start\_measure()}}
+{\footnotesize\ttfamily uint32\+\_\+t \texorpdfstring{$\ast$}{*} MEAS\+\_\+start\+\_\+measure (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start the measurement. 
+
+\DoxyHorRuler{0}
+ Measurement functions \DoxyHorRuler{0}
+ \begin{DoxyReturn}{Returns}
+ADC samples pointer
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The result is stored alternated e.\+g. every 4th is together. 
+\end{DoxyNote}
+\Hypertarget{measuring_8h_a2ace7017c3957ead5cd587fc6fae0290}\label{measuring_8h_a2ace7017c3957ead5cd587fc6fae0290} 
+\index{measuring.h@{measuring.h}!MEAS\_timer\_init@{MEAS\_timer\_init}}
+\index{MEAS\_timer\_init@{MEAS\_timer\_init}!measuring.h@{measuring.h}}
+\doxysubsubsection{\texorpdfstring{MEAS\_timer\_init()}{MEAS\_timer\_init()}}
+{\footnotesize\ttfamily void MEAS\+\_\+timer\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure the timer to trigger the ADC(s) 
+
+\DoxyHorRuler{0}
+ 
+
+\begin{DoxyNote}{Note}
+For debugging purposes the timer interrupt might be useful. 
+\end{DoxyNote}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{measuring_8h_a8efb445edd5e405be589571376a57b56}\label{measuring_8h_a8efb445edd5e405be589571376a57b56} 
+\index{measuring.h@{measuring.h}!MEAS\_input\_count@{MEAS\_input\_count}}
+\index{MEAS\_input\_count@{MEAS\_input\_count}!measuring.h@{measuring.h}}
+\doxysubsubsection{\texorpdfstring{MEAS\_input\_count}{MEAS\_input\_count}}
+{\footnotesize\ttfamily uint32\+\_\+t MEAS\+\_\+input\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+

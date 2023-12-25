@@ -1,0 +1,78 @@
+\doxysection{io.\+h}
+\hypertarget{io_8h_source}{}\label{io_8h_source}\index{Drivers/BSP/Components/Common/io.h@{Drivers/BSP/Components/Common/io.h}}
+\mbox{\hyperlink{io_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_IO\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_IO\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ IO\_PIN\_RESET\ =\ 0,}
+\DoxyCodeLine{00071\ \ \ IO\_PIN\_SET}
+\DoxyCodeLine{00072\ \}\mbox{\hyperlink{group___i_o___exported___types_ga7cbb1ccba2efb11afab1152c15d9c4a8}{IO\_PinState}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ IO\_MODE\_INPUT\ =\ 0,\ \ \ \textcolor{comment}{/*\ input\ floating\ */}}
+\DoxyCodeLine{00077\ \ \ \ IO\_MODE\_OUTPUT,\ \ \ \ \ \ \textcolor{comment}{/*\ output\ Push\ Pull\ */}}
+\DoxyCodeLine{00078\ \ \ \ IO\_MODE\_IT\_RISING\_EDGE,\ \ \ \textcolor{comment}{/*\ float\ input\ -\/\ irq\ detect\ on\ rising\ edge\ */}}
+\DoxyCodeLine{00079\ \ \ \ IO\_MODE\_IT\_FALLING\_EDGE,\ \ \textcolor{comment}{/*\ float\ input\ -\/\ irq\ detect\ on\ falling\ edge\ */}}
+\DoxyCodeLine{00080\ \ \ \ IO\_MODE\_IT\_LOW\_LEVEL,\ \ \ \ \ \textcolor{comment}{/*\ float\ input\ -\/\ irq\ detect\ on\ low\ level\ */}}
+\DoxyCodeLine{00081\ \ \ \ IO\_MODE\_IT\_HIGH\_LEVEL,\ \ \ \ \textcolor{comment}{/*\ float\ input\ -\/\ irq\ detect\ on\ high\ level\ */}}
+\DoxyCodeLine{00082\ \ \ \ \textcolor{comment}{/*\ following\ modes\ only\ available\ on\ MFX*/}}
+\DoxyCodeLine{00083\ \ \ \ IO\_MODE\_ANALOG,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ analog\ mode\ */}}
+\DoxyCodeLine{00084\ \ \ \ IO\_MODE\_OFF,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ when\ pin\ isn't\ used*/}}
+\DoxyCodeLine{00085\ \ \ \ IO\_MODE\_INPUT\_PU,\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ input\ with\ internal\ pull\ up\ resistor\ */}}
+\DoxyCodeLine{00086\ \ \ \ IO\_MODE\_INPUT\_PD,\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ input\ with\ internal\ pull\ down\ resistor\ */}}
+\DoxyCodeLine{00087\ \ \ \ IO\_MODE\_OUTPUT\_OD,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Open\ Drain\ output\ without\ internal\ resistor\ */}}
+\DoxyCodeLine{00088\ \ \ \ IO\_MODE\_OUTPUT\_OD\_PU,\ \ \ \ \ \ \ \textcolor{comment}{/*\ Open\ Drain\ output\ with\ \ internal\ pullup\ resistor\ */}}
+\DoxyCodeLine{00089\ \ \ \ IO\_MODE\_OUTPUT\_OD\_PD,\ \ \ \ \ \ \ \textcolor{comment}{/*\ Open\ Drain\ output\ with\ \ internal\ pulldown\ resistor\ */}}
+\DoxyCodeLine{00090\ \ \ \ IO\_MODE\_OUTPUT\_PP,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ PushPull\ output\ without\ internal\ resistor\ */}}
+\DoxyCodeLine{00091\ \ \ \ IO\_MODE\_OUTPUT\_PP\_PU,\ \ \ \ \ \ \ \textcolor{comment}{/*\ PushPull\ output\ with\ \ internal\ pullup\ resistor\ */}}
+\DoxyCodeLine{00092\ \ \ \ IO\_MODE\_OUTPUT\_PP\_PD,\ \ \ \ \ \ \ \textcolor{comment}{/*\ PushPull\ output\ with\ \ internal\ pulldown\ resistor\ */}}
+\DoxyCodeLine{00093\ \ \ \ IO\_MODE\_IT\_RISING\_EDGE\_PU,\ \ \ \textcolor{comment}{/*\ push\ up\ resistor\ input\ -\/\ irq\ on\ rising\ edge\ \ */}}
+\DoxyCodeLine{00094\ \ \ \ IO\_MODE\_IT\_RISING\_EDGE\_PD,\ \ \ \textcolor{comment}{/*\ push\ dw\ resistor\ input\ -\/\ irq\ on\ rising\ edge\ \ */}}
+\DoxyCodeLine{00095\ \ \ \ IO\_MODE\_IT\_FALLING\_EDGE\_PU,\ \ \textcolor{comment}{/*\ push\ up\ resistor\ input\ -\/\ irq\ on\ falling\ edge\ */}}
+\DoxyCodeLine{00096\ \ \ \ IO\_MODE\_IT\_FALLING\_EDGE\_PD,\ \ \textcolor{comment}{/*\ push\ dw\ resistor\ input\ -\/\ irq\ on\ falling\ edge\ */}}
+\DoxyCodeLine{00097\ \ \ \ IO\_MODE\_IT\_LOW\_LEVEL\_PU,\ \ \ \ \ \textcolor{comment}{/*\ push\ up\ resistor\ input\ -\/\ irq\ detect\ on\ low\ level\ */}}
+\DoxyCodeLine{00098\ \ \ \ IO\_MODE\_IT\_LOW\_LEVEL\_PD,\ \ \ \ \ \textcolor{comment}{/*\ push\ dw\ resistor\ input\ -\/\ irq\ detect\ on\ low\ level\ */}}
+\DoxyCodeLine{00099\ \ \ \ IO\_MODE\_IT\_HIGH\_LEVEL\_PU,\ \ \ \ \textcolor{comment}{/*\ push\ up\ resistor\ input\ -\/\ irq\ detect\ on\ high\ level\ */}}
+\DoxyCodeLine{00100\ \ \ \ IO\_MODE\_IT\_HIGH\_LEVEL\_PD,\ \ \ \ \textcolor{comment}{/*\ push\ dw\ resistor\ input\ -\/\ irq\ detect\ on\ high\ level\ */}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \}IO\_ModeTypedef;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00108\ \{\ \ }
+\DoxyCodeLine{00109\ \ \ void\ \ \ \ \ \ \ (*Init)(uint16\_t);}
+\DoxyCodeLine{00110\ \ \ uint16\_t\ \ \ (*ReadID)(uint16\_t);}
+\DoxyCodeLine{00111\ \ \ void\ \ \ \ \ \ \ (*Reset)(uint16\_t);}
+\DoxyCodeLine{00112\ \ \ }
+\DoxyCodeLine{00113\ \ \ void\ \ \ \ \ \ \ (*Start)(uint16\_t,\ uint32\_t);}
+\DoxyCodeLine{00114\ \ \ uint8\_t\ \ \ \ (*Config)(uint16\_t,\ uint32\_t,\ IO\_ModeTypedef);}
+\DoxyCodeLine{00115\ \ \ void\ \ \ \ \ \ \ (*WritePin)(uint16\_t,\ uint32\_t,\ uint8\_t);}
+\DoxyCodeLine{00116\ \ \ uint32\_t\ \ \ (*ReadPin)(uint16\_t,\ uint32\_t);}
+\DoxyCodeLine{00117\ \ \ }
+\DoxyCodeLine{00118\ \ \ void\ \ \ \ \ \ \ (*EnableIT)(uint16\_t);}
+\DoxyCodeLine{00119\ \ \ void\ \ \ \ \ \ \ (*DisableIT)(uint16\_t);}
+\DoxyCodeLine{00120\ \ \ uint32\_t\ \ \ \ (*ITStatus)(uint16\_t,\ uint32\_t);}
+\DoxyCodeLine{00121\ \ \ void\ \ \ \ \ \ \ (*ClearIT)(uint16\_t,\ uint32\_t);}
+\DoxyCodeLine{00122\ \ \ \ \ }
+\DoxyCodeLine{00123\ \}\mbox{\hyperlink{struct_i_o___drv_type_def}{IO\_DrvTypeDef}};}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_IO\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

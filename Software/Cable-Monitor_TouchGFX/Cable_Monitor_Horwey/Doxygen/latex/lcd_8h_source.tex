@@ -1,0 +1,45 @@
+\doxysection{lcd.\+h}
+\hypertarget{lcd_8h_source}{}\label{lcd_8h_source}\index{Drivers/BSP/Components/Common/lcd.h@{Drivers/BSP/Components/Common/lcd.h}}
+\mbox{\hyperlink{lcd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_LCD\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_LCD\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00048\ \ \ \ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ void\ \ \ \ \ (*Init)(void);}
+\DoxyCodeLine{00071\ \ \ uint16\_t\ (*ReadID)(void);}
+\DoxyCodeLine{00072\ \ \ void\ \ \ \ \ (*DisplayOn)(void);}
+\DoxyCodeLine{00073\ \ \ void\ \ \ \ \ (*DisplayOff)(void);}
+\DoxyCodeLine{00074\ \ \ void\ \ \ \ \ (*SetCursor)(uint16\_t,\ uint16\_t);}
+\DoxyCodeLine{00075\ \ \ void\ \ \ \ \ (*WritePixel)(uint16\_t,\ uint16\_t,\ uint16\_t);}
+\DoxyCodeLine{00076\ \ \ uint16\_t\ (*ReadPixel)(uint16\_t,\ uint16\_t);}
+\DoxyCodeLine{00077\ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \textcolor{comment}{/*\ Optimized\ operation\ */}}
+\DoxyCodeLine{00079\ \ \ void\ \ \ \ \ (*SetDisplayWindow)(uint16\_t,\ uint16\_t,\ uint16\_t,\ uint16\_t);}
+\DoxyCodeLine{00080\ \ \ void\ \ \ \ \ (*DrawHLine)(uint16\_t,\ uint16\_t,\ uint16\_t,\ uint16\_t);}
+\DoxyCodeLine{00081\ \ \ void\ \ \ \ \ (*DrawVLine)(uint16\_t,\ uint16\_t,\ uint16\_t,\ uint16\_t);}
+\DoxyCodeLine{00082\ \ \ }
+\DoxyCodeLine{00083\ \ \ uint16\_t\ (*GetLcdPixelWidth)(void);}
+\DoxyCodeLine{00084\ \ \ uint16\_t\ (*GetLcdPixelHeight)(void);}
+\DoxyCodeLine{00085\ \ \ void\ \ \ \ \ (*DrawBitmap)(uint16\_t,\ uint16\_t,\ uint8\_t*);}
+\DoxyCodeLine{00086\ \ \ void\ \ \ \ \ (*DrawRGBImage)(uint16\_t,\ uint16\_t,\ uint16\_t,\ uint16\_t,\ uint8\_t*);}
+\DoxyCodeLine{00087\ \}\mbox{\hyperlink{struct_l_c_d___drv_type_def}{LCD\_DrvTypeDef}};\ \ \ \ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_LCD\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\+Paint\+Impl.hpp File Reference}
+\hypertarget{_paint_impl_8hpp}{}\label{_paint_impl_8hpp}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintImpl.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/PaintImpl.hpp}}
+{\ttfamily \#include $<$touchgfx/hal/\+Paint.\+hpp$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetouchgfx}{touchgfx}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_paint_8hpp_adf80cd2cdd38b626d9ea8e68cd5b0145}{touchgfx\+::paint\+::set\+L8\+Palette}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const data)
+\item 
+void \mbox{\hyperlink{_paint_8hpp_a5f795ab5ce828e56db0ce8d99e69f99f}{touchgfx\+::paint\+::tear\+Down}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares paint functions for widgets 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_paint_8hpp_adf80cd2cdd38b626d9ea8e68cd5b0145}\label{_paint_8hpp_adf80cd2cdd38b626d9ea8e68cd5b0145} 
+\index{PaintImpl.hpp@{PaintImpl.hpp}!setL8Palette@{setL8Palette}}
+\index{setL8Palette@{setL8Palette}!PaintImpl.hpp@{PaintImpl.hpp}}
+\doxysubsubsection{\texorpdfstring{setL8Palette()}{setL8Palette()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::set\+L8\+Palette (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}const}]{data }\end{DoxyParamCaption})}
+
+Sets L8 palette to be used by the painter. The content pointed to be parameter data depends on the actual L8 format. L8\+RGB8888 assumes data points to three bytes per palette index,. L8\+ARGB8888 assumes four bytes per palette index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The palette data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_paint_8hpp_a5f795ab5ce828e56db0ce8d99e69f99f}\label{_paint_8hpp_a5f795ab5ce828e56db0ce8d99e69f99f} 
+\index{PaintImpl.hpp@{PaintImpl.hpp}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!PaintImpl.hpp@{PaintImpl.hpp}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily void touchgfx\+::paint\+::tear\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Tear down painter -\/ wait for pending draw operations to finish. 

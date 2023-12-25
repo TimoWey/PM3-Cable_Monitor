@@ -1,0 +1,106 @@
+\doxysection{touchgfx\+::I2C Class Reference}
+\hypertarget{classtouchgfx_1_1_i2_c}{}\label{classtouchgfx_1_1_i2_c}\index{touchgfx::I2C@{touchgfx::I2C}}
+
+
+{\ttfamily \#include $<$I2\+C.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_i2_c_a18082e35b98c75572fe73db882f56d78}{I2C}} (uint8\+\_\+t ch)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_i2_c_a23fe0d50c8651273de2a7fc770314832}{\texorpdfstring{$\sim$}{\string~}\+I2C}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_i2_c_a9c2f7117705c707d1230713f18fae25b}{init}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_i2_c_ad84241158a5bb7a5d7b65e3f9fca3e1a}{read\+Register}} (uint8\+\_\+t addr, uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t cnt)=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_i2_c_acdd74232362a12505a021f05e61724a9}{write\+Register}} (uint8\+\_\+t addr, uint8\+\_\+t reg, uint8\+\_\+t val)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_i2_c_a367b875db15eb257360de47c2625aa7e}\label{classtouchgfx_1_1_i2_c_a367b875db15eb257360de47c2625aa7e} 
+uint8\+\_\+t {\bfseries channel}
+\begin{DoxyCompactList}\small\item\em I2c channel is stored in order to initialize and recover a specific \doxylink{classtouchgfx_1_1_i2_c}{I2C} channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Platform independent interface for \doxylink{classtouchgfx_1_1_i2_c}{I2C} drivers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_i2_c_a18082e35b98c75572fe73db882f56d78}\label{classtouchgfx_1_1_i2_c_a18082e35b98c75572fe73db882f56d78} 
+\index{touchgfx::I2C@{touchgfx::I2C}!I2C@{I2C}}
+\index{I2C@{I2C}!touchgfx::I2C@{touchgfx::I2C}}
+\doxysubsubsection{\texorpdfstring{I2C()}{I2C()}}
+{\footnotesize\ttfamily touchgfx\+::\+I2\+C\+::\+I2C (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_i2_c}{I2C} class. Stores the channel of the \doxylink{classtouchgfx_1_1_i2_c}{I2C} bus to be configured.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & \doxylink{classtouchgfx_1_1_i2_c}{I2C} channel. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_i2_c_a23fe0d50c8651273de2a7fc770314832}\label{classtouchgfx_1_1_i2_c_a23fe0d50c8651273de2a7fc770314832} 
+\index{touchgfx::I2C@{touchgfx::I2C}!````~I2C@{\texorpdfstring{$\sim$}{\string~}I2C}}
+\index{````~I2C@{\texorpdfstring{$\sim$}{\string~}I2C}!touchgfx::I2C@{touchgfx::I2C}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}I2C()}{\string~I2C()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+I2\+C\+::\texorpdfstring{$\sim$}{\string~}\+I2C (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_i2_c}{I2C} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_i2_c_a9c2f7117705c707d1230713f18fae25b}\label{classtouchgfx_1_1_i2_c_a9c2f7117705c707d1230713f18fae25b} 
+\index{touchgfx::I2C@{touchgfx::I2C}!init@{init}}
+\index{init@{init}!touchgfx::I2C@{touchgfx::I2C}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+I2\+C\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Initializes the \doxylink{classtouchgfx_1_1_i2_c}{I2C} driver. \Hypertarget{classtouchgfx_1_1_i2_c_ad84241158a5bb7a5d7b65e3f9fca3e1a}\label{classtouchgfx_1_1_i2_c_ad84241158a5bb7a5d7b65e3f9fca3e1a} 
+\index{touchgfx::I2C@{touchgfx::I2C}!readRegister@{readRegister}}
+\index{readRegister@{readRegister}!touchgfx::I2C@{touchgfx::I2C}}
+\doxysubsubsection{\texorpdfstring{readRegister()}{readRegister()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+I2\+C\+::read\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint32\+\_\+t}]{cnt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Reads the specified register on the device with the specified address.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em addr} & The \doxylink{classtouchgfx_1_1_i2_c}{I2C} device address. \\
+\hline
+ & {\em reg} & The register. \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Pointer to buffer in which to place the result. \\
+\hline
+ & {\em cnt} & Size of buffer in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_i2_c_acdd74232362a12505a021f05e61724a9}\label{classtouchgfx_1_1_i2_c_acdd74232362a12505a021f05e61724a9} 
+\index{touchgfx::I2C@{touchgfx::I2C}!writeRegister@{writeRegister}}
+\index{writeRegister@{writeRegister}!touchgfx::I2C@{touchgfx::I2C}}
+\doxysubsubsection{\texorpdfstring{writeRegister()}{writeRegister()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+I2\+C\+::write\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Writes the specified value in a register.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The \doxylink{classtouchgfx_1_1_i2_c}{I2C} device address. \\
+\hline
+{\em reg} & The register. \\
+\hline
+{\em val} & The new value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/platform/driver/i2c/\mbox{\hyperlink{_i2_c_8hpp}{I2\+C.\+hpp}}\end{DoxyCompactItemize}

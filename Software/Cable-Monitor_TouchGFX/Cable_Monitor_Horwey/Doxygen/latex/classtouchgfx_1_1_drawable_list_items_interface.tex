@@ -1,0 +1,81 @@
+\doxysection{touchgfx\+::Drawable\+List\+Items\+Interface Class Reference}
+\hypertarget{classtouchgfx_1_1_drawable_list_items_interface}{}\label{classtouchgfx_1_1_drawable_list_items_interface}\index{touchgfx::DrawableListItemsInterface@{touchgfx::DrawableListItemsInterface}}
+
+
+{\ttfamily \#include $<$Drawable\+List.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Drawable\+List\+Items\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_drawable_list_items_interface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_acc2856a45a76450a589fa0b99f5a73f8}{\texorpdfstring{$\sim$}{\string~}\+Drawable\+List\+Items\+Interface}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_a8ad0aad7d560a7d95c3709644ec471a6}{get\+Drawable}} (int16\+\_\+t index)=0
+\item 
+virtual int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_interface_af507ec9a7acbf39b22ce8791b8b045bb}{get\+Number\+Of\+Drawables}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A drawable list items interface. Used to pass the allocated array of drawable elements to \doxylink{classtouchgfx_1_1_scroll_list_a096661aa8c23cb951f78a2afd5d27e85}{Scroll\+List\+::set\+Drawables()}, \doxylink{classtouchgfx_1_1_scroll_wheel_ac6adf7ef0bf8ec5dcd7faa251bc97ea7}{Scroll\+Wheel\+::set\+Drawables()} or \doxylink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a472c39359300751df50331ee4606c3d3}{Scroll\+Wheel\+With\+Selection\+Style\+::set\+Drawables()}. Provides easy access to each element in the array as well as the size of the array.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_scroll_list_a096661aa8c23cb951f78a2afd5d27e85}{Scroll\+List\+::set\+Drawables}, \doxylink{classtouchgfx_1_1_scroll_wheel_ac6adf7ef0bf8ec5dcd7faa251bc97ea7}{Scroll\+Wheel\+::set\+Drawables}, \doxylink{classtouchgfx_1_1_scroll_wheel_with_selection_style_a472c39359300751df50331ee4606c3d3}{Scroll\+Wheel\+With\+Selection\+Style\+::set\+Drawables} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_drawable_list_items_interface_acc2856a45a76450a589fa0b99f5a73f8}\label{classtouchgfx_1_1_drawable_list_items_interface_acc2856a45a76450a589fa0b99f5a73f8} 
+\index{touchgfx::DrawableListItemsInterface@{touchgfx::DrawableListItemsInterface}!````~DrawableListItemsInterface@{\texorpdfstring{$\sim$}{\string~}DrawableListItemsInterface}}
+\index{````~DrawableListItemsInterface@{\texorpdfstring{$\sim$}{\string~}DrawableListItemsInterface}!touchgfx::DrawableListItemsInterface@{touchgfx::DrawableListItemsInterface}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DrawableListItemsInterface()}{\string~DrawableListItemsInterface()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Drawable\+List\+Items\+Interface\+::\texorpdfstring{$\sim$}{\string~}\+Drawable\+List\+Items\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_drawable_list_items_interface}{Drawable\+List\+Items\+Interface} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_drawable_list_items_interface_a8ad0aad7d560a7d95c3709644ec471a6}\label{classtouchgfx_1_1_drawable_list_items_interface_a8ad0aad7d560a7d95c3709644ec471a6} 
+\index{touchgfx::DrawableListItemsInterface@{touchgfx::DrawableListItemsInterface}!getDrawable@{getDrawable}}
+\index{getDrawable@{getDrawable}!touchgfx::DrawableListItemsInterface@{touchgfx::DrawableListItemsInterface}}
+\doxysubsubsection{\texorpdfstring{getDrawable()}{getDrawable()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} touchgfx\+::\+Drawable\+List\+Items\+Interface\+::get\+Drawable (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets a drawable at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero-\/based index of the drawable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Null if it fails, else the drawable. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_ae7463635d1f48c69769758001674ec08}{touchgfx\+::\+Drawable\+List\+Items$<$ TYPE, SIZE $>$}}.
+
+\Hypertarget{classtouchgfx_1_1_drawable_list_items_interface_af507ec9a7acbf39b22ce8791b8b045bb}\label{classtouchgfx_1_1_drawable_list_items_interface_af507ec9a7acbf39b22ce8791b8b045bb} 
+\index{touchgfx::DrawableListItemsInterface@{touchgfx::DrawableListItemsInterface}!getNumberOfDrawables@{getNumberOfDrawables}}
+\index{getNumberOfDrawables@{getNumberOfDrawables}!touchgfx::DrawableListItemsInterface@{touchgfx::DrawableListItemsInterface}}
+\doxysubsubsection{\texorpdfstring{getNumberOfDrawables()}{getNumberOfDrawables()}}
+{\footnotesize\ttfamily virtual int16\+\_\+t touchgfx\+::\+Drawable\+List\+Items\+Interface\+::get\+Number\+Of\+Drawables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets number of drawables.
+
+\begin{DoxyReturn}{Returns}
+The number of drawables. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtouchgfx_1_1_drawable_list_items_a32e3d20cdfe058257d04a5e370e958d5}{touchgfx\+::\+Drawable\+List\+Items$<$ TYPE, SIZE $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/scrollers/\mbox{\hyperlink{_drawable_list_8hpp}{Drawable\+List.\+hpp}}\end{DoxyCompactItemize}

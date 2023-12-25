@@ -1,0 +1,62 @@
+\doxysection{touchgfx\+::Generic\+Callback\texorpdfstring{$<$}{<} void \texorpdfstring{$>$}{>} Class Reference}
+\hypertarget{classtouchgfx_1_1_generic_callback_3_01void_01_4}{}\label{classtouchgfx_1_1_generic_callback_3_01void_01_4}\index{touchgfx::GenericCallback$<$ void $>$@{touchgfx::GenericCallback$<$ void $>$}}
+
+
+{\ttfamily \#include $<$Callback.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_generic_callback_3_01void_01_4_a8d6c65bd4ec079add59dffb51d124e37}{\texorpdfstring{$\sim$}{\string~}\+Generic\+Callback}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_generic_callback_3_01void_01_4_abe2f1b08dea6bd4fce9a5ce12ffdff4a}{execute}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_generic_callback_3_01void_01_4_a13641f340bc85ce998bd2973f6a191b2}{is\+Valid}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classtouchgfx_1_1_generic_callback}{Generic\+Callback} is the base class for callbacks.
+
+The reason this base class exists, is that a normal \doxylink{structtouchgfx_1_1_callback}{Callback} requires the class type where the callback function resides to be known. This is problematic for ie. framework widgets like \doxylink{classtouchgfx_1_1_abstract_button}{Abstract\+Button}, on which it should be possible to register a callback on object types that are user-\/specific and thus unknown to \doxylink{classtouchgfx_1_1_abstract_button}{Abstract\+Button}. This is solved by having \doxylink{classtouchgfx_1_1_abstract_button}{Abstract\+Button} contain a pointer to a \doxylink{classtouchgfx_1_1_generic_callback}{Generic\+Callback} instead. This pointer must then be initialized to point on an instance of \doxylink{structtouchgfx_1_1_callback}{Callback}, created by the user, which is initialized with the appropriate object type.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{structtouchgfx_1_1_callback}{Callback}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+As with \doxylink{structtouchgfx_1_1_callback}{Callback}, this class exists in four versions to support callback functions taking zero, one, two or three arguments. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_generic_callback_3_01void_01_4_a8d6c65bd4ec079add59dffb51d124e37}\label{classtouchgfx_1_1_generic_callback_3_01void_01_4_a8d6c65bd4ec079add59dffb51d124e37} 
+\index{touchgfx::GenericCallback$<$ void $>$@{touchgfx::GenericCallback$<$ void $>$}!````~GenericCallback@{\texorpdfstring{$\sim$}{\string~}GenericCallback}}
+\index{````~GenericCallback@{\texorpdfstring{$\sim$}{\string~}GenericCallback}!touchgfx::GenericCallback$<$ void $>$@{touchgfx::GenericCallback$<$ void $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GenericCallback()}{\string~GenericCallback()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{touchgfx\+::\+Generic\+Callback}}$<$ void $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_generic_callback_3_01void_01_4}{Generic\+Callback$<$void$>$} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_generic_callback_3_01void_01_4_abe2f1b08dea6bd4fce9a5ce12ffdff4a}\label{classtouchgfx_1_1_generic_callback_3_01void_01_4_abe2f1b08dea6bd4fce9a5ce12ffdff4a} 
+\index{touchgfx::GenericCallback$<$ void $>$@{touchgfx::GenericCallback$<$ void $>$}!execute@{execute}}
+\index{execute@{execute}!touchgfx::GenericCallback$<$ void $>$@{touchgfx::GenericCallback$<$ void $>$}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual void \mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{touchgfx\+::\+Generic\+Callback}}$<$ void $>$\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Calls the member function. Do not call execute unless \doxylink{classtouchgfx_1_1_generic_callback_3_01void_01_4_a13641f340bc85ce998bd2973f6a191b2}{is\+Valid()} returns true (ie. a pointer to the object and the function has been set). \Hypertarget{classtouchgfx_1_1_generic_callback_3_01void_01_4_a13641f340bc85ce998bd2973f6a191b2}\label{classtouchgfx_1_1_generic_callback_3_01void_01_4_a13641f340bc85ce998bd2973f6a191b2} 
+\index{touchgfx::GenericCallback$<$ void $>$@{touchgfx::GenericCallback$<$ void $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!touchgfx::GenericCallback$<$ void $>$@{touchgfx::GenericCallback$<$ void $>$}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily virtual bool \mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{touchgfx\+::\+Generic\+Callback}}$<$ void $>$\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Function to check whether the \doxylink{structtouchgfx_1_1_callback}{Callback} has been initialized with values.
+
+\begin{DoxyReturn}{Returns}
+true If the callback is valid (i.\+e. safe to call execute). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_callback_8hpp}{Callback.\+hpp}}\end{DoxyCompactItemize}

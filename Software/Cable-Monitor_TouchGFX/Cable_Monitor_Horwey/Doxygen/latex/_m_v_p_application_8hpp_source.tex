@@ -1,0 +1,131 @@
+\doxysection{MVPApplication.\+hpp}
+\hypertarget{_m_v_p_application_8hpp_source}{}\label{_m_v_p_application_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp@{Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp}}
+\mbox{\hyperlink{_m_v_p_application_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_MVPAPPLICATION\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_MVPAPPLICATION\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <new>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_abstract_partition_8hpp}{common/AbstractPartition.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_m_v_p_heap_8hpp}{mvp/MVPHeap.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_presenter_8hpp}{mvp/Presenter.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_application_8hpp}{touchgfx/Application.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_screen_8hpp}{touchgfx/Screen.hpp}}>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_transition_8hpp}{touchgfx/transitions/Transition.hpp}}>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }Presenter;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application}{MVPApplication}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_application}{Application}}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a425d5adae20c7af5b8f4cd1986244051}{MVPApplication}}()}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a40ce2989591cee469d7c9c17879ebd62}{currentPresenter}}(0),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a975c0377661f96eadac0eae6a37d7063}{pendingScreenTransitionCallback}}(0)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_application_a9c4bc1fa2669ac301a99195e0d476efc}{instance}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_ab50411781d9955dfa2ab44caf6d15085}{handlePendingScreenTransition}}()}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a671a6469b0e50028a7427dbad9837bc1}{evaluatePendingScreenTransition}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_presenter}{Presenter}}*\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a40ce2989591cee469d7c9c17879ebd62}{currentPresenter}};\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ GenericCallback<>*\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a975c0377661f96eadac0eae6a37d7063}{pendingScreenTransitionCallback}};\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a671a6469b0e50028a7427dbad9837bc1}{evaluatePendingScreenTransition}}()}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a975c0377661f96eadac0eae6a37d7063}{pendingScreenTransitionCallback}}\ \&\&\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a975c0377661f96eadac0eae6a37d7063}{pendingScreenTransitionCallback}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_generic_callback_aeb620617117bba6c0490ef299642d33d}{isValid}}())}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a975c0377661f96eadac0eae6a37d7063}{pendingScreenTransitionCallback}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_generic_callback_a7253ed49d0a7fdd6dcd2f56a1ce2bd38}{execute}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_application_a975c0377661f96eadac0eae6a37d7063}{pendingScreenTransitionCallback}}\ =\ 0;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ prepareTransition(Screen**\ currentScreen,\ Presenter**\ currentPresenter,\ Transition**\ currentTrans)}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{Application::getInstance}}()-\/>\mbox{\hyperlink{classtouchgfx_1_1_application_a0f52ae6bb0f0568e801d93e3ecd49ff9}{clearAllTimerWidgets}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (*currentTrans)}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ (*currentTrans)-\/>tearDown();}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{if}\ (*currentTrans)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ (*currentTrans)-\/>\string~Transition();}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (*currentScreen)}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ (*currentScreen)-\/>tearDownScreen();}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (*currentPresenter)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ (*currentPresenter)-\/>deactivate();}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (*currentScreen)}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ (*currentScreen)-\/>\string~Screen();}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (*currentPresenter)}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ (*currentPresenter)-\/>\string~Presenter();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ finalizeTransition(Screen*\ newScreen,\ Presenter*\ newPresenter,\ Transition*\ newTransition)}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ newScreen-\/>setupScreen();}
+\DoxyCodeLine{00130\ \ \ \ \ newPresenter-\/>activate();}
+\DoxyCodeLine{00131\ \ \ \ \ newScreen-\/>bindTransition(*newTransition);}
+\DoxyCodeLine{00132\ \ \ \ \ newTransition-\/>init();}
+\DoxyCodeLine{00133\ \ \ \ \ newTransition-\/>invalidate();}
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ ScreenType,\ \textcolor{keyword}{class}\ PresenterType,\ \textcolor{keyword}{class}\ TransType,\ \textcolor{keyword}{class}\ ModelType>}
+\DoxyCodeLine{00161\ PresenterType*\ \mbox{\hyperlink{namespacetouchgfx_a2d9ebbfcc0da56978e5fbbd810138bcd}{makeTransition}}(\mbox{\hyperlink{classtouchgfx_1_1_screen}{Screen}}**\ currentScreen,\ \mbox{\hyperlink{classtouchgfx_1_1_presenter}{Presenter}}**\ currentPresenter,\ \mbox{\hyperlink{classtouchgfx_1_1_m_v_p_heap}{MVPHeap}}\&\ heap,\ \mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}}**\ currentTrans,\ ModelType*\ model)}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ assert(\textcolor{keyword}{sizeof}(ScreenType)\ <=\ heap.screenStorage.element\_size()\ \&\&\ \textcolor{stringliteral}{"{}View\ allocation\ error:\ Check\ that\ all\ views\ are\ added\ to\ FrontendHeap::ViewTypes"{}});}
+\DoxyCodeLine{00164\ \ \ \ \ assert(\textcolor{keyword}{sizeof}(PresenterType)\ <=\ heap.presenterStorage.element\_size()\ \&\&\ \textcolor{stringliteral}{"{}Presenter\ allocation\ error:\ Check\ that\ all\ presenters\ are\ added\ to\ FrontendHeap::PresenterTypes"{}});}
+\DoxyCodeLine{00165\ \ \ \ \ assert(\textcolor{keyword}{sizeof}(TransType)\ <=\ heap.transitionStorage.element\_size()\ \&\&\ \textcolor{stringliteral}{"{}Transition\ allocation\ error:\ Check\ that\ all\ transitions\ are\ added\ to\ FrontendHeap::TransitionTypes"{}});}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ prepareTransition(currentScreen,\ currentPresenter,\ currentTrans);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ TransType*\ newTransition\ =\ \textcolor{keyword}{new}\ (\&heap.transitionStorage.at<TransType>(0))\ TransType;}
+\DoxyCodeLine{00170\ \ \ \ \ ScreenType*\ newScreen\ =\ \textcolor{keyword}{new}\ (\&heap.screenStorage.at<ScreenType>(0))\ ScreenType;}
+\DoxyCodeLine{00171\ \ \ \ \ PresenterType*\ newPresenter\ =\ \textcolor{keyword}{new}\ (\&heap.presenterStorage.at<PresenterType>(0))\ PresenterType(*newScreen);}
+\DoxyCodeLine{00172\ \ \ \ \ *currentTrans\ =\ newTransition;}
+\DoxyCodeLine{00173\ \ \ \ \ *currentPresenter\ =\ newPresenter;}
+\DoxyCodeLine{00174\ \ \ \ \ *currentScreen\ =\ newScreen;}
+\DoxyCodeLine{00175\ \ \ \ \ model-\/>bind(newPresenter);}
+\DoxyCodeLine{00176\ \ \ \ \ newPresenter-\/>bind(model);}
+\DoxyCodeLine{00177\ \ \ \ \ newScreen-\/>bind(*newPresenter);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ finalizeTransition((\mbox{\hyperlink{classtouchgfx_1_1_screen}{Screen}}*)newScreen,\ (\mbox{\hyperlink{classtouchgfx_1_1_presenter}{Presenter}}*)newPresenter,\ (\mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}}*)newTransition);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ newPresenter;}
+\DoxyCodeLine{00182\ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_MVPAPPLICATION\_HPP}}
+
+\end{DoxyCode}

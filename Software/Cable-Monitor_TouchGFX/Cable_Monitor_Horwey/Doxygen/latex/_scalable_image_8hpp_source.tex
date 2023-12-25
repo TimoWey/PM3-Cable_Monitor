@@ -1,0 +1,59 @@
+\doxysection{Scalable\+Image.\+hpp}
+\hypertarget{_scalable_image_8hpp_source}{}\label{_scalable_image_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp}}
+\mbox{\hyperlink{_scalable_image_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_SCALABLEIMAGE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_SCALABLEIMAGE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8hpp}{touchgfx/widgets/Image.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_scalable_image}{ScalableImage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_image}{Image}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{ScalingAlgorithm}}}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0a83449d6bd06e137adeb0fee11c1e90ae}{NEAREST\_NEIGHBOR}},\ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0a118bd704f5430bfffa2a71e2dff3bc8f}{BILINEAR\_INTERPOLATION}}\ }
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_adb797b8965a6624a0593c5957a092c6d}{ScalableImage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ bmp\ =\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}());}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a5f0c42ce62526bfee6f387fa9965719f}{setScalingAlgorithm}}(\mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{ScalingAlgorithm}}\ algorithm);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{ScalingAlgorithm}}\ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a98c2aaae73f4bdce53586999f6b3ce02}{getScalingAlgorithm}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a6a05f606ae5c4071875c6deeaef5279b}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a5f39831278f70c4ab8b94aa3f58c4b2e}{getSolidRect}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{ScalingAlgorithm}}\ \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a5132de8cd48099e392d84ab69062fa8a}{currentScalingAlgorithm}};\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ drawQuad(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea,\ uint16\_t*\ fb,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ triangleXs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ triangleYs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ triangleZs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ triangleUs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ triangleVs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a24cfceb247b06587f179dbd309e415b5}{RenderingVariant}}\ lookupRenderVariant()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_SCALABLEIMAGE\_HPP}}
+
+\end{DoxyCode}

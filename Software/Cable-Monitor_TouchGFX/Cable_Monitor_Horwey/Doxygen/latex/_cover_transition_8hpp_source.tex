@@ -1,0 +1,196 @@
+\doxysection{Cover\+Transition.\+hpp}
+\hypertarget{_cover_transition_8hpp_source}{}\label{_cover_transition_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/CoverTransition.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/CoverTransition.hpp}}
+\mbox{\hyperlink{_cover_transition_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_COVERTRANSITION\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_COVERTRANSITION\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_callback_8hpp}{touchgfx/Callback.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_drawable_8hpp}{touchgfx/Drawable.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_easing_equations_8hpp}{touchgfx/EasingEquations.hpp}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_h_a_l_8hpp}{touchgfx/hal/HAL.hpp}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8hpp}{touchgfx/lcd/LCD.hpp}}>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_transition_8hpp}{touchgfx/transitions/Transition.hpp}}>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{template}\ <Direction\ templateDirection>}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_cover_transition}{CoverTransition}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_cover_transition_a07151e62b2d5982a5243bbb18fc98df7}{CoverTransition}}(\textcolor{keyword}{const}\ uint8\_t\ transitionSteps\ =\ 20)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_transition}{Transition}}(),}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ animationSteps(transitionSteps),}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ animationCounter(0),}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ calculatedValue(0),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ solid()}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (templateDirection)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a18f37db8f060364702c14dddb171e1ea}{EAST}}:}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ targetValue\ =\ -\/\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a76198d41f9ca65e0d5d07fe1d0292fb1}{WEST}}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ targetValue\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ad70ef04ee382c777b21b87ebc92b5590}{NORTH}}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ targetValue\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ab55e06157c018e7047bb6738d58274d5}{SOUTH}}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ targetValue\ =\ -\/\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_ae917c001b5249bd7cf85306f305dd34b}{done}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nothing\ to\ do\ here}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ensure\ that\ the\ solid\ area\ covers\ the\ entire\ screen}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ solid.\mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{setPosition}}(0,\ 0,\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}},\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}});}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_cover_transition_a9e8fd32a5b240a0d2965db2defdbcb77}{handleTickEvent}}()}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_ac8d57e80e3e8089d69a1eb68e654097f}{Transition::handleTickEvent}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ new\ position\ or\ stop\ animation}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ animationCounter++;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationCounter\ >\ animationSteps)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Final\ step:\ stop\ the\ animation}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_ae917c001b5249bd7cf85306f305dd34b}{done}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ animationCounter\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int16\_t\ oldValue\ =\ calculatedValue;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ value\ in\ [0;targetValue]}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ calculatedValue\ =\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a6aaba64f4fdb32e1a8ea85663a41ce2d}{EasingEquations::cubicEaseOut}}(animationCounter,\ 0,\ targetValue,\ animationSteps);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ Result\ of\ "{}calculatedValue\ \&\ 1"{}\ is\ compiler\ dependent\ for\ negative\ values\ of\ calculatedValue}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((calculatedValue\ \%\ 2)\ !=\ 0)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Optimization:\ calculatedValue\ is\ odd,\ add\ 1/-\/1\ to\ move\ drawables\ modulo\ 32\ bits\ in\ framebuffer}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ calculatedValue\ +=\ (calculatedValue\ >\ 0\ ?\ 1\ :\ -\/1);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ calculated\ value\ to\ delta\ value\ relative\ to\ current\ moved-\/to\ position}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int16\_t\ relativeValue\ =\ calculatedValue\ -\/\ oldValue;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ Cover\ Transition\ only\ draws\ to\ parts\ of\ the\ non-\/TFT\ framebuffer.\ To\ avoid\ glitches}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ In\ Double\ buffering\ mode\ both\ framebuffers\ must\ be\ identical.}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animationCounter\ ==\ 1\ \&\&\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aee04298dde3670e15c19d04a275c8eb5}{HAL::USE\_DOUBLE\_BUFFERING}})}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Synchronize\ framebuffers}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{Application::getInstance}}()-\/>\mbox{\hyperlink{classtouchgfx_1_1_application_a98c934c57d886b342e8ba3a301ceedf7}{copyInvalidatedAreasFromTFTToClientBuffer}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ rect;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (templateDirection)}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a18f37db8f060364702c14dddb171e1ea}{EAST}}:}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_ac3d8fab212cdad2b2b20cff23c4be498}{x}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}}\ +\ calculatedValue;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4fde7b14c13471088fb471eb13396ee7}{y}}\ =\ 0;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}}\ =\ -\/calculatedValue;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a76198d41f9ca65e0d5d07fe1d0292fb1}{WEST}}:}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_ac3d8fab212cdad2b2b20cff23c4be498}{x}}\ =\ 0;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4fde7b14c13471088fb471eb13396ee7}{y}}\ =\ 0;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}}\ =\ calculatedValue;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ad70ef04ee382c777b21b87ebc92b5590}{NORTH}}:}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_ac3d8fab212cdad2b2b20cff23c4be498}{x}}\ =\ 0;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4fde7b14c13471088fb471eb13396ee7}{y}}\ =\ 0;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}}\ =\ calculatedValue;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ab55e06157c018e7047bb6738d58274d5}{SOUTH}}:}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_ac3d8fab212cdad2b2b20cff23c4be498}{x}}\ =\ 0;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4fde7b14c13471088fb471eb13396ee7}{y}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa2546d90d1cd9a0aea48844c7e400b5e}{HAL::DISPLAY\_HEIGHT}}\ +\ calculatedValue;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaef71e6b3942d0ad97e99dcf584b5d80}{HAL::DISPLAY\_WIDTH}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ rect.\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}}\ =\ -\/calculatedValue;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{Application::getInstance}}()-\/>\mbox{\hyperlink{classtouchgfx_1_1_application_aebc078458e5c78ed0270f688a735b945}{invalidateArea}}(rect);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ children\ with\ delta\ value\ for\ X\ or\ Y}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}*\ d\ =\ \mbox{\hyperlink{classtouchgfx_1_1_transition_abeb3536988ce3cb07472c6744609af06}{screenContainer}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_container_a189adb3887f73b2aee9234c0642c2b35}{getFirstChild}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (d)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (templateDirection)}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a18f37db8f060364702c14dddb171e1ea}{EAST}}:}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a76198d41f9ca65e0d5d07fe1d0292fb1}{WEST}}:}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d-\/>\mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}}(d-\/>getX()\ +\ relativeValue);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ad70ef04ee382c777b21b87ebc92b5590}{NORTH}}:}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ab55e06157c018e7047bb6738d58274d5}{SOUTH}}:}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d-\/>setY(d-\/>getY()\ +\ relativeValue);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ d-\/>getNextSibling();}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_cover_transition_a9376dbbeb4889df144d4b9cbc2b5d820}{tearDown}}()}
+\DoxyCodeLine{00168\ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_abeb3536988ce3cb07472c6744609af06}{screenContainer}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_container_a42892e8dc8c2b0d72ba7f585de0ab39c}{remove}}(solid);}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_cover_transition_aa061cd3ca140c52613eae1202b10ad32}{init}}()}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_a13ebd1aba90c713efeb4e85853b49993}{Transition::init}}();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ snapshot\ and\ its\ children\ with\ delta\ value\ for\ X\ or\ Y}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}}*\ d\ =\ \mbox{\hyperlink{classtouchgfx_1_1_transition_abeb3536988ce3cb07472c6744609af06}{screenContainer}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_container_a189adb3887f73b2aee9234c0642c2b35}{getFirstChild}}();}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (d)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (templateDirection)}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a18f37db8f060364702c14dddb171e1ea}{EAST}}:}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102a76198d41f9ca65e0d5d07fe1d0292fb1}{WEST}}:}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d-\/>\mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}}(d-\/>getX()\ -\/\ targetValue);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ad70ef04ee382c777b21b87ebc92b5590}{NORTH}}:}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacetouchgfx_ae14b2b38c7bc9524a48095c970813102ab55e06157c018e7047bb6738d58274d5}{SOUTH}}:}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d-\/>setY(d-\/>getY()\ -\/\ targetValue);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ d-\/>getNextSibling();}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_transition_abeb3536988ce3cb07472c6744609af06}{screenContainer}}-\/>\mbox{\hyperlink{classtouchgfx_1_1_container_a2db56c03a79254f635c13dab2fd6a964}{add}}(solid);}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ animationSteps;\ }
+\DoxyCodeLine{00200\ \ \ \ \ uint8\_t\ animationCounter;\ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ int16\_t\ targetValue;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00202\ \ \ \ \ int16\_t\ calculatedValue;\ \ \ \ \ \ }
+\DoxyCodeLine{00203\ \ \ \ \ FullSolidRect\ solid;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00204\ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_COVERTRANSITION\_HPP}}
+
+\end{DoxyCode}

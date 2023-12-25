@@ -1,0 +1,134 @@
+\doxysection{touchgfx\+::MCUInstrumentation Class Reference}
+\hypertarget{classtouchgfx_1_1_m_c_u_instrumentation}{}\label{classtouchgfx_1_1_m_c_u_instrumentation}\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+
+
+{\ttfamily \#include $<$MCUInstrumentation.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_aaebb4e66d0c48176e346d7f0625a73b6}{MCUInstrumentation}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a7eaa6e8a0b8b3507ceca363acd7a825b}{init}} ()=0
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_aacd2e2931662af91d3ec477d604cc673}{\texorpdfstring{$\sim$}{\string~}\+MCUInstrumentation}} ()
+\item 
+virtual unsigned int \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a460e6ca98b992f08a85abcdf15ae6ec1}{get\+Elapsed\+US}} (unsigned int start, unsigned int now, unsigned int clockfrequency)=0
+\item 
+virtual unsigned int \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a7cb0ea97f1a31c2f3c15636832d9d922}{get\+CPUCycles}} (void)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a6365951e5bfa2277f5e422d170a68f32}{set\+MCUActive}} (bool active)
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_a63612437fa651303a0c5b0fe81a84f35}{get\+CCConsumed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation_ad3eb327de3f6fca516d664777bae478b}{set\+CCConsumed}} (uint32\+\_\+t val)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_a96096614f152021f715361f77070fe4d}\label{classtouchgfx_1_1_m_c_u_instrumentation_a96096614f152021f715361f77070fe4d} 
+volatile uint32\+\_\+t {\bfseries cc\+\_\+consumed}
+\begin{DoxyCompactList}\small\item\em Amount of consumed CPU cycles. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_af2b46e42147b17a3d030e841fb209f61}\label{classtouchgfx_1_1_m_c_u_instrumentation_af2b46e42147b17a3d030e841fb209f61} 
+volatile uint32\+\_\+t {\bfseries cc\+\_\+in}
+\begin{DoxyCompactList}\small\item\em Current CPU cycles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for instrumenting processors to measure MCU load via measured CPU cycles. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_aaebb4e66d0c48176e346d7f0625a73b6}\label{classtouchgfx_1_1_m_c_u_instrumentation_aaebb4e66d0c48176e346d7f0625a73b6} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!MCUInstrumentation@{MCUInstrumentation}}
+\index{MCUInstrumentation@{MCUInstrumentation}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{MCUInstrumentation()}{MCUInstrumentation()}}
+{\footnotesize\ttfamily touchgfx\+::\+MCUInstrumentation\+::\+MCUInstrumentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_m_c_u_instrumentation}{MCUInstrumentation} class. \Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_aacd2e2931662af91d3ec477d604cc673}\label{classtouchgfx_1_1_m_c_u_instrumentation_aacd2e2931662af91d3ec477d604cc673} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!````~MCUInstrumentation@{\texorpdfstring{$\sim$}{\string~}MCUInstrumentation}}
+\index{````~MCUInstrumentation@{\texorpdfstring{$\sim$}{\string~}MCUInstrumentation}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MCUInstrumentation()}{\string~MCUInstrumentation()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+MCUInstrumentation\+::\texorpdfstring{$\sim$}{\string~}\+MCUInstrumentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_m_c_u_instrumentation}{MCUInstrumentation} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_a63612437fa651303a0c5b0fe81a84f35}\label{classtouchgfx_1_1_m_c_u_instrumentation_a63612437fa651303a0c5b0fe81a84f35} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!getCCConsumed@{getCCConsumed}}
+\index{getCCConsumed@{getCCConsumed}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{getCCConsumed()}{getCCConsumed()}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t touchgfx\+::\+MCUInstrumentation\+::get\+CCConsumed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets number of consumed clock cycles.
+
+\begin{DoxyReturn}{Returns}
+clock cycles. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_a7cb0ea97f1a31c2f3c15636832d9d922}\label{classtouchgfx_1_1_m_c_u_instrumentation_a7cb0ea97f1a31c2f3c15636832d9d922} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!getCPUCycles@{getCPUCycles}}
+\index{getCPUCycles@{getCPUCycles}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{getCPUCycles()}{getCPUCycles()}}
+{\footnotesize\ttfamily virtual unsigned int touchgfx\+::\+MCUInstrumentation\+::get\+CPUCycles (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets CPU cycles from register.
+
+\begin{DoxyReturn}{Returns}
+CPU cycles. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_a460e6ca98b992f08a85abcdf15ae6ec1}\label{classtouchgfx_1_1_m_c_u_instrumentation_a460e6ca98b992f08a85abcdf15ae6ec1} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!getElapsedUS@{getElapsedUS}}
+\index{getElapsedUS@{getElapsedUS}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{getElapsedUS()}{getElapsedUS()}}
+{\footnotesize\ttfamily virtual unsigned int touchgfx\+::\+MCUInstrumentation\+::get\+Elapsed\+US (\begin{DoxyParamCaption}\item[{unsigned int}]{start,  }\item[{unsigned int}]{now,  }\item[{unsigned int}]{clockfrequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets elapsed microseconds based on clock frequency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start time. \\
+\hline
+{\em now} & Current time. \\
+\hline
+{\em clockfrequency} & Clock frequency of the system expressed in MHz.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elapsed microseconds start and now. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_a7eaa6e8a0b8b3507ceca363acd7a825b}\label{classtouchgfx_1_1_m_c_u_instrumentation_a7eaa6e8a0b8b3507ceca363acd7a825b} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!init@{init}}
+\index{init@{init}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+MCUInstrumentation\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Initialize. \Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_ad3eb327de3f6fca516d664777bae478b}\label{classtouchgfx_1_1_m_c_u_instrumentation_ad3eb327de3f6fca516d664777bae478b} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!setCCConsumed@{setCCConsumed}}
+\index{setCCConsumed@{setCCConsumed}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{setCCConsumed()}{setCCConsumed()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+MCUInstrumentation\+::set\+CCConsumed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets number of consumed clock cycles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & number of clock cycles. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_m_c_u_instrumentation_a6365951e5bfa2277f5e422d170a68f32}\label{classtouchgfx_1_1_m_c_u_instrumentation_a6365951e5bfa2277f5e422d170a68f32} 
+\index{touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}!setMCUActive@{setMCUActive}}
+\index{setMCUActive@{setMCUActive}!touchgfx::MCUInstrumentation@{touchgfx::MCUInstrumentation}}
+\doxysubsubsection{\texorpdfstring{setMCUActive()}{setMCUActive()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+MCUInstrumentation\+::set\+MCUActive (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets MCU activity high.
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & if True, inactive otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/platform/core/\mbox{\hyperlink{_m_c_u_instrumentation_8hpp}{MCUInstrumentation.\+hpp}}\end{DoxyCompactItemize}

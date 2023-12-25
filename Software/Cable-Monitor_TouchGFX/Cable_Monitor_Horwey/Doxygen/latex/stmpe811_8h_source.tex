@@ -1,0 +1,197 @@
+\doxysection{stmpe811.\+h}
+\hypertarget{stmpe811_8h_source}{}\label{stmpe811_8h_source}\index{Drivers/BSP/Components/stmpe811/stmpe811.h@{Drivers/BSP/Components/stmpe811/stmpe811.h}}
+\mbox{\hyperlink{stmpe811_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifndef\ \_\_STMPE811\_H}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ \_\_STMPE811\_H}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ \ \ }}
+\DoxyCodeLine{00046\ \ \ \ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ts_8h}{../Common/ts.h}}"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{io_8h}{../Common/io.h}}"{}}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ Chip\ IDs\ */}\ \ \ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ STMPE811\_ID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0811}}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00077\ \textcolor{comment}{/*\ Identification\ registers\ \&\ System\ Control\ */}\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_CHP\_ID\_LSB\ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_CHP\_ID\_MSB\ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ID\_VER\ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/*\ Global\ interrupt\ Enable\ bit\ */}\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01\ \ \ }}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{/*\ IO\ expander\ functionalities\ */}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ STMPE811\_ADC\_FCT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ STMPE811\_TS\_FCT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ STMPE811\_IO\_FCT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ STMPE811\_TEMPSENS\_FCT\ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{/*\ Global\ Interrupts\ definitions\ */}\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_IO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80\ \ }\textcolor{comment}{/*\ IO\ interrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_ADC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40\ \ }\textcolor{comment}{/*\ ADC\ interrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_TEMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20\ \ }\textcolor{comment}{/*\ Not\ implemented\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_FE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10\ \ }\textcolor{comment}{/*\ FIFO\ empty\ interrupt\ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_FF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x08\ \ }\textcolor{comment}{/*\ FIFO\ full\ interrupt\ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_FOV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04\ \ }\textcolor{comment}{/*\ FIFO\ overflowed\ interrupt\ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_FTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02\ \ }\textcolor{comment}{/*\ FIFO\ above\ threshold\ interrupt\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ STMPE811\_GIT\_TOUCH\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01\ \ }\textcolor{comment}{/*\ Touch\ is\ detected\ interrupt\ \ \ \ */}\textcolor{preprocessor}{\ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ STMPE811\_ALL\_GIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1F\ \ }\textcolor{comment}{/*\ All\ global\ interrupts\ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ STMPE811\_TS\_IT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (STMPE811\_GIT\_TOUCH\ |\ STMPE811\_GIT\_FTH\ |\ \ STMPE811\_GIT\_FOV\ |\ STMPE811\_GIT\_FF\ |\ STMPE811\_GIT\_FE)\ }\textcolor{comment}{/*\ Touch\ screen\ interrupts\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00102\ \ \ \ \ }
+\DoxyCodeLine{00103\ \textcolor{comment}{/*\ General\ Control\ Registers\ */}\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_SYS\_CTRL1\ \ \ \ \ \ \ \ \ \ 0x03}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_SYS\_CTRL2\ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_SPI\_CFG\ \ \ \ \ \ \ \ \ \ \ \ 0x08\ }}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*\ Interrupt\ system\ Registers\ */}\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_INT\_CTRL\ \ \ \ \ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_INT\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_INT\_STA\ \ \ \ \ \ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_INT\_EN\ \ \ \ \ \ \ \ \ \ 0x0C}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_INT\_STA\ \ \ \ \ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{/*\ IO\ Registers\ */}\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_SET\_PIN\ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_CLR\_PIN\ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_MP\_STA\ \ \ \ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_DIR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x13}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_ED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x14}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_RE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x15}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_FE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x16}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_IO\_AF\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x17}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{/*\ ADC\ Registers\ */}\ }
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_INT\_EN\ \ \ \ \ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_INT\_STA\ \ \ \ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_CTRL1\ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_CTRL2\ \ \ \ \ \ \ \ \ \ 0x21}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_CAPT\ \ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH0\ \ \ \ \ \ \ 0x30\ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH1\ \ \ \ \ \ \ 0x32\ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH2\ \ \ \ \ \ \ 0x34\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH3\ \ \ \ \ \ \ 0x36\ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH4\ \ \ \ \ \ \ 0x38\ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH5\ \ \ \ \ \ \ 0x3A\ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH6\ \ \ \ \ \ \ 0x3B\ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_ADC\_DATA\_CH7\ \ \ \ \ \ \ 0x3C\ }}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{comment}{/*\ Touch\ Screen\ Registers\ */}\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_CTRL\ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_CFG\ \ \ \ \ \ \ \ \ \ \ \ 0x41}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_WDM\_TR\_X\ \ \ \ \ \ \ \ \ \ \ 0x42\ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_WDM\_TR\_Y\ \ \ \ \ \ \ \ \ \ \ 0x44}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_WDM\_BL\_X\ \ \ \ \ \ \ \ \ \ \ 0x46}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_WDM\_BL\_Y\ \ \ \ \ \ \ \ \ \ \ 0x48}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_FIFO\_TH\ \ \ \ \ \ \ \ \ \ \ \ 0x4A}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_FIFO\_STA\ \ \ \ \ \ \ \ \ \ \ 0x4B}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_FIFO\_SIZE\ \ \ \ \ \ \ \ \ \ 0x4C}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_DATA\_X\ \ \ \ \ \ \ \ \ 0x4D\ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_DATA\_Y\ \ \ \ \ \ \ \ \ 0x4F}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_DATA\_Z\ \ \ \ \ \ \ \ \ 0x51}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_DATA\_XYZ\ \ \ \ \ \ \ 0x52\ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_FRACT\_XYZ\ \ \ \ \ \ 0x56}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_DATA\_INC\ \ \ \ \ \ \ 0x57}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_DATA\_NON\_INC\ \ \ 0xD7}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_I\_DRIVE\ \ \ \ \ \ \ \ 0x58}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ STMPE811\_REG\_TSC\_SHIELD\ \ \ \ \ \ \ \ \ 0x59}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{comment}{/*\ Touch\ Screen\ Pins\ definition\ */}\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ STMPE811\_TOUCH\_YD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ STMPE811\_PIN\_7\ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ STMPE811\_TOUCH\_XD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ STMPE811\_PIN\_6}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ STMPE811\_TOUCH\_YU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ STMPE811\_PIN\_5}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ STMPE811\_TOUCH\_XU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ STMPE811\_PIN\_4}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ STMPE811\_TOUCH\_IO\_ALL\ \ \ \ \ \ \ \ \ \ \ (uint32\_t)(STMPE811\_TOUCH\_YD\ |\ STMPE811\_TOUCH\_XD\ |\ STMPE811\_TOUCH\_YU\ |\ STMPE811\_TOUCH\_XU)}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{comment}{/*\ IO\ Pins\ definition\ */}\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ STMPE811\_PIN\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{comment}{/*\ IO\ Pins\ directions\ */}\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ STMPE811\_DIRECTION\_IN\ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ STMPE811\_DIRECTION\_OUT\ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{/*\ IO\ IT\ types\ */}\ \ \ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ STMPE811\_TYPE\_LEVEL\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ STMPE811\_TYPE\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{comment}{/*\ IO\ IT\ polarity\ */}\ \ \ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ STMPE811\_POLARITY\_LOW\ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ STMPE811\_POLARITY\_HIGH\ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{comment}{/*\ IO\ Pin\ IT\ edge\ modes\ */}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ STMPE811\_EDGE\_FALLING\ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ STMPE811\_EDGE\_RISING\ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{comment}{/*\ TS\ registers\ masks\ */}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ STMPE811\_TS\_CTRL\_ENABLE\ \ \ \ \ \ \ \ \ 0x01\ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ STMPE811\_TS\_CTRL\_STATUS\ \ \ \ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga5feafdd84c8af0d2384509425422d9b1}{stmpe811\_Init}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga40d34415bd52b78096fa6c9b9bb92126}{stmpe811\_Reset}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00217\ uint16\_t\ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gabb9c2cd405cc42c773d04de65862bc2c}{stmpe811\_ReadID}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00218\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga39df0fdc87be8229ddd44e4c7297a774}{stmpe811\_EnableGlobalIT}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00219\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga54bdd8669c2d73fde1939fd15d28c3a2}{stmpe811\_DisableGlobalIT}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga82f479a7684adf9c8f32972b3ccb8daf}{stmpe811\_EnableITSource}}(uint16\_t\ DeviceAddr,\ uint8\_t\ Source);}
+\DoxyCodeLine{00221\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gaa72900e194641921649229f22ad349ec}{stmpe811\_DisableITSource}}(uint16\_t\ DeviceAddr,\ uint8\_t\ Source);}
+\DoxyCodeLine{00222\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga5a70edb897af292cf1b64db901f09fbc}{stmpe811\_SetITPolarity}}(uint16\_t\ DeviceAddr,\ uint8\_t\ Polarity);}
+\DoxyCodeLine{00223\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga346c425ef8c88c868591eb97f97aa298}{stmpe811\_SetITType}}(uint16\_t\ DeviceAddr,\ uint8\_t\ Type);}
+\DoxyCodeLine{00224\ uint8\_t\ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga586f13e10186147660e8b09ca0574a17}{stmpe811\_GlobalITStatus}}(uint16\_t\ DeviceAddr,\ uint8\_t\ Source);}
+\DoxyCodeLine{00225\ uint8\_t\ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gac3b8ba5f65a98bdd9e9344a5c6d80589}{stmpe811\_ReadGITStatus}}(uint16\_t\ DeviceAddr,\ uint8\_t\ Source);}
+\DoxyCodeLine{00226\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gadf6fcaf4bcd765c0e5c9f96781cbbbf9}{stmpe811\_ClearGlobalIT}}(uint16\_t\ DeviceAddr,\ uint8\_t\ Source);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00231\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga60a6a887200a980d09b703c627c8f5f9}{stmpe811\_IO\_Start}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00232\ uint8\_t\ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga40c9ce3dd13c6b0e657de662fb35d9ce}{stmpe811\_IO\_Config}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin,\ IO\_ModeTypedef\ IO\_Mode);}
+\DoxyCodeLine{00233\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gaaa0cf2f844c6d262b9fce9a2cc6fd902}{stmpe811\_IO\_InitPin}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin,\ uint8\_t\ Direction);}
+\DoxyCodeLine{00234\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gabc0ce22f7579972aa15251a20ec7e3cc}{stmpe811\_IO\_EnableAF}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00235\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga1529e270bd11bca071743a260741500f}{stmpe811\_IO\_DisableAF}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00236\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga8f7f014edbe93fe0b95597ba42bfb928}{stmpe811\_IO\_SetEdgeMode}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin,\ uint8\_t\ Edge);}
+\DoxyCodeLine{00237\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga4b75f623e16115387ca332c8e6a23378}{stmpe811\_IO\_WritePin}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin,\ uint8\_t\ PinState);}
+\DoxyCodeLine{00238\ uint32\_t\ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga1f838b67ba27809406633ca90f0ef6bb}{stmpe811\_IO\_ReadPin}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00239\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gabca64e4661421c71506e17dedd52ba65}{stmpe811\_IO\_EnableIT}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00240\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga022afc5cec314919ae18e18b19ed6236}{stmpe811\_IO\_DisableIT}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00241\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga95f1f39fa2edd3d5b6ed32ec777a73da}{stmpe811\_IO\_EnablePinIT}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00242\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga8b7fcc635c1677d87dc2fbc71932b588}{stmpe811\_IO\_DisablePinIT}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00243\ uint32\_t\ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga641547eeeb366b88eaa00cc25b984025}{stmpe811\_IO\_ITStatus}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00244\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga6ab7ad96a8c53b799c893925471e3811}{stmpe811\_IO\_ClearIT}}(uint16\_t\ DeviceAddr,\ uint32\_t\ IO\_Pin);}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00249\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga6c2784b727e123850d09a884027d1521}{stmpe811\_TS\_Start}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00250\ uint8\_t\ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga4e475a85fca0c46acdce3fc310dec86c}{stmpe811\_TS\_DetectTouch}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00251\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gab242655d3918e03e289140fcd49e9776}{stmpe811\_TS\_GetXY}}(uint16\_t\ DeviceAddr,\ uint16\_t\ *X,\ uint16\_t\ *Y);}
+\DoxyCodeLine{00252\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gafd18353ba1e835324c98b7f7c03244f8}{stmpe811\_TS\_EnableIT}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00253\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gafba8e0baf0b89f5ea9b4cc1940468383}{stmpe811\_TS\_DisableIT}}(uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00254\ uint8\_t\ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gad34fc9bbe11dca105a81374145155448}{stmpe811\_TS\_ITStatus}}\ (uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00255\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga974ece91b797f5fb28e76d2d192932a5}{stmpe811\_TS\_ClearIT}}\ (uint16\_t\ DeviceAddr);}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga20cd09e59bac7284d1342b6741733593}{IOE\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gac33b368855363c8f6b05b7218bad4f7c}{IOE\_ITConfig}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00259\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gace5ebb1b3b098cb036585c47842bf935}{IOE\_Delay}}(uint32\_t\ delay);}
+\DoxyCodeLine{00260\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_ga6804257e10475b06cafd813afce0cf49}{IOE\_Write}}(uint8\_t\ addr,\ uint8\_t\ reg,\ uint8\_t\ value);}
+\DoxyCodeLine{00261\ uint8\_t\ \ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gad5545897cdcf52846d4e5125ca08ba02}{IOE\_Read}}(uint8\_t\ addr,\ uint8\_t\ reg);}
+\DoxyCodeLine{00262\ uint16\_t\ \mbox{\hyperlink{group___s_t_m_p_e811___exported___functions_gaaf62da44c5f3ba524033cb3e34a434fc}{IOE\_ReadMultiple}}(uint8\_t\ addr,\ uint8\_t\ reg,\ uint8\_t\ *buffer,\ uint16\_t\ length);}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{comment}{/*\ Touch\ screen\ driver\ structure\ */}}
+\DoxyCodeLine{00265\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_t_s___drv_type_def}{TS\_DrvTypeDef}}\ stmpe811\_ts\_drv;}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{comment}{/*\ IO\ driver\ structure\ */}}
+\DoxyCodeLine{00268\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_i_o___drv_type_def}{IO\_DrvTypeDef}}\ stmpe811\_io\_drv;}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00271\ \}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STMPE811\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00291\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

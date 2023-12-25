@@ -1,0 +1,282 @@
+\doxysection{Core/\+Src/measuring.c File Reference}
+\hypertarget{measuring_8c}{}\label{measuring_8c}\index{Core/Src/measuring.c@{Core/Src/measuring.c}}
+
+
+Measuring voltages with the ADC(s) in different configurations.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}measuring.\+h"{}}\newline
+{\ttfamily \#include "{}calculation.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{measuring_8c_a0a4c3d17b626e4d7b31b780e85dde7cf}{ADC\+\_\+\+NUMS}}~64
+\begin{DoxyCompactList}\small\item\em Number of samples. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{measuring_8c_aa8ccd2dce306c0d219eeabd92b30fcc0}{ADC\+\_\+\+FS}}~640
+\begin{DoxyCompactList}\small\item\em Sampling freq. =\texorpdfstring{$>$}{>} 12 samples for a 50Hz period. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{measuring_8c_a8f1900825debd6a99026eb55d9998131}{TIM\+\_\+\+CLOCK}}~84000000
+\begin{DoxyCompactList}\small\item\em APB1 timer clock frequency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{measuring_8c_a00237ed21338f907db7d88aeb54fecf2}{TIM\+\_\+\+TOP}}~9
+\begin{DoxyCompactList}\small\item\em Timer top value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{measuring_8c_ad3224fe94be10ed1c61870bd1d22b86d}{TIM\+\_\+\+PRESCALE}}~    (\mbox{\hyperlink{measuring_8c_a8f1900825debd6a99026eb55d9998131}{TIM\+\_\+\+CLOCK}} / \mbox{\hyperlink{measuring_8c_aa8ccd2dce306c0d219eeabd92b30fcc0}{ADC\+\_\+\+FS}} / (\mbox{\hyperlink{measuring_8c_a00237ed21338f907db7d88aeb54fecf2}{TIM\+\_\+\+TOP}} + 1) -\/ 1)
+\begin{DoxyCompactList}\small\item\em Clock prescaler. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{measuring_8c_a08f4cb5cb205c824902548906a61cb60}{INPUT\+\_\+\+COUNT}}~4
+\begin{DoxyCompactList}\small\item\em Number of input channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{measuring_8c_a645930ff74ceaacb90aca99fae865f8f}{MEAS\+\_\+\+GPIO\+\_\+analog\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Configure GPIOs in analog mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{measuring_8c_a94fd86d8bf93f5dc2033fbf102ef180e}{MEAS\+\_\+\+ADC\+\_\+reset}} (void)
+\begin{DoxyCompactList}\small\item\em Resets the ADCs and the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{measuring_8c_a2ace7017c3957ead5cd587fc6fae0290}{MEAS\+\_\+timer\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Configure the timer to trigger the ADC(s) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{measuring_8c_a550d69c255df67bab7703cc36a7ee308}{MEAS\+\_\+\+ADC3\+\_\+scan\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize ADC, timer and DMA for sequential acquisition = scan mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{measuring_8c_a09580c3436438e5feb38330bdbf7062b}{MEAS\+\_\+\+ADC3\+\_\+scan\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Start DMA, ADC and timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{measuring_8c_adab6f3e22e90bd5b1ceebb98022abdf2}{DMA2\+\_\+\+Stream1\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em Interrupt handler for DMA2 Stream1. \end{DoxyCompactList}\item 
+uint32\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{measuring_8c_a0495ebe6ce630b42c2f9479392506985}{MEAS\+\_\+start\+\_\+measure}} (void)
+\begin{DoxyCompactList}\small\item\em Start the measurement. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{measuring_8c_a2756121f7d9be8c582e834ec0382b01b}{MEAS\+\_\+get\+\_\+samp\+\_\+freq}} (void)
+\begin{DoxyCompactList}\small\item\em Get the sampling frequency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Measuring voltages with the ADC(s) in different configurations. 
+
+\DoxyHorRuler{0}
+\hypertarget{measuring_8c_autotoc_md16}{}\doxysubsection{\texorpdfstring{Demonstrates different ADC (Analog to Digital Converter) modes}{Demonstrates different ADC (Analog to Digital Converter) modes}}\label{measuring_8c_autotoc_md16}
+
+\begin{DoxyItemize}
+\item ADC in single conversion mode
+\item ADC triggered by a timer and with interrupt after end of conversion
+\item ADC combined with DMA (Direct Memory Access) to fill a buffer
+\item Dual mode = simultaneous sampling of two inputs by two ADCs
+\item Scan mode = sequential sampling of two inputs by one ADC
+\item Simple DAC output is demonstrated as well
+\item Analog mode configuration for GPIOs
+\item Display recorded data on the graphics display
+\end{DoxyItemize}
+
+Peripherals \doxylink{measuring_8c_HowTo}{How\+To}
+
+\hypertarget{measuring_8c_autotoc_md17}{}\doxysubsection{\texorpdfstring{HW used for the demonstrations}{HW used for the demonstrations}}\label{measuring_8c_autotoc_md17}
+A simple HW was used for testing the code. It is connected to the pins marked in red in the above image.
+
+
+
+Of course the code runs also without this HW. Simply connect a signal or waveform generator to the input(s).
+
+\label{measuring_8c_HowTo}%
+\Hypertarget{measuring_8c_HowTo}%
+\hypertarget{measuring_8c_autotoc_md18}{}\doxysubsection{\texorpdfstring{How to Configure the Peripherals\+: ADC, TIMER and DMA}{How to Configure the Peripherals\+: ADC, TIMER and DMA}}\label{measuring_8c_autotoc_md18}
+All the peripherals are accessed by writing to or reading from registers. From the programmer’s point of view this is done exactly as writing or reading the value of a variable. ~\newline
+ Writing to a register configures the HW of the associated peripheral to do what is required. ~\newline
+ Reading from a registers gets status and data from the HW peripheral.
+
+The information on which bits have to be set to get a specific behavior is documented in the {\bfseries{reference manual}} of the mikrocontroller.
+
+\DoxyHorRuler{0}
+ \begin{DoxyAuthor}{Author}
+Alejandro Horvat, \href{mailto:horvaale@zhaw.ch}{\texttt{ horvaale@zhaw.\+ch}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+17.\+06.\+2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{measuring_8c_aa8ccd2dce306c0d219eeabd92b30fcc0}\label{measuring_8c_aa8ccd2dce306c0d219eeabd92b30fcc0} 
+\index{measuring.c@{measuring.c}!ADC\_FS@{ADC\_FS}}
+\index{ADC\_FS@{ADC\_FS}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_FS}{ADC\_FS}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+FS~640}
+
+
+
+Sampling freq. =\texorpdfstring{$>$}{>} 12 samples for a 50Hz period. 
+
+\Hypertarget{measuring_8c_a0a4c3d17b626e4d7b31b780e85dde7cf}\label{measuring_8c_a0a4c3d17b626e4d7b31b780e85dde7cf} 
+\index{measuring.c@{measuring.c}!ADC\_NUMS@{ADC\_NUMS}}
+\index{ADC\_NUMS@{ADC\_NUMS}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_NUMS}{ADC\_NUMS}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+NUMS~64}
+
+
+
+Number of samples. 
+
+\Hypertarget{measuring_8c_a08f4cb5cb205c824902548906a61cb60}\label{measuring_8c_a08f4cb5cb205c824902548906a61cb60} 
+\index{measuring.c@{measuring.c}!INPUT\_COUNT@{INPUT\_COUNT}}
+\index{INPUT\_COUNT@{INPUT\_COUNT}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{INPUT\_COUNT}{INPUT\_COUNT}}
+{\footnotesize\ttfamily \#define INPUT\+\_\+\+COUNT~4}
+
+
+
+Number of input channels. 
+
+\Hypertarget{measuring_8c_a8f1900825debd6a99026eb55d9998131}\label{measuring_8c_a8f1900825debd6a99026eb55d9998131} 
+\index{measuring.c@{measuring.c}!TIM\_CLOCK@{TIM\_CLOCK}}
+\index{TIM\_CLOCK@{TIM\_CLOCK}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{TIM\_CLOCK}{TIM\_CLOCK}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+CLOCK~84000000}
+
+
+
+APB1 timer clock frequency. 
+
+\Hypertarget{measuring_8c_ad3224fe94be10ed1c61870bd1d22b86d}\label{measuring_8c_ad3224fe94be10ed1c61870bd1d22b86d} 
+\index{measuring.c@{measuring.c}!TIM\_PRESCALE@{TIM\_PRESCALE}}
+\index{TIM\_PRESCALE@{TIM\_PRESCALE}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{TIM\_PRESCALE}{TIM\_PRESCALE}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+PRESCALE~    (\mbox{\hyperlink{measuring_8c_a8f1900825debd6a99026eb55d9998131}{TIM\+\_\+\+CLOCK}} / \mbox{\hyperlink{measuring_8c_aa8ccd2dce306c0d219eeabd92b30fcc0}{ADC\+\_\+\+FS}} / (\mbox{\hyperlink{measuring_8c_a00237ed21338f907db7d88aeb54fecf2}{TIM\+\_\+\+TOP}} + 1) -\/ 1)}
+
+
+
+Clock prescaler. 
+
+\Hypertarget{measuring_8c_a00237ed21338f907db7d88aeb54fecf2}\label{measuring_8c_a00237ed21338f907db7d88aeb54fecf2} 
+\index{measuring.c@{measuring.c}!TIM\_TOP@{TIM\_TOP}}
+\index{TIM\_TOP@{TIM\_TOP}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{TIM\_TOP}{TIM\_TOP}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TOP~9}
+
+
+
+Timer top value. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{measuring_8c_adab6f3e22e90bd5b1ceebb98022abdf2}\label{measuring_8c_adab6f3e22e90bd5b1ceebb98022abdf2} 
+\index{measuring.c@{measuring.c}!DMA2\_Stream1\_IRQHandler@{DMA2\_Stream1\_IRQHandler}}
+\index{DMA2\_Stream1\_IRQHandler@{DMA2\_Stream1\_IRQHandler}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{DMA2\_Stream1\_IRQHandler()}{DMA2\_Stream1\_IRQHandler()}}
+{\footnotesize\ttfamily void DMA2\+\_\+\+Stream1\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Interrupt handler for DMA2 Stream1. 
+
+\DoxyHorRuler{0}
+ 
+
+The samples from the ADC3 have been transfered to memory by the DMA2 Stream1 and are ready for processing. \Hypertarget{measuring_8c_a550d69c255df67bab7703cc36a7ee308}\label{measuring_8c_a550d69c255df67bab7703cc36a7ee308} 
+\index{measuring.c@{measuring.c}!MEAS\_ADC3\_scan\_init@{MEAS\_ADC3\_scan\_init}}
+\index{MEAS\_ADC3\_scan\_init@{MEAS\_ADC3\_scan\_init}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{MEAS\_ADC3\_scan\_init()}{MEAS\_ADC3\_scan\_init()}}
+{\footnotesize\ttfamily void MEAS\+\_\+\+ADC3\+\_\+scan\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize ADC, timer and DMA for sequential acquisition = scan mode. 
+
+\DoxyHorRuler{0}
+ 
+
+Uses ADC2 and DMA2\+\_\+\+Stream1 channel2 ~\newline
+ The ADC2 trigger is set to TIM2 TRGO event ~\newline
+ At each trigger both inputs are converted sequentially and transfered to memory by the DMA. ~\newline
+ As each conversion triggers the DMA, the number of transfers is doubled. ~\newline
+ The DMA triggers the transfer complete interrupt when all data is ready. ~\newline
+ The inputs used are ADC3\+\_\+\+IN4 = GPIO PF6 (Pad Right), ADC3\+\_\+\+IN13 = GPIO PC3 (Pad Left), ADC\+\_\+\+IN6 = GPIO PF8 (HS-\/\+Right), ADC3\+\_\+\+IN11 = GPIO PC1 (HS-\/\+Left) \Hypertarget{measuring_8c_a09580c3436438e5feb38330bdbf7062b}\label{measuring_8c_a09580c3436438e5feb38330bdbf7062b} 
+\index{measuring.c@{measuring.c}!MEAS\_ADC3\_scan\_start@{MEAS\_ADC3\_scan\_start}}
+\index{MEAS\_ADC3\_scan\_start@{MEAS\_ADC3\_scan\_start}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{MEAS\_ADC3\_scan\_start()}{MEAS\_ADC3\_scan\_start()}}
+{\footnotesize\ttfamily void MEAS\+\_\+\+ADC3\+\_\+scan\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start DMA, ADC and timer. 
+
+\DoxyHorRuler{0}
+  \Hypertarget{measuring_8c_a94fd86d8bf93f5dc2033fbf102ef180e}\label{measuring_8c_a94fd86d8bf93f5dc2033fbf102ef180e} 
+\index{measuring.c@{measuring.c}!MEAS\_ADC\_reset@{MEAS\_ADC\_reset}}
+\index{MEAS\_ADC\_reset@{MEAS\_ADC\_reset}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{MEAS\_ADC\_reset()}{MEAS\_ADC\_reset()}}
+{\footnotesize\ttfamily void MEAS\+\_\+\+ADC\+\_\+reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resets the ADCs and the timer. 
+
+\DoxyHorRuler{0}
+ 
+
+to make sure the different demos do not interfere. \Hypertarget{measuring_8c_a2756121f7d9be8c582e834ec0382b01b}\label{measuring_8c_a2756121f7d9be8c582e834ec0382b01b} 
+\index{measuring.c@{measuring.c}!MEAS\_get\_samp\_freq@{MEAS\_get\_samp\_freq}}
+\index{MEAS\_get\_samp\_freq@{MEAS\_get\_samp\_freq}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{MEAS\_get\_samp\_freq()}{MEAS\_get\_samp\_freq()}}
+{\footnotesize\ttfamily uint16\+\_\+t MEAS\+\_\+get\+\_\+samp\+\_\+freq (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the sampling frequency. 
+
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Returns}
+Sampling frequency 
+\end{DoxyReturn}
+\Hypertarget{measuring_8c_a645930ff74ceaacb90aca99fae865f8f}\label{measuring_8c_a645930ff74ceaacb90aca99fae865f8f} 
+\index{measuring.c@{measuring.c}!MEAS\_GPIO\_analog\_init@{MEAS\_GPIO\_analog\_init}}
+\index{MEAS\_GPIO\_analog\_init@{MEAS\_GPIO\_analog\_init}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{MEAS\_GPIO\_analog\_init()}{MEAS\_GPIO\_analog\_init()}}
+{\footnotesize\ttfamily void MEAS\+\_\+\+GPIO\+\_\+analog\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure GPIOs in analog mode. 
+
+\DoxyHorRuler{0}
+ 
+
+\begin{DoxyNote}{Note}
+The input number for the ADCs is not equal to the GPIO pin number!
+\begin{DoxyItemize}
+\item ADC3\+\_\+\+IN4 = GPIO PF6 (Pad left)
+\item ADC123\+\_\+\+IN13 = GPIO PC3 (Pad right)
+\item ADC3\+\_\+\+IN6 = GPIO PF8 (Hall sensor Left)
+\item ADC123\+\_\+\+IN11 = GPIO PC1 (Hall sensor Right) 
+\end{DoxyItemize}
+\end{DoxyNote}
+\Hypertarget{measuring_8c_a0495ebe6ce630b42c2f9479392506985}\label{measuring_8c_a0495ebe6ce630b42c2f9479392506985} 
+\index{measuring.c@{measuring.c}!MEAS\_start\_measure@{MEAS\_start\_measure}}
+\index{MEAS\_start\_measure@{MEAS\_start\_measure}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{MEAS\_start\_measure()}{MEAS\_start\_measure()}}
+{\footnotesize\ttfamily uint32\+\_\+t \texorpdfstring{$\ast$}{*} MEAS\+\_\+start\+\_\+measure (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start the measurement. 
+
+\DoxyHorRuler{0}
+ Measurement functions \DoxyHorRuler{0}
+ \begin{DoxyReturn}{Returns}
+ADC samples pointer
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The result is stored alternated e.\+g. every 4th is together. 
+\end{DoxyNote}
+\Hypertarget{measuring_8c_a2ace7017c3957ead5cd587fc6fae0290}\label{measuring_8c_a2ace7017c3957ead5cd587fc6fae0290} 
+\index{measuring.c@{measuring.c}!MEAS\_timer\_init@{MEAS\_timer\_init}}
+\index{MEAS\_timer\_init@{MEAS\_timer\_init}!measuring.c@{measuring.c}}
+\doxysubsubsection{\texorpdfstring{MEAS\_timer\_init()}{MEAS\_timer\_init()}}
+{\footnotesize\ttfamily void MEAS\+\_\+timer\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure the timer to trigger the ADC(s) 
+
+\DoxyHorRuler{0}
+ 
+
+\begin{DoxyNote}{Note}
+For debugging purposes the timer interrupt might be useful. 
+\end{DoxyNote}

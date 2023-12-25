@@ -1,0 +1,184 @@
+\doxysection{Calibration\+View\+Base.\+hpp}
+\hypertarget{_calibration_view_base_8hpp_source}{}\label{_calibration_view_base_8hpp_source}\index{TouchGFX/generated/gui\_generated/include/gui\_generated/calibration\_screen/CalibrationViewBase.hpp@{TouchGFX/generated/gui\_generated/include/gui\_generated/calibration\_screen/CalibrationViewBase.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/**********\ THIS\ FILE\ IS\ GENERATED\ BY\ TOUCHGFX\ DESIGNER,\ DO\ NOT\ MODIFY\ ***********/}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*********************************************************************************/}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ CALIBRATIONVIEWBASE\_HPP}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ CALIBRATIONVIEWBASE\_HPP}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <gui/common/FrontendApplication.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_view_8hpp}{mvp/View.hpp}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <gui/calibration\_screen/CalibrationPresenter.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_box_8hpp}{touchgfx/widgets/Box.hpp}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8hpp}{touchgfx/widgets/Image.hpp}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_button_with_label_8hpp}{touchgfx/widgets/ButtonWithLabel.hpp}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_swipe_container_8hpp}{touchgfx/containers/SwipeContainer.hpp}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_container_8hpp}{touchgfx/containers/Container.hpp}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_button_with_icon_8hpp}{touchgfx/widgets/ButtonWithIcon.hpp}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_with_wildcard_8hpp}{touchgfx/widgets/TextAreaWithWildcard.hpp}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_line_8hpp}{touchgfx/widgets/canvas/Line.hpp}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_painter_r_g_b565_8hpp}{touchgfx/widgets/canvas/PainterRGB565.hpp}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_text_area_8hpp}{touchgfx/widgets/TextArea.hpp}}>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ SIMULATOR}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{measuring_8h}{measuring.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}\mbox{\hyperlink{calculation_8h}{calculation.h}}"{}}}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_calibration_view_base}{CalibrationViewBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_view}{touchgfx::View}}<CalibrationPresenter>}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_calibration_view_base}{CalibrationViewBase}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_calibration_view_base}{\string~CalibrationViewBase}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_calibration_view_base_a9dd94a7258fabc68dd7e8a78b8df4fb6}{setupScreen}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ transitionBegins();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ *\ Virtual\ Action\ Handlers}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Load\_FLASH\_Values()}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Override\ and\ implement\ this\ function\ in\ Calibration}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_frontend_application}{FrontendApplication}}\&\ application()\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_frontend_application}{FrontendApplication}}*\textcolor{keyword}{>}(\mbox{\hyperlink{classtouchgfx_1_1_application_ae794221f3f6411a6881ce48cac1dc710}{touchgfx::Application::getInstance}}());}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ \ *\ Member\ Declarations}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_box}{touchgfx::Box}}\ \_\_background;}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_image}{touchgfx::Image}}\ image1;}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_label}{touchgfx::ButtonWithLabel}}\ buttonWithLabel3;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_swipe_container}{touchgfx::SwipeContainer}}\ swipeContainer1;}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx::Container}}\ swipeContainerPadLeft;}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_LP3;}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_LP2;}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_LP1;}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_LP3;}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_LP2;}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_LP1;}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1\_LP;}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1\_LPPainter;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_LP;}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx::Container}}\ swipeContainerPadRight;}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_RP3;}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_RP2;}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_RP1;}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_RP3;}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_RP2;}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_RP1;}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1\_RP;}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1\_RPPainter;}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_RP;}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx::Container}}\ swipeContainerHallLeft1P;}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_LH2\_5A\_1P;}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_LH\_5A\_1P;}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTL\_1P\_5A;}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_LH1\_1A\_1P;}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_LH\_1A\_1P;}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTL\_1P\_1A;}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1\_LH;}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1\_LHPainter;}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_LH;}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx::Container}}\ swipeContainerHallRight1P;}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_RH2\_5A\_1P;}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_RH\_5A\_1P;}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTR\_1P\_5A;}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_RH1\_1A\_1P;}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_RH\_1A\_1P;}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTR\_1P\_1A;}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1\_RH\_1;}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1\_RH\_1Painter;}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_RH\_1P;}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx::Container}}\ swipeContainerHallLeft3P;}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_LH2\_5A\_3P;}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_LH\_5A\_3P;}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTL\_3P\_5A;}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_LH1\_1A\_3P;}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_LH\_1A\_3P;}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTL\_3P\_1A;}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1\_LH\_3P;}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1\_LH\_3PPainter;}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_LH\_3P;}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx::Container}}\ swipeContainerHallRight3P;}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_RH2\_5A\_3P;}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_RH\_5A\_3P;}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTR\_3P\_5A;}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{touchgfx::ButtonWithIcon}}\ buttonWithIcon\_RH1\_1A\_3P;}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area_with_one_wildcard}{touchgfx::TextAreaWithOneWildcard}}\ textAreaCal\_RH\_1A\_3P;}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_CURRENTR\_3P\_1A;}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1\_RH\_1\_3P;}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1\_RH\_1\_3PPainter;}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1\_RH\_3P;}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1\_1;}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1\_1Painter;}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea3;}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_line}{touchgfx::Line}}\ line1;}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565}{touchgfx::PainterRGB565}}\ line1Painter;}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea2;}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_text_area}{touchgfx::TextArea}}\ textArea1;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ \ \ \ *\ Wildcard\ Buffers}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_LP3\_SIZE\ =\ 10;}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_LP3Buffer[TEXTAREACAL\_LP3\_SIZE];}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_LP2\_SIZE\ =\ 10;}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_LP2Buffer[TEXTAREACAL\_LP2\_SIZE];}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_LP1\_SIZE\ =\ 10;}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_LP1Buffer[TEXTAREACAL\_LP1\_SIZE];}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_RP3\_SIZE\ =\ 10;}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_RP3Buffer[TEXTAREACAL\_RP3\_SIZE];}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_RP2\_SIZE\ =\ 10;}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_RP2Buffer[TEXTAREACAL\_RP2\_SIZE];}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_RP1\_SIZE\ =\ 10;}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_RP1Buffer[TEXTAREACAL\_RP1\_SIZE];}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_LH\_5A\_1P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_LH\_5A\_1PBuffer[TEXTAREACAL\_LH\_5A\_1P\_SIZE];}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_LH\_1A\_1P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_LH\_1A\_1PBuffer[TEXTAREACAL\_LH\_1A\_1P\_SIZE];}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_RH\_5A\_1P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_RH\_5A\_1PBuffer[TEXTAREACAL\_RH\_5A\_1P\_SIZE];}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_RH\_1A\_1P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_RH\_1A\_1PBuffer[TEXTAREACAL\_RH\_1A\_1P\_SIZE];}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_LH\_5A\_3P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_LH\_5A\_3PBuffer[TEXTAREACAL\_LH\_5A\_3P\_SIZE];}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_LH\_1A\_3P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_LH\_1A\_3PBuffer[TEXTAREACAL\_LH\_1A\_3P\_SIZE];}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_RH\_5A\_3P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_RH\_5A\_3PBuffer[TEXTAREACAL\_RH\_5A\_3P\_SIZE];}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ TEXTAREACAL\_RH\_1A\_3P\_SIZE\ =\ 10;}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{touchgfx::Unicode::UnicodeChar}}\ textAreaCal\_RH\_1A\_3PBuffer[TEXTAREACAL\_RH\_1A\_3P\_SIZE];}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\ \ \ \ \ *\ Canvas\ Buffer\ Size}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ CANVAS\_BUFFER\_SIZE\ =\ 3600;}
+\DoxyCodeLine{00164\ \ \ \ \ uint8\_t\ canvasBuffer[CANVAS\_BUFFER\_SIZE];}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00167\ \textcolor{comment}{\ \ \ \ \ *\ Callback\ Declarations}}
+\DoxyCodeLine{00168\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_callback}{touchgfx::Callback<CalibrationViewBase,\ const\ touchgfx::AbstractButton\&>}}\ buttonCallback;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ \ \ \ \ *\ Callback\ Handler\ Declarations}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ buttonCallbackHandler(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_abstract_button}{touchgfx::AbstractButton}}\&\ src);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CALIBRATIONVIEWBASE\_HPP}}
+
+\end{DoxyCode}

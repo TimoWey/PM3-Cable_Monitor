@@ -1,0 +1,946 @@
+\doxysection{touchgfx\+::HALSDL2 Class Reference}
+\hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2}{}\label{classtouchgfx_1_1_h_a_l_s_d_l2}\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+
+
+{\ttfamily \#include $<$HALSDL2.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::HALSDL2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_h_a_l_s_d_l2}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a4ead0460499045a7916cc2fd0092a977}{HALSDL2}} (\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\+\_\+\+Interface}} \&\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa562e7a507aaa2e5f77115885a8912e2}{dma}}, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \&\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa8cd5177dc4773f2f450c31af443f15f}{lcd}}, \mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{Touch\+Controller}} \&touch\+Ctrl, uint16\+\_\+t width, uint16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a25096d59f5525d7db19d2ad2fe3f3dd1}{task\+Entry}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ac5a0bedd2cdca7c6892fc6c9f6d0c1aa}{sample\+Key}} (uint8\+\_\+t \&key)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ab2d6864fee805f61bbbec4178fedc2dd}{flush\+Frame\+Buffer}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ac85c1d50d0d425d333adb426d98a276d}{flush\+Frame\+Buffer}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a9bd2e1a32bd4a006fbc423d832bb66f3}{set\+Vsync\+Interval}} (float ms)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a05a747b2c155bd26bd521263a4d42d0f}{do\+Sample\+Touch}} (int32\+\_\+t \&x, int32\+\_\+t \&y) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a602594142533986ab478cd242a2daed1}{set\+Frame\+Buffer\+Size}} (uint16\+\_\+t width, uint16\+\_\+t height)
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7e0d0ecf1cb60259546aad10b198cfce}{sdl\+\_\+init}} (int argcount, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a95c52b3d41cb96471a20cc8a4c226e7c}{load\+Skin}} (\mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498}{Display\+Orientation}} orientation, int x, int y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7000c3b817223e932561e13c989ca038}{save\+Screenshot}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a69f8b62dfcb402b0c4529346e103318b}{save\+Next\+Screenshots}} (int n)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ad07e3d14da7500f8f02a9cf02cfbf17d}{save\+Screenshot}} (char \texorpdfstring{$\ast$}{*}folder, char \texorpdfstring{$\ast$}{*}filename)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a3bf2e25f55d0910c9a5d97c1b437cb1d}{copy\+Screenshot\+To\+Clipboard}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a688fc7694b3e281af7cd8c2ad0fc0940}{set\+Flash\+Invalidated\+Areas}} (bool flash=true)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ae0a051b88d48b8201ea702f90f73a492}{set\+Window\+Visible}} (bool visible, bool redraw\+Window=true)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_acd1314d40d035d84cebb40391e392387}{get\+Window\+Visible}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7b7dd0e5a37adaf548af294250b8b794}{set\+Console\+Visible}} (bool visible, bool redraw\+Window=true)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ab1bb46704246b8180a6447a85e35c329}{get\+Console\+Visible}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a5badcb5f1aab9ea9a73c5514861aa47a}{print\+To\+File}} (const char \texorpdfstring{$\ast$}{*}filename)
+\item 
+FILE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a81de463d43169d5c0591fed3b7c23797}{get\+Print\+File}} () const
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ae211600471b2407f1e7b5acdd6560d26}{local\+File\+Name}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+\_\+size, const char \texorpdfstring{$\ast$}{*}filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{touchgfx\+::\+HAL}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a38e614d819fe8e824705fae05b5db8f9}{HAL}} (\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\+\_\+\+Interface}} \&dma\+Interface, \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \&display, \mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{Touch\+Controller}} \&touch\+Ctrl, uint16\+\_\+t width, uint16\+\_\+t height)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_add703aed53326f456ed10d925493e5c3}{\texorpdfstring{$\sim$}{\string~}\+HAL}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad8b8344785da31d3d5780e99032312e6}{set\+Display\+Orientation}} (\mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498}{Display\+Orientation}} orientation)
+\item 
+\mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498}{Display\+Orientation}} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a621d7d56953a859af80f4e6cd03f00a4}{get\+Display\+Orientation}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ac34eb96626328a8277350ee9dca31612}{signal\+DMAInterrupt}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaff7933fb96415e766d4b932d202da45}{initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a15713d28087f9b3993190bf1928f7ccd}{allow\+DMATransfers}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab758ccac9ac5401899c975ccac83ba7d}{front\+Porch\+Entered}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a077ffe964284d0d32f66475c63c2154c}{flush\+DMA}} ()
+\item 
+virtual uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad634b95de7377e0bcfc42927912d9b04}{lock\+Frame\+Buffer}} ()
+\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab3cdd02ba24d4dfcde73a3d2f505ab18}{lock\+Frame\+Buffer\+For\+Rendering\+Method}} (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2}{Rendering\+Method}} method)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad2d7cbcc73dc2b94ddfdd87a3fbc5590}{unlock\+Frame\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a4489a2b22d365b61acc23242d2496393}{lock\+DMATo\+Front\+Porch}} (bool enable\+Lock)
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aeaa3080f0b82c2c79d36ef0d8f2cbdc9}{block\+Copy}} (void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} dest, const void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}} src, uint32\+\_\+t num\+Bytes)
+\item 
+virtual \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{Blit\+Operations}} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a1166f95a3236fccbeb484abf2701de4e}{get\+Blit\+Caps}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a15eaa40397b6e6ac6d1430502a6c767e}{enable\+DMAAcceleration}} (const bool enable)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ac8eeb01259bb50c6c2a4d874abd5eb34}{blit\+Copy}} (const uint16\+\_\+t \texorpdfstring{$\ast$}{*}p\+Src, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Clut, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t src\+Width, uint8\+\_\+t alpha, bool has\+Transparent\+Pixels, uint16\+\_\+t dst\+Width, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} src\+Format, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} dst\+Format, bool replace\+Bg\+Alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab444664b4cdb7e585f7eca02a4aadae7}{blit\+Copy}} (const uint16\+\_\+t \texorpdfstring{$\ast$}{*}p\+Src, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t src\+Width, uint8\+\_\+t alpha, bool has\+Transparent\+Pixels, uint16\+\_\+t dst\+Width, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} src\+Format, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} dst\+Format, bool replace\+Bg\+Alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a002ad56dfa1c63f1018efaf4916230ea}{blit\+Copy}} (const uint16\+\_\+t \texorpdfstring{$\ast$}{*}p\+Src, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t src\+Width, uint8\+\_\+t alpha, bool has\+Transparent\+Pixels, bool replace\+Bg\+Alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aaee058268faa3792465c13347b7c2c22}{blit\+Copy\+Word}} (const uint16\+\_\+t \texorpdfstring{$\ast$}{*}p\+Src, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t src\+Width, uint16\+\_\+t dst\+Width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a12318b9c262a03c500a10813296f9085}{blit\+Fill\+Word}} (uint16\+\_\+t color\+Value, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t dst\+Width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae08a3bfbd14111a72fef2e0a50f5f35f}{blit\+Copy\+ARGB8888}} (const uint16\+\_\+t \texorpdfstring{$\ast$}{*}p\+Src, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t src\+Width, uint8\+\_\+t alpha, bool replace\+Bg\+Alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab95f287e146c1ea1bd41c26335d9d8af}{blit\+Copy\+Glyph}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Src, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t src\+Width, \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, uint8\+\_\+t alpha, \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{Blit\+Operations}} operation, bool replace\+Bg\+Alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a414dbd66d2efcc2d1bdaae6a908d1c71}{blit\+Fill}} (\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint8\+\_\+t alpha, uint16\+\_\+t dst\+Width, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} dst\+Format, bool replace\+Bg\+Alpha)
+\item 
+virtual uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a5546d27d37236f452ef4069e14fae67c}{copy\+From\+TFTTo\+Client\+Buffer}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} region)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a80b9feb0e79f141efb836a414a92aaac}{blit\+Fill}} (\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}} color, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint8\+\_\+t alpha, bool replace\+Bg\+Alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aef1bc91717b253212637bea2b276b0a8}{register\+Event\+Listener}} (\mbox{\hyperlink{classtouchgfx_1_1_u_i_event_listener}{UIEvent\+Listener}} \&listener)
+\item 
+virtual uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9be1ee5fa9676ec83670b6b1ef682921}{copy\+FBRegion\+To\+Memory}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} me\+Abs)
+\item 
+virtual uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a527197322435046149e079f582a1c87c}{copy\+FBRegion\+To\+Memory}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} me\+Abs, uint16\+\_\+t \texorpdfstring{$\ast$}{*}dst, uint32\+\_\+t stride)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a55c0c4bcc759be26c6c8c97fb8881276}{get\+Display\+Width}} () const
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a058bdb1ccfc36f6715c45492d8b25ead}{get\+Display\+Height}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad19300962aff56d8bf883175e5d68a7e}{swap\+Frame\+Buffers}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_afc97bb1daeb60052402662a14842c7d5}{get\+LCDRefresh\+Count}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a8ef0a31dee2098b4849e8ea2bb6f7234}{set\+Frame\+Rate\+Compensation}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a66b3636d40e093246d7e7a8734e71b3e}{v\+Sync}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad8b220ba5d6c4abf29a3f7bc5b42eced}{back\+Porch\+Exited}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a89527bf36859c7513a717672ab7e0c6d}{set\+Drag\+Threshold}} (uint8\+\_\+t value)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_gestures}{Gestures}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_acb75ba4686b91c3d59e5d21e4c35d7d4}{get\+Gestures}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9eb0be4818371848b1dc9e8b03dc108c}{set\+Frame\+Buffer\+Start\+Addresses}} (void \texorpdfstring{$\ast$}{*}frame\+Buffer, void \texorpdfstring{$\ast$}{*}double\+Buffer, void \texorpdfstring{$\ast$}{*}animation\+Storage)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_adda2f14906d5e11be15f09343ff96b20}{set\+Animation\+Storage}} (void \texorpdfstring{$\ast$}{*}animation\+Storage)
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_afeef8585401d3c180ad4da999edd5be6}{configure\+Partial\+Frame\+Buffer}} (const uint16\+\_\+t x, const uint16\+\_\+t y, const uint16\+\_\+t width, const uint16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_abe77d8e5ad4548096cc7dc60e2aebcfb}{set\+Touch\+Sample\+Rate}} (int8\+\_\+t sample\+Rate\+In\+Ticks)
+\item 
+int8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae71f80f5ef41994507d30d308f10f49f}{get\+Touch\+Sample\+Rate}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9a87f63594af25da8a855d69ffe7dc49}{set\+MCUActive}} (bool active)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a83b02d2c40178ed96f892522ec99b5ae}{get\+CPUCycles}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9dcc4588960aaf2904da561ec63bc6d1}{set\+MCUInstrumentation}} (\mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation}{MCUInstrumentation}} \texorpdfstring{$\ast$}{*}mcu\+Instr)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ad0478c396a54b8d3e79f788c2c7bfb23}{enable\+MCULoad\+Calculation}} (bool enabled)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a92d98ef8339dde0234b8362faa47db55}{get\+MCULoad\+Pct}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a3047eb144741afa1a828adf09e180cca}{set\+Button\+Controller}} (\mbox{\hyperlink{classtouchgfx_1_1_button_controller}{Button\+Controller}} \texorpdfstring{$\ast$}{*}btn\+Ctrl)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_button_controller}{Button\+Controller}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a125b8ce422e469639918f907ea0c97cf}{get\+Button\+Controller}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a4d10d868e1fdb300ef91da833ca4b94e}{set\+Frame\+Buffer\+Allocator}} (\mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator}{Frame\+Buffer\+Allocator}} \texorpdfstring{$\ast$}{*}allocator)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator}{Frame\+Buffer\+Allocator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a0851c0f936b0af88e595c0153020164c}{get\+Frame\+Buffer\+Allocator}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader}{Flash\+Data\+Reader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a11e7ee210e747ff88829f360bebf7486}{get\+Flash\+Data\+Reader}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a07e719e4e72a0665f6fe1db0aaa41209}{set\+Finger\+Size}} (uint8\+\_\+t size)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aeb8945359e850ce8180933ebcbf1e217}{get\+Finger\+Size}} () const
+\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_af2a694c8c996d5b0cb5ae32086f09874}{get\+Animation\+Storage}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a69a229a10515b7b85da0997147b0b74c}{set\+Frame\+Refresh\+Strategy}} (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab7627311105a9e634c223e94b36542f3}{Frame\+Refresh\+Strategy}} s)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab7627311105a9e634c223e94b36542f3}{Frame\+Refresh\+Strategy}} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a467b6278b768438492a5d01e067fdd6f}{get\+Frame\+Refresh\+Strategy}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a15a050c5ddfd7fc3fb0c602d5bf9cc5a}{register\+Task\+Delay\+Function}} (void(\texorpdfstring{$\ast$}{*}delayF)(uint16\+\_\+t))
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa35064e75347ce420a9f83c5201eadc3}{task\+Delay}} (uint16\+\_\+t ms)
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a7e49129c8fa477866674d899a55078a3}{get\+TFTCurrent\+Line}} ()
+\item 
+virtual \mbox{\hyperlink{namespacetouchgfx_a0d0b32603581a0cd9c5d447c78bb35e9}{DMAType}} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a3c3ec96153a86a4010e7778d4f649171}{get\+DMAType}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ac47c6799800a57dfe21474cadf1f2652}{draw\+Drawable\+In\+Dynamic\+Bitmap}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable, \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} bitmap\+Id)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a67f3aca47c24173edde0b76fcf9ab77a}{draw\+Drawable\+In\+Dynamic\+Bitmap}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable, \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} bitmap\+Id, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&rect)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae329b58a0d1e461578ea8abf84d5f459}{set\+Auxiliary\+LCD}} (\mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \texorpdfstring{$\ast$}{*}aux\+LCD)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_af85131f5e7ce00debde6970579c96713}{get\+Auxiliary\+LCD}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a2bf6709fd1294fa229c720c2d13e2bb1}{set\+Rendering\+Method}} (\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2}{Rendering\+Method}} method)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a89e0908dc45adece36bd90c45f694d01}{set\+Window\+Title}} (const char \texorpdfstring{$\ast$}{*}title)
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a03cf7d85b5f65ae22b4fa5a551667c6a}{get\+Window\+Title}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ac8ee11c9bbf5bb81d7951bcf6e214628}{set\+Single\+Stepping}} (bool single\+Stepping=true)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aa887eec2916ebe3e649e2efe0a06a2f6}{is\+Single\+Stepping}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aeca2aaa7439e20abc34a2661d1bc3ee1}{single\+Step}} (uint16\+\_\+t steps=1)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aaabe329a9ad1e0b881309bc591749755}{stop\+Application}} ()
+\item 
+static char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a6b6732eef93e6ccc3946cae4f20ca4d6}{get\+Argv}} (int \texorpdfstring{$\ast$}{*}argc)
+\item 
+static uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a7db14481373109ee4861cba7c3ba4c76}{scale\+To24bpp}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} format)
+\item 
+static uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_aad8237434597f3706b3415f271f14208}{do\+Rotate}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}src)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{touchgfx\+::\+HAL}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{HAL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9621f6b299c2c32eab7ff043e07a34ef}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \& \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aa8cd5177dc4773f2f450c31af443f15f}{lcd}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a62bfb00e930e1956cc48dea1fd7283bc}{get\+TFTFrame\+Buffer}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a67fa731f01911e0ec4b75e22f7a2d126}{set\+TFTFrame\+Buffer}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}addr)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a0c07752d97c229e85281fd3363ebb261}{render\+LCD\+\_\+\+Frame\+Buffer\+To\+Memory}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&\+\_\+rect\+To\+Update, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+Buffer)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a6ad80a4df86a4cfdffbf829c4d2ae023}{disable\+Interrupts}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ace29847c70fa951d32ae742f0877c305}{enable\+Interrupts}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_a44b26c64ee09a82974cf777bd854be76}{configure\+LCDInterrupt}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_af6bb8612e00dc3a2d5f5755d39b37546}{enable\+LCDController\+Interrupt}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ad1bdb3d463381aacb2c23d577afecef4}{configure\+Interrupts}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_s_d_l2_ac299d739d0e6294adfb76dabe3c7b731}{perform\+Display\+Orientation\+Change}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{touchgfx\+::\+HAL}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_acc0987b8a315d5946c1f1732055c0fa0}{tick}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_abdb47f5b8f8d0c5aa107b3554276e11f}{begin\+Frame}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a981e052306da8de5fc25758ac4940367}{end\+Frame}} ()
+\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ac66f83af8914aea4edf5f7bb0c6572d4}{get\+Client\+Frame\+Buffer}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_adc204630040897d5598788a29fbc80cd}{touch}} (int32\+\_\+t x, int32\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_af8b2ab7833b929b99e2cecf2713e5ab3}{no\+Touch}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a30a7880ae41af552f100d5a81bcfeb88}{Invalidate\+Cache}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_adff7c2279b6f93ee33e7bc538d30fe84}{Flush\+Cache}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{touchgfx\+::\+HAL}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2}{Rendering\+Method}} \{ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2aebfe7051d96000ada443e9dff50912bf}{SOFTWARE}}
+, \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ae02837e8dab2485aa21fc085f20ccbe2ad9421b73fe9bcee85e34ffd2d3e36eae}{HARDWARE}}
+ \}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab7627311105a9e634c223e94b36542f3}{Frame\+Refresh\+Strategy}} \{ \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab7627311105a9e634c223e94b36542f3a053847dd8c23e810afe7f70e3df5c010}{REFRESH\+\_\+\+STRATEGY\+\_\+\+DEFAULT}}
+, \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab7627311105a9e634c223e94b36542f3a5e9fb4006b684a1ba3fa11bc22346315}{REFRESH\+\_\+\+STRATEGY\+\_\+\+OPTIM\+\_\+\+SINGLE\+\_\+\+BUFFER\+\_\+\+TFT\+\_\+\+CTRL}}
+, \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab7627311105a9e634c223e94b36542f3a5b24214c0f08355dd7244bd85611c792}{REFRESH\+\_\+\+STRATEGY\+\_\+\+PARTIAL\+\_\+\+FRAMEBUFFER}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{touchgfx\+::\+HAL}}}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t {\bfseries DISPLAY\+\_\+\+WIDTH}
+\begin{DoxyCompactList}\small\item\em The width of the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} display in pixels. \end{DoxyCompactList}\item 
+static uint16\+\_\+t {\bfseries DISPLAY\+\_\+\+HEIGHT}
+\begin{DoxyCompactList}\small\item\em The height of the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} display in pixels. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespacetouchgfx_ae8c781d7b6f62fbbf961e9ff7b98c4bc}{Display\+Rotation}} {\bfseries DISPLAY\+\_\+\+ROTATION}
+\begin{DoxyCompactList}\small\item\em The rotation from display to framebuffer. \end{DoxyCompactList}\item 
+static uint16\+\_\+t {\bfseries FRAME\+\_\+\+BUFFER\+\_\+\+WIDTH}
+\begin{DoxyCompactList}\small\item\em The width of the framebuffer in pixels. \end{DoxyCompactList}\item 
+static uint16\+\_\+t {\bfseries FRAME\+\_\+\+BUFFER\+\_\+\+HEIGHT}
+\begin{DoxyCompactList}\small\item\em The height of the framebuffer in pixels. \end{DoxyCompactList}\item 
+static bool {\bfseries USE\+\_\+\+DOUBLE\+\_\+\+BUFFERING}
+\begin{DoxyCompactList}\small\item\em Is double buffering enabled? \end{DoxyCompactList}\item 
+static bool {\bfseries USE\+\_\+\+ANIMATION\+\_\+\+STORAGE}
+\begin{DoxyCompactList}\small\item\em Is animation storage enabled? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{touchgfx\+::\+HAL}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\+\_\+\+Interface}} \& {\bfseries dma}
+\begin{DoxyCompactList}\small\item\em A reference to the DMA interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \& {\bfseries lcd\+Ref}
+\begin{DoxyCompactList}\small\item\em A reference to the \doxylink{classtouchgfx_1_1_l_c_d}{LCD}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{Touch\+Controller}} \& {\bfseries touch\+Controller}
+\begin{DoxyCompactList}\small\item\em A reference to the touch controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_m_c_u_instrumentation}{MCUInstrumentation}} \texorpdfstring{$\ast$}{*} {\bfseries mcu\+Instrumentation}
+\begin{DoxyCompactList}\small\item\em A reference to an optional MCU instrumentation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_button_controller}{Button\+Controller}} \texorpdfstring{$\ast$}{*} {\bfseries button\+Controller}
+\begin{DoxyCompactList}\small\item\em A reference to an optional \doxylink{classtouchgfx_1_1_button_controller}{Button\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator}{Frame\+Buffer\+Allocator}} \texorpdfstring{$\ast$}{*} {\bfseries frame\+Buffer\+Allocator}
+\begin{DoxyCompactList}\small\item\em A reference to an optional \doxylink{classtouchgfx_1_1_frame_buffer_allocator}{Frame\+Buffer\+Allocator}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_gestures}{Gestures}} {\bfseries gestures}
+\begin{DoxyCompactList}\small\item\em Class for low-\/level interpretation of touch events. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498}{Display\+Orientation}} {\bfseries native\+Display\+Orientation}
+\begin{DoxyCompactList}\small\item\em Contains the native display orientation. If desired orientation is different, apply rotation. \end{DoxyCompactList}\item 
+void(\texorpdfstring{$\ast$}{*} {\bfseries task\+Delay\+Func} )(uint16\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Pointer to a function that can delay GUI task for a number of milliseconds. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries frame\+Buffer0}
+\begin{DoxyCompactList}\small\item\em Pointer to the first framebuffer. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries frame\+Buffer1}
+\begin{DoxyCompactList}\small\item\em Pointer to the second framebuffer. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries frame\+Buffer2}
+\begin{DoxyCompactList}\small\item\em Pointer to the optional third framebuffer used for animation storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab7627311105a9e634c223e94b36542f3}{Frame\+Refresh\+Strategy}} {\bfseries refresh\+Strategy}
+\begin{DoxyCompactList}\small\item\em The selected display refresh strategy. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bfseries finger\+Size}
+\begin{DoxyCompactList}\small\item\em The radius of the finger in pixels. \end{DoxyCompactList}\item 
+bool {\bfseries lock\+DMATo\+Porch}
+\begin{DoxyCompactList}\small\item\em Whether or not to lock DMA transfers with TFT porch signal. \end{DoxyCompactList}\item 
+bool {\bfseries frame\+Buffer\+Updated\+This\+Frame}
+\begin{DoxyCompactList}\small\item\em True if something was drawn in the current frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \texorpdfstring{$\ast$}{*} {\bfseries auxiliary\+LCD}
+\begin{DoxyCompactList}\small\item\em Auxiliary \doxylink{classtouchgfx_1_1_l_c_d}{LCD} class used to render Drawables into dynamic bitmaps. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} {\bfseries partial\+Frame\+Buffer\+Rect}
+\begin{DoxyCompactList}\small\item\em The region of the screen covered by the partial framebuffer. \end{DoxyCompactList}\item 
+bool {\bfseries use\+Auxiliary\+LCD}
+\begin{DoxyCompactList}\small\item\em True if using another \doxylink{classtouchgfx_1_1_l_c_d}{LCD} than the hardware framebuffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l}{touchgfx\+::\+HAL}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries is\+Drawing}
+\begin{DoxyCompactList}\small\item\em True if currently in the process of rendering a screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classtouchgfx_1_1_h_a_l}{HAL} implementation for the Touch\+GFX simulator. This particular simulator \doxylink{classtouchgfx_1_1_h_a_l}{HAL} implementation uses SDL2 to show the content of the framebuffer in a window.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l}{HAL} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a4ead0460499045a7916cc2fd0092a977}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a4ead0460499045a7916cc2fd0092a977} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!HALSDL2@{HALSDL2}}
+\index{HALSDL2@{HALSDL2}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{HALSDL2()}{HALSDL2()}}
+{\footnotesize\ttfamily touchgfx\+::\+HALSDL2\+::\+HALSDL2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{DMA\+\_\+\+Interface}} \&}]{dma,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_l_c_d}{LCD}} \&}]{lcd,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_touch_controller}{Touch\+Controller}} \&}]{touch\+Ctrl,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes a new instance of the \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2}{HALSDL2} class.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dma} & Reference to DMA interface. \\
+\hline
+\mbox{\texttt{ in}}  & {\em lcd} & Reference to the \doxylink{classtouchgfx_1_1_l_c_d}{LCD}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em touch\+Ctrl} & Reference to Touch Controller driver. \\
+\hline
+ & {\em width} & Width of the display. \\
+\hline
+ & {\em height} & Height of the display. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ad1bdb3d463381aacb2c23d577afecef4}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ad1bdb3d463381aacb2c23d577afecef4} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!configureInterrupts@{configureInterrupts}}
+\index{configureInterrupts@{configureInterrupts}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{configureInterrupts()}{configureInterrupts()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+HALSDL2\+::configure\+Interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Configures the interrupts relevant for Touch\+GFX. This primarily entails setting the interrupt priorities for the DMA and \doxylink{classtouchgfx_1_1_l_c_d}{LCD} interrupts. 
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_adc6bef3ab081e3d45bd5f87ad265a256}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a44b26c64ee09a82974cf777bd854be76}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a44b26c64ee09a82974cf777bd854be76} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!configureLCDInterrupt@{configureLCDInterrupt}}
+\index{configureLCDInterrupt@{configureLCDInterrupt}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{configureLCDInterrupt()}{configureLCDInterrupt()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+HALSDL2\+::configure\+LCDInterrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Configures \doxylink{classtouchgfx_1_1_l_c_d}{LCD} interrupt. \Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a3bf2e25f55d0910c9a5d97c1b437cb1d}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a3bf2e25f55d0910c9a5d97c1b437cb1d} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!copyScreenshotToClipboard@{copyScreenshotToClipboard}}
+\index{copyScreenshotToClipboard@{copyScreenshotToClipboard}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{copyScreenshotToClipboard()}{copyScreenshotToClipboard()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::copy\+Screenshot\+To\+Clipboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Copies the screenshot to clipboard. \Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a6ad80a4df86a4cfdffbf829c4d2ae023}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a6ad80a4df86a4cfdffbf829c4d2ae023} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!disableInterrupts@{disableInterrupts}}
+\index{disableInterrupts@{disableInterrupts}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{disableInterrupts()}{disableInterrupts()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+HALSDL2\+::disable\+Interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Disables the DMA and \doxylink{classtouchgfx_1_1_l_c_d}{LCD} interrupts. 
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_af73aae702b80eecc1b9e2ccbecc71185}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_aad8237434597f3706b3415f271f14208}\label{classtouchgfx_1_1_h_a_l_s_d_l2_aad8237434597f3706b3415f271f14208} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!doRotate@{doRotate}}
+\index{doRotate@{doRotate}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{doRotate()}{doRotate()}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+HALSDL2\+::do\+Rotate (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Rotates a framebuffer if the display is rotated.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & The framebuffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Null if it fails, else a pointer to an uint8\+\_\+t. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a05a747b2c155bd26bd521263a4d42d0f}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a05a747b2c155bd26bd521263a4d42d0f} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!doSampleTouch@{doSampleTouch}}
+\index{doSampleTouch@{doSampleTouch}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{doSampleTouch()}{doSampleTouch()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+HALSDL2\+::do\+Sample\+Touch (\begin{DoxyParamCaption}\item[{int32\+\_\+t \&}]{x,  }\item[{int32\+\_\+t \&}]{y }\end{DoxyParamCaption}) const}
+
+Samples the position of the mouse cursor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em x} & The x coordinate. \\
+\hline
+\mbox{\texttt{ out}}  & {\em y} & The y coordinate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if touch detected, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ace29847c70fa951d32ae742f0877c305}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ace29847c70fa951d32ae742f0877c305} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!enableInterrupts@{enableInterrupts}}
+\index{enableInterrupts@{enableInterrupts}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{enableInterrupts()}{enableInterrupts()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+HALSDL2\+::enable\+Interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Enables the DMA and \doxylink{classtouchgfx_1_1_l_c_d}{LCD} interrupts. 
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a496edbbd3cf8bf1a86f6c7e54d0f3b4d}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_af6bb8612e00dc3a2d5f5755d39b37546}\label{classtouchgfx_1_1_h_a_l_s_d_l2_af6bb8612e00dc3a2d5f5755d39b37546} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!enableLCDControllerInterrupt@{enableLCDControllerInterrupt}}
+\index{enableLCDControllerInterrupt@{enableLCDControllerInterrupt}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{enableLCDControllerInterrupt()}{enableLCDControllerInterrupt()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+HALSDL2\+::enable\+LCDController\+Interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Enables the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} interrupt. 
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ab012f78011384a284f127de26ae49eb9}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ab2d6864fee805f61bbbec4178fedc2dd}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ab2d6864fee805f61bbbec4178fedc2dd} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!flushFrameBuffer@{flushFrameBuffer}}
+\index{flushFrameBuffer@{flushFrameBuffer}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{flushFrameBuffer()}{flushFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::flush\+Frame\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is called whenever the framework has performed a complete draw.
+
+On some platforms, a local framebuffer needs to be pushed to the display through a SPI channel or similar. Implement that functionality here. This function is called whenever the framework has performed a complete draw. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a535a62ef7137b23755d2ab1001dc883a}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ac85c1d50d0d425d333adb426d98a276d}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ac85c1d50d0d425d333adb426d98a276d} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!flushFrameBuffer@{flushFrameBuffer}}
+\index{flushFrameBuffer@{flushFrameBuffer}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{flushFrameBuffer()}{flushFrameBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::flush\+Frame\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is called whenever the framework has performed a partial draw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & The area of the screen that has been drawn, expressed in absolute coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a9f42246ee71c3b1842a1eb47af62decb}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a6b6732eef93e6ccc3946cae4f20ca4d6}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a6b6732eef93e6ccc3946cae4f20ca4d6} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!getArgv@{getArgv}}
+\index{getArgv@{getArgv}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{getArgv()}{getArgv()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} touchgfx\+::\+HALSDL2\+::get\+Argv (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the argc and argv for a Windows program.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em argc} & Pointer to where to store number of arguments.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The argv list of arguments. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ab1bb46704246b8180a6447a85e35c329}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ab1bb46704246b8180a6447a85e35c329} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!getConsoleVisible@{getConsoleVisible}}
+\index{getConsoleVisible@{getConsoleVisible}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{getConsoleVisible()}{getConsoleVisible()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+HALSDL2\+::get\+Console\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Is console window visible?
+
+\begin{DoxyReturn}{Returns}
+True if it is visible, false if it is hidden.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_a7b7dd0e5a37adaf548af294250b8b794}{set\+Console\+Visible}, \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_acd1314d40d035d84cebb40391e392387}{get\+Window\+Visible} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a81de463d43169d5c0591fed3b7c23797}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a81de463d43169d5c0591fed3b7c23797} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!getPrintFile@{getPrintFile}}
+\index{getPrintFile@{getPrintFile}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{getPrintFile()}{getPrintFile()}}
+{\footnotesize\ttfamily FILE \texorpdfstring{$\ast$}{*} touchgfx\+::\+HALSDL2\+::get\+Print\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get file handle to output file (if set).
+
+\begin{DoxyReturn}{Returns}
+A file handle to the file where output is copied to.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_a5badcb5f1aab9ea9a73c5514861aa47a}{print\+To\+File} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a62bfb00e930e1956cc48dea1fd7283bc}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a62bfb00e930e1956cc48dea1fd7283bc} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!getTFTFrameBuffer@{getTFTFrameBuffer}}
+\index{getTFTFrameBuffer@{getTFTFrameBuffer}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{getTFTFrameBuffer()}{getTFTFrameBuffer()}}
+{\footnotesize\ttfamily uint16\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+HALSDL2\+::get\+TFTFrame\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets TFT framebuffer.
+
+\begin{DoxyReturn}{Returns}
+null if it fails, else the TFT framebuffer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_ac4248ddba37f52e5f7a8f1ac7656048c}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a03cf7d85b5f65ae22b4fa5a551667c6a}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a03cf7d85b5f65ae22b4fa5a551667c6a} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!getWindowTitle@{getWindowTitle}}
+\index{getWindowTitle@{getWindowTitle}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{getWindowTitle()}{getWindowTitle()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} touchgfx\+::\+HALSDL2\+::get\+Window\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets window title.
+
+\begin{DoxyReturn}{Returns}
+null "{}\+Touch\+GFX simulator"{} unless set to something else using \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_a89e0908dc45adece36bd90c45f694d01}{set\+Window\+Title()}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_a89e0908dc45adece36bd90c45f694d01}{set\+Window\+Title} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_acd1314d40d035d84cebb40391e392387}\label{classtouchgfx_1_1_h_a_l_s_d_l2_acd1314d40d035d84cebb40391e392387} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!getWindowVisible@{getWindowVisible}}
+\index{getWindowVisible@{getWindowVisible}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{getWindowVisible()}{getWindowVisible()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+HALSDL2\+::get\+Window\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Is the window visible?
+
+\begin{DoxyReturn}{Returns}
+True if it is visible, false if it is hidden.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_ae0a051b88d48b8201ea702f90f73a492}{set\+Window\+Visible}, \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_ab1bb46704246b8180a6447a85e35c329}{get\+Console\+Visible} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_aa887eec2916ebe3e649e2efe0a06a2f6}\label{classtouchgfx_1_1_h_a_l_s_d_l2_aa887eec2916ebe3e649e2efe0a06a2f6} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!isSingleStepping@{isSingleStepping}}
+\index{isSingleStepping@{isSingleStepping}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{isSingleStepping()}{isSingleStepping()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+HALSDL2\+::is\+Single\+Stepping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Is single stepping.
+
+\begin{DoxyReturn}{Returns}
+True if single stepping, false if not.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_ac8ee11c9bbf5bb81d7951bcf6e214628}{set\+Single\+Stepping} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a95c52b3d41cb96471a20cc8a4c226e7c}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a95c52b3d41cb96471a20cc8a4c226e7c} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!loadSkin@{loadSkin}}
+\index{loadSkin@{loadSkin}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{loadSkin()}{loadSkin()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::load\+Skin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_aad35f2cf10ce5cd8af11e3f39e28a498}{Display\+Orientation}}}]{orientation,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Loads a skin for a given display orientation that will be rendered in the simulator window with the the Touch\+GFX framebuffer placed inside the bitmap at the given coordinates. Different bitmaps can be loaded in landscape and portrait mode. If the provided bitmap cannot be loaded, the Touch\+GFX framebuffer will be displayed as normal. If the png files contain areas with alpha \texorpdfstring{$<$}{<} 255, this will be used to create a shaped window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orientation} & The orientation. \\
+\hline
+{\em x} & The x coordinate. \\
+\hline
+{\em y} & The y coordinate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The skins must be named "{}portrait.\+png"{} and "{}landscape.\+png"{} and placed inside the "{}simulator/"{} folder. The build process of the simulator will automatically copy the skins to the folder where the executable simulator is generated. 
+
+When as skin is set, the entire framebuffer is rendered through SDL whenever there is a change. Without a skin, only the areas with changes is rendered through SDL. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ae211600471b2407f1e7b5acdd6560d26}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ae211600471b2407f1e7b5acdd6560d26} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!localFileName@{localFileName}}
+\index{localFileName@{localFileName}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{localFileName()}{localFileName()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} touchgfx\+::\+HALSDL2\+::local\+File\+Name (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t}]{buffer\+\_\+size,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+Generate name of file placed next to the simulator.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & If the buffer to fill with the local filename. Must be at least 300+length of filename parameter. \\
+\hline
+ & {\em buffer\+\_\+size} & The size of the buffer in bytes. \\
+\hline
+\mbox{\texttt{ in}}  & {\em filename} & The filename relative to the simulator executable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The filled buffer. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ac299d739d0e6294adfb76dabe3c7b731}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ac299d739d0e6294adfb76dabe3c7b731} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!performDisplayOrientationChange@{performDisplayOrientationChange}}
+\index{performDisplayOrientationChange@{performDisplayOrientationChange}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{performDisplayOrientationChange()}{performDisplayOrientationChange()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::perform\+Display\+Orientation\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Perform the actual display orientation change. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a66ca45b5192e7adeddd82d5f67f8f722}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a5badcb5f1aab9ea9a73c5514861aa47a}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a5badcb5f1aab9ea9a73c5514861aa47a} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!printToFile@{printToFile}}
+\index{printToFile@{printToFile}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{printToFile()}{printToFile()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+HALSDL2\+::print\+To\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+Also write touchgfx\+\_\+printf() to a file. The file will be generated (no appended to).
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to write to (or null to stop writing to a file).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation succeeds, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a0c07752d97c229e85281fd3363ebb261}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a0c07752d97c229e85281fd3363ebb261} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!renderLCD\_FrameBufferToMemory@{renderLCD\_FrameBufferToMemory}}
+\index{renderLCD\_FrameBufferToMemory@{renderLCD\_FrameBufferToMemory}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{renderLCD\_FrameBufferToMemory()}{renderLCD\_FrameBufferToMemory()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::render\+LCD\+\_\+\+Frame\+Buffer\+To\+Memory (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{\+\_\+rect\+To\+Update,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update framebuffer using an SDL Surface.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+rect\+To\+Update} & Area to update. \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+Buffer} & Target framebuffer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ac5a0bedd2cdca7c6892fc6c9f6d0c1aa}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ac5a0bedd2cdca7c6892fc6c9f6d0c1aa} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!sampleKey@{sampleKey}}
+\index{sampleKey@{sampleKey}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{sampleKey()}{sampleKey()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+HALSDL2\+::sample\+Key (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sample key event from keyboard.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em key} & Output parameter that will be set to the key value if a key press was detected.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a key press was detected and the "{}key"{} parameter is set to a value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a66a15dafa8462cff520cb0380a6a740e}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a69f8b62dfcb402b0c4529346e103318b}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a69f8b62dfcb402b0c4529346e103318b} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!saveNextScreenshots@{saveNextScreenshots}}
+\index{saveNextScreenshots@{saveNextScreenshots}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{saveNextScreenshots()}{saveNextScreenshots()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::save\+Next\+Screenshots (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Copy the next N screenshots to disk. On each screen update, the new screen is saved to disk.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number of screenshots to save. These are added to any ongoing amount of screenshots in queue. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a7000c3b817223e932561e13c989ca038}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a7000c3b817223e932561e13c989ca038} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!saveScreenshot@{saveScreenshot}}
+\index{saveScreenshot@{saveScreenshot}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{saveScreenshot()}{saveScreenshot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::save\+Screenshot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Saves a screenshot to the default folder and default filename. \Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ad07e3d14da7500f8f02a9cf02cfbf17d}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ad07e3d14da7500f8f02a9cf02cfbf17d} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!saveScreenshot@{saveScreenshot}}
+\index{saveScreenshot@{saveScreenshot}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{saveScreenshot()}{saveScreenshot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::save\+Screenshot (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{folder,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Saves a screenshot.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em folder} & Folder name to place the screenshot in. \\
+\hline
+\mbox{\texttt{ in}}  & {\em filename} & Filename to save the screenshot to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a7db14481373109ee4861cba7c3ba4c76}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a7db14481373109ee4861cba7c3ba4c76} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!scaleTo24bpp@{scaleTo24bpp}}
+\index{scaleTo24bpp@{scaleTo24bpp}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{scaleTo24bpp()}{scaleTo24bpp()}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+HALSDL2\+::scale\+To24bpp (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Scale framebuffer to 24bpp. The format of the framebuffer (src) is given in parameter format. The result is placed in the pre-\/allocated memory pointed to by parameter dst. If the framebuffer is in format \doxylink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fcac06fa4950c5f30e1b8ac33c706d788cd}{Bitmap\+::\+RGB888}, parameter dst is not used and the parameter src is simply returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & The framebuffer. \\
+\hline
+ & {\em format} & Describes the format of the framebuffer (\doxylink{classtouchgfx_1_1_h_a_l_aa8cd5177dc4773f2f450c31af443f15f}{lcd()}.framebuffer\+Format()).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Null if it fails, else a pointer to an uint8\+\_\+t. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a7e0d0ecf1cb60259546aad10b198cfce}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a7e0d0ecf1cb60259546aad10b198cfce} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!sdl\_init@{sdl\_init}}
+\index{sdl\_init@{sdl\_init}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{sdl\_init()}{sdl\_init()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+HALSDL2\+::sdl\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{argcount,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initializes SDL.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em argcount} & Number of arguments. \\
+\hline
+\mbox{\texttt{ in}}  & {\em args} & Arguments.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if init went well, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a7b7dd0e5a37adaf548af294250b8b794}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a7b7dd0e5a37adaf548af294250b8b794} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setConsoleVisible@{setConsoleVisible}}
+\index{setConsoleVisible@{setConsoleVisible}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setConsoleVisible()}{setConsoleVisible()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+Console\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible,  }\item[{bool}]{redraw\+Window = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Change visibility of console window (hidden vs. shown).
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & Should the window be visible? \\
+\hline
+{\em redraw\+Window} & (Optional) Should the window be redrawn? Default is true.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_ae0a051b88d48b8201ea702f90f73a492}{set\+Window\+Visible}, \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_ab1bb46704246b8180a6447a85e35c329}{get\+Console\+Visible} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a688fc7694b3e281af7cd8c2ad0fc0940}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a688fc7694b3e281af7cd8c2ad0fc0940} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setFlashInvalidatedAreas@{setFlashInvalidatedAreas}}
+\index{setFlashInvalidatedAreas@{setFlashInvalidatedAreas}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setFlashInvalidatedAreas()}{setFlashInvalidatedAreas()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+Flash\+Invalidated\+Areas (\begin{DoxyParamCaption}\item[{bool}]{flash = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Flash invalidated areas on/off. The area that needs to be redrawn is flashed in grey to help identify performance bottle necks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flash} & (Optional) True to flash the screen when updating. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a602594142533986ab478cd242a2daed1}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a602594142533986ab478cd242a2daed1} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setFrameBufferSize@{setFrameBufferSize}}
+\index{setFrameBufferSize@{setFrameBufferSize}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setFrameBufferSize()}{setFrameBufferSize()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+Frame\+Buffer\+Size (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets framebuffer size. By default the display size and the framebuffer size are the same, but in some hardware configurations, the hardware may have a width of e.\+g. 832 pixels even though the display is only 800 pixels wide. First set the display width and height using \doxylink{namespacetouchgfx_a435569c93df9a2768c281476ad289c50}{touchgfx\+\_\+generic\+\_\+init()} and the update the framebuffer size using \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_a602594142533986ab478cd242a2daed1}{set\+Frame\+Buffer\+Size()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the framebuffer. \\
+\hline
+{\em height} & The height of the framebuffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespacetouchgfx_a435569c93df9a2768c281476ad289c50}{touchgfx\+\_\+generic\+\_\+init} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_aed9920b6b5302dedbd4ab09b344aa66b}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ac8ee11c9bbf5bb81d7951bcf6e214628}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ac8ee11c9bbf5bb81d7951bcf6e214628} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setSingleStepping@{setSingleStepping}}
+\index{setSingleStepping@{setSingleStepping}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setSingleStepping()}{setSingleStepping()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+Single\+Stepping (\begin{DoxyParamCaption}\item[{bool}]{single\+Stepping = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Single stepping enable/disable. When single stepping is enabled, F10 will execute one tick and F9 will disable single stepping.
+
+
+\begin{DoxyParams}{Parameters}
+{\em single\+Stepping} & (Optional) True to pause the simulation and start single stepping.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_aa887eec2916ebe3e649e2efe0a06a2f6}{is\+Single\+Stepping} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a67fa731f01911e0ec4b75e22f7a2d126}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a67fa731f01911e0ec4b75e22f7a2d126} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setTFTFrameBuffer@{setTFTFrameBuffer}}
+\index{setTFTFrameBuffer@{setTFTFrameBuffer}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setTFTFrameBuffer()}{setTFTFrameBuffer()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+TFTFrame\+Buffer (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sets TFT framebuffer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em addr} & The address of the TFT framebuffer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_acb78a3f0bc24d7b570825fd47c668581}{touchgfx\+::\+HAL}}.
+
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a9bd2e1a32bd4a006fbc423d832bb66f3}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a9bd2e1a32bd4a006fbc423d832bb66f3} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setVsyncInterval@{setVsyncInterval}}
+\index{setVsyncInterval@{setVsyncInterval}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setVsyncInterval()}{setVsyncInterval()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+Vsync\+Interval (\begin{DoxyParamCaption}\item[{float}]{ms }\end{DoxyParamCaption})}
+
+Sets vsync interval for simulating same tick speed as the real hardware. Due to limitations in the granularity of SDL, the generated ticks in the simulator might not occur at the exact time, but accumulated over several ticks, the precision is very good.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & The milliseconds between ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+That you can also use \doxylink{classtouchgfx_1_1_h_a_l_a8ef0a31dee2098b4849e8ea2bb6f7234}{HAL\+::set\+Frame\+Rate\+Compensation()} in the simulator. The effect of this can easily be demonstrated by dragging the console output window of the simulator (when running from Visual Studio) as this will pause the SDL and generate a lot of ticks when the console window is released. Beware that since the missed vsyncs are accumulated in an 8 bit counter, only up to 255 ticks may be missed, so at Vsync\+Interval = 16.\+6667, dragging the windows for more than 255 \texorpdfstring{$\ast$}{*} 16.\+6667ms = 4250ms = 4.\+25s will not generate all the ticks that were actually missed. This situation is, however, not very realistic, as normally just a couple of vsyncs are skipped. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a89e0908dc45adece36bd90c45f694d01}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a89e0908dc45adece36bd90c45f694d01} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setWindowTitle@{setWindowTitle}}
+\index{setWindowTitle@{setWindowTitle}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setWindowTitle()}{setWindowTitle()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+Window\+Title (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets window title.
+
+Sets window title of the Touch\+GFX simulator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title, if null the original "{}\+Touch\+GFX simulator"{} will be used.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_a03cf7d85b5f65ae22b4fa5a551667c6a}{get\+Window\+Title} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_ae0a051b88d48b8201ea702f90f73a492}\label{classtouchgfx_1_1_h_a_l_s_d_l2_ae0a051b88d48b8201ea702f90f73a492} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!setWindowVisible@{setWindowVisible}}
+\index{setWindowVisible@{setWindowVisible}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{setWindowVisible()}{setWindowVisible()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::set\+Window\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible,  }\item[{bool}]{redraw\+Window = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Change visibility of window (hidden vs. shown) as well as (due to backward compatibility) the visibility of the console window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & Should the window be visible? \\
+\hline
+{\em redraw\+Window} & (Optional) Should the window be redrawn? Default is true.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_acd1314d40d035d84cebb40391e392387}{get\+Window\+Visible}, \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_a7b7dd0e5a37adaf548af294250b8b794}{set\+Console\+Visible} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_aeca2aaa7439e20abc34a2661d1bc3ee1}\label{classtouchgfx_1_1_h_a_l_s_d_l2_aeca2aaa7439e20abc34a2661d1bc3ee1} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!singleStep@{singleStep}}
+\index{singleStep@{singleStep}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{singleStep()}{singleStep()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::single\+Step (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{steps = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Single step a number of steps. Only works if single stepping is already enabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & (Optional) The steps Default is 1 step.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_ac8ee11c9bbf5bb81d7951bcf6e214628}{set\+Single\+Stepping}, \doxylink{classtouchgfx_1_1_h_a_l_s_d_l2_aa887eec2916ebe3e649e2efe0a06a2f6}{is\+Single\+Stepping} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_aaabe329a9ad1e0b881309bc591749755}\label{classtouchgfx_1_1_h_a_l_s_d_l2_aaabe329a9ad1e0b881309bc591749755} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!stopApplication@{stopApplication}}
+\index{stopApplication@{stopApplication}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{stopApplication()}{stopApplication()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::stop\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Terminate the application as quickly as possible \Hypertarget{classtouchgfx_1_1_h_a_l_s_d_l2_a25096d59f5525d7db19d2ad2fe3f3dd1}\label{classtouchgfx_1_1_h_a_l_s_d_l2_a25096d59f5525d7db19d2ad2fe3f3dd1} 
+\index{touchgfx::HALSDL2@{touchgfx::HALSDL2}!taskEntry@{taskEntry}}
+\index{taskEntry@{taskEntry}!touchgfx::HALSDL2@{touchgfx::HALSDL2}}
+\doxysubsubsection{\texorpdfstring{taskEntry()}{taskEntry()}}
+{\footnotesize\ttfamily void touchgfx\+::\+HALSDL2\+::task\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Main event loop. Will wait for VSYNC signal, and then process next frame. Call this function from your GUI task.
+
+\begin{DoxyNote}{Note}
+This function never returns! 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_h_a_l_a0b678680e514d54a2842bdffd358c72d}{touchgfx\+::\+HAL}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/\mbox{\hyperlink{_h_a_l_s_d_l2_8hpp}{HALSDL2.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/platform/hal/simulator/sdl2/HALSDL2.\+cpp\item 
+Middlewares/\+ST/touchgfx/framework/source/platform/hal/simulator/sdl2/HALSDL2\+\_\+icon.\+cpp\end{DoxyCompactItemize}

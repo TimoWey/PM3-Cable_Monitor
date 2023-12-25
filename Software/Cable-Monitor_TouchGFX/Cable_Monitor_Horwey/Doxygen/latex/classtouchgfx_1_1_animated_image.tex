@@ -1,0 +1,417 @@
+\doxysection{touchgfx\+::Animated\+Image Class Reference}
+\hypertarget{classtouchgfx_1_1_animated_image}{}\label{classtouchgfx_1_1_animated_image}\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+
+
+{\ttfamily \#include $<$Animated\+Image.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Animated\+Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classtouchgfx_1_1_animated_image}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_animated_image_a87e6f48d1f80437e169f2a9519886fec}{Animated\+Image}} (const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \&start, const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \&end, const uint8\+\_\+t \&update\+Interval=1)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_animated_image_aeaabc6d3e0544a6290869ec9c3a581c6}{Animated\+Image}} (const uint8\+\_\+t \&update\+Interval=1)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_a5c6eedd3407bf2800fc4fe287bc9d1ca}{start\+Animation}} (const bool rev, const bool reset=false, const bool loop=false)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_ac603a95d60304a13f24401a936b22f51}{stop\+Animation}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_a84bb6c9b5c24d600c1b1cc9a4715b725}{pause\+Animation}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_a5de34785af92b29e2525414b7f70e5f5}{handle\+Tick\+Event}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_afeb960e650dc7a4dfb8e623f615e448f}{set\+Done\+Action}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animated_image}{Animated\+Image}} \& $>$ \&callback)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_animated_image_ab354cfd9a02bd870cadcc05cd5756eb7}{is\+Animated\+Image\+Running}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_animated_image_a24f3d215ca740a65949f2850ea6c3f53}{is\+Reverse}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_a7bec3ba8b4a1c5aee6ceefd0687a1f4d}{set\+Bitmap}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_ada214f9dc74a7279ef05b728b13959ba}{set\+Bitmap\+End}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_a1cdb6768e680393e42d9a761543ae6fb}{set\+Bitmaps}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} start, \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} end)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_animated_image_a7aec9387f2aeee932c6340facb236c79}{set\+Update\+Ticks\+Interval}} (uint8\+\_\+t update\+Interval)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_image}{touchgfx\+::\+Image}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_image_a64b87f9b8d33d3dfd4a7d49ec997bc33}{Image}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp=\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}())
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_image_acd148c888a859c4bc5c9cb500f2568ef}{set\+Alpha}} (uint8\+\_\+t new\+Alpha)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_a02ae3cc1489ec310e9966c730659de88}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_image_a72c52b2ef7a1450f7988666275d9ab08}{get\+Bitmap}} () const
+\item 
+\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \mbox{\hyperlink{classtouchgfx_1_1_image_a5e36f9471e365ea4a6c900a81d6af73d}{get\+Bitmap\+Id}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_image_a92f1407a24c75e6872e1546aa27274b2}{get\+Alpha}} () const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_image_a2264073396b608995b0fe44bcbe920a6}{get\+Solid\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_image_adef471e52f1ee49077ecbf7be1370faa}{invalidate\+Content}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_widget}{touchgfx\+::\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_widget_ad09a1834b6b28cb051ba7adb7dee997d}{get\+Last\+Child}} (int16\+\_\+t, int16\+\_\+t, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable_a7e96d82c7fcf819f57486ecc5f350c4c}{Drawable}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_a449ee29257a3cfac31bb01ad2a9a7f03}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad2f199fc52c4acce810f48ab5a1a88aa}{get\+Next\+Sibling}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aceb31b441310e00e8be53492143732e9}{get\+First\+Child}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aaece284803180a1581d10ecfaf08c981}{get\+Solid\+Rect\+Absolute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a67ffb816a2dd9252a3159dd8610b4a25}{get\+Visible\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}) const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_a50b898d044f548a4eaec275141dec0ca}{get\+Rect}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_adee868bcfb5c413bd3e37bdf6c649ea8}{get\+Absolute\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a58fdcf048cbd3ec550115caedaf54b2a}{translate\+Rect\+To\+Absolute}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{set\+Position}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4448236a68ced5ebd67cde7f56d872c3}{expand}} (int margin=0)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59d59e11909259d9452588f3a0180398}{center}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab7b0e3f307228823cf6f2d859cc07198}{centerX}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0392a74d988a06e28c6b3ea79076b4bd}{centerY}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a1870ba0e9ef62c1eb6a19a9013cf6895}{getX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a6451fb9a4bc22e6e4a0950844e5104de}{getY}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{get\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{get\+Height}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}} (int16\+\_\+t x)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3aae6f7f6cb9a43a53d26772d7eeb1fa}{setY}} (int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{set\+XY}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{set\+Width}} (int16\+\_\+t width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{set\+Height}} (int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a181c4ecac0494440425e5b5afa4ce109}{child\+Geometry\+Changed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9981eb2f8411aff05eaf19994f3ee293}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_acf2ed17311bb7ca228dabc3195d3225d}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{set\+Width\+Height}} (int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2f2d18d6edf70b6ec51d843c52c826c8}{set\+Position}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9b84be70989de6d15abb2c4bfe445707}{set\+XY}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7973faddf5b669b1ba7570b90053aeed}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a24b027fa86aebb44768b63b0d534e6b4}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9aeaa5baa9e47055a17f11968dbc1b37}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&other)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a341b62a9ebbe43ce97b47e1effd32a8b}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab27c897bb2d508cdf67ea7ffcfb40b14}{set\+Visible}} (bool vis)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a68b74845725451fda32fa94da7b7be18}{set\+Touchable}} (bool touch)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d9fac715c5114951a23492c6cc78b25}{is\+Visible}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a30a509142ffe76e5a2ed46aab5adf19b}{is\+Touchable}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_afefe9761c1f3a27944f317a47c2f0636}{get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a37d7afe3e065453bc3d23481fa446a55}{move\+Relative}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a602c55c069e516153167c3ebc7da4c0d}{move\+To}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_adab6837b035a409dde74c51f622a6e63}{draw\+To\+Dynamic\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_a3387622cf2375f473548e20660b7f4c6}\label{classtouchgfx_1_1_animated_image_a3387622cf2375f473548e20660b7f4c6} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animated_image}{Animated\+Image}} \& $>$ \texorpdfstring{$\ast$}{*} {\bfseries animation\+Done\+Action}
+\begin{DoxyCompactList}\small\item\em Pointer to the callback to be executed when animation is done. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_a895d3d31e1595e9602dc7eb140acd249}\label{classtouchgfx_1_1_animated_image_a895d3d31e1595e9602dc7eb140acd249} 
+\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} {\bfseries start\+Id}
+\begin{DoxyCompactList}\small\item\em Id of first bitmap in animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_a3d4d234fff5550eb9048b1b5f311ca1d}\label{classtouchgfx_1_1_animated_image_a3d4d234fff5550eb9048b1b5f311ca1d} 
+\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} {\bfseries end\+Id}
+\begin{DoxyCompactList}\small\item\em Id of last bitmap in animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_a9b51877cb154f54848bed19be30ee15a}\label{classtouchgfx_1_1_animated_image_a9b51877cb154f54848bed19be30ee15a} 
+uint8\+\_\+t {\bfseries update\+Ticks\+Interval}
+\begin{DoxyCompactList}\small\item\em Number of ticks between each animation update (image change). \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_a8ae1df0b00f4752be478f45e0d1a5235}\label{classtouchgfx_1_1_animated_image_a8ae1df0b00f4752be478f45e0d1a5235} 
+uint8\+\_\+t {\bfseries ticks\+Since\+Update}
+\begin{DoxyCompactList}\small\item\em Number of ticks since last animation update. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_adf3f3f8e99aa63d9564922dbb63732fe}\label{classtouchgfx_1_1_animated_image_adf3f3f8e99aa63d9564922dbb63732fe} 
+bool {\bfseries reverse}
+\begin{DoxyCompactList}\small\item\em If true, run in reverse direction (last to first). \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_a1efed84f431a2a0d87df021c04e47dc1}\label{classtouchgfx_1_1_animated_image_a1efed84f431a2a0d87df021c04e47dc1} 
+bool {\bfseries loop\+Animation}
+\begin{DoxyCompactList}\small\item\em If true, continuously loop animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_animated_image_a454c425e64266f318ed4ac2705d7ccc7}\label{classtouchgfx_1_1_animated_image_a454c425e64266f318ed4ac2705d7ccc7} 
+bool {\bfseries running}
+\begin{DoxyCompactList}\small\item\em If true, animation is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_image}{touchgfx\+::\+Image}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries bitmap}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} to display. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bfseries alpha}
+\begin{DoxyCompactList}\small\item\em The Alpha for this image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em Pointer to this drawable\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2c34a36e7eb05c8a0e1e5b0c4d664a9f}{next\+Sibling}}
+\item 
+bool {\bfseries touchable}
+\begin{DoxyCompactList}\small\item\em True if this drawable should receive touch events. \end{DoxyCompactList}\item 
+bool {\bfseries visible}
+\begin{DoxyCompactList}\small\item\em True if this drawable should be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A widget capable of basic animation using a range of bitmaps. The \doxylink{classtouchgfx_1_1_animated_image}{Animated\+Image} is capable of running the animation from start to end or, in reverse order, end to start. It is capable of doing a single animation or looping the animation until stopped or paused. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_animated_image_a87e6f48d1f80437e169f2a9519886fec}\label{classtouchgfx_1_1_animated_image_a87e6f48d1f80437e169f2a9519886fec} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!AnimatedImage@{AnimatedImage}}
+\index{AnimatedImage@{AnimatedImage}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{AnimatedImage()}{AnimatedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily touchgfx\+::\+Animated\+Image\+::\+Animated\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \&}]{start,  }\item[{const \mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} \&}]{end,  }\item[{const uint8\+\_\+t \&}]{update\+Interval = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an \doxylink{classtouchgfx_1_1_animated_image}{Animated\+Image}. The start and the end specifies the range of bitmaps to be used for animation. The update interval defines how often the animation should be updated. The animation will iterate over the bitmaps that lies between the IDs of start and end, both included.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Defines the start of the range of images in the animation. \\
+\hline
+{\em end} & Defines the end of the range of images in the animation. \\
+\hline
+{\em update\+Interval} & (Optional) Defines the number of ticks between each animation step. Higher value results in a slower animation. Default is to update the image on every tick. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_animated_image_aeaabc6d3e0544a6290869ec9c3a581c6}\label{classtouchgfx_1_1_animated_image_aeaabc6d3e0544a6290869ec9c3a581c6} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!AnimatedImage@{AnimatedImage}}
+\index{AnimatedImage@{AnimatedImage}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{AnimatedImage()}{AnimatedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily touchgfx\+::\+Animated\+Image\+::\+Animated\+Image (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \&}]{update\+Interval = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an \doxylink{classtouchgfx_1_1_animated_image}{Animated\+Image} without initializing bitmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em update\+Interval} & (Optional) Defines the number of ticks between each animation step. Higher value results in a slower animation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The bitmaps to display must be configured through set set\+Bitmaps function before this widget displays anything. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_animated_image_a5de34785af92b29e2525414b7f70e5f5}\label{classtouchgfx_1_1_animated_image_a5de34785af92b29e2525414b7f70e5f5} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called periodically by the framework if the \doxylink{classtouchgfx_1_1_drawable}{Drawable} instance has subscribed to timer ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb}{Application\+::register\+Timer\+Widget} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d0b43ec46e2644959854fdd697d2bc8}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_animated_image_ab354cfd9a02bd870cadcc05cd5756eb7}\label{classtouchgfx_1_1_animated_image_ab354cfd9a02bd870cadcc05cd5756eb7} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!isAnimatedImageRunning@{isAnimatedImageRunning}}
+\index{isAnimatedImageRunning@{isAnimatedImageRunning}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{isAnimatedImageRunning()}{isAnimatedImageRunning()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Animated\+Image\+::is\+Animated\+Image\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the running state of the \doxylink{classtouchgfx_1_1_animated_image}{Animated\+Image}.
+
+\begin{DoxyReturn}{Returns}
+true if the animation is currently running, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_animated_image_a24f3d215ca740a65949f2850ea6c3f53}\label{classtouchgfx_1_1_animated_image_a24f3d215ca740a65949f2850ea6c3f53} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!isReverse@{isReverse}}
+\index{isReverse@{isReverse}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{isReverse()}{isReverse()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Animated\+Image\+::is\+Reverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query if this object is running in reverse.
+
+\begin{DoxyReturn}{Returns}
+true if the animation is performed in reverse order. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_animated_image_a84bb6c9b5c24d600c1b1cc9a4715b725}\label{classtouchgfx_1_1_animated_image_a84bb6c9b5c24d600c1b1cc9a4715b725} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!pauseAnimation@{pauseAnimation}}
+\index{pauseAnimation@{pauseAnimation}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{pauseAnimation()}{pauseAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::pause\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Toggles the running state of an animation. Pauses the animation if the animation is running. Continues the animation if previously paused.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_animated_image_ac603a95d60304a13f24401a936b22f51}{stop\+Animation} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_animated_image_a7bec3ba8b4a1c5aee6ceefd0687a1f4d}\label{classtouchgfx_1_1_animated_image_a7bec3ba8b4a1c5aee6ceefd0687a1f4d} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!setBitmap@{setBitmap}}
+\index{setBitmap@{setBitmap}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{setBitmap()}{setBitmap()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::set\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+Sets the bitmap for this \doxylink{classtouchgfx_1_1_image}{Image} and updates the width and height of this widget to match those of the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & The bitmap instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The user code must call \doxylink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate()} in order to update the image on the display.  
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_animated_image_a1cdb6768e680393e42d9a761543ae6fb}{set\+Bitmaps}, \doxylink{classtouchgfx_1_1_animated_image_ada214f9dc74a7279ef05b728b13959ba}{set\+Bitmap\+End}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+This only sets the start image. 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_image_aff98a91334c5088ff8ed6177c1767b25}{touchgfx\+::\+Image}}.
+
+\Hypertarget{classtouchgfx_1_1_animated_image_ada214f9dc74a7279ef05b728b13959ba}\label{classtouchgfx_1_1_animated_image_ada214f9dc74a7279ef05b728b13959ba} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!setBitmapEnd@{setBitmapEnd}}
+\index{setBitmapEnd@{setBitmapEnd}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{setBitmapEnd()}{setBitmapEnd()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::set\+Bitmap\+End (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the end bitmap for this \doxylink{classtouchgfx_1_1_animated_image}{Animated\+Image} sequence.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & The bitmap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_animated_image_a1cdb6768e680393e42d9a761543ae6fb}{set\+Bitmaps}, \doxylink{classtouchgfx_1_1_animated_image_a7bec3ba8b4a1c5aee6ceefd0687a1f4d}{set\+Bitmap} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_animated_image_a1cdb6768e680393e42d9a761543ae6fb}\label{classtouchgfx_1_1_animated_image_a1cdb6768e680393e42d9a761543ae6fb} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!setBitmaps@{setBitmaps}}
+\index{setBitmaps@{setBitmaps}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{setBitmaps()}{setBitmaps()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::set\+Bitmaps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{start,  }\item[{\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}}}]{end }\end{DoxyParamCaption})}
+
+Sets the bitmaps that are used by the animation.
+
+The animation will iterate over the bitmaps that lies between the IDs of start and end, both inclusive.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Defines the start of the range of images in the animation. \\
+\hline
+{\em end} & Defines the end of the range of images in the animation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_animated_image_a7bec3ba8b4a1c5aee6ceefd0687a1f4d}{set\+Bitmap}, \doxylink{classtouchgfx_1_1_animated_image_ada214f9dc74a7279ef05b728b13959ba}{set\+Bitmap\+End} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_animated_image_afeb960e650dc7a4dfb8e623f615e448f}\label{classtouchgfx_1_1_animated_image_afeb960e650dc7a4dfb8e623f615e448f} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!setDoneAction@{setDoneAction}}
+\index{setDoneAction@{setDoneAction}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{setDoneAction()}{setDoneAction()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::set\+Done\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_animated_image}{Animated\+Image}} \& $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the animation of the \doxylink{classtouchgfx_1_1_animated_image}{Animated\+Image} is done. If the animation is set to loop at the end, the action is also triggered when the animation starts over.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback is executed when done. The callback is given the animated image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_animated_image_a7aec9387f2aeee932c6340facb236c79}\label{classtouchgfx_1_1_animated_image_a7aec9387f2aeee932c6340facb236c79} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!setUpdateTicksInterval@{setUpdateTicksInterval}}
+\index{setUpdateTicksInterval@{setUpdateTicksInterval}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{setUpdateTicksInterval()}{setUpdateTicksInterval()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::set\+Update\+Ticks\+Interval (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{update\+Interval }\end{DoxyParamCaption})}
+
+Sets the update interval. The value specifies the number of ticks between each step of the animation. The default update interval for animated images is 1, which means results in the fastest possible animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em update\+Interval} & Defines the number of ticks between each animation step. Higher value results in a slower animation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_animated_image_a5c6eedd3407bf2800fc4fe287bc9d1ca}\label{classtouchgfx_1_1_animated_image_a5c6eedd3407bf2800fc4fe287bc9d1ca} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!startAnimation@{startAnimation}}
+\index{startAnimation@{startAnimation}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{startAnimation()}{startAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::start\+Animation (\begin{DoxyParamCaption}\item[{const bool}]{rev,  }\item[{const bool}]{reset = {\ttfamily false},  }\item[{const bool}]{loop = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts the animation with the given parameters for animation direction, normal or reverse, whether to restart the animation and finally if the animation should loop automatically upon completion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rev} & Defines if the animation should be performed in reverse order. \\
+\hline
+{\em reset} & (Optional) Defines if the animation should reset and start from the first (or last if reverse order) bitmap. \\
+\hline
+{\em loop} & (Optional) Defines if the animation should loop or do a single animation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_animated_image_ac603a95d60304a13f24401a936b22f51}\label{classtouchgfx_1_1_animated_image_ac603a95d60304a13f24401a936b22f51} 
+\index{touchgfx::AnimatedImage@{touchgfx::AnimatedImage}!stopAnimation@{stopAnimation}}
+\index{stopAnimation@{stopAnimation}!touchgfx::AnimatedImage@{touchgfx::AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{stopAnimation()}{stopAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Animated\+Image\+::stop\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Stops and resets the animation. If the animation should not reset to the first image in the animation sequence, use \doxylink{classtouchgfx_1_1_animated_image_a84bb6c9b5c24d600c1b1cc9a4715b725}{pause\+Animation()}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_animated_image_a5c6eedd3407bf2800fc4fe287bc9d1ca}{start\+Animation}, \doxylink{classtouchgfx_1_1_animated_image_a84bb6c9b5c24d600c1b1cc9a4715b725}{pause\+Animation} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/\mbox{\hyperlink{_animated_image_8hpp}{Animated\+Image.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/touchgfx/widgets/Animated\+Image.\+cpp\end{DoxyCompactItemize}

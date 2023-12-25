@@ -1,0 +1,62 @@
+\doxysection{Blit\+Op.\+hpp}
+\hypertarget{_blit_op_8hpp_source}{}\label{_blit_op_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp}}
+\mbox{\hyperlink{_blit_op_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_BLITOP\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_BLITOP\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{BlitOperations}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fad844992c7c399467af858f9dd4a02184}{BLIT\_OP\_COPY}}\ =\ 1\ <<\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fa613688d2c9cced45cf7b81697270c947}{BLIT\_OP\_FILL}}\ =\ 1\ <<\ 1,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fae747f48e784a5edd51d39de30212facb}{BLIT\_OP\_COPY\_WITH\_ALPHA}}\ =\ 1\ <<\ 2,\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70faef9fbbaa6f8071fedf3fad0c63366d4b}{BLIT\_OP\_FILL\_WITH\_ALPHA}}\ =\ 1\ <<\ 3,\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fa3efc25a1e71622af5b460f974669ce05}{BLIT\_OP\_COPY\_WITH\_TRANSPARENT\_PIXELS}}\ =\ 1\ <<\ 4,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fa6ebe764790758b6c2afdff10b9d1a09d}{BLIT\_OP\_COPY\_ARGB8888}}\ =\ 1\ <<\ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fa4dfc243ae4cd75ec6cc189138ab2fc76}{BLIT\_OP\_COPY\_ARGB8888\_WITH\_ALPHA}}\ =\ 1\ <<\ 6,\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fa5d0636ea5cb30c8cd7ff02f304886db2}{BLIT\_OP\_COPY\_L8}}\ =\ 1\ <<\ 7,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fafdf74dedd83a863fd7fdb12fb0c1e926}{BLIT\_OP\_COPY\_A4}}\ =\ 1\ <<\ 8,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70faa527c41196a60b7a9353e6c7f543cd0e}{BLIT\_OP\_COPY\_A8}}\ =\ 1\ <<\ 9,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fa1bc16dde98de63513a4cdbf8fba08b90}{BLIT\_OP\_COPY\_16BIT}}\ =\ 1\ <<\ 10,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70fa9b914821e17a48c3f6bac2c32aeb0147}{BLIT\_OP\_FILL\_16BIT}}\ =\ 1\ <<\ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_blit_op}{BlitOp}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_ae1d83ed3bdcc49817d4af3a521f3e9c4}{operation}};\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t*\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_acffe654af045ff19e3e51c688dbe0585}{pSrc}};\ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a7ace2121c2d4e26ecef6c1f89fb01b1a}{pClut}};\ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a61708c85f5a838e95930620a62f02ad1}{color}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ uint16\_t*\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a724103c9cace2b9fe7c452f18c0cfe77}{pDst}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a43d994a099469a58597f6e4d47edeb0e}{nSteps}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a5aa4eee5743bf84b5cac1fea6caa15c0}{nLoops}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a530638c52de2e7e8ebdc18e5c7031b43}{srcLoopStride}};\ }
+\DoxyCodeLine{00056\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_af390a9de787b09489d29c83cb3f3552d}{dstLoopStride}};\ }
+\DoxyCodeLine{00057\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a3b7053e80eaf7bda4836901a00d021b8}{alpha}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_ab3e414ade8af5135318c0654a69e11ff}{srcFormat}};\ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_a2d103b361827e09f743524d117e9aa23}{dstFormat}};\ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_ab90bc52a661518281a2c86d8234750ff}{replaceBgAlpha}};\ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op_af7ab8bb5a443d84941724b7d9747938a}{replaceFgAlpha}};\ \ \ \ }
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_BLITOP\_HPP}}
+
+\end{DoxyCode}

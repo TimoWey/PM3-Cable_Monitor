@@ -1,0 +1,124 @@
+\doxysection{touchgfx\+::GPIO Class Reference}
+\hypertarget{classtouchgfx_1_1_g_p_i_o}{}\label{classtouchgfx_1_1_g_p_i_o}\index{touchgfx::GPIO@{touchgfx::GPIO}}
+
+
+{\ttfamily \#include $<$GPIO.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}} \{ {\bfseries VSYNC\+\_\+\+FREQ}
+, \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a0567c9d087777ec2a4dc657a28753f7f}{RENDER\+\_\+\+TIME}}
+, \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a0f01fe3be5b86fff97df0fd7c71db66e}{FRAME\+\_\+\+RATE}}
+, \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a8afe6b0e6671e7f2022a5322859f59e0}{MCU\+\_\+\+ACTIVE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a136864b3b663cd065289c8d4071bca94}{init}} ()
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_ac80d9ab91cc0a7ab022f8c9a29a6c020}{set}} (\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}} id)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_ad7afd578e50b9a9f8b0120dc77ac18bf}{clear}} (\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}} id)
+\item 
+static void \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_ab858b5383350959a8bf3291ac21f633d}{toggle}} (\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}} id)
+\item 
+static bool \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a4a44862864ccd68e75fb4c137f1b03c0}{get}} (\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}} id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface class for manipulating GPIOs in order to do performance measurements on target. Not used on the PC simulator. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}\label{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7} 
+\index{touchgfx::GPIO@{touchgfx::GPIO}!GPIO\_ID@{GPIO\_ID}}
+\index{GPIO\_ID@{GPIO\_ID}!touchgfx::GPIO@{touchgfx::GPIO}}
+\doxysubsubsection{\texorpdfstring{GPIO\_ID}{GPIO\_ID}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{touchgfx\+::\+GPIO\+::\+GPIO\+\_\+\+ID}}}
+
+Enum for the GPIOs used. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RENDER\_TIME@{RENDER\_TIME}!touchgfx::GPIO@{touchgfx::GPIO}}\index{touchgfx::GPIO@{touchgfx::GPIO}!RENDER\_TIME@{RENDER\_TIME}}}\Hypertarget{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a0567c9d087777ec2a4dc657a28753f7f}\label{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a0567c9d087777ec2a4dc657a28753f7f} 
+RENDER\+\_\+\+TIME&Pin is toggled at each VSYNC. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRAME\_RATE@{FRAME\_RATE}!touchgfx::GPIO@{touchgfx::GPIO}}\index{touchgfx::GPIO@{touchgfx::GPIO}!FRAME\_RATE@{FRAME\_RATE}}}\Hypertarget{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a0f01fe3be5b86fff97df0fd7c71db66e}\label{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a0f01fe3be5b86fff97df0fd7c71db66e} 
+FRAME\+\_\+\+RATE&Pin is high when frame rendering begins, low when finished. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCU\_ACTIVE@{MCU\_ACTIVE}!touchgfx::GPIO@{touchgfx::GPIO}}\index{touchgfx::GPIO@{touchgfx::GPIO}!MCU\_ACTIVE@{MCU\_ACTIVE}}}\Hypertarget{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a8afe6b0e6671e7f2022a5322859f59e0}\label{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7a8afe6b0e6671e7f2022a5322859f59e0} 
+MCU\+\_\+\+ACTIVE&Pin is toggled when the framebuffers are swapped. Pin is high when the MCU is doing work (i.\+e. not in idle task). \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_g_p_i_o_ad7afd578e50b9a9f8b0120dc77ac18bf}\label{classtouchgfx_1_1_g_p_i_o_ad7afd578e50b9a9f8b0120dc77ac18bf} 
+\index{touchgfx::GPIO@{touchgfx::GPIO}!clear@{clear}}
+\index{clear@{clear}!touchgfx::GPIO@{touchgfx::GPIO}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void GPIO\+::clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets a pin low.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the pin to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_g_p_i_o_a4a44862864ccd68e75fb4c137f1b03c0}\label{classtouchgfx_1_1_g_p_i_o_a4a44862864ccd68e75fb4c137f1b03c0} 
+\index{touchgfx::GPIO@{touchgfx::GPIO}!get@{get}}
+\index{get@{get}!touchgfx::GPIO@{touchgfx::GPIO}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily bool GPIO\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the state of a pin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the pin to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the pin is high, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_g_p_i_o_a136864b3b663cd065289c8d4071bca94}\label{classtouchgfx_1_1_g_p_i_o_a136864b3b663cd065289c8d4071bca94} 
+\index{touchgfx::GPIO@{touchgfx::GPIO}!init@{init}}
+\index{init@{init}!touchgfx::GPIO@{touchgfx::GPIO}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void GPIO\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Perform configuration of IO pins. \Hypertarget{classtouchgfx_1_1_g_p_i_o_ac80d9ab91cc0a7ab022f8c9a29a6c020}\label{classtouchgfx_1_1_g_p_i_o_ac80d9ab91cc0a7ab022f8c9a29a6c020} 
+\index{touchgfx::GPIO@{touchgfx::GPIO}!set@{set}}
+\index{set@{set}!touchgfx::GPIO@{touchgfx::GPIO}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void GPIO\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets a pin high.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the pin to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_g_p_i_o_ab858b5383350959a8bf3291ac21f633d}\label{classtouchgfx_1_1_g_p_i_o_ab858b5383350959a8bf3291ac21f633d} 
+\index{touchgfx::GPIO@{touchgfx::GPIO}!toggle@{toggle}}
+\index{toggle@{toggle}!touchgfx::GPIO@{touchgfx::GPIO}}
+\doxysubsubsection{\texorpdfstring{toggle()}{toggle()}}
+{\footnotesize\ttfamily void GPIO\+::toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_g_p_i_o_a1bba62b93b3ead5c761ed607d584cbe7}{GPIO\+\_\+\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Toggles a pin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the pin to toggle. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_g_p_i_o_8hpp}{GPIO.\+hpp}}\item 
+Touch\+GFX/target/Touch\+GFXGPIO.\+cpp\end{DoxyCompactItemize}

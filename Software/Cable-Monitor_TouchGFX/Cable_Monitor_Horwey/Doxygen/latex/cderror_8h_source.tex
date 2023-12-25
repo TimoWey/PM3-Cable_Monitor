@@ -1,0 +1,140 @@
+\doxysection{cderror.\+h}
+\hypertarget{cderror_8h_source}{}\label{cderror_8h_source}\index{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/cderror.h@{Middlewares/ST/touchgfx/3rdparty/libjpeg/include/cderror.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ cderror.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1994-\/1997,\ Thomas\ G.\ Lane.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Modified\ 2009\ by\ Guido\ Vollbeding.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ the\ Independent\ JPEG\ Group's\ software.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ For\ conditions\ of\ distribution\ and\ use,\ see\ the\ accompanying\ README\ file.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ defines\ the\ error\ and\ message\ codes\ for\ the\ cjpeg/djpeg}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ applications.\ \ These\ strings\ are\ not\ needed\ as\ part\ of\ the\ JPEG\ library}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ proper.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Edit\ this\ file\ to\ add\ new\ codes,\ or\ to\ translate\ the\ message\ strings\ to}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ some\ other\ language.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ To\ define\ the\ enum\ list\ of\ message\ codes,\ include\ this\ file\ without}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ defining\ macro\ JMESSAGE.\ \ To\ create\ a\ message\ string\ table,\ include\ it}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ again\ with\ a\ suitable\ JMESSAGE\ definition\ (see\ jerror.c\ for\ an\ example).}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ JMESSAGE}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ CDERROR\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CDERROR\_H}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ First\ time\ through,\ define\ the\ enum\ list\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Repeated\ inclusions\ of\ this\ file\ are\ no-\/ops\ unless\ JMESSAGE\ is\ defined\ */}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ JMESSAGE(code,string)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CDERROR\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JMESSAGE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ JMESSAGE(code,string)\ \ \ code\ ,}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JMAKE\_ENUM\_LIST\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ JMESSAGE(JMSG\_FIRSTADDONCODE=1000,\ NULL)\ \textcolor{comment}{/*\ Must\ be\ first\ entry!\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ BMP\_SUPPORTED}}
+\DoxyCodeLine{00043\ JMESSAGE(JERR\_BMP\_BADCMAP,\ \textcolor{stringliteral}{"{}Unsupported\ BMP\ colormap\ format"{}})}
+\DoxyCodeLine{00044\ JMESSAGE(JERR\_BMP\_BADDEPTH,\ "{}Only\ 8-\/\ and\ 24-\/bit\ BMP\ files\ are\ supported"{})}
+\DoxyCodeLine{00045\ JMESSAGE(JERR\_BMP\_BADHEADER,\ "{}Invalid\ BMP\ file:\ bad\ header\ length"{})}
+\DoxyCodeLine{00046\ JMESSAGE(JERR\_BMP\_BADPLANES,\ "{}Invalid\ BMP\ file:\ biPlanes\ not\ equal\ to\ 1"{})}
+\DoxyCodeLine{00047\ JMESSAGE(JERR\_BMP\_COLORSPACE,\ "{}BMP\ output\ must\ be\ grayscale\ or\ RGB"{})}
+\DoxyCodeLine{00048\ JMESSAGE(JERR\_BMP\_COMPRESSED,\ "{}Sorry,\ compressed\ BMPs\ not\ yet\ supported"{})}
+\DoxyCodeLine{00049\ JMESSAGE(JERR\_BMP\_EMPTY,\ "{}Empty\ BMP\ image"{})}
+\DoxyCodeLine{00050\ JMESSAGE(JERR\_BMP\_NOT,\ "{}Not\ a\ BMP\ file\ -\/\ does\ not\ start\ with\ BM"{})}
+\DoxyCodeLine{00051\ JMESSAGE(JTRC\_BMP,\ "{}\%ux\%u\ 24-\/bit\ BMP\ image"{})}
+\DoxyCodeLine{00052\ JMESSAGE(JTRC\_BMP\_MAPPED,\ "{}\%ux\%u\ 8-\/bit\ colormapped\ BMP\ image"{})}
+\DoxyCodeLine{00053\ JMESSAGE(JTRC\_BMP\_OS2,\ "{}\%ux\%u\ 24-\/bit\ OS2\ BMP\ image"{})}
+\DoxyCodeLine{00054\ JMESSAGE(JTRC\_BMP\_OS2\_MAPPED,\ "{}\%ux\%u\ 8-\/bit\ colormapped\ OS2\ BMP\ image"{})}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BMP\_SUPPORTED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ GIF\_SUPPORTED}}
+\DoxyCodeLine{00058\ JMESSAGE(JERR\_GIF\_BUG,\ \textcolor{stringliteral}{"{}GIF\ output\ got\ confused"{}})}
+\DoxyCodeLine{00059\ JMESSAGE(JERR\_GIF\_CODESIZE,\ "{}Bogus\ GIF\ codesize\ \%d"{})}
+\DoxyCodeLine{00060\ JMESSAGE(JERR\_GIF\_COLORSPACE,\ "{}GIF\ output\ must\ be\ grayscale\ or\ RGB"{})}
+\DoxyCodeLine{00061\ JMESSAGE(JERR\_GIF\_IMAGENOTFOUND,\ "{}Too\ few\ images\ in\ GIF\ file"{})}
+\DoxyCodeLine{00062\ JMESSAGE(JERR\_GIF\_NOT,\ "{}Not\ a\ GIF\ file"{})}
+\DoxyCodeLine{00063\ JMESSAGE(JTRC\_GIF,\ "{}\%ux\%ux\%d\ GIF\ image"{})}
+\DoxyCodeLine{00064\ JMESSAGE(JTRC\_GIF\_BADVERSION,}
+\DoxyCodeLine{00065\ \ \ \ \ \ "{}Warning:\ unexpected\ GIF\ version\ number\ '\%c\%c\%c'"{})}
+\DoxyCodeLine{00066\ JMESSAGE(JTRC\_GIF\_EXTENSION,\ "{}Ignoring\ GIF\ extension\ block\ of\ type\ 0x\%02x"{})}
+\DoxyCodeLine{00067\ JMESSAGE(JTRC\_GIF\_NONSQUARE,\ "{}Caution:\ nonsquare\ pixels\ in\ input"{})}
+\DoxyCodeLine{00068\ JMESSAGE(JWRN\_GIF\_BADDATA,\ "{}Corrupt\ data\ in\ GIF\ file"{})}
+\DoxyCodeLine{00069\ JMESSAGE(JWRN\_GIF\_CHAR,\ "{}Bogus\ \textcolor{keywordtype}{char}\ 0x\%02x\ in\ GIF\ file,\ ignoring"{})}
+\DoxyCodeLine{00070\ JMESSAGE(JWRN\_GIF\_ENDCODE,\ "{}Premature\ end\ of\ GIF\ image"{})}
+\DoxyCodeLine{00071\ JMESSAGE(JWRN\_GIF\_NOMOREDATA,\ "{}Ran\ out\ of\ GIF\ bits"{})}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ GIF\_SUPPORTED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#ifdef\ PPM\_SUPPORTED}}
+\DoxyCodeLine{00075\ JMESSAGE(JERR\_PPM\_COLORSPACE,\ \textcolor{stringliteral}{"{}PPM\ output\ must\ be\ grayscale\ or\ RGB"{}})}
+\DoxyCodeLine{00076\ JMESSAGE(JERR\_PPM\_NONNUMERIC,\ "{}Nonnumeric\ data\ in\ PPM\ file"{})}
+\DoxyCodeLine{00077\ JMESSAGE(JERR\_PPM\_NOT,\ "{}Not\ a\ PPM/PGM\ file"{})}
+\DoxyCodeLine{00078\ JMESSAGE(JTRC\_PGM,\ "{}\%ux\%u\ PGM\ image"{})}
+\DoxyCodeLine{00079\ JMESSAGE(JTRC\_PGM\_TEXT,\ "{}\%ux\%u\ text\ PGM\ image"{})}
+\DoxyCodeLine{00080\ JMESSAGE(JTRC\_PPM,\ "{}\%ux\%u\ PPM\ image"{})}
+\DoxyCodeLine{00081\ JMESSAGE(JTRC\_PPM\_TEXT,\ "{}\%ux\%u\ text\ PPM\ image"{})}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PPM\_SUPPORTED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifdef\ RLE\_SUPPORTED}}
+\DoxyCodeLine{00085\ JMESSAGE(JERR\_RLE\_BADERROR,\ \textcolor{stringliteral}{"{}Bogus\ error\ code\ from\ RLE\ library"{}})}
+\DoxyCodeLine{00086\ JMESSAGE(JERR\_RLE\_COLORSPACE,\ "{}RLE\ output\ must\ be\ grayscale\ or\ RGB"{})}
+\DoxyCodeLine{00087\ JMESSAGE(JERR\_RLE\_DIMENSIONS,\ "{}Image\ dimensions\ (\%ux\%u)\ too\ large\ for\ RLE"{})}
+\DoxyCodeLine{00088\ JMESSAGE(JERR\_RLE\_EMPTY,\ "{}Empty\ RLE\ file"{})}
+\DoxyCodeLine{00089\ JMESSAGE(JERR\_RLE\_EOF,\ "{}Premature\ EOF\ in\ RLE\ header"{})}
+\DoxyCodeLine{00090\ JMESSAGE(JERR\_RLE\_MEM,\ "{}Insufficient\ memory\ for\ RLE\ header"{})}
+\DoxyCodeLine{00091\ JMESSAGE(JERR\_RLE\_NOT,\ "{}Not\ an\ RLE\ file"{})}
+\DoxyCodeLine{00092\ JMESSAGE(JERR\_RLE\_TOOMANYCHANNELS,\ "{}Cannot\ handle\ \%d\ output\ channels\ for\ RLE"{})}
+\DoxyCodeLine{00093\ JMESSAGE(JERR\_RLE\_UNSUPPORTED,\ "{}Cannot\ handle\ this\ RLE\ setup"{})}
+\DoxyCodeLine{00094\ JMESSAGE(JTRC\_RLE,\ "{}\%ux\%u\ full-\/color\ RLE\ file"{})}
+\DoxyCodeLine{00095\ JMESSAGE(JTRC\_RLE\_FULLMAP,\ "{}\%ux\%u\ full-\/color\ RLE\ file\ with\ map\ of\ length\ \%d"{})}
+\DoxyCodeLine{00096\ JMESSAGE(JTRC\_RLE\_GRAY,\ "{}\%ux\%u\ grayscale\ RLE\ file"{})}
+\DoxyCodeLine{00097\ JMESSAGE(JTRC\_RLE\_MAPGRAY,\ "{}\%ux\%u\ grayscale\ RLE\ file\ with\ map\ of\ length\ \%d"{})}
+\DoxyCodeLine{00098\ JMESSAGE(JTRC\_RLE\_MAPPED,\ "{}\%ux\%u\ colormapped\ RLE\ file\ with\ map\ of\ length\ \%d"{})}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RLE\_SUPPORTED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#ifdef\ TARGA\_SUPPORTED}}
+\DoxyCodeLine{00102\ JMESSAGE(JERR\_TGA\_BADCMAP,\ \textcolor{stringliteral}{"{}Unsupported\ Targa\ colormap\ format"{}})}
+\DoxyCodeLine{00103\ JMESSAGE(JERR\_TGA\_BADPARMS,\ "{}Invalid\ or\ unsupported\ Targa\ file"{})}
+\DoxyCodeLine{00104\ JMESSAGE(JERR\_TGA\_COLORSPACE,\ "{}Targa\ output\ must\ be\ grayscale\ or\ RGB"{})}
+\DoxyCodeLine{00105\ JMESSAGE(JTRC\_TGA,\ "{}\%ux\%u\ RGB\ Targa\ image"{})}
+\DoxyCodeLine{00106\ JMESSAGE(JTRC\_TGA\_GRAY,\ "{}\%ux\%u\ grayscale\ Targa\ image"{})}
+\DoxyCodeLine{00107\ JMESSAGE(JTRC\_TGA\_MAPPED,\ "{}\%ux\%u\ colormapped\ Targa\ image"{})}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00109\ JMESSAGE(JERR\_TGA\_NOTCOMP,\ \textcolor{stringliteral}{"{}Targa\ support\ was\ not\ compiled"{}})}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ TARGA\_SUPPORTED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ JMESSAGE(JERR\_BAD\_CMAP\_FILE,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \textcolor{stringliteral}{"{}Color\ map\ file\ is\ invalid\ or\ of\ unsupported\ format"{}})}
+\DoxyCodeLine{00114\ JMESSAGE(JERR\_TOO\_MANY\_COLORS,}
+\DoxyCodeLine{00115\ \ \ \ \ \ "{}Output\ file\ format\ cannot\ handle\ \%d\ colormap\ entries"{})}
+\DoxyCodeLine{00116\ JMESSAGE(JERR\_UNGETC\_FAILED,\ "{}ungetc\ failed"{})}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#ifdef\ TARGA\_SUPPORTED}}
+\DoxyCodeLine{00118\ JMESSAGE(JERR\_UNKNOWN\_FORMAT,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \textcolor{stringliteral}{"{}Unrecognized\ input\ file\ format\ -\/-\/-\/\ perhaps\ you\ need\ -\/targa"{}})}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00121\ JMESSAGE(JERR\_UNKNOWN\_FORMAT,\ \textcolor{stringliteral}{"{}Unrecognized\ input\ file\ format"{}})}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00123\ JMESSAGE(JERR\_UNSUPPORTED\_FORMAT,\ \textcolor{stringliteral}{"{}Unsupported\ output\ file\ format"{}})}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#ifdef\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ JMSG\_LASTADDONCODE}
+\DoxyCodeLine{00128\ \}\ ADDON\_MESSAGE\_CODE;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#undef\ JMAKE\_ENUM\_LIST}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ JMAKE\_ENUM\_LIST\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{comment}{/*\ Zap\ JMESSAGE\ macro\ so\ that\ future\ re-\/inclusions\ do\ nothing\ by\ default\ */}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#undef\ JMESSAGE}}
+
+\end{DoxyCode}

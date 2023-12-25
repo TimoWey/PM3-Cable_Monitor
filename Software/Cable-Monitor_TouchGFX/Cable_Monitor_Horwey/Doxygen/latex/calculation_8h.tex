@@ -1,0 +1,310 @@
+\doxysection{Core/\+Inc/calculation.h File Reference}
+\hypertarget{calculation_8h}{}\label{calculation_8h}\index{Core/Inc/calculation.h@{Core/Inc/calculation.h}}
+
+
+See \doxylink{calculation_8c}{calculation.\+c}.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}arm\+\_\+math.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_f_t}{FFT}}
+\item 
+struct \mbox{\hyperlink{struct_a_c_c_u___f_f_t}{ACCU\+\_\+\+FFT}}
+\item 
+struct \mbox{\hyperlink{struct_s_i_n_g_l_e___m_e_a_s}{SINGLE\+\_\+\+MEAS}}
+\item 
+struct \mbox{\hyperlink{struct_a_c_c_u___m_e_a_s}{ACCU\+\_\+\+MEAS}}
+\item 
+struct \mbox{\hyperlink{struct_d_i_s_t_a_n_c_e___a_n_g_l_e}{DISTANCE\+\_\+\+ANGLE}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{calculation_8h_a42e162ee7b8b8c2663d1dbd31c7b590b}{ARM\+\_\+\+MATH\+\_\+\+CM4}}
+\item 
+\#define \mbox{\hyperlink{calculation_8h_ac57f72f3e56192d9df3dd527edb9e587}{SAMPLE\+\_\+\+LEN}}~64
+\item 
+\#define \mbox{\hyperlink{calculation_8h_a6511732d5b29a6781cf38783157f21e1}{CHANNEL\+\_\+\+NUM}}~4
+\item 
+\#define \mbox{\hyperlink{calculation_8h_adb966d5f9675ecf8225256002bb63314}{SINGLE\+\_\+\+PHASE}}~1
+\item 
+\#define \mbox{\hyperlink{calculation_8h_a57280a2ce44606289299d5748e9c28eb}{THREE\+\_\+\+PHASE}}~3
+\item 
+\#define \mbox{\hyperlink{calculation_8h_ac031bf5e13adcb4d23de36fe7ebe9aec}{ENABLE\+\_\+\+TOUCHGFX\+\_\+\+INTERRUPTS}}()
+\item 
+\#define \mbox{\hyperlink{calculation_8h_af8effa27f0158badaff3cc62a6016095}{DISABLE\+\_\+\+TOUCHGFX\+\_\+\+INTERRUPTS}}()
+\item 
+\#define \mbox{\hyperlink{calculation_8h_aa1da8470096f447fa45ad8251ad6953c}{DISABLE\+\_\+\+BUZZER}}()~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Stop(\&\mbox{\hyperlink{calculation_8h_ae4b8faf50eeb07577983d36e4c3894b8}{htim14}}, TIM\+\_\+\+CHANNEL\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{calculation_8h_a8c2f4d08dfe4e521e60674781b86f333}{ENABLE\+\_\+\+BUZZER}}()~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Start(\&\mbox{\hyperlink{calculation_8h_ae4b8faf50eeb07577983d36e4c3894b8}{htim14}}, TIM\+\_\+\+CHANNEL\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{calculation_8h_a8f63964ce584a43cbad406260d4e132b}{DISABLE\+\_\+\+LED}}()~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Stop(\&\mbox{\hyperlink{calculation_8h_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}}, TIM\+\_\+\+CHANNEL\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{calculation_8h_a3d8b3f36bda3f694d92a6d0949220a9e}{ENABLE\+\_\+\+LED}}()~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Start(\&\mbox{\hyperlink{calculation_8h_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}}, TIM\+\_\+\+CHANNEL\+\_\+1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2a}{CALC\+\_\+\+ERROR\+\_\+\+ITEM}} \{ \newline
+\mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa474aef8698fc4178e2d10a737c7c87a9}{CALC\+\_\+\+ERROR\+\_\+\+FREQUENCY}} = 0
+, \mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aae86cb76cc4d2213c6bfa1738bf1c71c0}{CALC\+\_\+\+ERROR\+\_\+\+DISCONNECT}}
+, \mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aaec3ce62130803dcc8025689e14c63369}{CALC\+\_\+\+ERROR\+\_\+\+OVERCURRENT}}
+, \mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa1c49751279cecb232e202f60473584fc}{CALC\+\_\+\+ERROR\+\_\+\+TOO\+\_\+\+FAR\+\_\+\+AWAY}}
+, \newline
+\mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa7a300c048f86eaa5fe197e588f2c8977}{CALC\+\_\+\+ERROR\+\_\+\+DEVIATION\+\_\+\+TOO\+\_\+\+HIGH}}
+, \mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aaa3f88aa319b7600fe19263c327f009e5}{CALC\+\_\+\+ERROR\+\_\+\+NONE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_i_n_g_l_e___m_e_a_s}{SINGLE\+\_\+\+MEAS}} \mbox{\hyperlink{calculation_8h_a6aee6a07a86ee73c7ba20e059b79c794}{single\+\_\+measurement}} (uint8\+\_\+t Phase)
+\begin{DoxyCompactList}\small\item\em Perform a single measurement for a specific phase. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_c_c_u___m_e_a_s}{ACCU\+\_\+\+MEAS}} \mbox{\hyperlink{calculation_8h_ac084ccf3f955bc4c19751d6b24aa3814}{accurate\+\_\+measurement}} (uint8\+\_\+t Phase)
+\begin{DoxyCompactList}\small\item\em Performs accurate measurement of various parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_c_c_u___f_f_t}{ACCU\+\_\+\+FFT}} \mbox{\hyperlink{calculation_8h_a4fddab1b09b687be16e69a9784d5b97b}{accurate\+\_\+\+FFT}} (void)
+\begin{DoxyCompactList}\small\item\em Performs accurate \doxylink{struct_f_f_t}{FFT} calculation for signal strength and main frequency of each channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{calculation_8h_abac8ce1f5096ff3f393117cbfa98f888}{start\+\_\+calibration}} (void)
+\begin{DoxyCompactList}\small\item\em Starts the calibration process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{calculation_8h_a6b6736969ddf8f3f9f229c3ac4a24c23}{toggle\+\_\+\+Buzzer\+\_\+settings}} (bool btn)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{calculation_8h_a43c98c20a1c370f9fd65564895637f19}{Calibration\+\_\+\+Data}} \mbox{[}14\mbox{]}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{calculation_8h_ae4b8faf50eeb07577983d36e4c3894b8}{htim14}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{calculation_8h_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See \doxylink{calculation_8c}{calculation.\+c}. 
+
+\DoxyHorRuler{0}
+
+
+Prefix CALC 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{calculation_8h_a42e162ee7b8b8c2663d1dbd31c7b590b}\label{calculation_8h_a42e162ee7b8b8c2663d1dbd31c7b590b} 
+\index{calculation.h@{calculation.h}!ARM\_MATH\_CM4@{ARM\_MATH\_CM4}}
+\index{ARM\_MATH\_CM4@{ARM\_MATH\_CM4}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{ARM\_MATH\_CM4}{ARM\_MATH\_CM4}}
+{\footnotesize\ttfamily \#define ARM\+\_\+\+MATH\+\_\+\+CM4}
+
+\Hypertarget{calculation_8h_a6511732d5b29a6781cf38783157f21e1}\label{calculation_8h_a6511732d5b29a6781cf38783157f21e1} 
+\index{calculation.h@{calculation.h}!CHANNEL\_NUM@{CHANNEL\_NUM}}
+\index{CHANNEL\_NUM@{CHANNEL\_NUM}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{CHANNEL\_NUM}{CHANNEL\_NUM}}
+{\footnotesize\ttfamily \#define CHANNEL\+\_\+\+NUM~4}
+
+\Hypertarget{calculation_8h_aa1da8470096f447fa45ad8251ad6953c}\label{calculation_8h_aa1da8470096f447fa45ad8251ad6953c} 
+\index{calculation.h@{calculation.h}!DISABLE\_BUZZER@{DISABLE\_BUZZER}}
+\index{DISABLE\_BUZZER@{DISABLE\_BUZZER}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{DISABLE\_BUZZER}{DISABLE\_BUZZER}}
+{\footnotesize\ttfamily \#define DISABLE\+\_\+\+BUZZER(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Stop(\&\mbox{\hyperlink{calculation_8h_ae4b8faf50eeb07577983d36e4c3894b8}{htim14}}, TIM\+\_\+\+CHANNEL\+\_\+1)}
+
+\Hypertarget{calculation_8h_a8f63964ce584a43cbad406260d4e132b}\label{calculation_8h_a8f63964ce584a43cbad406260d4e132b} 
+\index{calculation.h@{calculation.h}!DISABLE\_LED@{DISABLE\_LED}}
+\index{DISABLE\_LED@{DISABLE\_LED}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{DISABLE\_LED}{DISABLE\_LED}}
+{\footnotesize\ttfamily \#define DISABLE\+\_\+\+LED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Stop(\&\mbox{\hyperlink{calculation_8h_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}}, TIM\+\_\+\+CHANNEL\+\_\+1)}
+
+\Hypertarget{calculation_8h_af8effa27f0158badaff3cc62a6016095}\label{calculation_8h_af8effa27f0158badaff3cc62a6016095} 
+\index{calculation.h@{calculation.h}!DISABLE\_TOUCHGFX\_INTERRUPTS@{DISABLE\_TOUCHGFX\_INTERRUPTS}}
+\index{DISABLE\_TOUCHGFX\_INTERRUPTS@{DISABLE\_TOUCHGFX\_INTERRUPTS}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{DISABLE\_TOUCHGFX\_INTERRUPTS}{DISABLE\_TOUCHGFX\_INTERRUPTS}}
+{\footnotesize\ttfamily \#define DISABLE\+\_\+\+TOUCHGFX\+\_\+\+INTERRUPTS(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ NVIC\_DisableIRQ(DMA2D\_IRQn);\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ NVIC\_DisableIRQ(LTDC\_IRQn);\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+\Hypertarget{calculation_8h_a8c2f4d08dfe4e521e60674781b86f333}\label{calculation_8h_a8c2f4d08dfe4e521e60674781b86f333} 
+\index{calculation.h@{calculation.h}!ENABLE\_BUZZER@{ENABLE\_BUZZER}}
+\index{ENABLE\_BUZZER@{ENABLE\_BUZZER}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{ENABLE\_BUZZER}{ENABLE\_BUZZER}}
+{\footnotesize\ttfamily \#define ENABLE\+\_\+\+BUZZER(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Start(\&\mbox{\hyperlink{calculation_8h_ae4b8faf50eeb07577983d36e4c3894b8}{htim14}}, TIM\+\_\+\+CHANNEL\+\_\+1)}
+
+\Hypertarget{calculation_8h_a3d8b3f36bda3f694d92a6d0949220a9e}\label{calculation_8h_a3d8b3f36bda3f694d92a6d0949220a9e} 
+\index{calculation.h@{calculation.h}!ENABLE\_LED@{ENABLE\_LED}}
+\index{ENABLE\_LED@{ENABLE\_LED}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{ENABLE\_LED}{ENABLE\_LED}}
+{\footnotesize\ttfamily \#define ENABLE\+\_\+\+LED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~HAL\+\_\+\+TIM\+\_\+\+PWM\+\_\+\+Start(\&\mbox{\hyperlink{calculation_8h_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}}, TIM\+\_\+\+CHANNEL\+\_\+1)}
+
+\Hypertarget{calculation_8h_ac031bf5e13adcb4d23de36fe7ebe9aec}\label{calculation_8h_ac031bf5e13adcb4d23de36fe7ebe9aec} 
+\index{calculation.h@{calculation.h}!ENABLE\_TOUCHGFX\_INTERRUPTS@{ENABLE\_TOUCHGFX\_INTERRUPTS}}
+\index{ENABLE\_TOUCHGFX\_INTERRUPTS@{ENABLE\_TOUCHGFX\_INTERRUPTS}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{ENABLE\_TOUCHGFX\_INTERRUPTS}{ENABLE\_TOUCHGFX\_INTERRUPTS}}
+{\footnotesize\ttfamily \#define ENABLE\+\_\+\+TOUCHGFX\+\_\+\+INTERRUPTS(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ NVIC\_EnableIRQ(DMA2D\_IRQn);\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ NVIC\_EnableIRQ(LTDC\_IRQn);\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+\Hypertarget{calculation_8h_ac57f72f3e56192d9df3dd527edb9e587}\label{calculation_8h_ac57f72f3e56192d9df3dd527edb9e587} 
+\index{calculation.h@{calculation.h}!SAMPLE\_LEN@{SAMPLE\_LEN}}
+\index{SAMPLE\_LEN@{SAMPLE\_LEN}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_LEN}{SAMPLE\_LEN}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+LEN~64}
+
+\Hypertarget{calculation_8h_adb966d5f9675ecf8225256002bb63314}\label{calculation_8h_adb966d5f9675ecf8225256002bb63314} 
+\index{calculation.h@{calculation.h}!SINGLE\_PHASE@{SINGLE\_PHASE}}
+\index{SINGLE\_PHASE@{SINGLE\_PHASE}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{SINGLE\_PHASE}{SINGLE\_PHASE}}
+{\footnotesize\ttfamily \#define SINGLE\+\_\+\+PHASE~1}
+
+\Hypertarget{calculation_8h_a57280a2ce44606289299d5748e9c28eb}\label{calculation_8h_a57280a2ce44606289299d5748e9c28eb} 
+\index{calculation.h@{calculation.h}!THREE\_PHASE@{THREE\_PHASE}}
+\index{THREE\_PHASE@{THREE\_PHASE}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{THREE\_PHASE}{THREE\_PHASE}}
+{\footnotesize\ttfamily \#define THREE\+\_\+\+PHASE~3}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2a}\label{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2a} 
+\index{calculation.h@{calculation.h}!CALC\_ERROR\_ITEM@{CALC\_ERROR\_ITEM}}
+\index{CALC\_ERROR\_ITEM@{CALC\_ERROR\_ITEM}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{CALC\_ERROR\_ITEM}{CALC\_ERROR\_ITEM}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2a}{CALC\+\_\+\+ERROR\+\_\+\+ITEM}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALC\_ERROR\_FREQUENCY@{CALC\_ERROR\_FREQUENCY}!calculation.h@{calculation.h}}\index{calculation.h@{calculation.h}!CALC\_ERROR\_FREQUENCY@{CALC\_ERROR\_FREQUENCY}}}\Hypertarget{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa474aef8698fc4178e2d10a737c7c87a9}\label{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa474aef8698fc4178e2d10a737c7c87a9} 
+CALC\+\_\+\+ERROR\+\_\+\+FREQUENCY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALC\_ERROR\_DISCONNECT@{CALC\_ERROR\_DISCONNECT}!calculation.h@{calculation.h}}\index{calculation.h@{calculation.h}!CALC\_ERROR\_DISCONNECT@{CALC\_ERROR\_DISCONNECT}}}\Hypertarget{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aae86cb76cc4d2213c6bfa1738bf1c71c0}\label{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aae86cb76cc4d2213c6bfa1738bf1c71c0} 
+CALC\+\_\+\+ERROR\+\_\+\+DISCONNECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALC\_ERROR\_OVERCURRENT@{CALC\_ERROR\_OVERCURRENT}!calculation.h@{calculation.h}}\index{calculation.h@{calculation.h}!CALC\_ERROR\_OVERCURRENT@{CALC\_ERROR\_OVERCURRENT}}}\Hypertarget{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aaec3ce62130803dcc8025689e14c63369}\label{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aaec3ce62130803dcc8025689e14c63369} 
+CALC\+\_\+\+ERROR\+\_\+\+OVERCURRENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALC\_ERROR\_TOO\_FAR\_AWAY@{CALC\_ERROR\_TOO\_FAR\_AWAY}!calculation.h@{calculation.h}}\index{calculation.h@{calculation.h}!CALC\_ERROR\_TOO\_FAR\_AWAY@{CALC\_ERROR\_TOO\_FAR\_AWAY}}}\Hypertarget{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa1c49751279cecb232e202f60473584fc}\label{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa1c49751279cecb232e202f60473584fc} 
+CALC\+\_\+\+ERROR\+\_\+\+TOO\+\_\+\+FAR\+\_\+\+AWAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALC\_ERROR\_DEVIATION\_TOO\_HIGH@{CALC\_ERROR\_DEVIATION\_TOO\_HIGH}!calculation.h@{calculation.h}}\index{calculation.h@{calculation.h}!CALC\_ERROR\_DEVIATION\_TOO\_HIGH@{CALC\_ERROR\_DEVIATION\_TOO\_HIGH}}}\Hypertarget{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa7a300c048f86eaa5fe197e588f2c8977}\label{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aa7a300c048f86eaa5fe197e588f2c8977} 
+CALC\+\_\+\+ERROR\+\_\+\+DEVIATION\+\_\+\+TOO\+\_\+\+HIGH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALC\_ERROR\_NONE@{CALC\_ERROR\_NONE}!calculation.h@{calculation.h}}\index{calculation.h@{calculation.h}!CALC\_ERROR\_NONE@{CALC\_ERROR\_NONE}}}\Hypertarget{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aaa3f88aa319b7600fe19263c327f009e5}\label{calculation_8h_a563ecf0d7220a38a3b2fab1de4856e2aaa3f88aa319b7600fe19263c327f009e5} 
+CALC\+\_\+\+ERROR\+\_\+\+NONE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{calculation_8h_a4fddab1b09b687be16e69a9784d5b97b}\label{calculation_8h_a4fddab1b09b687be16e69a9784d5b97b} 
+\index{calculation.h@{calculation.h}!accurate\_FFT@{accurate\_FFT}}
+\index{accurate\_FFT@{accurate\_FFT}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{accurate\_FFT()}{accurate\_FFT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_c_c_u___f_f_t}{ACCU\+\_\+\+FFT}} accurate\+\_\+\+FFT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Performs accurate \doxylink{struct_f_f_t}{FFT} calculation for signal strength and main frequency of each channel. 
+
+This function calculates the signal strength and main frequency for each channel using \doxylink{struct_f_f_t}{FFT}. It performs accurate measurement loops and calculates the mean and standard deviation of the signal strength. If the standard deviation is larger than 100, it sets the error flag accordingly.
+
+\begin{DoxyReturn}{Returns}
+The calculated \doxylink{struct_a_c_c_u___f_f_t}{ACCU\+\_\+\+FFT} structure containing the signal strength, standard deviation, and error flag. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8h_ac084ccf3f955bc4c19751d6b24aa3814}\label{calculation_8h_ac084ccf3f955bc4c19751d6b24aa3814} 
+\index{calculation.h@{calculation.h}!accurate\_measurement@{accurate\_measurement}}
+\index{accurate\_measurement@{accurate\_measurement}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{accurate\_measurement()}{accurate\_measurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_c_c_u___m_e_a_s}{ACCU\+\_\+\+MEAS}} accurate\+\_\+measurement (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Phase }\end{DoxyParamCaption})}
+
+
+
+Performs accurate measurement of various parameters. 
+
+This function calculates the mean value and standard deviation of distance, angle, frequency, and current based on multiple single measurements. It checks for errors in the single measurements and sets the appropriate error flags. If the standard deviation of any parameter exceeds 100, it sets the error\+\_\+accu flag to CALC\+\_\+\+ERROR\+\_\+\+DEVIATION\+\_\+\+TOO\+\_\+\+HIGH.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Phase} & The phase for which the accurate measurement is performed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_a_c_c_u___m_e_a_s}{ACCU\+\_\+\+MEAS} The structure containing the calculated values and error flags. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8h_a6aee6a07a86ee73c7ba20e059b79c794}\label{calculation_8h_a6aee6a07a86ee73c7ba20e059b79c794} 
+\index{calculation.h@{calculation.h}!single\_measurement@{single\_measurement}}
+\index{single\_measurement@{single\_measurement}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{single\_measurement()}{single\_measurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_i_n_g_l_e___m_e_a_s}{SINGLE\+\_\+\+MEAS}} single\+\_\+measurement (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Phase }\end{DoxyParamCaption})}
+
+
+
+Perform a single measurement for a specific phase. 
+
+This function starts the measurement, converts the samples to the specific channel, calculates the signal strength and main frequency for each channel using \doxylink{struct_f_f_t}{FFT}, calculates the distance and angle, and calculates the current using the magnetic coefficients. It also performs error testing and optimization on the calculated values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Phase} & The phase for which the measurement is performed (SINGLE\+\_\+\+PHASE or THREE\+\_\+\+PHASE). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated values including frequency, distance, angle, current, and error status. 
+\end{DoxyReturn}
+\Hypertarget{calculation_8h_abac8ce1f5096ff3f393117cbfa98f888}\label{calculation_8h_abac8ce1f5096ff3f393117cbfa98f888} 
+\index{calculation.h@{calculation.h}!start\_calibration@{start\_calibration}}
+\index{start\_calibration@{start\_calibration}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{start\_calibration()}{start\_calibration()}}
+{\footnotesize\ttfamily void start\+\_\+calibration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Starts the calibration process. 
+
+This function initializes the necessary variables and arrays for calibration. It calculates the coefficients for distance approximation and current approximation based on the calibration data stored in flash memory. \Hypertarget{calculation_8h_a6b6736969ddf8f3f9f229c3ac4a24c23}\label{calculation_8h_a6b6736969ddf8f3f9f229c3ac4a24c23} 
+\index{calculation.h@{calculation.h}!toggle\_Buzzer\_settings@{toggle\_Buzzer\_settings}}
+\index{toggle\_Buzzer\_settings@{toggle\_Buzzer\_settings}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{toggle\_Buzzer\_settings()}{toggle\_Buzzer\_settings()}}
+{\footnotesize\ttfamily void toggle\+\_\+\+Buzzer\+\_\+settings (\begin{DoxyParamCaption}\item[{bool}]{btn }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{calculation_8h_a43c98c20a1c370f9fd65564895637f19}\label{calculation_8h_a43c98c20a1c370f9fd65564895637f19} 
+\index{calculation.h@{calculation.h}!Calibration\_Data@{Calibration\_Data}}
+\index{Calibration\_Data@{Calibration\_Data}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{Calibration\_Data}{Calibration\_Data}}
+{\footnotesize\ttfamily uint32\+\_\+t Calibration\+\_\+\+Data\mbox{[}14\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{calculation_8h_ae4b8faf50eeb07577983d36e4c3894b8}\label{calculation_8h_ae4b8faf50eeb07577983d36e4c3894b8} 
+\index{calculation.h@{calculation.h}!htim14@{htim14}}
+\index{htim14@{htim14}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{htim14}{htim14}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def htim14\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{calculation_8h_acefaeaaa3856ddddae7083b2d220fe4b}\label{calculation_8h_acefaeaaa3856ddddae7083b2d220fe4b} 
+\index{calculation.h@{calculation.h}!htim5@{htim5}}
+\index{htim5@{htim5}!calculation.h@{calculation.h}}
+\doxysubsubsection{\texorpdfstring{htim5}{htim5}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def htim5\hspace{0.3cm}{\ttfamily [extern]}}
+

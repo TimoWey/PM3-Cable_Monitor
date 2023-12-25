@@ -1,0 +1,108 @@
+\doxysection{Easing\+Equations.\+hpp}
+\hypertarget{_easing_equations_8hpp_source}{}\label{_easing_equations_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp}}
+\mbox{\hyperlink{_easing_equations_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_EASINGEQUATIONS\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_EASINGEQUATIONS\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ int16\_t\ (*\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{EasingEquation}})(uint16\_t,\ int16\_t,\ int16\_t,\ uint16\_t);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_easing_equations}{EasingEquations}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a3c06e2f3f90679b91ac35737c5f8a555}{backEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad36d1da3d2f9ce66f55e81f79e762e21}{backEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a4a6529690d4690c494eead419a3ada9a}{backEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_aa8e9fc78b8673968a71a189a1a0b4120}{bounceEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_afc27afcba6791fdec423137531b22908}{bounceEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a3a08ae5ca8d44fc2a7bd4cd7c0a496c1}{bounceEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_aeb9c64fa61b021be90b653c5854c7a0d}{circEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ac0ccce11712f66db844638c94b5583f4}{circEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a0f680d36589e0b6418af2fd442de78dd}{circEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a2152bdfdc5582643d4de2014e8ff1eaa}{cubicEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a6aaba64f4fdb32e1a8ea85663a41ce2d}{cubicEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a7d10ca2f103c99c1148e3c42c1ebc2b5}{cubicEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ae1bfb11c20357227fbf22f2d32cecd0d}{elasticEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a0afcaf5165ba02b4fb40e39d7caf48f0}{elasticEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a279c44ec8ac915b409defb8db24de171}{elasticEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a24a5cb278d61f8be0e00c849c2749b95}{expoEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a22b277a0f7b77f0d763830f6920d865c}{expoEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a527e3b3a4917e3230b1deead363b6885}{expoEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{linearEaseNone}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a664cdac70cf3f33e7ddbfe013e68c174}{linearEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a7779b517d7d82d4b83b667c8621b0430}{linearEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a68b0e83c12fdb919c959f6d53a92dd1a}{linearEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a9582ad3291459ff3c7ad81c1c51c46de}{quadEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a7b193dfe1a2792244bfb5d4ef360d63c}{quadEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a29b1832cd62a05a6c16a29cf9e584c06}{quadEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a67277e6c11635b6f90f6b935fb28aef4}{quartEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a58b34a7bd2c5e314820b9098afef1c70}{quartEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ae8216f1126629f0b6e99570ba6a6526d}{quartEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_aeee887e88de5c05f8fbfc012400007b2}{quintEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a6f969030e03f094888c5e9955a6713f5}{quintEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a63c3e58bea60f472e1fab34e84072e19}{quintEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ae391603918172a2b5f4058b953e14ebd}{sineEaseIn}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_a72053180a2d63fb969db913f821ad2e6}{sineEaseOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad63ad2056019b63c003c5027428b086e}{sineEaseInOut}}(uint16\_t\ t,\ int16\_t\ b,\ int16\_t\ c,\ uint16\_t\ d);}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00459\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ int16\_t\ roundRespectSign(\textcolor{keywordtype}{float}\ resultFloating)}
+\DoxyCodeLine{00460\ \ \ \ \ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}int16\_t\textcolor{keyword}{>}((resultFloating\ >\ 0.0f)\ ?\ (resultFloating\ +\ 0.5f)\ :\ (resultFloating\ -\/\ 0.5f));}
+\DoxyCodeLine{00462\ \ \ \ \ \}}
+\DoxyCodeLine{00463\ \};}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_EASINGEQUATIONS\_HPP}}
+
+\end{DoxyCode}

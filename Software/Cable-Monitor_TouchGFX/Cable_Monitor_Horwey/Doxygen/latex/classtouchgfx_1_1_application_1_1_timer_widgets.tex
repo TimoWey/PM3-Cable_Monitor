@@ -1,0 +1,105 @@
+\doxysection{touchgfx\+::Application\+::Timer\+Widgets Class Reference}
+\hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets}{}\label{classtouchgfx_1_1_application_1_1_timer_widgets}\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+
+
+{\ttfamily \#include $<$Application.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets_aed7c0243942835d0f0ee29d8c184d489}{tick\+Active}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets_afcb3a3685e66acd71d0c4750720d0e86}{add}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}w)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets_a031fa731c253979c7a7c94ca98d4013d}{remove}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}w)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets_a233d2109057dd9a3be1b0d5ecea292ef}{clear}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets_a518a9c97ac1bc8a76916aa275af0db99}{get\+Counter}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}w) const
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets_a56ba3604712924815a6cece86523c3df}{get\+Number\+Of\+Active\+Timer\+Widgets}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_application_1_1_timer_widgets_ad3a882d54604079487e01f4a8bad72ac}{compact}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to handle and manage timer widgets. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets_afcb3a3685e66acd71d0c4750720d0e86}\label{classtouchgfx_1_1_application_1_1_timer_widgets_afcb3a3685e66acd71d0c4750720d0e86} 
+\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}!add@{add}}
+\index{add@{add}!touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::\+Timer\+Widgets\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption})}
+
+Adds timer widget. If a timer widget is added from a \doxylink{classtouchgfx_1_1_application_a5a2d535267608055dd2748ff34822d81}{handle\+Tick\+Event()}, the timer will not be ticket until the next tick (unless that same widget is already registered, and has not yet been ticked in this tick).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em w} & The timer widget to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets_a233d2109057dd9a3be1b0d5ecea292ef}\label{classtouchgfx_1_1_application_1_1_timer_widgets_a233d2109057dd9a3be1b0d5ecea292ef} 
+\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}!clear@{clear}}
+\index{clear@{clear}!touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::\+Timer\+Widgets\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears all timer widgets. \Hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets_ad3a882d54604079487e01f4a8bad72ac}\label{classtouchgfx_1_1_application_1_1_timer_widgets_ad3a882d54604079487e01f4a8bad72ac} 
+\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}!compact@{compact}}
+\index{compact@{compact}!touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+\doxysubsubsection{\texorpdfstring{compact()}{compact()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::\+Timer\+Widgets\+::compact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Compacts the timer widgets. All widgets with a counter of 0 will be removed from the list, and the list will be compacted. Compacting the timer widgets during traversal (in \doxylink{classtouchgfx_1_1_application_1_1_timer_widgets_aed7c0243942835d0f0ee29d8c184d489}{tick\+Active()}) is handled properly. \Hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets_a518a9c97ac1bc8a76916aa275af0db99}\label{classtouchgfx_1_1_application_1_1_timer_widgets_a518a9c97ac1bc8a76916aa275af0db99} 
+\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}!getCounter@{getCounter}}
+\index{getCounter@{getCounter}!touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+\doxysubsubsection{\texorpdfstring{getCounter()}{getCounter()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Application\+::\+Timer\+Widgets\+::get\+Counter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption}) const}
+
+Gets a counter for a given timer widget. Normally the counter is 1 unless a timer widget has been registered several times.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The timer widget to get the counter for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The counter. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets_a56ba3604712924815a6cece86523c3df}\label{classtouchgfx_1_1_application_1_1_timer_widgets_a56ba3604712924815a6cece86523c3df} 
+\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}!getNumberOfActiveTimerWidgets@{getNumberOfActiveTimerWidgets}}
+\index{getNumberOfActiveTimerWidgets@{getNumberOfActiveTimerWidgets}!touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+\doxysubsubsection{\texorpdfstring{getNumberOfActiveTimerWidgets()}{getNumberOfActiveTimerWidgets()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Application\+::\+Timer\+Widgets\+::get\+Number\+Of\+Active\+Timer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets number of active timer widgets.
+
+\begin{DoxyReturn}{Returns}
+The number of active timer widgets. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets_a031fa731c253979c7a7c94ca98d4013d}\label{classtouchgfx_1_1_application_1_1_timer_widgets_a031fa731c253979c7a7c94ca98d4013d} 
+\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}!remove@{remove}}
+\index{remove@{remove}!touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::\+Timer\+Widgets\+::remove (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption})}
+
+Removes the given timer widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The timer widget to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_application_1_1_timer_widgets_aed7c0243942835d0f0ee29d8c184d489}\label{classtouchgfx_1_1_application_1_1_timer_widgets_aed7c0243942835d0f0ee29d8c184d489} 
+\index{touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}!tickActive@{tickActive}}
+\index{tickActive@{tickActive}!touchgfx::Application::TimerWidgets@{touchgfx::Application::TimerWidgets}}
+\doxysubsubsection{\texorpdfstring{tickActive()}{tickActive()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Application\+::\+Timer\+Widgets\+::tick\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tick all active timer widgets. Adding and removing timer widgets during ticks is supported. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/\mbox{\hyperlink{_application_8hpp}{Application.\+hpp}}\end{DoxyCompactItemize}

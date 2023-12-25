@@ -1,0 +1,675 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+events.h File Reference}
+\hypertarget{_s_d_l__events_8h}{}\label{_s_d_l__events_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_events.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_events.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+error.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+video.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+mouse.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+joystick.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+gamecontroller.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+quit.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+gesture.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+touch.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___common_event}{SDL\+\_\+\+Common\+Event}}
+\begin{DoxyCompactList}\small\item\em Fields shared by every event. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___window_event}{SDL\+\_\+\+Window\+Event}}
+\begin{DoxyCompactList}\small\item\em Window state change event data (event.\+window.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___keyboard_event}{SDL\+\_\+\+Keyboard\+Event}}
+\begin{DoxyCompactList}\small\item\em Keyboard button event structure (event.\+key.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___text_editing_event}{SDL\+\_\+\+Text\+Editing\+Event}}
+\begin{DoxyCompactList}\small\item\em Keyboard text editing event structure (event.\+edit.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___text_input_event}{SDL\+\_\+\+Text\+Input\+Event}}
+\begin{DoxyCompactList}\small\item\em Keyboard text input event structure (event.\+text.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___mouse_motion_event}{SDL\+\_\+\+Mouse\+Motion\+Event}}
+\begin{DoxyCompactList}\small\item\em Mouse motion event structure (event.\+motion.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___mouse_button_event}{SDL\+\_\+\+Mouse\+Button\+Event}}
+\begin{DoxyCompactList}\small\item\em Mouse button event structure (event.\+button.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event}{SDL\+\_\+\+Mouse\+Wheel\+Event}}
+\begin{DoxyCompactList}\small\item\em Mouse wheel event structure (event.\+wheel.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___joy_axis_event}{SDL\+\_\+\+Joy\+Axis\+Event}}
+\begin{DoxyCompactList}\small\item\em Joystick axis motion event structure (event.\+jaxis.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___joy_ball_event}{SDL\+\_\+\+Joy\+Ball\+Event}}
+\begin{DoxyCompactList}\small\item\em Joystick trackball motion event structure (event.\+jball.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___joy_hat_event}{SDL\+\_\+\+Joy\+Hat\+Event}}
+\begin{DoxyCompactList}\small\item\em Joystick hat position change event structure (event.\+jhat.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___joy_button_event}{SDL\+\_\+\+Joy\+Button\+Event}}
+\begin{DoxyCompactList}\small\item\em Joystick button event structure (event.\+jbutton.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___joy_device_event}{SDL\+\_\+\+Joy\+Device\+Event}}
+\begin{DoxyCompactList}\small\item\em Joystick device event structure (event.\+jdevice.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___controller_axis_event}{SDL\+\_\+\+Controller\+Axis\+Event}}
+\begin{DoxyCompactList}\small\item\em Game controller axis motion event structure (event.\+caxis.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___controller_button_event}{SDL\+\_\+\+Controller\+Button\+Event}}
+\begin{DoxyCompactList}\small\item\em Game controller button event structure (event.\+cbutton.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___controller_device_event}{SDL\+\_\+\+Controller\+Device\+Event}}
+\begin{DoxyCompactList}\small\item\em Controller device event structure (event.\+cdevice.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___audio_device_event}{SDL\+\_\+\+Audio\+Device\+Event}}
+\begin{DoxyCompactList}\small\item\em Audio device event structure (event.\+adevice.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___touch_finger_event}{SDL\+\_\+\+Touch\+Finger\+Event}}
+\begin{DoxyCompactList}\small\item\em Touch finger event structure (event.\+tfinger.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___multi_gesture_event}{SDL\+\_\+\+Multi\+Gesture\+Event}}
+\begin{DoxyCompactList}\small\item\em Multiple Finger Gesture Event (event.\+mgesture.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event}{SDL\+\_\+\+Dollar\+Gesture\+Event}}
+\begin{DoxyCompactList}\small\item\em Dollar Gesture Event (event.\+dgesture.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___drop_event}{SDL\+\_\+\+Drop\+Event}}
+\begin{DoxyCompactList}\small\item\em An event used to request a file open by the system (event.\+drop.\texorpdfstring{$\ast$}{*}) This event is enabled by default, you can disable it with \doxylink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___quit_event}{SDL\+\_\+\+Quit\+Event}}
+\begin{DoxyCompactList}\small\item\em The "{}quit requested"{} event. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___o_s_event}{SDL\+\_\+\+OSEvent}}
+\begin{DoxyCompactList}\small\item\em OS Specific event. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___user_event}{SDL\+\_\+\+User\+Event}}
+\begin{DoxyCompactList}\small\item\em A user-\/defined event type (event.\+user.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d_l___sys_w_m_event}{SDL\+\_\+\+Sys\+WMEvent}}
+\begin{DoxyCompactList}\small\item\em A video driver dependent system event (event.\+syswm.\texorpdfstring{$\ast$}{*}) This event is disabled by default, you can enable it with \doxylink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()} \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}}
+\begin{DoxyCompactList}\small\item\em General event structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__events_8h_ad680a069f9fcab80de91b3eefdf29c3c}\label{_s_d_l__events_8h_ad680a069f9fcab80de91b3eefdf29c3c} 
+\#define {\bfseries SDL\+\_\+\+RELEASED}~0
+\item 
+\Hypertarget{_s_d_l__events_8h_aee81bbffbc8489bdea8fecd1232c4bd1}\label{_s_d_l__events_8h_aee81bbffbc8489bdea8fecd1232c4bd1} 
+\#define {\bfseries SDL\+\_\+\+PRESSED}~1
+\item 
+\Hypertarget{_s_d_l__events_8h_a2399de7b94f0570b853f5da9c5db7e82}\label{_s_d_l__events_8h_a2399de7b94f0570b853f5da9c5db7e82} 
+\#define {\bfseries SDL\+\_\+\+TEXTEDITINGEVENT\+\_\+\+TEXT\+\_\+\+SIZE}~(32)
+\item 
+\Hypertarget{_s_d_l__events_8h_a43822437fd5e89c1da1841a813cad4aa}\label{_s_d_l__events_8h_a43822437fd5e89c1da1841a813cad4aa} 
+\#define {\bfseries SDL\+\_\+\+TEXTINPUTEVENT\+\_\+\+TEXT\+\_\+\+SIZE}~(32)
+\item 
+\Hypertarget{_s_d_l__events_8h_a56cee6a1344dd6d33598af982fa9607f}\label{_s_d_l__events_8h_a56cee6a1344dd6d33598af982fa9607f} 
+\#define {\bfseries SDL\+\_\+\+QUERY}~-\/1
+\item 
+\Hypertarget{_s_d_l__events_8h_af1ff071ae5e1576d6de5663d68391ac5}\label{_s_d_l__events_8h_af1ff071ae5e1576d6de5663d68391ac5} 
+\#define {\bfseries SDL\+\_\+\+IGNORE}~0
+\item 
+\Hypertarget{_s_d_l__events_8h_a8190e7249139292b676f0cfcaf7d590a}\label{_s_d_l__events_8h_a8190e7249139292b676f0cfcaf7d590a} 
+\#define {\bfseries SDL\+\_\+\+DISABLE}~0
+\item 
+\Hypertarget{_s_d_l__events_8h_ae8ffaa5d3d65f4dd75dcf1563e1cc8a9}\label{_s_d_l__events_8h_ae8ffaa5d3d65f4dd75dcf1563e1cc8a9} 
+\#define {\bfseries SDL\+\_\+\+ENABLE}~1
+\item 
+\Hypertarget{_s_d_l__events_8h_a733b4d1d521281545a5a34d799f8a2a1}\label{_s_d_l__events_8h_a733b4d1d521281545a5a34d799f8a2a1} 
+\#define {\bfseries SDL\+\_\+\+Get\+Event\+State}(type)~\mbox{\hyperlink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State}}(type, SDL\+\_\+\+QUERY)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__events_8h_a737d360b5df89c7c8a13a8fefb0aa321}\label{_s_d_l__events_8h_a737d360b5df89c7c8a13a8fefb0aa321} 
+typedef struct SDL\+\_\+\+Common\+Event {\bfseries SDL\+\_\+\+Common\+Event}
+\begin{DoxyCompactList}\small\item\em Fields shared by every event. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_aa19383df47bc131f64ea1adc49d3530b}\label{_s_d_l__events_8h_aa19383df47bc131f64ea1adc49d3530b} 
+typedef struct SDL\+\_\+\+Window\+Event {\bfseries SDL\+\_\+\+Window\+Event}
+\begin{DoxyCompactList}\small\item\em Window state change event data (event.\+window.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a0ac4af376ea5f04b1c099923b17aabcc}\label{_s_d_l__events_8h_a0ac4af376ea5f04b1c099923b17aabcc} 
+typedef struct SDL\+\_\+\+Keyboard\+Event {\bfseries SDL\+\_\+\+Keyboard\+Event}
+\begin{DoxyCompactList}\small\item\em Keyboard button event structure (event.\+key.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a5cc9a3eec4f311d076f2f9e29eca9c3a}\label{_s_d_l__events_8h_a5cc9a3eec4f311d076f2f9e29eca9c3a} 
+typedef struct SDL\+\_\+\+Text\+Editing\+Event {\bfseries SDL\+\_\+\+Text\+Editing\+Event}
+\begin{DoxyCompactList}\small\item\em Keyboard text editing event structure (event.\+edit.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a078aa3712873c5ec13e17c42f9f394a0}\label{_s_d_l__events_8h_a078aa3712873c5ec13e17c42f9f394a0} 
+typedef struct SDL\+\_\+\+Text\+Input\+Event {\bfseries SDL\+\_\+\+Text\+Input\+Event}
+\begin{DoxyCompactList}\small\item\em Keyboard text input event structure (event.\+text.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a47fa051bc75e8216caa65d1d3358b7ae}\label{_s_d_l__events_8h_a47fa051bc75e8216caa65d1d3358b7ae} 
+typedef struct SDL\+\_\+\+Mouse\+Motion\+Event {\bfseries SDL\+\_\+\+Mouse\+Motion\+Event}
+\begin{DoxyCompactList}\small\item\em Mouse motion event structure (event.\+motion.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a07c8c7d7bde4b2d43e6647a595754d36}\label{_s_d_l__events_8h_a07c8c7d7bde4b2d43e6647a595754d36} 
+typedef struct SDL\+\_\+\+Mouse\+Button\+Event {\bfseries SDL\+\_\+\+Mouse\+Button\+Event}
+\begin{DoxyCompactList}\small\item\em Mouse button event structure (event.\+button.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a14c0794d5e8d6768fde5e4bb8bb6dea5}\label{_s_d_l__events_8h_a14c0794d5e8d6768fde5e4bb8bb6dea5} 
+typedef struct SDL\+\_\+\+Mouse\+Wheel\+Event {\bfseries SDL\+\_\+\+Mouse\+Wheel\+Event}
+\begin{DoxyCompactList}\small\item\em Mouse wheel event structure (event.\+wheel.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_abf2328076a9820b8f2f906392680153c}\label{_s_d_l__events_8h_abf2328076a9820b8f2f906392680153c} 
+typedef struct SDL\+\_\+\+Joy\+Axis\+Event {\bfseries SDL\+\_\+\+Joy\+Axis\+Event}
+\begin{DoxyCompactList}\small\item\em Joystick axis motion event structure (event.\+jaxis.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_ab4f00b9e50d6256932b1d2e42a1d8768}\label{_s_d_l__events_8h_ab4f00b9e50d6256932b1d2e42a1d8768} 
+typedef struct SDL\+\_\+\+Joy\+Ball\+Event {\bfseries SDL\+\_\+\+Joy\+Ball\+Event}
+\begin{DoxyCompactList}\small\item\em Joystick trackball motion event structure (event.\+jball.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_acc126973445bf3de581f5b21fcdd9f34}\label{_s_d_l__events_8h_acc126973445bf3de581f5b21fcdd9f34} 
+typedef struct SDL\+\_\+\+Joy\+Hat\+Event {\bfseries SDL\+\_\+\+Joy\+Hat\+Event}
+\begin{DoxyCompactList}\small\item\em Joystick hat position change event structure (event.\+jhat.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_ac5a4678f070c2c2820a184dd8d2dc3fe}\label{_s_d_l__events_8h_ac5a4678f070c2c2820a184dd8d2dc3fe} 
+typedef struct SDL\+\_\+\+Joy\+Button\+Event {\bfseries SDL\+\_\+\+Joy\+Button\+Event}
+\begin{DoxyCompactList}\small\item\em Joystick button event structure (event.\+jbutton.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a823e4ba13b863419abc37c82445749c1}\label{_s_d_l__events_8h_a823e4ba13b863419abc37c82445749c1} 
+typedef struct SDL\+\_\+\+Joy\+Device\+Event {\bfseries SDL\+\_\+\+Joy\+Device\+Event}
+\begin{DoxyCompactList}\small\item\em Joystick device event structure (event.\+jdevice.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a9b12bc8c4cfa09f0c385b583f15bbf3f}\label{_s_d_l__events_8h_a9b12bc8c4cfa09f0c385b583f15bbf3f} 
+typedef struct SDL\+\_\+\+Controller\+Axis\+Event {\bfseries SDL\+\_\+\+Controller\+Axis\+Event}
+\begin{DoxyCompactList}\small\item\em Game controller axis motion event structure (event.\+caxis.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a04d2d1528e21ae733a88f0895cf2a11f}\label{_s_d_l__events_8h_a04d2d1528e21ae733a88f0895cf2a11f} 
+typedef struct SDL\+\_\+\+Controller\+Button\+Event {\bfseries SDL\+\_\+\+Controller\+Button\+Event}
+\begin{DoxyCompactList}\small\item\em Game controller button event structure (event.\+cbutton.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a9e9263b2b62bec155b03edc2e9480857}\label{_s_d_l__events_8h_a9e9263b2b62bec155b03edc2e9480857} 
+typedef struct SDL\+\_\+\+Controller\+Device\+Event {\bfseries SDL\+\_\+\+Controller\+Device\+Event}
+\begin{DoxyCompactList}\small\item\em Controller device event structure (event.\+cdevice.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a64524ac8fed2cb0cadafa09560dff210}\label{_s_d_l__events_8h_a64524ac8fed2cb0cadafa09560dff210} 
+typedef struct SDL\+\_\+\+Audio\+Device\+Event {\bfseries SDL\+\_\+\+Audio\+Device\+Event}
+\begin{DoxyCompactList}\small\item\em Audio device event structure (event.\+adevice.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a7147e3df7940e4e43a997dc99e0611eb}\label{_s_d_l__events_8h_a7147e3df7940e4e43a997dc99e0611eb} 
+typedef struct SDL\+\_\+\+Touch\+Finger\+Event {\bfseries SDL\+\_\+\+Touch\+Finger\+Event}
+\begin{DoxyCompactList}\small\item\em Touch finger event structure (event.\+tfinger.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_ab6e6d25815e6d1b48a2777b2bddf695c}\label{_s_d_l__events_8h_ab6e6d25815e6d1b48a2777b2bddf695c} 
+typedef struct SDL\+\_\+\+Multi\+Gesture\+Event {\bfseries SDL\+\_\+\+Multi\+Gesture\+Event}
+\begin{DoxyCompactList}\small\item\em Multiple Finger Gesture Event (event.\+mgesture.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_adf06d9167ed17ff913e20ef7cdacba34}\label{_s_d_l__events_8h_adf06d9167ed17ff913e20ef7cdacba34} 
+typedef struct SDL\+\_\+\+Dollar\+Gesture\+Event {\bfseries SDL\+\_\+\+Dollar\+Gesture\+Event}
+\begin{DoxyCompactList}\small\item\em Dollar Gesture Event (event.\+dgesture.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+typedef struct SDL\+\_\+\+Drop\+Event \mbox{\hyperlink{_s_d_l__events_8h_a4c88d1d54b64b3f2b5c7a18984614f85}{SDL\+\_\+\+Drop\+Event}}
+\begin{DoxyCompactList}\small\item\em An event used to request a file open by the system (event.\+drop.\texorpdfstring{$\ast$}{*}) This event is enabled by default, you can disable it with \doxylink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()}. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a276c50ba90bfed63c8c3129551c65a43}\label{_s_d_l__events_8h_a276c50ba90bfed63c8c3129551c65a43} 
+typedef struct SDL\+\_\+\+Quit\+Event {\bfseries SDL\+\_\+\+Quit\+Event}
+\begin{DoxyCompactList}\small\item\em The "{}quit requested"{} event. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a38f7a582f0cd969b24f26dce745cedfe}\label{_s_d_l__events_8h_a38f7a582f0cd969b24f26dce745cedfe} 
+typedef struct SDL\+\_\+\+OSEvent {\bfseries SDL\+\_\+\+OSEvent}
+\begin{DoxyCompactList}\small\item\em OS Specific event. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a8103cd8a0899ff3fb8648dc5a47a8a82}\label{_s_d_l__events_8h_a8103cd8a0899ff3fb8648dc5a47a8a82} 
+typedef struct SDL\+\_\+\+User\+Event {\bfseries SDL\+\_\+\+User\+Event}
+\begin{DoxyCompactList}\small\item\em A user-\/defined event type (event.\+user.\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a1ebcb2014aeef8b8c2cfdd66c91ce3c8}\label{_s_d_l__events_8h_a1ebcb2014aeef8b8c2cfdd66c91ce3c8} 
+typedef struct SDL\+\_\+\+Sys\+WMmsg {\bfseries SDL\+\_\+\+Sys\+WMmsg}
+\item 
+typedef struct SDL\+\_\+\+Sys\+WMEvent \mbox{\hyperlink{_s_d_l__events_8h_af028372f0833c630b96a1472899a0369}{SDL\+\_\+\+Sys\+WMEvent}}
+\begin{DoxyCompactList}\small\item\em A video driver dependent system event (event.\+syswm.\texorpdfstring{$\ast$}{*}) This event is disabled by default, you can enable it with \doxylink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()} \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a33fcc6aa445cb781bfca881e39e5333e}\label{_s_d_l__events_8h_a33fcc6aa445cb781bfca881e39e5333e} 
+typedef union SDL\+\_\+\+Event {\bfseries SDL\+\_\+\+Event}
+\begin{DoxyCompactList}\small\item\em General event structure. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95}\label{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95} 
+typedef int(SDLCALL \texorpdfstring{$\ast$}{*} {\bfseries SDL\+\_\+\+Event\+Filter}) (void \texorpdfstring{$\ast$}{*}userdata, \mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fcca}{SDL\+\_\+\+Event\+Type}} \{ \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafd64b483c47e93576b91bf5b227d04c2}{SDL\+\_\+\+FIRSTEVENT}} = 0
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}} = 0x100
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaac9c2c9870db9d109959ae68ec64cf67e}{SDL\+\_\+\+APP\+\_\+\+TERMINATING}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa32bc310f9370245fa086e42c69d76c40}{SDL\+\_\+\+APP\+\_\+\+LOWMEMORY}}
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa0c6280f19f3c307fd2e0c7b1d5f5461}{SDL\+\_\+\+APP\+\_\+\+WILLENTERBACKGROUND}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaab2a804d0e9d91a604f4a03e49f5ab7c1}{SDL\+\_\+\+APP\+\_\+\+DIDENTERBACKGROUND}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa406151c433bc968c46591bde396c987f}{SDL\+\_\+\+APP\+\_\+\+WILLENTERFOREGROUND}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa964e90265b0910f3a52619cc460699d7}{SDL\+\_\+\+APP\+\_\+\+DIDENTERFOREGROUND}}
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa5ff4e41f0d8b5def11cfe6a69ec0b698}{SDL\+\_\+\+WINDOWEVENT}} = 0x200
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa73749d735a18ce6ef17a09ee70d5dbe7}{SDL\+\_\+\+SYSWMEVENT}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacaf8cfd53c985cdbf6a90c811d51a1fc}{SDL\+\_\+\+KEYDOWN}} = 0x300
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadefb8866b9d28be21c2c33c35cc66c4b}{SDL\+\_\+\+KEYUP}}
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1b80c465df69c0b6d06f026ce7a230e3}{SDL\+\_\+\+TEXTEDITING}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4fa2570088f6b9cbd109ae91b511368f}{SDL\+\_\+\+TEXTINPUT}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacd473484a07dfdc628c4a02fbf9f83c9}{SDL\+\_\+\+KEYMAPCHANGED}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa04c436ef80fef38fb77a89e0e9124c30}{SDL\+\_\+\+MOUSEMOTION}} = 0x400
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9267166e1536dfa8b0daa98c0afa9052}{SDL\+\_\+\+MOUSEBUTTONDOWN}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4ab85278398d29b9e50f500aad2b952b}{SDL\+\_\+\+MOUSEBUTTONUP}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa63135c2e0aea2286f05066f3c0bc5c4e}{SDL\+\_\+\+MOUSEWHEEL}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaf0803b3f8a12de3d85f81ebd7b514cd1}{SDL\+\_\+\+JOYAXISMOTION}} = 0x600
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa78f859489cfd565c305c7f6f9d5b25c1}{SDL\+\_\+\+JOYBALLMOTION}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafba4080bfbad335e520097b2024f0dff}{SDL\+\_\+\+JOYHATMOTION}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa386ac978bc145a45883fe0adab70710b}{SDL\+\_\+\+JOYBUTTONDOWN}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa76f91c81110f012e3a47cbbc0449e3c3}{SDL\+\_\+\+JOYBUTTONUP}}
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa0500c4e830a1822e6d0a90294c3f1393}{SDL\+\_\+\+JOYDEVICEADDED}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4e2d7a1067dc56abeee393d46309ecd0}{SDL\+\_\+\+JOYDEVICEREMOVED}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaca6330126f4126f6a45454fa046c25f3}{SDL\+\_\+\+CONTROLLERAXISMOTION}} = 0x650
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaafe044d5f92ac9608ded473218569474}{SDL\+\_\+\+CONTROLLERBUTTONDOWN}}
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa8cb5a10b1ae0e185ef69a321d3d2d1be}{SDL\+\_\+\+CONTROLLERBUTTONUP}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9642de478348da1aba4fb5791e8c5314}{SDL\+\_\+\+CONTROLLERDEVICEADDED}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae00ac6995dfb7b92bfae68b9f47ae07a}{SDL\+\_\+\+CONTROLLERDEVICEREMOVED}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaeca87c7b5bb21915d444298449a78ee6}{SDL\+\_\+\+CONTROLLERDEVICEREMAPPED}}
+, \newline
+{\bfseries SDL\+\_\+\+FINGERDOWN} = 0x700
+, {\bfseries SDL\+\_\+\+FINGERUP}
+, {\bfseries SDL\+\_\+\+FINGERMOTION}
+, {\bfseries SDL\+\_\+\+DOLLARGESTURE} = 0x800
+, \newline
+{\bfseries SDL\+\_\+\+DOLLARRECORD}
+, {\bfseries SDL\+\_\+\+MULTIGESTURE}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa6ba1fed7d9fec95993eeb74abd96f64a}{SDL\+\_\+\+CLIPBOARDUPDATE}} = 0x900
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad9238862d7aeaebff88be6453ee0fbab}{SDL\+\_\+\+DROPFILE}} = 0x1000
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadb3154654baf003910e75d74b507a82b}{SDL\+\_\+\+AUDIODEVICEADDED}} = 0x1100
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad56f8934fe24ee4c0cd9329e3c57c0c2}{SDL\+\_\+\+AUDIODEVICEREMOVED}}
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae8971f362076f4844d953ea57702108a}{SDL\+\_\+\+RENDER\+\_\+\+TARGETS\+\_\+\+RESET}} = 0x2000
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa88e4a52a73047416133b179ba0fd7db0}{SDL\+\_\+\+RENDER\+\_\+\+DEVICE\+\_\+\+RESET}}
+, \newline
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4364c23f54802309e83fdb9b1c07c719}{SDL\+\_\+\+USEREVENT}} = 0x8000
+, \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaffeac40a4ff366717c0ebc74118ea2ae}{SDL\+\_\+\+LASTEVENT}} = 0x\+FFFF
+ \}
+\begin{DoxyCompactList}\small\item\em The types of events that can be delivered. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179}\label{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179} 
+enum {\bfseries SDL\+\_\+eventaction} \{ {\bfseries SDL\+\_\+\+ADDEVENT}
+, {\bfseries SDL\+\_\+\+PEEKEVENT}
+, {\bfseries SDL\+\_\+\+GETEVENT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_aa15403d1c8fc341cd9cf750e27a66d19}{SDL\+\_\+\+Pump\+Events}} (void)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_a83618a672f963892ddd0eef74a402e75}{SDL\+\_\+\+Peep\+Events}} (\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}events, int numevents, SDL\+\_\+eventaction action, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} min\+Type, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} max\+Type)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_ac424563975b92f98c6175543e8f41012}{SDL\+\_\+\+Has\+Event}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} type)
+\item 
+\Hypertarget{_s_d_l__events_8h_a74336e7d6e86f06171814eccbc1e2157}\label{_s_d_l__events_8h_a74336e7d6e86f06171814eccbc1e2157} 
+DECLSPEC SDL\+\_\+bool SDLCALL {\bfseries SDL\+\_\+\+Has\+Events} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} min\+Type, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} max\+Type)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_a4225727df385885e999784f416410cc9}{SDL\+\_\+\+Flush\+Event}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} type)
+\item 
+\Hypertarget{_s_d_l__events_8h_aa0e3ec5d83d38af1dfea722d4b741f3e}\label{_s_d_l__events_8h_aa0e3ec5d83d38af1dfea722d4b741f3e} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Flush\+Events} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} min\+Type, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} max\+Type)
+\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_acfa517963c25f8b71acc6b56721c5d9b}{SDL\+\_\+\+Poll\+Event}} (\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}event)
+\begin{DoxyCompactList}\small\item\em Polls for currently pending events. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_af37c266ea979ba39b82079d9eb401003}{SDL\+\_\+\+Wait\+Event}} (\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}event)
+\begin{DoxyCompactList}\small\item\em Waits indefinitely for the next available event. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_a54285ab4f6e2d6d1a01df6a1dd78294a}{SDL\+\_\+\+Wait\+Event\+Timeout}} (\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}event, int timeout)
+\begin{DoxyCompactList}\small\item\em Waits until the specified timeout (in milliseconds) for the next available event. \end{DoxyCompactList}\item 
+DECLSPEC int SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_adced45c8816620846a6fde2a7d54b446}{SDL\+\_\+\+Push\+Event}} (\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}event)
+\begin{DoxyCompactList}\small\item\em Add an event to the event queue. \end{DoxyCompactList}\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_ac02d22efa3a02407ec1f3b4f303b0bfb}{SDL\+\_\+\+Set\+Event\+Filter}} (SDL\+\_\+\+Event\+Filter filter, void \texorpdfstring{$\ast$}{*}userdata)
+\item 
+DECLSPEC SDL\+\_\+bool SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_a9cc48009a4dc4464594213ca45b26c27}{SDL\+\_\+\+Get\+Event\+Filter}} (SDL\+\_\+\+Event\+Filter \texorpdfstring{$\ast$}{*}filter, void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}userdata)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_ad81eba7df9eae4fd0acd046b7f983202}{SDL\+\_\+\+Add\+Event\+Watch}} (SDL\+\_\+\+Event\+Filter filter, void \texorpdfstring{$\ast$}{*}userdata)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_a05a54ccb07f32fe31b73e93ac238e20a}{SDL\+\_\+\+Del\+Event\+Watch}} (SDL\+\_\+\+Event\+Filter filter, void \texorpdfstring{$\ast$}{*}userdata)
+\item 
+DECLSPEC void SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_a37e4458a58164455f53ed35d633c4bb5}{SDL\+\_\+\+Filter\+Events}} (SDL\+\_\+\+Event\+Filter filter, void \texorpdfstring{$\ast$}{*}userdata)
+\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} type, int state)
+\item 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL \mbox{\hyperlink{_s_d_l__events_8h_af99e29fafb9e4773b70f68cec08681fc}{SDL\+\_\+\+Register\+Events}} (int numevents)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL event handling. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_s_d_l__events_8h_a4c88d1d54b64b3f2b5c7a18984614f85}\label{_s_d_l__events_8h_a4c88d1d54b64b3f2b5c7a18984614f85} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_DropEvent@{SDL\_DropEvent}}
+\index{SDL\_DropEvent@{SDL\_DropEvent}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_DropEvent}{SDL\_DropEvent}}
+{\footnotesize\ttfamily typedef struct SDL\+\_\+\+Drop\+Event SDL\+\_\+\+Drop\+Event}
+
+
+
+An event used to request a file open by the system (event.\+drop.\texorpdfstring{$\ast$}{*}) This event is enabled by default, you can disable it with \doxylink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()}. 
+
+\begin{DoxyNote}{Note}
+If this event is enabled, you must free the filename in the event. 
+\end{DoxyNote}
+\Hypertarget{_s_d_l__events_8h_af028372f0833c630b96a1472899a0369}\label{_s_d_l__events_8h_af028372f0833c630b96a1472899a0369} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_SysWMEvent@{SDL\_SysWMEvent}}
+\index{SDL\_SysWMEvent@{SDL\_SysWMEvent}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SysWMEvent}{SDL\_SysWMEvent}}
+{\footnotesize\ttfamily typedef struct SDL\+\_\+\+Sys\+WMEvent SDL\+\_\+\+Sys\+WMEvent}
+
+
+
+A video driver dependent system event (event.\+syswm.\texorpdfstring{$\ast$}{*}) This event is disabled by default, you can enable it with \doxylink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()} 
+
+\begin{DoxyNote}{Note}
+If you want to use this event, you should include \doxylink{_s_d_l__syswm_8h}{SDL\+\_\+syswm.\+h}. 
+\end{DoxyNote}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fcca}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fcca} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_EventType@{SDL\_EventType}}
+\index{SDL\_EventType@{SDL\_EventType}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_EventType}{SDL\_EventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fcca}{SDL\+\_\+\+Event\+Type}}}
+
+
+
+The types of events that can be delivered. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_FIRSTEVENT@{SDL\_FIRSTEVENT}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_FIRSTEVENT@{SDL\_FIRSTEVENT}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafd64b483c47e93576b91bf5b227d04c2}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafd64b483c47e93576b91bf5b227d04c2} 
+SDL\+\_\+\+FIRSTEVENT&Unused (do not remove) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_QUIT@{SDL\_QUIT}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_QUIT@{SDL\_QUIT}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603} 
+SDL\+\_\+\+QUIT&User-\/requested quit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_APP\_TERMINATING@{SDL\_APP\_TERMINATING}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_APP\_TERMINATING@{SDL\_APP\_TERMINATING}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaac9c2c9870db9d109959ae68ec64cf67e}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaac9c2c9870db9d109959ae68ec64cf67e} 
+SDL\+\_\+\+APP\+\_\+\+TERMINATING&The application is being terminated by the OS Called on i\+OS in application\+Will\+Terminate() Called on Android in on\+Destroy() \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_APP\_LOWMEMORY@{SDL\_APP\_LOWMEMORY}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_APP\_LOWMEMORY@{SDL\_APP\_LOWMEMORY}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa32bc310f9370245fa086e42c69d76c40}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa32bc310f9370245fa086e42c69d76c40} 
+SDL\+\_\+\+APP\+\_\+\+LOWMEMORY&The application is low on memory, free memory if possible. Called on i\+OS in application\+Did\+Receive\+Memory\+Warning() Called on Android in on\+Low\+Memory() \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_APP\_WILLENTERBACKGROUND@{SDL\_APP\_WILLENTERBACKGROUND}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_APP\_WILLENTERBACKGROUND@{SDL\_APP\_WILLENTERBACKGROUND}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa0c6280f19f3c307fd2e0c7b1d5f5461}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa0c6280f19f3c307fd2e0c7b1d5f5461} 
+SDL\+\_\+\+APP\+\_\+\+WILLENTERBACKGROUND&The application is about to enter the background Called on i\+OS in application\+Will\+Resign\+Active() Called on Android in on\+Pause() \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_APP\_DIDENTERBACKGROUND@{SDL\_APP\_DIDENTERBACKGROUND}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_APP\_DIDENTERBACKGROUND@{SDL\_APP\_DIDENTERBACKGROUND}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaab2a804d0e9d91a604f4a03e49f5ab7c1}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaab2a804d0e9d91a604f4a03e49f5ab7c1} 
+SDL\+\_\+\+APP\+\_\+\+DIDENTERBACKGROUND&The application did enter the background and may not get CPU for some time Called on i\+OS in application\+Did\+Enter\+Background() Called on Android in on\+Pause() \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_APP\_WILLENTERFOREGROUND@{SDL\_APP\_WILLENTERFOREGROUND}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_APP\_WILLENTERFOREGROUND@{SDL\_APP\_WILLENTERFOREGROUND}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa406151c433bc968c46591bde396c987f}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa406151c433bc968c46591bde396c987f} 
+SDL\+\_\+\+APP\+\_\+\+WILLENTERFOREGROUND&The application is about to enter the foreground Called on i\+OS in application\+Will\+Enter\+Foreground() Called on Android in on\+Resume() \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_APP\_DIDENTERFOREGROUND@{SDL\_APP\_DIDENTERFOREGROUND}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_APP\_DIDENTERFOREGROUND@{SDL\_APP\_DIDENTERFOREGROUND}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa964e90265b0910f3a52619cc460699d7}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa964e90265b0910f3a52619cc460699d7} 
+SDL\+\_\+\+APP\+\_\+\+DIDENTERFOREGROUND&The application is now interactive Called on i\+OS in application\+Did\+Become\+Active() Called on Android in on\+Resume() \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_WINDOWEVENT@{SDL\_WINDOWEVENT}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_WINDOWEVENT@{SDL\_WINDOWEVENT}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa5ff4e41f0d8b5def11cfe6a69ec0b698}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa5ff4e41f0d8b5def11cfe6a69ec0b698} 
+SDL\+\_\+\+WINDOWEVENT&Window state change \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWMEVENT@{SDL\_SYSWMEVENT}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_SYSWMEVENT@{SDL\_SYSWMEVENT}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa73749d735a18ce6ef17a09ee70d5dbe7}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa73749d735a18ce6ef17a09ee70d5dbe7} 
+SDL\+\_\+\+SYSWMEVENT&System specific event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_KEYDOWN@{SDL\_KEYDOWN}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_KEYDOWN@{SDL\_KEYDOWN}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacaf8cfd53c985cdbf6a90c811d51a1fc}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacaf8cfd53c985cdbf6a90c811d51a1fc} 
+SDL\+\_\+\+KEYDOWN&Key pressed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_KEYUP@{SDL\_KEYUP}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_KEYUP@{SDL\_KEYUP}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadefb8866b9d28be21c2c33c35cc66c4b}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadefb8866b9d28be21c2c33c35cc66c4b} 
+SDL\+\_\+\+KEYUP&Key released \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_TEXTEDITING@{SDL\_TEXTEDITING}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_TEXTEDITING@{SDL\_TEXTEDITING}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1b80c465df69c0b6d06f026ce7a230e3}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1b80c465df69c0b6d06f026ce7a230e3} 
+SDL\+\_\+\+TEXTEDITING&Keyboard text editing (composition) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_TEXTINPUT@{SDL\_TEXTINPUT}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_TEXTINPUT@{SDL\_TEXTINPUT}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4fa2570088f6b9cbd109ae91b511368f}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4fa2570088f6b9cbd109ae91b511368f} 
+SDL\+\_\+\+TEXTINPUT&Keyboard text input \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_KEYMAPCHANGED@{SDL\_KEYMAPCHANGED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_KEYMAPCHANGED@{SDL\_KEYMAPCHANGED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacd473484a07dfdc628c4a02fbf9f83c9}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacd473484a07dfdc628c4a02fbf9f83c9} 
+SDL\+\_\+\+KEYMAPCHANGED&Keymap changed due to a system event such as an input language or keyboard layout change. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MOUSEMOTION@{SDL\_MOUSEMOTION}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_MOUSEMOTION@{SDL\_MOUSEMOTION}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa04c436ef80fef38fb77a89e0e9124c30}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa04c436ef80fef38fb77a89e0e9124c30} 
+SDL\+\_\+\+MOUSEMOTION&Mouse moved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MOUSEBUTTONDOWN@{SDL\_MOUSEBUTTONDOWN}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_MOUSEBUTTONDOWN@{SDL\_MOUSEBUTTONDOWN}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9267166e1536dfa8b0daa98c0afa9052}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9267166e1536dfa8b0daa98c0afa9052} 
+SDL\+\_\+\+MOUSEBUTTONDOWN&Mouse button pressed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MOUSEBUTTONUP@{SDL\_MOUSEBUTTONUP}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_MOUSEBUTTONUP@{SDL\_MOUSEBUTTONUP}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4ab85278398d29b9e50f500aad2b952b}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4ab85278398d29b9e50f500aad2b952b} 
+SDL\+\_\+\+MOUSEBUTTONUP&Mouse button released \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MOUSEWHEEL@{SDL\_MOUSEWHEEL}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_MOUSEWHEEL@{SDL\_MOUSEWHEEL}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa63135c2e0aea2286f05066f3c0bc5c4e}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa63135c2e0aea2286f05066f3c0bc5c4e} 
+SDL\+\_\+\+MOUSEWHEEL&Mouse wheel motion \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_JOYAXISMOTION@{SDL\_JOYAXISMOTION}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_JOYAXISMOTION@{SDL\_JOYAXISMOTION}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaf0803b3f8a12de3d85f81ebd7b514cd1}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaf0803b3f8a12de3d85f81ebd7b514cd1} 
+SDL\+\_\+\+JOYAXISMOTION&Joystick axis motion \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_JOYBALLMOTION@{SDL\_JOYBALLMOTION}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_JOYBALLMOTION@{SDL\_JOYBALLMOTION}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa78f859489cfd565c305c7f6f9d5b25c1}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa78f859489cfd565c305c7f6f9d5b25c1} 
+SDL\+\_\+\+JOYBALLMOTION&Joystick trackball motion \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_JOYHATMOTION@{SDL\_JOYHATMOTION}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_JOYHATMOTION@{SDL\_JOYHATMOTION}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafba4080bfbad335e520097b2024f0dff}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafba4080bfbad335e520097b2024f0dff} 
+SDL\+\_\+\+JOYHATMOTION&Joystick hat position change \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_JOYBUTTONDOWN@{SDL\_JOYBUTTONDOWN}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_JOYBUTTONDOWN@{SDL\_JOYBUTTONDOWN}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa386ac978bc145a45883fe0adab70710b}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa386ac978bc145a45883fe0adab70710b} 
+SDL\+\_\+\+JOYBUTTONDOWN&Joystick button pressed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_JOYBUTTONUP@{SDL\_JOYBUTTONUP}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_JOYBUTTONUP@{SDL\_JOYBUTTONUP}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa76f91c81110f012e3a47cbbc0449e3c3}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa76f91c81110f012e3a47cbbc0449e3c3} 
+SDL\+\_\+\+JOYBUTTONUP&Joystick button released \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_JOYDEVICEADDED@{SDL\_JOYDEVICEADDED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_JOYDEVICEADDED@{SDL\_JOYDEVICEADDED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa0500c4e830a1822e6d0a90294c3f1393}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa0500c4e830a1822e6d0a90294c3f1393} 
+SDL\+\_\+\+JOYDEVICEADDED&A new joystick has been inserted into the system \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_JOYDEVICEREMOVED@{SDL\_JOYDEVICEREMOVED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_JOYDEVICEREMOVED@{SDL\_JOYDEVICEREMOVED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4e2d7a1067dc56abeee393d46309ecd0}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4e2d7a1067dc56abeee393d46309ecd0} 
+SDL\+\_\+\+JOYDEVICEREMOVED&An opened joystick has been removed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_CONTROLLERAXISMOTION@{SDL\_CONTROLLERAXISMOTION}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_CONTROLLERAXISMOTION@{SDL\_CONTROLLERAXISMOTION}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaca6330126f4126f6a45454fa046c25f3}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaca6330126f4126f6a45454fa046c25f3} 
+SDL\+\_\+\+CONTROLLERAXISMOTION&Game controller axis motion \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_CONTROLLERBUTTONDOWN@{SDL\_CONTROLLERBUTTONDOWN}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_CONTROLLERBUTTONDOWN@{SDL\_CONTROLLERBUTTONDOWN}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaafe044d5f92ac9608ded473218569474}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaafe044d5f92ac9608ded473218569474} 
+SDL\+\_\+\+CONTROLLERBUTTONDOWN&Game controller button pressed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_CONTROLLERBUTTONUP@{SDL\_CONTROLLERBUTTONUP}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_CONTROLLERBUTTONUP@{SDL\_CONTROLLERBUTTONUP}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa8cb5a10b1ae0e185ef69a321d3d2d1be}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa8cb5a10b1ae0e185ef69a321d3d2d1be} 
+SDL\+\_\+\+CONTROLLERBUTTONUP&Game controller button released \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_CONTROLLERDEVICEADDED@{SDL\_CONTROLLERDEVICEADDED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_CONTROLLERDEVICEADDED@{SDL\_CONTROLLERDEVICEADDED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9642de478348da1aba4fb5791e8c5314}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9642de478348da1aba4fb5791e8c5314} 
+SDL\+\_\+\+CONTROLLERDEVICEADDED&A new Game controller has been inserted into the system \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_CONTROLLERDEVICEREMOVED@{SDL\_CONTROLLERDEVICEREMOVED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_CONTROLLERDEVICEREMOVED@{SDL\_CONTROLLERDEVICEREMOVED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae00ac6995dfb7b92bfae68b9f47ae07a}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae00ac6995dfb7b92bfae68b9f47ae07a} 
+SDL\+\_\+\+CONTROLLERDEVICEREMOVED&An opened Game controller has been removed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_CONTROLLERDEVICEREMAPPED@{SDL\_CONTROLLERDEVICEREMAPPED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_CONTROLLERDEVICEREMAPPED@{SDL\_CONTROLLERDEVICEREMAPPED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaeca87c7b5bb21915d444298449a78ee6}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaeca87c7b5bb21915d444298449a78ee6} 
+SDL\+\_\+\+CONTROLLERDEVICEREMAPPED&The controller mapping was updated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_CLIPBOARDUPDATE@{SDL\_CLIPBOARDUPDATE}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_CLIPBOARDUPDATE@{SDL\_CLIPBOARDUPDATE}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa6ba1fed7d9fec95993eeb74abd96f64a}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa6ba1fed7d9fec95993eeb74abd96f64a} 
+SDL\+\_\+\+CLIPBOARDUPDATE&The clipboard changed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_DROPFILE@{SDL\_DROPFILE}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_DROPFILE@{SDL\_DROPFILE}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad9238862d7aeaebff88be6453ee0fbab}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad9238862d7aeaebff88be6453ee0fbab} 
+SDL\+\_\+\+DROPFILE&The system requests a file open \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_AUDIODEVICEADDED@{SDL\_AUDIODEVICEADDED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_AUDIODEVICEADDED@{SDL\_AUDIODEVICEADDED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadb3154654baf003910e75d74b507a82b}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadb3154654baf003910e75d74b507a82b} 
+SDL\+\_\+\+AUDIODEVICEADDED&A new audio device is available \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_AUDIODEVICEREMOVED@{SDL\_AUDIODEVICEREMOVED}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_AUDIODEVICEREMOVED@{SDL\_AUDIODEVICEREMOVED}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad56f8934fe24ee4c0cd9329e3c57c0c2}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad56f8934fe24ee4c0cd9329e3c57c0c2} 
+SDL\+\_\+\+AUDIODEVICEREMOVED&An audio device has been removed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_RENDER\_TARGETS\_RESET@{SDL\_RENDER\_TARGETS\_RESET}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_RENDER\_TARGETS\_RESET@{SDL\_RENDER\_TARGETS\_RESET}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae8971f362076f4844d953ea57702108a}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae8971f362076f4844d953ea57702108a} 
+SDL\+\_\+\+RENDER\+\_\+\+TARGETS\+\_\+\+RESET&The render targets have been reset and their contents need to be updated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_RENDER\_DEVICE\_RESET@{SDL\_RENDER\_DEVICE\_RESET}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_RENDER\_DEVICE\_RESET@{SDL\_RENDER\_DEVICE\_RESET}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa88e4a52a73047416133b179ba0fd7db0}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa88e4a52a73047416133b179ba0fd7db0} 
+SDL\+\_\+\+RENDER\+\_\+\+DEVICE\+\_\+\+RESET&The device has been reset and all textures need to be recreated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_USEREVENT@{SDL\_USEREVENT}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_USEREVENT@{SDL\_USEREVENT}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4364c23f54802309e83fdb9b1c07c719}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4364c23f54802309e83fdb9b1c07c719} 
+SDL\+\_\+\+USEREVENT&Events \doxylink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4364c23f54802309e83fdb9b1c07c719}{SDL\+\_\+\+USEREVENT} through \doxylink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaffeac40a4ff366717c0ebc74118ea2ae}{SDL\+\_\+\+LASTEVENT} are for your use, and should be allocated with \doxylink{_s_d_l__events_8h_af99e29fafb9e4773b70f68cec08681fc}{SDL\+\_\+\+Register\+Events()} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_LASTEVENT@{SDL\_LASTEVENT}!SDL\_events.h@{SDL\_events.h}}\index{SDL\_events.h@{SDL\_events.h}!SDL\_LASTEVENT@{SDL\_LASTEVENT}}}\Hypertarget{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaffeac40a4ff366717c0ebc74118ea2ae}\label{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaffeac40a4ff366717c0ebc74118ea2ae} 
+SDL\+\_\+\+LASTEVENT&This last event is only for bounding internal arrays \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__events_8h_ad81eba7df9eae4fd0acd046b7f983202}\label{_s_d_l__events_8h_ad81eba7df9eae4fd0acd046b7f983202} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_AddEventWatch@{SDL\_AddEventWatch}}
+\index{SDL\_AddEventWatch@{SDL\_AddEventWatch}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_AddEventWatch()}{SDL\_AddEventWatch()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Add\+Event\+Watch (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event\+Filter}]{filter,  }\item[{void \texorpdfstring{$\ast$}{*}}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Add a function which is called when an event is added to the queue. \Hypertarget{_s_d_l__events_8h_a05a54ccb07f32fe31b73e93ac238e20a}\label{_s_d_l__events_8h_a05a54ccb07f32fe31b73e93ac238e20a} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_DelEventWatch@{SDL\_DelEventWatch}}
+\index{SDL\_DelEventWatch@{SDL\_DelEventWatch}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_DelEventWatch()}{SDL\_DelEventWatch()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Del\+Event\+Watch (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event\+Filter}]{filter,  }\item[{void \texorpdfstring{$\ast$}{*}}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Remove an event watch function added with \doxylink{_s_d_l__events_8h_ad81eba7df9eae4fd0acd046b7f983202}{SDL\+\_\+\+Add\+Event\+Watch()} \Hypertarget{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}\label{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_EventState@{SDL\_EventState}}
+\index{SDL\_EventState@{SDL\_EventState}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_EventState()}{SDL\_EventState()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} SDLCALL SDL\+\_\+\+Event\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{type,  }\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function allows you to set the state of processing certain events.
+\begin{DoxyItemize}
+\item If {\ttfamily state} is set to SDL\+\_\+\+IGNORE, that event will be automatically dropped from the event queue and will not event be filtered.
+\item If {\ttfamily state} is set to SDL\+\_\+\+ENABLE, that event will be processed normally.
+\item If {\ttfamily state} is set to SDL\+\_\+\+QUERY, \doxylink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()} will return the current processing state of the specified event. 
+\end{DoxyItemize}\Hypertarget{_s_d_l__events_8h_a37e4458a58164455f53ed35d633c4bb5}\label{_s_d_l__events_8h_a37e4458a58164455f53ed35d633c4bb5} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_FilterEvents@{SDL\_FilterEvents}}
+\index{SDL\_FilterEvents@{SDL\_FilterEvents}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_FilterEvents()}{SDL\_FilterEvents()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Filter\+Events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event\+Filter}]{filter,  }\item[{void \texorpdfstring{$\ast$}{*}}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Run the filter function on the current event queue, removing any events for which the filter returns 0. \Hypertarget{_s_d_l__events_8h_a4225727df385885e999784f416410cc9}\label{_s_d_l__events_8h_a4225727df385885e999784f416410cc9} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_FlushEvent@{SDL\_FlushEvent}}
+\index{SDL\_FlushEvent@{SDL\_FlushEvent}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_FlushEvent()}{SDL\_FlushEvent()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Flush\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function clears events from the event queue This function only affects currently queued events. If you want to make sure that all pending OS events are flushed, you can call \doxylink{_s_d_l__events_8h_aa15403d1c8fc341cd9cf750e27a66d19}{SDL\+\_\+\+Pump\+Events()} on the main thread immediately before the flush call. \Hypertarget{_s_d_l__events_8h_a9cc48009a4dc4464594213ca45b26c27}\label{_s_d_l__events_8h_a9cc48009a4dc4464594213ca45b26c27} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_GetEventFilter@{SDL\_GetEventFilter}}
+\index{SDL\_GetEventFilter@{SDL\_GetEventFilter}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetEventFilter()}{SDL\_GetEventFilter()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Get\+Event\+Filter (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event\+Filter \texorpdfstring{$\ast$}{*}}]{filter,  }\item[{void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Return the current event filter -\/ can be used to "{}chain"{} filters. If there is no event filter set, this function returns SDL\+\_\+\+FALSE. \Hypertarget{_s_d_l__events_8h_ac424563975b92f98c6175543e8f41012}\label{_s_d_l__events_8h_ac424563975b92f98c6175543e8f41012} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_HasEvent@{SDL\_HasEvent}}
+\index{SDL\_HasEvent@{SDL\_HasEvent}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasEvent()}{SDL\_HasEvent()}}
+{\footnotesize\ttfamily DECLSPEC SDL\+\_\+bool SDLCALL SDL\+\_\+\+Has\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Checks to see if certain event types are in the event queue. \Hypertarget{_s_d_l__events_8h_a83618a672f963892ddd0eef74a402e75}\label{_s_d_l__events_8h_a83618a672f963892ddd0eef74a402e75} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_PeepEvents@{SDL\_PeepEvents}}
+\index{SDL\_PeepEvents@{SDL\_PeepEvents}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_PeepEvents()}{SDL\_PeepEvents()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Peep\+Events (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}}]{events,  }\item[{int}]{numevents,  }\item[{SDL\+\_\+eventaction}]{action,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{min\+Type,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{max\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Checks the event queue for messages and optionally returns them.
+
+If {\ttfamily action} is SDL\+\_\+\+ADDEVENT, up to {\ttfamily numevents} events will be added to the back of the event queue.
+
+If {\ttfamily action} is SDL\+\_\+\+PEEKEVENT, up to {\ttfamily numevents} events at the front of the event queue, within the specified minimum and maximum type, will be returned and will not be removed from the queue.
+
+If {\ttfamily action} is SDL\+\_\+\+GETEVENT, up to {\ttfamily numevents} events at the front of the event queue, within the specified minimum and maximum type, will be returned and will be removed from the queue.
+
+\begin{DoxyReturn}{Returns}
+The number of events actually stored, or -\/1 if there was an error.
+\end{DoxyReturn}
+This function is thread-\/safe. \Hypertarget{_s_d_l__events_8h_acfa517963c25f8b71acc6b56721c5d9b}\label{_s_d_l__events_8h_acfa517963c25f8b71acc6b56721c5d9b} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_PollEvent@{SDL\_PollEvent}}
+\index{SDL\_PollEvent@{SDL\_PollEvent}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_PollEvent()}{SDL\_PollEvent()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Poll\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Polls for currently pending events. 
+
+\begin{DoxyReturn}{Returns}
+1 if there are any pending events, or 0 if there are none available.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & If not NULL, the next event is removed from the queue and stored in that area. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_s_d_l__events_8h_aa15403d1c8fc341cd9cf750e27a66d19}\label{_s_d_l__events_8h_aa15403d1c8fc341cd9cf750e27a66d19} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_PumpEvents@{SDL\_PumpEvents}}
+\index{SDL\_PumpEvents@{SDL\_PumpEvents}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_PumpEvents()}{SDL\_PumpEvents()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Pump\+Events (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Pumps the event loop, gathering events from the input devices.
+
+This function updates the event queue and internal input device state.
+
+This should only be run in the thread that sets the video mode. \Hypertarget{_s_d_l__events_8h_adced45c8816620846a6fde2a7d54b446}\label{_s_d_l__events_8h_adced45c8816620846a6fde2a7d54b446} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_PushEvent@{SDL\_PushEvent}}
+\index{SDL\_PushEvent@{SDL\_PushEvent}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_PushEvent()}{SDL\_PushEvent()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Push\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Add an event to the event queue. 
+
+\begin{DoxyReturn}{Returns}
+1 on success, 0 if the event was filtered, or -\/1 if the event queue was full or there was some other error. 
+\end{DoxyReturn}
+\Hypertarget{_s_d_l__events_8h_af99e29fafb9e4773b70f68cec08681fc}\label{_s_d_l__events_8h_af99e29fafb9e4773b70f68cec08681fc} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_RegisterEvents@{SDL\_RegisterEvents}}
+\index{SDL\_RegisterEvents@{SDL\_RegisterEvents}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_RegisterEvents()}{SDL\_RegisterEvents()}}
+{\footnotesize\ttfamily DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL SDL\+\_\+\+Register\+Events (\begin{DoxyParamCaption}\item[{int}]{numevents }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function allocates a set of user-\/defined events, and returns the beginning event number for that set of events.
+
+If there aren\textquotesingle{}t enough user-\/defined events left, this function returns (Uint32)-\/1 \Hypertarget{_s_d_l__events_8h_ac02d22efa3a02407ec1f3b4f303b0bfb}\label{_s_d_l__events_8h_ac02d22efa3a02407ec1f3b4f303b0bfb} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_SetEventFilter@{SDL\_SetEventFilter}}
+\index{SDL\_SetEventFilter@{SDL\_SetEventFilter}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetEventFilter()}{SDL\_SetEventFilter()}}
+{\footnotesize\ttfamily DECLSPEC void SDLCALL SDL\+\_\+\+Set\+Event\+Filter (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event\+Filter}]{filter,  }\item[{void \texorpdfstring{$\ast$}{*}}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Sets up a filter to process all events before they change internal state and are posted to the internal event queue.
+
+The filter is prototyped as\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ SDL\_EventFilter(\textcolor{keywordtype}{void}\ *userdata,\ \mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}}\ *\ event);}
+
+\end{DoxyCode}
+
+
+If the filter returns 1, then the event will be added to the internal queue. If it returns 0, then the event will be dropped from the queue, but the internal state will still be updated. This allows selective filtering of dynamically arriving events.
+
+\begin{DoxyWarning}{Warning}
+Be very careful of what you do in the event filter function, as it may run in a different thread!
+\end{DoxyWarning}
+There is one caveat when dealing with the \doxylink{struct_s_d_l___quit_event}{SDL\+\_\+\+Quit\+Event} event type. The event filter is only called when the window manager desires to close the application window. If the event filter returns 1, then the window will be closed, otherwise the window will remain open if possible.
+
+If the quit event is generated by an interrupt signal, it will bypass the internal queue and be delivered to the application at the next event poll. \Hypertarget{_s_d_l__events_8h_af37c266ea979ba39b82079d9eb401003}\label{_s_d_l__events_8h_af37c266ea979ba39b82079d9eb401003} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_WaitEvent@{SDL\_WaitEvent}}
+\index{SDL\_WaitEvent@{SDL\_WaitEvent}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_WaitEvent()}{SDL\_WaitEvent()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Wait\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Waits indefinitely for the next available event. 
+
+\begin{DoxyReturn}{Returns}
+1, or 0 if there was an error while waiting for events.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & If not NULL, the next event is removed from the queue and stored in that area. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_s_d_l__events_8h_a54285ab4f6e2d6d1a01df6a1dd78294a}\label{_s_d_l__events_8h_a54285ab4f6e2d6d1a01df6a1dd78294a} 
+\index{SDL\_events.h@{SDL\_events.h}!SDL\_WaitEventTimeout@{SDL\_WaitEventTimeout}}
+\index{SDL\_WaitEventTimeout@{SDL\_WaitEventTimeout}!SDL\_events.h@{SDL\_events.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_WaitEventTimeout()}{SDL\_WaitEventTimeout()}}
+{\footnotesize\ttfamily DECLSPEC int SDLCALL SDL\+\_\+\+Wait\+Event\+Timeout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{union_s_d_l___event}{SDL\+\_\+\+Event}} \texorpdfstring{$\ast$}{*}}]{event,  }\item[{int}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Waits until the specified timeout (in milliseconds) for the next available event. 
+
+\begin{DoxyReturn}{Returns}
+1, or 0 if there was an error while waiting for events.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & If not NULL, the next event is removed from the queue and stored in that area. \\
+\hline
+{\em timeout} & The timeout (in milliseconds) to wait for next event. \\
+\hline
+\end{DoxyParams}

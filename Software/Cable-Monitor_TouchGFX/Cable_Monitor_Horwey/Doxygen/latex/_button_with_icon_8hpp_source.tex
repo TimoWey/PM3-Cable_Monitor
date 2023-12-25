@@ -1,0 +1,92 @@
+\doxysection{Button\+With\+Icon.\+hpp}
+\hypertarget{_button_with_icon_8hpp_source}{}\label{_button_with_icon_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp}}
+\mbox{\hyperlink{_button_with_icon_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_BUTTONWITHICON\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_BUTTONWITHICON\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bitmap_8hpp}{touchgfx/Bitmap.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_button_8hpp}{touchgfx/widgets/Button.hpp}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{ButtonWithIcon}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_button}{Button}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon}{ButtonWithIcon}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifdef\ \_\_IAR\_SYSTEMS\_ICC\_\_\ \ \ \ }\textcolor{comment}{//\ Only\ include\ in\ IAR\ compilation}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#pragma\ diag\_suppress\ =\ Pe997\ }\textcolor{comment}{//\ Suppress\ warning\ for\ intentional\ virtual\ function\ override}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ <\ 6000000)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#pragma\ diag\_suppress\ 997}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a4bcba2a156a0b06a627fd1910ada7f19}{setBitmaps}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ newBackgroundReleased,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ newBackgroundPressed,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ newIconReleased,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ newIconPressed);}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifdef\ \_\_IAR\_SYSTEMS\_ICC\_\_\ }\textcolor{comment}{//\ Only\ include\ in\ IAR\ compilation}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#pragma\ diag\_default\ =\ Pe997}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a1534e4cb8f9b2653f1a6886b38a0f5e0}{setIconX}}(int16\_t\ x)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_abc86e51cfe005d4949a01a648d38428c}{iconX}}\ =\ x;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_ad822e6c089f6ac49e7c4b3552368d07f}{setIconY}}(int16\_t\ y)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a3572f019aa64b96d2ab1b55bfd6306a8}{iconY}}\ =\ y;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a06a7baaada7b3f32a82859cc2483110a}{setIconXY}}(int16\_t\ x,\ int16\_t\ y)}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a1534e4cb8f9b2653f1a6886b38a0f5e0}{setIconX}}(x);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_ad822e6c089f6ac49e7c4b3552368d07f}{setIconY}}(y);}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_abe15226e4d5b9f81eab302afa0253d42}{getCurrentlyDisplayedIcon}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classtouchgfx_1_1_abstract_button_a7f450856c9fe3c1ce325e29df112cca0}{pressed}}\ ?\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a18dd08af130f47f89d0f62d5509d1008}{iconPressed}}\ :\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_aaad01099b4c7378b58364aae3653a6a8}{iconReleased}});}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_aae2595f086193bc45cb6bf11b10c9438}{getIconX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_abc86e51cfe005d4949a01a648d38428c}{iconX}};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a607ac3781d969cd6a444af076b195135}{getIconY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00145\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a3572f019aa64b96d2ab1b55bfd6306a8}{iconY}};}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a7af14f7164ae71036368f48edda2c643}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ invalidatedArea)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_aaad01099b4c7378b58364aae3653a6a8}{iconReleased}};\ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a18dd08af130f47f89d0f62d5509d1008}{iconPressed}};\ \ }
+\DoxyCodeLine{00154\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_abc86e51cfe005d4949a01a648d38428c}{iconX}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a3572f019aa64b96d2ab1b55bfd6306a8}{iconY}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_button_with_icon_a4bcba2a156a0b06a627fd1910ada7f19}{setBitmaps}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ \textcolor{comment}{/*bitmapReleased*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}\&\ \textcolor{comment}{/*bitmapPressed*/})}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_BUTTONWITHICON\_HPP}}
+
+\end{DoxyCode}

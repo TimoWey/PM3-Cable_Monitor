@@ -1,0 +1,41 @@
+\doxysection{tsensor.\+h}
+\hypertarget{tsensor_8h_source}{}\label{tsensor_8h_source}\index{Drivers/BSP/Components/Common/tsensor.h@{Drivers/BSP/Components/Common/tsensor.h}}
+\mbox{\hyperlink{tsensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifndef\ \_\_TSENSOR\_H}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ \_\_TSENSOR\_H}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ uint8\_t\ AlertMode;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Alert\ Mode\ Temperature\ out\ of\ range*/}}
+\DoxyCodeLine{00072\ \ \ uint8\_t\ ConversionMode;\ \ \ \ \ \ \ \textcolor{comment}{/*\ Continuous/One\ Shot\ Mode\ */}}
+\DoxyCodeLine{00073\ \ \ uint8\_t\ ConversionResolution;\ \textcolor{comment}{/*\ Temperature\ Resolution\ */}}
+\DoxyCodeLine{00074\ \ \ uint8\_t\ ConversionRate;\ \ \ \ \ \ \ \textcolor{comment}{/*\ Number\ of\ measure\ per\ second\ */}}
+\DoxyCodeLine{00075\ \ \ uint8\_t\ TemperatureLimitHigh;\ \textcolor{comment}{/*\ High\ Temperature\ Limit\ Range\ */}}
+\DoxyCodeLine{00076\ \ \ uint8\_t\ TemperatureLimitLow;\ \ \textcolor{comment}{/*\ Low\ Temperature\ Limit\ Range\ */}}
+\DoxyCodeLine{00077\ \}\mbox{\hyperlink{struct_t_s_e_n_s_o_r___init_type_def}{TSENSOR\_InitTypeDef}};}
+\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00086\ \{\ \ }
+\DoxyCodeLine{00087\ \ \ void\ \ \ \ \ \ \ (*Init)(uint16\_t,\ \mbox{\hyperlink{struct_t_s_e_n_s_o_r___init_type_def}{TSENSOR\_InitTypeDef}}\ *);}
+\DoxyCodeLine{00088\ \ \ uint8\_t\ \ \ \ (*IsReady)(uint16\_t,\ uint32\_t);}
+\DoxyCodeLine{00089\ \ \ uint8\_t\ \ \ \ (*ReadStatus)(uint16\_t);}
+\DoxyCodeLine{00090\ \ \ uint16\_t\ \ \ (*ReadTemp)(uint16\_t);\ }
+\DoxyCodeLine{00091\ \}\mbox{\hyperlink{struct_t_s_e_n_s_o_r___drv_type_def}{TSENSOR\_DrvTypeDef}};}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_TSENSOR\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,416 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+stdinc.h File Reference}
+\hypertarget{_s_d_l__stdinc_8h}{}\label{_s_d_l__stdinc_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_stdinc.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_stdinc.h}}
+{\ttfamily \#include "{}SDL\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__stdinc_8h_a56cfbf2e664506e5f4bb2e05997be8ae}{SDL\+\_\+arraysize}}(array)~(sizeof(array)/sizeof(array\mbox{[}0\mbox{]}))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ac9d76e3a8ba6474d1714f13ca3c9d7e6}\label{_s_d_l__stdinc_8h_ac9d76e3a8ba6474d1714f13ca3c9d7e6} 
+\#define {\bfseries SDL\+\_\+\+TABLESIZE}(table)~\mbox{\hyperlink{_s_d_l__stdinc_8h_a56cfbf2e664506e5f4bb2e05997be8ae}{SDL\+\_\+arraysize}}(table)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Cast operators}\par
+{\em Use proper C++ casts when compiled as C++ to be compatible with the option -\/Wold-\/style-\/cast of GCC (and -\/Werror=old-\/style-\/cast in GCC 4.\+2 and above). }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a9891f68858953b42cbc18e68a441e39d}\label{_s_d_l__stdinc_8h_a9891f68858953b42cbc18e68a441e39d} 
+\#define {\bfseries SDL\+\_\+reinterpret\+\_\+cast}(type,  expression)~((type)(expression))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a774ea048cf20bd5f86f31da56d2937ff}\label{_s_d_l__stdinc_8h_a774ea048cf20bd5f86f31da56d2937ff} 
+\#define {\bfseries SDL\+\_\+static\+\_\+cast}(type,  expression)~((type)(expression))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aa1364dba66887966247b36f48e19ac62}\label{_s_d_l__stdinc_8h_aa1364dba66887966247b36f48e19ac62} 
+\#define {\bfseries SDL\+\_\+const\+\_\+cast}(type,  expression)~((type)(expression))
+\item 
+\#define \mbox{\hyperlink{_s_d_l__stdinc_8h_af482df3379ebfd4c3cfe44e6e0db7628}{SDL\+\_\+\+FOURCC}}(A,  B,  C,  D)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Basic data types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aae47902b4a68b35b6b5a5733af74e99e}\label{_s_d_l__stdinc_8h_aae47902b4a68b35b6b5a5733af74e99e} 
+\#define {\bfseries SDL\+\_\+\+PRIs64}~"{}lld"{}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a595c1590a52d953f5c34859ff23b0d5c}\label{_s_d_l__stdinc_8h_a595c1590a52d953f5c34859ff23b0d5c} 
+\#define {\bfseries SDL\+\_\+\+PRIu64}~"{}llu"{}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ada61ee823d794777744d0b190e9cbb1f}\label{_s_d_l__stdinc_8h_ada61ee823d794777744d0b190e9cbb1f} 
+\#define {\bfseries SDL\+\_\+\+PRIx64}~"{}llx"{}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a1d0d06015b59be929cbcd44a022ab69c}\label{_s_d_l__stdinc_8h_a1d0d06015b59be929cbcd44a022ab69c} 
+\#define {\bfseries SDL\+\_\+\+PRIX64}~"{}ll\+X"{}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a4a03aca91467efc1051ddb85c02385a2}\label{_s_d_l__stdinc_8h_a4a03aca91467efc1051ddb85c02385a2} 
+\#define {\bfseries SDL\+\_\+\+IN\+\_\+\+BYTECAP}(x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a7c8c45cf712b53863edc008aa96f24b6}\label{_s_d_l__stdinc_8h_a7c8c45cf712b53863edc008aa96f24b6} 
+\#define {\bfseries SDL\+\_\+\+INOUT\+\_\+\+Z\+\_\+\+CAP}(x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_af908e59c33d8212a2785d160ef322fb1}\label{_s_d_l__stdinc_8h_af908e59c33d8212a2785d160ef322fb1} 
+\#define {\bfseries SDL\+\_\+\+OUT\+\_\+\+Z\+\_\+\+CAP}(x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a56add5577e642481fff247b14376b2de}\label{_s_d_l__stdinc_8h_a56add5577e642481fff247b14376b2de} 
+\#define {\bfseries SDL\+\_\+\+OUT\+\_\+\+CAP}(x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a2f008605e9e07d875b5f037d470d4c2a}\label{_s_d_l__stdinc_8h_a2f008605e9e07d875b5f037d470d4c2a} 
+\#define {\bfseries SDL\+\_\+\+OUT\+\_\+\+BYTECAP}(x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_acf3bc9681b799ba3d31c03e9a548496d}\label{_s_d_l__stdinc_8h_acf3bc9681b799ba3d31c03e9a548496d} 
+\#define {\bfseries SDL\+\_\+\+OUT\+\_\+\+Z\+\_\+\+BYTECAP}(x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ab13a729d2e3e2d1e1b3b2dc0bfb858eb}\label{_s_d_l__stdinc_8h_ab13a729d2e3e2d1e1b3b2dc0bfb858eb} 
+\#define {\bfseries SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a724eb3fcc488692f106d393193501514}\label{_s_d_l__stdinc_8h_a724eb3fcc488692f106d393193501514} 
+\#define {\bfseries SDL\+\_\+\+SCANF\+\_\+\+FORMAT\+\_\+\+STRING}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ab974676e45d9edeef6598d601d4fdd6a}\label{_s_d_l__stdinc_8h_ab974676e45d9edeef6598d601d4fdd6a} 
+\#define {\bfseries SDL\+\_\+\+PRINTF\+\_\+\+VARARG\+\_\+\+FUNC}(fmtargnumber)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_acd540fbbc717339e1267b0a884baa66d}\label{_s_d_l__stdinc_8h_acd540fbbc717339e1267b0a884baa66d} 
+\#define {\bfseries SDL\+\_\+\+SCANF\+\_\+\+VARARG\+\_\+\+FUNC}(fmtargnumber)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aba1f23ae531b67b0455a2e254bdad09b}\label{_s_d_l__stdinc_8h_aba1f23ae531b67b0455a2e254bdad09b} 
+\#define {\bfseries SDL\+\_\+\+COMPILE\+\_\+\+TIME\+\_\+\+ASSERT}(name,  x)~       typedef int SDL\+\_\+dummy\+\_\+ \#\# name\mbox{[}(x) \texorpdfstring{$\ast$}{*} 2 -\/ 1\mbox{]}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a6c6778dd1ee11d2edce116271c822fbd}\label{_s_d_l__stdinc_8h_a6c6778dd1ee11d2edce116271c822fbd} 
+\#define {\bfseries SDL\+\_\+stack\+\_\+alloc}(type,  count)~(type\texorpdfstring{$\ast$}{*})SDL\+\_\+malloc(sizeof(type)\texorpdfstring{$\ast$}{*}(count))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aca62cdb628b52c2f1f2a3004ddf721ce}\label{_s_d_l__stdinc_8h_aca62cdb628b52c2f1f2a3004ddf721ce} 
+\#define {\bfseries SDL\+\_\+stack\+\_\+free}(data)~SDL\+\_\+free(data)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ad93f0b2393a3aa89f9ce24ac2642744e}\label{_s_d_l__stdinc_8h_ad93f0b2393a3aa89f9ce24ac2642744e} 
+\#define {\bfseries SDL\+\_\+min}(x,  y)~(((x) $<$ (y)) ? (x) \+: (y))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ae3ab6e7584a16c7217ca0a4622212b61}\label{_s_d_l__stdinc_8h_ae3ab6e7584a16c7217ca0a4622212b61} 
+\#define {\bfseries SDL\+\_\+max}(x,  y)~(((x) $>$ (y)) ? (x) \+: (y))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a16b9e31a9558e1cbc9e417b0f35a7b8a}\label{_s_d_l__stdinc_8h_a16b9e31a9558e1cbc9e417b0f35a7b8a} 
+\#define {\bfseries SDL\+\_\+zero}(x)~SDL\+\_\+memset(\&(x), 0, sizeof((x)))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a995406d407faf4cfa1ca9dd904672ab6}\label{_s_d_l__stdinc_8h_a995406d407faf4cfa1ca9dd904672ab6} 
+\#define {\bfseries SDL\+\_\+zerop}(x)~SDL\+\_\+memset((x), 0, sizeof(\texorpdfstring{$\ast$}{*}(x)))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ae71449b1cc6e6250b91f539153a7a0d3}\label{_s_d_l__stdinc_8h_ae71449b1cc6e6250b91f539153a7a0d3} 
+\#define {\bfseries M\+\_\+\+PI}~3.\+14159265358979323846264338327950288   /\texorpdfstring{$\ast$}{*} pi \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ada422bea61b05ed228c4f42e4aea2144}\label{_s_d_l__stdinc_8h_ada422bea61b05ed228c4f42e4aea2144} 
+\#define {\bfseries SDL\+\_\+\+ICONV\+\_\+\+ERROR}~(size\+\_\+t)-\/1
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a8147462b96bda427f0b41125e645b9ab}\label{_s_d_l__stdinc_8h_a8147462b96bda427f0b41125e645b9ab} 
+\#define {\bfseries SDL\+\_\+\+ICONV\+\_\+\+E2\+BIG}~(size\+\_\+t)-\/2
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_adc8b6997623c449e7ed53a605faa9eb0}\label{_s_d_l__stdinc_8h_adc8b6997623c449e7ed53a605faa9eb0} 
+\#define {\bfseries SDL\+\_\+\+ICONV\+\_\+\+EILSEQ}~(size\+\_\+t)-\/3
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a03d30a2857731df69d31ffa802424a9e}\label{_s_d_l__stdinc_8h_a03d30a2857731df69d31ffa802424a9e} 
+\#define {\bfseries SDL\+\_\+\+ICONV\+\_\+\+EINVAL}~(size\+\_\+t)-\/4
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a773e5f83e392495ad8abab8d71aa84c6}\label{_s_d_l__stdinc_8h_a773e5f83e392495ad8abab8d71aa84c6} 
+\#define {\bfseries SDL\+\_\+iconv\+\_\+utf8\+\_\+locale}(S)~\mbox{\hyperlink{_s_d_l__stdinc_8h_ad3b4082f19efa5d3bcf71f3f156b43f7}{SDL\+\_\+iconv\+\_\+string}}("{}"{}, "{}UTF-\/8"{}, S, SDL\+\_\+strlen(S)+1)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a59cd43c02306558671fe05c23284ab3b}\label{_s_d_l__stdinc_8h_a59cd43c02306558671fe05c23284ab3b} 
+\#define {\bfseries SDL\+\_\+iconv\+\_\+utf8\+\_\+ucs2}(S)~(\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{_s_d_l__stdinc_8h_ad3b4082f19efa5d3bcf71f3f156b43f7}{SDL\+\_\+iconv\+\_\+string}}("{}UCS-\/2-\/INTERNAL"{}, "{}UTF-\/8"{}, S, SDL\+\_\+strlen(S)+1)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_acdced7c8985d280d87e659f583a5479e}\label{_s_d_l__stdinc_8h_acdced7c8985d280d87e659f583a5479e} 
+\#define {\bfseries SDL\+\_\+iconv\+\_\+utf8\+\_\+ucs4}(S)~(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{_s_d_l__stdinc_8h_ad3b4082f19efa5d3bcf71f3f156b43f7}{SDL\+\_\+iconv\+\_\+string}}("{}UCS-\/4-\/INTERNAL"{}, "{}UTF-\/8"{}, S, SDL\+\_\+strlen(S)+1)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}\label{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b} 
+enum {\bfseries SDL\+\_\+bool} \{ {\bfseries SDL\+\_\+\+FALSE} = 0
+, {\bfseries SDL\+\_\+\+TRUE} = 1
+ \}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a5fc98623306a32e69eaab63e89e1d138}\label{_s_d_l__stdinc_8h_a5fc98623306a32e69eaab63e89e1d138} 
+typedef int8\+\_\+t {\bfseries Sint8}
+\begin{DoxyCompactList}\small\item\em A signed 8-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}\label{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2} 
+typedef uint8\+\_\+t {\bfseries Uint8}
+\begin{DoxyCompactList}\small\item\em An unsigned 8-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_a9d0257032c0e146ab6121bf0122712f5}\label{_s_d_l__stdinc_8h_a9d0257032c0e146ab6121bf0122712f5} 
+typedef int16\+\_\+t {\bfseries Sint16}
+\begin{DoxyCompactList}\small\item\em A signed 16-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}\label{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b} 
+typedef uint16\+\_\+t {\bfseries Uint16}
+\begin{DoxyCompactList}\small\item\em An unsigned 16-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}\label{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e} 
+typedef int32\+\_\+t {\bfseries Sint32}
+\begin{DoxyCompactList}\small\item\em A signed 32-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}\label{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d} 
+typedef uint32\+\_\+t {\bfseries Uint32}
+\begin{DoxyCompactList}\small\item\em An unsigned 32-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}\label{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d} 
+typedef int64\+\_\+t {\bfseries Sint64}
+\begin{DoxyCompactList}\small\item\em A signed 64-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}\label{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13} 
+typedef uint64\+\_\+t {\bfseries Uint64}
+\begin{DoxyCompactList}\small\item\em An unsigned 64-\/bit integer type. \end{DoxyCompactList}\item 
+\Hypertarget{_s_d_l__stdinc_8h_a37ee875bea397030104764a92857ae79}\label{_s_d_l__stdinc_8h_a37ee875bea397030104764a92857ae79} 
+typedef struct \+\_\+\+SDL\+\_\+iconv\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries SDL\+\_\+iconv\+\_\+t}
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a18324113df54556a3d72049b72615a49}\label{_s_d_l__stdinc_8h_a18324113df54556a3d72049b72615a49} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+malloc} (size\+\_\+t size)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a992b08a30e37eb465de30d6d6f59e349}\label{_s_d_l__stdinc_8h_a992b08a30e37eb465de30d6d6f59e349} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+calloc} (size\+\_\+t nmemb, size\+\_\+t size)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ac7864eb853658f50d6179a264f087c24}\label{_s_d_l__stdinc_8h_ac7864eb853658f50d6179a264f087c24} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+realloc} (void \texorpdfstring{$\ast$}{*}mem, size\+\_\+t size)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a0e4ade894d550ada1fa19dc2d46e88b8}\label{_s_d_l__stdinc_8h_a0e4ade894d550ada1fa19dc2d46e88b8} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+free} (void \texorpdfstring{$\ast$}{*}mem)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a38d80496c7c3bfefb2634b3b038514c4}\label{_s_d_l__stdinc_8h_a38d80496c7c3bfefb2634b3b038514c4} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+getenv} (const char \texorpdfstring{$\ast$}{*}name)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a82561dde7eb250ecb6fcbd3e3786d8b9}\label{_s_d_l__stdinc_8h_a82561dde7eb250ecb6fcbd3e3786d8b9} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+setenv} (const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}value, int overwrite)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ae4e475d53a51a90992745186a20d1f01}\label{_s_d_l__stdinc_8h_ae4e475d53a51a90992745186a20d1f01} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+qsort} (void \texorpdfstring{$\ast$}{*}base, size\+\_\+t nmemb, size\+\_\+t size, int(\texorpdfstring{$\ast$}{*}compare)(const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_abc2986a4608bc9fd73df173d7619c096}\label{_s_d_l__stdinc_8h_abc2986a4608bc9fd73df173d7619c096} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+abs} (int x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a3e2b095edf06856900b16babe77809cf}\label{_s_d_l__stdinc_8h_a3e2b095edf06856900b16babe77809cf} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+isdigit} (int x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a345ef079d2b47f9cda08d383dde1ec65}\label{_s_d_l__stdinc_8h_a345ef079d2b47f9cda08d383dde1ec65} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+isspace} (int x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a91fcc07ab87653a6c92ae1288c20a606}\label{_s_d_l__stdinc_8h_a91fcc07ab87653a6c92ae1288c20a606} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+toupper} (int x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_af18a897c83986540d4caf4573775f199}\label{_s_d_l__stdinc_8h_af18a897c83986540d4caf4573775f199} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+tolower} (int x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ae175db0d44cd740e2fa1072b71e5f1a4}\label{_s_d_l__stdinc_8h_ae175db0d44cd740e2fa1072b71e5f1a4} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+memset} (SDL\+\_\+\+OUT\+\_\+\+BYTECAP(len) void \texorpdfstring{$\ast$}{*}dst, int c, size\+\_\+t len)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a0f1cd3e844f8fac8e26ca1e2c2101956}\label{_s_d_l__stdinc_8h_a0f1cd3e844f8fac8e26ca1e2c2101956} 
+SDL\+\_\+\+FORCE\+\_\+\+INLINE void {\bfseries SDL\+\_\+memset4} (void \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} val, size\+\_\+t dwords)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a627cbec2fd30f1bfc7ccae4c4e4d4b12}\label{_s_d_l__stdinc_8h_a627cbec2fd30f1bfc7ccae4c4e4d4b12} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+memcpy} (SDL\+\_\+\+OUT\+\_\+\+BYTECAP(len) void \texorpdfstring{$\ast$}{*}dst, SDL\+\_\+\+IN\+\_\+\+BYTECAP(len) const void \texorpdfstring{$\ast$}{*}src, size\+\_\+t len)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a00f4124a79e4fc79d1aa4c12df3e8a07}\label{_s_d_l__stdinc_8h_a00f4124a79e4fc79d1aa4c12df3e8a07} 
+DECLSPEC void \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+memmove} (SDL\+\_\+\+OUT\+\_\+\+BYTECAP(len) void \texorpdfstring{$\ast$}{*}dst, SDL\+\_\+\+IN\+\_\+\+BYTECAP(len) const void \texorpdfstring{$\ast$}{*}src, size\+\_\+t len)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_af8e26df545c29284291714410fa7731e}\label{_s_d_l__stdinc_8h_af8e26df545c29284291714410fa7731e} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+memcmp} (const void \texorpdfstring{$\ast$}{*}s1, const void \texorpdfstring{$\ast$}{*}s2, size\+\_\+t len)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_afddee3f5be8611a2956f21ea899ea6f1}\label{_s_d_l__stdinc_8h_afddee3f5be8611a2956f21ea899ea6f1} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+wcslen} (const wchar\+\_\+t \texorpdfstring{$\ast$}{*}wstr)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a611742b034af091bbf678150ede27a0f}\label{_s_d_l__stdinc_8h_a611742b034af091bbf678150ede27a0f} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+wcslcpy} (SDL\+\_\+\+OUT\+\_\+\+Z\+\_\+\+CAP(maxlen) wchar\+\_\+t \texorpdfstring{$\ast$}{*}dst, const wchar\+\_\+t \texorpdfstring{$\ast$}{*}src, size\+\_\+t maxlen)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a9f29935903b98e66f3d69b336f741712}\label{_s_d_l__stdinc_8h_a9f29935903b98e66f3d69b336f741712} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+wcslcat} (SDL\+\_\+\+INOUT\+\_\+\+Z\+\_\+\+CAP(maxlen) wchar\+\_\+t \texorpdfstring{$\ast$}{*}dst, const wchar\+\_\+t \texorpdfstring{$\ast$}{*}src, size\+\_\+t maxlen)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ac06c288c339beeecb6f32e5d2a9471c0}\label{_s_d_l__stdinc_8h_ac06c288c339beeecb6f32e5d2a9471c0} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+strlen} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ac362d85898cfb51e06e33399a7d3fd03}\label{_s_d_l__stdinc_8h_ac362d85898cfb51e06e33399a7d3fd03} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+strlcpy} (SDL\+\_\+\+OUT\+\_\+\+Z\+\_\+\+CAP(maxlen) char \texorpdfstring{$\ast$}{*}dst, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t maxlen)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a78f061725fa314e775a3978b916a5daa}\label{_s_d_l__stdinc_8h_a78f061725fa314e775a3978b916a5daa} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+utf8strlcpy} (SDL\+\_\+\+OUT\+\_\+\+Z\+\_\+\+CAP(dst\+\_\+bytes) char \texorpdfstring{$\ast$}{*}dst, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t dst\+\_\+bytes)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a50d15493c8921df9a8c2c233703429c8}\label{_s_d_l__stdinc_8h_a50d15493c8921df9a8c2c233703429c8} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+strlcat} (SDL\+\_\+\+INOUT\+\_\+\+Z\+\_\+\+CAP(maxlen) char \texorpdfstring{$\ast$}{*}dst, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t maxlen)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a4b0dde72d9c2a020c9e6405ca080e81b}\label{_s_d_l__stdinc_8h_a4b0dde72d9c2a020c9e6405ca080e81b} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+strdup} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_adab03841a0dcf11f95a75c5cb17b5d3c}\label{_s_d_l__stdinc_8h_adab03841a0dcf11f95a75c5cb17b5d3c} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+strrev} (char \texorpdfstring{$\ast$}{*}str)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a9c2b7f65e349e0c08047f333f79b4114}\label{_s_d_l__stdinc_8h_a9c2b7f65e349e0c08047f333f79b4114} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+strupr} (char \texorpdfstring{$\ast$}{*}str)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a4918c9af266607b61b7c31c129a45c67}\label{_s_d_l__stdinc_8h_a4918c9af266607b61b7c31c129a45c67} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+strlwr} (char \texorpdfstring{$\ast$}{*}str)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a27a3d8808549daee7eb2b6a67d96d928}\label{_s_d_l__stdinc_8h_a27a3d8808549daee7eb2b6a67d96d928} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+strchr} (const char \texorpdfstring{$\ast$}{*}str, int c)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a32ef5d635ca8305dce08ec46d66c1a67}\label{_s_d_l__stdinc_8h_a32ef5d635ca8305dce08ec46d66c1a67} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+strrchr} (const char \texorpdfstring{$\ast$}{*}str, int c)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a39036c682ddb0c0ceff78782a8b7d3b0}\label{_s_d_l__stdinc_8h_a39036c682ddb0c0ceff78782a8b7d3b0} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+strstr} (const char \texorpdfstring{$\ast$}{*}haystack, const char \texorpdfstring{$\ast$}{*}needle)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_af533f5144ccdb6287b076c12d2e925af}\label{_s_d_l__stdinc_8h_af533f5144ccdb6287b076c12d2e925af} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+itoa} (int value, char \texorpdfstring{$\ast$}{*}str, int radix)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a016d6b88a308688df4393aca3aca1e9a}\label{_s_d_l__stdinc_8h_a016d6b88a308688df4393aca3aca1e9a} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+uitoa} (unsigned int value, char \texorpdfstring{$\ast$}{*}str, int radix)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a699d7eef3ecd841bf4bd778da9da1046}\label{_s_d_l__stdinc_8h_a699d7eef3ecd841bf4bd778da9da1046} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+ltoa} (long value, char \texorpdfstring{$\ast$}{*}str, int radix)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_af09800798781e90beaa02f2c14df7347}\label{_s_d_l__stdinc_8h_af09800798781e90beaa02f2c14df7347} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+ultoa} (unsigned long value, char \texorpdfstring{$\ast$}{*}str, int radix)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a128dee711ea087b35466f1353a26ecea}\label{_s_d_l__stdinc_8h_a128dee711ea087b35466f1353a26ecea} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+lltoa} (\mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}} value, char \texorpdfstring{$\ast$}{*}str, int radix)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a7d4157d5ea4b08719e6b8a6baf5f5418}\label{_s_d_l__stdinc_8h_a7d4157d5ea4b08719e6b8a6baf5f5418} 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+ulltoa} (\mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}} value, char \texorpdfstring{$\ast$}{*}str, int radix)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a693141d8cd82c97ba5cb0f4bc42c96ae}\label{_s_d_l__stdinc_8h_a693141d8cd82c97ba5cb0f4bc42c96ae} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+atoi} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a7f36805f126b5712ab14d4b1da721a2b}\label{_s_d_l__stdinc_8h_a7f36805f126b5712ab14d4b1da721a2b} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+atof} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aa0674ed6bcaf8a0889dbbee89f4ac19c}\label{_s_d_l__stdinc_8h_aa0674ed6bcaf8a0889dbbee89f4ac19c} 
+DECLSPEC long SDLCALL {\bfseries SDL\+\_\+strtol} (const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endp, int base)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a2b92ab8170e4df3252013d903b9d4051}\label{_s_d_l__stdinc_8h_a2b92ab8170e4df3252013d903b9d4051} 
+DECLSPEC unsigned long SDLCALL {\bfseries SDL\+\_\+strtoul} (const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endp, int base)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a4ebd07268af4cf8efe05f1eb28d9ba98}\label{_s_d_l__stdinc_8h_a4ebd07268af4cf8efe05f1eb28d9ba98} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}} SDLCALL {\bfseries SDL\+\_\+strtoll} (const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endp, int base)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aa893ab27b0d874a0d1eea7025937c006}\label{_s_d_l__stdinc_8h_aa893ab27b0d874a0d1eea7025937c006} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}} SDLCALL {\bfseries SDL\+\_\+strtoull} (const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endp, int base)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aebf098dbc1451c320b48e1760d090db9}\label{_s_d_l__stdinc_8h_aebf098dbc1451c320b48e1760d090db9} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+strtod} (const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endp)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a37e18b9103f755d03cf4b0aedeb39fb8}\label{_s_d_l__stdinc_8h_a37e18b9103f755d03cf4b0aedeb39fb8} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+strcmp} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a21287cfa7609bbc3d46ea10b20234389}\label{_s_d_l__stdinc_8h_a21287cfa7609bbc3d46ea10b20234389} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+strncmp} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2, size\+\_\+t maxlen)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a1de324579fee4225e390df0a7b485d17}\label{_s_d_l__stdinc_8h_a1de324579fee4225e390df0a7b485d17} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+strcasecmp} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a51b84fa76ad53e7c3b17892d9982c526}\label{_s_d_l__stdinc_8h_a51b84fa76ad53e7c3b17892d9982c526} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+strncasecmp} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2, size\+\_\+t len)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a7b721b0e22698c8eb6efc5341003b582}\label{_s_d_l__stdinc_8h_a7b721b0e22698c8eb6efc5341003b582} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+sscanf} (const char \texorpdfstring{$\ast$}{*}text, SDL\+\_\+\+SCANF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}fmt,...) SDL\+\_\+\+SCANF\+\_\+\+VARARG\+\_\+\+FUNC(2)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aec25dc54f0de98ea8d970552f38d6365}\label{_s_d_l__stdinc_8h_aec25dc54f0de98ea8d970552f38d6365} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+vsscanf} (const char \texorpdfstring{$\ast$}{*}text, const char \texorpdfstring{$\ast$}{*}fmt, va\+\_\+list ap)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_adcf2cbf4b55834f5727664425f80e6b5}\label{_s_d_l__stdinc_8h_adcf2cbf4b55834f5727664425f80e6b5} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+snprintf} (SDL\+\_\+\+OUT\+\_\+\+Z\+\_\+\+CAP(maxlen) char \texorpdfstring{$\ast$}{*}text, size\+\_\+t maxlen, SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}fmt,...) SDL\+\_\+\+PRINTF\+\_\+\+VARARG\+\_\+\+FUNC(3)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ae9acdeeb54ccbab3bb53280052541bdd}\label{_s_d_l__stdinc_8h_ae9acdeeb54ccbab3bb53280052541bdd} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+vsnprintf} (SDL\+\_\+\+OUT\+\_\+\+Z\+\_\+\+CAP(maxlen) char \texorpdfstring{$\ast$}{*}text, size\+\_\+t maxlen, const char \texorpdfstring{$\ast$}{*}fmt, va\+\_\+list ap)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aad4335bccd2da5d4cbc56227a00c5e6a}\label{_s_d_l__stdinc_8h_aad4335bccd2da5d4cbc56227a00c5e6a} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+acos} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a1d20f8c07517e3edff66a483df394a4e}\label{_s_d_l__stdinc_8h_a1d20f8c07517e3edff66a483df394a4e} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+asin} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_af8123e938b403f372e38c9dcf0d532f1}\label{_s_d_l__stdinc_8h_af8123e938b403f372e38c9dcf0d532f1} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+atan} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a98d519102f70e12856f8ecc2bde10c0d}\label{_s_d_l__stdinc_8h_a98d519102f70e12856f8ecc2bde10c0d} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+atan2} (double x, double y)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a936588a2d12ce83c915d9a2441653370}\label{_s_d_l__stdinc_8h_a936588a2d12ce83c915d9a2441653370} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+ceil} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a4171a3b97ac5cde52618cedd490be481}\label{_s_d_l__stdinc_8h_a4171a3b97ac5cde52618cedd490be481} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+copysign} (double x, double y)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a188dec0f0bc8eabb58181656eaf41fd7}\label{_s_d_l__stdinc_8h_a188dec0f0bc8eabb58181656eaf41fd7} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+cos} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a531f6b784d47ec6719c71e578bccc88d}\label{_s_d_l__stdinc_8h_a531f6b784d47ec6719c71e578bccc88d} 
+DECLSPEC float SDLCALL {\bfseries SDL\+\_\+cosf} (float x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_ab3c294fac683198ba196e072bb181f02}\label{_s_d_l__stdinc_8h_ab3c294fac683198ba196e072bb181f02} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+fabs} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aef4788340ec0d94db83efa78a985a633}\label{_s_d_l__stdinc_8h_aef4788340ec0d94db83efa78a985a633} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+floor} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a2b226b584a9922167301231d3c13bee2}\label{_s_d_l__stdinc_8h_a2b226b584a9922167301231d3c13bee2} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+log} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a3d52f0185cf0e50a39d82d1c0d9033a0}\label{_s_d_l__stdinc_8h_a3d52f0185cf0e50a39d82d1c0d9033a0} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+pow} (double x, double y)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aadf9f772c77eaac69d873bdc894d8877}\label{_s_d_l__stdinc_8h_aadf9f772c77eaac69d873bdc894d8877} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+scalbn} (double x, int n)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aea6fa73c9125ce7781b16964a12678fd}\label{_s_d_l__stdinc_8h_aea6fa73c9125ce7781b16964a12678fd} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+sin} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a833d0eb1ac38643cc5e8f71f9231d3eb}\label{_s_d_l__stdinc_8h_a833d0eb1ac38643cc5e8f71f9231d3eb} 
+DECLSPEC float SDLCALL {\bfseries SDL\+\_\+sinf} (float x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a89a212b3de74f13ce69fd5bea007df86}\label{_s_d_l__stdinc_8h_a89a212b3de74f13ce69fd5bea007df86} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+sqrt} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aeaa64ed4e3d788ebcb7b7363eb66ff4f}\label{_s_d_l__stdinc_8h_aeaa64ed4e3d788ebcb7b7363eb66ff4f} 
+DECLSPEC float SDLCALL {\bfseries SDL\+\_\+sqrtf} (float x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a4d52b941eca596f2f716425c777cb3fc}\label{_s_d_l__stdinc_8h_a4d52b941eca596f2f716425c777cb3fc} 
+DECLSPEC double SDLCALL {\bfseries SDL\+\_\+tan} (double x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_afe3ee9cc3fc388193f23d3e5c98197ab}\label{_s_d_l__stdinc_8h_afe3ee9cc3fc388193f23d3e5c98197ab} 
+DECLSPEC float SDLCALL {\bfseries SDL\+\_\+tanf} (float x)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a0ba254663bb7d4b49eaa414d4533c6b5}\label{_s_d_l__stdinc_8h_a0ba254663bb7d4b49eaa414d4533c6b5} 
+DECLSPEC SDL\+\_\+iconv\+\_\+t SDLCALL {\bfseries SDL\+\_\+iconv\+\_\+open} (const char \texorpdfstring{$\ast$}{*}tocode, const char \texorpdfstring{$\ast$}{*}fromcode)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_a92eeaa95348c308ebd882ca85eccd684}\label{_s_d_l__stdinc_8h_a92eeaa95348c308ebd882ca85eccd684} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+iconv\+\_\+close} (SDL\+\_\+iconv\+\_\+t cd)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_aeef39b9728425f231fc3e019ffa6c9ea}\label{_s_d_l__stdinc_8h_aeef39b9728425f231fc3e019ffa6c9ea} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+iconv} (SDL\+\_\+iconv\+\_\+t cd, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}inbuf, size\+\_\+t \texorpdfstring{$\ast$}{*}inbytesleft, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}outbuf, size\+\_\+t \texorpdfstring{$\ast$}{*}outbytesleft)
+\item 
+DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL \mbox{\hyperlink{_s_d_l__stdinc_8h_ad3b4082f19efa5d3bcf71f3f156b43f7}{SDL\+\_\+iconv\+\_\+string}} (const char \texorpdfstring{$\ast$}{*}tocode, const char \texorpdfstring{$\ast$}{*}fromcode, const char \texorpdfstring{$\ast$}{*}inbuf, size\+\_\+t inbytesleft)
+\item 
+\Hypertarget{_s_d_l__stdinc_8h_adc0bad3fa42ea3a629b39272a412842c}\label{_s_d_l__stdinc_8h_adc0bad3fa42ea3a629b39272a412842c} 
+SDL\+\_\+\+FORCE\+\_\+\+INLINE void \texorpdfstring{$\ast$}{*} {\bfseries SDL\+\_\+memcpy4} (SDL\+\_\+\+OUT\+\_\+\+BYTECAP(dwords \texorpdfstring{$\ast$}{*}4) void \texorpdfstring{$\ast$}{*}dst, SDL\+\_\+\+IN\+\_\+\+BYTECAP(dwords \texorpdfstring{$\ast$}{*}4) const void \texorpdfstring{$\ast$}{*}src, size\+\_\+t dwords)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a general header that includes C language support. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_s_d_l__stdinc_8h_a56cfbf2e664506e5f4bb2e05997be8ae}\label{_s_d_l__stdinc_8h_a56cfbf2e664506e5f4bb2e05997be8ae} 
+\index{SDL\_stdinc.h@{SDL\_stdinc.h}!SDL\_arraysize@{SDL\_arraysize}}
+\index{SDL\_arraysize@{SDL\_arraysize}!SDL\_stdinc.h@{SDL\_stdinc.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_arraysize}{SDL\_arraysize}}
+{\footnotesize\ttfamily \#define SDL\+\_\+arraysize(\begin{DoxyParamCaption}\item[{}]{array }\end{DoxyParamCaption})~(sizeof(array)/sizeof(array\mbox{[}0\mbox{]}))}
+
+The number of elements in an array. \Hypertarget{_s_d_l__stdinc_8h_af482df3379ebfd4c3cfe44e6e0db7628}\label{_s_d_l__stdinc_8h_af482df3379ebfd4c3cfe44e6e0db7628} 
+\index{SDL\_stdinc.h@{SDL\_stdinc.h}!SDL\_FOURCC@{SDL\_FOURCC}}
+\index{SDL\_FOURCC@{SDL\_FOURCC}!SDL\_stdinc.h@{SDL\_stdinc.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_FOURCC}{SDL\_FOURCC}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+FOURCC(\begin{DoxyParamCaption}\item[{}]{A,  }\item[{}]{B,  }\item[{}]{C,  }\item[{}]{D }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ ((SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}},\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}},\ (A)))\ <<\ 0)\ |\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}},\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}},\ (B)))\ <<\ 8)\ |\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}},\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}},\ (C)))\ <<\ 16)\ |\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}},\ SDL\_static\_cast(\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}},\ (D)))\ <<\ 24))}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_d_l__stdinc_8h_ad3b4082f19efa5d3bcf71f3f156b43f7}\label{_s_d_l__stdinc_8h_ad3b4082f19efa5d3bcf71f3f156b43f7} 
+\index{SDL\_stdinc.h@{SDL\_stdinc.h}!SDL\_iconv\_string@{SDL\_iconv\_string}}
+\index{SDL\_iconv\_string@{SDL\_iconv\_string}!SDL\_stdinc.h@{SDL\_stdinc.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_iconv\_string()}{SDL\_iconv\_string()}}
+{\footnotesize\ttfamily DECLSPEC char \texorpdfstring{$\ast$}{*}SDLCALL SDL\+\_\+iconv\+\_\+string (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{tocode,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fromcode,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{inbuf,  }\item[{size\+\_\+t}]{inbytesleft }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+This function converts a string between encodings in one pass, returning a string that must be freed with SDL\+\_\+free() or NULL on error. 

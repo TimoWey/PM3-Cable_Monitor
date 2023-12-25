@@ -1,0 +1,180 @@
+\doxysection{SDL\+\_\+rwops.\+h}
+\hypertarget{_s_d_l__rwops_8h_source}{}\label{_s_d_l__rwops_8h_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_rwops.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_rwops.h}}
+\mbox{\hyperlink{_s_d_l__rwops_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Simple\ DirectMedia\ Layer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ Copyright\ (C)\ 1997-\/2016\ Sam\ Lantinga\ <slouken@libsdl.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ warranty.\ \ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ \_SDL\_rwops\_h}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ \_SDL\_rwops\_h}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__error_8h}{SDL\_error.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{comment}{/*\ Set\ up\ for\ C\ function\ definitions,\ even\ when\ using\ C++\ */}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ RWops\ Types\ */}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ SDL\_RWOPS\_UNKNOWN\ \ \ 0\ \ \ }\textcolor{comment}{/*\ Unknown\ stream\ type\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ SDL\_RWOPS\_WINFILE\ \ \ 1\ \ \ }\textcolor{comment}{/*\ Win32\ file\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ SDL\_RWOPS\_STDFILE\ \ \ 2\ \ \ }\textcolor{comment}{/*\ Stdio\ file\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ SDL\_RWOPS\_JNIFILE\ \ \ 3\ \ \ }\textcolor{comment}{/*\ Android\ asset\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ SDL\_RWOPS\_MEMORY\ \ \ \ 4\ \ \ }\textcolor{comment}{/*\ Memory\ stream\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ SDL\_RWOPS\_MEMORY\_RO\ 5\ \ \ }\textcolor{comment}{/*\ Read-\/Only\ memory\ stream\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{struct_s_d_l___r_wops_a45f66dbb683a88281d96f83ca18c525f}{Sint64}}\ (SDLCALL\ *\ size)\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ context);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{struct_s_d_l___r_wops_a767114391a3d1b4a7c214da3e164acf5}{Sint64}}\ (SDLCALL\ *\ seek)\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ context,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}}\ offset,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ whence);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{struct_s_d_l___r_wops_acd9a3c6e840d285c1e30cadaf99097b2}{size\_t}}\ (SDLCALL\ *\ read)\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ context,\ \textcolor{keywordtype}{void}\ *ptr,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ maxnum);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{struct_s_d_l___r_wops_a5f12fd517afffba5bfaff4643d6792b1}{size\_t}}\ (SDLCALL\ *\ write)\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ context,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *ptr,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ num);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{struct_s_d_l___r_wops_ab303bcbb0f6742a141ba8b2998923f47}{int}}\ (SDLCALL\ *\ close)\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ context);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ type;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#if\ defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *fileNameRef;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *inputStreamRef;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *readableByteChannelRef;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *readMethod;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *assetFileDescriptorRef;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ position;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ size;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ offset;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fd;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}\ androidio;}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#elif\ defined(\_\_WIN32\_\_)}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ SDL\_bool\ append;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *h;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *data;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ left;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ buffer;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}\ windowsio;}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#ifdef\ HAVE\_STDIO\_H}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ SDL\_bool\ autoclose;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ FILE\ *fp;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}\ stdio;}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}\ *base;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}\ *here;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}\ *stop;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}\ mem;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *data1;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *data2;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}\ unknown;}
+\DoxyCodeLine{00141\ \ \ \ \ \}\ hidden;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \}\ \mbox{\hyperlink{_s_d_l__rwops_8h_a74ae02b3c98390e2792749c53329cc23}{SDL\_RWops}};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ @\{\ */}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *SDLCALL\ SDL\_RWFromFile(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *mode);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#ifdef\ HAVE\_STDIO\_H}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *SDLCALL\ SDL\_RWFromFP(FILE\ *\ fp,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SDL\_bool\ autoclose);}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00160\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *SDLCALL\ SDL\_RWFromFP(\textcolor{keywordtype}{void}\ *\ fp,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SDL\_bool\ autoclose);}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *SDLCALL\ SDL\_RWFromMem(\textcolor{keywordtype}{void}\ *mem,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00165\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *SDLCALL\ SDL\_RWFromConstMem(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *mem,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{comment}{/*\ @\}\ */}\textcolor{comment}{/*\ RWFrom\ functions\ */}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *SDLCALL\ SDL\_AllocRW(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00172\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ SDLCALL\ SDL\_FreeRW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ area);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ RW\_SEEK\_SET\ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ RW\_SEEK\_CUR\ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ RW\_SEEK\_END\ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{comment}{/*\ @\{\ */}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ SDL\_RWsize(ctx)\ \ \ \ \ \ \ \ \ (ctx)-\/>size(ctx)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ SDL\_RWseek(ctx,\ offset,\ whence)\ (ctx)-\/>seek(ctx,\ offset,\ whence)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ SDL\_RWtell(ctx)\ \ \ \ \ \ \ \ \ (ctx)-\/>seek(ctx,\ 0,\ RW\_SEEK\_CUR)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ SDL\_RWread(ctx,\ ptr,\ size,\ n)\ \ \ (ctx)-\/>read(ctx,\ ptr,\ size,\ n)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ SDL\_RWwrite(ctx,\ ptr,\ size,\ n)\ \ (ctx)-\/>write(ctx,\ ptr,\ size,\ n)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ SDL\_RWclose(ctx)\ \ \ \ \ \ \ \ (ctx)-\/>close(ctx)}}
+\DoxyCodeLine{00190\ \textcolor{comment}{/*\ @\}\ */}\textcolor{comment}{/*\ Read/write\ macros\ */}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00198\ \textcolor{comment}{/*\ @\{\ */}}
+\DoxyCodeLine{00199\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}\ SDLCALL\ SDL\_ReadU8(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ src);}
+\DoxyCodeLine{00200\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ SDLCALL\ SDL\_ReadLE16(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ src);}
+\DoxyCodeLine{00201\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ SDLCALL\ SDL\_ReadBE16(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ src);}
+\DoxyCodeLine{00202\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ SDLCALL\ SDL\_ReadLE32(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ src);}
+\DoxyCodeLine{00203\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ SDLCALL\ SDL\_ReadBE32(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ src);}
+\DoxyCodeLine{00204\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ SDLCALL\ SDL\_ReadLE64(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ src);}
+\DoxyCodeLine{00205\ \textcolor{keyword}{extern}\ DECLSPEC\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ SDLCALL\ SDL\_ReadBE64(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ src);}
+\DoxyCodeLine{00206\ \textcolor{comment}{/*\ @\}\ */}\textcolor{comment}{/*\ Read\ endian\ functions\ */}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00213\ \textcolor{comment}{/*\ @\{\ */}}
+\DoxyCodeLine{00214\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{size\_t}\ SDLCALL\ SDL\_WriteU8(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ dst,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}\ value);}
+\DoxyCodeLine{00215\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{size\_t}\ SDLCALL\ SDL\_WriteLE16(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ dst,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ value);}
+\DoxyCodeLine{00216\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{size\_t}\ SDLCALL\ SDL\_WriteBE16(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ dst,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}}\ value);}
+\DoxyCodeLine{00217\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{size\_t}\ SDLCALL\ SDL\_WriteLE32(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ dst,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ value);}
+\DoxyCodeLine{00218\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{size\_t}\ SDLCALL\ SDL\_WriteBE32(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ dst,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ value);}
+\DoxyCodeLine{00219\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{size\_t}\ SDLCALL\ SDL\_WriteLE64(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ dst,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ value);}
+\DoxyCodeLine{00220\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{size\_t}\ SDLCALL\ SDL\_WriteBE64(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}}\ *\ dst,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}\ value);}
+\DoxyCodeLine{00221\ \textcolor{comment}{/*\ @\}\ */}\textcolor{comment}{/*\ Write\ endian\ functions\ */}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{comment}{/*\ Ends\ C\ function\ definitions\ when\ using\ C++\ */}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00225\ \}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SDL\_rwops\_h\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{comment}{/*\ vi:\ set\ ts=4\ sw=4\ expandtab:\ */}}
+
+\end{DoxyCode}

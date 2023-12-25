@@ -1,0 +1,94 @@
+\doxysection{Matrix3x3.\+hpp}
+\hypertarget{_matrix3x3_8hpp_source}{}\label{_matrix3x3_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/Matrix3x3.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/Matrix3x3.hpp}}
+\mbox{\hyperlink{_matrix3x3_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_MATRIX3X3\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_MATRIX3X3\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_config_8hpp}{touchgfx/hal/Config.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Point}}}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point_a9a8e62114fefa929d4ea66b79f1004e4}{x}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point_a1c8f6c10aac88cd2bf8ef01b3c883e17}{y}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a023ee854fab79ce89b59011f3a4f7924}{Matrix3x3}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00054\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a592c4b3e538edbb192bbd06ad6c88143}{getElement}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ elements[row][column];}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00075\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a5bfb836b554b7c4a4f5931a83ea19919}{getElements}}()}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&elements[0][0];}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a1011ed3904e01b724c33d6fdc20c0530}{setElement}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column,\ \textcolor{keywordtype}{float}\ value)}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ elements[row][column]\ =\ value;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_aefbfa83b7acbf1af8cdcbb6abd3f1c61}{reset}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_af71250e7a351c73a9f02b287f6f6ac96}{setAffineTransformation}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ transformation[6])}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ elements[0][0]\ =\ transformation[0];}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ elements[0][1]\ =\ transformation[2];}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ elements[0][2]\ =\ transformation[4];}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ elements[1][0]\ =\ transformation[1];}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ elements[1][1]\ =\ transformation[3];}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ elements[1][2]\ =\ transformation[5];}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ elements[2][0]\ =\ 0.f;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ elements[2][1]\ =\ 0.f;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ elements[2][2]\ =\ 1.f;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a77c0a414e62c4fb8f22e034daffa89d0}{scale}}(\textcolor{keywordtype}{float}\ scaleX,\ \textcolor{keywordtype}{float}\ scaleY);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a2741cec3a973ea23d6f4bf40c095ea0f}{scale}}(\textcolor{keywordtype}{float}\ scaleXY)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ scale(scaleXY,\ scaleXY);}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_aafa4b327383681d6613754486aa3021b}{rotate}}(\textcolor{keywordtype}{float}\ angleInDegrees);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a265ca8451ab46509b7e18a6a1c3ba39d}{rotatePivot}}(\textcolor{keywordtype}{float}\ angleInDegrees,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a7bf90c5cf58c311f7a899083b5ac8272}{translate}}(\textcolor{keywordtype}{float}\ deltaX,\ \textcolor{keywordtype}{float}\ deltaY);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_ae94520f04bbd6cf2056dff3ddefc545c}{projectiveTransform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\&\ point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a4961a5967f5d9701b304a51755124288}{affineTransform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\&\ point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_matrix3x3_1_1_point}{Matrix3x3::Point}}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_a8da5b7714f2a3db5f7869f79c1c3e65f}{affineTransform}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3_aed526859baa7958ee6ba2fbfd5c0f898}{multiply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_matrix3x3}{Matrix3x3}}\&\ rhs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{float}\ elements[3][3];\ }
+\DoxyCodeLine{00246\ \};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_MATRIX3X3\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,190 @@
+\doxysection{touchgfx\+::Icon\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_icon_button_style}{}\label{classtouchgfx_1_1_icon_button_style}\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Icon\+Button\+Style.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Icon\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_icon_button_style}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_a5b3c52bfb88caabe8c1f20a4cb893e33}{set\+Icon\+Bitmaps}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&new\+Icon\+Released, const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&new\+Icon\+Pressed)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_a293cebf8bd61805e2b883db7a0a27800}{set\+IconX}} (int16\+\_\+t x)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_a98b5e849efd78d4f9260bec939d92732}{set\+IconY}} (int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_a70ca8aee766705b6dace4bd15ce5ea23}{set\+Icon\+XY}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_aea91961f217078d7d847014dfdf8f603}{get\+Currently\+Displayed\+Icon}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_a8b9f3179d073e22bfd99ecd7ae5fe5b6}{get\+IconX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_ae22eec223182ca3ddb41b79e969fe149}{get\+IconY}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_a2e51b261df4abdcc1879ec918804b442}{handle\+Pressed\+Updated}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style_add10a0f3965ba816832ec91c206678b8}{handle\+Alpha\+Updated}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_icon_button_style_aebfca6280fdaefc5c218ff30dd991a9c}\label{classtouchgfx_1_1_icon_button_style_aebfca6280fdaefc5c218ff30dd991a9c} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries icon\+Released}
+\begin{DoxyCompactList}\small\item\em Icon to display when button is not pressed. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_icon_button_style_aa2fd16bc1f4dbdce0c0080b8b85013f3}\label{classtouchgfx_1_1_icon_button_style_aa2fd16bc1f4dbdce0c0080b8b85013f3} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries icon\+Pressed}
+\begin{DoxyCompactList}\small\item\em Icon to display when button is pressed. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_icon_button_style_a24156f3c45d506423dea5fd29f6489c9}\label{classtouchgfx_1_1_icon_button_style_a24156f3c45d506423dea5fd29f6489c9} 
+\mbox{\hyperlink{classtouchgfx_1_1_image}{Image}} {\bfseries icon\+Image}
+\begin{DoxyCompactList}\small\item\em The icon image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Icon\+Button\+Style$<$ T $>$}
+An icon button style. This class is supposed to be used with one of the Button\+Trigger classes to create a functional button. This class will show one of two icons depending on the state of the button (pressed or released).
+
+To get a background behind the icon, use \doxylink{classtouchgfx_1_1_icon_button_style}{Icon\+Button\+Style} together with e.\+g. \doxylink{classtouchgfx_1_1_image_button_style}{Image\+Button\+Style}\+: \doxylink{classtouchgfx_1_1_icon_button_style}{Icon\+Button\+Style}\texorpdfstring{$<$}{<}Image\+Button\+Style$<$\+Click\+Button\+Trigger$>$ \texorpdfstring{$>$}{>} my\+Button;
+
+The \doxylink{classtouchgfx_1_1_icon_button_style}{Icon\+Button\+Style} will center the icon on the enclosing container (normally \doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container}). Set the size of the button before setting the icons.
+
+The position of the icon can be adjusted with set\+Icon\+XY.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_icon_button_style_aea91961f217078d7d847014dfdf8f603}\label{classtouchgfx_1_1_icon_button_style_aea91961f217078d7d847014dfdf8f603} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!getCurrentlyDisplayedIcon@{getCurrentlyDisplayedIcon}}
+\index{getCurrentlyDisplayedIcon@{getCurrentlyDisplayedIcon}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCurrentlyDisplayedIcon()}{getCurrentlyDisplayedIcon()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::get\+Currently\+Displayed\+Icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets currently displayed icon.
+
+\begin{DoxyReturn}{Returns}
+The currently displayed icon. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_icon_button_style_a8b9f3179d073e22bfd99ecd7ae5fe5b6}\label{classtouchgfx_1_1_icon_button_style_a8b9f3179d073e22bfd99ecd7ae5fe5b6} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!getIconX@{getIconX}}
+\index{getIconX@{getIconX}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getIconX()}{getIconX()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::get\+IconX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets icon x coordinate.
+
+\begin{DoxyReturn}{Returns}
+The icon x coordinate. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_icon_button_style_ae22eec223182ca3ddb41b79e969fe149}\label{classtouchgfx_1_1_icon_button_style_ae22eec223182ca3ddb41b79e969fe149} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!getIconY@{getIconY}}
+\index{getIconY@{getIconY}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getIconY()}{getIconY()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::get\+IconY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets icon y coordinate.
+
+\begin{DoxyReturn}{Returns}
+The icon y coordinate. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_icon_button_style_add10a0f3965ba816832ec91c206678b8}\label{classtouchgfx_1_1_icon_button_style_add10a0f3965ba816832ec91c206678b8} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!handleAlphaUpdated@{handleAlphaUpdated}}
+\index{handleAlphaUpdated@{handleAlphaUpdated}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleAlphaUpdated()}{handleAlphaUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::handle\+Alpha\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the alpha is updated.   \Hypertarget{classtouchgfx_1_1_icon_button_style_a2e51b261df4abdcc1879ec918804b442}\label{classtouchgfx_1_1_icon_button_style_a2e51b261df4abdcc1879ec918804b442} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!handlePressedUpdated@{handlePressedUpdated}}
+\index{handlePressedUpdated@{handlePressedUpdated}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handlePressedUpdated()}{handlePressedUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::handle\+Pressed\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the pressed state is updated.   \Hypertarget{classtouchgfx_1_1_icon_button_style_a5b3c52bfb88caabe8c1f20a4cb893e33}\label{classtouchgfx_1_1_icon_button_style_a5b3c52bfb88caabe8c1f20a4cb893e33} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!setIconBitmaps@{setIconBitmaps}}
+\index{setIconBitmaps@{setIconBitmaps}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setIconBitmaps()}{setIconBitmaps()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::set\+Icon\+Bitmaps (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{new\+Icon\+Released,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{new\+Icon\+Pressed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets icon bitmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Icon\+Released} & The new icon released. \\
+\hline
+{\em new\+Icon\+Pressed} & The new icon pressed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_icon_button_style_a293cebf8bd61805e2b883db7a0a27800}\label{classtouchgfx_1_1_icon_button_style_a293cebf8bd61805e2b883db7a0a27800} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!setIconX@{setIconX}}
+\index{setIconX@{setIconX}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setIconX()}{setIconX()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::set\+IconX (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets icon x coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_icon_button_style_a70ca8aee766705b6dace4bd15ce5ea23}\label{classtouchgfx_1_1_icon_button_style_a70ca8aee766705b6dace4bd15ce5ea23} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!setIconXY@{setIconXY}}
+\index{setIconXY@{setIconXY}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setIconXY()}{setIconXY()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::set\+Icon\+XY (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the position of the icon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate. \\
+\hline
+{\em y} & The y coordinate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_icon_button_style_a98b5e849efd78d4f9260bec939d92732}\label{classtouchgfx_1_1_icon_button_style_a98b5e849efd78d4f9260bec939d92732} 
+\index{touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}!setIconY@{setIconY}}
+\index{setIconY@{setIconY}!touchgfx::IconButtonStyle$<$ T $>$@{touchgfx::IconButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setIconY()}{setIconY()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classtouchgfx_1_1_icon_button_style}{touchgfx\+::\+Icon\+Button\+Style}}$<$ T $>$\+::set\+IconY (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets icon y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/buttons/\mbox{\hyperlink{_icon_button_style_8hpp}{Icon\+Button\+Style.\+hpp}}\end{DoxyCompactItemize}

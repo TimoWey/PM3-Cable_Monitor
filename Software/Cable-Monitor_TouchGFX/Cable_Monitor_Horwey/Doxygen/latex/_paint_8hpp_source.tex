@@ -1,0 +1,61 @@
+\doxysection{Paint.\+hpp}
+\hypertarget{_paint_8hpp_source}{}\label{_paint_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Paint.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Paint.hpp}}
+\mbox{\hyperlink{_paint_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_PAINT\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_PAINT\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }paint}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_adf80cd2cdd38b626d9ea8e68cd5b0145}{setL8Palette}}(\textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a5f795ab5ce828e56db0ce8d99e69f99f}{tearDown}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }rgb565}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_ae31b9beca5c98b230c2aa975b86a9d98}{lineFromColor}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint32\_t\ color,\ \textcolor{keyword}{const}\ uint8\_t\ alpha,\ \textcolor{keyword}{const}\ uint32\_t\ color565);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a017937212430095a4844e75b24301ac6}{lineFromRGB565}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint16\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a7bf1380bed40b89a1a9668095cd368ff}{lineFromARGB8888}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_ae868991b9ec4441c0cce8442c4be065f}{lineFromL8RGB888}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a5cf198880107f8d45111ed8d5c2085cd}{lineFromL8ARGB8888}}(uint16\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00094\ \}\ \textcolor{comment}{//\ namespace\ rgb565}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{namespace\ }rgb888}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_ae31b9beca5c98b230c2aa975b86a9d98}{lineFromColor}}(uint8\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint32\_t\ color,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_ac008d4ecd0351bba2571da7b11f551a8}{lineFromRGB888}}(uint8\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a7bf1380bed40b89a1a9668095cd368ff}{lineFromARGB8888}}(uint8\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint32\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_ae868991b9ec4441c0cce8442c4be065f}{lineFromL8RGB888}}(uint8\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00150\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_paint_8hpp_a5cf198880107f8d45111ed8d5c2085cd}{lineFromL8ARGB8888}}(uint8\_t*\ \textcolor{keyword}{const}\ ptr,\ \textcolor{keyword}{const}\ uint8\_t*\ \textcolor{keyword}{const}\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ count,\ \textcolor{keyword}{const}\ uint8\_t\ alpha);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \}\ \textcolor{comment}{//\ namespace\ rgb888}}
+\DoxyCodeLine{00153\ \}\ \textcolor{comment}{//\ namespace\ paint}}
+\DoxyCodeLine{00154\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_PAINT\_HPP}}
+
+\end{DoxyCode}

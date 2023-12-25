@@ -1,0 +1,167 @@
+\doxysection{Frame\+Buffer\+Allocator.\+hpp}
+\hypertarget{_frame_buffer_allocator_8hpp_source}{}\label{_frame_buffer_allocator_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferAllocator.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferAllocator.hpp}}
+\mbox{\hyperlink{_frame_buffer_allocator_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_FRAMEBUFFERALLOCATOR\_HPP}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_FRAMEBUFFERALLOCATOR\_HPP}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetouchgfx_a7a3610743e1972c8f41084114a82389e}{FrameBufferAllocatorWaitOnTransfer}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetouchgfx_a619b0204855df173fed6712fa4c3bf84}{FrameBufferAllocatorSignalBlockDrawn}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator}{FrameBufferAllocator}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_ad1eb3fbd2582bd6cfb678b2cf12c4f92}{allocateBlock}}(\textcolor{keyword}{const}\ uint16\_t\ x,\ \textcolor{keyword}{const}\ uint16\_t\ y,\ \textcolor{keyword}{const}\ uint16\_t\ width,\ \textcolor{keyword}{const}\ uint16\_t\ height,\ uint8\_t**\ block)\ =\ 0;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a9fae62fe9606e7982141ebdefca3cc37}{markBlockReadyForTransfer}}()\ =\ 0;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_af4645e372cdc0860f1ea1b9f586532c8}{hasBlockReadyForTransfer}}()\ =\ 0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_ac84a0aee9f02cba6af160d13f6d2c8e9}{getBlockForTransfer}}(\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect)\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a19dfae47ef70eee001e6d85cdbd1853e}{peekBlockForTransfer}}()\ =\ 0;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a7a2a14290cc2a28c62d2fe50316ffe93}{hasEmptyBlock}}()\ =\ 0;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a8fe7ba0a5b62e87746b62ba89518efa5}{freeBlockAfterTransfer}}()\ =\ 0;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_abb1686d608f9ce111c64b3e4b069b84c}{\string~FrameBufferAllocator}}()}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35}{BlockState}}}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}{EMPTY}},\ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a5bbba919e0312b4496d52a4069852f62}{ALLOCATED}},\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963}{DRAWN}},\ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a4f1daf9f148fd4ee4bc6ea9e76680044}{SENDING}}\ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \};}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{template}\ <u\textcolor{keywordtype}{int}32\_t\ block\_size,\ u\textcolor{keywordtype}{int}32\_t\ blocks,\ u\textcolor{keywordtype}{int}32\_t\ \textcolor{keywordtype}{byte}s\_pr\_pixel>}
+\DoxyCodeLine{00133\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator}{ManyBlockAllocator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator}{FrameBufferAllocator}}}
+\DoxyCodeLine{00134\ \{}
+\DoxyCodeLine{00135\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator}{ManyBlockAllocator}}()}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ sendingBlock\ =\ -\/1;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ drawingBlock\ =\ -\/1;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ blocks;\ i++)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ state[i]\ =\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}{EMPTY}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a4b24e0b0e48dde5bfa6be7a63a3ebca2}{allocateBlock}}(\textcolor{keyword}{const}\ uint16\_t\ x,\ \textcolor{keyword}{const}\ uint16\_t\ y,\ \textcolor{keyword}{const}\ uint16\_t\ width,\ \textcolor{keyword}{const}\ uint16\_t\ height,\ uint8\_t**\ block)}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ drawingBlock++;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drawingBlock\ ==\ blocks)}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ drawingBlock\ =\ 0;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (state[drawingBlock]\ !=\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}{EMPTY}})}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a7a3610743e1972c8f41084114a82389e}{FrameBufferAllocatorWaitOnTransfer}}();}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ assert(state[drawingBlock]\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}{EMPTY}});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ state[drawingBlock]\ =\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a5bbba919e0312b4496d52a4069852f62}{ALLOCATED}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int32\_t\ stride\ =\ width\ *\ bytes\_pr\_pixel;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int32\_t\ lines\ =\ block\_size\ /\ stride;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ *block\ =\ (uint8\_t*)\&memory[drawingBlock][0];}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ blockRect[drawingBlock].\mbox{\hyperlink{classtouchgfx_1_1_rect_ac3d8fab212cdad2b2b20cff23c4be498}{x}}\ =\ x;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ blockRect[drawingBlock].\mbox{\hyperlink{classtouchgfx_1_1_rect_a4fde7b14c13471088fb471eb13396ee7}{y}}\ =\ y;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ blockRect[drawingBlock].\mbox{\hyperlink{classtouchgfx_1_1_rect_a4e06ced2db54543fd6b29ec0dd09c5b3}{width}}\ =\ width;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ blockRect[drawingBlock].\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}}\ =\ MIN(height,\ lines);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blockRect[drawingBlock].\mbox{\hyperlink{classtouchgfx_1_1_rect_a33c9dc90205d96ffe3f6d1d3926bf4ba}{height}};}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a7b5cfef049b2d6b231b774e2604f7c93}{markBlockReadyForTransfer}}()}
+\DoxyCodeLine{00184\ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ assert(state[drawingBlock]\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a5bbba919e0312b4496d52a4069852f62}{ALLOCATED}});}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ state[drawingBlock]\ =\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963}{DRAWN}};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacetouchgfx_a619b0204855df173fed6712fa4c3bf84}{FrameBufferAllocatorSignalBlockDrawn}}();}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a3a4189e8c682eea29b9d46f4c52db944}{hasBlockReadyForTransfer}}()}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ blocks;\ i++)}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state[i]\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963}{DRAWN}})}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_af62b6e441dbd66db4248ad9e05ec95ad}{getBlockForTransfer}}(\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect)}
+\DoxyCodeLine{00215\ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ sendingBlock++;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sendingBlock\ ==\ blocks)}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ sendingBlock\ =\ 0;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ assert(state[sendingBlock]\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963}{DRAWN}});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ rect\ =\ blockRect[sendingBlock];}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ state[sendingBlock]\ =\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a4f1daf9f148fd4ee4bc6ea9e76680044}{SENDING}};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{const}\ uint8\_t*)\&memory[sendingBlock][0];}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a47da61e7e26568e9a7f6548373cc681f}{peekBlockForTransfer}}()}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextSendingBlock\ =\ sendingBlock\ +\ 1;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextSendingBlock\ ==\ blocks)}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ nextSendingBlock\ =\ 0;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ assert(state[nextSendingBlock]\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a67c981d411f330121c7d6cf706117963}{DRAWN}});}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blockRect[nextSendingBlock];}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_a6d9f074fc4d2ddc0b46b644faafa7c28}{hasEmptyBlock}}()}
+\DoxyCodeLine{00239\ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextDrawingBlock\ =\ drawingBlock\ +\ 1;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextDrawingBlock\ ==\ blocks)}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ nextDrawingBlock\ =\ 0;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (state[nextDrawingBlock]\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}{EMPTY}});}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_many_block_allocator_abe2fff59f8a0615eb439b9f68d25337d}{freeBlockAfterTransfer}}()}
+\DoxyCodeLine{00254\ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ assert(state[sendingBlock]\ ==\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35a4f1daf9f148fd4ee4bc6ea9e76680044}{SENDING}});}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ state[sendingBlock]\ =\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35ac7eaea77c83ac9540689a2b64e9bfd81}{EMPTY}};}
+\DoxyCodeLine{00257\ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{classtouchgfx_1_1_frame_buffer_allocator_a4508781bf91bef1a6470d3848f31dd35}{BlockState}}\ state[blocks];}
+\DoxyCodeLine{00261\ \ \ \ \ uint32\_t\ memory[blocks][block\_size\ /\ 4];}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ blockRect[blocks];}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{int}\ sendingBlock;}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{int}\ drawingBlock;}
+\DoxyCodeLine{00265\ \};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_FRAMEBUFFERALLOCATOR\_HPP}}
+
+\end{DoxyCode}

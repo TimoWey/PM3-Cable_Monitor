@@ -1,0 +1,47 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+error.h File Reference}
+\hypertarget{_s_d_l__error_8h}{}\label{_s_d_l__error_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_error.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_error.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__error_8h_a26775853eaf43390bbceb27eb21a2240}\label{_s_d_l__error_8h_a26775853eaf43390bbceb27eb21a2240} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Set\+Error} (SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING const char \texorpdfstring{$\ast$}{*}fmt,...) SDL\+\_\+\+PRINTF\+\_\+\+VARARG\+\_\+\+FUNC(1)
+\item 
+\Hypertarget{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}\label{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a} 
+DECLSPEC const char \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+Get\+Error} (void)
+\item 
+\Hypertarget{_s_d_l__error_8h_a007ed517953a99a46e46be567ef5609e}\label{_s_d_l__error_8h_a007ed517953a99a46e46be567ef5609e} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Clear\+Error} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Internal error functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__error_8h_a440edcb93dba4e39c88ecf8dc676b6c1}\label{_s_d_l__error_8h_a440edcb93dba4e39c88ecf8dc676b6c1} 
+\#define {\bfseries SDL\+\_\+\+Out\+Of\+Memory}()~SDL\+\_\+\+Error(SDL\+\_\+\+ENOMEM)
+\item 
+\Hypertarget{_s_d_l__error_8h_a45dc695e3a906dd40f00e204ace3bcf5}\label{_s_d_l__error_8h_a45dc695e3a906dd40f00e204ace3bcf5} 
+\#define {\bfseries SDL\+\_\+\+Unsupported}()~SDL\+\_\+\+Error(SDL\+\_\+\+UNSUPPORTED)
+\item 
+\Hypertarget{_s_d_l__error_8h_a5875c9c083a88408e11abeaa8391dfa5}\label{_s_d_l__error_8h_a5875c9c083a88408e11abeaa8391dfa5} 
+\#define {\bfseries SDL\+\_\+\+Invalid\+Param\+Error}(param)~SDL\+\_\+\+Set\+Error("{}Parameter \textquotesingle{}\%s\textquotesingle{} is invalid"{}, (param))
+\item 
+\Hypertarget{_s_d_l__error_8h_a5c417ba725f086b33390a5e5d5dabfe1}\label{_s_d_l__error_8h_a5c417ba725f086b33390a5e5d5dabfe1} 
+enum {\bfseries SDL\+\_\+errorcode} \{ \newline
+{\bfseries SDL\+\_\+\+ENOMEM}
+, {\bfseries SDL\+\_\+\+EFREAD}
+, {\bfseries SDL\+\_\+\+EFWRITE}
+, {\bfseries SDL\+\_\+\+EFSEEK}
+, \newline
+{\bfseries SDL\+\_\+\+UNSUPPORTED}
+, {\bfseries SDL\+\_\+\+LASTERROR}
+ \}
+\item 
+\Hypertarget{_s_d_l__error_8h_a0ec05915c315049ed2ab74cfe1ff980f}\label{_s_d_l__error_8h_a0ec05915c315049ed2ab74cfe1ff980f} 
+DECLSPEC int SDLCALL {\bfseries SDL\+\_\+\+Error} (SDL\+\_\+errorcode code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple error message routines for SDL. 

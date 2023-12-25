@@ -1,0 +1,102 @@
+\doxysection{touchgfx\+::Flash\+Data\+Reader Class Reference}
+\hypertarget{classtouchgfx_1_1_flash_data_reader}{}\label{classtouchgfx_1_1_flash_data_reader}\index{touchgfx::FlashDataReader@{touchgfx::FlashDataReader}}
+
+
+{\ttfamily \#include $<$Flash\+Data\+Reader.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader_a8f744802f9926fa7b19a56168f13e5f1}{\texorpdfstring{$\sim$}{\string~}\+Flash\+Data\+Reader}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader_a1968e445b0410f587209fe158d5e742c}{address\+Is\+Addressable}} (const void \texorpdfstring{$\ast$}{*}address)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader_afad39c8101f5fbbaccc1133efdca971f}{copy\+Data}} (const void \texorpdfstring{$\ast$}{*}src, void \texorpdfstring{$\ast$}{*}dst, uint32\+\_\+t bytes)=0
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader_ada4ead44f292b5ca3094931bee7f573d}{start\+Flash\+Line\+Read}} (const void \texorpdfstring{$\ast$}{*}src, uint32\+\_\+t bytes)=0
+\item 
+virtual const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_flash_data_reader_ae4480488fc800c81d55d2c54897a13a0}{wait\+Flash\+Read\+Complete}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is an abstract interface for a class reading data from a flash. The flash can be any type, but is mostly used for flashes that are not memory mapped. Applications must implement access to the flash through this interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_flash_data_reader_a8f744802f9926fa7b19a56168f13e5f1}\label{classtouchgfx_1_1_flash_data_reader_a8f744802f9926fa7b19a56168f13e5f1} 
+\index{touchgfx::FlashDataReader@{touchgfx::FlashDataReader}!````~FlashDataReader@{\texorpdfstring{$\sim$}{\string~}FlashDataReader}}
+\index{````~FlashDataReader@{\texorpdfstring{$\sim$}{\string~}FlashDataReader}!touchgfx::FlashDataReader@{touchgfx::FlashDataReader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FlashDataReader()}{\string~FlashDataReader()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Flash\+Data\+Reader\+::\texorpdfstring{$\sim$}{\string~}\+Flash\+Data\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_flash_data_reader}{Flash\+Data\+Reader} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_flash_data_reader_a1968e445b0410f587209fe158d5e742c}\label{classtouchgfx_1_1_flash_data_reader_a1968e445b0410f587209fe158d5e742c} 
+\index{touchgfx::FlashDataReader@{touchgfx::FlashDataReader}!addressIsAddressable@{addressIsAddressable}}
+\index{addressIsAddressable@{addressIsAddressable}!touchgfx::FlashDataReader@{touchgfx::FlashDataReader}}
+\doxysubsubsection{\texorpdfstring{addressIsAddressable()}{addressIsAddressable()}}
+{\footnotesize\ttfamily virtual bool touchgfx\+::\+Flash\+Data\+Reader\+::address\+Is\+Addressable (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Compute if an address is directly addressable by the MCU.
+
+Compute if an address is directly addressable by the MCU. The data is addressable it should be read direct through a pointer and not through this interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The address in the flash.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the address is addressable by the MCU. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_flash_data_reader_afad39c8101f5fbbaccc1133efdca971f}\label{classtouchgfx_1_1_flash_data_reader_afad39c8101f5fbbaccc1133efdca971f} 
+\index{touchgfx::FlashDataReader@{touchgfx::FlashDataReader}!copyData@{copyData}}
+\index{copyData@{copyData}!touchgfx::FlashDataReader@{touchgfx::FlashDataReader}}
+\doxysubsubsection{\texorpdfstring{copyData()}{copyData()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Flash\+Data\+Reader\+::copy\+Data (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{src,  }\item[{void \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{uint32\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Copy data from flash to a buffer. This must be a synchrony method that does not return until the copy is done.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em src} & Address of source data in the flash. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em dst} & Address of destination buffer in RAM. \\
+\hline
+ & {\em bytes} & Number of bytes to copy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_flash_data_reader_ada4ead44f292b5ca3094931bee7f573d}\label{classtouchgfx_1_1_flash_data_reader_ada4ead44f292b5ca3094931bee7f573d} 
+\index{touchgfx::FlashDataReader@{touchgfx::FlashDataReader}!startFlashLineRead@{startFlashLineRead}}
+\index{startFlashLineRead@{startFlashLineRead}!touchgfx::FlashDataReader@{touchgfx::FlashDataReader}}
+\doxysubsubsection{\texorpdfstring{startFlashLineRead()}{startFlashLineRead()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Flash\+Data\+Reader\+::start\+Flash\+Line\+Read (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{src,  }\item[{uint32\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Initiate a read operation from flash to a buffer. This can be an asynchrony operation that is still running after this function returns. Buffers must be handled by the subclass. \doxylink{classtouchgfx_1_1_l_c_d16bpp_serial_flash}{LCD16bpp\+Serial\+Flash} will at most copy 4 bytes times the width of the display.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Address of source data in the flash. \\
+\hline
+{\em bytes} & Number of bytes to copy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_flash_data_reader_ae4480488fc800c81d55d2c54897a13a0}\label{classtouchgfx_1_1_flash_data_reader_ae4480488fc800c81d55d2c54897a13a0} 
+\index{touchgfx::FlashDataReader@{touchgfx::FlashDataReader}!waitFlashReadComplete@{waitFlashReadComplete}}
+\index{waitFlashReadComplete@{waitFlashReadComplete}!touchgfx::FlashDataReader@{touchgfx::FlashDataReader}}
+\doxysubsubsection{\texorpdfstring{waitFlashReadComplete()}{waitFlashReadComplete()}}
+{\footnotesize\ttfamily virtual const uint8\+\_\+t \texorpdfstring{$\ast$}{*} touchgfx\+::\+Flash\+Data\+Reader\+::wait\+Flash\+Read\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Waits until the previous start\+Flash\+Line\+Read operation is complete.
+
+Waits until the previous start\+Flash\+Line\+Read operation is complete. If the start\+Flash\+Line\+Read method is asynchrony, this method must wait until the previous operation has completed.
+
+\begin{DoxyReturn}{Returns}
+The address of a buffer containing the read data. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/hal/\mbox{\hyperlink{_flash_data_reader_8hpp}{Flash\+Data\+Reader.\+hpp}}\end{DoxyCompactItemize}

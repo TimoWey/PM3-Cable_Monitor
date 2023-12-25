@@ -1,0 +1,171 @@
+\doxysection{Middlewares/\+ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/\+SDL2/\+SDL\+\_\+rwops.h File Reference}
+\hypertarget{_s_d_l__rwops_8h}{}\label{_s_d_l__rwops_8h}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_rwops.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_rwops.h}}
+{\ttfamily \#include "{}SDL\+\_\+stdinc.\+h"{}}\newline
+{\ttfamily \#include "{}SDL\+\_\+error.\+h"{}}\newline
+{\ttfamily \#include "{}begin\+\_\+code.\+h"{}}\newline
+{\ttfamily \#include "{}close\+\_\+code.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__rwops_8h_abefd1a35086e97620beffc2c069bd97d}\label{_s_d_l__rwops_8h_abefd1a35086e97620beffc2c069bd97d} 
+\#define {\bfseries SDL\+\_\+\+RWOPS\+\_\+\+UNKNOWN}~0   /\texorpdfstring{$\ast$}{*} Unknown stream type \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{_s_d_l__rwops_8h_ad979b58d7905cfd8af0bab9ed97c1685}\label{_s_d_l__rwops_8h_ad979b58d7905cfd8af0bab9ed97c1685} 
+\#define {\bfseries SDL\+\_\+\+RWOPS\+\_\+\+WINFILE}~1   /\texorpdfstring{$\ast$}{*} Win32 file \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a054a717fd0b1a2f175e2e822e1ecc67d}\label{_s_d_l__rwops_8h_a054a717fd0b1a2f175e2e822e1ecc67d} 
+\#define {\bfseries SDL\+\_\+\+RWOPS\+\_\+\+STDFILE}~2   /\texorpdfstring{$\ast$}{*} Stdio file \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{_s_d_l__rwops_8h_ad1e973a8b9f9c6cae33f2870c9f76b7d}\label{_s_d_l__rwops_8h_ad1e973a8b9f9c6cae33f2870c9f76b7d} 
+\#define {\bfseries SDL\+\_\+\+RWOPS\+\_\+\+JNIFILE}~3   /\texorpdfstring{$\ast$}{*} Android asset \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a1120765c20af356803b2beb6709e6749}\label{_s_d_l__rwops_8h_a1120765c20af356803b2beb6709e6749} 
+\#define {\bfseries SDL\+\_\+\+RWOPS\+\_\+\+MEMORY}~4   /\texorpdfstring{$\ast$}{*} Memory stream \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a145dd63b72548f37e2fdd9de8bf15bbc}\label{_s_d_l__rwops_8h_a145dd63b72548f37e2fdd9de8bf15bbc} 
+\#define {\bfseries SDL\+\_\+\+RWOPS\+\_\+\+MEMORY\+\_\+\+RO}~5   /\texorpdfstring{$\ast$}{*} Read-\/Only memory stream \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Read/write macros}\par
+{\em Macros to easily read and write from an \doxylink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops} structure. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__rwops_8h_af4709cdb6df63500202f278ed179a2a1}\label{_s_d_l__rwops_8h_af4709cdb6df63500202f278ed179a2a1} 
+\#define {\bfseries SDL\+\_\+\+RWsize}(ctx)~(ctx)-\/$>$size(ctx)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a21053fbfbd96536cb7b9404a12f66822}\label{_s_d_l__rwops_8h_a21053fbfbd96536cb7b9404a12f66822} 
+\#define {\bfseries SDL\+\_\+\+RWseek}(ctx,  offset,  whence)~(ctx)-\/$>$seek(ctx, offset, whence)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_abda2d76d76788e378d4d27344eb71d43}\label{_s_d_l__rwops_8h_abda2d76d76788e378d4d27344eb71d43} 
+\#define {\bfseries SDL\+\_\+\+RWtell}(ctx)~(ctx)-\/$>$seek(ctx, 0, \mbox{\hyperlink{_s_d_l__rwops_8h_aba5f3b60c197def370ffa2ca1ab1348d}{RW\+\_\+\+SEEK\+\_\+\+CUR}})
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a49822992c9b056f6cf6cfc52c9a13050}\label{_s_d_l__rwops_8h_a49822992c9b056f6cf6cfc52c9a13050} 
+\#define {\bfseries SDL\+\_\+\+RWread}(ctx,  ptr,  size,  n)~(ctx)-\/$>$read(ctx, ptr, size, n)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a83549e70a4a09a1d10c7a1b14b5cbdf4}\label{_s_d_l__rwops_8h_a83549e70a4a09a1d10c7a1b14b5cbdf4} 
+\#define {\bfseries SDL\+\_\+\+RWwrite}(ctx,  ptr,  size,  n)~(ctx)-\/$>$write(ctx, ptr, size, n)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a02700bab029c9438c0102457822c1231}\label{_s_d_l__rwops_8h_a02700bab029c9438c0102457822c1231} 
+\#define {\bfseries SDL\+\_\+\+RWclose}(ctx)~(ctx)-\/$>$close(ctx)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct SDL\+\_\+\+RWops \mbox{\hyperlink{_s_d_l__rwops_8h_a74ae02b3c98390e2792749c53329cc23}{SDL\+\_\+\+RWops}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{Indent}\textbf{ Read endian functions}\par
+{\em Read an item of the specified endianness and return in native format. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__rwops_8h_ab864094eb6b80fbf0c77d34ecdde7907}\label{_s_d_l__rwops_8h_ab864094eb6b80fbf0c77d34ecdde7907} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} SDLCALL {\bfseries SDL\+\_\+\+Read\+U8} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a7274f5c4b6f22a6b742ec6ef4f9d390b}\label{_s_d_l__rwops_8h_a7274f5c4b6f22a6b742ec6ef4f9d390b} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} SDLCALL {\bfseries SDL\+\_\+\+Read\+LE16} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a3cdf85a50e40dc58536930429b7b4d09}\label{_s_d_l__rwops_8h_a3cdf85a50e40dc58536930429b7b4d09} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} SDLCALL {\bfseries SDL\+\_\+\+Read\+BE16} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a8320334c299a3631fd6beb9937c30f04}\label{_s_d_l__rwops_8h_a8320334c299a3631fd6beb9937c30f04} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL {\bfseries SDL\+\_\+\+Read\+LE32} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_af023e134e3ae87b1595306e5faeaab76}\label{_s_d_l__rwops_8h_af023e134e3ae87b1595306e5faeaab76} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDLCALL {\bfseries SDL\+\_\+\+Read\+BE32} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_af7e5d9b56874b8bd3a8a6a0c5393c33d}\label{_s_d_l__rwops_8h_af7e5d9b56874b8bd3a8a6a0c5393c33d} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}} SDLCALL {\bfseries SDL\+\_\+\+Read\+LE64} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a4917dc584d162bc5f28b63843557214e}\label{_s_d_l__rwops_8h_a4917dc584d162bc5f28b63843557214e} 
+DECLSPEC \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}} SDLCALL {\bfseries SDL\+\_\+\+Read\+BE64} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}src)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Write endian functions}\par
+{\em Write an item of native format to the specified endianness. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a07c817f8360ddc8c8983d12373306555}\label{_s_d_l__rwops_8h_a07c817f8360ddc8c8983d12373306555} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+\+Write\+U8} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} value)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_aa4a7df8d967c5751e3f0974743b9c2d4}\label{_s_d_l__rwops_8h_aa4a7df8d967c5751e3f0974743b9c2d4} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+\+Write\+LE16} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} value)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_ab84ea778a5f8f76cd73a52216c2c08f5}\label{_s_d_l__rwops_8h_ab84ea778a5f8f76cd73a52216c2c08f5} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+\+Write\+BE16} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} value)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a84f37961925773fe8b06ea09ed144568}\label{_s_d_l__rwops_8h_a84f37961925773fe8b06ea09ed144568} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+\+Write\+LE32} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} value)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a5debf04eeed819018ddd9a2f70d32c89}\label{_s_d_l__rwops_8h_a5debf04eeed819018ddd9a2f70d32c89} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+\+Write\+BE32} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} value)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_ae4f9b45fbb3bf4a40f3f308419307e6b}\label{_s_d_l__rwops_8h_ae4f9b45fbb3bf4a40f3f308419307e6b} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+\+Write\+LE64} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}} value)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a0422f79e1889750cf99310e968cb76fc}\label{_s_d_l__rwops_8h_a0422f79e1889750cf99310e968cb76fc} 
+DECLSPEC size\+\_\+t SDLCALL {\bfseries SDL\+\_\+\+Write\+BE64} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}} value)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{RWFrom functions}
+Functions to create \doxylink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops} structures from various data streams. \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__rwops_8h_ac028b032bb8230df64bc6284e04789f5}{RW\+\_\+\+SEEK\+\_\+\+SET}}~0
+\item 
+\#define \mbox{\hyperlink{_s_d_l__rwops_8h_aba5f3b60c197def370ffa2ca1ab1348d}{RW\+\_\+\+SEEK\+\_\+\+CUR}}~1
+\item 
+\#define \mbox{\hyperlink{_s_d_l__rwops_8h_a6cf141faabd1b8f2ec3c03cf76eaf553}{RW\+\_\+\+SEEK\+\_\+\+END}}~2
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a898d9ad749f054f6b6780bff411fd33a}\label{_s_d_l__rwops_8h_a898d9ad749f054f6b6780bff411fd33a} 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+RWFrom\+File} (const char \texorpdfstring{$\ast$}{*}file, const char \texorpdfstring{$\ast$}{*}mode)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_ac97cd440488d5985ee24b981169b94c6}\label{_s_d_l__rwops_8h_ac97cd440488d5985ee24b981169b94c6} 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+RWFrom\+FP} (void \texorpdfstring{$\ast$}{*}fp, SDL\+\_\+bool autoclose)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a71dcee62581049097e1a6e2966849b85}\label{_s_d_l__rwops_8h_a71dcee62581049097e1a6e2966849b85} 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+RWFrom\+Mem} (void \texorpdfstring{$\ast$}{*}mem, int size)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_aafa955069a970575dfa1cab7db167c54}\label{_s_d_l__rwops_8h_aafa955069a970575dfa1cab7db167c54} 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+RWFrom\+Const\+Mem} (const void \texorpdfstring{$\ast$}{*}mem, int size)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_a2fa1222f94ca8a89b0719be6ef391856}\label{_s_d_l__rwops_8h_a2fa1222f94ca8a89b0719be6ef391856} 
+DECLSPEC \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}SDLCALL {\bfseries SDL\+\_\+\+Alloc\+RW} (void)
+\item 
+\Hypertarget{_s_d_l__rwops_8h_ac4c87c7bed186ea1a98531164ff1acfa}\label{_s_d_l__rwops_8h_ac4c87c7bed186ea1a98531164ff1acfa} 
+DECLSPEC void SDLCALL {\bfseries SDL\+\_\+\+Free\+RW} (\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} \texorpdfstring{$\ast$}{*}area)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides a general interface for SDL to read and write data streams. It can easily be extended to files, memory, etc. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_s_d_l__rwops_8h_aba5f3b60c197def370ffa2ca1ab1348d}\label{_s_d_l__rwops_8h_aba5f3b60c197def370ffa2ca1ab1348d} 
+\index{SDL\_rwops.h@{SDL\_rwops.h}!RW\_SEEK\_CUR@{RW\_SEEK\_CUR}}
+\index{RW\_SEEK\_CUR@{RW\_SEEK\_CUR}!SDL\_rwops.h@{SDL\_rwops.h}}
+\doxysubsubsection{\texorpdfstring{RW\_SEEK\_CUR}{RW\_SEEK\_CUR}}
+{\footnotesize\ttfamily \#define RW\+\_\+\+SEEK\+\_\+\+CUR~1}
+
+Seek relative to current read point \Hypertarget{_s_d_l__rwops_8h_a6cf141faabd1b8f2ec3c03cf76eaf553}\label{_s_d_l__rwops_8h_a6cf141faabd1b8f2ec3c03cf76eaf553} 
+\index{SDL\_rwops.h@{SDL\_rwops.h}!RW\_SEEK\_END@{RW\_SEEK\_END}}
+\index{RW\_SEEK\_END@{RW\_SEEK\_END}!SDL\_rwops.h@{SDL\_rwops.h}}
+\doxysubsubsection{\texorpdfstring{RW\_SEEK\_END}{RW\_SEEK\_END}}
+{\footnotesize\ttfamily \#define RW\+\_\+\+SEEK\+\_\+\+END~2}
+
+Seek relative to the end of data \Hypertarget{_s_d_l__rwops_8h_ac028b032bb8230df64bc6284e04789f5}\label{_s_d_l__rwops_8h_ac028b032bb8230df64bc6284e04789f5} 
+\index{SDL\_rwops.h@{SDL\_rwops.h}!RW\_SEEK\_SET@{RW\_SEEK\_SET}}
+\index{RW\_SEEK\_SET@{RW\_SEEK\_SET}!SDL\_rwops.h@{SDL\_rwops.h}}
+\doxysubsubsection{\texorpdfstring{RW\_SEEK\_SET}{RW\_SEEK\_SET}}
+{\footnotesize\ttfamily \#define RW\+\_\+\+SEEK\+\_\+\+SET~0}
+
+Seek from the beginning of data 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_s_d_l__rwops_8h_a74ae02b3c98390e2792749c53329cc23}\label{_s_d_l__rwops_8h_a74ae02b3c98390e2792749c53329cc23} 
+\index{SDL\_rwops.h@{SDL\_rwops.h}!SDL\_RWops@{SDL\_RWops}}
+\index{SDL\_RWops@{SDL\_RWops}!SDL\_rwops.h@{SDL\_rwops.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_RWops}{SDL\_RWops}}
+{\footnotesize\ttfamily typedef struct SDL\+\_\+\+RWops SDL\+\_\+\+RWops}
+
+This is the read/write operation structure -- very basic. 

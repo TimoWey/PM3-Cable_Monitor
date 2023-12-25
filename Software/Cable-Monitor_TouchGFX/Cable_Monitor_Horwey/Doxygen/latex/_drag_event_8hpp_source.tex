@@ -1,0 +1,105 @@
+\doxysection{Drag\+Event.\+hpp}
+\hypertarget{_drag_event_8hpp_source}{}\label{_drag_event_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/events/DragEvent.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/events/DragEvent.hpp}}
+\mbox{\hyperlink{_drag_event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_DRAGEVENT\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DRAGEVENT\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_event_8hpp}{touchgfx/Event.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_drag_event}{DragEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_event}{Event}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{DragEventType}}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6ea8e1aa801e17f568d9bad86259bb39c3e}{DRAGGED}}\ }
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a32f28cf73beca964bae147c984bd5961}{DragEvent}}(\mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{DragEventType}}\ type,\ int16\_t\ oldX,\ int16\_t\ oldY,\ int16\_t\ newX,\ int16\_t\ newY)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ :\ dragEventType(type),\ dragOldX(oldX),\ dragOldY(oldY),\ dragNewX(newX),\ dragNewY(newY)}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a19a490aaa3cdf3e105290143bbb40550}{DragEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{DragEvent}}\&\ dragEvent)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ =\ dragEvent;}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_ae3e1da950886183073e64985a014aa44}{getOldX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00072\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dragOldX;}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a0fae3fa6849c7f14934a9021424bc9a0}{getOldY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dragOldY;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a11f3bc0cfc6ab613fe7a6c6df3c9825f}{getNewX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dragNewX;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a925b4f1fd982a4e858e545806a1110f9}{getNewY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00103\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dragNewY;}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{DragEventType}}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a67df41cebdcbeeb545abd33797f78cf7}{getType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dragEventType;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a35c2dfb4029059151267e0655f220ba8}{getDeltaX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dragNewX\ -\/\ dragOldX;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00132\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a50e17213d96b458c3c7445cf5581faf8}{getDeltaY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00133\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dragNewY\ -\/\ dragOldY;}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7}{Event::EventType}}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6b1f37b423f4ef293d3e0fa355d82af6}{getEventType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_event_afe944033e37f7a17f3740e6e6992f7f7a36c8095692a9b7537f99bfc827908b12}{Event::EVENT\_DRAG}};}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{DragEvent}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_abd167bd155901c5051c8b2718d479dfb}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{DragEvent}}\&\ dragEvent)}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ dragEventType\ =\ dragEvent.dragEventType;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ dragOldX\ =\ dragEvent.dragOldX;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ dragOldY\ =\ dragEvent.dragOldY;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ dragNewX\ =\ dragEvent.dragNewX;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ dragNewY\ =\ dragEvent.dragNewY;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_drag_event_a6e79477c3cf96d76ae10f5ca80976f6e}{DragEventType}}\ dragEventType;}
+\DoxyCodeLine{00166\ \ \ \ \ int16\_t\ dragOldX;}
+\DoxyCodeLine{00167\ \ \ \ \ int16\_t\ dragOldY;}
+\DoxyCodeLine{00168\ \ \ \ \ int16\_t\ dragNewX;}
+\DoxyCodeLine{00169\ \ \ \ \ int16\_t\ dragNewY;}
+\DoxyCodeLine{00170\ \};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_DRAGEVENT\_HPP}}
+
+\end{DoxyCode}

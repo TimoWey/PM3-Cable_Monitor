@@ -1,0 +1,35 @@
+var calculation_8h =
+[
+    [ "FFT", "struct_f_f_t.html", "struct_f_f_t" ],
+    [ "ACCU_FFT", "struct_a_c_c_u___f_f_t.html", "struct_a_c_c_u___f_f_t" ],
+    [ "SINGLE_MEAS", "struct_s_i_n_g_l_e___m_e_a_s.html", "struct_s_i_n_g_l_e___m_e_a_s" ],
+    [ "ACCU_MEAS", "struct_a_c_c_u___m_e_a_s.html", "struct_a_c_c_u___m_e_a_s" ],
+    [ "DISTANCE_ANGLE", "struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html", "struct_d_i_s_t_a_n_c_e___a_n_g_l_e" ],
+    [ "ARM_MATH_CM4", "calculation_8h.html#a42e162ee7b8b8c2663d1dbd31c7b590b", null ],
+    [ "CHANNEL_NUM", "calculation_8h.html#a6511732d5b29a6781cf38783157f21e1", null ],
+    [ "DISABLE_BUZZER", "calculation_8h.html#aa1da8470096f447fa45ad8251ad6953c", null ],
+    [ "DISABLE_LED", "calculation_8h.html#a8f63964ce584a43cbad406260d4e132b", null ],
+    [ "DISABLE_TOUCHGFX_INTERRUPTS", "calculation_8h.html#af8effa27f0158badaff3cc62a6016095", null ],
+    [ "ENABLE_BUZZER", "calculation_8h.html#a8c2f4d08dfe4e521e60674781b86f333", null ],
+    [ "ENABLE_LED", "calculation_8h.html#a3d8b3f36bda3f694d92a6d0949220a9e", null ],
+    [ "ENABLE_TOUCHGFX_INTERRUPTS", "calculation_8h.html#ac031bf5e13adcb4d23de36fe7ebe9aec", null ],
+    [ "SAMPLE_LEN", "calculation_8h.html#ac57f72f3e56192d9df3dd527edb9e587", null ],
+    [ "SINGLE_PHASE", "calculation_8h.html#adb966d5f9675ecf8225256002bb63314", null ],
+    [ "THREE_PHASE", "calculation_8h.html#a57280a2ce44606289299d5748e9c28eb", null ],
+    [ "CALC_ERROR_ITEM", "calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2a", [
+      [ "CALC_ERROR_FREQUENCY", "calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2aa474aef8698fc4178e2d10a737c7c87a9", null ],
+      [ "CALC_ERROR_DISCONNECT", "calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2aae86cb76cc4d2213c6bfa1738bf1c71c0", null ],
+      [ "CALC_ERROR_OVERCURRENT", "calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2aaec3ce62130803dcc8025689e14c63369", null ],
+      [ "CALC_ERROR_TOO_FAR_AWAY", "calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2aa1c49751279cecb232e202f60473584fc", null ],
+      [ "CALC_ERROR_DEVIATION_TOO_HIGH", "calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2aa7a300c048f86eaa5fe197e588f2c8977", null ],
+      [ "CALC_ERROR_NONE", "calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2aaa3f88aa319b7600fe19263c327f009e5", null ]
+    ] ],
+    [ "accurate_FFT", "calculation_8h.html#a4fddab1b09b687be16e69a9784d5b97b", null ],
+    [ "accurate_measurement", "calculation_8h.html#ac084ccf3f955bc4c19751d6b24aa3814", null ],
+    [ "single_measurement", "calculation_8h.html#a6aee6a07a86ee73c7ba20e059b79c794", null ],
+    [ "start_calibration", "calculation_8h.html#abac8ce1f5096ff3f393117cbfa98f888", null ],
+    [ "toggle_Buzzer_settings", "calculation_8h.html#a6b6736969ddf8f3f9f229c3ac4a24c23", null ],
+    [ "Calibration_Data", "calculation_8h.html#a43c98c20a1c370f9fd65564895637f19", null ],
+    [ "htim14", "calculation_8h.html#ae4b8faf50eeb07577983d36e4c3894b8", null ],
+    [ "htim5", "calculation_8h.html#acefaeaaa3856ddddae7083b2d220fe4b", null ]
+];

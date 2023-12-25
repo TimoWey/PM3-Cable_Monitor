@@ -1,0 +1,125 @@
+\doxysection{SDL\+\_\+main.\+h}
+\hypertarget{_s_d_l__main_8h_source}{}\label{_s_d_l__main_8h_source}\index{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_main.h@{Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/vendor/SDL2/SDL\_main.h}}
+\mbox{\hyperlink{_s_d_l__main_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Simple\ DirectMedia\ Layer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ Copyright\ (C)\ 1997-\/2016\ Sam\ Lantinga\ <slouken@libsdl.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ warranty.\ \ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ \_SDL\_main\_h}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \_SDL\_main\_h}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ SDL\_MAIN\_HANDLED}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ defined(\_\_WIN32\_\_)}}
+\DoxyCodeLine{00035\ \textcolor{comment}{/*\ On\ Windows\ SDL\ provides\ WinMain(),\ which\ parses\ the\ command\ line\ and\ passes}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ the\ arguments\ to\ your\ main\ function.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ If\ you\ provide\ your\ own\ WinMain(),\ you\ may\ define\ SDL\_MAIN\_HANDLED}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SDL\_MAIN\_AVAILABLE}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#elif\ defined(\_\_WINRT\_\_)}}
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ On\ WinRT,\ SDL\ provides\ a\ main\ function\ that\ initializes\ CoreApplication,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ creating\ an\ instance\ of\ IFrameworkView\ in\ the\ process.}}
+\DoxyCodeLine{00045\ \textcolor{comment}{}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ \ \ Please\ note\ that\ \#include'ing\ SDL\_main.h\ is\ not\ enough\ to\ get\ a\ main()}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ \ function\ working.\ \ In\ non-\/XAML\ apps,\ the\ file,}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ \ src/main/winrt/SDL\_WinRT\_main\_NonXAML.cpp,\ or\ a\ copy\ of\ it,\ must\ be\ compiled}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ into\ the\ app\ itself.\ \ In\ XAML\ apps,\ the\ function,\ SDL\_WinRTRunApp\ must\ be}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ called,\ with\ a\ pointer\ to\ the\ Direct3D-\/hosted\ XAML\ control\ passed\ in.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#elif\ defined(\_\_IPHONEOS\_\_)}}
+\DoxyCodeLine{00055\ \textcolor{comment}{/*\ On\ iOS\ SDL\ provides\ a\ main\ function\ that\ creates\ an\ application\ delegate}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ and\ starts\ the\ iOS\ application\ run\ loop.}}
+\DoxyCodeLine{00057\ \textcolor{comment}{}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ See\ src/video/uikit/SDL\_uikitappdelegate.m\ for\ more\ details.}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#elif\ defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00063\ \textcolor{comment}{/*\ On\ Android\ SDL\ provides\ a\ Java\ class\ in\ SDLActivity.java\ that\ is\ the}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ \ \ main\ activity\ entry\ point.}}
+\DoxyCodeLine{00065\ \textcolor{comment}{}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ See\ README-\/android.txt\ for\ more\ details\ on\ extending\ that\ class.}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#elif\ defined(\_\_NACL\_\_)}}
+\DoxyCodeLine{00071\ \textcolor{comment}{/*\ On\ NACL\ we\ use\ ppapi\_simple\ to\ set\ up\ the\ application\ helper\ code,}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ then\ wait\ for\ the\ first\ PSE\_INSTANCE\_DIDCHANGEVIEW\ event\ before\ }}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ \ starting\ the\ user\ main\ function.}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ All\ user\ code\ is\ run\ in\ a\ separate\ thread\ by\ ppapi\_simple,\ thus\ }}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ allowing\ for\ blocking\ io\ to\ take\ place\ via\ nacl\_io}}
+\DoxyCodeLine{00076\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SDL\_MAIN\_HANDLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ C\_LINKAGE\ \ \ "{}C"{}}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ C\_LINKAGE}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#if\ defined(SDL\_MAIN\_NEEDED)\ ||\ defined(SDL\_MAIN\_AVAILABLE)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ main\ \ \ \ SDL\_main}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{extern}\ C\_LINKAGE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_d_l__main_8h_abebe82923d88787c3718e201b3e62295}{SDL\_main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[]);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ SDLCALL\ \mbox{\hyperlink{_s_d_l__main_8h_a6a4bb5ffb489bf0956bc1b813397306d}{SDL\_SetMainReady}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#ifdef\ \_\_WIN32\_\_}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ SDL\_RegisterApp(\textcolor{keywordtype}{char}\ *name,\ \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}\ style,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *hInst);}
+\DoxyCodeLine{00134\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{void}\ SDLCALL\ SDL\_UnregisterApp(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_WIN32\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#ifdef\ \_\_WINRT\_\_}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{extern}\ DECLSPEC\ \textcolor{keywordtype}{int}\ SDLCALL\ SDL\_WinRTRunApp(\textcolor{keywordtype}{int}\ (*mainFunction)(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{char}\ **),\ \textcolor{keywordtype}{void}\ *\ reserved);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_WINRT\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00155\ \}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SDL\_main\_h\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{/*\ vi:\ set\ ts=4\ sw=4\ expandtab:\ */}}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\doxysection{STM32\+DMA.\+hpp}
+\hypertarget{_s_t_m32_d_m_a_8hpp_source}{}\label{_s_t_m32_d_m_a_8hpp_source}\index{TouchGFX/target/generated/STM32DMA.hpp@{TouchGFX/target/generated/STM32DMA.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ STM32DMA\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ STM32DMA\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_blit_op_8hpp}{touchgfx/hal/BlitOp.hpp}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_d_m_a_8hpp}{touchgfx/hal/DMA.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_t_m32_d_m_a}{STM32DMA}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtouchgfx_1_1_d_m_a___interface}{touchgfx::DMA\_Interface}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_s_t_m32_d_m_a_acd2a354edecf304c98edf7eb27b60753}{STM32DMA}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacetouchgfx_ae1e94da7298eecda8c3e2be6833ac70f}{touchgfx::BlitOperations}}\ \mbox{\hyperlink{class_s_t_m32_d_m_a_a1e7dec26073f6eacf3717b0a5522bc84}{getBlitCaps}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_t_m32_d_m_a_afebf4e7dccb3c401e5018f24297fe808}{setupDataCopy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{touchgfx::BlitOp}}\&\ blitOp);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_t_m32_d_m_a_a348711832780148327a03acc85ee5699}{setupDataFill}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{touchgfx::BlitOp}}\&\ blitOp);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_t_m32_d_m_a_a8c3f2a4adb69ad2f2e260bda720bc91d}{signalDMAInterrupt}}()}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_t_m32_d_m_a_af7828fceba886ab02766d5d12426464a}{flush}}()}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_lock_free_d_m_a___queue}{touchgfx::LockFreeDMA\_Queue}}\ q;}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1_blit_op}{touchgfx::BlitOp}}\ b;}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_NODMA\_HPP}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\doxysection{touchgfx\+::Font\+Cache Class Reference}
+\hypertarget{classtouchgfx_1_1_font_cache}{}\label{classtouchgfx_1_1_font_cache}\index{touchgfx::FontCache@{touchgfx::FontCache}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a93ff9e6be429749ab5ccdc812379cecc}\label{classtouchgfx_1_1_font_cache_a93ff9e6be429749ab5ccdc812379cecc} 
+void {\bfseries set\+Reader} (\mbox{\hyperlink{classtouchgfx_1_1_font_data_reader}{Font\+Data\+Reader}} \texorpdfstring{$\ast$}{*}reader)
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_aef851b579ba693c2637418bce3af3776}\label{classtouchgfx_1_1_font_cache_aef851b579ba693c2637418bce3af3776} 
+void {\bfseries clear} (bool keep\+Gsub\+Or\+Context\+Table=false)
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a55b5c86b256b7626d4184d320b4233c8}\label{classtouchgfx_1_1_font_cache_a55b5c86b256b7626d4184d320b4233c8} 
+void {\bfseries set\+Memory} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}memory, uint32\+\_\+t size)
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_affbeceb796c6c0ec926c9f17d4f7bf86}\label{classtouchgfx_1_1_font_cache_affbeceb796c6c0ec926c9f17d4f7bf86} 
+void {\bfseries initialize\+Cached\+Font} (\mbox{\hyperlink{classtouchgfx_1_1_typed_text}{Typed\+Text}} t, \mbox{\hyperlink{classtouchgfx_1_1_cached_font}{Cached\+Font}} \texorpdfstring{$\ast$}{*}font, bool load\+Gsub\+Or\+Context\+Table=false)
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a1bc035f297770cf19474108de69eedea}\label{classtouchgfx_1_1_font_cache_a1bc035f297770cf19474108de69eedea} 
+bool {\bfseries cache\+String} (\mbox{\hyperlink{classtouchgfx_1_1_typed_text}{Typed\+Text}} t, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}string)
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_ad16d51840b747640748301cc3116d3d9}\label{classtouchgfx_1_1_font_cache_ad16d51840b747640748301cc3116d3d9} 
+bool {\bfseries cache\+Ligatures} (\mbox{\hyperlink{classtouchgfx_1_1_cached_font}{Cached\+Font}} \texorpdfstring{$\ast$}{*}font, \mbox{\hyperlink{classtouchgfx_1_1_typed_text}{Typed\+Text}} t, const \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} \texorpdfstring{$\ast$}{*}string)
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a513196d29cb1c7d078a9ad1ac858e93d}\label{classtouchgfx_1_1_font_cache_a513196d29cb1c7d078a9ad1ac858e93d} 
+const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Glyph} (\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{Unicode\+::\+Unicode\+Char}} unicode, \mbox{\hyperlink{namespacetouchgfx_ab0e44c90ae4c1ef36dc2b940091825a2}{Font\+Id}} font) const
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a3883933484b6da0db10ec0165e57da3e}\label{classtouchgfx_1_1_font_cache_a3883933484b6da0db10ec0165e57da3e} 
+uint32\+\_\+t {\bfseries get\+Memory\+Usage} ()
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a7e72b490d8ae751bb5cf117a0a68747f}\label{classtouchgfx_1_1_font_cache_a7e72b490d8ae751bb5cf117a0a68747f} 
+void {\bfseries open} ()
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a5541bf005399cecc01f0ce5c756e90d6}\label{classtouchgfx_1_1_font_cache_a5541bf005399cecc01f0ce5c756e90d6} 
+void {\bfseries close} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a3bfea0217b31ee0f2cf94fd2b104c4d9}\label{classtouchgfx_1_1_font_cache_a3bfea0217b31ee0f2cf94fd2b104c4d9} 
+static const uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries get\+Pixel\+Data} (const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}glyph)
+\item 
+\Hypertarget{classtouchgfx_1_1_font_cache_a58ac004e77b33cec115fd853a8f3678f}\label{classtouchgfx_1_1_font_cache_a58ac004e77b33cec115fd853a8f3678f} 
+static bool {\bfseries is\+Cached} (const \mbox{\hyperlink{structtouchgfx_1_1_glyph_node}{Glyph\+Node}} \texorpdfstring{$\ast$}{*}g)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Touch\+GFX/generated/fonts/include/fonts/Font\+Cache.\+hpp\item 
+Touch\+GFX/generated/fonts/src/Font\+Cache.\+cpp\end{DoxyCompactItemize}

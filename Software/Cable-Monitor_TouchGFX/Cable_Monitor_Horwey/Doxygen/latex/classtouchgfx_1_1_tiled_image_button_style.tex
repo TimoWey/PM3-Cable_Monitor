@@ -1,0 +1,154 @@
+\doxysection{touchgfx\+::Tiled\+Image\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtouchgfx_1_1_tiled_image_button_style}{}\label{classtouchgfx_1_1_tiled_image_button_style}\index{touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Tiled\+Image\+Button\+Style.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Tiled\+Image\+Button\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtouchgfx_1_1_tiled_image_button_style}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_af608564c1b9988eaa5bf5dc1ffc73a26}{set\+Width}} (int16\+\_\+t width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a9421aaa303900132bc587bab9cca91a1}{set\+Height}} (int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a034f465219847056137eef968b066581}{set\+Tile\+Bitmaps}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp\+Released, const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp\+Pressed)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a05138b32d408bd55dbafc70a4b553ebd}{set\+Tile\+Offset}} (int16\+\_\+t x, int16\+\_\+t y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_a3df45a17f0c64230aa7d9ac1e15c89f5}{handle\+Pressed\+Updated}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style_aaf7d8f70825aa91945c1d18ebf991574}{handle\+Alpha\+Updated}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872}\label{classtouchgfx_1_1_tiled_image_button_style_a02846cb77e0b17926003d8bd11c97872} 
+\mbox{\hyperlink{classtouchgfx_1_1_tiled_image}{Tiled\+Image}} {\bfseries tiled\+Image}
+\begin{DoxyCompactList}\small\item\em The tiled image. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_tiled_image_button_style_a3e6c09c29d7ac61388bf12df74d3df84}\label{classtouchgfx_1_1_tiled_image_button_style_a3e6c09c29d7ac61388bf12df74d3df84} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries up\+Tile}
+\begin{DoxyCompactList}\small\item\em The image to display when button is released. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_tiled_image_button_style_ae9f1560ec0f8971016648c0c907c2ed0}\label{classtouchgfx_1_1_tiled_image_button_style_ae9f1560ec0f8971016648c0c907c2ed0} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries down\+Tile}
+\begin{DoxyCompactList}\small\item\em The image to display when button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class touchgfx\+::\+Tiled\+Image\+Button\+Style$<$ T $>$}
+A tiled image button style.
+
+An tiled image button style. This class is supposed to be used with one of the Button\+Trigger classes to create a functional button. This class will show one of two tiled images depending on the state of the button (pressed or released).
+
+The \doxylink{classtouchgfx_1_1_tiled_image_button_style}{Tiled\+Image\+Button\+Style} does not set the size of the enclosing container (normally \doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container}) to the size of the pressed \doxylink{classtouchgfx_1_1_bitmap}{Bitmap}. This can be overridden by calling set\+Width/set\+Height after setting the bitmaps.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Generic type parameter. Typically a \doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container} subclass.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_button_container}{Abstract\+Button\+Container} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_tiled_image_button_style_aaf7d8f70825aa91945c1d18ebf991574}\label{classtouchgfx_1_1_tiled_image_button_style_aaf7d8f70825aa91945c1d18ebf991574} 
+\index{touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}!handleAlphaUpdated@{handleAlphaUpdated}}
+\index{handleAlphaUpdated@{handleAlphaUpdated}!touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handleAlphaUpdated()}{handleAlphaUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{touchgfx\+::\+Tiled\+Image\+Button\+Style}}$<$ T $>$\+::handle\+Alpha\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the alpha is updated.   \Hypertarget{classtouchgfx_1_1_tiled_image_button_style_a3df45a17f0c64230aa7d9ac1e15c89f5}\label{classtouchgfx_1_1_tiled_image_button_style_a3df45a17f0c64230aa7d9ac1e15c89f5} 
+\index{touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}!handlePressedUpdated@{handlePressedUpdated}}
+\index{handlePressedUpdated@{handlePressedUpdated}!touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{handlePressedUpdated()}{handlePressedUpdated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{touchgfx\+::\+Tiled\+Image\+Button\+Style}}$<$ T $>$\+::handle\+Pressed\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+
+
+Handles what should happen when the pressed state is updated.   \Hypertarget{classtouchgfx_1_1_tiled_image_button_style_a9421aaa303900132bc587bab9cca91a1}\label{classtouchgfx_1_1_tiled_image_button_style_a9421aaa303900132bc587bab9cca91a1} 
+\index{touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{touchgfx\+::\+Tiled\+Image\+Button\+Style}}$<$ T $>$\+::set\+Height (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets height.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_tiled_image_button_style_a034f465219847056137eef968b066581}\label{classtouchgfx_1_1_tiled_image_button_style_a034f465219847056137eef968b066581} 
+\index{touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}!setTileBitmaps@{setTileBitmaps}}
+\index{setTileBitmaps@{setTileBitmaps}!touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setTileBitmaps()}{setTileBitmaps()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{touchgfx\+::\+Tiled\+Image\+Button\+Style}}$<$ T $>$\+::set\+Tile\+Bitmaps (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp\+Released,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp\+Pressed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets tile bitmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp\+Released} & The bitmap released. \\
+\hline
+{\em bmp\+Pressed} & The bitmap pressed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_tiled_image_button_style_a05138b32d408bd55dbafc70a4b553ebd}\label{classtouchgfx_1_1_tiled_image_button_style_a05138b32d408bd55dbafc70a4b553ebd} 
+\index{touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}!setTileOffset@{setTileOffset}}
+\index{setTileOffset@{setTileOffset}!touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setTileOffset()}{setTileOffset()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{touchgfx\+::\+Tiled\+Image\+Button\+Style}}$<$ T $>$\+::set\+Tile\+Offset (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets an offset into the bitmap where the tile drawing should start.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate offset. \\
+\hline
+{\em y} & The y coordinate offset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_tiled_image_ae38e1ef10a6218bb13a3413c4a476152}{Tiled\+Image\+::set\+Offset} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_tiled_image_button_style_af608564c1b9988eaa5bf5dc1ffc73a26}\label{classtouchgfx_1_1_tiled_image_button_style_af608564c1b9988eaa5bf5dc1ffc73a26} 
+\index{touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!touchgfx::TiledImageButtonStyle$<$ T $>$@{touchgfx::TiledImageButtonStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_tiled_image_button_style}{touchgfx\+::\+Tiled\+Image\+Button\+Style}}$<$ T $>$\+::set\+Width (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets width.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/buttons/\mbox{\hyperlink{_tiled_image_button_style_8hpp}{Tiled\+Image\+Button\+Style.\+hpp}}\end{DoxyCompactItemize}

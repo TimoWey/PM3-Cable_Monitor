@@ -1,0 +1,276 @@
+\doxysection{touchgfx\+::Canvas Class Reference}
+\hypertarget{classtouchgfx_1_1_canvas}{}\label{classtouchgfx_1_1_canvas}\index{touchgfx::Canvas@{touchgfx::Canvas}}
+
+
+{\ttfamily \#include $<$Canvas.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_canvas_a72eced6ee0d805d98f66ad3bbe0803bb}{Canvas}} (const \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget}} \texorpdfstring{$\ast$}{*}\+\_\+widget, const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_canvas_a0b421abfc92bcd700f0ccb2053f7ad4e}{\texorpdfstring{$\sim$}{\string~}\+Canvas}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_canvas_afe5aaf65377906f712bedbacdb73380c}{set\+Filling\+Rule}} (Rasterizer\+::\+Filling\+Rule rule)
+\item 
+Rasterizer\+::\+Filling\+Rule \mbox{\hyperlink{classtouchgfx_1_1_canvas_a0e388aa24947ec0af6a1959d17433541}{get\+Filling\+Rule}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}{move\+To}} (\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}} x, \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}} y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{line\+To}} (\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}} x, \mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}} y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_canvas_a53f916f622d8452a1c0c3c069ce4743e}{quadratic\+Bezier\+To}} (float x0, float y0, const float x1, const float y1, const float x, const float y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_canvas_a28e43a37e13c1af4823912f60b5b299e}{cubic\+Bezier\+To}} (float x0, float y0, float x1, float y1, float x2, float y2, float x, float y)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_canvas_a9b0c71b946c4e1ef88a3bbbda1aa39f9}{close}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classtouchgfx_1_1_canvas_a080c91a4e00299ad652f4d26224cee75}{move\+To}} (T x, T y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classtouchgfx_1_1_canvas_a13b39f002fce94e9977f8ed4820fd872}{line\+To}} (T x, T y)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_canvas_ac8224f2cf0e2cb613fadc0645cb36357}{render}} (uint8\+\_\+t custom\+Alpha=255)
+\item 
+FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool \mbox{\hyperlink{classtouchgfx_1_1_canvas_a02f7332bca408a5988c6b57ac27c5280}{was\+Outline\+Too\+Complex}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for easy rendering using \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer}.
+
+The \doxylink{classtouchgfx_1_1_canvas}{Canvas} class will make implementation of a new \doxylink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget} very easy. The few simple primitives allows moving a "{}pen"{} and drawing the outline of a shape which can then be rendered.
+
+The \doxylink{classtouchgfx_1_1_canvas}{Canvas} class has been optimized to eliminate drawing unnecessary lines outside the currently invalidated rectangle. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_canvas_a72eced6ee0d805d98f66ad3bbe0803bb}\label{classtouchgfx_1_1_canvas_a72eced6ee0d805d98f66ad3bbe0803bb} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!Canvas@{Canvas}}
+\index{Canvas@{Canvas}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{Canvas()}{Canvas()}}
+{\footnotesize\ttfamily touchgfx\+::\+Canvas\+::\+Canvas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget}} \texorpdfstring{$\ast$}{*}}]{\+\_\+widget,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&}]{invalidated\+Area }\end{DoxyParamCaption})}
+
+\doxylink{classtouchgfx_1_1_canvas}{Canvas} Constructor. Locks the framebuffer and prepares for drawing only in the allowed area which has been invalidated. The color depth of the \doxylink{classtouchgfx_1_1_l_c_d}{LCD} is taken into account.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+widget} & a pointer to the \doxylink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget} using this \doxylink{classtouchgfx_1_1_canvas}{Canvas}. Used for getting the canvas dimensions. \\
+\hline
+{\em invalidated\+Area} & the are which should be updated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Locks the framebuffer. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_canvas_a0b421abfc92bcd700f0ccb2053f7ad4e}\label{classtouchgfx_1_1_canvas_a0b421abfc92bcd700f0ccb2053f7ad4e} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!````~Canvas@{\texorpdfstring{$\sim$}{\string~}Canvas}}
+\index{````~Canvas@{\texorpdfstring{$\sim$}{\string~}Canvas}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Canvas()}{\string~Canvas()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Canvas\+::\texorpdfstring{$\sim$}{\string~}\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Finalizes an instance of the \doxylink{classtouchgfx_1_1_canvas}{Canvas} class.
+
+\begin{DoxyNote}{Note}
+Unlocks the framebuffer. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_canvas_a9b0c71b946c4e1ef88a3bbbda1aa39f9}\label{classtouchgfx_1_1_canvas_a9b0c71b946c4e1ef88a3bbbda1aa39f9} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!close@{close}}
+\index{close@{close}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Canvas\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Closes the current shape so that the inside can be filled using a Painter.
+
+\begin{DoxyReturn}{Returns}
+True if there is enough memory to calculate the shape outline, false if there is too little memory. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_canvas_a28e43a37e13c1af4823912f60b5b299e}\label{classtouchgfx_1_1_canvas_a28e43a37e13c1af4823912f60b5b299e} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!cubicBezierTo@{cubicBezierTo}}
+\index{cubicBezierTo@{cubicBezierTo}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{cubicBezierTo()}{cubicBezierTo()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Canvas\+::cubic\+Bezier\+To (\begin{DoxyParamCaption}\item[{float}]{x0,  }\item[{float}]{y0,  }\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Draw a Cubic Bezier curve via x1,y1 and x2,y2 to x3,y3.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The start x coordinate. \\
+\hline
+{\em y0} & The start y coordinate. \\
+\hline
+{\em x1} & The first \textquotesingle{}via\textquotesingle{} x coordinate. \\
+\hline
+{\em y1} & The first \textquotesingle{}via\textquotesingle{} y coordinate. \\
+\hline
+{\em x2} & The second \textquotesingle{}via\textquotesingle{} x coordinate. \\
+\hline
+{\em y2} & The second \textquotesingle{}via\textquotesingle{} y coordinate. \\
+\hline
+{\em x} & The end x coordinate. \\
+\hline
+{\em y} & The end y coordinate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_canvas_a0e388aa24947ec0af6a1959d17433541}\label{classtouchgfx_1_1_canvas_a0e388aa24947ec0af6a1959d17433541} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!getFillingRule@{getFillingRule}}
+\index{getFillingRule@{getFillingRule}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{getFillingRule()}{getFillingRule()}}
+{\footnotesize\ttfamily Rasterizer\+::\+Filling\+Rule touchgfx\+::\+Canvas\+::get\+Filling\+Rule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the filling rule being used when rendering the outline.
+
+\begin{DoxyReturn}{Returns}
+The filling rule.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_canvas_afe5aaf65377906f712bedbacdb73380c}{set\+Filling\+Rule} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}\label{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!lineTo@{lineTo}}
+\index{lineTo@{lineTo}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{lineTo()}{lineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Canvas\+::line\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}}}]{x,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}}}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Draw line from the current (x, y) to the new (x, y) as part of the shape being drawn. As for move\+To, line\+To commands completely outside the drawing are are discarded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate for the pen position in \doxylink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5} format. \\
+\hline
+{\em y} & The y coordinate for the pen position in \doxylink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5} format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}, \doxylink{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}{move\+To} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_canvas_a13b39f002fce94e9977f8ed4820fd872}\label{classtouchgfx_1_1_canvas_a13b39f002fce94e9977f8ed4820fd872} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!lineTo@{lineTo}}
+\index{lineTo@{lineTo}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{lineTo()}{lineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void touchgfx\+::\+Canvas\+::line\+To (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Draw line from the current (x, y) to the new (x, y) as part of the shape being drawn. As for move\+To, line\+To commands completely outside the drawing are are discarded.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & either int or float. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate for the pen position. \\
+\hline
+{\em y} & The y coordinate for the pen position. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}\label{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void touchgfx\+::\+Canvas\+::move\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}}}]{x,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5}}}]{y }\end{DoxyParamCaption})}
+
+Move the current pen position to (x, y). If the pen is outside the drawing area, nothing is done, but the coordinates are saved in case the next operation is line\+To a coordinate which is inside (or on the opposite side of) the drawing area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate for the pen position in \doxylink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5} format. \\
+\hline
+{\em y} & The y coordinate for the pen position in \doxylink{classtouchgfx_1_1_c_w_r_util_1_1_q5}{CWRUtil\+::\+Q5} format. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_canvas_a080c91a4e00299ad652f4d26224cee75}\label{classtouchgfx_1_1_canvas_a080c91a4e00299ad652f4d26224cee75} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void touchgfx\+::\+Canvas\+::move\+To (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Move the current pen position to (x, y). If the pen is outside (above or below) the drawing area, nothing is done, but the coordinates are saved in case the next operation is line\+To a coordinate which is inside (or on the opposite side of) the drawing area.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Either int or float. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate for the pen position. \\
+\hline
+{\em y} & The y coordinate for the pen position. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_canvas_a53f916f622d8452a1c0c3c069ce4743e}\label{classtouchgfx_1_1_canvas_a53f916f622d8452a1c0c3c069ce4743e} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!quadraticBezierTo@{quadraticBezierTo}}
+\index{quadraticBezierTo@{quadraticBezierTo}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{quadraticBezierTo()}{quadraticBezierTo()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Canvas\+::quadratic\+Bezier\+To (\begin{DoxyParamCaption}\item[{float}]{x0,  }\item[{float}]{y0,  }\item[{const float}]{x1,  }\item[{const float}]{y1,  }\item[{const float}]{x,  }\item[{const float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Draw a Quadratic Bezier curve via x1,y1 to x2,y2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & The start x coordinate. \\
+\hline
+{\em y0} & The start y coordinate. \\
+\hline
+{\em x1} & The \textquotesingle{}via\textquotesingle{} x coordinate. \\
+\hline
+{\em y1} & The \textquotesingle{}via\textquotesingle{} y coordinate. \\
+\hline
+{\em x} & The end x coordinate. \\
+\hline
+{\em y} & The end y coordinate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_canvas_ac8224f2cf0e2cb613fadc0645cb36357}\label{classtouchgfx_1_1_canvas_ac8224f2cf0e2cb613fadc0645cb36357} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!render@{render}}
+\index{render@{render}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Canvas\+::render (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{custom\+Alpha = {\ttfamily 255} }\end{DoxyParamCaption})}
+
+Render the graphical shape drawn using \doxylink{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}{move\+To()} and \doxylink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{line\+To()} with the given Painter. The shape is automatically closed, i.\+e. a \doxylink{classtouchgfx_1_1_canvas_a464e7727123c580c575ece51fe6f4cf6}{line\+To()} is automatically inserted connecting the current pen position with the initial pen position given in the first \doxylink{classtouchgfx_1_1_canvas_a04a862a374e29aa46e32368a75005087}{move\+To()} command.
+
+
+\begin{DoxyParams}{Parameters}
+{\em custom\+Alpha} & (Optional) Alpha to apply to the entire canvas. Useful if the canvas is part of a more complex container setup that needs to be faded. Default is solid.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the widget was rendered, false if insufficient memory was available to render the widget. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_canvas_afe5aaf65377906f712bedbacdb73380c}\label{classtouchgfx_1_1_canvas_afe5aaf65377906f712bedbacdb73380c} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!setFillingRule@{setFillingRule}}
+\index{setFillingRule@{setFillingRule}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{setFillingRule()}{setFillingRule()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Canvas\+::set\+Filling\+Rule (\begin{DoxyParamCaption}\item[{Rasterizer\+::\+Filling\+Rule}]{rule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the filling rule to be used when rendering the outline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rule} & The filling rule.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_canvas_a0e388aa24947ec0af6a1959d17433541}{get\+Filling\+Rule} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_canvas_a02f7332bca408a5988c6b57ac27c5280}\label{classtouchgfx_1_1_canvas_a02f7332bca408a5988c6b57ac27c5280} 
+\index{touchgfx::Canvas@{touchgfx::Canvas}!wasOutlineTooComplex@{wasOutlineTooComplex}}
+\index{wasOutlineTooComplex@{wasOutlineTooComplex}!touchgfx::Canvas@{touchgfx::Canvas}}
+\doxysubsubsection{\texorpdfstring{wasOutlineTooComplex()}{wasOutlineTooComplex()}}
+{\footnotesize\ttfamily FORCE\+\_\+\+INLINE\+\_\+\+FUNCTION bool touchgfx\+::\+Canvas\+::was\+Outline\+Too\+Complex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if we the outline was too complex to draw completely.
+
+\begin{DoxyReturn}{Returns}
+True if it was too complex, false if not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/canvas/\mbox{\hyperlink{_canvas_8hpp}{Canvas.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/touchgfx/widgets/canvas/Canvas.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,753 @@
+\doxysection{touchgfx\+::Zoom\+Animation\+Image Class Reference}
+\hypertarget{classtouchgfx_1_1_zoom_animation_image}{}\label{classtouchgfx_1_1_zoom_animation_image}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+
+
+{\ttfamily \#include $<$Zoom\+Animation\+Image.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Zoom\+Animation\+Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtouchgfx_1_1_zoom_animation_image}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}} \{ \newline
+\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fad77e89d8e9d03a830df2bf3bb492d616}{FIXED\+\_\+\+CENTER}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faa66d113606562465d85a7ef894c81070}{FIXED\+\_\+\+LEFT}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fadf6a382346f4292cc2e47c76a8468fbe}{FIXED\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faf87c0e5a806ac1babc18d69da1a375f5}{FIXED\+\_\+\+TOP}}
+, \newline
+\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa33b2b0e5b391c590615b09f169bf6658}{FIXED\+\_\+\+BOTTOM}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa012b730e6def7d74f58b9a692cc87c77}{FIXED\+\_\+\+RIGHT\+\_\+\+AND\+\_\+\+TOP}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faecbc478cc9f7da77b93bd4cecb6f0ac7}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+BOTTOM}}
+, \newline
+\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa4571a7023e37c16d883f23f5149739a9}{FIXED\+\_\+\+RIGHT\+\_\+\+AND\+\_\+\+BOTTOM}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a9229fb073031a0faeaf813ae537f7712}{start\+Zoom\+Animation}} (int16\+\_\+t end\+Width, int16\+\_\+t end\+Height, uint16\+\_\+t duration, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}} zoom\+Mode=\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP}}, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} width\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} height\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}})
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aea02e326f8e5f448582825cb9a20b3d5}{start\+Zoom\+And\+Move\+Animation}} (int16\+\_\+t endX, int16\+\_\+t endY, int16\+\_\+t end\+Width, int16\+\_\+t end\+Height, uint16\+\_\+t duration, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}} zoom\+Mode=\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP}}, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} x\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} y\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} width\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} height\+Progression\+Equation=\&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}})
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a4c10a02ff47abacb2d4d3df35f4fb96b}{cancel\+Zoom\+Animation}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a76e9f86c175fd16979b6f24efacd65e6}{handle\+Tick\+Event}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa7162b2d953d72e67f31810d13bc14a9}{set\+Bitmaps}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&small\+Bitmap, const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&large\+Bitmap)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_af65919621d55a11cf505b83f4ab9a9db}{get\+Small\+Bitmap}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_adcb8f0fd705cdf033212d49d80ec790d}{get\+Large\+Bitmap}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a1dfd9be84c6eeb3bcf2bbbcc41100014}{set\+Width}} (int16\+\_\+t width)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a343803b73bc55ec7914c2a1b90d44b3e}{set\+Height}} (int16\+\_\+t height)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a87b2f349772f3101b16d0357a178a656}{set\+Scaling\+Mode}} (\mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{Scalable\+Image\+::\+Scaling\+Algorithm}} mode)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{Scalable\+Image\+::\+Scaling\+Algorithm}} \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a7ea7f2e9cfb605eb3f8a61169cdc2133}{get\+Scaling\+Mode}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a62e8247c34820bbeb89764befe4e6ba2}{set\+Alpha}} (uint8\+\_\+t new\+Alpha)
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a4fd736cf2d1eafd1cdaed92c46a37146}{get\+Alpha}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aeb249ca1fa76d3958744a5edd9937d94}{set\+Animation\+Delay}} (uint16\+\_\+t delay)
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_afe1180111704923a42538b299ec5c831}{get\+Animation\+Delay}} () const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a580651c181522f475caedec52e8a1781}{set\+Animation\+Ended\+Callback}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image}} \& $>$ \&callback)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_af57284d11e195a4f363316a3a835d9a1}{is\+Zoom\+Animation\+Running}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_adc981c68b8695166502132e6eb99589f}{invalidate\+Content}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a2db56c03a79254f635c13dab2fd6a964}{add}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a42892e8dc8c2b0d72ba7f585de0ab39c}{remove}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_adec2a66c9696b2341d7c80e2c9b2bf4f}{remove\+All}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a0e52c074bde6985ec4f14573545d29a3}{unlink}} ()
+\item 
+virtual bool \mbox{\hyperlink{classtouchgfx_1_1_container_a735fecb585a1187d4e497e60bc5dbe30}{contains}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_ae7f9e387582f56c079ef4b05d0905526}{insert}} (\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}previous, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&d)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a35a4ef068b0404679b6a7f3234cc1499}{get\+Last\+Child}} (int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a3f86e82c2a502453d2c8b09d3c2a39db}{get\+Last\+Child\+Near}} (int16\+\_\+t x, int16\+\_\+t y, \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}last, int16\+\_\+t \texorpdfstring{$\ast$}{*}finger\+AdjustmentX, int16\+\_\+t \texorpdfstring{$\ast$}{*}finger\+AdjustmentY)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a02275ab5673c5eb38c8f70da74242f58}{draw}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_container_a34dfa7ec5557ab8ad54fcd7d57cef49d}{get\+Solid\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_af812955f5f1b185a13421ec36ff7c356}{for\+Each\+Child}} (\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \& $>$ \texorpdfstring{$\ast$}{*}function)
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_container_a189adb3887f73b2aee9234c0642c2b35}{get\+First\+Child}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable_a7e96d82c7fcf819f57486ecc5f350c4c}{Drawable}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_drawable_a449ee29257a3cfac31bb01ad2a9a7f03}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a74b53c659b2ff0700841262d00d76ddd}{invalidate\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&invalidated\+Area) const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad2f199fc52c4acce810f48ab5a1a88aa}{get\+Next\+Sibling}} ()
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_aaece284803180a1581d10ecfaf08c981}{get\+Solid\+Rect\+Absolute}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a67ffb816a2dd9252a3159dd8610b4a25}{get\+Visible\+Rect}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&\mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}) const
+\item 
+const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \& \mbox{\hyperlink{classtouchgfx_1_1_drawable_a50b898d044f548a4eaec275141dec0ca}{get\+Rect}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_adee868bcfb5c413bd3e37bdf6c649ea8}{get\+Absolute\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a58fdcf048cbd3ec550115caedaf54b2a}{translate\+Rect\+To\+Absolute}} (\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&r) const
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4d556b5c486d7dc0910d4d808849e9d4}{set\+Position}} (int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a4448236a68ced5ebd67cde7f56d872c3}{expand}} (int margin=0)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a59d59e11909259d9452588f3a0180398}{center}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab7b0e3f307228823cf6f2d859cc07198}{centerX}} ()
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0392a74d988a06e28c6b3ea79076b4bd}{centerY}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a1870ba0e9ef62c1eb6a19a9013cf6895}{getX}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a6451fb9a4bc22e6e4a0950844e5104de}{getY}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3a644571efd15a4809acd2717eff7b48}{get\+Width}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7edff68e4197ec124a1a6b7a446b4ede}{get\+Height}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3ccf6412e33b61ca27be3a7776312fc7}{setX}} (int16\+\_\+t x)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a3aae6f7f6cb9a43a53d26772d7eeb1fa}{setY}} (int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ae55d7c5491a2fc1f05c176c862766925}{set\+XY}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a181c4ecac0494440425e5b5afa4ce109}{child\+Geometry\+Changed}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9981eb2f8411aff05eaf19994f3ee293}{handle\+Click\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_click_event}{Click\+Event}} \&event)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_acf2ed17311bb7ca228dabc3195d3225d}{handle\+Gesture\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_gesture_event}{Gesture\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad66a164eff6aaf9e74a4eb171ebca131}{set\+Width\+Height}} (int16\+\_\+t width, int16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2f2d18d6edf70b6ec51d843c52c826c8}{set\+Position}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9b84be70989de6d15abb2c4bfe445707}{set\+XY}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a7973faddf5b669b1ba7570b90053aeed}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \&drawable)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a24b027fa86aebb44768b63b0d534e6b4}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bitmap)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a9aeaa5baa9e47055a17f11968dbc1b37}{set\+Width\+Height}} (const \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \&other)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a341b62a9ebbe43ce97b47e1effd32a8b}{handle\+Drag\+Event}} (const \mbox{\hyperlink{classtouchgfx_1_1_drag_event}{Drag\+Event}} \&event)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_ab27c897bb2d508cdf67ea7ffcfb40b14}{set\+Visible}} (bool vis)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a68b74845725451fda32fa94da7b7be18}{set\+Touchable}} (bool touch)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d9fac715c5114951a23492c6cc78b25}{is\+Visible}} () const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_drawable_a30a509142ffe76e5a2ed46aab5adf19b}{is\+Touchable}} () const
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_afefe9761c1f3a27944f317a47c2f0636}{get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a37d7afe3e065453bc3d23481fa446a55}{move\+Relative}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_drawable_a602c55c069e516153167c3ebc7da4c0d}{move\+To}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_drawable_adab6837b035a409dde74c51f622a6e63}{draw\+To\+Dynamic\+Bitmap}} (\mbox{\hyperlink{namespacetouchgfx_ae53393d832fa262c0c9082b1e5f8e96a}{Bitmap\+Id}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23}{States}} \{ \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23aef1ff668bde60b4ff7ce3c1623d932c6}{ANIMATE\+\_\+\+ZOOM}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23acea8f8d5b2169b42dda4dcb31e621db1}{ANIMATE\+\_\+\+ZOOM\+\_\+\+AND\+\_\+\+MOVE}}
+, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23a34d19ff60c36c7e943e8c0a0f1ee89ba}{NO\+\_\+\+ANIMATION}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a9c790972622e2592e709c6f7fdd185ac}{update\+Rendering\+Method}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a344bbb27787284730a69be41fb06f647}{set\+Current\+State}} (\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23}{States}} state)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_a8fdf70992c780531abdc7e81d93427d4}{start\+Timer\+And\+Set\+Parameters}} (int16\+\_\+t end\+Width, int16\+\_\+t end\+Height, uint16\+\_\+t duration, \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}} zoom\+Mode, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} width\+Progression\+Equation, \mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} height\+Progression\+Equation)
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aff18331088e4a5341f1b0e7efc6dfa36}{update\+Zoom\+Animation\+Delta\+XY}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_container_a2c6156e664e01e9113ff400a7c09bc64}{get\+Contained\+Area}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_container_a2d5920db13b22f9f3567c58f2373f912}{move\+Children\+Relative}} (int16\+\_\+t deltaX, int16\+\_\+t deltaY)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a6a2fc92daafe8b24108d0fc7cfd3dd90}\label{classtouchgfx_1_1_zoom_animation_image_a6a2fc92daafe8b24108d0fc7cfd3dd90} 
+\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23}{States}} {\bfseries current\+State}
+\begin{DoxyCompactList}\small\item\em The current animation state. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a592e612b81a64d8a0dee70900d4c4686}\label{classtouchgfx_1_1_zoom_animation_image_a592e612b81a64d8a0dee70900d4c4686} 
+uint16\+\_\+t {\bfseries animation\+Counter}
+\begin{DoxyCompactList}\small\item\em The progress counter for the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a3ade05d9408a354ca2956e701a2f5229}\label{classtouchgfx_1_1_zoom_animation_image_a3ade05d9408a354ca2956e701a2f5229} 
+uint16\+\_\+t {\bfseries zoom\+Animation\+Delay}
+\begin{DoxyCompactList}\small\item\em A delay that is applied before animation start. Expressed in ticks. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a5f5883b259e7576e2d67410d208adcc0}\label{classtouchgfx_1_1_zoom_animation_image_a5f5883b259e7576e2d67410d208adcc0} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries small\+Bmp}
+\begin{DoxyCompactList}\small\item\em The bitmap representing the small image. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a1da7b1896bab8b777d731c28b82a0ff8}\label{classtouchgfx_1_1_zoom_animation_image_a1da7b1896bab8b777d731c28b82a0ff8} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries large\+Bmp}
+\begin{DoxyCompactList}\small\item\em The bitmap representing the large image. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ad07026888e11f6df24f52a9d62aa70fa}\label{classtouchgfx_1_1_zoom_animation_image_ad07026888e11f6df24f52a9d62aa70fa} 
+\mbox{\hyperlink{classtouchgfx_1_1_image}{Image}} {\bfseries image}
+\begin{DoxyCompactList}\small\item\em The image for displaying the bitmap when the width/height is equal one of the bitmaps. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aaa65cc2d0460061c62da21065163845b}\label{classtouchgfx_1_1_zoom_animation_image_aaa65cc2d0460061c62da21065163845b} 
+\mbox{\hyperlink{classtouchgfx_1_1_scalable_image}{Scalable\+Image}} {\bfseries scalable\+Image}
+\begin{DoxyCompactList}\small\item\em The scalable image for displaying the bitmap when the width/height is not equal one of the bitmaps. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a8caff22dcf8a24a7d6206e6eea227cd0}\label{classtouchgfx_1_1_zoom_animation_image_a8caff22dcf8a24a7d6206e6eea227cd0} 
+\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}} {\bfseries current\+Zoom\+Mode}
+\begin{DoxyCompactList}\small\item\em The Zoom\+Mode to use by the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a78e2f63704b9cf5fc2702fdca5461d53}\label{classtouchgfx_1_1_zoom_animation_image_a78e2f63704b9cf5fc2702fdca5461d53} 
+int16\+\_\+t {\bfseries zoom\+Animation\+Start\+Width}
+\begin{DoxyCompactList}\small\item\em Width of the zoom animation start. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a8268763bb9979948f808b7edfc0e9722}\label{classtouchgfx_1_1_zoom_animation_image_a8268763bb9979948f808b7edfc0e9722} 
+int16\+\_\+t {\bfseries zoom\+Animation\+Start\+Height}
+\begin{DoxyCompactList}\small\item\em Height of the zoom animation start. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_acaeb4c015eed5ff3aeabd09eb18f1db5}\label{classtouchgfx_1_1_zoom_animation_image_acaeb4c015eed5ff3aeabd09eb18f1db5} 
+int16\+\_\+t {\bfseries zoom\+Animation\+End\+Width}
+\begin{DoxyCompactList}\small\item\em Width of the zoom animation end. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a521764d3a3e19064c7f34428787194c3}\label{classtouchgfx_1_1_zoom_animation_image_a521764d3a3e19064c7f34428787194c3} 
+int16\+\_\+t {\bfseries zoom\+Animation\+End\+Height}
+\begin{DoxyCompactList}\small\item\em Height of the zoom animation end. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ae722a9b61e7d909fb54444558240708e}\label{classtouchgfx_1_1_zoom_animation_image_ae722a9b61e7d909fb54444558240708e} 
+int16\+\_\+t {\bfseries zoom\+Animation\+StartX}
+\begin{DoxyCompactList}\small\item\em The zoom animation start x coordinate. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ad4646ad425359f2e2f74b90401cadec2}\label{classtouchgfx_1_1_zoom_animation_image_ad4646ad425359f2e2f74b90401cadec2} 
+int16\+\_\+t {\bfseries zoom\+Animation\+StartY}
+\begin{DoxyCompactList}\small\item\em The zoom animation start y coordinate. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a1810a4d662729a501b74fd4ffc9621f4}\label{classtouchgfx_1_1_zoom_animation_image_a1810a4d662729a501b74fd4ffc9621f4} 
+int16\+\_\+t {\bfseries zoom\+Animation\+DeltaX}
+\begin{DoxyCompactList}\small\item\em The zoom animation delta x. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a076b28fedd9414b9ee365f3c37ef9745}\label{classtouchgfx_1_1_zoom_animation_image_a076b28fedd9414b9ee365f3c37ef9745} 
+int16\+\_\+t {\bfseries zoom\+Animation\+DeltaY}
+\begin{DoxyCompactList}\small\item\em The zoom animation delta y. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_adcf38741e69d0f3ab6fb1236104f2233}\label{classtouchgfx_1_1_zoom_animation_image_adcf38741e69d0f3ab6fb1236104f2233} 
+int16\+\_\+t {\bfseries move\+Animation\+EndX}
+\begin{DoxyCompactList}\small\item\em The move animation end x coordinate. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ac4c549624af5bca86fa0221bd7fd976d}\label{classtouchgfx_1_1_zoom_animation_image_ac4c549624af5bca86fa0221bd7fd976d} 
+int16\+\_\+t {\bfseries move\+Animation\+EndY}
+\begin{DoxyCompactList}\small\item\em The move animation end y coordinate. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aef39f8ccb3f812e15c1744e1a91a4413}\label{classtouchgfx_1_1_zoom_animation_image_aef39f8ccb3f812e15c1744e1a91a4413} 
+uint16\+\_\+t {\bfseries animation\+Duration}
+\begin{DoxyCompactList}\small\item\em Duration of the animation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a0d64c46d6063a24833b8c02e9147ba6b}\label{classtouchgfx_1_1_zoom_animation_image_a0d64c46d6063a24833b8c02e9147ba6b} 
+\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} {\bfseries zoom\+Animation\+Width\+Equation}
+\begin{DoxyCompactList}\small\item\em The zoom animation width equation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a7507a3191c55817bcfdc26961e7bfe70}\label{classtouchgfx_1_1_zoom_animation_image_a7507a3191c55817bcfdc26961e7bfe70} 
+\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} {\bfseries zoom\+Animation\+Height\+Equation}
+\begin{DoxyCompactList}\small\item\em The zoom animation height equation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a679b1457d02a402833d20bb1ffe761ea}\label{classtouchgfx_1_1_zoom_animation_image_a679b1457d02a402833d20bb1ffe761ea} 
+\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} {\bfseries move\+Animation\+XEquation}
+\begin{DoxyCompactList}\small\item\em The move animation x coordinate equation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a89883e473d41ac4c97288fec851fbc3e}\label{classtouchgfx_1_1_zoom_animation_image_a89883e473d41ac4c97288fec851fbc3e} 
+\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}} {\bfseries move\+Animation\+YEquation}
+\begin{DoxyCompactList}\small\item\em The move animation y coordinate equation. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a025df7972ee0689e8cf43d9317126e6e}\label{classtouchgfx_1_1_zoom_animation_image_a025df7972ee0689e8cf43d9317126e6e} 
+\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image}} \& $>$ \texorpdfstring{$\ast$}{*} {\bfseries animation\+Ended\+Action}
+\begin{DoxyCompactList}\small\item\em The animation ended action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_container}{touchgfx\+::\+Container}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries first\+Child}
+\begin{DoxyCompactList}\small\item\em Pointer to the first child of this container. Subsequent children can be found through first\+Child\textquotesingle{}s next\+Sibling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtouchgfx_1_1_drawable}{touchgfx\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a06c199b1d10107865a4b79903125b950}{rect}}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em Pointer to this drawable\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtouchgfx_1_1_drawable}{Drawable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtouchgfx_1_1_drawable_a2c34a36e7eb05c8a0e1e5b0c4d664a9f}{next\+Sibling}}
+\item 
+bool {\bfseries touchable}
+\begin{DoxyCompactList}\small\item\em True if this drawable should receive touch events. \end{DoxyCompactList}\item 
+bool {\bfseries visible}
+\begin{DoxyCompactList}\small\item\em True if this drawable should be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for optimizing and wrapping move and zoom operations on a \doxylink{classtouchgfx_1_1_scalable_image}{Scalable\+Image}. The \doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image} takes two bitmaps representing the same image but at a small and a large resolution. These bitmaps should be the sizes that are used when not animating the image. The \doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image} will use an \doxylink{classtouchgfx_1_1_image}{Image} for displaying the \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} when its width and height matches either of them. When it does not match the size of one of the bitmaps, it will use a \doxylink{classtouchgfx_1_1_scalable_image}{Scalable\+Image} instead. The main idea is that the supplied bitmaps should be the end points of the zoom animation so that it ends up using an \doxylink{classtouchgfx_1_1_image}{Image} when not animating. This is, however, not a requirement. You can animate from and to sizes that are not equal the sizes of the bitmaps. The result is a container that has the high performance of an ordinary image when the size matches the pre-\/rendered bitmaps. Moreover it supplies easy to use animation functions that lets you zoom and move the image.
+
+\begin{DoxyNote}{Note}
+Since this container uses the \doxylink{classtouchgfx_1_1_scalable_image}{Scalable\+Image} it has the same restrictions as a Scaleable\+Image, i.\+e. 1bpp is not supported. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23}\label{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!States@{States}}
+\index{States@{States}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{States}{States}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23}{touchgfx\+::\+Zoom\+Animation\+Image\+::\+States}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+Animation states. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATE\_ZOOM@{ANIMATE\_ZOOM}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!ANIMATE\_ZOOM@{ANIMATE\_ZOOM}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23aef1ff668bde60b4ff7ce3c1623d932c6}\label{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23aef1ff668bde60b4ff7ce3c1623d932c6} 
+ANIMATE\+\_\+\+ZOOM&Zoom animation state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATE\_ZOOM\_AND\_MOVE@{ANIMATE\_ZOOM\_AND\_MOVE}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!ANIMATE\_ZOOM\_AND\_MOVE@{ANIMATE\_ZOOM\_AND\_MOVE}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23acea8f8d5b2169b42dda4dcb31e621db1}\label{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23acea8f8d5b2169b42dda4dcb31e621db1} 
+ANIMATE\+\_\+\+ZOOM\+\_\+\+AND\+\_\+\+MOVE&Zoom and move animation state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_ANIMATION@{NO\_ANIMATION}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!NO\_ANIMATION@{NO\_ANIMATION}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23a34d19ff60c36c7e943e8c0a0f1ee89ba}\label{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23a34d19ff60c36c7e943e8c0a0f1ee89ba} 
+NO\+\_\+\+ANIMATION&No animation state. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!ZoomMode@{ZoomMode}}
+\index{ZoomMode@{ZoomMode}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{ZoomMode}{ZoomMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{touchgfx\+::\+Zoom\+Animation\+Image\+::\+Zoom\+Mode}}}
+
+A Zoom\+Mode describes in which direction the image will grow/shrink when do a zoom animation. A FIXED direction means that the image will not grow/shrink in that direction. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_CENTER@{FIXED\_CENTER}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_CENTER@{FIXED\_CENTER}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fad77e89d8e9d03a830df2bf3bb492d616}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fad77e89d8e9d03a830df2bf3bb492d616} 
+FIXED\+\_\+\+CENTER&The small image will grow from the center of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_LEFT@{FIXED\_LEFT}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_LEFT@{FIXED\_LEFT}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faa66d113606562465d85a7ef894c81070}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faa66d113606562465d85a7ef894c81070} 
+FIXED\+\_\+\+LEFT&The small image will grow from the middle of the left side of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_RIGHT@{FIXED\_RIGHT}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_RIGHT@{FIXED\_RIGHT}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fadf6a382346f4292cc2e47c76a8468fbe}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fadf6a382346f4292cc2e47c76a8468fbe} 
+FIXED\+\_\+\+RIGHT&The small image will grow from the middle of the right side of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_TOP@{FIXED\_TOP}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_TOP@{FIXED\_TOP}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faf87c0e5a806ac1babc18d69da1a375f5}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faf87c0e5a806ac1babc18d69da1a375f5} 
+FIXED\+\_\+\+TOP&The small image will grow from the middle of the top of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_BOTTOM@{FIXED\_BOTTOM}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_BOTTOM@{FIXED\_BOTTOM}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa33b2b0e5b391c590615b09f169bf6658}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa33b2b0e5b391c590615b09f169bf6658} 
+FIXED\+\_\+\+BOTTOM&The small image will grow from the middle of the bottom of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_LEFT\_AND\_TOP@{FIXED\_LEFT\_AND\_TOP}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_LEFT\_AND\_TOP@{FIXED\_LEFT\_AND\_TOP}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f} 
+FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP&The small image will grow from the top left corner of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_RIGHT\_AND\_TOP@{FIXED\_RIGHT\_AND\_TOP}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_RIGHT\_AND\_TOP@{FIXED\_RIGHT\_AND\_TOP}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa012b730e6def7d74f58b9a692cc87c77}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa012b730e6def7d74f58b9a692cc87c77} 
+FIXED\+\_\+\+RIGHT\+\_\+\+AND\+\_\+\+TOP&The small image will grow from the top right corner of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_LEFT\_AND\_BOTTOM@{FIXED\_LEFT\_AND\_BOTTOM}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_LEFT\_AND\_BOTTOM@{FIXED\_LEFT\_AND\_BOTTOM}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faecbc478cc9f7da77b93bd4cecb6f0ac7}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89faecbc478cc9f7da77b93bd4cecb6f0ac7} 
+FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+BOTTOM&The small image will grow from the bottom left corner of the large image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIXED\_RIGHT\_AND\_BOTTOM@{FIXED\_RIGHT\_AND\_BOTTOM}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!FIXED\_RIGHT\_AND\_BOTTOM@{FIXED\_RIGHT\_AND\_BOTTOM}}}\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa4571a7023e37c16d883f23f5149739a9}\label{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fa4571a7023e37c16d883f23f5149739a9} 
+FIXED\+\_\+\+RIGHT\+\_\+\+AND\+\_\+\+BOTTOM&The small image will grow from the bottom right corner of the large image. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a4c10a02ff47abacb2d4d3df35f4fb96b}\label{classtouchgfx_1_1_zoom_animation_image_a4c10a02ff47abacb2d4d3df35f4fb96b} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!cancelZoomAnimation@{cancelZoomAnimation}}
+\index{cancelZoomAnimation@{cancelZoomAnimation}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{cancelZoomAnimation()}{cancelZoomAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::cancel\+Zoom\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Cancel zoom animation. The image is left in the position and size it is currently at. \Hypertarget{classtouchgfx_1_1_zoom_animation_image_a4fd736cf2d1eafd1cdaed92c46a37146}\label{classtouchgfx_1_1_zoom_animation_image_a4fd736cf2d1eafd1cdaed92c46a37146} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!getAlpha@{getAlpha}}
+\index{getAlpha@{getAlpha}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{getAlpha()}{getAlpha()}}
+{\footnotesize\ttfamily uint8\+\_\+t touchgfx\+::\+Zoom\+Animation\+Image\+::get\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+Gets the current alpha value of the widget. The alpha value is in range 255 (solid) to 0 (invisible).
+
+\begin{DoxyReturn}{Returns}
+The current alpha value.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_a62e8247c34820bbeb89764befe4e6ba2}{set\+Alpha}   
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_afe1180111704923a42538b299ec5c831}\label{classtouchgfx_1_1_zoom_animation_image_afe1180111704923a42538b299ec5c831} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!getAnimationDelay@{getAnimationDelay}}
+\index{getAnimationDelay@{getAnimationDelay}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{getAnimationDelay()}{getAnimationDelay()}}
+{\footnotesize\ttfamily uint16\+\_\+t touchgfx\+::\+Zoom\+Animation\+Image\+::get\+Animation\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the current animation delay.
+
+\begin{DoxyReturn}{Returns}
+The current animation delay. Expressed in ticks.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_aeb249ca1fa76d3958744a5edd9937d94}{set\+Animation\+Delay} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_adcb8f0fd705cdf033212d49d80ec790d}\label{classtouchgfx_1_1_zoom_animation_image_adcb8f0fd705cdf033212d49d80ec790d} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!getLargeBitmap@{getLargeBitmap}}
+\index{getLargeBitmap@{getLargeBitmap}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{getLargeBitmap()}{getLargeBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} touchgfx\+::\+Zoom\+Animation\+Image\+::get\+Large\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the large bitmap.
+
+\begin{DoxyReturn}{Returns}
+the large bitmap.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_aa7162b2d953d72e67f31810d13bc14a9}{set\+Bitmaps} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a7ea7f2e9cfb605eb3f8a61169cdc2133}\label{classtouchgfx_1_1_zoom_animation_image_a7ea7f2e9cfb605eb3f8a61169cdc2133} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!getScalingMode@{getScalingMode}}
+\index{getScalingMode@{getScalingMode}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{getScalingMode()}{getScalingMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{Scalable\+Image\+::\+Scaling\+Algorithm}} touchgfx\+::\+Zoom\+Animation\+Image\+::get\+Scaling\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the scaling algorithm of the \doxylink{classtouchgfx_1_1_scalable_image}{Scalable\+Image}.
+
+\begin{DoxyReturn}{Returns}
+the scaling algorithm used.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_a87b2f349772f3101b16d0357a178a656}{set\+Scaling\+Mode} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_af65919621d55a11cf505b83f4ab9a9db}\label{classtouchgfx_1_1_zoom_animation_image_af65919621d55a11cf505b83f4ab9a9db} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!getSmallBitmap@{getSmallBitmap}}
+\index{getSmallBitmap@{getSmallBitmap}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{getSmallBitmap()}{getSmallBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} touchgfx\+::\+Zoom\+Animation\+Image\+::get\+Small\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the small bitmap.
+
+\begin{DoxyReturn}{Returns}
+the small bitmap.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_aa7162b2d953d72e67f31810d13bc14a9}{set\+Bitmaps} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a76e9f86c175fd16979b6f24efacd65e6}\label{classtouchgfx_1_1_zoom_animation_image_a76e9f86c175fd16979b6f24efacd65e6} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!handleTickEvent@{handleTickEvent}}
+\index{handleTickEvent@{handleTickEvent}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{handleTickEvent()}{handleTickEvent()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::handle\+Tick\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called periodically by the framework if the \doxylink{classtouchgfx_1_1_drawable}{Drawable} instance has subscribed to timer ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_application_a00cf43e33c6423b330ed09036162a8cb}{Application\+::register\+Timer\+Widget} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8d0b43ec46e2644959854fdd697d2bc8}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_adc981c68b8695166502132e6eb99589f}\label{classtouchgfx_1_1_zoom_animation_image_adc981c68b8695166502132e6eb99589f} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!invalidateContent@{invalidateContent}}
+\index{invalidateContent@{invalidateContent}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{invalidateContent()}{invalidateContent()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Zoom\+Animation\+Image\+::invalidate\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Tell the framework that the contents of the \doxylink{classtouchgfx_1_1_drawable}{Drawable} needs to be redrawn. If the \doxylink{classtouchgfx_1_1_drawable}{Drawable} is invisible, nothing happens. Subclasses of \doxylink{classtouchgfx_1_1_drawable}{Drawable} are encouraged to implement this function and invalidate as little as possible, i.\+e. the smallest rectangle covering the visual element(s) drawn by the widget. 
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a0b8b93fb5b2af43364f8d6818485e09d}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_af57284d11e195a4f363316a3a835d9a1}\label{classtouchgfx_1_1_zoom_animation_image_af57284d11e195a4f363316a3a835d9a1} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!isZoomAnimationRunning@{isZoomAnimationRunning}}
+\index{isZoomAnimationRunning@{isZoomAnimationRunning}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{isZoomAnimationRunning()}{isZoomAnimationRunning()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Zoom\+Animation\+Image\+::is\+Zoom\+Animation\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Is there currently an animation running.
+
+\begin{DoxyReturn}{Returns}
+true if there is an animation running. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a62e8247c34820bbeb89764befe4e6ba2}\label{classtouchgfx_1_1_zoom_animation_image_a62e8247c34820bbeb89764befe4e6ba2} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setAlpha@{setAlpha}}
+\index{setAlpha@{setAlpha}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setAlpha()}{setAlpha()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Alpha (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+Sets the opacity (alpha value). This can be used to fade it away by gradually decreasing the alpha value from 255 (solid) to 0 (invisible).
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Alpha} & The new alpha value. 255=solid, 0=invisible.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_a4fd736cf2d1eafd1cdaed92c46a37146}{get\+Alpha}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+The user code must call \doxylink{classtouchgfx_1_1_drawable_a59656b17f74984aa48ec603bbbfad19c}{invalidate()} in order to update the display.   
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aeb249ca1fa76d3958744a5edd9937d94}\label{classtouchgfx_1_1_zoom_animation_image_aeb249ca1fa76d3958744a5edd9937d94} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setAnimationDelay@{setAnimationDelay}}
+\index{setAnimationDelay@{setAnimationDelay}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setAnimationDelay()}{setAnimationDelay()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Animation\+Delay (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets a delay on animations done by the \doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image}. Defaults to 0 which means that the animation starts immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & The delay in ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_afe1180111704923a42538b299ec5c831}{get\+Animation\+Delay} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a580651c181522f475caedec52e8a1781}\label{classtouchgfx_1_1_zoom_animation_image_a580651c181522f475caedec52e8a1781} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setAnimationEndedCallback@{setAnimationEndedCallback}}
+\index{setAnimationEndedCallback@{setAnimationEndedCallback}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setAnimationEndedCallback()}{setAnimationEndedCallback()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Animation\+Ended\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_generic_callback}{Generic\+Callback}}$<$ const \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image}} \& $>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Associates an action to be performed when the animation ends.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback to be executed. The callback will be given a reference to the \doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_generic_callback}{Generic\+Callback} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aa7162b2d953d72e67f31810d13bc14a9}\label{classtouchgfx_1_1_zoom_animation_image_aa7162b2d953d72e67f31810d13bc14a9} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setBitmaps@{setBitmaps}}
+\index{setBitmaps@{setBitmaps}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setBitmaps()}{setBitmaps()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Bitmaps (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{small\+Bitmap,  }\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{large\+Bitmap }\end{DoxyParamCaption})}
+
+Initializes the bitmap of the image to be used. The bitmaps should represent the same image in the two needed static resolutions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em small\+Bitmap} & The image in the smallest resolution. \\
+\hline
+{\em large\+Bitmap} & The image in the largest resolution.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_af65919621d55a11cf505b83f4ab9a9db}{get\+Small\+Bitmap}, \doxylink{classtouchgfx_1_1_zoom_animation_image_adcb8f0fd705cdf033212d49d80ec790d}{get\+Large\+Bitmap}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+The size of the bitmaps do not in any way limit the size of the \doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image} and it is possible to scale the image beyond the sizes of these bitmaps. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a344bbb27787284730a69be41fb06f647}\label{classtouchgfx_1_1_zoom_animation_image_a344bbb27787284730a69be41fb06f647} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setCurrentState@{setCurrentState}}
+\index{setCurrentState@{setCurrentState}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setCurrentState()}{setCurrentState()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Current\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_ab91ad125495be885d16809ec76ca9c23}{States}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sets the current animation state and reset the animation counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The new state. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a343803b73bc55ec7914c2a1b90d44b3e}\label{classtouchgfx_1_1_zoom_animation_image_a343803b73bc55ec7914c2a1b90d44b3e} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Height (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+Sets the height of this drawable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The new height.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For most \doxylink{classtouchgfx_1_1_drawable}{Drawable} widgets, changing this does normally not automatically yield a redraw.  
+
+\doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image} diverts from the normal behavior by automatically invalidating which causes a redraw. 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_a8ff47d5d4b357979001ab94021e912ab}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a87b2f349772f3101b16d0357a178a656}\label{classtouchgfx_1_1_zoom_animation_image_a87b2f349772f3101b16d0357a178a656} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setScalingMode@{setScalingMode}}
+\index{setScalingMode@{setScalingMode}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setScalingMode()}{setScalingMode()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Scaling\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{Scalable\+Image\+::\+Scaling\+Algorithm}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the algorithm to be used. In short, there is currently a value for fast (nearest neighbor) and a value for slow (bilinear interpolation). Default is \doxylink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0a83449d6bd06e137adeb0fee11c1e90ae}{Scalable\+Image\+::\+NEAREST\+\_\+\+NEIGHBOR} since moving images do not need to be of the best quality, until they stop moving. If the image moves only a little bit, or moves/resizes slowly, consider using Scaleable\+Image\+::\+BILINEAR\+\_\+\+INTERPOLATION.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The algorithm to use when rendering.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_scalable_image_a0a1d747f631d9671a71dd6f945f1d9b0}{Scalable\+Image\+::\+Scaling\+Algorithm}, \doxylink{classtouchgfx_1_1_zoom_animation_image_a7ea7f2e9cfb605eb3f8a61169cdc2133}{get\+Scaling\+Mode} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a1dfd9be84c6eeb3bcf2bbbcc41100014}\label{classtouchgfx_1_1_zoom_animation_image_a1dfd9be84c6eeb3bcf2bbbcc41100014} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::set\+Width (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+Sets the width of this drawable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For most \doxylink{classtouchgfx_1_1_drawable}{Drawable} widgets, changing this does normally not automatically yield a redraw.  
+
+\doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image} diverts from the normal behavior by automatically invalidating which causes a redraw. 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{classtouchgfx_1_1_drawable_ad078a89be11e8dcdf07806b3bc674686}{touchgfx\+::\+Drawable}}.
+
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a8fdf70992c780531abdc7e81d93427d4}\label{classtouchgfx_1_1_zoom_animation_image_a8fdf70992c780531abdc7e81d93427d4} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!startTimerAndSetParameters@{startTimerAndSetParameters}}
+\index{startTimerAndSetParameters@{startTimerAndSetParameters}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{startTimerAndSetParameters()}{startTimerAndSetParameters()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::start\+Timer\+And\+Set\+Parameters (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{end\+Width,  }\item[{int16\+\_\+t}]{end\+Height,  }\item[{uint16\+\_\+t}]{duration,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}}}]{zoom\+Mode,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{width\+Progression\+Equation,  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{height\+Progression\+Equation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Starts timer and set parameters. Contains code shared between \doxylink{classtouchgfx_1_1_zoom_animation_image_a9229fb073031a0faeaf813ae537f7712}{start\+Zoom\+Animation()} and \doxylink{classtouchgfx_1_1_zoom_animation_image_aea02e326f8e5f448582825cb9a20b3d5}{start\+Zoom\+And\+Move\+Animation()}. If both delay and duration is zero, the end position and size is applied and the animation is ended immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+Width} & The end width. \\
+\hline
+{\em end\+Height} & The end height. \\
+\hline
+{\em duration} & The duration. \\
+\hline
+{\em zoom\+Mode} & The zoom mode. \\
+\hline
+{\em width\+Progression\+Equation} & The width progression equation. \\
+\hline
+{\em height\+Progression\+Equation} & The height progression equation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aea02e326f8e5f448582825cb9a20b3d5}\label{classtouchgfx_1_1_zoom_animation_image_aea02e326f8e5f448582825cb9a20b3d5} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!startZoomAndMoveAnimation@{startZoomAndMoveAnimation}}
+\index{startZoomAndMoveAnimation@{startZoomAndMoveAnimation}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{startZoomAndMoveAnimation()}{startZoomAndMoveAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::start\+Zoom\+And\+Move\+Animation (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{endX,  }\item[{int16\+\_\+t}]{endY,  }\item[{int16\+\_\+t}]{end\+Width,  }\item[{int16\+\_\+t}]{end\+Height,  }\item[{uint16\+\_\+t}]{duration,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}}}]{zoom\+Mode = {\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP}}},  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{x\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}},  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{y\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}},  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{width\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}},  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{height\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}} }\end{DoxyParamCaption})}
+
+Setup and starts the zoom and move animation. At end of the animation the image will have been resized to the end\+Width and end\+Height and have moved from its original position to the endX and endY. Please note that the Zoom\+Mode might influence the actual end position since the zoom transformation might change the X and Y of the image. The Zoom\+Mode \doxylink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP} ensures that the endX and endY will be the actual end position.
+
+The development of the width, height, X and Y during the animation is described by the supplied \doxylink{classtouchgfx_1_1_easing_equations}{Easing\+Equations}. The container is registered as a Timer\+Widget and automatically unregistered when the animation has finished.
+
+
+\begin{DoxyParams}{Parameters}
+{\em endX} & The X position of the image at animation end. Relative to the container or view that holds the \doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image}. \\
+\hline
+{\em endY} & The Y position of the image at animation end. Relative to the container or view that holds the \doxylink{classtouchgfx_1_1_zoom_animation_image}{Zoom\+Animation\+Image}. \\
+\hline
+{\em end\+Width} & The width of the image at animation end. \\
+\hline
+{\em end\+Height} & The height of the image at animation end. \\
+\hline
+{\em duration} & The duration of the animation measured in ticks. \\
+\hline
+{\em zoom\+Mode} & (Optional) The zoom mode that will be used during the animation. Default is \doxylink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP}. \\
+\hline
+{\em x\+Progression\+Equation} & (Optional) The equation that describes the development of the X position during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+{\em y\+Progression\+Equation} & (Optional) The equation that describes the development of the Y position during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+{\em width\+Progression\+Equation} & (Optional) The equation that describes the development of the width during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+{\em height\+Progression\+Equation} & (Optional) The equation that describes the development of the height during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a9229fb073031a0faeaf813ae537f7712}\label{classtouchgfx_1_1_zoom_animation_image_a9229fb073031a0faeaf813ae537f7712} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!startZoomAnimation@{startZoomAnimation}}
+\index{startZoomAnimation@{startZoomAnimation}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{startZoomAnimation()}{startZoomAnimation()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::start\+Zoom\+Animation (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{end\+Width,  }\item[{int16\+\_\+t}]{end\+Height,  }\item[{uint16\+\_\+t}]{duration,  }\item[{\mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}}}]{zoom\+Mode = {\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP}}},  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{width\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}},  }\item[{\mbox{\hyperlink{namespacetouchgfx_a680e719942f1f8c20dd0bee6bcffd95e}{Easing\+Equation}}}]{height\+Progression\+Equation = {\ttfamily \&\mbox{\hyperlink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}}} }\end{DoxyParamCaption})}
+
+Setup and starts the zoom animation. At end of the animation the image will have been resized to the end\+Width and end\+Height. The development of the width and height during the animation is described by the supplied \doxylink{classtouchgfx_1_1_easing_equations}{Easing\+Equations}. The container is registered as a Timer\+Widget and automatically unregistered when the animation has finished.
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+Width} & The width of the image at animation end. \\
+\hline
+{\em end\+Height} & The height of the image at animation end. \\
+\hline
+{\em duration} & The duration of the animation measured in ticks. \\
+\hline
+{\em zoom\+Mode} & (Optional) The zoom mode that will be used during the animation. Default is \doxylink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89fab7181dcd06e6d69ee023035a0ff9b70f}{FIXED\+\_\+\+LEFT\+\_\+\+AND\+\_\+\+TOP}. \\
+\hline
+{\em width\+Progression\+Equation} & (Optional) The equation that describes the development of the width during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}. \\
+\hline
+{\em height\+Progression\+Equation} & (Optional) The equation that describes the development of the height during the animation. Default is \doxylink{classtouchgfx_1_1_easing_equations_ad26c8bd47dc520b7ce489af7a76f6604}{Easing\+Equations\+::linear\+Ease\+None}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The animation follows the specified Zoom\+Mode so the X and Y coordinates of the image might change during animation. 
+\end{DoxyNote}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_a9c790972622e2592e709c6f7fdd185ac}\label{classtouchgfx_1_1_zoom_animation_image_a9c790972622e2592e709c6f7fdd185ac} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!updateRenderingMethod@{updateRenderingMethod}}
+\index{updateRenderingMethod@{updateRenderingMethod}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{updateRenderingMethod()}{updateRenderingMethod()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::update\+Rendering\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Chooses the optimal rendering of the image given the current width and height. If the dimensions match either the small or large bitmap, that will be used, otherwise the large image will be scaled using the defined scaling mode.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_zoom_animation_image_a87b2f349772f3101b16d0357a178a656}{set\+Scaling\+Mode}, \doxylink{classtouchgfx_1_1_zoom_animation_image_aa7162b2d953d72e67f31810d13bc14a9}{set\+Bitmaps} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_zoom_animation_image_aff18331088e4a5341f1b0e7efc6dfa36}\label{classtouchgfx_1_1_zoom_animation_image_aff18331088e4a5341f1b0e7efc6dfa36} 
+\index{touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}!updateZoomAnimationDeltaXY@{updateZoomAnimationDeltaXY}}
+\index{updateZoomAnimationDeltaXY@{updateZoomAnimationDeltaXY}!touchgfx::ZoomAnimationImage@{touchgfx::ZoomAnimationImage}}
+\doxysubsubsection{\texorpdfstring{updateZoomAnimationDeltaXY()}{updateZoomAnimationDeltaXY()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Zoom\+Animation\+Image\+::update\+Zoom\+Animation\+Delta\+XY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Calculates the change in X and Y caused by the zoom animation given the current \doxylink{classtouchgfx_1_1_zoom_animation_image_aa27b601ee64a721da93cd7f9dadde89f}{Zoom\+Mode}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/containers/\mbox{\hyperlink{_zoom_animation_image_8hpp}{Zoom\+Animation\+Image.\+hpp}}\item 
+Middlewares/\+ST/touchgfx/framework/source/touchgfx/containers/Zoom\+Animation\+Image.\+cpp\end{DoxyCompactItemize}

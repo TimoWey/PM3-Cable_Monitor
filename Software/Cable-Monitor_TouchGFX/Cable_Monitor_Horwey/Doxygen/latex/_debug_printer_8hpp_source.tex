@@ -1,0 +1,103 @@
+\doxysection{Debug\+Printer.\+hpp}
+\hypertarget{_debug_printer_8hpp_source}{}\label{_debug_printer_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/DebugPrinter.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/DebugPrinter.hpp}}
+\mbox{\hyperlink{_debug_printer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_DEBUGPRINTER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_DEBUGPRINTER\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_debug_printer}{DebugPrinter}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_ae510da6a59a76773aca59e437c7c7cc9}{DebugPrinter}}()}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_af9ef6d095608d155a6daf504a6ec746a}{debugString}}(0),\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_ad0df8782da49f5cc96d0633a732814aa}{debugRegion}}(),\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a409a5a67f6ae78cfb5af5886b9ff07a7}{debugForegroundColor}}(0xffffffff),\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_aca2058cf9e60ea5127a3c01daed411a2}{debugScale}}(1)}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_aa5f34f5ada641794147c5c293f1712c1}{\string~DebugPrinter}}()}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_afbb6efe8fe1d44f83346fe372d2b4f59}{setString}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_af9ef6d095608d155a6daf504a6ec746a}{debugString}}\ =\ string;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_aedadca6de71beea01c855cc755668db0}{setPosition}}(int16\_t\ x,\ int16\_t\ y,\ int16\_t\ w,\ int16\_t\ h)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_ad0df8782da49f5cc96d0633a732814aa}{debugRegion}}\ =\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}(x,\ y,\ w,\ h);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a624281e6567355762ba6e88eb648ffa0}{setScale}}(uint8\_t\ scale)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!scale)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ scale\ =\ 1;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_aca2058cf9e60ea5127a3c01daed411a2}{debugScale}}\ =\ scale;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a99642b24ebcaf477cb3ff4cf14a8ea46}{setColor}}(\mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ fg)}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a409a5a67f6ae78cfb5af5886b9ff07a7}{debugForegroundColor}}\ =\ fg;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a80b5bd7c31c746396ea2b932196af821}{draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ rect)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\&\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a12ae161526a6fca950077dd16169336f}{getRegion}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00104\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_ad0df8782da49f5cc96d0633a732814aa}{debugRegion}};}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00116\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a5d67da05dd4720c68308f5511c555399}{getGlyph}}(uint8\_t\ c)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00117\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint16\_t\ builtin\_debug\_font[]\ =\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ 000000,\ 022202,\ 055000,\ 057575,\ 026532,\ 051245,\ 025253,\ 022000,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ 012221,\ 042224,\ 005250,\ 002720,\ 000024,\ 000700,\ 000002,\ 011244,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ 025752,\ 026222,\ 061247,\ 061216,\ 045571,\ 074616,\ 034652,\ 071222,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ 025252,\ 025312,\ 002020,\ 002024,\ 012421,\ 007070,\ 042124,\ 061202,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ 025543,\ 025755,\ 065656,\ 034443,\ 065556,\ 074647,\ 074644,\ 034553,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ 055755,\ 072227,\ 011152,\ 055655,\ 044447,\ 057555,\ 015754,\ 025552,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ 065644,\ 025573,\ 065655,\ 034216,\ 072222,\ 055557,\ 055522,\ 055575,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ 055255,\ 055222,\ 071247,\ 032223,\ 044211,\ 062226,\ 025000,\ 000007,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ 042000,\ 003553,\ 046556,\ 003443,\ 013553,\ 002743,\ 012722,\ 002716,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ 046555,\ 020627,\ 010316,\ 045655,\ 062227,\ 006777,\ 006555,\ 002552,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ 006564,\ 003531,\ 006544,\ 003636,\ 022721,\ 005553,\ 005522,\ 005575,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ 005255,\ 005316,\ 007247,\ 032623,\ 022222,\ 062326,\ 063000,\ 077777}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ <\ \textcolor{charliteral}{'\ '}\ ||\ c\ >\ \textcolor{charliteral}{'\string~'})}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ 0x7F;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ builtin\_debug\_font[c\ -\/\ \textcolor{charliteral}{'\ '}];}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_af9ef6d095608d155a6daf504a6ec746a}{debugString}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_ad0df8782da49f5cc96d0633a732814aa}{debugRegion}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{structtouchgfx_1_1colortype}{colortype}}\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_a409a5a67f6ae78cfb5af5886b9ff07a7}{debugForegroundColor}};\ }
+\DoxyCodeLine{00143\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classtouchgfx_1_1_debug_printer_aca2058cf9e60ea5127a3c01daed411a2}{debugScale}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_DEBUGPRINTER\_HPP}}
+
+\end{DoxyCode}

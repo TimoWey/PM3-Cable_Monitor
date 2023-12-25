@@ -1,0 +1,220 @@
+\doxysection{touchgfx\+::Abstract\+Painter\+Bitmap Class Reference}
+\hypertarget{classtouchgfx_1_1_abstract_painter_bitmap}{}\label{classtouchgfx_1_1_abstract_painter_bitmap}\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+
+
+{\ttfamily \#include $<$Abstract\+Painter\+Bitmap.\+hpp$>$}
+
+Inheritance diagram for touchgfx\+::Abstract\+Painter\+Bitmap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classtouchgfx_1_1_abstract_painter_bitmap}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_ab5ea48c81de13790bdaca9602994dbc5}{Abstract\+Painter\+Bitmap}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp=\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}(\mbox{\hyperlink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\+\_\+\+INVALID}}))
+\item 
+virtual \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a8d3d63db2f225124d9600672b469c0e1}{\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter\+Bitmap}} ()
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a35bf7ff8cd0aeee7f6b0143af0477406}{set\+Bitmap}} (const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&bmp)
+\item 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a89152655bd65ca9073b592f90628acf9}{get\+Bitmap}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a340eb416b74fe54f45c46584e7d53479}{set\+Tiled}} (bool tiled)
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_ad339212b2cb04caf0b6d8ca6b82e33f0}{get\+Tiled}} () const
+\item 
+virtual void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a4a83b47170d88a4240001a4f25ea6e44}{set\+Offset}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a4b79d111d34b58302545f05d391c5cde}{get\+Offset}} (int16\+\_\+t \&x, int16\+\_\+t \&y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_a2586f4eebebba168f487f8109bf6243a}{update\+Bitmap\+Offsets}} (int16\+\_\+t widget\+Width) const
+\item 
+bool \mbox{\hyperlink{classtouchgfx_1_1_abstract_painter_bitmap_aa3a68ca56a9fae80086cdaccf6668d81}{adjust\+Bitmap\+XY}} (int16\+\_\+t \&bitmapX, int16\+\_\+t \&bitmapY, int16\+\_\+t \&offset, int16\+\_\+t \&count) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_ac1c43d9f329134a09788919a07af25cb}\label{classtouchgfx_1_1_abstract_painter_bitmap_ac1c43d9f329134a09788919a07af25cb} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} {\bfseries bitmap}
+\begin{DoxyCompactList}\small\item\em The bitmap to be used when painting. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a7aa270c0eb773afc017868df365ee501}\label{classtouchgfx_1_1_abstract_painter_bitmap_a7aa270c0eb773afc017868df365ee501} 
+\mbox{\hyperlink{classtouchgfx_1_1_bitmap_a33481add46cb21e3dff51be2459c05fc}{Bitmap\+::\+Bitmap\+Format}} {\bfseries bitmap\+Format}
+\begin{DoxyCompactList}\small\item\em Copy of the bitmap format (for speed reasons) \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe}\label{classtouchgfx_1_1_abstract_painter_bitmap_a11f0234db053f17082de5dcd28e74fbe} 
+\mbox{\hyperlink{classtouchgfx_1_1_rect}{Rect}} {\bfseries bitmap\+Rect}
+\begin{DoxyCompactList}\small\item\em \doxylink{classtouchgfx_1_1_bitmap}{Bitmap} rectangle translated to framebuffer coordinates. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a3a0bc2447e45300d7d2b1e896c63c7d0}\label{classtouchgfx_1_1_abstract_painter_bitmap_a3a0bc2447e45300d7d2b1e896c63c7d0} 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries bitmap\+Data}
+\begin{DoxyCompactList}\small\item\em Pointer to the bitmap data. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716}\label{classtouchgfx_1_1_abstract_painter_bitmap_a1b765829eba6d469f191fe8e39834716} 
+int16\+\_\+t {\bfseries x\+Offset}
+\begin{DoxyCompactList}\small\item\em The x offset of the bitmap. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6}\label{classtouchgfx_1_1_abstract_painter_bitmap_a44b425f2a65ee49fc9a4424344eebba6} 
+int16\+\_\+t {\bfseries y\+Offset}
+\begin{DoxyCompactList}\small\item\em The y offset of the bitmap. \end{DoxyCompactList}\item 
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a2b76db95292e3ac0ba5d0d7a3dddaf1b}\label{classtouchgfx_1_1_abstract_painter_bitmap_a2b76db95292e3ac0ba5d0d7a3dddaf1b} 
+bool {\bfseries is\+Tiled}
+\begin{DoxyCompactList}\small\item\em True if bitmap should be tiled, false if not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class for creating painter classes for drawing canvas widgets. All canvas widgets need a painter to fill the shape drawn with a \doxylink{classtouchgfx_1_1_canvas_widget_renderer}{Canvas\+Widget\+Renderer}. The painter must provide the color of a pixel on a given coordinate, which will the be blended into the framebuffer depending on the position of the canvas widget and the transparency of the given pixel.
+
+The \doxylink{classtouchgfx_1_1_abstract_painter}{Abstract\+Painter} also implements a function which will blend each pixel in a scanline snippet into the framebuffer, but for better performance, the function should be reimplemented in each painter. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_ab5ea48c81de13790bdaca9602994dbc5}\label{classtouchgfx_1_1_abstract_painter_bitmap_ab5ea48c81de13790bdaca9602994dbc5} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!AbstractPainterBitmap@{AbstractPainterBitmap}}
+\index{AbstractPainterBitmap@{AbstractPainterBitmap}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{AbstractPainterBitmap()}{AbstractPainterBitmap()}}
+{\footnotesize\ttfamily touchgfx\+::\+Abstract\+Painter\+Bitmap\+::\+Abstract\+Painter\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp = {\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}}(\mbox{\hyperlink{namespacetouchgfx_a154aad8174fb34a59c746fe9855e5ff2}{BITMAP\+\_\+\+INVALID}})} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & (Optional) The bitmap to use in the painter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a8d3d63db2f225124d9600672b469c0e1}\label{classtouchgfx_1_1_abstract_painter_bitmap_a8d3d63db2f225124d9600672b469c0e1} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!````~AbstractPainterBitmap@{\texorpdfstring{$\sim$}{\string~}AbstractPainterBitmap}}
+\index{````~AbstractPainterBitmap@{\texorpdfstring{$\sim$}{\string~}AbstractPainterBitmap}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AbstractPainterBitmap()}{\string~AbstractPainterBitmap()}}
+{\footnotesize\ttfamily virtual touchgfx\+::\+Abstract\+Painter\+Bitmap\+::\texorpdfstring{$\sim$}{\string~}\+Abstract\+Painter\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_aa3a68ca56a9fae80086cdaccf6668d81}\label{classtouchgfx_1_1_abstract_painter_bitmap_aa3a68ca56a9fae80086cdaccf6668d81} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!adjustBitmapXY@{adjustBitmapXY}}
+\index{adjustBitmapXY@{adjustBitmapXY}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{adjustBitmapXY()}{adjustBitmapXY()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Abstract\+Painter\+Bitmap\+::adjust\+Bitmap\+XY (\begin{DoxyParamCaption}\item[{int16\+\_\+t \&}]{bitmapX,  }\item[{int16\+\_\+t \&}]{bitmapY,  }\item[{int16\+\_\+t \&}]{offset,  }\item[{int16\+\_\+t \&}]{count }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Adjust bitmap x and y. For a tiled bitmap painters, the coordinates are fixed to be inside the bitmap, for non-\/tiled bitmap painters, false is returned if the entire span (considering offset and count) is outside the bitmap -\/ otherwise, the parameters are adjust to make sure that the requested number of pixels can be read from the bitmap at the given coordinate and count pixels ahead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em bitmapX} & The bitmap x coordinate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bitmapY} & The bitmap y coordinate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em offset} & The pointer x coordinate. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em count} & Number of.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if anything should be painted, false if nothing has to be painted. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a89152655bd65ca9073b592f90628acf9}\label{classtouchgfx_1_1_abstract_painter_bitmap_a89152655bd65ca9073b592f90628acf9} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!getBitmap@{getBitmap}}
+\index{getBitmap@{getBitmap}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{getBitmap()}{getBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} touchgfx\+::\+Abstract\+Painter\+Bitmap\+::get\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the bitmap previously set using \doxylink{classtouchgfx_1_1_abstract_painter_bitmap_a35bf7ff8cd0aeee7f6b0143af0477406}{set\+Bitmap()}.
+
+\begin{DoxyReturn}{Returns}
+The bitmap. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a4b79d111d34b58302545f05d391c5cde}\label{classtouchgfx_1_1_abstract_painter_bitmap_a4b79d111d34b58302545f05d391c5cde} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Abstract\+Painter\+Bitmap\+::get\+Offset (\begin{DoxyParamCaption}\item[{int16\+\_\+t \&}]{x,  }\item[{int16\+\_\+t \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the bitmap offset previously set using \doxylink{classtouchgfx_1_1_abstract_painter_bitmap_a4a83b47170d88a4240001a4f25ea6e44}{set\+Offset()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em x} & The x coordinate. \\
+\hline
+\mbox{\texttt{ out}}  & {\em y} & The y coordinate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_ad339212b2cb04caf0b6d8ca6b82e33f0}\label{classtouchgfx_1_1_abstract_painter_bitmap_ad339212b2cb04caf0b6d8ca6b82e33f0} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!getTiled@{getTiled}}
+\index{getTiled@{getTiled}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{getTiled()}{getTiled()}}
+{\footnotesize\ttfamily bool touchgfx\+::\+Abstract\+Painter\+Bitmap\+::get\+Tiled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the tiled setting, previously set using \doxylink{classtouchgfx_1_1_abstract_painter_bitmap_a340eb416b74fe54f45c46584e7d53479}{set\+Tiled()}.
+
+\begin{DoxyReturn}{Returns}
+True if the bitmap is tiled, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a35bf7ff8cd0aeee7f6b0143af0477406}\label{classtouchgfx_1_1_abstract_painter_bitmap_a35bf7ff8cd0aeee7f6b0143af0477406} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!setBitmap@{setBitmap}}
+\index{setBitmap@{setBitmap}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{setBitmap()}{setBitmap()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Abstract\+Painter\+Bitmap\+::set\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtouchgfx_1_1_bitmap}{Bitmap}} \&}]{bmp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets a bitmap to be used when drawing the \doxylink{classtouchgfx_1_1_canvas_widget}{Canvas\+Widget}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & The bitmap. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classtouchgfx_1_1_painter_a_b_g_r2222_bitmap_a589fac7cb81ab96602b0146c10e0108f}{touchgfx\+::\+Painter\+ABGR2222\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_a_r_g_b2222_bitmap_a68a73aa700475ea4d00a9004172b7d26}{touchgfx\+::\+Painter\+ARGB2222\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_a_r_g_b8888_bitmap_a109365b94978f974a9b4b77dcbdee029}{touchgfx\+::\+Painter\+ARGB8888\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_a_r_g_b8888_l8_bitmap_a3eff8f0eccc182d42c02583563538ae7}{touchgfx\+::\+Painter\+ARGB8888\+L8\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_b_g_r_a2222_bitmap_a1feb436cb09ce822d8b738a5632832d9}{touchgfx\+::\+Painter\+BGRA2222\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_b_w_bitmap_a02dcfcba11698bdefa2d465e8c84f032}{touchgfx\+::\+Painter\+BWBitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_g_r_a_y2_bitmap_a804d4d0571c7b98cfe014f8b472110cb}{touchgfx\+::\+Painter\+GRAY2\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_g_r_a_y4_bitmap_a752eb56d9b80a3c88075e11cc929faf0}{touchgfx\+::\+Painter\+GRAY4\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_bitmap_a9792a973b9622e95fd0a22264d855c59}{touchgfx\+::\+Painter\+RGB565\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b565_l8_bitmap_a40bf2e353f0896b6d718530c36fe4963}{touchgfx\+::\+Painter\+RGB565\+L8\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b888_bitmap_a7460ff73f701372f544d33b8ba07c9c4}{touchgfx\+::\+Painter\+RGB888\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b888_l8_bitmap_a4921a4ccda8988c37f705ed7c9e2545e}{touchgfx\+::\+Painter\+RGB888\+L8\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_r_g_b_a2222_bitmap_a22d324b7a87a13449b55cf5a88432561}{touchgfx\+::\+Painter\+RGBA2222\+Bitmap}}, \mbox{\hyperlink{classtouchgfx_1_1_painter_x_r_g_b8888_bitmap_a0cc0a0a8ebe13c5cba29274451eca716}{touchgfx\+::\+Painter\+XRGB8888\+Bitmap}}, and \mbox{\hyperlink{classtouchgfx_1_1_painter_x_r_g_b8888_l8_bitmap_a5e36721dddd3a98204a084e73622188a}{touchgfx\+::\+Painter\+XRGB8888\+L8\+Bitmap}}.
+
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a4a83b47170d88a4240001a4f25ea6e44}\label{classtouchgfx_1_1_abstract_painter_bitmap_a4a83b47170d88a4240001a4f25ea6e44} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!setOffset@{setOffset}}
+\index{setOffset@{setOffset}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{setOffset()}{setOffset()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Abstract\+Painter\+Bitmap\+::set\+Offset (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets an offset for the bitmap used. The x and y coordinates specifies how far the bitmap should be moved to the right and down. This works for tiled bitmaps and non-\/tiled bitmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate. \\
+\hline
+{\em y} & The y coordinate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_painter_bitmap_a340eb416b74fe54f45c46584e7d53479}{set\+Tiled} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a340eb416b74fe54f45c46584e7d53479}\label{classtouchgfx_1_1_abstract_painter_bitmap_a340eb416b74fe54f45c46584e7d53479} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!setTiled@{setTiled}}
+\index{setTiled@{setTiled}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{setTiled()}{setTiled()}}
+{\footnotesize\ttfamily virtual void touchgfx\+::\+Abstract\+Painter\+Bitmap\+::set\+Tiled (\begin{DoxyParamCaption}\item[{bool}]{tiled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Instruct the painter to tile the bitmap specified. The bitmap will be tiled both horizontally and vertically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiled} & True if tiled.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classtouchgfx_1_1_abstract_painter_bitmap_a4a83b47170d88a4240001a4f25ea6e44}{set\+Offset} 
+\end{DoxySeeAlso}
+\Hypertarget{classtouchgfx_1_1_abstract_painter_bitmap_a2586f4eebebba168f487f8109bf6243a}\label{classtouchgfx_1_1_abstract_painter_bitmap_a2586f4eebebba168f487f8109bf6243a} 
+\index{touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}!updateBitmapOffsets@{updateBitmapOffsets}}
+\index{updateBitmapOffsets@{updateBitmapOffsets}!touchgfx::AbstractPainterBitmap@{touchgfx::AbstractPainterBitmap}}
+\doxysubsubsection{\texorpdfstring{updateBitmapOffsets()}{updateBitmapOffsets()}}
+{\footnotesize\ttfamily void touchgfx\+::\+Abstract\+Painter\+Bitmap\+::update\+Bitmap\+Offsets (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{widget\+Width }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Updates the bitmap offsets described by widget\+Width, these offset are used by bitmap painters adjust the coordinate position inside the widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget\+Width} & Width of the widget. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Middlewares/\+ST/touchgfx/framework/include/touchgfx/widgets/canvas/\mbox{\hyperlink{_abstract_painter_bitmap_8hpp}{Abstract\+Painter\+Bitmap.\+hpp}}\end{DoxyCompactItemize}

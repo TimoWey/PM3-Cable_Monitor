@@ -1,0 +1,92 @@
+\doxysection{Unicode.\+hpp}
+\hypertarget{_unicode_8hpp_source}{}\label{_unicode_8hpp_source}\index{Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp@{Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp}}
+\mbox{\hyperlink{_unicode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Copyright\ (c)\ 2018(-\/2023)\ STMicroelectronics.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ the\ TouchGFX\ 4.22.1\ distribution.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ This\ software\ is\ licensed\ under\ terms\ that\ can\ be\ found\ in\ the\ LICENSE\ file\ in}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ the\ root\ directory\ of\ this\ software\ component.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ If\ no\ LICENSE\ file\ comes\ with\ this\ software,\ it\ is\ provided\ AS-\/IS.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TOUCHGFX\_UNICODE\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TOUCHGFX\_UNICODE\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8hpp}{touchgfx/hal/Types.hpp}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetouchgfx}{touchgfx}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtouchgfx_1_1_unicode}{Unicode}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typedef}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3769f50fac8824134c41cc0529f5b87a}{strlen}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ str);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a7d83270f609e96bf794e9ce334607a68}{strlen}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aeb149427bcd83af292edad0aec54a399}{strncpy}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ dst,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ src,\ uint16\_t\ maxchars);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a4c8703bd6996d46d6147ddc964620598}{strncpy}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ dst,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ src,\ uint16\_t\ maxchars);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa10fe9978066d5875a9195acc5e18bc3}{itoa}}(int32\_t\ value,\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ buffer,\ uint16\_t\ bufferSize,\ \textcolor{keywordtype}{int}\ radix);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_af28c9495d1d24d8bc74ab3dd09c18374}{utoa}}(uint32\_t\ value,\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ buffer,\ uint16\_t\ bufferSize,\ \textcolor{keywordtype}{int}\ radix);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a9d97529f421a238fd51e138557b72784}{atoi}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ s);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a0d6f2117bb636dad1737d669de99e4da}{snprintf}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ format,\ ...);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a13576e2abe6e95daa300538d8bdf0ecf}{vsnprintf}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ format,\ va\_list\ pArg);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a10ede5ebf0ce09541bf651845501fdf8}{snprintf}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ ...);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a13350e800e63807fbe5fc52571919660}{vsnprintf}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ va\_list\ pArg);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintfFloats}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ format,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ values);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a4d9a39834ddc8dade1c7e2d1b47a5d29}{snprintfFloat}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ format,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ value)}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintfFloats}}(dst,\ dstSize,\ format,\ \&value);}
+\DoxyCodeLine{00314\ \ \ \ \ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a9d8466471e6b55ef385ad80a4b4f606b}{snprintfFloats}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ values);}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a833dfbadd43209959b80b6c23cefbbd6}{snprintfFloat}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ value)}
+\DoxyCodeLine{00405\ \ \ \ \ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintfFloats}}(dst,\ dstSize,\ format,\ \&value);}
+\DoxyCodeLine{00407\ \ \ \ \ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a2a0c7d11dd43d0116788998e7da50927}{strncmp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ str1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ str2,\ uint16\_t\ maxchars);}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a43b0d0714fc591df46a0b03052a7bc3e}{strncmp\_ignore\_whitespace}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ str1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{_config_8hpp_aae3356b63849abbe8789dd41648ee90a}{RESTRICT}}\ str2,\ uint16\_t\ maxchars);}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3c366b14573f1484137c274dacf67a0d}{fromUTF8}}(\textcolor{keyword}{const}\ uint8\_t*\ utf8,\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ maxchars);}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keyword}{static}\ uint16\_t\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a186538c6bdd4598290a2bab59cfb2c8f}{toUTF8}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ unicode,\ uint8\_t*\ utf8,\ uint16\_t\ maxbytes);}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ composeString(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\&\ bufptr,\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}\ numberSign,\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}\ formatChar,\ \textcolor{keywordtype}{bool}\ hasPrecision,\ \textcolor{keywordtype}{bool}\ zeroPrefix,\ \textcolor{keywordtype}{int}\ precision,\ \textcolor{keywordtype}{bool}\ hasWidth,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{bool}\ alignLeft,\ \textcolor{keywordtype}{int}\&\ charNumber,\ uint16\_t\ dstSize,\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst);}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ parseFlagsAndPrecision(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\&\ ucFormat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\&\ cFormat,\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}\&\ numberSign,\ \textcolor{keywordtype}{bool}\&\ alignLeft,\ \textcolor{keywordtype}{bool}\&\ forceDecimalPoint,\ \textcolor{keywordtype}{bool}\&\ zeroPrefix,\ \textcolor{keywordtype}{bool}\&\ hasWidth,\ \textcolor{keywordtype}{int}\&\ width,\ \textcolor{keywordtype}{bool}\&\ hasPrecision,\ \textcolor{keywordtype}{int}\&\ precision);}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ skip\_spaces(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ str);}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ skip\_whitespace(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ str);}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}\ peekChar(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ ucFormat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cFormat);}
+\DoxyCodeLine{00478\ \ \ \ \ FORCE\_INLINE\_FUNCTION\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ nextChar(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\&\ ucFormat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\&\ cFormat);}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a13576e2abe6e95daa300538d8bdf0ecf}{vsnprintf}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ ucFormat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cFormat,\ va\_list\ pArg);}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_a3ac663a0d78f95b04115db4415e1232a}{snprintfFloats}}(\mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ dst,\ uint16\_t\ dstSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtouchgfx_1_1_unicode_aa7c1c36379dab89e697ea22fa4cd6b95}{UnicodeChar}}*\ ucFormat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cFormat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ values);}
+\DoxyCodeLine{00481\ \};}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \}\ \textcolor{comment}{//\ namespace\ touchgfx}}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOUCHGFX\_UNICODE\_HPP}}
+
+\end{DoxyCode}
