@@ -33,8 +33,14 @@
  * Types
  *****************************************************************************/
 /* enum for errors*/
-typedef enum { CALC_ERROR_FREQUENCY = 0, CALC_ERROR_NONE } CALC_ERROR_ITEM;
-
+typedef enum { 
+    CALC_ERROR_FREQUENCY = 0,       // Frequency out of bounds
+    CALC_ERROR_DISCONNECT,          // Wire too far away for distance calculation
+    CALC_ERROR_OVERCURRENT,         // Current too high for current calculation
+    CALC_ERROR_TOO_FAR_AWAY,        // Wire too far away for current calculation
+    CALC_ERROR_DEVIATION_TOO_HIGH,  // Deviation too high
+    CALC_ERROR_NONE                 // No error
+} CALC_ERROR_ITEM;
 
 /* Structure for FFT*/
 typedef struct {
@@ -53,6 +59,7 @@ typedef struct {
     float32_t signal_strength_hsr_std_dev;
     float32_t signal_strength_hsl;
     float32_t signal_strength_hsl_std_dev;
+    CALC_ERROR_ITEM error;
 } ACCU_FFT;
 
 /* Structure for measurements*/
@@ -61,6 +68,7 @@ typedef struct {
     float32_t angle;
     float32_t frequency;
     float32_t current;
+    CALC_ERROR_ITEM error;
 } SINGLE_MEAS;
 
 /* Structure for accurate measurements*/
@@ -73,6 +81,8 @@ typedef struct {
     float32_t angle_std_dev;
     float32_t frequency_std_dev;
     float32_t current_std_dev;
+    CALC_ERROR_ITEM error_single;
+    CALC_ERROR_ITEM error_accu;
 } ACCU_MEAS;
 
 /* Structure for distance and angle*/
@@ -81,6 +91,7 @@ typedef struct {
     float32_t distance_l;
     float32_t distance;
     float32_t angle;
+    CALC_ERROR_ITEM error;
 } DISTANCE_ANGLE;
 
 /******************************************************************************
