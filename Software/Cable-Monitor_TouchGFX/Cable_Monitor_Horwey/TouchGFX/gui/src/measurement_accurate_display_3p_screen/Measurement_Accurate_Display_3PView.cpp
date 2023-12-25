@@ -65,9 +65,15 @@ void Measurement_Accurate_Display_3PView::accu_meas_3PH(){
 			Unicode::snprintf(AMD3_CurrentBuffer, AMD3_CURRENT_SIZE, "TOO FAR");
 			AMD3_Current.invalidate();
 		} else{
-			//set current value
-			Unicode::snprintfFloat(AMD3_CurrentBuffer, AMD3_CURRENT_SIZE, "%.2f A", accu_meas.current);
-			AMD3_Current.invalidate();
+			// set current value
+			// Check if current is within range of 0 - 10 A
+			if(accu_meas.current >= 0 && accu_meas.current <= 10){
+				Unicode::snprintfFloat(AMD3_CurrentBuffer, AMD3_CURRENT_SIZE, "%.2f A", accu_meas.current);
+				AMD3_Current.invalidate();
+			} else {
+				Unicode::snprintf(AMD3_CurrentBuffer, AMD3_CURRENT_SIZE, "TOO FAR");
+				AMD3_Current.invalidate();
+			}
 		}
 
 		// Check if there is an error with the frequency
@@ -92,13 +98,14 @@ void Measurement_Accurate_Display_3PView::accu_meas_3PH(){
 			AMD3_Current.invalidate();
 		} else{
 			//set distance value
+			// Check if distance is within range of 0 to 200 mm
 			if(accu_meas.distance >= 0 && accu_meas.distance <= 200)
 				Unicode::snprintfFloat(AMD3_DistanceBuffer, AMD3_DISTANCE_SIZE, "%.2f mm", accu_meas.distance);
 			else if(accu_meas.distance < 0)
 				Unicode::snprintf(AMD3_DistanceBuffer, AMD3_DISTANCE_SIZE, "0 mm");
 			else{
 				Unicode::snprintf(AMD3_DistanceBuffer, AMD3_DISTANCE_SIZE, "+200 mm");
-				Unicode::snprintf(AMD3_CurrentBuffer, AMD3_CURRENT_SIZE, "DISCONNECTED");
+				Unicode::snprintf(AMD3_CurrentBuffer, AMD3_CURRENT_SIZE, "TOO FAR");
 			}
 			AMD3_Distance.invalidate();
 			AMD3_Current.invalidate();
