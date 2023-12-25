@@ -61,11 +61,11 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t AMD1_CURRENT_SIZE = 10;
+    static const uint16_t AMD1_CURRENT_SIZE = 14;
     touchgfx::Unicode::UnicodeChar AMD1_CurrentBuffer[AMD1_CURRENT_SIZE];
     static const uint16_t AMD1_FREQUENCY_SIZE = 10;
     touchgfx::Unicode::UnicodeChar AMD1_FrequencyBuffer[AMD1_FREQUENCY_SIZE];
-    static const uint16_t AMD1_DISTANCE_SIZE = 10;
+    static const uint16_t AMD1_DISTANCE_SIZE = 14;
     touchgfx::Unicode::UnicodeChar AMD1_DistanceBuffer[AMD1_DISTANCE_SIZE];
 
 private:

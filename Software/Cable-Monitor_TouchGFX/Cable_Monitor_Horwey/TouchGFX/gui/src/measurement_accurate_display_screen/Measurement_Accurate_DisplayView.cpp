@@ -43,9 +43,9 @@ void Measurement_Accurate_DisplayView::accu_meas(){
 	// Check if standard deviation is too high
 	if (accu_meas.error_accu == CALC_ERROR_DEVIATION_TOO_HIGH) {
         // Output error message
-        Unicode::snprintf(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "STDEV");
-		Unicode::snprintf(AMD1_FrequencyBuffer, AMD1_FREQUENCY_SIZE, "STDEV");
 		Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "STDEV");
+		Unicode::snprintf(AMD1_FrequencyBuffer, AMD1_FREQUENCY_SIZE, "TOO");
+		Unicode::snprintf(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "HIGH");
 		AMD1_Gauge.setValue(0);
 		AMD1_Gauge.invalidate();
         AMD1_Current.invalidate();
@@ -67,7 +67,7 @@ void Measurement_Accurate_DisplayView::accu_meas(){
 			AMD1_Current.invalidate();
 		} else{
 			//set current value
-			Unicode::snprintfFloat(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "%.2f", accu_meas.current);
+			Unicode::snprintfFloat(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "%.2f A", accu_meas.current);
 			AMD1_Current.invalidate();
 		}
 
@@ -78,7 +78,7 @@ void Measurement_Accurate_DisplayView::accu_meas(){
 			AMD1_Frequency.invalidate();
 		} else{
 			//set frequency value
-			Unicode::snprintfFloat(AMD1_FrequencyBuffer, AMD1_FREQUENCY_SIZE, "%.2f", accu_meas.frequency);
+			Unicode::snprintfFloat(AMD1_FrequencyBuffer, AMD1_FREQUENCY_SIZE, "%.2f Hz", accu_meas.frequency);
 			AMD1_Frequency.invalidate();
 		}
 
@@ -87,16 +87,18 @@ void Measurement_Accurate_DisplayView::accu_meas(){
 			// Output error message
 			Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "DISCONNECTED");
 			Unicode::snprintf(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "DISCONNECTED");
+			Unicode::snprintf(AMD1_FrequencyBuffer, AMD1_FREQUENCY_SIZE, "NO SIGNAL");
+			AMD1_Frequency.invalidate();
 			AMD1_Distance.invalidate();
 			AMD1_Current.invalidate();
 		} else{
 			//set distance value
 			if(accu_meas.distance >= 0 && accu_meas.distance <= 200)
-				Unicode::snprintfFloat(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "%.2f", accu_meas.distance);
+				Unicode::snprintfFloat(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "%.2f mm", accu_meas.distance);
 			else if(accu_meas.distance < 0)
-				Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "0");
+				Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "0 mm");
 			else{
-				Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "+200");
+				Unicode::snprintf(AMD1_DistanceBuffer, AMD1_DISTANCE_SIZE, "+200 mm");
 				Unicode::snprintf(AMD1_CurrentBuffer, AMD1_CURRENT_SIZE, "DISCONNECTED");
 			}
 			AMD1_Distance.invalidate();

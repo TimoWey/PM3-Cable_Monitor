@@ -406,7 +406,7 @@ Calibration_PadViewBase::Calibration_PadViewBase() :
 
     swipeContainer1.add(swipeContainerHallRight3P);
 
-    swipeContainer1.setSelectedPage(3);
+    swipeContainer1.setSelectedPage(0);
     add(swipeContainer1);
 
     line1_1.setPosition(0, 75, 240, 10);

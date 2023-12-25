@@ -57,7 +57,7 @@ void Measurement_Single_Display_1PView::single_measure()
 		SMD1_Current.invalidate();
 	} else{
 		//set current value
-		Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f", single_meas.current);
+		Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f A", single_meas.current);
 		SMD1_Current.invalidate();
 	}
 	
@@ -68,24 +68,27 @@ void Measurement_Single_Display_1PView::single_measure()
 		SMD1_Frequency.invalidate();
 	} else{
 		//set frequency value
-		Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", single_meas.frequency);
+		Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f Hz", single_meas.frequency);
 		SMD1_Frequency.invalidate();
 	}
+
 	// Check if there is an error with the distance
 	if(single_meas.error == CALC_ERROR_DISCONNECT){
 		// Output error message
 		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "DISCONNECTED");
 		Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "DISCONNECTED");
+		Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "NO SIGNAL");
+		SMD1_Frequency.invalidate();
 		SMD1_Distance.invalidate();
 		SMD1_Current.invalidate();
 	} else{
 		//set distance value
 		if(single_meas.distance >= 0 && single_meas.distance <= 200)
-			Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
+			Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f mm", single_meas.distance);
 		else if(single_meas.distance < 0)
-			Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "0");
+			Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "0 mm");
 		else{
-			Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "+200");
+			Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "+200 mm");
 			Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "DISCONNECTED");
 		}
 		SMD1_Distance.invalidate();
