@@ -275,7 +275,7 @@ int main(void)
 
 
   //Read flash calibration values for further calculations
-  Flash_Read_Data(SECTOR_23_ADDR, Calibration_Data, 12);
+  Flash_Read_Data(SECTOR_23_ADDR, Calibration_Data, 14);
   start_calibration();
 
   /* USER CODE END 2 */

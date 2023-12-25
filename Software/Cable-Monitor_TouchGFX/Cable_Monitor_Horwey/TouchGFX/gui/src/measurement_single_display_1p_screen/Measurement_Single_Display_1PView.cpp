@@ -41,30 +41,69 @@ void Measurement_Single_Display_1PView::single_measure()
 	// calculate single measurement values
 	SINGLE_MEAS single_meas = single_measurement(SINGLE_PHASE);
 
-	// Enable TouchGFX Interrupts after the accurate measurement values are calculated
-	ENABLE_TOUCHGFX_INTERRUPTS();
-
 	//update GUI values
 	//set gauge angle
 	SMD1_Gauge.setValue(single_meas.angle);
 	SMD1_Gauge.invalidate();
 
-	//set current value
-	Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f", single_meas.current);
-	SMD1_Current.invalidate();
+	// Check if there is an error with the current
+	if(single_meas.error == CALC_ERROR_OVERCURRENT){
+		// Output error message
+		Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "OVERCURRENT");
+		SMD1_Current.invalidate();
+	} else if(single_meas.error == CALC_ERROR_TOO_FAR_AWAY){
+		// Output error message
+		Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "TOO FAR");
+		SMD1_Current.invalidate();
+	} else{
+		// set current value
+		// Check if current is within range of 0 - 10 A
+		if(single_meas.current >= 0 && single_meas.current <= 10){
+		Unicode::snprintfFloat(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "%.2f A", single_meas.current);
+		SMD1_Current.invalidate();
+		} else {
+			Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "TOO FAR");
+			SMD1_Current.invalidate();
+		}
+	}
 
-	//set frequency value
-	Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f", single_meas.frequency);
-	SMD1_Frequency.invalidate();
+	// Check if there is an error with the frequency
+	if(single_meas.error == CALC_ERROR_FREQUENCY){
+		// Output error message
+		Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "NO SIGNAL");
+		SMD1_Frequency.invalidate();
+	} else{
+		//set frequency value
+		Unicode::snprintfFloat(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "%.2f Hz", single_meas.frequency);
+		SMD1_Frequency.invalidate();
+	}
 
-	//set distance value
-	if(single_meas.distance >= 0 && single_meas.distance <= 200)
-		Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f", single_meas.distance);
-	else if(single_meas.distance < 0)
-		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "0");
-	else
-		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "+200");
-	SMD1_Distance.invalidate();
+	// Check if there is an error with the distance
+	if(single_meas.error == CALC_ERROR_DISCONNECT){
+		// Output error message
+		Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "DISCONNECTED");
+		Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "DISCONNECTED");
+		Unicode::snprintf(SMD1_FrequencyBuffer, SMD1_FREQUENCY_SIZE, "NO SIGNAL");
+		SMD1_Frequency.invalidate();
+		SMD1_Distance.invalidate();
+		SMD1_Current.invalidate();
+	} else{
+		// set distance value
+		// Check if distance is within range of 0 to 200 mm
+		if(single_meas.distance >= 0 && single_meas.distance <= 200)
+			Unicode::snprintfFloat(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "%.2f mm", single_meas.distance);
+		else if(single_meas.distance < 0)
+			Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "0 mm");
+		else{
+			Unicode::snprintf(SMD1_DistanceBuffer, SMD1_DISTANCE_SIZE, "+200 mm");
+			Unicode::snprintf(SMD1_CurrentBuffer, SMD1_CURRENT_SIZE, "TOO FAR");
+		}
+		SMD1_Distance.invalidate();
+		SMD1_Current.invalidate();
+	}
+
+	// Enable TouchGFX Interrupts after the accurate measurement values are calculated
+	ENABLE_TOUCHGFX_INTERRUPTS();
 
 #endif
 }
