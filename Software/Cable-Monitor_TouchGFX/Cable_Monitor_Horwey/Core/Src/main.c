@@ -711,7 +711,8 @@ static void MX_TIM9_Init(void)
   }
   /* USER CODE BEGIN TIM9_Init 2 */
   TIM9->CCR1 = 50;
-  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_1);
+//  HAL_TIM_PWM_Start(&htim9, TIM_CHANNEL_1);
+//  HAL_TIM_PWM_Stop(&htim9, TIM_CHANNEL_1);
   /* USER CODE END TIM9_Init 2 */
   HAL_TIM_MspPostInit(&htim9);
 

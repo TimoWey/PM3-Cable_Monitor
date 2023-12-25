@@ -58,14 +58,12 @@
 /******************************************************************************
  * Includes
  *****************************************************************************/
+#include "main.h"
 #include "calculation.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include "measuring.h"
-#include "stm32f4xx.h"
-#include "stm32f4xx_hal.h"
-
 #define ARM_MATH_CM4
 #include "arm_math.h"
 
@@ -98,6 +96,10 @@ float32_t a_magn2_r = 0;
 
 float32_t a_magn3_l = 0;
 float32_t a_magn3_r = 0;
+
+bool State_BUZZER = true;
+bool State_LED = true;
+
 
 /******************************************************************************
  * Functions
@@ -307,6 +309,14 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
         single_meas.current = 0;
     }
 
+    if(single_meas.distance > 0 && single_meas.distance < 200 && (State_BUZZER == false))
+    {
+//    	TIM14->CCR1 = 50;
+    	TIM14->CCR1 = 50 + (single_meas.distance/4);
+    }
+    else
+    	TIM14->CCR1 = 0;
+
     return single_meas;
 }
 
@@ -466,4 +476,35 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
 void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn){
     *a_magn = cal_current / (s * d);
 }
+
+void toggle_Buzzer_settings(bool btn)
+{
+	if(btn == true)
+	{
+		if(State_BUZZER == true)
+		{
+			State_BUZZER = false;
+			ENABLE_BUZZER();
+		}
+		else
+		{
+			State_BUZZER = true;
+			DISABLE_BUZZER();
+		}
+	}
+	else
+	{
+		if(State_LED == true)
+		{
+			State_LED = false;
+	//		ENABLE_LED();
+		}
+		else
+		{
+			State_LED = true;
+	//		DISABLE_LED();
+		}
+	}
+}
+
 

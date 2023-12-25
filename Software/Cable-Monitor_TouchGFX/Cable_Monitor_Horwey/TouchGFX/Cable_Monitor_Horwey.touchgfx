@@ -205,13 +205,12 @@
             "Y": 5,
             "Width": 36,
             "Height": 36,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_outline_normal.png",
-            "IconPressed": "power_off_36x36.png",
-            "IconReleased": "power_off_36x36.png",
+            "Pressed": "settings.png",
+            "Released": "settings.png",
+            "IconPressed": "settings.png",
+            "IconReleased": "settings.png",
             "IconHeight": 36,
-            "IconWidth": 36,
-            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_outline_normal.json"
+            "IconWidth": 36
           }
         ],
         "Interactions": [
@@ -3531,19 +3530,17 @@
             "Type": "ToggleButton",
             "Name": "toggleButton_LED",
             "X": 51,
-            "Y": 110,
+            "Y": 176,
             "Width": 138,
             "Height": 50,
-            "InitialStatePressed": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_off_normal.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_on_dark.png",
-            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round_text.json"
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_on_light.png"
           },
           {
             "Type": "TextArea",
             "Name": "textArea_LED",
             "X": 101,
-            "Y": 160,
+            "Y": 153,
             "Width": 38,
             "Height": 23,
             "TextId": "__SingleUse_ZE28",
@@ -3559,19 +3556,17 @@
             "Type": "ToggleButton",
             "Name": "toggleButton_BUZZER",
             "X": 51,
-            "Y": 183,
+            "Y": 103,
             "Width": 138,
             "Height": 50,
-            "InitialStatePressed": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_off_normal.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_on_dark.png",
-            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round_text.json"
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_on_light.png"
           },
           {
             "Type": "TextArea",
             "Name": "textArea_BUZZER",
             "X": 88,
-            "Y": 85,
+            "Y": 80,
             "Width": 64,
             "Height": 23,
             "TextId": "__SingleUse_873W",
@@ -3680,6 +3675,39 @@
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Main_Menu"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_BUZZER"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "toggle_BUZZER"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_LED"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "toggle_LED"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "#ifndef SIMULATOR\r\n\r\n#include \"main.h\"\r\n\r\nextern \"C\"\r\n{\r\n\t#include \"calculation.h\"\r\n}\r\n\r\n#endif",
+              "Code": "#ifndef SIMULATOR\r\n\r\nextern bool State_BUZZER;\r\nextern bool State_LED;\r\n\r\ntoggleButton_BUZZER.forceState(State_BUZZER);\r\ntoggleButton_BUZZER.invalidate();\r\ntoggleButton_LED.forceState(State_LED);\r\ntoggleButton_LED.invalidate();\r\n\r\n#endif"
             }
           }
         ]

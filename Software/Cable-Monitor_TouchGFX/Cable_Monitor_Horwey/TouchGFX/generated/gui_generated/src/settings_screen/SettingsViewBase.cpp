@@ -37,23 +37,23 @@ SettingsViewBase::SettingsViewBase() :
     buttonWithLabel_Return.setAction(buttonCallback);
     add(buttonWithLabel_Return);
 
-    toggleButton_LED.setXY(51, 110);
-    toggleButton_LED.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_ON_DARK_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_OFF_NORMAL_ID));
-    toggleButton_LED.forceState(true);
+    toggleButton_LED.setXY(51, 176);
+    toggleButton_LED.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_ON_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_OFF_NORMAL_ID));
+    toggleButton_LED.setAction(buttonCallback);
     add(toggleButton_LED);
 
-    textArea_LED.setXY(101, 160);
+    textArea_LED.setXY(101, 153);
     textArea_LED.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea_LED.setLinespacing(0);
     textArea_LED.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZE28));
     add(textArea_LED);
 
-    toggleButton_BUZZER.setXY(51, 183);
-    toggleButton_BUZZER.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_ON_DARK_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_OFF_NORMAL_ID));
-    toggleButton_BUZZER.forceState(true);
+    toggleButton_BUZZER.setXY(51, 103);
+    toggleButton_BUZZER.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_ON_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_OFF_NORMAL_ID));
+    toggleButton_BUZZER.setAction(buttonCallback);
     add(toggleButton_BUZZER);
 
-    textArea_BUZZER.setXY(88, 85);
+    textArea_BUZZER.setXY(88, 80);
     textArea_BUZZER.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea_BUZZER.setLinespacing(0);
     textArea_BUZZER.setTypedText(touchgfx::TypedText(T___SINGLEUSE_873W));
@@ -103,7 +103,7 @@ SettingsViewBase::~SettingsViewBase()
 
 void SettingsViewBase::setupScreen()
 {
-
+    transitionBegins();
 }
 
 void SettingsViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -115,4 +115,36 @@ void SettingsViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //Go to Main_Menu with screen transition towards West
         application().gotoMain_MenuScreenWipeTransitionWest();
     }
+    if (&src == &toggleButton_BUZZER)
+    {
+        //Interaction2
+        //When toggleButton_BUZZER clicked call virtual function
+        //Call toggle_BUZZER
+        toggle_BUZZER();
+    }
+    if (&src == &toggleButton_LED)
+    {
+        //Interaction3
+        //When toggleButton_LED clicked call virtual function
+        //Call toggle_LED
+        toggle_LED();
+    }
+}
+
+void SettingsViewBase::transitionBegins()
+{
+    //Interaction4
+    //When screen transition begins execute C++ code
+    //Execute C++ code
+    #ifndef SIMULATOR
+    
+    extern bool State_BUZZER;
+    extern bool State_LED;
+    
+    toggleButton_BUZZER.forceState(State_BUZZER);
+    toggleButton_BUZZER.invalidate();
+    toggleButton_LED.forceState(State_LED);
+    toggleButton_LED.invalidate();
+    
+    #endif
 }

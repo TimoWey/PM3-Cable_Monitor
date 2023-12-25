@@ -16,3 +16,8 @@ void SettingsPresenter::deactivate()
 {
 
 }
+
+void SettingsPresenter::setTimeoutValue(int value)
+{
+	view.setTimeoutValue(value);
+}

@@ -17,9 +17,11 @@
 #include <stdio.h>
 #include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
-
+#include "stm32f4xx_hal_tim.h"
 #define ARM_MATH_CM4
 #include "arm_math.h"
+#include "Components/ili9341/ili9341.h"
+
 
 /******************************************************************************
  * Defines
@@ -90,12 +92,15 @@ SINGLE_MEAS single_measurement(uint8_t Phase);
 ACCU_MEAS accurate_measurement(uint8_t Phase);
 ACCU_FFT accurate_FFT(void);
 void start_calibration(void);
+void toggle_Buzzer_settings(bool btn);
 
 /******************************************************************************
  * External variables (FLASH)
  *****************************************************************************/
-
+//bool State_BUZZER = false;
+//bool State_LED = false;
 extern uint32_t Calibration_Data[14];
+extern TIM_HandleTypeDef htim14;
 
 /******************************************************************************
  * Macros (For TouchGFX)
@@ -113,5 +118,10 @@ extern uint32_t Calibration_Data[14];
         NVIC_DisableIRQ(DMA2D_IRQn);  \
         NVIC_DisableIRQ(LTDC_IRQn);   \
     } while (0)
+
+// Macro for Buzzer control
+#define DISABLE_BUZZER() HAL_TIM_PWM_Stop(&htim14, TIM_CHANNEL_1)
+
+#define ENABLE_BUZZER() HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1)
 
 #endif /* CALC_H_ */

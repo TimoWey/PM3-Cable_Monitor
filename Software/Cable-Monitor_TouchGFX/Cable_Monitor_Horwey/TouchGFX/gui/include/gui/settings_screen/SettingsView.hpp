@@ -11,6 +11,9 @@ public:
     virtual ~SettingsView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void setTimeoutValue(int value);
+    virtual void toggle_BUZZER();
+    virtual void toggle_LED();
 protected:
 };
 
