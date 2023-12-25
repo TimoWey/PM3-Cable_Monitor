@@ -105,8 +105,7 @@ Application/User/generated/CalibrationViewBase.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
- ../../Core/Inc/arm_math.h ../../Drivers/BSP/Components/ili9341/ili9341.h \
- ../../Drivers/BSP/Components/ili9341/../Common/lcd.h \
+ ../../Core/Inc/arm_math.h \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
@@ -218,8 +217,6 @@ Application/User/generated/CalibrationViewBase.o: \
 ../../Core/Inc/measuring.h:
 ../../Core/Inc/calculation.h:
 ../../Core/Inc/arm_math.h:
-../../Drivers/BSP/Components/ili9341/ili9341.h:
-../../Drivers/BSP/Components/ili9341/../Common/lcd.h:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:

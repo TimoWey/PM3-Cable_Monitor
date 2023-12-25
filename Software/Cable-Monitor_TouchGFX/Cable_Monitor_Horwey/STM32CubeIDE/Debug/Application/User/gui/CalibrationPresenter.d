@@ -106,8 +106,7 @@ Application/User/gui/CalibrationPresenter.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
- ../../Core/Inc/arm_math.h ../../Drivers/BSP/Components/ili9341/ili9341.h \
- ../../Drivers/BSP/Components/ili9341/../Common/lcd.h
+ ../../Core/Inc/arm_math.h
 ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -216,5 +215,3 @@ Application/User/gui/CalibrationPresenter.o: \
 ../../Core/Inc/measuring.h:
 ../../Core/Inc/calculation.h:
 ../../Core/Inc/arm_math.h:
-../../Drivers/BSP/Components/ili9341/ili9341.h:
-../../Drivers/BSP/Components/ili9341/../Common/lcd.h:

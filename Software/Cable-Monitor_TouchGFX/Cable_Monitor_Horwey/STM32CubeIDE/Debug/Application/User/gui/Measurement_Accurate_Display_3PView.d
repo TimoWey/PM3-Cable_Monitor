@@ -108,8 +108,7 @@ Application/User/gui/Measurement_Accurate_Display_3PView.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
- ../../Core/Inc/arm_math.h ../../Drivers/BSP/Components/ili9341/ili9341.h \
- ../../Drivers/BSP/Components/ili9341/../Common/lcd.h
+ ../../Core/Inc/arm_math.h
 ../../TouchGFX/gui/include/gui/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/measurement_accurate_display_3p_screen/Measurement_Accurate_Display_3PViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -220,5 +219,3 @@ Application/User/gui/Measurement_Accurate_Display_3PView.o: \
 ../../Core/Inc/measuring.h:
 ../../Core/Inc/calculation.h:
 ../../Core/Inc/arm_math.h:
-../../Drivers/BSP/Components/ili9341/ili9341.h:
-../../Drivers/BSP/Components/ili9341/../Common/lcd.h:

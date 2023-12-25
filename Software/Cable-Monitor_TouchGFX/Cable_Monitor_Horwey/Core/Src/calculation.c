@@ -58,12 +58,14 @@
 /******************************************************************************
  * Includes
  *****************************************************************************/
-#include "main.h"
 #include "calculation.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include "measuring.h"
+#include "stm32f4xx.h"
+#include "stm32f4xx_hal.h"
+
 #define ARM_MATH_CM4
 #include "arm_math.h"
 
@@ -75,31 +77,35 @@
 ///< (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm)
 #define D_P 19.7  ///< Distance from the board center to pad center
 #define ACCURATE_MEASUREMENT_LOOPS 10  ///< How many loops for accu. meas.
+#define CALIBRATION_MEASUREMENT_LOOPS 50  ///< How many loops for calibration meas
 #define POW2(x) ((x) * (x))            ///< Power of two
 
 /******************************************************************************
  * Variables
  *****************************************************************************/
-float32_t a_r = 0;
-float32_t b_r = 0;
-float32_t c_r = 0;
+static float32_t a_r = 0;
+static float32_t b_r = 0;
+static float32_t c_r = 0;
 
-float32_t a_l = 0;
-float32_t b_l = 0;
-float32_t c_l = 0;
+static float32_t a_l = 0;
+static float32_t b_l = 0;
+static float32_t c_l = 0;
 
-float32_t a_magn1_l = 0;
-float32_t a_magn1_r = 0;
+static float32_t a_magn1_l_1P = 0;
+static float32_t a_magn1_r_1P = 0;
 
-float32_t a_magn2_l = 0;
-float32_t a_magn2_r = 0;
+static float32_t a_magn2_l_1P = 0;
+static float32_t a_magn2_r_1P = 0;
 
-float32_t a_magn3_l = 0;
-float32_t a_magn3_r = 0;
+static float32_t a_magn1_l_3P = 0;
+static float32_t a_magn1_r_3P = 0;
+
+static float32_t a_magn2_l_3P = 0;
+static float32_t a_magn2_r_3P = 0;
+
 
 bool State_BUZZER = true;
 bool State_LED = true;
-
 
 /******************************************************************************
  * Functions
@@ -111,20 +117,23 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
 void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c);
 void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn);
 
-
 /**
- * @brief Calculates the frequency and signal strength using FFT.
+ * @brief Calculates the frequency and signal strength using Fast Fourier Transform (FFT).
  *
- * This function performs Fast Fourier Transform (FFT) on the input samples to
- *calculate the main frequency and signal strength. It uses the CMSIS-DSP
- *library for FFT calculations.
+ * This function takes an array of input samples and performs the following steps:
+ * 1. Removes the DC component from the input samples.
+ * 2. Performs FFT on the input samples to obtain the complex output.
+ * 3. Calculates the magnitude of the complex numbers.
+ * 4. Finds the index of the maximum magnitude in the first half of the array.
+ * 5. Determines the main frequency based on the maximum magnitude index.
+ * 6. Rounds the main frequency to either 50 Hz or 60 Hz.
+ * 7. Calculates the index of the rounded frequency.
+ * 8. Calculates the signal strength at the rounded frequency.
+ * 9. Returns the calculated main frequency and signal strength in a structure.
  *
- * @param Channel The channel number for which the frequency and signal strength
- *are calculated.
- * @param samples Pointer to the array of input samples.
- * @return FFT structure containing the calculated main frequency and signal
- *strength.
- **/
+ * @param input_samples The array of input samples.
+ * @return The structure containing the calculated main frequency and signal strength.
+ */
 FFT calculate_freq_and_signalstrength(float32_t input_samples[])
 {
     // remove DC component
@@ -176,14 +185,13 @@ FFT calculate_freq_and_signalstrength(float32_t input_samples[])
 }
 
 /**
- * @brief Performs accurate FFT calculation for signal strength and main frequency.
+ * @brief Performs accurate FFT calculation for signal strength and main frequency of each channel.
  *
- * This function calculates the signal strength and main frequency for each channel
- * using the Fast Fourier Transform (FFT) algorithm. It performs multiple measurements
- * to obtain accurate results and returns the calculated values in an instance of the
- * ACCU_FFT structure.
+ * This function calculates the signal strength and main frequency for each channel using FFT.
+ * It performs accurate measurement loops and calculates the mean and standard deviation of the signal strength.
+ * If the standard deviation is larger than 100, it sets the error flag accordingly.
  *
- * @return The calculated signal strength and main frequency for each channel.
+ * @return The calculated ACCU_FFT structure containing the signal strength, standard deviation, and error flag.
  */
 ACCU_FFT accurate_FFT(void){
     // Create an instance of the ACCU_FFT structure
@@ -191,10 +199,10 @@ ACCU_FFT accurate_FFT(void){
     // Create an instance of the FFT structure
     FFT fft;
 
-    static float32_t accu_strength_PR[ACCURATE_MEASUREMENT_LOOPS];
-    static float32_t accu_strength_PL[ACCURATE_MEASUREMENT_LOOPS];
-    static float32_t accu_strength_HSR[ACCURATE_MEASUREMENT_LOOPS];
-    static float32_t accu_strength_HSL[ACCURATE_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_PR[CALIBRATION_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_PL[CALIBRATION_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_HSR[CALIBRATION_MEASUREMENT_LOOPS];
+    static float32_t accu_strength_HSL[CALIBRATION_MEASUREMENT_LOOPS];
 
     uint32_t* samples;
 
@@ -203,7 +211,7 @@ ACCU_FFT accurate_FFT(void){
     static float32_t samples_HSR[SAMPLE_LEN];
     static float32_t samples_HSL[SAMPLE_LEN];
 
-    for (uint8_t i = 0; i < ACCURATE_MEASUREMENT_LOOPS; i++){
+    for (uint8_t i = 0; i < CALIBRATION_MEASUREMENT_LOOPS; i++){
         // Start the measurement
         samples = MEAS_start_measure();
 
@@ -227,29 +235,32 @@ ACCU_FFT accurate_FFT(void){
         accu_strength_HSL[i] = fft.signal_strength;
         //current[i] = single_meas.current;
     }
-    arm_mean_f32(accu_strength_PR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr);
-    arm_std_f32(accu_strength_PR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr_std_dev);
-    arm_mean_f32(accu_strength_PL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl);
-    arm_std_f32(accu_strength_PL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl_std_dev);
-    arm_mean_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr);
-    arm_std_f32(accu_strength_HSR, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr_std_dev);
-    arm_mean_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl);
-    arm_std_f32(accu_strength_HSL, ACCURATE_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl_std_dev);
-
+    arm_mean_f32(accu_strength_PR, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr);
+    arm_std_f32(accu_strength_PR, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pr_std_dev);
+    arm_mean_f32(accu_strength_PL, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl);
+    arm_std_f32(accu_strength_PL, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_pl_std_dev);
+    arm_mean_f32(accu_strength_HSR, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr);
+    arm_std_f32(accu_strength_HSR, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsr_std_dev);
+    arm_mean_f32(accu_strength_HSL, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl);
+    arm_std_f32(accu_strength_HSL, CALIBRATION_MEASUREMENT_LOOPS, &accu_fft.signal_strength_hsl_std_dev);
+    // Check if the standard deviation is larger than 100
+    if (accu_fft.signal_strength_pr_std_dev > 100 || accu_fft.signal_strength_pl_std_dev > 100 || accu_fft.signal_strength_hsr_std_dev > 100 || accu_fft.signal_strength_hsl_std_dev > 100){
+        accu_fft.error = CALC_ERROR_DEVIATION_TOO_HIGH;
+    } else accu_fft.error = CALC_ERROR_NONE;
+    // Return the calculated values
     return accu_fft;
 }
 
 /**
- * @brief Perform single measurement on the given samples.
+ * @brief Perform a single measurement for a specific phase.
  *
- * This function takes an array of samples and performs calculations to determine the signal strength, main frequency,
- * distance, angle, and current for a single measurement. The samples are converted to specific channels and then passed
- * through an FFT algorithm to calculate the signal strength and main frequency for each channel. The main frequency is
- * then averaged between two channels to obtain the final frequency. The signal strengths of two channels are used to
- * calculate the distance and angle. The current is currently not calculated and is set to 0.
+ * This function starts the measurement, converts the samples to the specific channel,
+ * calculates the signal strength and main frequency for each channel using FFT,
+ * calculates the distance and angle, and calculates the current using the magnetic coefficients.
+ * It also performs error testing and optimization on the calculated values.
  *
- * @param samples Pointer to the array of samples.
- * @return The SINGLE_MEAS structure containing the calculated values.
+ * @param Phase The phase for which the measurement is performed (SINGLE_PHASE or THREE_PHASE).
+ * @return The calculated values including frequency, distance, angle, current, and error status.
  */
 SINGLE_MEAS single_measurement(uint8_t Phase) {
     // Start the measurement
@@ -258,6 +269,9 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     SINGLE_MEAS single_meas;
     // Create an instance of the FFT structure
     FFT fft;
+
+    // Set the error to none
+    single_meas.error = CALC_ERROR_NONE;
 
     static float32_t samples_PR[SAMPLE_LEN];
     static float32_t samples_PL[SAMPLE_LEN];
@@ -292,50 +306,97 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     single_meas.distance = dist_angle.distance;
     single_meas.angle = dist_angle.angle;
 
-    // TODO: Calculate current
-    if(0 <= single_meas.distance && single_meas.distance <= 25){
-        current_l = a_magn1_l * single_meas.distance * signal_strength_HSL;
-        current_r = a_magn1_r * single_meas.distance * signal_strength_HSR;
+    // Calculate the current using the magnetic coefficients for 5A
+    if(Phase == SINGLE_PHASE){
+        current_l = a_magn2_l_1P * single_meas.distance * signal_strength_HSL;
+        current_r = a_magn2_r_1P * single_meas.distance * signal_strength_HSR;
         single_meas.current = (current_l + current_r) / 2;
-    } else if(25 < single_meas.distance && single_meas.distance <= 75){
-        current_l = a_magn2_l * single_meas.distance * signal_strength_HSL;
-        current_r = a_magn2_r * single_meas.distance * signal_strength_HSR;
-        single_meas.current = (current_l + current_r) / 2;
-    } else if (75 < single_meas.distance && single_meas.distance <= 125){
-        current_l = a_magn3_l * single_meas.distance * signal_strength_HSL;
-        current_r = a_magn3_r * single_meas.distance * signal_strength_HSR;
-        single_meas.current = (current_l + current_r) / 2;
-    } else {
-        single_meas.current = 0;
+    } else if(Phase == THREE_PHASE){
+        if (signal_strength_HSL > signal_strength_HSR){
+            single_meas.current = a_magn2_l_3P * single_meas.distance * signal_strength_HSL;
+        } else {
+            single_meas.current = a_magn2_r_3P * single_meas.distance * signal_strength_HSR;
+        }
     }
 
+    // Check if the current is smaller than 4 A -> use the magnetic coefficients for 1.2 A
+    if (single_meas.current < 4){
+        if(Phase == SINGLE_PHASE){
+            current_l = a_magn1_l_1P * single_meas.distance * signal_strength_HSL;
+            current_r = a_magn1_r_1P * single_meas.distance * signal_strength_HSR;
+            single_meas.current = (current_l + current_r) / 2;
+        } else if(Phase == THREE_PHASE){
+            if (signal_strength_HSL > signal_strength_HSR){
+                single_meas.current = a_magn1_l_3P * single_meas.distance * signal_strength_HSL;
+            } else {
+                single_meas.current = a_magn1_r_3P * single_meas.distance * signal_strength_HSR;
+            }
+        }
+    }
+
+    // ERROR TESTING:
+
+    // Check if distance is close enough for current calculation and if the current is out of the range of 0-10 A
+    if (single_meas.distance > 30 || (single_meas.current <= 0 && single_meas.current >= 10)){
+       single_meas.error = CALC_ERROR_TOO_FAR_AWAY;
+    }
+
+    // Check if the current is larger than 10 A -> CALL ERROR OVERCURRENT
+    if (single_meas.current > 10){
+       single_meas.error = CALC_ERROR_OVERCURRENT;
+    }
+
+    // Check if the distance is larger than 300 mm or smaller than 0 -> CALL ERROR DISCONNECT
+    if (single_meas.distance > 250){
+        single_meas.error = CALC_ERROR_DISCONNECT;
+        single_meas.angle = 0;
+    }
+
+    // Check if the frequency is 0 -> CALL ERROR FREQUENCY
+    if (single_meas.frequency == 0){
+        single_meas.error = CALC_ERROR_FREQUENCY;
+    }
+
+    // OPTIMIZE:
+
+    // Limit the angle to +/- 90 degrees
+    if (single_meas.angle > 90){
+        single_meas.angle = 90;
+    }else if (single_meas.angle < -90){
+        single_meas.angle = -90;
+    }
+
+    // BUZZER LED
     if(single_meas.distance > 0 && single_meas.distance < 200 && (State_BUZZER == false))
-    	TIM14->CCR1 = 50 + (single_meas.distance/4);
-    else
-    	TIM14->CCR1 = 0;
+       	TIM14->CCR1 = 50 + (single_meas.distance/4);
+       else
+       	TIM14->CCR1 = 0;
 
-    if(single_meas.distance > 0 && single_meas.distance < 200 && (State_LED == false))
-    	TIM5->CCR1 = abs(100 - (int)(single_meas.distance/2));
-    else
-    	TIM5->CCR1 = 0;
-
+       if(single_meas.distance > 0 && single_meas.distance < 200 && (State_LED == false))
+       	TIM5->CCR1 = abs(100 - (int)(single_meas.distance/2));
+       else
+       	TIM5->CCR1 = 0;
+    // Return the calculated values
     return single_meas;
 }
 
 /**
- * @brief Performs accurate measurement of distance, angle, and frequency.
+ * @brief Performs accurate measurement of various parameters.
  *
- * This function takes an array of samples and performs accurate measurement
- * of distance, angle, and frequency. It calculates the mean value and standard
- * deviation of each parameter over a specified number of measurement loops.
+ * This function calculates the mean value and standard deviation of distance, angle, frequency, and current
+ * based on multiple single measurements. It checks for errors in the single measurements and sets the
+ * appropriate error flags. If the standard deviation of any parameter exceeds 100, it sets the
+ * error_accu flag to CALC_ERROR_DEVIATION_TOO_HIGH.
  *
- * @param samples Pointer to the array of samples.
- * @return ACCU_MEAS The structure containing the accurate measurement results.
+ * @param Phase The phase for which the accurate measurement is performed.
+ * @return ACCU_MEAS The structure containing the calculated values and error flags.
  */
 ACCU_MEAS accurate_measurement(uint8_t Phase){
     // Create an instance of the ACCU_MEAS structure
     ACCU_MEAS accu_meas;
-    // Create an instance of the FFT structure
+
+    // set the error to none
+    accu_meas.error_accu = CALC_ERROR_NONE;
 
     static float32_t distance[ACCURATE_MEASUREMENT_LOOPS];
     static float32_t angle[ACCURATE_MEASUREMENT_LOOPS];
@@ -348,6 +409,11 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
         angle[i] = single_meas.angle;
         frequency[i] = single_meas.frequency;
         current[i] = single_meas.current;
+
+        // Check if there is an error in the single measurement
+        if (single_meas.error != CALC_ERROR_NONE){
+            accu_meas.error_single = single_meas.error;
+        }
     }
     // Calculate the mean value of the distance
     arm_mean_f32(distance, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.distance);
@@ -365,18 +431,25 @@ ACCU_MEAS accurate_measurement(uint8_t Phase){
     arm_mean_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current);
     // Calculate standard deviation of the current
     arm_std_f32(current, ACCURATE_MEASUREMENT_LOOPS, &accu_meas.current_std_dev);
+
+    // Check if the standard deviation is larger than 100
+    if (accu_meas.distance_std_dev > 100 || accu_meas.angle_std_dev > 100 || accu_meas.frequency_std_dev > 100 || accu_meas.current_std_dev > 100){
+        accu_meas.error_accu = CALC_ERROR_DEVIATION_TOO_HIGH;
+    } else accu_meas.error_accu = CALC_ERROR_NONE;
+
+    // Return the calculated values
     return accu_meas;
 }
 
 /**
  * @brief Calculates the distance and angle based on signal strengths.
  *
- * This function calculates the distance and angle using the provided signal strengths
- * and calibration values. It takes the signal strengths of the right and left pads
- * as input and returns a structure containing the calculated distance and angle.
+ * This function takes the signal strengths of the right and left signals and calculates
+ * the distance and angle using predefined coefficients. The calculated values are stored
+ * in a DISTANCE_ANGLE structure and returned.
  *
- * @param signal_strength_r The signal strength of the right pad.
- * @param signal_strength_l The signal strength of the left pad.
+ * @param signal_strength_r The signal strength of the right signal.
+ * @param signal_strength_l The signal strength of the left signal.
  * @return The calculated distance and angle.
  */
 DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32_t signal_strength_l){
@@ -407,10 +480,9 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
 /**
  * @brief Starts the calibration process.
  *
- * This function creates an array of distance measurements and initializes arrays with values from the calibration (flash memory).
- * It then calculates the coefficients for the distance approximation from a second degree polynomial using the calculate_coefficients_single_pad function.
- *
- * @return None
+ * This function initializes the necessary variables and arrays for calibration.
+ * It calculates the coefficients for distance approximation and current approximation
+ * based on the calibration data stored in flash memory.
  */
 void start_calibration(void)
 {
@@ -419,31 +491,42 @@ void start_calibration(void)
 
     // Measured current is 5 A and 1.2 A
     static float32_t current_1 = 5;
-//    float32_t current_2 = 1.2;
+    float32_t current_2 = 1.2;
 
     // initialize arrays with values from the calibration (flash memory)
     float32_t signal_pl[3] = {Calibration_Data[0], Calibration_Data[1], Calibration_Data[2]};
     float32_t signal_pr[3] = {Calibration_Data[3], Calibration_Data[4], Calibration_Data[5]};
-    float32_t signal_current_l[3] = {Calibration_Data[6], Calibration_Data[7], Calibration_Data[8]};
-    float32_t signal_current_r[3] = {Calibration_Data[9], Calibration_Data[10], Calibration_Data[11]};
+    float32_t signal_current_l_C1_1P = Calibration_Data[6];
+    float32_t signal_current_l_C2_1P = Calibration_Data[7];
+    float32_t signal_current_r_C1_1P = Calibration_Data[8];
+    float32_t signal_current_r_C2_1P = Calibration_Data[9];
+    float32_t signal_current_l_C1_3P = Calibration_Data[10];
+    float32_t signal_current_l_C2_3P = Calibration_Data[11];
+    float32_t signal_current_r_C1_3P = Calibration_Data[12];
+    float32_t signal_current_r_C2_3P = Calibration_Data[13];
 
     // Calculate the coefficients for the distance approximation from a second degree polynomial
     calculate_coefficients_single_pad(signal_pr, distance, &a_r, &b_r, &c_r);
     calculate_coefficients_single_pad(signal_pl, distance, &a_l, &b_l, &c_l);
     // Calculate the coefficients for the current approximation from a constant
-    calculate_magnetic_coefficients(signal_current_l[0], distance[0], current_1, &a_magn1_l);
-    calculate_magnetic_coefficients(signal_current_r[0], distance[0], current_1, &a_magn1_r);
-    calculate_magnetic_coefficients(signal_current_l[1], distance[1], current_1, &a_magn2_l);
-    calculate_magnetic_coefficients(signal_current_r[1], distance[1], current_1, &a_magn2_r);
-    calculate_magnetic_coefficients(signal_current_l[2], distance[2], current_1, &a_magn3_l);
-    calculate_magnetic_coefficients(signal_current_r[2], distance[2], current_1, &a_magn3_r);
+    calculate_magnetic_coefficients(signal_current_l_C1_1P, distance[0], current_1, &a_magn1_l_1P);
+    calculate_magnetic_coefficients(signal_current_l_C2_1P, distance[0], current_2, &a_magn2_l_1P);
+    calculate_magnetic_coefficients(signal_current_r_C1_1P, distance[0], current_1, &a_magn1_r_1P);
+    calculate_magnetic_coefficients(signal_current_r_C2_1P, distance[0], current_2, &a_magn2_r_1P);
+    calculate_magnetic_coefficients(signal_current_l_C1_3P, distance[0], current_1, &a_magn1_l_3P);
+    calculate_magnetic_coefficients(signal_current_l_C2_3P, distance[0], current_2, &a_magn2_l_3P);
+    calculate_magnetic_coefficients(signal_current_r_C1_3P, distance[0], current_1, &a_magn1_r_3P);
+    calculate_magnetic_coefficients(signal_current_r_C2_3P, distance[0], current_2, &a_magn2_r_3P);
 }
 
 /**
  * Calculates the coefficients for the distance approximation from an approximation based on a second degree polynomial.
  *
- * @param s An array containing the values x_0, x_1, x_2.
- * @param d An array containing the values y_0, y_1, y_2.
+ * @param s An array of three float32_t values representing x coordinates: x_0, x_1, x_2.
+ * @param d An array of three float32_t values representing y coordinates: y_0, y_1, y_2.
+ * @param a Pointer to a float32_t variable to store the calculated coefficient 'a'.
+ * @param b Pointer to a float32_t variable to store the calculated coefficient 'b'.
+ * @param c Pointer to a float32_t variable to store the calculated coefficient 'c'.
  */
 void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* a, float32_t* b, float32_t* c) {
     // s = x_0, x_1, x_2 d= y_0, y_1, y_2
@@ -470,14 +553,15 @@ void calculate_coefficients_single_pad(float32_t s[], float32_t d[], float32_t* 
  *
  * This function calculates the magnetic coefficients based on the given parameters.
  *
- * @param s The value of signal at given distance d.
- * @param d The value of distance.
- * @param cal_current The value of the calibration current.
- * @param a_magn Pointer to the variable where the calculated magnetic coefficients will be stored.
+ * @param s The value of s.
+ * @param d The value of d.
+ * @param cal_current The calibration current.
+ * @param a_magn Pointer to store the calculated magnetic coefficients.
  */
 void calculate_magnetic_coefficients(float32_t s, float32_t d, float32_t cal_current, float32_t* a_magn){
     *a_magn = cal_current / (s * d);
 }
+
 
 void toggle_Buzzer_settings(bool btn)
 {
