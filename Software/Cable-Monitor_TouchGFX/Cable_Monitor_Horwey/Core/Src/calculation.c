@@ -82,22 +82,25 @@
 /******************************************************************************
  * Variables
  *****************************************************************************/
-float32_t a_r = 0;
-float32_t b_r = 0;
-float32_t c_r = 0;
+static float32_t a_r = 0;
+static float32_t b_r = 0;
+static float32_t c_r = 0;
 
-float32_t a_l = 0;
-float32_t b_l = 0;
-float32_t c_l = 0;
+static float32_t a_l = 0;
+static float32_t b_l = 0;
+static float32_t c_l = 0;
 
-float32_t a_magn1_l = 0;
-float32_t a_magn1_r = 0;
+static float32_t a_magn1_l_1P = 0;
+static float32_t a_magn1_r_1P = 0;
 
-float32_t a_magn2_l = 0;
-float32_t a_magn2_r = 0;
+static float32_t a_magn2_l_1P = 0;
+static float32_t a_magn2_r_1P = 0;
 
-float32_t a_magn3_l = 0;
-float32_t a_magn3_r = 0;
+static float32_t a_magn1_l_3P = 0;
+static float32_t a_magn1_r_3P = 0;
+
+static float32_t a_magn2_l_3P = 0;
+static float32_t a_magn2_r_3P = 0;
 
 /******************************************************************************
  * Functions
@@ -290,21 +293,32 @@ SINGLE_MEAS single_measurement(uint8_t Phase) {
     single_meas.distance = dist_angle.distance;
     single_meas.angle = dist_angle.angle;
 
-    // TODO: Calculate current
-    if(0 <= single_meas.distance && single_meas.distance <= 25){
-        current_l = a_magn1_l * single_meas.distance * signal_strength_HSL;
-        current_r = a_magn1_r * single_meas.distance * signal_strength_HSR;
+    // Calculate the current using the magnetic coefficients for 5A
+    if(Phase == SINGLE_PHASE){
+        current_l = a_magn2_l_1P * single_meas.distance * signal_strength_HSL;
+        current_r = a_magn2_r_1P * single_meas.distance * signal_strength_HSR;
         single_meas.current = (current_l + current_r) / 2;
-    } else if(25 < single_meas.distance && single_meas.distance <= 75){
-        current_l = a_magn2_l * single_meas.distance * signal_strength_HSL;
-        current_r = a_magn2_r * single_meas.distance * signal_strength_HSR;
-        single_meas.current = (current_l + current_r) / 2;
-    } else if (75 < single_meas.distance && single_meas.distance <= 125){
-        current_l = a_magn3_l * single_meas.distance * signal_strength_HSL;
-        current_r = a_magn3_r * single_meas.distance * signal_strength_HSR;
-        single_meas.current = (current_l + current_r) / 2;
-    } else {
-        single_meas.current = 0;
+    } else if(Phase == THREE_PHASE){
+        if (signal_strength_HSL > signal_strength_HSR){
+            single_meas.current = a_magn2_l_3P * single_meas.distance * signal_strength_HSL;
+        } else {
+            single_meas.current = a_magn2_r_3P * single_meas.distance * signal_strength_HSR;
+        }
+    }
+
+    // Check if the current is smaller than 4 A -> use the magnetic coefficients for 1.2 A
+    if (single_meas.current < 4){
+        if(Phase == SINGLE_PHASE){
+            current_l = a_magn1_l_1P * single_meas.distance * signal_strength_HSL;
+            current_r = a_magn1_r_1P * single_meas.distance * signal_strength_HSR;
+            single_meas.current = (current_l + current_r) / 2;
+        } else if(Phase == THREE_PHASE){
+            if (signal_strength_HSL > signal_strength_HSR){
+                single_meas.current = a_magn1_l_3P * single_meas.distance * signal_strength_HSL;
+            } else {
+                single_meas.current = a_magn1_r_3P * single_meas.distance * signal_strength_HSR;
+            }
+        }
     }
 
     return single_meas;
@@ -412,19 +426,27 @@ void start_calibration(void)
     // initialize arrays with values from the calibration (flash memory)
     float32_t signal_pl[3] = {Calibration_Data[0], Calibration_Data[1], Calibration_Data[2]};
     float32_t signal_pr[3] = {Calibration_Data[3], Calibration_Data[4], Calibration_Data[5]};
-    float32_t signal_current_l[3] = {Calibration_Data[6], Calibration_Data[7], Calibration_Data[8]};
-    float32_t signal_current_r[3] = {Calibration_Data[9], Calibration_Data[10], Calibration_Data[11]};
+    float32_t signal_current_l_C1_1P = Calibration_Data[6];
+    float32_t signal_current_l_C2_1P = Calibration_Data[7];
+    float32_t signal_current_r_C1_1P = Calibration_Data[8];
+    float32_t signal_current_r_C2_1P = Calibration_Data[9];
+    float32_t signal_current_l_C1_3P = Calibration_Data[10];
+    float32_t signal_current_l_C2_3P = Calibration_Data[11];
+    float32_t signal_current_r_C1_3P = Calibration_Data[12];
+    float32_t signal_current_r_C2_3P = Calibration_Data[13];
 
     // Calculate the coefficients for the distance approximation from a second degree polynomial
     calculate_coefficients_single_pad(signal_pr, distance, &a_r, &b_r, &c_r);
     calculate_coefficients_single_pad(signal_pl, distance, &a_l, &b_l, &c_l);
     // Calculate the coefficients for the current approximation from a constant
-    calculate_magnetic_coefficients(signal_current_l[0], distance[0], current_1, &a_magn1_l);
-    calculate_magnetic_coefficients(signal_current_r[0], distance[0], current_1, &a_magn1_r);
-    calculate_magnetic_coefficients(signal_current_l[1], distance[1], current_1, &a_magn2_l);
-    calculate_magnetic_coefficients(signal_current_r[1], distance[1], current_1, &a_magn2_r);
-    calculate_magnetic_coefficients(signal_current_l[2], distance[2], current_1, &a_magn3_l);
-    calculate_magnetic_coefficients(signal_current_r[2], distance[2], current_1, &a_magn3_r);
+    calculate_magnetic_coefficients(signal_current_l_C1_1P, distance[0], current_1, &a_magn1_l_1P);
+    calculate_magnetic_coefficients(signal_current_l_C2_1P, distance[0], current_2, &a_magn2_l_1P);
+    calculate_magnetic_coefficients(signal_current_r_C1_1P, distance[0], current_1, &a_magn1_r_1P);
+    calculate_magnetic_coefficients(signal_current_r_C2_1P, distance[0], current_2, &a_magn2_r_1P);
+    calculate_magnetic_coefficients(signal_current_l_C1_3P, distance[0], current_1, &a_magn1_l_3P);
+    calculate_magnetic_coefficients(signal_current_l_C2_3P, distance[0], current_2, &a_magn2_l_3P);
+    calculate_magnetic_coefficients(signal_current_r_C1_3P, distance[0], current_1, &a_magn1_r_3P);
+    calculate_magnetic_coefficients(signal_current_r_C2_3P, distance[0], current_2, &a_magn2_r_3P);
 }
 
 /**
