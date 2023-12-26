@@ -6,27 +6,39 @@
  * Trigonometry used for distance and angle calculation
  * ====================================================
  *
- * Calibration
+ * Distance Calibration
  * -----------
- * For calibration the angle is given, because
- * the board is placed perpendicular to the wire.
- * @n The equation for this trigonometry can be seen
- * under the figure.
- * @n d: Distance from wire to pad (left or right)
- * @n l: Distance from the board center to wire
- * @n x: Distance from the board center to pad
+ * For calibration the distance between the board and the wire is given.
+ * The board is placed perpendicular to the wire.
+ * The distance between the board and the wire is measured with a ruler.
+ * The distance calibration is done with 3 measurements per pad through the GUI.
+ * This measurements are done with a distance of 10, 50 and 100 mm.
+ * The signal strength (FFT) is measured for each individual pad, for each distance.
+ * refer to image below for better understanding of the calibration setup.
+ * @n values are read from flash: @ref start_calibration
  * @see D_P Distance from the board center to pad
  *
- * @image html trigonometry_calibration.jpg
+ * @image html Doxygen/img/Calibration_Setup.png
  *
- * Measure
+ * Angle Calculation and distance approximation
  * -------
  * The equation for this trigonometry can be seen
  * under the figure.
  *
- * @image html trigonometry_measure.jpg
+ * @image html Doxygen/img/Angle_Calculation.png
  *
- *
+ * The arctangent function used to calculate the angle 
+ * between Pad_Distance readings maps any real number to an angle 
+ * in the range of -90 to 90 degrees,  representing the ratio 
+ * of the difference in Pads_Distance values to the fixed distance 
+ * between the Pads, thus allowing for the calculation of angles up to ±90 degrees.
+ * This approach interprets extreme distance value differences as steep angles 
+ * approaching the vertical, corresponding to ±90 degrees 
+ * in a right-angled triangle framework.
+ * 
+ * @n signal_l: Signal strength of the left pad
+ * @n signal_r: Signal strength of the right pad
+ * 
  * Approximation used for calculations
  * ===================================
  * Distance
@@ -49,7 +61,8 @@
  *
  * @image html approximation_constant.jpg
  *
- * @todo Optimize Angle Calculation, Current Calculation, Calibration Hall Sensor
+ * @todo Optimize accuracy of approximation
+ * @bug Current calculation sometîmes returns nan or inf values
  * ----------------------------------------------------------------------------
  * @author  Alejandro Horvat, horvaale@students.zhaw.ch
  * @date	12.28.2021
