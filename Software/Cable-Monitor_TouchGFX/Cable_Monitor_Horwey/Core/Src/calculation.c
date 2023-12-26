@@ -18,23 +18,25 @@
  * @n values are read from flash: @ref start_calibration
  * @see D_P Distance from the board center to pad
  *
- * @image html Doxygen/img/Calibration_Setup.png
+ * @image html Doxygen/img/Calibration_Setup.png height=400px
  *
  * Angle Calculation and distance approximation
  * -------
  * The equation for this trigonometry can be seen
  * under the figure.
  *
- * @image html Doxygen/img/Angle_Calculation.png
+ * @image html Doxygen/img/Angle_Calculation.png height=400px
  *
- * The arctangent function used to calculate the angle 
- * between Pad_Distance readings maps any real number to an angle 
- * in the range of -90 to 90 degrees,  representing the ratio 
- * of the difference in Pads_Distance values to the fixed distance 
- * between the Pads, thus allowing for the calculation of angles up to ±90 degrees.
- * This approach interprets extreme distance value differences as steep angles 
- * approaching the vertical, corresponding to ±90 degrees 
- * in a right-angled triangle framework.
+ * The arctangent function, applied to calculate the angle between sensor readings, 
+ * maps any real number to an angle within -90 to 90 degrees, 
+ * reflecting the ratio of sensor value differences to the fixed sensor separation, 
+ * thereby facilitating the calculation of angles up to ±90 degrees. 
+ * However, visualizing these angles as traditional triangles is challenging, 
+ * as extreme sensor value differences — representing steep, 
+ * nearly vertical angles — do not correspond neatly to standard geometric shapes.
+ * Thats why the visualisation using the right angle triangle 
+ * only allows angles between -45 and 45 degrees to be visualized.
+ * @ref reffer to image above
  * 
  * @n signal_l: Signal strength of the left pad
  * @n signal_r: Signal strength of the right pad
@@ -44,6 +46,7 @@
  * Distance
  * --------
  * Approximation is done with a Laurent polynomial 2nd degree.
+ * By solving the equation system with the 3 measurements, the coefficients can be calculated.
  * @n For calibration only 3 measurements are needed.
  * @n d1,d2,d3: Distance for each measurement
  * @n s1,s2,s3: Signal for each measurement
@@ -62,6 +65,7 @@
  * @image html approximation_constant.jpg
  *
  * @todo Optimize accuracy of approximation
+ * 
  * @bug Current calculation sometîmes returns nan or inf values
  * ----------------------------------------------------------------------------
  * @author  Alejandro Horvat, horvaale@students.zhaw.ch
