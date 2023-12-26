@@ -15,12 +15,10 @@ var searchData=
   ['disable_5fled_12',['DISABLE_LED',['../calculation_8h.html#a8f63964ce584a43cbad406260d4e132b',1,'calculation.h']]],
   ['disable_5ftouchgfx_5finterrupts_13',['DISABLE_TOUCHGFX_INTERRUPTS',['../calculation_8h.html#af8effa27f0158badaff3cc62a6016095',1,'calculation.h']]],
   ['distance_14',['distance',['../struct_s_i_n_g_l_e___m_e_a_s.html#aee4ba99f2d04d448f9bc6d1f3844e91e',1,'SINGLE_MEAS::distance'],['../struct_a_c_c_u___m_e_a_s.html#aee4ba99f2d04d448f9bc6d1f3844e91e',1,'ACCU_MEAS::distance'],['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html#aee4ba99f2d04d448f9bc6d1f3844e91e',1,'DISTANCE_ANGLE::distance']]],
-  ['distance_15',['Distance',['../calculation_8c.html#autotoc_md4',1,'']]],
-  ['distance_20and_20angle_20calculation_16',['Trigonometry used for distance and angle calculation',['../calculation_8c.html#autotoc_md0',1,'']]],
-  ['distance_5fangle_17',['DISTANCE_ANGLE',['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html',1,'']]],
-  ['distance_5fl_18',['distance_l',['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html#ae38c898f873018b239d45a915ba56336',1,'DISTANCE_ANGLE']]],
-  ['distance_5fr_19',['distance_r',['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html#aa5df9a28939cf5e5bf8a061bb91bf3be',1,'DISTANCE_ANGLE']]],
-  ['distance_5fstd_5fdev_20',['distance_std_dev',['../struct_a_c_c_u___m_e_a_s.html#a82445fde9113461d31e14e08ea17aaab',1,'ACCU_MEAS']]],
-  ['dma_21',['How to Configure the Peripherals: ADC, TIMER and DMA',['../measuring_8c.html#autotoc_md9',1,'']]],
-  ['dma2_5fstream1_5firqhandler_22',['DMA2_Stream1_IRQHandler',['../measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2',1,'measuring.c']]]
+  ['distance_5fangle_15',['DISTANCE_ANGLE',['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html',1,'']]],
+  ['distance_5fl_16',['distance_l',['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html#ae38c898f873018b239d45a915ba56336',1,'DISTANCE_ANGLE']]],
+  ['distance_5fr_17',['distance_r',['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html#aa5df9a28939cf5e5bf8a061bb91bf3be',1,'DISTANCE_ANGLE']]],
+  ['distance_5fstd_5fdev_18',['distance_std_dev',['../struct_a_c_c_u___m_e_a_s.html#a82445fde9113461d31e14e08ea17aaab',1,'ACCU_MEAS']]],
+  ['dma2_5fstream1_5firqhandler_19',['DMA2_Stream1_IRQHandler',['../measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2',1,'measuring.c']]],
+  ['documentation_20',['Cable-Monitor Code Documentation',['../index.html',1,'']]]
 ];

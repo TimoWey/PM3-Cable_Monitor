@@ -1,20 +1,40 @@
 /**
-@mainpage Cable-Monitor-Code
+@mainpage Cable-Monitor Code Documentation
 
 This code_cable_monitor is the firmware for the <b>Electronics-Project Modules</b>
 <b>ET.PM3: Cable-Monitor</b>
-@n A cable monitor had to be developed. It should sense a mains cable via the 
-electrostatic, as well as electromagnetic field. Furthermore, it should be able 
-to measure the distance and the current flowing through it. The values are then 
-displayed on a touch display.
+@n As part of the Project Module 3 in the 5th Semester, the objective was to develop a Cable-Monitor.
+This device should be able to find hidden cables in walls, floors and ceilings by measuring the
+electromagnetic and electrostatic fields of the cable. By making use of the display from the 
+provided development kit, the user is guided to the approximate location of the cable. In addition, 
+audible feedback is provided using a buzzer and useful information such as the current and voltage, 
+is shown on the display. To be able to measure such weak signals, an amplifier had to be used. The 
+amplification was also paired with a Multi-Feedback-Bandpass-Filter (MFB) to eliminate unnecessary 
+frequencies and filter out the wanted 50 Hz signal. Subsequently, the signal is fed into an
+Analog-to-Digital-Converter (ADC) and read by the microcontroller. 
+The final product aims to detect various types of cables, including one- or two-phased cables
+and will feature an intuitive touch interface. The challenge extended beyond the realms of hardware 
+and software to effective teamwork, as the project was a collaborative effort between two individuals. 
+Successful completion required meticulous planning and coordination between team members.
 
 @n The file measuring.c prepares the measured data.
 @n calculation.c performs the necessary calculations for displaying the measurements.
-@n While the file menu.c takes care of the menu change and the touchscreen.
-@n display.c determines the visuals of the display.
 @n main.c puts everything together.
 
-@image html board.png
+
+@n The following renders show the front and back view of the cable monitor.
+<table>
+<tr>
+<td>
+\image html Doxygen/img/Cable_Monitor_Front.png "Front View" width=300px
+</td>
+<td>
+\image html Doxygen/img/Cable_Monitor_Back.png "Back View" width=300px
+</td>
+</tr>
+</table>
+
+
 
 This code is written for the evaluation board
 <b>32F429IDISCOVERY (Discovery kit with STM32F429ZI MCU)</b>.
@@ -22,11 +42,11 @@ This code is written for the evaluation board
 
 How to use
 ---
-With this firmware you are able to perform distance, angle and current 
-measurements of mains cables. There is also the possibility for a simple 
-and fast calibration.
-@n The use of the menu should be self-explanatory.
-Everything is described on the respective page.
+This Firmware offers a comprehensive set of features for cable measurement. It allows you to determine the distance to a cable, measure the current flowing through it, and identify its frequency. Additionally, it provides user-friendly guidance through a visual gauge that displays the angle to the cable.
+In the measurement menu, users have the flexibility to choose between two modes: a single, quicker measurement that takes only about 5 periods of a 50Hz signal, or a more precise but slower accurate measurement, which requires approximately 50 periods for completion.
+For enhanced accuracy, the calibration menu enables users to fine-tune distance and current measurements. These calibration values are securely stored in the microcontroller's flash memory.
+In the main menu, located in the top left corner, users can access the settings menu to control the buzzer and LED functions. Furthermore, in the top right corner of the main menu, there is an option to disable the cable monitor.
+Additionally, an information menu is available to provide users with detailed information about the cable monitor's functionality and operation.
 
 Testing
 ---
@@ -37,6 +57,6 @@ Bugs
 @link bug.html @endlink
 
 ---
-@author	Fabian Erni, ernifab@students.zhaw.ch & Flavio Felder, feldefla@students.zhaw.ch
-@date 12.28.2021
+@authors	Alejandro Horvat, horvaale@students.zhaw.ch & Timo Wey, weytim01@students.zhaw.ch
+@date 27.12.2023
 */

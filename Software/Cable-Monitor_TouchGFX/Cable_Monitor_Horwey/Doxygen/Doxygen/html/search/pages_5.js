@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['software_20library_0',['CMSIS DSP Software Library',['../index.html',1,'']]]
+  ['monitor_20code_20documentation_0',['Cable-Monitor Code Documentation',['../index.html',1,'']]]
 ];
