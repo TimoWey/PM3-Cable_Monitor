@@ -83,6 +83,9 @@ $(function() {
   <div class="headertitle"><div class="title">measuring.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Measuring input signal using following configuration:   
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &quot;stm32f4xx.h&quot;</code><br />
@@ -146,17 +149,9 @@ Functions</h2></td></tr>
 <tr class="separator:a2756121f7d9be8c582e834ec0382b01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><hr  />
-<h1><a class="anchor" id="autotoc_md7"></a>
-@brief Measuring input signal using following configuration:</h1>
-<ul>
-<li>ADC triggered by a timer and with interrupt after end of conversion</li>
-<li>ADC combined with DMA (Direct Memory Access) to fill a buffer</li>
-<li>Scan mode = sequential sampling of two inputs by one ADC</li>
-<li>Analog mode configuration for GPIOs</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Peripherals <a class="el" href="#HowTo">HowTo</a></h1>
+<div class="textblock"><p>Measuring input signal using following configuration:  </p>
+<hr  />
+<h1>\iline 4 4ADC triggered by a timer and with interrupt after end of conversionconversionADC combined with DMA (Direct Memory Access) to fill a bufferbufferScan mode = sequential sampling of two inputs by one ADCADCAnalog mode configuration for GPIOs Peripherals @ref HowTo </h1>
 <p>This Software is to be used with the STM32F4-Discovery Board in conjunction with the Cable-Monitor Board designed by A. Horvat and T. Wey. <br  />
  The Cable-Monitor Board is connected to the STM32F4-Discovery Board</p>
 <div class="image">
@@ -170,9 +165,7 @@ Peripherals <a class="el" href="#HowTo">HowTo</a></h1>
 <li>NVIC</li>
 <li>RCC</li>
 </ul>
-<p><a class="anchor" id="HowTo"></a></p>
-<h1><a class="anchor" id="autotoc_md9"></a>
-How to Configure the Peripherals: ADC, TIMER and DMA</h1>
+<p><a class="anchor" id="HowTo"></a></p><h1>How to Configure the Peripherals: ADC, TIMER and DMA </h1>
 <p>All the peripherals are accessed by writing to or reading from registers. From the programmer’s point of view this is done exactly as writing or reading the value of a variable. <br  />
  Writing to a register configures the HW of the associated peripheral to do what is required. <br  />
  Reading from a registers gets status and data from the HW peripheral.</p>
