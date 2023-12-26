@@ -11,6 +11,6 @@ var searchData=
   ['signal_5fstrength_5fpr_5fstd_5fdev_8',['signal_strength_pr_std_dev',['../struct_a_c_c_u___f_f_t.html#a035152441346c5f524efaa423fb9949c',1,'ACCU_FFT']]],
   ['sleep_5ftimeout_5fvalue_9',['sleep_timeout_value',['../main_8h.html#afd60c544c217169ceebd6daf55f54e14',1,'sleep_timeout_value:&#160;main.c'],['../main_8c.html#afd60c544c217169ceebd6daf55f54e14',1,'sleep_timeout_value:&#160;main.c']]],
   ['spi5timeout_10',['Spi5Timeout',['../main_8c.html#af4e3feeb6f1fc7a4acd9570cbfce9617',1,'main.c']]],
-  ['state_5fbuzzer_11',['State_BUZZER',['../calculation_8c.html#a38561fdc926275e79fcc8d74e1d56373',1,'State_BUZZER:&#160;calculation.c'],['../_settings_view_8cpp.html#a38561fdc926275e79fcc8d74e1d56373',1,'State_BUZZER:&#160;calculation.c']]],
+  ['state_5fbuzzer_11',['state_buzzer',['../calculation_8c.html#a38561fdc926275e79fcc8d74e1d56373',1,'State_BUZZER:&#160;calculation.c'],['../_settings_view_8cpp.html#a38561fdc926275e79fcc8d74e1d56373',1,'State_BUZZER:&#160;calculation.c']]],
   ['state_5fled_12',['State_LED',['../calculation_8c.html#a505d7c6b96ad0efb16bb1cdecdadae93',1,'calculation.c']]]
 ];

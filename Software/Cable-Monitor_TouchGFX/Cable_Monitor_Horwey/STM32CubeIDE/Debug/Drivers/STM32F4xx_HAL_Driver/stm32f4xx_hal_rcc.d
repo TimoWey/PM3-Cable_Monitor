@@ -1,5 +1,5 @@
 Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \

@@ -1,21 +1,19 @@
-/** ***************************************************************************
+/** *****************************************************************************
  * @file
  * @brief Measuring input signal using following configuration:
- * ==============================================================
- *
+ * 
+ * Configuration of ADC, timer and DMA
+ * -----------
  * - ADC triggered by a timer and with interrupt after end of conversion
  * - ADC combined with DMA (Direct Memory Access) to fill a buffer
  * - Scan mode = sequential sampling of two inputs by one ADC
  * - Analog mode configuration for GPIOs
  *
- * Peripherals @ref HowTo
- * ======================
- * 
- * This Software is to be used with the STM32F4-Discovery Board in conjunction
+ * @details This Software is to be used with the STM32F4-Discovery Board in conjunction
  * with the Cable-Monitor Board designed by A. Horvat and T. Wey.
- * @n The Cable-Monitor Board is connected to the STM32F4-Discovery Board
- * 
- * @image html Cable_Monitor_Front.png
+ * \n The Cable-Monitor Board is connected to the STM32F4-Discovery Board
+ *
+ * @image html Doxygen/img/Cable_Monitor_Front.png height=400px
  *
  * The following peripherals are used:
  * - ADC3
@@ -24,7 +22,7 @@
  * - GPIO
  * - NVIC
  * - RCC
- * 
+ *
  * @anchor HowTo
  * How to Configure the Peripherals: ADC, TIMER and DMA
  * ====================================================
