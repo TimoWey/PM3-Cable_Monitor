@@ -16,12 +16,11 @@ var searchData=
   ['include_5fxtaskgetschedulerstate_13',['INCLUDE_xTaskGetSchedulerState',['../_free_r_t_o_s_config_8h.html#a9ed60ede556830584e6bfd4a3ab4f9de',1,'FreeRTOSConfig.h']]],
   ['include_5fxtimerpendfunctioncall_14',['INCLUDE_xTimerPendFunctionCall',['../_free_r_t_o_s_config_8h.html#a4b4336acd61a8e513ca2376be84326b5',1,'FreeRTOSConfig.h']]],
   ['initialize_15',['initialize',['../class_configuration___container.html#a6365dca5a7d8ddb694726a53b55a4c27',1,'Configuration_Container']]],
-  ['input_20signal_20using_20following_20configuration_3a_16',['@brief Measuring input signal using following configuration:',['../measuring_8c.html#autotoc_md7',1,'']]],
-  ['input_5fcount_17',['INPUT_COUNT',['../measuring_8c.html#a08f4cb5cb205c824902548906a61cb60',1,'measuring.c']]],
-  ['ioe_5fdelay_18',['IOE_Delay',['../main_8c.html#afe6384ff1973503e54b8daa35470b0ec',1,'main.c']]],
-  ['ioe_5finit_19',['IOE_Init',['../main_8c.html#a20cd09e59bac7284d1342b6741733593',1,'main.c']]],
-  ['ioe_5fitconfig_20',['IOE_ITConfig',['../main_8c.html#ac33b368855363c8f6b05b7218bad4f7c',1,'main.c']]],
-  ['ioe_5fread_21',['IOE_Read',['../main_8c.html#a1fb4704e1fedb443110f4a68d75c6150',1,'main.c']]],
-  ['ioe_5freadmultiple_22',['IOE_ReadMultiple',['../main_8c.html#a8c1a6f29316f73b7f067e815f7ccca36',1,'main.c']]],
-  ['ioe_5fwrite_23',['IOE_Write',['../main_8c.html#ac9aaccafd33dc8ce45ee7bce22ff361e',1,'main.c']]]
+  ['input_5fcount_16',['INPUT_COUNT',['../measuring_8c.html#a08f4cb5cb205c824902548906a61cb60',1,'measuring.c']]],
+  ['ioe_5fdelay_17',['IOE_Delay',['../main_8c.html#afe6384ff1973503e54b8daa35470b0ec',1,'main.c']]],
+  ['ioe_5finit_18',['IOE_Init',['../main_8c.html#a20cd09e59bac7284d1342b6741733593',1,'main.c']]],
+  ['ioe_5fitconfig_19',['IOE_ITConfig',['../main_8c.html#ac33b368855363c8f6b05b7218bad4f7c',1,'main.c']]],
+  ['ioe_5fread_20',['IOE_Read',['../main_8c.html#a1fb4704e1fedb443110f4a68d75c6150',1,'main.c']]],
+  ['ioe_5freadmultiple_21',['IOE_ReadMultiple',['../main_8c.html#a8c1a6f29316f73b7f067e815f7ccca36',1,'main.c']]],
+  ['ioe_5fwrite_22',['IOE_Write',['../main_8c.html#ac9aaccafd33dc8ce45ee7bce22ff361e',1,'main.c']]]
 ];
