@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['dma_5fhandletypedef_0',['DMA_HandleTypeDef',['../group___d_m_a___exported___types.html#ga41b754a906b86bce54dc79938970138b',1,'stm32f4xx_hal_dma.h']]]
+  ['userdefinedpresentertypes_0',['UserDefinedPresenterTypes',['../class_frontend_heap.html#a48e0d50a8b0551b2aa38528436167bad',1,'FrontendHeap']]],
+  ['userdefinedtransitiontypes_1',['UserDefinedTransitionTypes',['../class_frontend_heap.html#a4b0123fd965f9a0238b0ae5bc5fee41e',1,'FrontendHeap']]],
+  ['userdefinedviewtypes_2',['UserDefinedViewTypes',['../class_frontend_heap.html#a7253aafa197395fe174b6540c76494af',1,'FrontendHeap']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arm_5fstatus_0',['arm_status',['../arm__math_8h.html#a5e459c6409dfcd2927bb8a57491d7cf6',1,'arm_math.h']]]
+  ['calc_5ferror_5fitem_0',['CALC_ERROR_ITEM',['../calculation_8h.html#a563ecf0d7220a38a3b2fab1de4856e2a',1,'calculation.h']]]
 ];

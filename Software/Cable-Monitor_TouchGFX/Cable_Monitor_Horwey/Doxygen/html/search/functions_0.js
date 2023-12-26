@@ -1,26 +1,9 @@
 var searchData=
 [
-  ['_5f_5fqadd_0',['__QADD',['../arm__math_8h.html#ab9f3cfbfb0f12975ab91ddb179160dcb',1,'arm_math.h']]],
-  ['_5f_5fqadd16_1',['__QADD16',['../arm__math_8h.html#a08bea9cb2c311d925224c0d6829edb8c',1,'arm_math.h']]],
-  ['_5f_5fqadd8_2',['__QADD8',['../arm__math_8h.html#a937a37e831677294ecde7195ec9d68ee',1,'arm_math.h']]],
-  ['_5f_5fqasx_3',['__QASX',['../arm__math_8h.html#aad6f7afa72d784b95e6357c215a919bb',1,'arm_math.h']]],
-  ['_5f_5fqsax_4',['__QSAX',['../arm__math_8h.html#a391f5f1d2e7cefaccfece0a49141ad47',1,'arm_math.h']]],
-  ['_5f_5fqsub_5',['__QSUB',['../arm__math_8h.html#a15e896d0146c280e600d00f609832350',1,'arm_math.h']]],
-  ['_5f_5fqsub16_6',['__QSUB16',['../arm__math_8h.html#a6e4703dc08d1b82eab7f5ef96edb59bb',1,'arm_math.h']]],
-  ['_5f_5fqsub8_7',['__QSUB8',['../arm__math_8h.html#a4690314b420f463093f1a2f68b5fb143',1,'arm_math.h']]],
-  ['_5f_5fshadd16_8',['__SHADD16',['../arm__math_8h.html#af3d7aff37a4472f1f2bc88eb3b97b526',1,'arm_math.h']]],
-  ['_5f_5fshasx_9',['__SHASX',['../arm__math_8h.html#af60f220d422ebc524411f712544feecf',1,'arm_math.h']]],
-  ['_5f_5fshsax_10',['__SHSAX',['../arm__math_8h.html#abbfbf3cfac1971b4b380c0cde120a85b',1,'arm_math.h']]],
-  ['_5f_5fshsub16_11',['__SHSUB16',['../arm__math_8h.html#a0987d147320a596bbdb537d70b23de73',1,'arm_math.h']]],
-  ['_5f_5fsmlad_12',['__SMLAD',['../arm__math_8h.html#aa611fdbf6c56c46553701d6596a79aaf',1,'arm_math.h']]],
-  ['_5f_5fsmladx_13',['__SMLADX',['../arm__math_8h.html#a7fc670277db1ad9ac34d52d771c7c305',1,'arm_math.h']]],
-  ['_5f_5fsmlald_14',['__SMLALD',['../arm__math_8h.html#a7aed02041f489a4f65dbd7093073d94e',1,'arm_math.h']]],
-  ['_5f_5fsmlaldx_15',['__SMLALDX',['../arm__math_8h.html#a3bdab9022ab56e30f6346a043050dfc4',1,'arm_math.h']]],
-  ['_5f_5fsmlsdx_16',['__SMLSDX',['../arm__math_8h.html#a5d61b7d886888f9f1f35c079eb5d01c9',1,'arm_math.h']]],
-  ['_5f_5fsmmla_17',['__SMMLA',['../arm__math_8h.html#a0162015f6d3458e2934a265481460ec4',1,'arm_math.h']]],
-  ['_5f_5fsmuad_18',['__SMUAD',['../arm__math_8h.html#a2eed05660fedbe3fbd0b6dbb1315cfc3',1,'arm_math.h']]],
-  ['_5f_5fsmuadx_19',['__SMUADX',['../arm__math_8h.html#a9c58d7b4648a973d91e27544bc190e60',1,'arm_math.h']]],
-  ['_5f_5fsmusd_20',['__SMUSD',['../arm__math_8h.html#a6b293f62ad7eb225fa9ce0f39458eba3',1,'arm_math.h']]],
-  ['_5f_5fsmusdx_21',['__SMUSDX',['../arm__math_8h.html#a7375d1deba32929dc97008bfa7085d46',1,'arm_math.h']]],
-  ['_5f_5fsxtb16_22',['__SXTB16',['../arm__math_8h.html#ac9f7f02a5e0ad5642026dbd0da7418db',1,'arm_math.h']]]
+  ['accu_5fmeas_0',['accu_meas',['../class_measurement___accurate___display__1_p_view.html#a92067076f61a282a7f716c62766cb34a',1,'Measurement_Accurate_Display_1PView']]],
+  ['accu_5fmeas_5f3ph_1',['accu_meas_3PH',['../class_measurement___accurate___display__3_p_view.html#aab213b8a21000ff7b405bd1252eef702',1,'Measurement_Accurate_Display_3PView']]],
+  ['accurate_5ffft_2',['accurate_fft',['../calculation_8h.html#a4fddab1b09b687be16e69a9784d5b97b',1,'accurate_FFT(void):&#160;calculation.c'],['../calculation_8c.html#a4fddab1b09b687be16e69a9784d5b97b',1,'accurate_FFT(void):&#160;calculation.c']]],
+  ['accurate_5fmeasurement_3',['accurate_measurement',['../calculation_8h.html#ac084ccf3f955bc4c19751d6b24aa3814',1,'accurate_measurement(uint8_t Phase):&#160;calculation.c'],['../calculation_8c.html#ac084ccf3f955bc4c19751d6b24aa3814',1,'accurate_measurement(uint8_t Phase):&#160;calculation.c']]],
+  ['activate_4',['activate',['../class_calibration_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'CalibrationPresenter::activate()'],['../class_main___menu_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Main_MenuPresenter::activate()'],['../class_measurement___accurate___display__1_p_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Measurement_Accurate_Display_1PPresenter::activate()'],['../class_measurement___accurate___display__3_p_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Measurement_Accurate_Display_3PPresenter::activate()'],['../class_measurement___accurate_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Measurement_AccuratePresenter::activate()'],['../class_measurement_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'MeasurementPresenter::activate()'],['../class_measurement___single___display__1_p_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Measurement_Single_Display_1PPresenter::activate()'],['../class_measurement___single___display__3_p_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Measurement_Single_Display_3PPresenter::activate()'],['../class_measurement___single_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Measurement_SinglePresenter::activate()'],['../class_project___info_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Project_InfoPresenter::activate()'],['../class_settings_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'SettingsPresenter::activate()'],['../class_shutting___off_presenter.html#a8011fcbeb5efeda20bd2dbffbbb70165',1,'Shutting_OffPresenter::activate()']]],
+  ['adc_5freset_5',['ADC_reset',['../measuring_8h.html#ad33d4cf42023ab7762e61cddb0d4113a',1,'measuring.h']]]
 ];

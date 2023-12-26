@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['clarke_20transform_0',['Clarke Transform',['../group__clarke.html',1,'Vector Clarke Transform'],['../group__inv__clarke.html',1,'Vector Inverse Clarke Transform']]],
-  ['cmsis_1',['CMSIS',['../group___c_m_s_i_s.html',1,'']]],
-  ['complex_20math_20functions_2',['Complex Math Functions',['../group__group_cmplx_math.html',1,'']]],
-  ['control_3',['PID Motor Control',['../group___p_i_d.html',1,'']]],
-  ['controller_20functions_4',['Controller Functions',['../group__group_controller.html',1,'']]]
+  ['stm32f4xx_5fsystem_0',['Stm32f4xx_system',['../group__stm32f4xx__system.html',1,'']]],
+  ['stm32f4xx_5fsystem_5fprivate_5fdefines_1',['STM32F4xx_System_Private_Defines',['../group___s_t_m32_f4xx___system___private___defines.html',1,'']]],
+  ['stm32f4xx_5fsystem_5fprivate_5ffunctionprototypes_2',['STM32F4xx_System_Private_FunctionPrototypes',['../group___s_t_m32_f4xx___system___private___function_prototypes.html',1,'']]],
+  ['stm32f4xx_5fsystem_5fprivate_5ffunctions_3',['STM32F4xx_System_Private_Functions',['../group___s_t_m32_f4xx___system___private___functions.html',1,'']]],
+  ['stm32f4xx_5fsystem_5fprivate_5fincludes_4',['STM32F4xx_System_Private_Includes',['../group___s_t_m32_f4xx___system___private___includes.html',1,'']]],
+  ['stm32f4xx_5fsystem_5fprivate_5fmacros_5',['STM32F4xx_System_Private_Macros',['../group___s_t_m32_f4xx___system___private___macros.html',1,'']]],
+  ['stm32f4xx_5fsystem_5fprivate_5ftypesdefinitions_6',['STM32F4xx_System_Private_TypesDefinitions',['../group___s_t_m32_f4xx___system___private___types_definitions.html',1,'']]],
+  ['stm32f4xx_5fsystem_5fprivate_5fvariables_7',['STM32F4xx_System_Private_Variables',['../group___s_t_m32_f4xx___system___private___variables.html',1,'']]]
 ];
