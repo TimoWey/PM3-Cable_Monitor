@@ -7,5 +7,5 @@ var searchData=
   ['lcd_5fio_5fwritereg_4',['LCD_IO_WriteReg',['../main_8c.html#a435f47c3f7c327325ea17f71fae7cebc',1,'main.c']]],
   ['led_5fpwm_5fgpio_5fport_5',['LED_PWM_GPIO_Port',['../main_8h.html#ae301cd5a2018c8e53110c9671e56ebee',1,'main.h']]],
   ['led_5fpwm_5fpin_6',['LED_PWM_Pin',['../main_8h.html#a280a09b94f1c415aa8553cf781c43a74',1,'main.h']]],
-  ['list_7',['List',['../bug.html',1,'Bug List'],['../todo.html',1,'Todo List']]]
+  ['list_7',['list',['../bug.html',1,'Bug List'],['../todo.html',1,'Todo List']]]
 ];
