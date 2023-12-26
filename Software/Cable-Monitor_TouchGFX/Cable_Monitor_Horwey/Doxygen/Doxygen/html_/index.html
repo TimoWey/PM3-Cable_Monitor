@@ -76,28 +76,40 @@ $(function() {
   <div class="headertitle"><div class="title">Cable-Monitor Code Documentation </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This code_cable_monitor is the firmware for the <b>Electronics-Project Modules</b> <b>ET.PM3: Cable-Monitor</b> <br  />
- A cable monitor had to be developed. It should sense a mains cable via the electrostatic, as well as electromagnetic field. Furthermore, it should be able to measure the distance and the current flowing through it. The values are then displayed on a touch display.</p>
+<div class="textblock"><p>This is the firmware for the <b>Electronics-Project Module</b> <b>ET.PM3: Cable-Monitor</b></p>
 <p><br  />
- The file <a class="el" href="measuring_8c.html">measuring.c</a> prepares the measured data. <br  />
+ As part of the Project Module 3 in the 5th Semester, the objective was to develop a Cable-Monitor. This device should be able to find hidden cables in walls, floors and ceilings by measuring the electromagnetic and electrostatic fields of the cable. By making use of the display from the provided development kit, the user is guided to the approximate location of the cable. In addition, audible feedback is provided using a buzzer and useful information such as the current and voltage, is shown on the display. To be able to measure such weak signals, an amplifier had to be used. The amplification was also paired with a Multi-Feedback-Bandpass-Filter (MFB) to eliminate unnecessary frequencies and filter out the wanted 50 Hz signal. Subsequently, the signal is fed into an Analog-to-Digital-Converter (ADC) and read by the microcontroller. The final product aims to detect various types of cables, including one- or two-phased cables and will feature an intuitive touch interface. The challenge extended beyond the realms of hardware and software to effective teamwork, as the project was a collaborative effort between two individuals. Successful completion required meticulous planning and coordination between team members.</p>
+<h2>Core </h2>
+<p><br  />
+ <a class="el" href="measuring_8c.html" title="Measuring input signal using following configuration:">measuring.c</a> prepares the measured data. <br  />
+ <a class="el" href="_f_l_a_s_h___s_e_c_t_o_r___f4_8c.html">FLASH_SECTOR_F4.c</a> is used to store the calibration values in the flash memory. <br  />
  <a class="el" href="calculation_8c.html" title="Calculations for displaying the measurements.">calculation.c</a> performs the necessary calculations for displaying the measurements. <br  />
- While the file menu.c takes care of the menu change and the touchscreen. <br  />
- display.c determines the visuals of the display. <br  />
  <a class="el" href="main_8c.html" title=": Main program body">main.c</a> puts everything together.</p>
-<p>test</p>
-<p>This code is written for the evaluation board <b>32F429IDISCOVERY (Discovery kit with STM32F429ZI MCU)</b>.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
-How to use</h2>
-<p>This Firmware lets you measure the distance to a cable, the current flowing through it and the frequency. Also the user is guided to the cable via a gauge, which displays the angle to the cable. <br  />
- The use of the menu should be self-explanatory. Everything is described on the respective page.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
-Testing</h2>
+<h2>TouchGFX </h2>
+<p><br  />
+ In the src folder in generated/gui_generated, the code for all screen elements is generated. This was done using the TouchGFX Designer. <br  />
+ In the src folder in gui, the virtual functions are implemented.</p>
+<p><br  />
+ The following renders show the front and back view of the cable monitor. </p><table class="doxtable">
+<tr>
+<td><div class="image">
+<img src="Cable_Monitor_Front.png" alt="" height="400px"/>
+<div class="caption">
+Front View</div></div>
+  </td><td><div class="image">
+<img src="Cable_Monitor_Back.png" alt="" height="400px"/>
+<div class="caption">
+Back View</div></div>
+   </td></tr>
+</table>
+<h2>How to use </h2>
+<p>This Firmware offers a comprehensive set of features for cable measurement. It allows you to determine the distance to a cable, measure the current flowing through it, and identify its frequency. Additionally, it provides user-friendly guidance through a visual gauge that displays the angle to the cable. In the measurement menu, users have the flexibility to choose between two modes: a single, quicker measurement that takes only about 5 periods of a 50Hz signal, or a more precise but slower accurate measurement, which requires approximately 50 periods for completion. For enhanced accuracy, the calibration menu enables users to fine-tune distance and current measurements. These calibration values are securely stored in the microcontroller's flash memory. In the main menu, located in the top left corner, users can access the settings menu to control the buzzer and LED functions. Furthermore, in the top right corner of the main menu, there is an option to disable the cable monitor. Additionally, an information menu is available to provide users with detailed information about the cable monitor's functionality and operation.</p>
+<h2>Testing </h2>
 <p><a class="el" href="testing.html">testing.html</a></p>
-<h2><a class="anchor" id="autotoc_md15"></a>
-Bugs</h2>
-<p><a class="el" href="">bug.html</a></p>
+<h2>Bugs </h2>
+<p><a class="el" href="bug.html">bug.html</a></p>
 <hr  />
- <dl class="section author"><dt>Authors</dt><dd>Alejandro Horvat, <a href="#" onclick="location.href='mai'+'lto:'+'hor'+'va'+'ale'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">horva<span class="obfuscator">.nosp@m.</span>ale@<span class="obfuscator">.nosp@m.</span>stude<span class="obfuscator">.nosp@m.</span>nts.<span class="obfuscator">.nosp@m.</span>zhaw.<span class="obfuscator">.nosp@m.</span>ch</a> &amp; Timo Wey, <a href="#" onclick="location.href='mai'+'lto:'+'wey'+'ti'+'m01'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">weyti<span class="obfuscator">.nosp@m.</span>m01@<span class="obfuscator">.nosp@m.</span>stude<span class="obfuscator">.nosp@m.</span>nts.<span class="obfuscator">.nosp@m.</span>zhaw.<span class="obfuscator">.nosp@m.</span>ch</a> </dd></dl>
+ <dl class="section author"><dt>Author</dt><dd>Alejandro Horvat, <a href="#" onclick="location.href='mai'+'lto:'+'hor'+'va'+'ale'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">horva<span class="obfuscator">.nosp@m.</span>ale@<span class="obfuscator">.nosp@m.</span>stude<span class="obfuscator">.nosp@m.</span>nts.<span class="obfuscator">.nosp@m.</span>zhaw.<span class="obfuscator">.nosp@m.</span>ch</a> &amp; Timo Wey, <a href="#" onclick="location.href='mai'+'lto:'+'wey'+'ti'+'m01'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">weyti<span class="obfuscator">.nosp@m.</span>m01@<span class="obfuscator">.nosp@m.</span>stude<span class="obfuscator">.nosp@m.</span>nts.<span class="obfuscator">.nosp@m.</span>zhaw.<span class="obfuscator">.nosp@m.</span>ch</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>27.12.2023 </dd></dl>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
