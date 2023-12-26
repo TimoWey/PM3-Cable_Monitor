@@ -1,36 +1,30 @@
 /** ***************************************************************************
  * @file
- * @brief Measuring voltages with the ADC(s) in different configurations
- *
- *
- * Demonstrates different ADC (Analog to Digital Converter) modes
+ * @brief Measuring input signal using following configuration:
  * ==============================================================
  *
- * - ADC in single conversion mode
  * - ADC triggered by a timer and with interrupt after end of conversion
  * - ADC combined with DMA (Direct Memory Access) to fill a buffer
- * - Dual mode = simultaneous sampling of two inputs by two ADCs
  * - Scan mode = sequential sampling of two inputs by one ADC
- * - Simple DAC output is demonstrated as well
  * - Analog mode configuration for GPIOs
- * - Display recorded data on the graphics display
  *
  * Peripherals @ref HowTo
+ * ======================
+ * 
+ * This Software is to be used with the STM32F4-Discovery Board in conjunction
+ * with the Cable-Monitor Board designed by A. Horvat and T. Wey.
+ * @n The Cable-Monitor Board is connected to the STM32F4-Discovery Board
+ * 
+ * @image html Cable_Monitor_Front.png
  *
- * @image html demo_screenshot_board.jpg
- *
- *
- * HW used for the demonstrations
- * ==============================
- * A simple HW was used for testing the code.
- * It is connected to the pins marked in red in the above image.
- *
- * @image html demo_board_schematic.png
- *
- * Of course the code runs also without this HW.
- * Simply connect a signal or waveform generator to the input(s).
- *
- *
+ * The following peripherals are used:
+ * - ADC3
+ * - DMA2
+ * - TIM2
+ * - GPIO
+ * - NVIC
+ * - RCC
+ * 
  * @anchor HowTo
  * How to Configure the Peripherals: ADC, TIMER and DMA
  * ====================================================
@@ -43,12 +37,12 @@
  * @n Reading from a registers gets status and data from the HW peripheral.
  *
  * The information on which bits have to be set to get a specific behavior
- * is documented in the <b>reference manual</b> of the mikrocontroller.
+ * is documented in the <b>reference manual</b> of the microcontroller.
  *
  *
  * ----------------------------------------------------------------------------
  * @author Alejandro Horvat, horvaale@zhaw.ch
- * @date 17.06.2021
+ * @date 26.12.2023
  *****************************************************************************/
 
 /******************************************************************************
@@ -77,9 +71,8 @@
  * Variables
  *****************************************************************************/
 
-//static uint32_t ADC_sample_count = 0;  ///< Index for buffer
+static uint32_t ADC_samples[INPUT_COUNT * ADC_NUMS]; 
 ///< ADC values of max. 4 input channels
-static uint32_t ADC_samples[INPUT_COUNT * ADC_NUMS];
 
 /******************************************************************************
  * Functions
@@ -104,11 +97,13 @@ void MEAS_GPIO_analog_init(void)
     GPIOC->MODER |= (3UL << GPIO_MODER_MODER1_Pos);  // Analog PC1 = ADC3_IN11
 }
 
-/** ***************************************************************************
- * @brief Resets the ADCs and the timer
- *
- * to make sure the different demos do not interfere.
- *****************************************************************************/
+/**
+ * @brief Resets the ADCs, disables the timer.
+ * 
+ * This function resets the ADCs by asserting the ADC reset bit in the RCC_APB2RSTR register,
+ * then releases the reset by clearing the ADC reset bit. It also disables the timer by clearing
+ * the TIM_CR1_CEN bit in the TIM2 control register.
+ */
 void MEAS_ADC_reset(void)
 {
     RCC->APB2RSTR |= RCC_APB2RSTR_ADCRST;   // Reset ADCs
@@ -236,12 +231,14 @@ void DMA2_Stream1_IRQHandler(void)
  * Measurement functions
  *****************************************************************************/
 /** ***************************************************************************
- * @brief Start the measurement
+ * @brief Start the measurement by initialising the ADC, timer and DMA, it then
+ * starts the measurement and waits for the DMA to finish. The result is then
+ * returned.
+ *
  * @return ADC samples pointer
  *
  * @note The result is stored alternated e.g. every 4th is together.
  *****************************************************************************/
-// Start the measurement procedure
 uint32_t* MEAS_start_measure(void)
 {
 	MEAS_Buffer_reset(INPUT_COUNT, ADC_samples);

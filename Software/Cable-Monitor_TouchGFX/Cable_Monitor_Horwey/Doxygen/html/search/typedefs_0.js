@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['float32_5ft_0',['float32_t',['../arm__math_8h.html#a4611b605e45ab401f02cab15c5e38715',1,'arm_math.h']]],
-  ['float64_5ft_1',['float64_t',['../arm__math_8h.html#ac55f3ae81b5bc9053760baacf57e47f4',1,'arm_math.h']]]
+  ['combinedpresentertypes_0',['CombinedPresenterTypes',['../class_frontend_heap.html#aa558e3b72b9949123cc9bc8d19aec9da',1,'FrontendHeap']]],
+  ['combinedtransitiontypes_1',['CombinedTransitionTypes',['../class_frontend_heap.html#aed30949f14c7c9a233ec2406f62ba59e',1,'FrontendHeap']]],
+  ['combinedviewtypes_2',['CombinedViewTypes',['../class_frontend_heap.html#a610fa2c8d335f91498876c2904bea6fa',1,'FrontendHeap']]]
 ];

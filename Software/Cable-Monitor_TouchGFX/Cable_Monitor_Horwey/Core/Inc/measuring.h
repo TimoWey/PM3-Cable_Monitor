@@ -15,7 +15,6 @@
  *****************************************************************************/
 #include <stdbool.h>
 
-
 /******************************************************************************
  * Defines
  *****************************************************************************/
@@ -28,7 +27,6 @@ void MEAS_GPIO_analog_init(void);
 void MEAS_timer_init(void);
 void ADC_reset(void);
 uint16_t MEAS_get_samp_freq(void);
-
 uint32_t *MEAS_start_measure(void);
 
 #endif

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['single_5fmeas_0',['SINGLE_MEAS',['../struct_s_i_n_g_l_e___m_e_a_s.html',1,'']]]
+  ['fft_0',['FFT',['../struct_f_f_t.html',1,'']]],
+  ['frontendapplication_1',['FrontendApplication',['../class_frontend_application.html',1,'']]],
+  ['frontendheap_2',['FrontendHeap',['../class_frontend_heap.html',1,'']]]
 ];
