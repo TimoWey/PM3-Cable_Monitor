@@ -52,7 +52,7 @@ Project_InfoViewBase::Project_InfoViewBase() :
     line2.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line2);
 
-    textArea_menu.setXY(70, 60);
+    textArea_menu.setXY(67, 60);
     textArea_menu.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea_menu.setLinespacing(0);
     textArea_menu.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BYJD));

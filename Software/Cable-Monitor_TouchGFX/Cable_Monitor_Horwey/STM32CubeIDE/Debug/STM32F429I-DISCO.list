@@ -13,25 +13,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   4 FontSearchFlashSection 0000024c  080563ac  080563ac  000663ac  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 TextFlashSection 00000904  080565f8  080565f8  000665f8  2**2
+  5 TextFlashSection 00000928  080565f8  080565f8  000665f8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  6 ExtFlashSection 00093cd0  08056efc  08056efc  00066efc  2**2
+  6 ExtFlashSection 00093cd0  08056f20  08056f20  00066f20  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .ARM.extab    00000000  080eabcc  080eabcc  00100178  2**0
+  7 .ARM.extab    00000000  080eabf0  080eabf0  00100178  2**0
                   CONTENTS
-  8 .ARM          00000008  080eabcc  080eabcc  000fabcc  2**2
+  8 .ARM          00000008  080eabf0  080eabf0  000fabf0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  9 .preinit_array 00000000  080eabd4  080eabd4  00100178  2**0
+  9 .preinit_array 00000000  080eabf8  080eabf8  00100178  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 10 .init_array   00000014  080eabd4  080eabd4  000fabd4  2**2
+ 10 .init_array   00000014  080eabf8  080eabf8  000fabf8  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 11 .fini_array   00000008  080eabe8  080eabe8  000fabe8  2**2
+ 11 .fini_array   00000008  080eac0c  080eac0c  000fac0c  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 12 .data         00000178  20000000  080eabf0  00100000  2**2
+ 12 .data         00000178  20000000  080eac14  00100000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 13 .bss          00015470  20000178  080ead68  00100178  2**2
+ 13 .bss          00015470  20000178  080ead8c  00100178  2**2
                   ALLOC
- 14 ._user_heap_stack 00001400  200155e8  080ead68  001055e8  2**0
+ 14 ._user_heap_stack 00001400  200155e8  080ead8c  001055e8  2**0
                   ALLOC
  15 .ARM.attributes 00000030  00000000  00000000  00100178  2**0
                   CONTENTS, READONLY
@@ -1252,7 +1252,7 @@ LoopFillZerobss:
   ldr   sp, =_estack       /* set stack pointer */
  8000ec0:	20030000 	.word	0x20030000
   ldr  r3, =_sidata
- 8000ec4:	080eabf0 	.word	0x080eabf0
+ 8000ec4:	080eac14 	.word	0x080eac14
   ldr  r0, =_sdata
  8000ec8:	20000000 	.word	0x20000000
   ldr  r3, =_edata
@@ -5018,10 +5018,10 @@ __STATIC_FORCEINLINE void __DSB(void)
  800297c:	40012200 	.word	0x40012200
 
 08002980 <MEAS_start_measure>:
+ * @return ADC samples pointer
  *
  * @note The result is stored alternated e.g. every 4th is together.
  *****************************************************************************/
-// Start the measurement procedure
 uint32_t* MEAS_start_measure(void)
 {
  8002980:	b508      	push	{r3, lr}
@@ -39704,12 +39704,12 @@ class TypedText
  801401a:	4629      	mov	r1, r5
  801401c:	9801      	ldr	r0, [sp, #4]
  801401e:	f00a faa1 	bl	801e564 <_ZN8touchgfx9Container3addERNS_8DrawableE>
-    textArea_menu.setXY(70, 60);
+    textArea_menu.setXY(67, 60);
  8014022:	f50a 75fc 	add.w	r5, sl, #504	; 0x1f8
         setX(x);
  8014026:	f8da 31f8 	ldr.w	r3, [sl, #504]	; 0x1f8
  801402a:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 801402c:	2146      	movs	r1, #70	; 0x46
+ 801402c:	2143      	movs	r1, #67	; 0x43
  801402e:	4628      	mov	r0, r5
  8014030:	4798      	blx	r3
         setY(y);
@@ -42578,7 +42578,7 @@ void touchgfx::Texts::setLanguage(touchgfx::LanguageId id)
  8015734:	20014a0c 	.word	0x20014a0c
  8015738:	08056848 	.word	0x08056848
  801573c:	080565f8 	.word	0x080565f8
- 8015740:	08056ef8 	.word	0x08056ef8
+ 8015740:	08056f1c 	.word	0x08056f1c
 
 08015744 <_ZNK8touchgfx5Texts7getTextEt>:
     languagesArray[id] = (const TranslationHeader*)translation;
@@ -106016,10 +106016,10 @@ Timer_t * const pxTimer = ( Timer_t * ) listGET_OWNER_OF_HEAD_ENTRY( pxCurrentTi
  8039ea6:	4798      	blx	r3
  8039ea8:	3601      	adds	r6, #1
  8039eaa:	e7f2      	b.n	8039e92 <__libc_init_array+0x1e>
- 8039eac:	080eabd4 	.word	0x080eabd4
- 8039eb0:	080eabd4 	.word	0x080eabd4
- 8039eb4:	080eabd4 	.word	0x080eabd4
- 8039eb8:	080eabe8 	.word	0x080eabe8
+ 8039eac:	080eabf8 	.word	0x080eabf8
+ 8039eb0:	080eabf8 	.word	0x080eabf8
+ 8039eb4:	080eabf8 	.word	0x080eabf8
+ 8039eb8:	080eac0c 	.word	0x080eac0c
 
 08039ebc <__retarget_lock_init_recursive>:
  8039ebc:	4770      	bx	lr
