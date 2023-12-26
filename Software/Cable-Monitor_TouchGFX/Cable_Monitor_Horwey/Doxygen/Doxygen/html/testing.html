@@ -82,50 +82,13 @@ $(function() {
 <tr>
 <th>Module</th><th>Test Conditions</th><th>Expected</th><th>Observed</th><th>Pass/Fail</th><th>Remarks  </th></tr>
 <tr>
-<td>Menu system</td><td>Touch menu item "single measurement" from state "home screen"</td><td>Switch to state "single measurement"</td><td>Switches to "single measurement"</td><td>Pass</td><td>none  </td></tr>
+<td>GUI</td><td>Touch menu item "Measurement" from state "Main Menu"</td><td>Switch to state "Measurement Menu"</td><td>Switches to "Measurement Menu"</td><td>Pass</td><td>none  </td></tr>
 <tr>
-<td>Menu system</td><td>Touch menu item "1.phase measurement" or "3.phase measurement" from state "single measurement"</td><td>Display of the single measurement screen</td><td>Displays the single measurement screen</td><td>Pass</td><td>none  </td></tr>
+<td>GUI</td><td>Touch menu item "Calibration" from state "Main Menu"</td><td>Switch to state "Calibration Menu"</td><td>Switches to "Calibration Menu"</td><td>Pass</td><td>none  </td></tr>
 <tr>
-<td>Menu system</td><td>Touch menu item "home screen" from any first level submenu screen</td><td>Switch to state "home screen"</td><td>Switches to "home screen"</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "accurate measurement" from state "home screen"</td><td>Switch to state "accurate measurement"</td><td>Switches to "accurate measurement"</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "1.phase measurement" or "3.phase measurement" from state "accurate measurement"</td><td>Display of the accurate measurement screen</td><td>Displays the accurate measurement screen</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "calibration screen" from state "home screen"</td><td>Switch to state "calibration screen"</td><td>Switches to "calibration screen"</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "calibration current" from state "calibration screen"</td><td>Switch to state "calibration current"</td><td>Switches to "calibration current"</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "1.phase current" or "3.phase current" and confirming from state "calibration current"</td><td>Switch to state "calibration screen"</td><td>Switches to "calibration screen"</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "calibration distance" from state "calibration screen"</td><td>Switch to state "calibration distance"</td><td>Switches to "calibration distance"</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "next distance" from state "calibration distance"</td><td>Proceed forward in the menu</td><td>Proceeds forward in the menu</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "back distance" from state "calibration distance"</td><td>Proceed backwards in the menu</td><td>Proceeds backwards in the menu</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>Menu system</td><td>Touch menu item "abort distance" and confirming from state "calibration current" &amp; "calibration distance"</td><td>Switch to state "calibration screen"</td><td>Switches to "calibration screen"</td><td>Pass</td><td>none  </td></tr>
-<tr>
-<td>ADC with DMA</td><td>fs = 640Hz, N = 64<br  />
-f = 50Hz, V = 1Vdc+1Vpp</td><td>Array filled with 64 samples = 5 signal periods<br  />
-Minimum = 682, Maximum = 2048</td><td>5 signal periods<br  />
-Minimum = 691, Maximum = 2037</td><td>Pass</td><td>Small inaccuracies due to measurement.  </td></tr>
-<tr>
-<td>Measurements</td><td>Current measurement (1.Phase in accurate measurement) after current calibration</td><td>Current in the range of 1A to 10A with a precision of ±50% up to a distance of 10mm</td><td>Wire 1.2A: measured 1.4A<br  />
-Wire 5.0A: measured 5.5A</td><td>Pass</td><td>Overcurrent after 20A.  </td></tr>
-<tr>
-<td>Measurements</td><td>Current measurement (3.Phase in accurate measurement) after current calibration</td><td>Current in the range of 1A to 10A with a precision of ±50% up to a distance of 5mm</td><td>Wire 1.2A: measured 1.1A<br  />
-Wire 5.0A: measured 4.6A</td><td>Pass</td><td>Overcurrent after 20A.  </td></tr>
-<tr>
-<td>Measurements</td><td>Distance measurement (in accurate measurement) after distance calibration</td><td>Distance up to 200mm with a precision of ±30%</td><td>Distance 100mm: measured 91mm<br  />
-Distance 200mm: measured 166mm<br  />
-Distance 400mm: measured cable too far away</td><td>Pass</td><td>After 300mm cable will not be detected.  </td></tr>
-<tr>
-<td>Measurements</td><td>Angle measurement (in accurate measurement) after distance calibration</td><td>Angle in the range of ±45° with a precision of ±15°</td><td>Angle 60°@200mm: measured 63.4°<br  />
-Angle -30°@200mm: measured -29.5°<br  />
-Angle 0°@200mm: measured 2°<br  />
-Angle 0°@20mm: measured 50°<br  />
-Angle -60°@20mm: measured -62.3°</td><td>Fail</td><td>Skips small angles at short distances (<a class="el" href="">bug.html</a>).  </td></tr>
+<td>GUI</td><td>Touch menu item "Project Info" from state "Main Menu"</td><td>Switch to state "Project Info"</td><td>Switches to "Project Info"</td><td>Pass</td><td><p class="starttd">none </p>
+<p class="endtd"></p>
+</td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>The measurements are very sensitive to almost everything. Simply holding or laying the cable monitor differently after calibration will result in deviations in the data.</dd></dl>
 <p><br  />
