@@ -17,26 +17,6 @@
   *
   ******************************************************************************
   */
-
-// insert small sample mainpage here for doxygen
-/**
-   \mainpage Main Page
-    \section intro_sec Introduction
-    This is the introduction.
-    \section install_sec Installation
-    \subsection main.c handels...
-    \subsection calculation.c handels...
-    \subsection measureing.c handels...
-    \subsection FLASH_SECTOR_F4.c handels...
-    \subsection TouchGFX Folder includes...
-    \subsection How to use
-    \section Testing
-    \section Bugs
-    \section conclusion Conclusion
-    This is the conclusion.
-*/
-
-
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
