@@ -1,5 +1,5 @@
 Application/User/generated/Project_InfoViewBase.o: \
- C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/project_info_screen/Project_InfoViewBase.cpp \
+ C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/generated/gui_generated/src/project_info_screen/Project_InfoViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/project_info_screen/Project_InfoViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
