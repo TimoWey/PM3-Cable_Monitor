@@ -16,9 +16,8 @@
  * - For each pad and each set distance, the signal strength is recorded. See @ref calculate_freq_and_signalstrength for more details.
  * - For a visual representation of the calibration setup, refer to the diagram below.
  * @note Values are read from flash: @ref start_calibration
- * @see D_P Distance from the board center to pad
  *
- * @image html Doxygen/img/Calibration_Setup.png height=400px
+ * @image html Doxygen/img/Calibration_Setup.png height=450px
  * 
  * Current Calibration
  * -----------
@@ -30,9 +29,9 @@
  * - Measurements are conducted at different currents (1.2 A and 5 A) and different phases (single and three-phase).
  * - For each hall-sensor, current, and phase, the signal strength is recorded. See @ref calculate_freq_and_signalstrength for more details.
  * - For a visual representation of the calibration setup, refer to the diagram below.
- * @n Values are read from flash: @ref start_calibration
+ * @note Values are read from flash: @ref start_calibration
  *
- * @image html Doxygen/img/Calibration_Setup_current.png height=400px
+ * @image html Doxygen/img/Calibration_Setup_current.png height=500px
  * 
  * Angle Calculation and Distance Approximation
  * -------
@@ -51,6 +50,8 @@
  * That's why the visualization using standard geometric shapes
  * only allows angles between -45 and 45 degrees to be visualized.
  * Refer to the image above for a better understanding of the angle calculation.
+ * 
+ * @see D_P Distance from the board center to pad center
  * 
  * @n signal_l: Signal strength of the left pad
  * @n signal_r: Signal strength of the right pad
@@ -78,6 +79,9 @@
  * @image html Doxygen/img/approximation_plot.png height=600px
  * Using the coefficient approach, results in a very similar approximation to the look-up table approach, while being more efficient
  * and not requiring an external device to calculate the coefficients.
+ * @note @htmlonly
+ * <a href="../files/LookUpTable_vs_Coefficients.m">MATLAB SCRIPT</a>
+ * @endhtmlonly 
  * 
  * @n For calibration, only 3 measurements are needed.
  * @n d1, d2, d3: Distance for each measurement
