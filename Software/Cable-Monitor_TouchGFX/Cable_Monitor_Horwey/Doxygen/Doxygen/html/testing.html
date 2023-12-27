@@ -20,6 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">Cable-Monitor by Horvat &amp; Wey<span id="projectnumber">&#160;V1.0</span>
    </div>
@@ -110,8 +111,24 @@ $(function() {
 <td>System Measurements </td><td>Measure ADC Timer 2 sample frequency at GPIO </td><td>Measure 640 Hz with PicoScope at GPIO </td><td>640 Hz </td><td>Pass </td><td>none  </td></tr>
 <tr>
 <td>System Measurements </td><td>Measure heartbeat frequency at PG13 User-LED </td><td>Measure 1 Hz with PicoScope </td><td>1 Hz </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>Measurements </td><td>Current measurement in "Accurate Measurement" 1.Phase after calibration </td><td>Current in the range of 1 A to 10 A with a precision of ±50% up to a distance of 20 mm </td><td>Actual 1.2 A: measured 1.5A<br  />
+Actual 5.0 A: measured 5.5A </td><td>Pass </td><td>"OVERCURRENT" over 10A. and "TOO FAR" if over 20 mm  </td></tr>
+<tr>
+<td>Measurements </td><td>Current measurement in "Accurate Measurement" 3.Phase after calibration </td><td>Current in the range of 1 A to 10 A with a precision of ±50% up to a distance of 20 mm </td><td>Actual 1.2 A: measured 1.0A<br  />
+Actual 5.0 A: measured 4.7 A </td><td>Pass </td><td>"OVERCURRENT" over 10A. and "TOO FAR" if over 20 mm  </td></tr>
+<tr>
+<td>Measurements </td><td>Distance measurement in "Accurate Measurement" 1.Phase after calibration </td><td>Distance up to 200 mm with a precision of ±30% </td><td>Distance 100 mm: measured 105 mm<br  />
+Distance 200 mm: measured 187 mm<br  />
+ Distance over 200 mm: "DISCONNECTED" </td><td>Pass </td><td>note: at higher distances less precise  </td></tr>
+<tr>
+<td>Measurements </td><td>Distance measurement in "Accurate Measurement" 3.Phase after calibration </td><td>Distance up to 200 mm with a precision of ±30% </td><td>Distance 100 mm: measured 95 mm<br  />
+Distance 200 mm: measured 188 mm<br  />
+ Distance over 200 mm: "DISCONNECTED" </td><td>Pass </td><td>note: at higher distances less precise  </td></tr>
 </table>
-<dl class="section note"><dt>Note</dt><dd>The measurements are very sensitive to almost everything. Simply holding or laying the cable monitor differently after calibration will result in deviations in the data.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only a handful of tests are listed here, since its not required for this documentation. The tests were performed on the device itself and with a PicoScope.</dd>
+<dd>
+The measurements are very sensitive to almost everything. Simply holding or laying the cable monitor differently after calibration will result in deviations in the data.</dd></dl>
 <p><br  />
  Test date: 27.12.2023 <br  />
  Tester: Alejandro Horvat, <a href="#" onclick="location.href='mai'+'lto:'+'hor'+'va'+'ale'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">horva<span class="obfuscator">.nosp@m.</span>ale@<span class="obfuscator">.nosp@m.</span>stude<span class="obfuscator">.nosp@m.</span>nts.<span class="obfuscator">.nosp@m.</span>zhaw.<span class="obfuscator">.nosp@m.</span>ch</a> &amp; Timo Wey, <a href="#" onclick="location.href='mai'+'lto:'+'wey'+'ti'+'m01'+'@s'+'tud'+'en'+'ts.'+'zh'+'aw.'+'ch'; return false;">weyti<span class="obfuscator">.nosp@m.</span>m01@<span class="obfuscator">.nosp@m.</span>stude<span class="obfuscator">.nosp@m.</span>nts.<span class="obfuscator">.nosp@m.</span>zhaw.<span class="obfuscator">.nosp@m.</span>ch</a></p>
