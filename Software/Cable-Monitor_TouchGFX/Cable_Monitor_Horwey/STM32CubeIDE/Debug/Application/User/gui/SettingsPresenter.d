@@ -1,5 +1,5 @@
 Application/User/gui/SettingsPresenter.o: \
- C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/settings_screen/SettingsPresenter.cpp \
+ C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/settings_screen/SettingsPresenter.cpp \
  ../../TouchGFX/gui/include/gui/settings_screen/SettingsView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/settings_screen/SettingsViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
