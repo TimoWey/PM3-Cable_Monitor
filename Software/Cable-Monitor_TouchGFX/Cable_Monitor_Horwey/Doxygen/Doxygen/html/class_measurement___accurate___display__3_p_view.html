@@ -253,13 +253,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs accurate 3-phase measurement and updates the display accordingly. </p>
-<p>This function calculates the accurate measurement values for a 3-phase system and updates the display with the calculated values. It also handles error conditions and displays appropriate error messages.</p>
-<dl class="section note"><dt>Note</dt><dd>This function is only executed when not running in the simulator.</dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug:</a></b></dt><dd>GUI is unresponsive while the accurate measurement values are calculated. This is due to the fact that the TouchGFX interrupts are disabled while the accurate measurement values are calculated. </dd></dl>
+<p>This function calculates the accurate measurement values for a 3-phase system and updates the display with the calculated values. It disables TouchGFX interrupts during the calculation to ensure accuracy. If the standard deviation of the measurement is too high, an error message is displayed. Otherwise, the gauge angle, current, frequency, and distance values are updated on the display.</p>
+<dl class="section note"><dt>Note</dt><dd>This function is only executed when not running in the simulator. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_measurement___accurate___display__3_p_view_base.html#a1d619e6b97d299c14a3d3842cb9e446c">Measurement_Accurate_Display_3PViewBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_measurement___accurate___display__3_p_view_8cpp_source.html#l00041">41</a> of file <a class="el" href="_measurement___accurate___display__3_p_view_8cpp_source.html">Measurement_Accurate_Display_3PView.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_measurement___accurate___display__3_p_view_8cpp_source.html#l00040">40</a> of file <a class="el" href="_measurement___accurate___display__3_p_view_8cpp_source.html">Measurement_Accurate_Display_3PView.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
