@@ -1,5 +1,5 @@
 Application/User/gui/CalibrationView.o: \
- C:/Users/aleja/Documents/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/calibration_screen/CalibrationView.cpp \
+ C:/Github/PM3-Cable_Monitor/Software/Cable-Monitor_TouchGFX/Cable_Monitor_Horwey/TouchGFX/gui/src/calibration_screen/CalibrationView.cpp \
  ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
@@ -106,7 +106,7 @@ Application/User/gui/CalibrationView.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Core/Inc/measuring.h ../../Core/Inc/calculation.h \
- ../../Core/Inc/arm_math.h
+ ../../Core/Inc/arm_math.h ../../Core/Inc/FLASH_SECTOR_F4.h
 ../../TouchGFX/gui/include/gui/calibration_screen/CalibrationView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/calibration_screen/CalibrationViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -215,3 +215,4 @@ Application/User/gui/CalibrationView.o: \
 ../../Core/Inc/measuring.h:
 ../../Core/Inc/calculation.h:
 ../../Core/Inc/arm_math.h:
+../../Core/Inc/FLASH_SECTOR_F4.h:
