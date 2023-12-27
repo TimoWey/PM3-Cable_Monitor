@@ -40,6 +40,9 @@ void Measurement_Accurate_Display_1PView::setTimeoutValue(int value)
  * with the calculated values. It also handles error conditions and displays appropriate error messages.
  * 
  * @note This function is only executed when not running in the simulator.
+ * 
+ * @bug GUI is unresponsive while the accurate measurement values are calculated.
+ * This is due to the fact that the TouchGFX interrupts are disabled while the accurate measurement values are calculated. 
  */
 void Measurement_Accurate_Display_1PView::accu_meas()
 {
