@@ -1,31 +1,32 @@
 /** *****************************************************************************
  * @file
- * @brief Measuring input signal using following configuration:
+ * @brief Measuring input signal using the following configuration:
  * 
- * Measurement procedure
+ * Measurement Procedure
  * -----------
  * @details The measurement consists of an amplified signal from the cable monitor board.
  * This signal is then sampled by the ADC and the samples are stored in a buffer.
  * The buffer is then processed by the calculation module using several digital signal processing methods.
- * @note This processing allows the calculation of the distance to the cable, the angle of the cable and the current.
- * @n refer to @ref calculation.c
+ * @note This processing allows the calculation of the distance to the cable, the angle of the cable, and the current flowing through the cable.
+ * @n Refer to @ref calculation.c
  * 
- * the simplified procedure is shown in the following figure:
+ * The simplified procedure is shown in the following figure:
  * @image html Doxygen/img/ADC_Process.png height=600px
  * 
  * 
- * Configuration of ADC, timer and DMA
+ * Configuration of ADC, Timer, and DMA
  * -----------
- * - ADC triggered by a timer and with interrupt after end of conversion
+ * - ADC is triggered by a timer and with an interrupt after the end of conversion
  * - ADC combined with DMA (Direct Memory Access) to fill a buffer
  * - Scan mode = sequential sampling of two inputs by one ADC
  * - Analog mode configuration for GPIOs
- * @details The ADC3 is configured to sample four channels sequentially.
- * @n The ADC is triggered by the Timer 2 and the samples are transfered to memory by the DMA.
+ * 
+ * @details ADC3 is configured to sample four channels sequentially.
+ * @n The ADC is triggered by Timer 2, and the samples are transferred to memory by the DMA.
  * @n The DMA triggers the transfer complete interrupt when all data is ready.
  * @n The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3 (Pad Left),
- * ADC_IN6 = GPIO PF8 (HS-Right), ADC3_IN11 = GPIO PC1 (HS-Left)
- * @n refer to @ref MEAS_start_measure
+ * ADC3_IN6 = GPIO PF8 (HS-Right), and ADC3_IN11 = GPIO PC1 (HS-Left)
+ * @n Refer to @ref MEAS_start_measure
  * @image html Doxygen/img/DMA_Buffer.png height=800px
  *
  * @note The following peripherals are used:
@@ -37,18 +38,21 @@
  * - RCC
  * 
  * @anchor HowTo
- * How to Configure the Peripherals: ADC, TIMER and DMA
+ * How to Configure the Peripherals: ADC, Timer, and DMA
  * ====================================================
  *
  * All the peripherals are accessed by writing to or reading from registers.
- * From the programmer’s point of view this is done exactly as
+ * From the programmer’s point of view, this is done exactly as
  * writing or reading the value of a variable.
  * @n Writing to a register configures the HW of the associated peripheral
  * to do what is required.
- * @n Reading from a registers gets status and data from the HW peripheral.
+ * @n Reading from a register gets status and data from the HW peripheral.
  *
  * The information on which bits have to be set to get a specific behavior
- * is documented in the <b>reference manual</b> of the microcontroller.
+ * is documented in the 
+ * @htmlonly
+ * <a href="../files/Reference manual STM32F429.pdf">reference manual</a>
+ * @endhtmlonly of the microcontroller.
  *
  *
  * ----------------------------------------------------------------------------

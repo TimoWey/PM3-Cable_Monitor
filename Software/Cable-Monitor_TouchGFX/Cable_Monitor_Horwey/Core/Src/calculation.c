@@ -15,26 +15,26 @@
  * - Measurements are conducted at intervals of 10 mm, 50 mm, and 100 mm.
  * - For each pad and each set distance, the signal strength is recorded. See @ref calculate_freq_and_signalstrength for more details.
  * - For a visual representation of the calibration setup, refer to the diagram below.
- * @note values are read from flash: @ref start_calibration
+ * @note Values are read from flash: @ref start_calibration
  * @see D_P Distance from the board center to pad
  *
  * @image html Doxygen/img/Calibration_Setup.png height=400px
  * 
  * Current Calibration
  * -----------
- * - Calibration involves using the given current through the wire, the type of cable (single or three phase), and the distance
+ * - Calibration involves using the given current through the wire, the type of cable (single or three-phase), and the distance
  * between the board and the wire.
  * - Positioning of the board is crucial; it must be perpendicular to the wire during calibration.
  * - A ruler is employed for measuring the distance between the board and the wire.
- * - The calibration process includes taking one measurement per pad, which are executed through the GUI.
- * - Measurements are conducted at different currents (1.2 A and 5 A) and different phases (single and three phase).
+ * - The calibration process includes taking one measurement per hall-sensor, which are executed through the GUI.
+ * - Measurements are conducted at different currents (1.2 A and 5 A) and different phases (single and three-phase).
  * - For each hall-sensor, current, and phase, the signal strength is recorded. See @ref calculate_freq_and_signalstrength for more details.
  * - For a visual representation of the calibration setup, refer to the diagram below.
- * @n values are read from flash: @ref start_calibration
+ * @n Values are read from flash: @ref start_calibration
  *
  * @image html Doxygen/img/Calibration_Setup_current.png height=400px
  * 
- * Angle Calculation and distance approximation
+ * Angle Calculation and Distance Approximation
  * -------
  * The equation for this trigonometry can be seen
  * under the figure.
@@ -48,54 +48,52 @@
  * However, visualizing these angles as traditional triangles is challenging, 
  * as extreme sensor value differences — representing steep, 
  * nearly vertical angles — do not correspond neatly to standard geometric shapes.
- * Thats why the visualisation using standard geometric shapes
+ * That's why the visualization using standard geometric shapes
  * only allows angles between -45 and 45 degrees to be visualized.
- * refer to image above for better understanding of the angle calculation.
+ * Refer to the image above for a better understanding of the angle calculation.
  * 
  * @n signal_l: Signal strength of the left pad
  * @n signal_r: Signal strength of the right pad
  * 
- * Coefficients used for distance approximation
+ * Coefficients Used for Distance Approximation
  * ===================================
  * Distance
  * --------
- * Approximation is done with a Laurent polynomial 2nd degree. 
+ * Approximation is done with a Laurent polynomial of 2nd degree. 
  * @n By solving the equation system with the 3 measurements, the coefficients can be calculated.
- * each coefficient is calculated with the following equation:
+ * Each coefficient is calculated with the following equation:
  * 
  * 
  * @image html Doxygen/img/distance_coefficients.png height=400px
  * @see calculate_coefficients_single_pad
  * 
- * The coefficients are calculated for each pad. With these coefficients the distance can be approximated.
+ * The coefficients are calculated for each pad. With these coefficients, the distance can be approximated.
  * @ref calculate_distance_and_angle function calculates both distances from each pad
- * and returns the mean value of both distances as the real distance between board center to wire.
+ * and returns the mean value of both distances as the real distance between the board center and the wire.
  * 
  * This approach allows the calibration and calculation to be done all on the board itself, 
- * instead of having to calculate the approximation externally using matlab and importing the values through a look-up table.
+ * instead of having to calculate the approximation externally using MATLAB and importing the values through a look-up table.
  * 
- * The approximation in comparison to the look-up table approach looks like this:
+ * The approximation, in comparison to the look-up table approach, looks like this:
  * @image html Doxygen/img/approximation_plot.png height=600px
- * using the coefficient approach, results in a very similar approximation to the look-up table approach, while being more efficient
+ * Using the coefficient approach, results in a very similar approximation to the look-up table approach, while being more efficient
  * and not requiring an external device to calculate the coefficients.
  * 
- * @n For calibration only 3 measurements are needed.
- * @n d1,d2,d3: Distance for each measurement
- * @n s1,s2,s3: Signal for each measurement
- * @n a,b,c: @ref calculate_coefficients_single_pad
+ * @n For calibration, only 3 measurements are needed.
+ * @n d1, d2, d3: Distance for each measurement
+ * @n s1, s2, s3: Signal for each measurement
+ * @n a, b, c: @ref calculate_coefficients_single_pad
  *
- * 
-
  * Current Calculation
  * -------
- * Approximation is done with a constant as seen in the figure.
+ * Approximation is done with a constant, as seen in the figure.
  * @image html Doxygen/img/Current_Aproximation.png height=400px
  * This approach allows only an accurate approximation for a specific current in a very limited and close range.
  * \n The approximation is done for 1.2 A and 5 A.
  * \n The approximation is done for each pad and for each current.
- * \ As the phase changes the magnetic Field, a different approximation is needed for each phase.
+ * \ As the phase changes the magnetic field, a different approximation is needed for each phase.
  * 
- * @n For calibration only 1 measurements is needed per pad, set current (1.2 A or 5 A) and phase.
+ * @n For calibration, only 1 measurement is needed per pad, set current (1.2 A or 5 A), and phase.
  * @n U: Signal
  * @n r: Distance from the board center to wire
  * @n const: @ref calculate_magnetic_coefficients
@@ -103,8 +101,9 @@
  *
  * @todo Optimize accuracy of approximation
  * @todo Optimize output of accurate measurement
+ * @todo Animate shutting off screen (Currently only static image)
  * 
- * @bug Current calculation sometimes returns nan or inf values
+ * @bug Current calculation sometimes returns NaN or inf values
  * 
  * ----------------------------------------------------------------------------
  * @author  Alejandro Horvat, horvaale@students.zhaw.ch

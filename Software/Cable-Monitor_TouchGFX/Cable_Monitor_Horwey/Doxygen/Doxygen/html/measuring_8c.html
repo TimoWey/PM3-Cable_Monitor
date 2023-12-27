@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Measuring input signal using following configuration:  
+<p>Measuring input signal using the following configuration:  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -172,25 +172,25 @@ Functions</h2></td></tr>
 <tr class="separator:a2756121f7d9be8c582e834ec0382b01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Measuring input signal using following configuration: </p>
+<div class="textblock"><p>Measuring input signal using the following configuration: </p>
 <hr  />
-<h2>Measurement procedure </h2>
-<p>The measurement consists of an amplified signal from the cable monitor board. This signal is then sampled by the ADC and the samples are stored in a buffer. The buffer is then processed by the calculation module using several digital signal processing methods. </p><dl class="section note"><dt>Note</dt><dd>This processing allows the calculation of the distance to the cable, the angle of the cable and the current. <br  />
- refer to <a class="el" href="calculation_8c.html">calculation.c</a></dd></dl>
-<p>the simplified procedure is shown in the following figure: </p><div class="image">
+<h2>Measurement Procedure </h2>
+<p>The measurement consists of an amplified signal from the cable monitor board. This signal is then sampled by the ADC and the samples are stored in a buffer. The buffer is then processed by the calculation module using several digital signal processing methods. </p><dl class="section note"><dt>Note</dt><dd>This processing allows the calculation of the distance to the cable, the angle of the cable, and the current flowing through the cable. <br  />
+ Refer to <a class="el" href="calculation_8c.html">calculation.c</a></dd></dl>
+<p>The simplified procedure is shown in the following figure: </p><div class="image">
 <img src="ADC_Process.png" alt="" height="600px"/>
 </div>
-<h2>Configuration of ADC, timer and DMA </h2>
+<h2>Configuration of ADC, Timer, and DMA </h2>
 <ul>
-<li>ADC triggered by a timer and with interrupt after end of conversion</li>
+<li>ADC is triggered by a timer and with an interrupt after the end of conversion</li>
 <li>ADC combined with DMA (Direct Memory Access) to fill a buffer</li>
 <li>Scan mode = sequential sampling of two inputs by one ADC</li>
 <li><p class="startli">Analog mode configuration for GPIOs</p>
-<p class="startli">The ADC3 is configured to sample four channels sequentially. <br  />
- The ADC is triggered by the Timer 2 and the samples are transfered to memory by the DMA. <br  />
+<p class="startli">ADC3 is configured to sample four channels sequentially. <br  />
+ The ADC is triggered by Timer 2, and the samples are transferred to memory by the DMA. <br  />
  The DMA triggers the transfer complete interrupt when all data is ready. <br  />
- The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3 (Pad Left), ADC_IN6 = GPIO PF8 (HS-Right), ADC3_IN11 = GPIO PC1 (HS-Left) <br  />
- refer to <a class="el" href="measuring_8h.html#a0495ebe6ce630b42c2f9479392506985">MEAS_start_measure</a> </p><div class="image">
+ The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3 (Pad Left), ADC3_IN6 = GPIO PF8 (HS-Right), and ADC3_IN11 = GPIO PC1 (HS-Left) <br  />
+ Refer to <a class="el" href="measuring_8h.html#a0495ebe6ce630b42c2f9479392506985">MEAS_start_measure</a> </p><div class="image">
 <img src="DMA_Buffer.png" alt="" height="800px"/>
 </div>
 </li>
@@ -204,11 +204,13 @@ Functions</h2></td></tr>
 <li>RCC</li>
 </ul>
 </dd></dl>
-<p><a class="anchor" id="HowTo"></a></p><h1>How to Configure the Peripherals: ADC, TIMER and DMA </h1>
-<p>All the peripherals are accessed by writing to or reading from registers. From the programmer’s point of view this is done exactly as writing or reading the value of a variable. <br  />
+<p><a class="anchor" id="HowTo"></a></p><h1>How to Configure the Peripherals: ADC, Timer, and DMA </h1>
+<p>All the peripherals are accessed by writing to or reading from registers. From the programmer’s point of view, this is done exactly as writing or reading the value of a variable. <br  />
  Writing to a register configures the HW of the associated peripheral to do what is required. <br  />
- Reading from a registers gets status and data from the HW peripheral.</p>
-<p>The information on which bits have to be set to get a specific behavior is documented in the <b>reference manual</b> of the microcontroller.</p>
+ Reading from a register gets status and data from the HW peripheral.</p>
+<p>The information on which bits have to be set to get a specific behavior is documented in the  
+<a href="../files/Reference manual STM32F429.pdf">reference manual</a>
+ of the microcontroller.</p>
 <hr  />
  <dl class="section author"><dt>Author</dt><dd>Alejandro Horvat, <a href="#" onclick="location.href='mai'+'lto:'+'hor'+'va'+'ale'+'@z'+'haw'+'.c'+'h'; return false;">horva<span class="obfuscator">.nosp@m.</span>ale@<span class="obfuscator">.nosp@m.</span>zhaw.<span class="obfuscator">.nosp@m.</span>ch</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>26.12.2023 </dd></dl>
@@ -229,7 +231,7 @@ Functions</h2></td></tr>
 
 <p>Sampling freq. =&gt; 12 samples for a 50Hz period. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00074">74</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00078">78</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -247,7 +249,7 @@ Functions</h2></td></tr>
 
 <p>Number of samples. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00073">73</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00077">77</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -265,7 +267,7 @@ Functions</h2></td></tr>
 
 <p>Number of input channels. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00079">79</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00083">83</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -283,7 +285,7 @@ Functions</h2></td></tr>
 
 <p>APB1 timer clock frequency. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00075">75</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00079">79</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -301,7 +303,7 @@ Functions</h2></td></tr>
 
 <p>Clock prescaler/*#end#*&zwj;/. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00078">78</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00082">82</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -319,7 +321,7 @@ Functions</h2></td></tr>
 
 <p>Timer top value. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00076">76</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00080">80</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 
 </div>
 </div>
@@ -344,7 +346,7 @@ Functions</h2></td></tr>
 <hr  />
  <p>The samples from the ADC3 have been transfered to memory by the DMA2 Stream1 and are ready for processing. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00219">219</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00223">223</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -383,7 +385,7 @@ Here is the call graph for this function:</div>
  The DMA triggers the transfer complete interrupt when all data is ready. <br  />
  The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3 (Pad Left), ADC_IN6 = GPIO PF8 (HS-Right), ADC3_IN11 = GPIO PC1 (HS-Left) </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00167">167</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00171">171</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -431,7 +433,7 @@ Here is the caller graph for this function:</div>
 <p>Start DMA, ADC and timer. </p>
 <hr  />
   
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00204">204</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00208">208</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -479,7 +481,7 @@ Here is the caller graph for this function:</div>
 <p>Resets the ADCs, disables the timer. </p>
 <p>This function resets the ADCs by asserting the ADC reset bit in the RCC_APB2RSTR register, then releases the reset by clearing the ADC reset bit. It also disables the timer by clearing the TIM_CR1_CEN bit in the TIM2 control register. </p>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00118">118</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00122">122</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -513,7 +515,7 @@ Here is the caller graph for this function:</div>
 <hr  />
  <dl class="section return"><dt>Returns</dt><dd>Sampling frequency </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00271">271</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00275">275</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -568,7 +570,7 @@ Here is the caller graph for this function:</div>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00101">101</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00105">105</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -604,7 +606,7 @@ Here is the caller graph for this function:</div>
  <dl class="section return"><dt>Returns</dt><dd>ADC samples pointer</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The result is stored alternated e.g. every 4th is together. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00253">253</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00257">257</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -663,7 +665,7 @@ Here is the caller graph for this function:</div>
 <hr  />
  <dl class="section note"><dt>Note</dt><dd>For debugging purposes the timer interrupt might be useful. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00144">144</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="measuring_8c_source.html#l00148">148</a> of file <a class="el" href="measuring_8c_source.html">measuring.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
