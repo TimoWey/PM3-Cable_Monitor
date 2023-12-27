@@ -456,6 +456,14 @@ void CalibrationViewBase::setupScreen()
     transitionBegins();
 }
 
+/**
+ * @brief Handles the button callback events in the CalibrationViewBase class.
+ * 
+ * This function is called when a button is clicked in the CalibrationViewBase class.
+ * It executes C++ code based on the button that was clicked.
+ * 
+ * @param src The button that triggered the callback.
+ */
 void CalibrationViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &buttonWithIcon_LP1)
@@ -463,16 +471,6 @@ void CalibrationViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //Interaction_LP1
         //When buttonWithIcon_LP1 clicked execute C++ code
         //Execute C++ code
-        
-        /**
-         * @brief Handles the button callback events in the Calibration_PadViewBase class.
-         * 
-         * This function is called when a button is clicked in the Calibration_PadViewBase screen.
-         * It performs different actions based on the button that was clicked and stores
-         * its associated value in the FLASH
-         * 
-         * @param src The reference to the button that triggered the callback.
-         */
         
         #ifndef SIMULATOR
         

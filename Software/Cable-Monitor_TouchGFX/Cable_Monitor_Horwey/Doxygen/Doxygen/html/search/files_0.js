@@ -6,6 +6,8 @@ var searchData=
   ['calibrationpresenter_2ehpp_3',['CalibrationPresenter.hpp',['../_calibration_presenter_8hpp.html',1,'']]],
   ['calibrationview_2ecpp_4',['CalibrationView.cpp',['../_calibration_view_8cpp.html',1,'']]],
   ['calibrationview_2ehpp_5',['CalibrationView.hpp',['../_calibration_view_8hpp.html',1,'']]],
-  ['coding_5fguidelines_2edox_6',['coding_guidelines.dox',['../coding__guidelines_8dox.html',1,'']]],
-  ['configuration_5fcontainer_2ehpp_7',['Configuration_Container.hpp',['../_configuration___container_8hpp.html',1,'']]]
+  ['calibrationviewbase_2ecpp_6',['CalibrationViewBase.cpp',['../_calibration_view_base_8cpp.html',1,'']]],
+  ['calibrationviewbase_2ehpp_7',['CalibrationViewBase.hpp',['../_calibration_view_base_8hpp.html',1,'']]],
+  ['coding_5fguidelines_2edox_8',['coding_guidelines.dox',['../coding__guidelines_8dox.html',1,'']]],
+  ['configuration_5fcontainer_2ehpp_9',['Configuration_Container.hpp',['../_configuration___container_8hpp.html',1,'']]]
 ];

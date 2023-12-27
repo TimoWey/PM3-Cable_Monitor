@@ -83,7 +83,25 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">main.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* USER CODE BEGIN Header */</span></div>
+<a href="main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* USER CODE BEGIN Header */</span><span class="comment"></span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  ******************************************************************************</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  * @file           : main.h</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  * @brief          : Header for main.c file.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  *                   This file contains the common defines of the application.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  ******************************************************************************</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  * @attention</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  *</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  * &lt;h2&gt;&lt;center&gt;&amp;copy; Copyright (c) 2020 STMicroelectronics.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  * All rights reserved.&lt;/center&gt;&lt;/h2&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  * This software component is licensed by ST under Ultimate Liberty license</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  * SLA0044, the &quot;License&quot;; You may not use this file except in compliance with</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  * the License. You may obtain a copy of the License at:</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  *                             www.st.com/SLA0044</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  ******************************************************************************</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  */</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/* USER CODE END Header */</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/* Define to prevent recursive inclusion -------------------------------------*/</span></div>
@@ -145,10 +163,16 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="main_8h.html#a1ce3843dfd349d06d1dfb3417ef72df0">   78</a></span><span class="preprocessor">#define DEVICE_ON_Pin GPIO_PIN_13</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="main_8h.html#ae2797da1a8de8f8044f4faa9fe598eac">   79</a></span><span class="preprocessor">#define DEVICE_ON_GPIO_Port GPIOG</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">/* USER CODE BEGIN Private defines */</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">/* USER CODE BEGIN Private defines */</span><span class="comment"></span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment"> * @brief Address of sector 23 in flash memory.</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="main_8h.html#ad17a18d85401edaf367742d21171755b">   85</a></span><span class="preprocessor">#define SECTOR_23_ADDR 0x081E0000</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment"></span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"> * @brief The timeout value (in seconds) for the screen to automatically turn off.</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="main_8h.html#a28b01617eea2a7776c35e353a5b735c2">   91</a></span><span class="preprocessor">#define SCREEN_TIMEOUT 180</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="main_8h.html#afd60c544c217169ceebd6daf55f54e14">sleep_timeout_value</a>;</div>
@@ -159,10 +183,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif </span><span class="comment">/* __MAIN_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l01381">main.c:1381</a></div></div>
+<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l01373">main.c:1373</a></div></div>
 <div class="ttc" id="amain_8h_html_ae70bce6c39d0b570a7523b86738cec4b"><div class="ttname"><a href="main_8h.html#ae70bce6c39d0b570a7523b86738cec4b">HAL_TIM_MspPostInit</a></div><div class="ttdeci">void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim)</div></div>
-<div class="ttc" id="amain_8h_html_aea7e5561eb9e6610bac506772ded41e3"><div class="ttname"><a href="main_8h.html#aea7e5561eb9e6610bac506772ded41e3">setCalibrationFlashValues</a></div><div class="ttdeci">void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint32_t index, uint16_t numberofwords)</div><div class="ttdoc">Sets the calibration flash values.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00249">main.c:249</a></div></div>
-<div class="ttc" id="amain_8h_html_afd60c544c217169ceebd6daf55f54e14"><div class="ttname"><a href="main_8h.html#afd60c544c217169ceebd6daf55f54e14">sleep_timeout_value</a></div><div class="ttdeci">int sleep_timeout_value</div><div class="ttdoc">Timeout value for sleep mode.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00188">main.c:188</a></div></div>
+<div class="ttc" id="amain_8h_html_aea7e5561eb9e6610bac506772ded41e3"><div class="ttname"><a href="main_8h.html#aea7e5561eb9e6610bac506772ded41e3">setCalibrationFlashValues</a></div><div class="ttdeci">void setCalibrationFlashValues(uint32_t StartSectorAddress, uint32_t value, uint32_t index, uint16_t numberofwords)</div><div class="ttdoc">Sets the calibration flash values.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00241">main.c:241</a></div></div>
+<div class="ttc" id="amain_8h_html_afd60c544c217169ceebd6daf55f54e14"><div class="ttname"><a href="main_8h.html#afd60c544c217169ceebd6daf55f54e14">sleep_timeout_value</a></div><div class="ttdeci">int sleep_timeout_value</div><div class="ttdoc">Timeout value for sleep mode.</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00180">main.c:180</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
