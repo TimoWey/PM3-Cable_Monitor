@@ -1306,6 +1306,7 @@ void StartDefaultTask(void *argument)
 /* USER CODE BEGIN Header_StartTimeoutTask */
 /**
 * @brief Function implementing the TimeoutTask thread.
+* This handles the sleep timeout value and puts it in the queue to be read by the screen task
 * @param argument: Not used
 * @retval None
 */
@@ -1314,8 +1315,6 @@ void StartTimeoutTask(void *argument)
 {
   /* USER CODE BEGIN StartTimeoutTask */
   /* Infinite loop */
-  // set the sleep timout to 60 seconds
-  //static int sleep_timeout_value = 60;
   for(;;)
   {
 	// decrement the sleep timeout value
