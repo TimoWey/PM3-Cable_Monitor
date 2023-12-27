@@ -4,6 +4,17 @@
   * @file           : main.c
   * @brief          : Main program body
   ******************************************************************************
+  * Main file
+  * =========
+  * The main file acts as the entry point for the program. It initializes all
+  * peripherals and starts the scheduler. It also contains the main loop which
+  * is never reached as the scheduler takes over. This file also serves as the
+  * unified location for all global variables and functions.
+  * 
+  * GUI tasks are handled by the TouchGFX framework.
+  * 
+  * 
+  * 
   * @attention
   *
   * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
