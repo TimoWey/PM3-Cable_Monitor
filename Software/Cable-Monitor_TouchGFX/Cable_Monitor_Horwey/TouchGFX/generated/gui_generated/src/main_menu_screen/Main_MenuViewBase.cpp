@@ -112,6 +112,14 @@ void Main_MenuViewBase::setupScreen()
 
 }
 
+/**
+ * @brief Handles button callbacks in the Main_MenuViewBase class.
+ * 
+ * This function is called when a button is clicked in the Main_MenuViewBase class.
+ * It performs different actions based on which button is clicked.
+ * 
+ * @param src The button that triggered the callback.
+ */
 void Main_MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &buttonWithLabel_Measure)
@@ -142,7 +150,8 @@ void Main_MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
         //Execute C++ code
         #ifndef SIMULATOR
         HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
-        #endif
+        #endif
+
         //Interaction5
         //When buttonWithIcon_turn_off clicked change screen to Shutting_Off
         //Go to Shutting_Off with no screen transition

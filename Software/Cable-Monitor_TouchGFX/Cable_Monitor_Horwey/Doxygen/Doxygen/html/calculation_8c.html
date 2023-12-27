@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="logo2.png"/></td>
   <td id="projectalign">
    <div id="projectname">Cable-Monitor by Horvat &amp; Wey<span id="projectnumber">&#160;V1.0</span>
    </div>
@@ -195,10 +195,9 @@ Variables</h2></td></tr>
 <li>The calibration process includes taking three measurements per pad, which are executed through the GUI.</li>
 <li>Measurements are conducted at intervals of 10 mm, 50 mm, and 100 mm.</li>
 <li>For each pad and each set distance, the signal strength is recorded. See <a class="el" href="calculation_8c.html#a9b4c4cf533fe366c1c5637d2853c823a">calculate_freq_and_signalstrength</a> for more details.</li>
-<li>For a visual representation of the calibration setup, refer to the diagram below. <dl class="section note"><dt>Note</dt><dd>Values are read from flash: <a class="el" href="calculation_8h.html#abac8ce1f5096ff3f393117cbfa98f888">start_calibration</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="calculation_8c.html#a903c0e7083ad87b2f7420dcdcd409f99" title="Distance from the board center to pad center.">D_P</a> Distance from the board center to pad</dd></dl>
+<li>For a visual representation of the calibration setup, refer to the diagram below. <dl class="section note"><dt>Note</dt><dd>Values are read from flash: <a class="el" href="calculation_8h.html#abac8ce1f5096ff3f393117cbfa98f888">start_calibration</a></dd></dl>
 <div class="image">
-<img src="Calibration_Setup.png" alt="" height="400px"/>
+<img src="Calibration_Setup.png" alt="" height="450px"/>
 </div>
 </li>
 </ul>
@@ -210,18 +209,19 @@ Variables</h2></td></tr>
 <li>The calibration process includes taking one measurement per hall-sensor, which are executed through the GUI.</li>
 <li>Measurements are conducted at different currents (1.2 A and 5 A) and different phases (single and three-phase).</li>
 <li>For each hall-sensor, current, and phase, the signal strength is recorded. See <a class="el" href="calculation_8c.html#a9b4c4cf533fe366c1c5637d2853c823a">calculate_freq_and_signalstrength</a> for more details.</li>
-<li>For a visual representation of the calibration setup, refer to the diagram below. <br  />
- Values are read from flash: <a class="el" href="calculation_8h.html#abac8ce1f5096ff3f393117cbfa98f888">start_calibration</a></li>
-</ul>
+<li>For a visual representation of the calibration setup, refer to the diagram below. <dl class="section note"><dt>Note</dt><dd>Values are read from flash: <a class="el" href="calculation_8h.html#abac8ce1f5096ff3f393117cbfa98f888">start_calibration</a></dd></dl>
 <div class="image">
-<img src="Calibration_Setup_current.png" alt="" height="400px"/>
+<img src="Calibration_Setup_current.png" alt="" height="500px"/>
 </div>
+</li>
+</ul>
 <h2>Angle Calculation and Distance Approximation </h2>
 <p>The equation for this trigonometry can be seen under the figure.</p>
 <div class="image">
 <img src="Angle_Calculation.png" alt="" height="400px"/>
 </div>
 <dl class="section note"><dt>Note</dt><dd>The arctangent function, applied to calculate the angle between pad distance readings, maps any real number to an angle within -90 to 90 degrees, reflecting the ratio of pad distance value differences to the fixed pad separation, thereby facilitating the calculation of angles up to ±90 degrees. However, visualizing these angles as traditional triangles is challenging, as extreme sensor value differences — representing steep, nearly vertical angles — do not correspond neatly to standard geometric shapes. That's why the visualization using standard geometric shapes only allows angles between -45 and 45 degrees to be visualized. Refer to the image above for a better understanding of the angle calculation.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="calculation_8c.html#a903c0e7083ad87b2f7420dcdcd409f99" title="Distance from the board center to pad center.">D_P</a> Distance from the board center to pad center</dd></dl>
 <p><br  />
  signal_l: Signal strength of the left pad <br  />
  signal_r: Signal strength of the right pad</p>
@@ -238,7 +238,9 @@ Variables</h2></td></tr>
 <p>The approximation, in comparison to the look-up table approach, looks like this: </p><div class="image">
 <img src="approximation_plot.png" alt="" height="600px"/>
 </div>
-<p> Using the coefficient approach, results in a very similar approximation to the look-up table approach, while being more efficient and not requiring an external device to calculate the coefficients.</p>
+<p> Using the coefficient approach, results in a very similar approximation to the look-up table approach, while being more efficient and not requiring an external device to calculate the coefficients. </p><dl class="section note"><dt>Note</dt><dd> 
+<a href="../files/LookUpTable_vs_Coefficients.m">MATLAB SCRIPT</a>
+</dd></dl>
 <p><br  />
  For calibration, only 3 measurements are needed. <br  />
  d1, d2, d3: Distance for each measurement <br  />
@@ -281,7 +283,7 @@ Variables</h2></td></tr>
 
 <p>How many loops for accu. meas. </p>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00131">131</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00135">135</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 
 </div>
 </div>
@@ -297,7 +299,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00134">134</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00138">138</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 
 </div>
 </div>
@@ -315,7 +317,7 @@ Variables</h2></td></tr>
 
 <p>How many loops for calibration meas. </p>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00132">132</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00136">136</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 
 </div>
 </div>
@@ -334,7 +336,7 @@ Variables</h2></td></tr>
 <p>Distance from the board center to pad center. </p>
 <p>&lt; pad border to center of board 8.26 mm (Pad to Board Center) + 22.86 mm (Board Width) / 2 = 19.69 mm (rounded to 19.7 mm) </p>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00130">130</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00134">134</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 
 </div>
 </div>
@@ -356,7 +358,7 @@ Variables</h2></td></tr>
 
 <p>Power of two. </p>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00133">133</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00137">137</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 
 </div>
 </div>
@@ -381,7 +383,7 @@ Variables</h2></td></tr>
 <p>This function calculates the signal strength and main frequency for each channel using <a class="el" href="struct_f_f_t.html">FFT</a>. It performs accurate measurement loops and calculates the mean and standard deviation of the signal strength. If the standard deviation is larger than 100, it sets the error flag accordingly.</p>
 <dl class="section return"><dt>Returns</dt><dd>The calculated <a class="el" href="struct_a_c_c_u___f_f_t.html">ACCU_FFT</a> structure containing the signal strength, standard deviation, and error flag. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00256">256</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00260">260</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -439,7 +441,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_a_c_c_u___m_e_a_s.html">ACCU_MEAS</a> The structure containing the calculated values and error flags. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00460">460</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00464">464</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -533,7 +535,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00601">601</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00605">605</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -588,7 +590,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The calculated distance and angle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00524">524</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00528">528</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -650,7 +652,7 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>The structure containing the calculated main frequency and signal strength. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><em></em> <a href="https://www.keil.com/pack/doc/CMSIS/DSP/html/index.html">CMSIS DSP Software Library </a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00189">189</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00193">193</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -739,7 +741,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00632">632</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00636">636</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -783,7 +785,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The calculated values including frequency, distance, angle, current, and error status. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00328">328</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00332">332</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -845,7 +847,7 @@ Here is the caller graph for this function:</div>
 <p>Starts the calibration process. </p>
 <p>This function initializes the necessary variables and arrays for calibration. It calculates the coefficients for distance approximation and current approximation based on the calibration data stored in flash memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00557">557</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00561">561</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -898,7 +900,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00648">648</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00652">652</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -929,7 +931,7 @@ Here is the caller graph for this function:</div>
 
 <p>This section includes the necessary header files for the <a class="el" href="_settings_view_8cpp.html">SettingsView.cpp</a> file. It includes "main.h" and "calculation.h". It also declares the external variable "State_BUZZER". </p>
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00159">159</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00163">163</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 
 </div>
 </div>
@@ -945,7 +947,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00160">160</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="calculation_8c_source.html#l00164">164</a> of file <a class="el" href="calculation_8c_source.html">calculation.c</a>.</p>
 
 </div>
 </div>
