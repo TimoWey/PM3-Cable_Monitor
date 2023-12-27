@@ -1,6 +1,11 @@
 /**
 @mainpage Cable-Monitor Code Documentation
 
+@details This Software is to be used with the STM32F429I-Discovery Board in conjunction
+with the @ref Cable-Monitor-Board designed by A. Horvat and T. Wey.
+@n The Cable-Monitor Board acts as a shield which is connected to the STM32F429I-Discovery board using the headers on the back of the board.
+@n Its power source comes from its dedicated micro-USB port, which simultaneously powers the STM32F429I-Discovery board.
+
 This is the firmware for the <b>Electronics-Project Module</b>
 <b>ET.PM3: Cable-Monitor</b>
 
@@ -30,7 +35,7 @@ TouchGFX
 @n In the src folder in generated/gui_generated, the code for all screen elements is generated. This was done using the TouchGFX Designer.
 @n In the src folder in gui, the virtual functions are implemented.
 
-
+@anchor Cable-Monitor-Board
 @n The following renders show the front and back view of the cable monitor.
 <table>
 <tr>
@@ -48,8 +53,58 @@ How to use
 This Firmware offers a comprehensive set of features for cable measurement. It allows you to determine the distance to a cable, measure the current flowing through it, and identify its frequency. Additionally, it provides user-friendly guidance through a visual gauge that displays the angle to the cable.
 In the measurement menu, users have the flexibility to choose between two modes: a single, quicker measurement that takes only about 5 periods of a 50Hz signal, or a more precise but slower accurate measurement, which requires approximately 50 periods for completion.
 For enhanced accuracy, the calibration menu enables users to fine-tune distance and current measurements. These calibration values are securely stored in the microcontroller's flash memory.
-In the main menu, located in the top left corner, users can access the settings menu to control the buzzer and LED functions. Furthermore, in the top right corner of the main menu, there is an option to disable the cable monitor.
-Additionally, an information menu is available to provide users with detailed information about the cable monitor's functionality and operation.
+In the main menu, located in the top left corner, users can access the settings menu to control the buzzer and LED functions. Furthermore, in the top right corner of the main menu, there is an option to power off the cable monitor.
+Additionally, the cable monitor can be turned on and off using its dedicated power button on the cable monitor board.
+
+An information menu is also available to provide users with detailed information about the cable monitor's firmware version and its developers.
+
+@n The following renders show the different menus and their functions (Taken from @ref Simulator).
+<table>
+<tr>
+<td>
+\image html Doxygen/img/Measurement_Menu.png "Main Menu" height=320px
+</td>
+<td>
+\image html Doxygen/img/Settings_Menu.png "Settings Menu" height=320px
+</td>
+<td>
+\image html Doxygen/img/Project_info.png "Information Menu" height=320px
+</td>
+<td>
+\image html Doxygen/img/Measurement_Menu.png "Measurement Menu" height=320px
+</td>
+</tr>
+<tr>
+<td>
+\image html Doxygen/img/Single_Measurement_Menu.png "Single Measurement Menu" height=320px
+</td>
+<td>
+\image html Doxygen/img/Single_Measurement_1Phase.png "Single Measurement 1 Phase" height=320px
+</td>
+<td>
+\image html Doxygen/img/Calibration_Menu_Pad.png "Calibration Menu (PAD -> Distance)" height=320px
+</td>
+<td>
+\image html Doxygen/img/Calibration_Menu_HS.png "Calibration Menu (Hall-Sensor -> Current)" height=320px
+</td>
+</tr>
+</table>
+
+@note not all menus are shown here.
+@n For example, the accurate measurement menu is not shown, as it is identical to the single measurement menu, except for the number of periods used for calculation.
+@n The 3-phase measurement menu is also not shown, as it is identical to the 1-phase measurement menu, except for the number of phases used for calculation.
+@n Additionally values are not shown as the renders where made using the TouchGFX Simulator.
+
+@anchor Simulator
+Simulator
+---
+
+Additionally the GUI can be simulated using the TouchGFX Simulator.
+@htmlonly
+<a href="../Cable_Monitor_Simulator.zip">Download Cable_Monitor.exe</a>
+@endhtmlonly
+@note The Simulator requires a Windows PC. In the simulation, values cannot be measured, and other functions, such as the auto turn-off feature, do not operate. 
+@n It solely functions as a visual representation of the GUI.
 
 Testing
 ---

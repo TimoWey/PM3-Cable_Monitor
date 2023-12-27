@@ -77,19 +77,39 @@ $(function() {
 <h1>Test</h1>
 <table class="doxtable">
 <tr>
-<th>Module</th><th>Test Conditions</th><th>Expected</th><th>Observed</th><th>Pass/Fail</th><th>Remarks  </th></tr>
+<th>Module </th><th>Test Conditions </th><th>Expected </th><th>Observed </th><th>Pass/Fail </th><th>Remarks  </th></tr>
 <tr>
-<td>GUI</td><td>Touch menu item "Measurement" from state "Main Menu"</td><td>Switch to state "Measurement Menu"</td><td>Switches to "Measurement Menu"</td><td>Pass</td><td>none  </td></tr>
+<td>GUI </td><td>Touch menu item "Measurement" from state "Main Menu" </td><td>Switch to state "Measurement Menu" </td><td>Switches to "Measurement Menu" </td><td>Pass </td><td>none  </td></tr>
 <tr>
-<td>GUI</td><td>Touch menu item "Calibration" from state "Main Menu"</td><td>Switch to state "Calibration Menu"</td><td>Switches to "Calibration Menu"</td><td>Pass</td><td>none  </td></tr>
+<td>GUI </td><td>Touch menu item "Calibration" from state "Main Menu" </td><td>Switch to state "Calibration Menu" </td><td>Switches to "Calibration Menu" </td><td>Pass </td><td>none  </td></tr>
 <tr>
-<td>GUI</td><td>Touch menu item "Project Info" from state "Main Menu"</td><td>Switch to state "Project Info"</td><td>Switches to "Project Info"</td><td>Pass</td><td>none  </td></tr>
+<td>GUI </td><td>Touch menu item "Project Info" from state "Main Menu" </td><td>Switch to state "Project Info" </td><td>Switches to "Project Info" </td><td>Pass </td><td>none  </td></tr>
 <tr>
-<td>GUI</td><td>Touch red "Off" button from state "Main Menu"</td><td>Switch to state "Shutting_off"</td><td>Switches to "Shutting_off" and device turns off</td><td>Pass</td><td>none  </td></tr>
+<td>GUI </td><td>Touch red "Off" button from state "Main Menu" </td><td>Switch to state "Shutting_off" </td><td>Switches to "Shutting_off" and device turns off </td><td>Pass </td><td>none  </td></tr>
 <tr>
-<td>GUI</td><td>Touch "gear" icon from state "Main Menu"</td><td>Switch to state "Setting Menu"</td><td>Switches to "Settings Menu"</td><td>Pass</td><td><p class="starttd">none </p>
-<p class="endtd"></p>
-</td></tr>
+<td>GUI </td><td>Touch "gear" icon from state "Main Menu" </td><td>Switch to state "Setting Menu" </td><td>Switches to "Settings Menu" </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>GUI </td><td>Observe Timeout in state "Measurement Menu" </td><td>Switch to shutting down menu and device should switch off when timer runs out </td><td>Shutdown menu appears, then device switches off </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>GUI </td><td>Swipe "Calibration Menu" left and right </td><td>Swiping through 6 menu pages </td><td>Successfully swiping through menu pages </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>GUI </td><td>Press green checkmark to store calibration value </td><td>New value should appear after a few sec. </td><td>New value is displayed </td><td>Pass </td><td>In the background the value is stored in the flash as well  </td></tr>
+<tr>
+<td>GUI </td><td>Observe Gauge GUI element in "Measurements Menus" </td><td>Gauge should approximately point to the cable </td><td>Points to the cable </td><td>Pass </td><td>Very sensitive  </td></tr>
+<tr>
+<td>GUI </td><td>Observe Distance GUI value-element in "Measurements Menus" </td><td>Display value according to distance </td><td>Displays distance from 0 to 200mm </td><td>Pass </td><td>Very sensitive  </td></tr>
+<tr>
+<td>GUI </td><td>Observe Frequency GUI value-element in "Measurements Menus" </td><td>Display value according to frequency </td><td>Displays frequency of about 50 Hz </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>GUI </td><td>Observe Current GUI value-element in "Measurements Menus" </td><td>Display value according to current </td><td>Displays current from 0 to 10 A </td><td>Pass </td><td>Very sensitive  </td></tr>
+<tr>
+<td>System Measurements </td><td>Measure Buzzer-PWM base frequency </td><td>Measure 4 kHz with PicoScope at "PWM-Buzzer" testpoint </td><td>4.000 kHz </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>System Measurements </td><td>Measure LED-PWM base frequency </td><td>Measure 1 kHz with PicoScope at both LEDs </td><td>1.000 kHz </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>System Measurements </td><td>Measure ADC Timer 2 sample frequency at GPIO </td><td>Measure 640 Hz with PicoScope at GPIO </td><td>640 Hz </td><td>Pass </td><td>none  </td></tr>
+<tr>
+<td>System Measurements </td><td>Measure heartbeat frequency at PG13 User-LED </td><td>Measure 1 Hz with PicoScope </td><td>1 Hz </td><td>Pass </td><td>none  </td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>The measurements are very sensitive to almost everything. Simply holding or laying the cable monitor differently after calibration will result in deviations in the data.</dd></dl>
 <p><br  />

@@ -2,27 +2,40 @@
  * @file
  * @brief Measuring input signal using following configuration:
  * 
+ * Measurement procedure
+ * -----------
+ * @details The measurement consists of an amplified signal from the cable monitor board.
+ * This signal is then sampled by the ADC and the samples are stored in a buffer.
+ * The buffer is then processed by the calculation module using several digital signal processing methods.
+ * @note This processing allows the calculation of the distance to the cable, the angle of the cable and the current.
+ * @n refer to @ref calculation.c
+ * 
+ * the simplified procedure is shown in the following figure:
+ * @image html Doxygen/img/ADC_Process.png height=600px
+ * 
+ * 
  * Configuration of ADC, timer and DMA
  * -----------
  * - ADC triggered by a timer and with interrupt after end of conversion
  * - ADC combined with DMA (Direct Memory Access) to fill a buffer
  * - Scan mode = sequential sampling of two inputs by one ADC
  * - Analog mode configuration for GPIOs
+ * @details The ADC3 is configured to sample four channels sequentially.
+ * @n The ADC is triggered by the Timer 2 and the samples are transfered to memory by the DMA.
+ * @n The DMA triggers the transfer complete interrupt when all data is ready.
+ * @n The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3 (Pad Left),
+ * ADC_IN6 = GPIO PF8 (HS-Right), ADC3_IN11 = GPIO PC1 (HS-Left)
+ * @n refer to @ref MEAS_start_measure
+ * @image html Doxygen/img/DMA_Buffer.png height=800px
  *
- * @details This Software is to be used with the STM32F4-Discovery Board in conjunction
- * with the Cable-Monitor Board designed by A. Horvat and T. Wey.
- * \n The Cable-Monitor Board is connected to the STM32F4-Discovery Board
- *
- * @image html Doxygen/img/Cable_Monitor_Front.png height=400px
- *
- * The following peripherals are used:
+ * @note The following peripherals are used:
  * - ADC3
  * - DMA2
  * - TIM2
  * - GPIO
  * - NVIC
  * - RCC
- *
+ * 
  * @anchor HowTo
  * How to Configure the Peripherals: ADC, TIMER and DMA
  * ====================================================
@@ -80,10 +93,10 @@ static uint32_t ADC_samples[INPUT_COUNT * ADC_NUMS];
  * @brief Configure GPIOs in analog mode.
  *
  * @note The input number for the ADCs is not equal to the GPIO pin number!
- * - ADC3_IN4 = GPIO PF6 (Pad left)
- * - ADC123_IN13 = GPIO PC3 (Pad right)
- * - ADC3_IN6 = GPIO PF8 (Hall sensor Left)
- * - ADC123_IN11 = GPIO PC1 (Hall sensor Right)
+ * - ADC3_IN4 = GPIO PF6 (Pad right)
+ * - ADC123_IN13 = GPIO PC3 (Pad left)
+ * - ADC3_IN6 = GPIO PF8 (Hall sensor right)
+ * - ADC123_IN11 = GPIO PC1 (Hall sensor left)
  *****************************************************************************/
 void MEAS_GPIO_analog_init(void)
 {
