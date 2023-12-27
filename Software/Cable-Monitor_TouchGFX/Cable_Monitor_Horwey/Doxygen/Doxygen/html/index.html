@@ -73,7 +73,10 @@ $(function() {
   <div class="headertitle"><div class="title">Cable-Monitor Code Documentation </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is the firmware for the <b>Electronics-Project Module</b> <b>ET.PM3: Cable-Monitor</b></p>
+<div class="textblock"><p>This Software is to be used with the STM32F429I-Discovery Board in conjunction with the <a class="el" href="index.html#Cable-Monitor-Board">Cable-Monitor-Board</a> designed by A. Horvat and T. Wey. <br  />
+ The Cable-Monitor Board acts as a shield which is connected to the STM32F429I-Discovery board using the headers on the back of the board. <br  />
+ Its power source comes from its dedicated micro-USB port, which simultaneously powers the STM32F429I-Discovery board.</p>
+<p>This is the firmware for the <b>Electronics-Project Module</b> <b>ET.PM3: Cable-Monitor</b></p>
 <p><br  />
  As part of the Project Module 3 in the 5th Semester, the objective was to develop a Cable-Monitor. This device should be able to find hidden cables in walls, floors and ceilings by measuring the electromagnetic and electrostatic fields of the cable. By making use of the display from the provided development kit, the user is guided to the approximate location of the cable. In addition, audible feedback is provided using a buzzer and useful information such as the current and voltage, is shown on the display. To be able to measure such weak signals, an amplifier had to be used. The amplification was also paired with a Multi-Feedback-Bandpass-Filter (MFB) to eliminate unnecessary frequencies and filter out the wanted 50 Hz signal. Subsequently, the signal is fed into an Analog-to-Digital-Converter (ADC) and read by the microcontroller. The final product aims to detect various types of cables, including one- or two-phased cables and will feature an intuitive touch interface. The challenge extended beyond the realms of hardware and software to effective teamwork, as the project was a collaborative effort between two individuals. Successful completion required meticulous planning and coordination between team members.</p>
 <h2>Core </h2>
@@ -86,7 +89,7 @@ $(function() {
 <p><br  />
  In the src folder in generated/gui_generated, the code for all screen elements is generated. This was done using the TouchGFX Designer. <br  />
  In the src folder in gui, the virtual functions are implemented.</p>
-<p><br  />
+<p><a class="anchor" id="Cable-Monitor-Board"></a><br  />
  The following renders show the front and back view of the cable monitor. </p><table class="doxtable">
 <tr>
 <td><div class="image">
@@ -100,7 +103,56 @@ Back View</div></div>
    </td></tr>
 </table>
 <h2>How to use </h2>
-<p>This Firmware offers a comprehensive set of features for cable measurement. It allows you to determine the distance to a cable, measure the current flowing through it, and identify its frequency. Additionally, it provides user-friendly guidance through a visual gauge that displays the angle to the cable. In the measurement menu, users have the flexibility to choose between two modes: a single, quicker measurement that takes only about 5 periods of a 50Hz signal, or a more precise but slower accurate measurement, which requires approximately 50 periods for completion. For enhanced accuracy, the calibration menu enables users to fine-tune distance and current measurements. These calibration values are securely stored in the microcontroller's flash memory. In the main menu, located in the top left corner, users can access the settings menu to control the buzzer and LED functions. Furthermore, in the top right corner of the main menu, there is an option to disable the cable monitor. Additionally, an information menu is available to provide users with detailed information about the cable monitor's functionality and operation.</p>
+<p>This Firmware offers a comprehensive set of features for cable measurement. It allows you to determine the distance to a cable, measure the current flowing through it, and identify its frequency. Additionally, it provides user-friendly guidance through a visual gauge that displays the angle to the cable. In the measurement menu, users have the flexibility to choose between two modes: a single, quicker measurement that takes only about 5 periods of a 50Hz signal, or a more precise but slower accurate measurement, which requires approximately 50 periods for completion. For enhanced accuracy, the calibration menu enables users to fine-tune distance and current measurements. These calibration values are securely stored in the microcontroller's flash memory. In the main menu, located in the top left corner, users can access the settings menu to control the buzzer and LED functions. Furthermore, in the top right corner of the main menu, there is an option to power off the cable monitor. Additionally, the cable monitor can be turned on and off using its dedicated power button on the cable monitor board.</p>
+<p>An information menu is also available to provide users with detailed information about the cable monitor's firmware version and its developers.</p>
+<p><br  />
+ The following renders show the different menus and their functions (Taken from <a class="el" href="index.html#Simulator">Simulator</a>). </p><table class="doxtable">
+<tr>
+<td><div class="image">
+<img src="Measurement_Menu.png" alt="" height="320px"/>
+<div class="caption">
+Main Menu</div></div>
+  </td><td><div class="image">
+<img src="Settings_Menu.png" alt="" height="320px"/>
+<div class="caption">
+Settings Menu</div></div>
+  </td><td><div class="image">
+<img src="Project_info.png" alt="" height="320px"/>
+<div class="caption">
+Information Menu</div></div>
+  </td><td><div class="image">
+<img src="Measurement_Menu.png" alt="" height="320px"/>
+<div class="caption">
+Measurement Menu</div></div>
+   </td></tr>
+<tr>
+<td><div class="image">
+<img src="Single_Measurement_Menu.png" alt="" height="320px"/>
+<div class="caption">
+Single Measurement Menu</div></div>
+  </td><td><div class="image">
+<img src="Single_Measurement_1Phase.png" alt="" height="320px"/>
+<div class="caption">
+Single Measurement 1 Phase</div></div>
+  </td><td><div class="image">
+<img src="Calibration_Menu_Pad.png" alt="" height="320px"/>
+<div class="caption">
+Calibration Menu (PAD -&gt; Distance)</div></div>
+  </td><td><div class="image">
+<img src="Calibration_Menu_HS.png" alt="" height="320px"/>
+<div class="caption">
+Calibration Menu (Hall-Sensor -&gt; Current)</div></div>
+   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>not all menus are shown here. <br  />
+ For example, the accurate measurement menu is not shown, as it is identical to the single measurement menu, except for the number of periods used for calculation. <br  />
+ The 3-phase measurement menu is also not shown, as it is identical to the 1-phase measurement menu, except for the number of phases used for calculation. <br  />
+ Additionally values are not shown as the renders where made using the TouchGFX Simulator.</dd></dl>
+<p><a class="anchor" id="Simulator"></a></p><h2>Simulator </h2>
+<p>Additionally the GUI can be simulated using the TouchGFX Simulator.  
+<a href="../Cable_Monitor_Simulator.zip">Download Cable_Monitor.exe</a>
+ </p><dl class="section note"><dt>Note</dt><dd>The Simulator requires a Windows PC. In the simulation, values cannot be measured, and other functions, such as the auto turn-off feature, do not operate. <br  />
+ It solely functions as a visual representation of the GUI.</dd></dl>
 <h2>Testing </h2>
 <p><a class="el" href="testing.html">testing.html</a></p>
 <h2>Bugs </h2>

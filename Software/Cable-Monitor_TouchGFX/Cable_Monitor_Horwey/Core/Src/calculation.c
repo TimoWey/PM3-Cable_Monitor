@@ -15,7 +15,7 @@
  * - Measurements are conducted at intervals of 10 mm, 50 mm, and 100 mm.
  * - For each pad and each set distance, the signal strength is recorded. See @ref calculate_freq_and_signalstrength for more details.
  * - For a visual representation of the calibration setup, refer to the diagram below.
- * @n values are read from flash: @ref start_calibration
+ * @note values are read from flash: @ref start_calibration
  * @see D_P Distance from the board center to pad
  *
  * @image html Doxygen/img/Calibration_Setup.png height=400px
@@ -41,7 +41,7 @@
  *
  * @image html Doxygen/img/Angle_Calculation.png height=400px
  *
- * The arctangent function, applied to calculate the angle between pad distance readings, 
+ * @note The arctangent function, applied to calculate the angle between pad distance readings, 
  * maps any real number to an angle within -90 to 90 degrees, 
  * reflecting the ratio of pad distance value differences to the fixed pad separation, 
  * thereby facilitating the calculation of angles up to ±90 degrees. 
@@ -59,10 +59,13 @@
  * ===================================
  * Distance
  * --------
- * Approximation is done with a Laurent polynomial 2nd degree.
- * By solving the equation system with the 3 measurements, the coefficients can be calculated.
+ * Approximation is done with a Laurent polynomial 2nd degree. 
+ * @n By solving the equation system with the 3 measurements, the coefficients can be calculated.
  * each coefficient is calculated with the following equation:
+ * 
+ * 
  * @image html Doxygen/img/distance_coefficients.png height=400px
+ * @see calculate_coefficients_single_pad
  * 
  * The coefficients are calculated for each pad. With these coefficients the distance can be approximated.
  * @ref calculate_distance_and_angle function calculates both distances from each pad
@@ -99,8 +102,9 @@
  *
  *
  * @todo Optimize accuracy of approximation
+ * @todo Optimize output of accurate measurement
  * 
- * @bug Current calculation sometimes returns nan or inf values, Flash looses data sometimes
+ * @bug Current calculation sometimes returns nan or inf values
  * 
  * ----------------------------------------------------------------------------
  * @author  Alejandro Horvat, horvaale@students.zhaw.ch
@@ -403,7 +407,7 @@ SINGLE_MEAS single_measurement(uint8_t Phase)
     // ERROR TESTING:
 
     // Check if distance is close enough for current calculation and if the current is out of the range of 0-10 A
-    if (single_meas.distance > 30 || (single_meas.current <= 0 && single_meas.current >= 10))
+    if (single_meas.distance > 20 || (single_meas.current <= 0 && single_meas.current >= 10))
        single_meas.error = CALC_ERROR_TOO_FAR_AWAY;
 
     // Check if the current is larger than 10 A -> CALL ERROR OVERCURRENT

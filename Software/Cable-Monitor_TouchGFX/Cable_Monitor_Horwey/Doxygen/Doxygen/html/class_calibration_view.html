@@ -101,6 +101,7 @@ Collaboration diagram for CalibrationView:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad59acad74e16f835feaa7fcf38416443" id="r_ad59acad74e16f835feaa7fcf38416443"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_calibration_view.html#ad59acad74e16f835feaa7fcf38416443">CalibrationView</a> ()</td></tr>
+<tr class="memdesc:ad59acad74e16f835feaa7fcf38416443"><td class="mdescLeft">&#160;</td><td class="mdescRight">This section includes the necessary header files for the calibration screen.  <br /></td></tr>
 <tr class="separator:ad59acad74e16f835feaa7fcf38416443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16a4516b21b1c6f01e96aded6a4a7ad5" id="r_a16a4516b21b1c6f01e96aded6a4a7ad5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_calibration_view.html#a16a4516b21b1c6f01e96aded6a4a7ad5">~CalibrationView</a> ()</td></tr>
 <tr class="separator:a16a4516b21b1c6f01e96aded6a4a7ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,6 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a85289561483ed5279a1a6d834708237d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affb58a0de279aa4abde467f1761db6ca" id="r_affb58a0de279aa4abde467f1761db6ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_calibration_view.html#affb58a0de279aa4abde467f1761db6ca">setTimeoutValue</a> (int value)</td></tr>
 <tr class="separator:affb58a0de279aa4abde467f1761db6ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b00300d1f4217da9c77355b28377cf5" id="r_a0b00300d1f4217da9c77355b28377cf5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_calibration_view.html#a0b00300d1f4217da9c77355b28377cf5">Load_FLASH_Values</a> ()</td></tr>
+<tr class="memdesc:a0b00300d1f4217da9c77355b28377cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the calibration values from the Flash memory and updates the GUI.  <br /></td></tr>
+<tr class="separator:a0b00300d1f4217da9c77355b28377cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -130,7 +134,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00003">3</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
+<p>This section includes the necessary header files for the calibration screen. </p>
+<p>The "FLASH_SECTOR_F4.h" header file provides access to functions related to flash sector operations. The "calculation.h" header file provides access to functions related to calculations. </p>
+
+<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00022">22</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
 
 </div>
 </div>
@@ -162,6 +169,42 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0b00300d1f4217da9c77355b28377cf5" name="a0b00300d1f4217da9c77355b28377cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b00300d1f4217da9c77355b28377cf5">&#9670;&#160;</a></span>Load_FLASH_Values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Load_FLASH_Values </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the calibration values from the Flash memory and updates the GUI. </p>
+<p>This function reads the calibration values stored in the Flash memory and writes them to the corresponding GUI elements. The calibration values include left pad, right pad, hall left 1P 1.2A and 5A, hall right 1P 1.2A and 5A, hall left 3P 1.2A and 5A, and hall right 3P 1.2A and 5A.</p>
+<dl class="section note"><dt>Note</dt><dd>This function is only executed when not running in the simulator. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00051">51</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_calibration_view_a0b00300d1f4217da9c77355b28377cf5_cgraph.png" border="0" usemap="#aclass_calibration_view_a0b00300d1f4217da9c77355b28377cf5_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="affb58a0de279aa4abde467f1761db6ca" name="affb58a0de279aa4abde467f1761db6ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#affb58a0de279aa4abde467f1761db6ca">&#9670;&#160;</a></span>setTimeoutValue()</h2>
 
@@ -186,7 +229,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00018">18</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00037">37</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
 
 </div>
 </div>
@@ -213,7 +256,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00008">8</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00027">27</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
 
 </div>
 </div>
@@ -240,7 +283,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00013">13</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_calibration_view_8cpp_source.html#l00032">32</a> of file <a class="el" href="_calibration_view_8cpp_source.html">CalibrationView.cpp</a>.</p>
 
 </div>
 </div>
