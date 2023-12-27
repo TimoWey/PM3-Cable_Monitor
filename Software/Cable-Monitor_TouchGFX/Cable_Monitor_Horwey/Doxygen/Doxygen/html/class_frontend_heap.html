@@ -74,7 +74,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle"><div class="title">FrontendHeap Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -85,8 +86,10 @@ Inheritance diagram for FrontendHeap:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_frontend_heap__inherit__graph.png" border="0" usemap="#a_frontend_heap_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_frontend_heap_inherit__map" id="a_frontend_heap_inherit__map">
-<area shape="rect" title=" " alt="" coords="20,80,123,107"/>
-<area shape="rect" title=" " alt="" coords="5,5,138,32"/>
+<area shape="rect" title=" " alt="" coords="20,155,123,181"/>
+<area shape="rect" href="class_frontend_heap_base.html" title=" " alt="" coords="5,80,138,107"/>
+<area shape="poly" title=" " alt="" coords="74,122,74,154,69,154,69,122"/>
+<area shape="rect" title=" " alt="" coords="31,5,112,32"/>
 <area shape="poly" title=" " alt="" coords="74,48,74,80,69,80,69,48"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -95,18 +98,24 @@ Collaboration diagram for FrontendHeap:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_frontend_heap__coll__graph.png" border="0" usemap="#a_frontend_heap_coll__map" alt="Collaboration graph"/></div>
 <map name="a_frontend_heap_coll__map" id="a_frontend_heap_coll__map">
-<area shape="rect" title=" " alt="" coords="176,172,279,199"/>
-<area shape="rect" title=" " alt="" coords="5,81,138,108"/>
-<area shape="poly" title=" " alt="" coords="108,114,207,169,204,174,106,118"/>
-<area shape="rect" href="class_model.html" title=" " alt="" coords="325,81,381,108"/>
-<area shape="poly" title=" " alt="" coords="324,119,302,134,246,174,243,169,299,130,321,115"/>
-<area shape="rect" href="class_model_listener.html" title=" " alt="" coords="336,172,439,199"/>
-<area shape="poly" title=" " alt="" coords="348,123,351,147,359,159,370,170,366,174,355,163,346,149,343,123"/>
-<area shape="poly" title=" " alt="" coords="393,157,390,133,382,121,371,111,375,107,386,117,395,131,398,157"/>
-<area shape="rect" href="class_frontend_application.html" title=" " alt="" coords="162,81,298,108"/>
-<area shape="poly" title=" " alt="" coords="232,124,231,171,225,171,227,124"/>
-<area shape="rect" title=" " alt="" coords="147,5,313,32"/>
-<area shape="poly" title=" " alt="" coords="233,47,233,81,228,81,228,47"/>
+<area shape="rect" title=" " alt="" coords="393,172,496,199"/>
+<area shape="rect" href="class_frontend_application_base.html" title=" " alt="" coords="236,263,402,289"/>
+<area shape="poly" title=" " alt="" coords="389,208,359,225,341,244,328,263,324,261,337,240,356,221,386,203"/>
+<area shape="rect" href="class_frontend_heap_base.html" title=" " alt="" coords="378,81,511,108"/>
+<area shape="poly" title=" " alt="" coords="447,124,447,171,442,171,442,124"/>
+<area shape="rect" title=" " alt="" coords="404,5,485,32"/>
+<area shape="poly" title=" " alt="" coords="447,47,447,81,442,81,442,47"/>
+<area shape="rect" href="class_model.html" title=" " alt="" coords="135,81,191,108"/>
+<area shape="poly" title=" " alt="" coords="207,107,405,169,403,174,205,112"/>
+<area shape="rect" href="class_model_listener.html" title=" " alt="" coords="5,172,108,199"/>
+<area shape="poly" title=" " alt="" coords="141,120,106,150,76,173,72,169,103,146,137,116"/>
+<area shape="poly" title=" " alt="" coords="172,122,185,160,206,197,226,217,248,234,292,260,290,264,245,239,222,221,202,200,180,162,167,124"/>
+<area shape="poly" title=" " alt="" coords="24,163,14,148,14,139,17,130,37,118,68,108,134,96,135,102,69,113,39,122,22,134,19,140,19,146,29,160"/>
+<area shape="rect" href="class_frontend_application.html" title=" " alt="" coords="323,339,459,365"/>
+<area shape="poly" title=" " alt="" coords="402,324,419,284,435,238,441,199,446,200,440,239,424,286,407,326"/>
+<area shape="poly" title=" " alt="" coords="343,298,381,336,377,340,340,302"/>
+<area shape="rect" title=" " alt="" coords="255,172,370,199"/>
+<area shape="poly" title=" " alt="" coords="317,214,321,262,316,262,312,215"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -120,22 +129,35 @@ Public Types</h2></td></tr>
 <tr class="separator:a4b0123fd965f9a0238b0ae5bc5fee41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a932ca1c5b78a2a2ba59de03426dc340b" id="r_a932ca1c5b78a2a2ba59de03426dc340b"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap.html#a7253aafa197395fe174b6540c76494af">UserDefinedViewTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#a932ca1c5b78a2a2ba59de03426dc340b">MaxUserViewType</a></td></tr>
 <tr class="separator:a932ca1c5b78a2a2ba59de03426dc340b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a610fa2c8d335f91498876c2904bea6fa" id="r_a610fa2c8d335f91498876c2904bea6fa"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; MaxGeneratedViewType, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a932ca1c5b78a2a2ba59de03426dc340b">MaxUserViewType</a>, touchgfx::meta::Nil &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#a610fa2c8d335f91498876c2904bea6fa">CombinedViewTypes</a></td></tr>
+<tr class="memitem:a610fa2c8d335f91498876c2904bea6fa" id="r_a610fa2c8d335f91498876c2904bea6fa"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap_base.html#a2be27db7500a1b728652fa64898bc4f8">MaxGeneratedViewType</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a932ca1c5b78a2a2ba59de03426dc340b">MaxUserViewType</a>, touchgfx::meta::Nil &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#a610fa2c8d335f91498876c2904bea6fa">CombinedViewTypes</a></td></tr>
 <tr class="separator:a610fa2c8d335f91498876c2904bea6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4597ad40417325a2d5f60c93ad648c3b" id="r_a4597ad40417325a2d5f60c93ad648c3b"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap.html#a610fa2c8d335f91498876c2904bea6fa">CombinedViewTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#a4597ad40417325a2d5f60c93ad648c3b">MaxViewType</a></td></tr>
 <tr class="separator:a4597ad40417325a2d5f60c93ad648c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a016f21d90190f9d5805d7669d5d2626e" id="r_a016f21d90190f9d5805d7669d5d2626e"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap.html#a48e0d50a8b0551b2aa38528436167bad">UserDefinedPresenterTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#a016f21d90190f9d5805d7669d5d2626e">MaxUserPresenterType</a></td></tr>
 <tr class="separator:a016f21d90190f9d5805d7669d5d2626e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa558e3b72b9949123cc9bc8d19aec9da" id="r_aa558e3b72b9949123cc9bc8d19aec9da"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; MaxGeneratedPresenterType, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a016f21d90190f9d5805d7669d5d2626e">MaxUserPresenterType</a>, touchgfx::meta::Nil &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#aa558e3b72b9949123cc9bc8d19aec9da">CombinedPresenterTypes</a></td></tr>
+<tr class="memitem:aa558e3b72b9949123cc9bc8d19aec9da" id="r_aa558e3b72b9949123cc9bc8d19aec9da"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap_base.html#a79dbf253e440483cbe11702a8eb057d5">MaxGeneratedPresenterType</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a016f21d90190f9d5805d7669d5d2626e">MaxUserPresenterType</a>, touchgfx::meta::Nil &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#aa558e3b72b9949123cc9bc8d19aec9da">CombinedPresenterTypes</a></td></tr>
 <tr class="separator:aa558e3b72b9949123cc9bc8d19aec9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3969a26870edbfd5291fe346b0b0cd8" id="r_aa3969a26870edbfd5291fe346b0b0cd8"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap.html#aa558e3b72b9949123cc9bc8d19aec9da">CombinedPresenterTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#aa3969a26870edbfd5291fe346b0b0cd8">MaxPresenterType</a></td></tr>
 <tr class="separator:aa3969a26870edbfd5291fe346b0b0cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa79170ecfa32ccf8fcaa670096ab1591" id="r_aa79170ecfa32ccf8fcaa670096ab1591"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap.html#a4b0123fd965f9a0238b0ae5bc5fee41e">UserDefinedTransitionTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#aa79170ecfa32ccf8fcaa670096ab1591">MaxUserTransitionType</a></td></tr>
 <tr class="separator:aa79170ecfa32ccf8fcaa670096ab1591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed30949f14c7c9a233ec2406f62ba59e" id="r_aed30949f14c7c9a233ec2406f62ba59e"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; MaxGeneratedTransitionType, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#aa79170ecfa32ccf8fcaa670096ab1591">MaxUserTransitionType</a>, touchgfx::meta::Nil &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#aed30949f14c7c9a233ec2406f62ba59e">CombinedTransitionTypes</a></td></tr>
+<tr class="memitem:aed30949f14c7c9a233ec2406f62ba59e" id="r_aed30949f14c7c9a233ec2406f62ba59e"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap_base.html#a70e0e16e95c1d3923d8ba4468b129b28">MaxGeneratedTransitionType</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#aa79170ecfa32ccf8fcaa670096ab1591">MaxUserTransitionType</a>, touchgfx::meta::Nil &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#aed30949f14c7c9a233ec2406f62ba59e">CombinedTransitionTypes</a></td></tr>
 <tr class="separator:aed30949f14c7c9a233ec2406f62ba59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d51d5960fb28142aa00ce6278cd5f43" id="r_a0d51d5960fb28142aa00ce6278cd5f43"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap.html#aed30949f14c7c9a233ec2406f62ba59e">CombinedTransitionTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#a0d51d5960fb28142aa00ce6278cd5f43">MaxTransitionType</a></td></tr>
 <tr class="separator:a0d51d5960fb28142aa00ce6278cd5f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_frontend_heap_base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_frontend_heap_base')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_frontend_heap_base.html">FrontendHeapBase</a></td></tr>
+<tr class="memitem:a0005e79d41dc8eeff8b8774edab609b1 inherit pub_types_class_frontend_heap_base" id="r_a0005e79d41dc8eeff8b8774edab609b1"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_main___menu_view.html">Main_MenuView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement_view.html">MeasurementView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___single_view.html">Measurement_SingleView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___single___display__1_p_view.html">Measurement_Single_Display_1PView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___single___display__3_p_view.html">Measurement_Single_Display_3PView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___accurate_view.html">Measurement_AccurateView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___accurate___display__1_p_view.html">Measurement_Accurate_Display_1PView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___accurate___display__3_p_view.html">Measurement_Accurate_Display_3PView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_calibration_view.html">CalibrationView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_project___info_view.html">Project_InfoView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_settings_view.html">SettingsView</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_shutting___off_view.html">Shutting_OffView</a>, touchgfx::meta::Nil &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#a0005e79d41dc8eeff8b8774edab609b1">GeneratedViewTypes</a></td></tr>
+<tr class="separator:a0005e79d41dc8eeff8b8774edab609b1 inherit pub_types_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be27db7500a1b728652fa64898bc4f8 inherit pub_types_class_frontend_heap_base" id="r_a2be27db7500a1b728652fa64898bc4f8"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap_base.html#a0005e79d41dc8eeff8b8774edab609b1">GeneratedViewTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#a2be27db7500a1b728652fa64898bc4f8">MaxGeneratedViewType</a></td></tr>
+<tr class="separator:a2be27db7500a1b728652fa64898bc4f8 inherit pub_types_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc8a6b2fbaa585e048427bcb871ed9d8 inherit pub_types_class_frontend_heap_base" id="r_afc8a6b2fbaa585e048427bcb871ed9d8"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_main___menu_presenter.html">Main_MenuPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement_presenter.html">MeasurementPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___single_presenter.html">Measurement_SinglePresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___single___display__1_p_presenter.html">Measurement_Single_Display_1PPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___single___display__3_p_presenter.html">Measurement_Single_Display_3PPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___accurate_presenter.html">Measurement_AccuratePresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___accurate___display__1_p_presenter.html">Measurement_Accurate_Display_1PPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_measurement___accurate___display__3_p_presenter.html">Measurement_Accurate_Display_3PPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_calibration_presenter.html">CalibrationPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_project___info_presenter.html">Project_InfoPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_settings_presenter.html">SettingsPresenter</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_shutting___off_presenter.html">Shutting_OffPresenter</a>, touchgfx::meta::Nil &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#afc8a6b2fbaa585e048427bcb871ed9d8">GeneratedPresenterTypes</a></td></tr>
+<tr class="separator:afc8a6b2fbaa585e048427bcb871ed9d8 inherit pub_types_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79dbf253e440483cbe11702a8eb057d5 inherit pub_types_class_frontend_heap_base" id="r_a79dbf253e440483cbe11702a8eb057d5"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap_base.html#afc8a6b2fbaa585e048427bcb871ed9d8">GeneratedPresenterTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#a79dbf253e440483cbe11702a8eb057d5">MaxGeneratedPresenterType</a></td></tr>
+<tr class="separator:a79dbf253e440483cbe11702a8eb057d5 inherit pub_types_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24bfa3c79fb0ae2e7a29faafbf99d6df inherit pub_types_class_frontend_heap_base" id="r_a24bfa3c79fb0ae2e7a29faafbf99d6df"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::TypeList&lt; touchgfx::NoTransition, touchgfx::meta::TypeList&lt; WipeTransition&lt; EAST &gt;, touchgfx::meta::TypeList&lt; WipeTransition&lt; WEST &gt;, touchgfx::meta::Nil &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#a24bfa3c79fb0ae2e7a29faafbf99d6df">GeneratedTransitionTypes</a></td></tr>
+<tr class="separator:a24bfa3c79fb0ae2e7a29faafbf99d6df inherit pub_types_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e0e16e95c1d3923d8ba4468b129b28 inherit pub_types_class_frontend_heap_base" id="r_a70e0e16e95c1d3923d8ba4468b129b28"><td class="memItemLeft" align="right" valign="top">typedef touchgfx::meta::select_type_maxsize&lt; <a class="el" href="class_frontend_heap_base.html#a24bfa3c79fb0ae2e7a29faafbf99d6df">GeneratedTransitionTypes</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#a70e0e16e95c1d3923d8ba4468b129b28">MaxGeneratedTransitionType</a></td></tr>
+<tr class="separator:a70e0e16e95c1d3923d8ba4468b129b28 inherit pub_types_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -154,6 +176,20 @@ Data Fields</h2></td></tr>
 <tr class="separator:aa7373a131d63421e546eaa40689df69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8e5fdf4d1a442d7f4ba2b20e625f29c" id="r_ae8e5fdf4d1a442d7f4ba2b20e625f29c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_frontend_application.html">FrontendApplication</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#ae8e5fdf4d1a442d7f4ba2b20e625f29c">app</a></td></tr>
 <tr class="separator:ae8e5fdf4d1a442d7f4ba2b20e625f29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae7a4cb75fe0193c6750c1b538073be8b" id="r_ae7a4cb75fe0193c6750c1b538073be8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap.html#ae7a4cb75fe0193c6750c1b538073be8b">FrontendHeap</a> ()</td></tr>
+<tr class="separator:ae7a4cb75fe0193c6750c1b538073be8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_class_frontend_heap_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_frontend_heap_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_frontend_heap_base.html">FrontendHeapBase</a></td></tr>
+<tr class="memitem:abc8db3cf751be2823e3064293e570a6f inherit pub_methods_class_frontend_heap_base" id="r_abc8db3cf751be2823e3064293e570a6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#abc8db3cf751be2823e3064293e570a6f">gotoStartScreen</a> (<a class="el" href="class_frontend_application.html">FrontendApplication</a> &amp;app)</td></tr>
+<tr class="separator:abc8db3cf751be2823e3064293e570a6f inherit pub_methods_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_frontend_heap_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_frontend_heap_base')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_frontend_heap_base.html">FrontendHeapBase</a></td></tr>
+<tr class="memitem:a7f06be773551c058fe0833769a4386c6 inherit pro_methods_class_frontend_heap_base" id="r_a7f06be773551c058fe0833769a4386c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frontend_heap_base.html#a7f06be773551c058fe0833769a4386c6">FrontendHeapBase</a> (touchgfx::AbstractPartition &amp;presenters, touchgfx::AbstractPartition &amp;views, touchgfx::AbstractPartition &amp;transitions, <a class="el" href="class_frontend_application.html">FrontendApplication</a> &amp;app)</td></tr>
+<tr class="separator:a7f06be773551c058fe0833769a4386c6 inherit pro_methods_class_frontend_heap_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -166,7 +202,7 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef touchgfx::meta::TypeList&lt; MaxGeneratedPresenterType, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a016f21d90190f9d5805d7669d5d2626e">MaxUserPresenterType</a>, touchgfx::meta::Nil &gt; &gt; <a class="el" href="class_frontend_heap.html#aa558e3b72b9949123cc9bc8d19aec9da">CombinedPresenterTypes</a></td>
+          <td class="memname">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap_base.html#a79dbf253e440483cbe11702a8eb057d5">MaxGeneratedPresenterType</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a016f21d90190f9d5805d7669d5d2626e">MaxUserPresenterType</a>, touchgfx::meta::Nil &gt; &gt; <a class="el" href="class_frontend_heap.html#aa558e3b72b9949123cc9bc8d19aec9da">CombinedPresenterTypes</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -182,7 +218,7 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef touchgfx::meta::TypeList&lt; MaxGeneratedTransitionType, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#aa79170ecfa32ccf8fcaa670096ab1591">MaxUserTransitionType</a>, touchgfx::meta::Nil &gt; &gt; <a class="el" href="class_frontend_heap.html#aed30949f14c7c9a233ec2406f62ba59e">CombinedTransitionTypes</a></td>
+          <td class="memname">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap_base.html#a70e0e16e95c1d3923d8ba4468b129b28">MaxGeneratedTransitionType</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#aa79170ecfa32ccf8fcaa670096ab1591">MaxUserTransitionType</a>, touchgfx::meta::Nil &gt; &gt; <a class="el" href="class_frontend_heap.html#aed30949f14c7c9a233ec2406f62ba59e">CombinedTransitionTypes</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -198,7 +234,7 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef touchgfx::meta::TypeList&lt; MaxGeneratedViewType, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a932ca1c5b78a2a2ba59de03426dc340b">MaxUserViewType</a>, touchgfx::meta::Nil &gt; &gt; <a class="el" href="class_frontend_heap.html#a610fa2c8d335f91498876c2904bea6fa">CombinedViewTypes</a></td>
+          <td class="memname">typedef touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap_base.html#a2be27db7500a1b728652fa64898bc4f8">MaxGeneratedViewType</a>, touchgfx::meta::TypeList&lt; <a class="el" href="class_frontend_heap.html#a932ca1c5b78a2a2ba59de03426dc340b">MaxUserViewType</a>, touchgfx::meta::Nil &gt; &gt; <a class="el" href="class_frontend_heap.html#a610fa2c8d335f91498876c2904bea6fa">CombinedViewTypes</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -348,6 +384,48 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_frontend_heap_8hpp_source.html#l00012">12</a> of file <a class="el" href="_frontend_heap_8hpp_source.html">FrontendHeap.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae7a4cb75fe0193c6750c1b538073be8b" name="ae7a4cb75fe0193c6750c1b538073be8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a4cb75fe0193c6750c1b538073be8b">&#9670;&#160;</a></span>FrontendHeap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_frontend_heap.html">FrontendHeap</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_frontend_heap_8hpp_source.html#l00067">67</a> of file <a class="el" href="_frontend_heap_8hpp_source.html">FrontendHeap.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_frontend_heap_ae7a4cb75fe0193c6750c1b538073be8b_cgraph.png" border="0" usemap="#aclass_frontend_heap_ae7a4cb75fe0193c6750c1b538073be8b_cgraph" alt=""/></div>
+<map name="aclass_frontend_heap_ae7a4cb75fe0193c6750c1b538073be8b_cgraph" id="aclass_frontend_heap_ae7a4cb75fe0193c6750c1b538073be8b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,108,40"/>
+<area shape="rect" href="class_frontend_heap_base.html#abc8db3cf751be2823e3064293e570a6f" title=" " alt="" coords="156,5,349,48"/>
+<area shape="poly" title=" " alt="" coords="108,24,140,24,140,29,108,29"/>
+<area shape="rect" href="class_frontend_application_base.html#a90ae06736f85119a08added0eaeade39" title=" " alt="" coords="397,5,631,48"/>
+<area shape="poly" title=" " alt="" coords="349,24,381,24,381,29,349,29"/>
+<area shape="rect" href="class_frontend_application_base.html#a045789b89bbd934016b858b9f852bff0" title=" " alt="" coords="679,5,938,48"/>
+<area shape="poly" title=" " alt="" coords="632,24,664,24,664,29,632,29"/>
+</map>
+</div>
 
 </div>
 </div>

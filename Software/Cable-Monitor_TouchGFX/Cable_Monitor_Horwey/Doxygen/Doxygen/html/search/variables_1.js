@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['bytes_5ftemp_0',['bytes_temp',['../_f_l_a_s_h___s_e_c_t_o_r___f4_8c.html#ae7fc8a7d12e0c0c2be596ccb2dd48fdd',1,'FLASH_SECTOR_F4.c']]]
+  ['amd1_5fcurrent_0',['AMD1_Current',['../class_measurement___accurate___display__1_p_view_base.html#a8597023270f644da3726cba746d87d74',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5fcurrent_5fsize_1',['AMD1_CURRENT_SIZE',['../class_measurement___accurate___display__1_p_view_base.html#a1e9ba9edd1d0938942712c6a2f128439',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5fcurrentbuffer_2',['AMD1_CurrentBuffer',['../class_measurement___accurate___display__1_p_view_base.html#acb0c587d7d64b94ef5bd5e69e9ad1c94',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5fdistance_3',['AMD1_Distance',['../class_measurement___accurate___display__1_p_view_base.html#a65ff344e1859a3123578c496e845eb08',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5fdistance_5fsize_4',['AMD1_DISTANCE_SIZE',['../class_measurement___accurate___display__1_p_view_base.html#a6dd2a275e8e45f4d61df5ddf97b77579',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5fdistancebuffer_5',['AMD1_DistanceBuffer',['../class_measurement___accurate___display__1_p_view_base.html#a6bbda3c60321d070e04efd5a48d8f6f5',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5ffrequency_6',['AMD1_Frequency',['../class_measurement___accurate___display__1_p_view_base.html#a4b1888f37654837f7122f0d2f6b3db27',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5ffrequency_5fsize_7',['AMD1_FREQUENCY_SIZE',['../class_measurement___accurate___display__1_p_view_base.html#a46a41910552bc3c4f59a26ccd1386e98',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5ffrequencybuffer_8',['AMD1_FrequencyBuffer',['../class_measurement___accurate___display__1_p_view_base.html#a87a2b0aac8b1a540dccbfe909889ed00',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd1_5fgauge_9',['AMD1_Gauge',['../class_measurement___accurate___display__1_p_view_base.html#a8c7cc040e0471f5cf95d42a2cb40b5f0',1,'Measurement_Accurate_Display_1PViewBase']]],
+  ['amd3_5fcurrent_10',['AMD3_Current',['../class_measurement___accurate___display__3_p_view_base.html#a75f98f64cb250d3ea83048312398ef02',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5fcurrent_5fsize_11',['AMD3_CURRENT_SIZE',['../class_measurement___accurate___display__3_p_view_base.html#a061a538b484d8487382b3ce47d7a4c31',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5fcurrentbuffer_12',['AMD3_CurrentBuffer',['../class_measurement___accurate___display__3_p_view_base.html#a712ae889a570b756dbb449a67ea02909',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5fdistance_13',['AMD3_Distance',['../class_measurement___accurate___display__3_p_view_base.html#af18f3bc10ac7eabaed1c685c8189184a',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5fdistance_5fsize_14',['AMD3_DISTANCE_SIZE',['../class_measurement___accurate___display__3_p_view_base.html#a4e093defbfac7f05f3bd64088d24e94f',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5fdistancebuffer_15',['AMD3_DistanceBuffer',['../class_measurement___accurate___display__3_p_view_base.html#a5150cde6a659ce5e8e3ae4456709ea24',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5ffrequency_16',['AMD3_Frequency',['../class_measurement___accurate___display__3_p_view_base.html#ac66875342fe138f5cf425eb9e62dda10',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5ffrequency_5fsize_17',['AMD3_FREQUENCY_SIZE',['../class_measurement___accurate___display__3_p_view_base.html#a701983b665a688adce8a6c872b701a9e',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5ffrequencybuffer_18',['AMD3_FrequencyBuffer',['../class_measurement___accurate___display__3_p_view_base.html#a5c209150d650d7ec6a79a2a1e7801e42',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['amd3_5fgauge_19',['AMD3_Gauge',['../class_measurement___accurate___display__3_p_view_base.html#a55c5b2fdceeb200d4cfbd8f8bca1f96f',1,'Measurement_Accurate_Display_3PViewBase']]],
+  ['angle_20',['angle',['../struct_s_i_n_g_l_e___m_e_a_s.html#a075c4c04f1ee8c1cd5f910bf5d3b092c',1,'SINGLE_MEAS::angle'],['../struct_a_c_c_u___m_e_a_s.html#a075c4c04f1ee8c1cd5f910bf5d3b092c',1,'ACCU_MEAS::angle'],['../struct_d_i_s_t_a_n_c_e___a_n_g_l_e.html#a075c4c04f1ee8c1cd5f910bf5d3b092c',1,'DISTANCE_ANGLE::angle']]],
+  ['angle_5fstd_5fdev_21',['angle_std_dev',['../struct_a_c_c_u___m_e_a_s.html#af440532e45c15aaa8eb9c7323a8c669c',1,'ACCU_MEAS']]],
+  ['app_22',['app',['../class_frontend_heap.html#ae8e5fdf4d1a442d7f4ba2b20e625f29c',1,'FrontendHeap']]]
 ];

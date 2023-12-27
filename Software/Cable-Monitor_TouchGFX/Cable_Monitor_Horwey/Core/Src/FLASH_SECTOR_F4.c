@@ -1,20 +1,23 @@
-
 /**
-  ***************************************************************************************************************
-  ***************************************************************************************************************
-  ***************************************************************************************************************
-  File:	      FLASH_SECTOR_F4.c
-  Modifier:   ControllersTech.com
-  Updated:    27th MAY 2021
-  ***************************************************************************************************************
-  Copyright (C) 2017 ControllersTech.com
-  This is a free software under the GNU license, you can redistribute it and/or modify it under the terms
-  of the GNU General Public License version 3 as published by the Free Software Foundation.
-  This software library is shared with public for educational purposes, without WARRANTY and Author is not liable
-  for any damages caused directly or indirectly by this software, read more about this on the GNU General
-  Public License.
-  ***************************************************************************************************************
-*/
+ * @file FLASH_SECTOR_F4.c
+ * @brief File for 'FLASH_SECTOR_F4' functions
+ * 
+ * @author ControllersTech.com
+ * @date 27th May 2021
+ * 
+ * @section license_sec License
+ * Copyright (C) 2017 ControllersTech.com
+ * 
+ * This is a free software under the GNU license. You can redistribute it and/or 
+ * modify it under the terms of the GNU General Public License version 3 as 
+ * published by the Free Software Foundation.
+ * 
+ * This software library is shared with the public for educational purposes, 
+ * without WARRANTY and the author is not liable for any damages caused directly 
+ * or indirectly by this software. For more details, read the GNU General 
+ * Public License.
+ * 
+ */
 
 #include "FLASH_SECTOR_F4.h"
 #include "stm32f4xx_hal.h"
