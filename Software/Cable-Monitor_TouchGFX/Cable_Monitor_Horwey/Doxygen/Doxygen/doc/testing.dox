@@ -141,7 +141,41 @@ This table was used to check the firmware for bugs.
         <td>Pass</td>
         <td>none</td>
     </tr>
+	<tr>
+        <td>Measurements</td>
+        <td>Current measurement in "Accurate Measurement" 1.Phase after calibration</td>
+        <td>Current in the range of 1 A to 10 A with a precision of ±50% up to a distance of 20 mm</td>
+        <td>Actual 1.2 A: measured 1.5A<br>Actual 5.0 A: measured 5.5A</td>
+        <td>Pass</td>
+        <td>"OVERCURRENT" over 10A. and "TOO FAR" if over 20 mm</td>
+    </tr>
+    <tr>
+        <td>Measurements</td>
+        <td>Current measurement in "Accurate Measurement" 3.Phase after calibration</td>
+        <td>Current in the range of 1 A to 10 A with a precision of ±50% up to a distance of 20 mm</td>
+        <td>Actual 1.2 A: measured 1.0A<br>Actual 5.0 A: measured 4.7 A</td>
+        <td>Pass</td>
+        <td>"OVERCURRENT" over 10A. and "TOO FAR" if over 20 mm</td>
+    </tr>
+    <tr>
+        <td>Measurements</td>
+        <td>Distance measurement in "Accurate Measurement" 1.Phase after calibration</td>
+        <td>Distance up to 200 mm with a precision of ±30%</td>
+        <td>Distance 100 mm: measured 105 mm<br>Distance 200 mm: measured 187 mm<br> Distance over 200 mm: "DISCONNECTED"</td>
+        <td>Pass</td>
+        <td>note: at higher distances less precise</td>
+    </tr>
+    <tr>
+        <td>Measurements</td>
+        <td>Distance measurement in "Accurate Measurement" 3.Phase after calibration</td>
+        <td>Distance up to 200 mm with a precision of ±30%</td>
+        <td>Distance 100 mm: measured 95 mm<br>Distance 200 mm: measured 188 mm<br> Distance over 200 mm: "DISCONNECTED"</td>
+        <td>Pass</td>
+        <td>note: at higher distances less precise</td>
+    </tr>
 </table>
+
+@note Only a handful of tests are listed here, since its not required for this documentation. The tests were performed on the device itself and with a PicoScope.
 
 @note The measurements are very sensitive to almost everything. Simply holding or laying the cable monitor differently after calibration will result in deviations in the data.
 
