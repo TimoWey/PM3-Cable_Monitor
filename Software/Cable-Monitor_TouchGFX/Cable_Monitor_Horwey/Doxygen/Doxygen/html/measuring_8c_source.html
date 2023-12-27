@@ -83,7 +83,68 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">measuring.c</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="measuring_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="measuring_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/** *****************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief Measuring input signal using the following configuration:</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Measurement Procedure</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * -----------</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * @details The measurement consists of an amplified signal from the cable monitor board.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * This signal is then sampled by the ADC and the samples are stored in a buffer.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * The buffer is then processed by the calculation module using several digital signal processing methods.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * @note This processing allows the calculation of the distance to the cable, the angle of the cable, and the current flowing through the cable.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * @n Refer to @ref calculation.c</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * The simplified procedure is shown in the following figure:</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * @image html Doxygen/img/ADC_Process.png height=600px</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * Configuration of ADC, Timer, and DMA</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * -----------</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * - ADC is triggered by a timer and with an interrupt after the end of conversion</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * - ADC combined with DMA (Direct Memory Access) to fill a buffer</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * - Scan mode = sequential sampling of two inputs by one ADC</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * - Analog mode configuration for GPIOs</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * @details ADC3 is configured to sample four channels sequentially.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * @n The ADC is triggered by Timer 2, and the samples are transferred to memory by the DMA.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * @n The DMA triggers the transfer complete interrupt when all data is ready.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * @n The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3 (Pad Left),</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * ADC3_IN6 = GPIO PF8 (HS-Right), and ADC3_IN11 = GPIO PC1 (HS-Left)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * @n Refer to @ref MEAS_start_measure</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> * @image html Doxygen/img/DMA_Buffer.png height=800px</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * @note The following peripherals are used:</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * - ADC3</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * - DMA2</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * - TIM2</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * - GPIO</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * - NVIC</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * - RCC</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * @anchor HowTo</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * How to Configure the Peripherals: ADC, Timer, and DMA</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * ====================================================</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * All the peripherals are accessed by writing to or reading from registers.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * From the programmer’s point of view, this is done exactly as</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * writing or reading the value of a variable.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * @n Writing to a register configures the HW of the associated peripheral</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> * to do what is required.</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * @n Reading from a register gets status and data from the HW peripheral.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> * The information on which bits have to be set to get a specific behavior</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> * is documented in the </span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> * @htmlonly</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> * &lt;a href=&quot;../files/Reference manual STM32F429.pdf&quot;&gt;reference manual&lt;/a&gt;</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> * @endhtmlonly of the microcontroller.</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> * ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> * @author Alejandro Horvat, horvaale@zhaw.ch</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"> * @date 26.12.2023</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/******************************************************************************</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"> * Includes</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"> *****************************************************************************/</span></div>
@@ -98,24 +159,34 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/******************************************************************************</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"> * Defines</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="measuring_8c.html#a0a4c3d17b626e4d7b31b780e85dde7cf">   77</a></span><span class="preprocessor">#define ADC_NUMS 64         </span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="measuring_8c.html#aa8ccd2dce306c0d219eeabd92b30fcc0">   78</a></span><span class="preprocessor">#define ADC_FS 640          </span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="measuring_8c.html#a8f1900825debd6a99026eb55d9998131">   79</a></span><span class="preprocessor">#define TIM_CLOCK 84000000  </span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="measuring_8c.html#a00237ed21338f907db7d88aeb54fecf2">   80</a></span><span class="preprocessor">#define TIM_TOP 9           </span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="measuring_8c.html#a0a4c3d17b626e4d7b31b780e85dde7cf">   77</a></span><span class="preprocessor">#define ADC_NUMS 64         </span><span class="comment">///&lt; Number of samples</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="measuring_8c.html#aa8ccd2dce306c0d219eeabd92b30fcc0">   78</a></span><span class="preprocessor">#define ADC_FS 640          </span><span class="comment">///&lt; Sampling freq. =&gt; 12 samples for a 50Hz period</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="measuring_8c.html#a8f1900825debd6a99026eb55d9998131">   79</a></span><span class="preprocessor">#define TIM_CLOCK 84000000  </span><span class="comment">///&lt; APB1 timer clock frequency</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="measuring_8c.html#a00237ed21338f907db7d88aeb54fecf2">   80</a></span><span class="preprocessor">#define TIM_TOP 9           </span><span class="comment">///&lt; Timer top value</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#define TIM_PRESCALE \</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="measuring_8c.html#ad3224fe94be10ed1c61870bd1d22b86d">   82</a></span><span class="preprocessor">    (TIM_CLOCK / ADC_FS / (TIM_TOP + 1) - 1)  </span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="measuring_8c.html#a08f4cb5cb205c824902548906a61cb60">   83</a></span><span class="preprocessor">#define INPUT_COUNT 4                         </span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="measuring_8c.html#ad3224fe94be10ed1c61870bd1d22b86d">   82</a></span><span class="preprocessor">    (TIM_CLOCK / ADC_FS / (TIM_TOP + 1) - 1)  </span><span class="comment">///&lt; Clock prescaler</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="measuring_8c.html#a08f4cb5cb205c824902548906a61cb60">   83</a></span><span class="preprocessor">#define INPUT_COUNT 4                         </span><span class="comment">///&lt; Number of input channels</span></div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">/******************************************************************************</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"> * Variables</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">static</span> uint32_t ADC_samples[<a class="code hl_define" href="measuring_8c.html#a08f4cb5cb205c824902548906a61cb60">INPUT_COUNT</a> * <a class="code hl_define" href="measuring_8c.html#a0a4c3d17b626e4d7b31b780e85dde7cf">ADC_NUMS</a>]; </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">static</span> uint32_t ADC_samples[<a class="code hl_define" href="measuring_8c.html#a08f4cb5cb205c824902548906a61cb60">INPUT_COUNT</a> * <a class="code hl_define" href="measuring_8c.html#a0a4c3d17b626e4d7b31b780e85dde7cf">ADC_NUMS</a>]; <span class="comment"></span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">///&lt; ADC values of max. 4 input channels</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"></span> </div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">/******************************************************************************</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment"> * Functions</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment"> *****************************************************************************/</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment"></span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"> * @brief Configure GPIOs in analog mode.</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"> * @note The input number for the ADCs is not equal to the GPIO pin number!</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment"> * - ADC3_IN4 = GPIO PF6 (Pad right)</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment"> * - ADC123_IN13 = GPIO PC3 (Pad left)</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"> * - ADC3_IN6 = GPIO PF8 (Hall sensor right)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"> * - ADC123_IN11 = GPIO PC1 (Hall sensor left)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="measuring_8h.html#a645930ff74ceaacb90aca99fae865f8f">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="measuring_8c.html#a645930ff74ceaacb90aca99fae865f8f">MEAS_GPIO_analog_init</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
@@ -127,7 +198,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    GPIOC-&gt;MODER |= (3UL &lt;&lt; GPIO_MODER_MODER1_Pos);  <span class="comment">// Analog PC1 = ADC3_IN11</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
 </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment"></span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment"> * @brief Resets the ADCs, disables the timer.</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"> * This function resets the ADCs by asserting the ADC reset bit in the RCC_APB2RSTR register,</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment"> * then releases the reset by clearing the ADC reset bit. It also disables the timer by clearing</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"> * the TIM_CR1_CEN bit in the TIM2 control register.</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="measuring_8c.html#a94fd86d8bf93f5dc2033fbf102ef180e">  122</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="measuring_8c.html#a94fd86d8bf93f5dc2033fbf102ef180e">MEAS_ADC_reset</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
@@ -136,7 +214,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    TIM2-&gt;CR1 &amp;= ~TIM_CR1_CEN;              <span class="comment">// Disable timer</span></div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
 </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment"></span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment"> * @brief Resets the buffer and the flag (data ready for new measurement)</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"> * @param[in] channels  input channels</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment"> * @param[in] buffer    buffer pointer</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keyword">static</span> <span class="keywordtype">void</span> MEAS_Buffer_reset(uint8_t channels, uint32_t* buffer)</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="comment">/* Clear buffer and flag */</span></div>
@@ -145,7 +228,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        buffer[i] = 0;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment"></span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment"> * @brief Configure the timer to trigger the ADC(s)</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment"> * @note For debugging purposes the timer interrupt might be useful.</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="measuring_8h.html#a2ace7017c3957ead5cd587fc6fae0290">  148</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="measuring_8c.html#a2ace7017c3957ead5cd587fc6fae0290">MEAS_timer_init</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>{</div>
@@ -158,7 +246,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    NVIC_SetPriority(TIM2_IRQn, 0);</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}</div>
 </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment"></span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment"> * @brief Initialize ADC, timer and DMA for sequential acquisition = scan mode</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment"> * Uses ADC2 and DMA2_Stream1 channel2</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment"> * @n The ADC2 trigger is set to TIM2 TRGO event</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment"> * @n At each trigger both inputs are converted sequentially</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment"> * and transfered to memory by the DMA.</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment"> * @n As each conversion triggers the DMA, the number of transfers is doubled.</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment"> * @n The DMA triggers the transfer complete interrupt when all data is ready.</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment"> * @n The inputs used are ADC3_IN4 = GPIO PF6 (Pad Right), ADC3_IN13 = GPIO PC3</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment"> *(Pad Left), ADC_IN6 = GPIO PF8 (HS-Right), ADC3_IN11 = GPIO PC1 (HS-Left)</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="foldopen" id="foldopen00171" data-start="{" data-end="}">
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="measuring_8c.html#a550d69c255df67bab7703cc36a7ee308">  171</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="measuring_8c.html#a550d69c255df67bab7703cc36a7ee308">MEAS_ADC3_scan_init</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>{</div>
@@ -193,7 +293,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    DMA2_Stream1-&gt;M0AR = (uint32_t)ADC_samples;  <span class="comment">// Buffer memory loc. address</span></div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
 </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment"></span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment"> * @brief Start DMA, ADC and timer</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="measuring_8c.html#a09580c3436438e5feb38330bdbf7062b">  208</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="measuring_8c.html#a09580c3436438e5feb38330bdbf7062b">MEAS_ADC3_scan_start</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>{</div>
@@ -204,7 +308,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    TIM2-&gt;CR1 |= TIM_CR1_CEN;           <span class="comment">// Enable timer</span></div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
 </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment"></span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment"> * @brief Interrupt handler for DMA2 Stream1</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"> * The samples from the ADC3 have been transfered to memory by the DMA2 Stream1</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment"> * and are ready for processing.</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2">  223</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="measuring_8c.html#adab6f3e22e90bd5b1ceebb98022abdf2">DMA2_Stream1_IRQHandler</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>{</div>
@@ -228,7 +338,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    }</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>}</div>
 </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment"></span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment"> * Measurement functions</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment"> *****************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment"> * @brief Start the measurement by initialising the ADC, timer and DMA, it then</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment"> * starts the measurement and waits for the DMA to finish. The result is then</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment"> * returned.</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="comment"> * @return ADC samples pointer</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment"> * @note The result is stored alternated e.g. every 4th is together.</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="foldopen" id="foldopen00257" data-start="{" data-end="}">
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="measuring_8h.html#a0495ebe6ce630b42c2f9479392506985">  257</a></span>uint32_t* <a class="code hl_function" href="measuring_8c.html#a0495ebe6ce630b42c2f9479392506985">MEAS_start_measure</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>{</div>
@@ -244,7 +366,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>     <span class="keywordflow">return</span> ADC_samples;</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
 </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment"></span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">/** ***************************************************************************</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment"> * @brief Get the sampling frequency</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment"> * @return Sampling frequency</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment"> *****************************************************************************/</span></div>
 <div class="foldopen" id="foldopen00275" data-start="{" data-end="}">
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="measuring_8h.html#a2756121f7d9be8c582e834ec0382b01b">  275</a></span>uint16_t <a class="code hl_function" href="measuring_8c.html#a2756121f7d9be8c582e834ec0382b01b">MEAS_get_samp_freq</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>{</div>

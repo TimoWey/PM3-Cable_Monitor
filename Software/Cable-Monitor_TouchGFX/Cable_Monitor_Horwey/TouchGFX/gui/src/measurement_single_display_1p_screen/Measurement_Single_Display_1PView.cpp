@@ -4,6 +4,8 @@
 #include "main.h"
 #include "stm32f4xx_hal_gpio.h"
 
+@file
+
 extern "C"
 {
 	#include "main.h"
@@ -32,8 +34,8 @@ void Measurement_Single_Display_1PView::tearDownScreen()
  * @brief Performs a single measurement and updates the GUI values accordingly.
  * 
  * This function calculates the single measurement values and updates the GUI elements
- * such as gauge angle, current value, frequency value, and distance value.
- * It also handles error conditions and displays appropriate error messages on the GUI.
+ * such as gauge angle, current value, frequency value, and distance value. It also handles
+ * error conditions and displays appropriate error messages on the GUI.
  * 
  * @note This function is only executed when not running in the simulator.
  */

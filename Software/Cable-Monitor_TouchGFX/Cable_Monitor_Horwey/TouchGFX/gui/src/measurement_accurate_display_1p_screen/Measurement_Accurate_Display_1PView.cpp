@@ -37,12 +37,14 @@ void Measurement_Accurate_Display_1PView::setTimeoutValue(int value)
  * @brief Performs accurate measurement and updates the display accordingly.
  * 
  * This function calculates the accurate measurement values for a single phase and updates the display
- * with the calculated values. It also handles error conditions and displays appropriate error messages.
+ * with the calculated values. If the standard deviation is too high, an error message is displayed.
+ * If there are errors with the current, frequency, or distance values, appropriate error messages are displayed.
  * 
- * @note This function is only executed when not running in the simulator.
+ * @note This function disables TouchGFX interrupts during the calculation of accurate measurement values.
  * 
- * @bug GUI is unresponsive while the accurate measurement values are calculated.
- * This is due to the fact that the TouchGFX interrupts are disabled while the accurate measurement values are calculated. 
+ * @note This function assumes that the ACCU_MEAS struct is defined and the accurate_measurement() function is implemented.
+ * 
+ * @note This function is only executed if the SIMULATOR macro is not defined.
  */
 void Measurement_Accurate_Display_1PView::accu_meas()
 {

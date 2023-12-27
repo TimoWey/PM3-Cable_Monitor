@@ -89,7 +89,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span><span class="comment"></span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * @brief This section includes the necessary header files for the SettingsView.cpp file.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *        It includes &quot;main.h&quot; and &quot;calculation.h&quot;.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *        It also declares the external variable &quot;State_BUZZER&quot;.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="calculation_8h.html">calculation.h</a>&quot;</span></div>
@@ -108,7 +113,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_settings_view.html#a6bf3690307e72e6c5023c086328377df">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_view.html#a6bf3690307e72e6c5023c086328377df">SettingsView::setupScreen</a>()</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    SettingsViewBase::setupScreen();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="class_settings_view_base.html#a6bf3690307e72e6c5023c086328377df">SettingsViewBase::setupScreen</a>();</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -118,21 +123,36 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    SettingsViewBase::tearDownScreen();</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * @brief Sets the timeout value for the settings view.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * This function updates the GUI to display the specified timeout value.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * If the value is 0, it also navigates to the shutting off screen without any transition.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * @param value The timeout value to be set.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_settings_view.html#affb58a0de279aa4abde467f1761db6ca">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_view.html#affb58a0de279aa4abde467f1761db6ca">SettingsView::setTimeoutValue</a>(<span class="keywordtype">int</span> value)</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">//display the timeout value on the GUI</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Unicode::snprintf(textArea_auto_offBuffer, TEXTAREA_AUTO_OFF_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, value);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    textArea_auto_off.invalidate();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Unicode::snprintf(<a class="code hl_variable" href="class_settings_view_base.html#a503ba8305592b33f18b5e248c2bfe5d0">textArea_auto_offBuffer</a>, <a class="code hl_variable" href="class_settings_view_base.html#a58350f15619a8d7a0e11d597f11cae77">TEXTAREA_AUTO_OFF_SIZE</a>, <span class="stringliteral">&quot;%d&quot;</span>, value);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_variable" href="class_settings_view_base.html#a6fec791757011342fad6ed170b78972b">textArea_auto_off</a>.invalidate();</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span>(value == 0)</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        application().gotoShutting_OffScreenNoTransition();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="class_settings_view_base.html#ac76f37b6a7e939bcea1a2d25f1bed915">application</a>().<a class="code hl_function" href="class_frontend_application_base.html#a1e62df43819891f030be21f5e4609727">gotoShutting_OffScreenNoTransition</a>();</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"></span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> * @brief Toggles the buzzer.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> * This function is used to toggle the buzzer on or off. It calls a callback function</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"> * in calculation.c to perform the actual toggling of the buzzer. This function is only</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"> * executed if the code is not running in a simulator.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_settings_view.html#a3abebcf37c0d55a3708fe7e94ad58e73">   63</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_view.html#a3abebcf37c0d55a3708fe7e94ad58e73">SettingsView::toggle_BUZZER</a>()</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
@@ -142,7 +162,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"></span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"> * @brief Toggles the LED.</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"> * This function is used to toggle the LED on the device. It checks if the code is running on a simulator or not.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"> * If it is not running on a simulator, it calls the toggle_Buzzer_settings function in calculation.c to toggle the buzzer.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_settings_view.html#a5451f1927eaf00d8c129c0613fc5204d">   77</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_view.html#a5451f1927eaf00d8c129c0613fc5204d">SettingsView::toggle_LED</a>()</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
@@ -155,7 +181,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="a_settings_view_8cpp_html_a38561fdc926275e79fcc8d74e1d56373"><div class="ttname"><a href="_settings_view_8cpp.html#a38561fdc926275e79fcc8d74e1d56373">State_BUZZER</a></div><div class="ttdeci">bool State_BUZZER</div><div class="ttdoc">This section includes the necessary header files for the SettingsView.cpp file. It includes &quot;main....</div><div class="ttdef"><b>Definition</b> <a href="calculation_8c_source.html#l00159">calculation.c:159</a></div></div>
 <div class="ttc" id="a_settings_view_8hpp_html"><div class="ttname"><a href="_settings_view_8hpp.html">SettingsView.hpp</a></div></div>
 <div class="ttc" id="acalculation_8h_html"><div class="ttname"><a href="calculation_8h.html">calculation.h</a></div><div class="ttdoc">See calculation.c.</div></div>
-<div class="ttc" id="acalculation_8h_html_a6b6736969ddf8f3f9f229c3ac4a24c23"><div class="ttname"><a href="calculation_8h.html#a6b6736969ddf8f3f9f229c3ac4a24c23">toggle_Buzzer_settings</a></div><div class="ttdeci">void toggle_Buzzer_settings(bool btn)</div><div class="ttdoc">Toggles the settings of the buzzer or LED based on the button number.</div><div class="ttdef"><b>Definition</b> <a href="calculation_8c_source.html#l00647">calculation.c:647</a></div></div>
+<div class="ttc" id="acalculation_8h_html_a6b6736969ddf8f3f9f229c3ac4a24c23"><div class="ttname"><a href="calculation_8h.html#a6b6736969ddf8f3f9f229c3ac4a24c23">toggle_Buzzer_settings</a></div><div class="ttdeci">void toggle_Buzzer_settings(bool btn)</div><div class="ttdoc">Toggles the settings of the buzzer or LED based on the button number.</div><div class="ttdef"><b>Definition</b> <a href="calculation_8c_source.html#l00648">calculation.c:648</a></div></div>
+<div class="ttc" id="aclass_frontend_application_base_html_a1e62df43819891f030be21f5e4609727"><div class="ttname"><a href="class_frontend_application_base.html#a1e62df43819891f030be21f5e4609727">FrontendApplicationBase::gotoShutting_OffScreenNoTransition</a></div><div class="ttdeci">void gotoShutting_OffScreenNoTransition()</div><div class="ttdef"><b>Definition</b> <a href="_frontend_application_base_8cpp_source.html#l00233">FrontendApplicationBase.cpp:233</a></div></div>
+<div class="ttc" id="aclass_settings_view_base_html_a503ba8305592b33f18b5e248c2bfe5d0"><div class="ttname"><a href="class_settings_view_base.html#a503ba8305592b33f18b5e248c2bfe5d0">SettingsViewBase::textArea_auto_offBuffer</a></div><div class="ttdeci">touchgfx::Unicode::UnicodeChar textArea_auto_offBuffer[TEXTAREA_AUTO_OFF_SIZE]</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_base_8hpp_source.html#l00075">SettingsViewBase.hpp:75</a></div></div>
+<div class="ttc" id="aclass_settings_view_base_html_a58350f15619a8d7a0e11d597f11cae77"><div class="ttname"><a href="class_settings_view_base.html#a58350f15619a8d7a0e11d597f11cae77">SettingsViewBase::TEXTAREA_AUTO_OFF_SIZE</a></div><div class="ttdeci">static const uint16_t TEXTAREA_AUTO_OFF_SIZE</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_base_8hpp_source.html#l00074">SettingsViewBase.hpp:74</a></div></div>
+<div class="ttc" id="aclass_settings_view_base_html_a6bf3690307e72e6c5023c086328377df"><div class="ttname"><a href="class_settings_view_base.html#a6bf3690307e72e6c5023c086328377df">SettingsViewBase::setupScreen</a></div><div class="ttdeci">virtual void setupScreen()</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_base_8cpp_source.html#l00104">SettingsViewBase.cpp:104</a></div></div>
+<div class="ttc" id="aclass_settings_view_base_html_a6fec791757011342fad6ed170b78972b"><div class="ttname"><a href="class_settings_view_base.html#a6fec791757011342fad6ed170b78972b">SettingsViewBase::textArea_auto_off</a></div><div class="ttdeci">touchgfx::TextAreaWithOneWildcard textArea_auto_off</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_base_8hpp_source.html#l00057">SettingsViewBase.hpp:57</a></div></div>
+<div class="ttc" id="aclass_settings_view_base_html_ac76f37b6a7e939bcea1a2d25f1bed915"><div class="ttname"><a href="class_settings_view_base.html#ac76f37b6a7e939bcea1a2d25f1bed915">SettingsViewBase::application</a></div><div class="ttdeci">FrontendApplication &amp; application()</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_base_8hpp_source.html#l00048">SettingsViewBase.hpp:48</a></div></div>
 <div class="ttc" id="aclass_settings_view_html_a3abebcf37c0d55a3708fe7e94ad58e73"><div class="ttname"><a href="class_settings_view.html#a3abebcf37c0d55a3708fe7e94ad58e73">SettingsView::toggle_BUZZER</a></div><div class="ttdeci">virtual void toggle_BUZZER()</div><div class="ttdoc">Toggles the buzzer.</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_8cpp_source.html#l00063">SettingsView.cpp:63</a></div></div>
 <div class="ttc" id="aclass_settings_view_html_a3d222574bfb48eaa536b558fb2be4cbf"><div class="ttname"><a href="class_settings_view.html#a3d222574bfb48eaa536b558fb2be4cbf">SettingsView::SettingsView</a></div><div class="ttdeci">SettingsView()</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_8cpp_source.html#l00021">SettingsView.cpp:21</a></div></div>
 <div class="ttc" id="aclass_settings_view_html_a5451f1927eaf00d8c129c0613fc5204d"><div class="ttname"><a href="class_settings_view.html#a5451f1927eaf00d8c129c0613fc5204d">SettingsView::toggle_LED</a></div><div class="ttdeci">virtual void toggle_LED()</div><div class="ttdoc">Toggles the LED.</div><div class="ttdef"><b>Definition</b> <a href="_settings_view_8cpp_source.html#l00077">SettingsView.cpp:77</a></div></div>
