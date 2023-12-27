@@ -31,12 +31,11 @@ void Measurement_Accurate_Display_3PView::tearDownScreen()
  * @brief Performs accurate 3-phase measurement and updates the display accordingly.
  * 
  * This function calculates the accurate measurement values for a 3-phase system and updates the display
- * with the calculated values. It also handles error conditions and displays appropriate error messages.
+ * with the calculated values. It disables TouchGFX interrupts during the calculation to ensure accuracy.
+ * If the standard deviation of the measurement is too high, an error message is displayed. Otherwise, the
+ * gauge angle, current, frequency, and distance values are updated on the display.
  * 
  * @note This function is only executed when not running in the simulator.
- * 
- * @bug GUI is unresponsive while the accurate measurement values are calculated.
- * This is due to the fact that the TouchGFX interrupts are disabled while the accurate measurement values are calculated.
  */
 void Measurement_Accurate_Display_3PView::accu_meas_3PH()
 {
