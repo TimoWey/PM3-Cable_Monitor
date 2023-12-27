@@ -181,9 +181,10 @@ DISTANCE_ANGLE calculate_distance_and_angle(float32_t signal_strength_r, float32
  * 7. Calculates the index of the rounded frequency.
  * 8. Calculates the signal strength at the rounded frequency.
  * 9. Returns the calculated main frequency and signal strength in a structure.
- *
+ * 
  * @param input_samples The array of input samples.
  * @return The structure containing the calculated main frequency and signal strength.
+ * @see @a <a href="https://www.keil.com/pack/doc/CMSIS/DSP/html/index.html">CMSIS DSP Software Library </a>
  */
 FFT calculate_freq_and_signalstrength(float32_t input_samples[])
 {

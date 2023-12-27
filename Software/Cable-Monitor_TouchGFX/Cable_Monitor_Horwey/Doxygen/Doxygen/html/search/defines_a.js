@@ -15,6 +15,7 @@ var searchData=
   ['sdram_5fmodereg_5fwriteburst_5fmode_5fsingle_12',['SDRAM_MODEREG_WRITEBURST_MODE_SINGLE',['../main_8c.html#a54dc88e23250d2904be75f94cfdf699f',1,'main.c']]],
   ['sdram_5ftimeout_13',['SDRAM_TIMEOUT',['../main_8c.html#a16ba60f030cd56f8b4c8cf72b9e6e827',1,'main.c']]],
   ['sector_5f23_5faddr_14',['SECTOR_23_ADDR',['../main_8h.html#ad17a18d85401edaf367742d21171755b',1,'main.h']]],
-  ['single_5fphase_15',['SINGLE_PHASE',['../calculation_8h.html#adb966d5f9675ecf8225256002bb63314',1,'calculation.h']]],
-  ['spi5_5ftimeout_5fmax_16',['SPI5_TIMEOUT_MAX',['../main_8c.html#a31cbda8324bfabcbf9fb18cc6c945b88',1,'main.c']]]
+  ['sim_5ftitle_15',['SIM_TITLE',['../_sim_constants_8hpp.html#aca772cd0c4138abaec7915ed2f74561a',1,'SimConstants.hpp']]],
+  ['single_5fphase_16',['SINGLE_PHASE',['../calculation_8h.html#adb966d5f9675ecf8225256002bb63314',1,'calculation.h']]],
+  ['spi5_5ftimeout_5fmax_17',['SPI5_TIMEOUT_MAX',['../main_8c.html#a31cbda8324bfabcbf9fb18cc6c945b88',1,'main.c']]]
 ];
