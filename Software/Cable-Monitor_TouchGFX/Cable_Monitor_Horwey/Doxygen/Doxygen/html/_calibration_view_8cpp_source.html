@@ -84,38 +84,96 @@ $(document).ready(function() { init_codefold(0); });
 <div class="contents">
 <a href="_calibration_view_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;<a class="code" href="_calibration_view_8hpp.html">gui/calibration_screen/CalibrationView.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="class_calibration_view.html#ad59acad74e16f835feaa7fcf38416443">    3</a></span><a class="code hl_function" href="class_calibration_view.html#ad59acad74e16f835feaa7fcf38416443">CalibrationView::CalibrationView</a>()</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>}</div>
-</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SIMULATOR</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_calibration_view.html#a6bf3690307e72e6c5023c086328377df">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_calibration_view.html#a6bf3690307e72e6c5023c086328377df">CalibrationView::setupScreen</a>()</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    CalibrationViewBase::setupScreen();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    #include &quot;<a class="code" href="_f_l_a_s_h___s_e_c_t_o_r___f4_8h.html">FLASH_SECTOR_F4.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    #include &quot;<a class="code" href="calculation_8h.html">calculation.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_calibration_view.html#ad59acad74e16f835feaa7fcf38416443">   22</a></span><a class="code hl_function" href="class_calibration_view.html#ad59acad74e16f835feaa7fcf38416443">CalibrationView::CalibrationView</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_calibration_view.html#a85289561483ed5279a1a6d834708237d">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_calibration_view.html#a85289561483ed5279a1a6d834708237d">CalibrationView::tearDownScreen</a>()</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    CalibrationViewBase::tearDownScreen();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_calibration_view.html#a6bf3690307e72e6c5023c086328377df">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_calibration_view.html#a6bf3690307e72e6c5023c086328377df">CalibrationView::setupScreen</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    CalibrationViewBase::setupScreen();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_calibration_view.html#affb58a0de279aa4abde467f1761db6ca">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_calibration_view.html#affb58a0de279aa4abde467f1761db6ca">CalibrationView::setTimeoutValue</a>(<span class="keywordtype">int</span> value)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_calibration_view.html#a85289561483ed5279a1a6d834708237d">   32</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_calibration_view.html#a85289561483ed5279a1a6d834708237d">CalibrationView::tearDownScreen</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    CalibrationViewBase::tearDownScreen();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_calibration_view.html#affb58a0de279aa4abde467f1761db6ca">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_calibration_view.html#affb58a0de279aa4abde467f1761db6ca">CalibrationView::setTimeoutValue</a>(<span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_calibration_view.html#a0b00300d1f4217da9c77355b28377cf5">   51</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_calibration_view.html#a0b00300d1f4217da9c77355b28377cf5">CalibrationView::Load_FLASH_Values</a>()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#ifndef SIMULATOR</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    SwipeContainer swipeContainer = swipeContainer1;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    uint32_t Rx_Data[14];</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">//Load the 6 Calibration Values from the Flash</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_function" href="_f_l_a_s_h___s_e_c_t_o_r___f4_8h.html#ac07ad72b408bd18c692153025d113a5f">Flash_Read_Data</a>(0x081E0000, Rx_Data, 14);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">// Write current Data stored in the Flash to the GUI</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">//Left Pad</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Unicode::snprintf(textAreaCal_LP1Buffer, TEXTAREACAL_LP1_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[0]);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    Unicode::snprintf(textAreaCal_LP2Buffer, TEXTAREACAL_LP2_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[1]);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Unicode::snprintf(textAreaCal_LP3Buffer, TEXTAREACAL_LP3_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[2]);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">//Right Pad</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    Unicode::snprintf(textAreaCal_RP1Buffer, TEXTAREACAL_RP1_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[3]);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    Unicode::snprintf(textAreaCal_RP2Buffer, TEXTAREACAL_RP2_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[4]);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    Unicode::snprintf(textAreaCal_RP3Buffer, TEXTAREACAL_RP3_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[5]);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Hall Left  1P 1.2A and 5A</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    Unicode::snprintf(textAreaCal_LH_1A_1PBuffer, TEXTAREACAL_LH_1A_1P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[6]);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Unicode::snprintf(textAreaCal_LH_5A_1PBuffer, TEXTAREACAL_LH_5A_1P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[7]);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">// Hall Right 1P 1.2A and 5A</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    Unicode::snprintf(textAreaCal_RH_1A_1PBuffer, TEXTAREACAL_RH_1A_1P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[8]);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Unicode::snprintf(textAreaCal_RH_5A_1PBuffer, TEXTAREACAL_RH_5A_1P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[9]);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// Hall Left  3P 1.2A and 5A</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Unicode::snprintf(textAreaCal_LH_1A_3PBuffer, TEXTAREACAL_LH_1A_3P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[10]);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    Unicode::snprintf(textAreaCal_LH_5A_3PBuffer, TEXTAREACAL_LH_5A_3P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[11]);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// Hall Right 3P 1.2A and 5A</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    Unicode::snprintf(textAreaCal_RH_1A_3PBuffer, TEXTAREACAL_RH_1A_3P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[12]);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Unicode::snprintf(textAreaCal_RH_5A_3PBuffer, TEXTAREACAL_RH_5A_3P_SIZE, <span class="stringliteral">&quot;%d&quot;</span>, Rx_Data[13]);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// update swipe container</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    swipeContainer1.invalidate();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
 </div>
 <div class="ttc" id="a_calibration_view_8hpp_html"><div class="ttname"><a href="_calibration_view_8hpp.html">CalibrationView.hpp</a></div></div>
-<div class="ttc" id="aclass_calibration_view_html_a6bf3690307e72e6c5023c086328377df"><div class="ttname"><a href="class_calibration_view.html#a6bf3690307e72e6c5023c086328377df">CalibrationView::setupScreen</a></div><div class="ttdeci">virtual void setupScreen()</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00008">CalibrationView.cpp:8</a></div></div>
-<div class="ttc" id="aclass_calibration_view_html_a85289561483ed5279a1a6d834708237d"><div class="ttname"><a href="class_calibration_view.html#a85289561483ed5279a1a6d834708237d">CalibrationView::tearDownScreen</a></div><div class="ttdeci">virtual void tearDownScreen()</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00013">CalibrationView.cpp:13</a></div></div>
-<div class="ttc" id="aclass_calibration_view_html_ad59acad74e16f835feaa7fcf38416443"><div class="ttname"><a href="class_calibration_view.html#ad59acad74e16f835feaa7fcf38416443">CalibrationView::CalibrationView</a></div><div class="ttdeci">CalibrationView()</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00003">CalibrationView.cpp:3</a></div></div>
-<div class="ttc" id="aclass_calibration_view_html_affb58a0de279aa4abde467f1761db6ca"><div class="ttname"><a href="class_calibration_view.html#affb58a0de279aa4abde467f1761db6ca">CalibrationView::setTimeoutValue</a></div><div class="ttdeci">virtual void setTimeoutValue(int value)</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00018">CalibrationView.cpp:18</a></div></div>
+<div class="ttc" id="a_f_l_a_s_h___s_e_c_t_o_r___f4_8h_html"><div class="ttname"><a href="_f_l_a_s_h___s_e_c_t_o_r___f4_8h.html">FLASH_SECTOR_F4.h</a></div></div>
+<div class="ttc" id="a_f_l_a_s_h___s_e_c_t_o_r___f4_8h_html_ac07ad72b408bd18c692153025d113a5f"><div class="ttname"><a href="_f_l_a_s_h___s_e_c_t_o_r___f4_8h.html#ac07ad72b408bd18c692153025d113a5f">Flash_Read_Data</a></div><div class="ttdeci">void Flash_Read_Data(uint32_t StartSectorAddress, uint32_t *RxBuf, uint16_t numberofwords)</div><div class="ttdoc">Reads data from flash memory.</div><div class="ttdef"><b>Definition</b> <a href="_f_l_a_s_h___s_e_c_t_o_r___f4_8c_source.html#l00259">FLASH_SECTOR_F4.c:259</a></div></div>
+<div class="ttc" id="acalculation_8h_html"><div class="ttname"><a href="calculation_8h.html">calculation.h</a></div><div class="ttdoc">See calculation.c.</div></div>
+<div class="ttc" id="aclass_calibration_view_html_a0b00300d1f4217da9c77355b28377cf5"><div class="ttname"><a href="class_calibration_view.html#a0b00300d1f4217da9c77355b28377cf5">CalibrationView::Load_FLASH_Values</a></div><div class="ttdeci">virtual void Load_FLASH_Values()</div><div class="ttdoc">Loads the calibration values from the Flash memory and updates the GUI.</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00051">CalibrationView.cpp:51</a></div></div>
+<div class="ttc" id="aclass_calibration_view_html_a6bf3690307e72e6c5023c086328377df"><div class="ttname"><a href="class_calibration_view.html#a6bf3690307e72e6c5023c086328377df">CalibrationView::setupScreen</a></div><div class="ttdeci">virtual void setupScreen()</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00027">CalibrationView.cpp:27</a></div></div>
+<div class="ttc" id="aclass_calibration_view_html_a85289561483ed5279a1a6d834708237d"><div class="ttname"><a href="class_calibration_view.html#a85289561483ed5279a1a6d834708237d">CalibrationView::tearDownScreen</a></div><div class="ttdeci">virtual void tearDownScreen()</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00032">CalibrationView.cpp:32</a></div></div>
+<div class="ttc" id="aclass_calibration_view_html_ad59acad74e16f835feaa7fcf38416443"><div class="ttname"><a href="class_calibration_view.html#ad59acad74e16f835feaa7fcf38416443">CalibrationView::CalibrationView</a></div><div class="ttdeci">CalibrationView()</div><div class="ttdoc">This section includes the necessary header files for the calibration screen.</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00022">CalibrationView.cpp:22</a></div></div>
+<div class="ttc" id="aclass_calibration_view_html_affb58a0de279aa4abde467f1761db6ca"><div class="ttname"><a href="class_calibration_view.html#affb58a0de279aa4abde467f1761db6ca">CalibrationView::setTimeoutValue</a></div><div class="ttdeci">virtual void setTimeoutValue(int value)</div><div class="ttdef"><b>Definition</b> <a href="_calibration_view_8cpp_source.html#l00037">CalibrationView.cpp:37</a></div></div>
+<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
